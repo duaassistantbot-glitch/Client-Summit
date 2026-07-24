@@ -1,0 +1,907 @@
+const fs = require('fs');
+const path = require('path');
+const ExcelJS = require('exceljs');
+
+const workbookPath = process.env.SUMMIT_XLSX || '/home/openclaw/.openclaw/media/inbound/me-registration-report-27962-154818---2ba3c48a-dfc9-4c94-906a-c8f3eae1ae3c.xlsx';
+const outDir = path.resolve(__dirname, '..');
+const dataDir = path.join(outDir, 'assets', 'data');
+
+const GOALS = {
+  totalRegistrants: 400,
+  paidTickets: 165,
+  ticketRevenue: 74000,
+  sponsorRevenue: 313950,
+  totalRevenue: 387950,
+  sponsorPasses: 57,
+  uniqueSponsors: 25,
+  staffTickets: 60,
+  customerProspectRegistrations: 283,
+  customerProspectPaid: 165,
+  customerProspectComped: 118,
+  projectedCost: 503636,
+  netTarget: -115686
+};
+
+const ACTUAL_2025 = {
+  totalRegistrations: 301,
+  staffTickets: 60,
+  customerProspectRegistrations: 179,
+  customerProspectPaid: 85,
+  customerProspectComped: 94,
+  avgTicketPrice: 471,
+  ticketRevenue: 40040,
+  sponsorTickets: 62,
+  sponsors: 21,
+  sponsorshipRevenue: 184000,
+  totalRevenue: 224040,
+  totalCost: 336402,
+  totalCostTe: 315171,
+  netProfit: -112362,
+  profitMargin: -50.2,
+  totalCostPerAttendee: 1047,
+  netCostPerAttendee: 373
+};
+
+const DISCOUNT_CAPS = {
+  'REVGUEST-A': 20,
+  'REVGUEST-B': 20,
+  REVFAN100: 15,
+  'REVSALES50-EB': 20,
+  SUMMIT100VIIRTUE: null,
+  CAMREVSUMMIT: null
+};
+
+function valueOf(cell) {
+  if (cell == null) return '';
+  if (cell instanceof Date) return cell.toISOString();
+  if (typeof cell === 'object') return cell.text || cell.result || cell.hyperlink || '';
+  return cell;
+}
+
+function asText(value) {
+  return String(valueOf(value) ?? '').trim();
+}
+
+function asNumber(value) {
+  if (typeof value === 'number') return value;
+  const text = asText(value).replace(/[$,]/g, '');
+  const num = Number(text);
+  return Number.isFinite(num) ? num : 0;
+}
+
+function parseDate(value) {
+  if (value instanceof Date) return value;
+  const text = asText(value);
+  if (!text) return null;
+  const parsed = new Date(text);
+  return Number.isNaN(parsed.getTime()) ? null : parsed;
+}
+
+function cleanPackage(value) {
+  return asText(value)
+    .replace(/^Standard:\s*/i, '')
+    .replace(/\s*\([^)]*\)/g, '')
+    .replace(/-\s*$/g, '')
+    .replace(/\s+/g, ' ')
+    .trim() || 'Unspecified';
+}
+
+function cleanIndustry(value) {
+  return asText(value)
+    .replace('Telecom or Communications Service Provider (CSP)', 'CSP / Telecom')
+    .replace('Managed Service Provider (MSP)', 'MSP')
+    .trim() || 'Unspecified';
+}
+
+function pct(current, goal) {
+  return goal ? Math.round((current / goal) * 100) : 0;
+}
+
+function money(value) {
+  const abs = Math.abs(value);
+  const formatted = '$' + Math.round(abs).toLocaleString('en-US');
+  return value < 0 ? `(${formatted})` : formatted;
+}
+
+function countBy(rows, selector) {
+  const counts = new Map();
+  rows.forEach((row) => {
+    const raw = selector(row);
+    if (!raw) return;
+    const values = Array.isArray(raw) ? raw : [raw];
+    values.forEach((value) => {
+      const key = String(value).trim();
+      if (!key) return;
+      counts.set(key, (counts.get(key) || 0) + 1);
+    });
+  });
+  return [...counts.entries()]
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+}
+
+function splitMulti(value) {
+  return asText(value).split(',').map((item) => item.trim()).filter(Boolean);
+}
+
+function normalizeTopics(value) {
+  const text = asText(value);
+  const topics = [
+    'Business Growth, Strategy & Service Delivery',
+    'Customer Success & Experience',
+    'Industry & Regulatory Insights',
+    'Sales & Marketing',
+    'Technology, AI & Innovation',
+    'Product & Platform Deep Dives',
+    'Communications Billing (Usage rating, Telecom Taxation)',
+    'Payment Processing (Accounts receivable, Accounts Payable)',
+    'PSA (service tickets, tech scheduling, inventory, quoting)',
+    'RMM (Remote Monitoring and Management)',
+    'Women in Leadership'
+  ];
+  return topics.filter((topic) => text.includes(topic));
+}
+
+function normalizeReceptions(value) {
+  const text = asText(value);
+  const receptions = [];
+  if (text.includes('Welcome Reception')) receptions.push('Welcome Reception');
+  if (text.includes('Networking Reception')) receptions.push('Networking Reception');
+  if (text.includes('not attending')) receptions.push('Not Attending Receptions');
+  return receptions.length ? receptions : ['Unspecified'];
+}
+
+async function loadWorkbookRows() {
+  const workbook = new ExcelJS.Workbook();
+  await workbook.xlsx.readFile(workbookPath);
+  const sheet = workbook.worksheets[0];
+  const headers = sheet.getRow(1).values.slice(1).map(asText);
+  const rows = [];
+
+  sheet.eachRow((row, rowNumber) => {
+    if (rowNumber === 1) return;
+    const record = {};
+    headers.forEach((header, index) => {
+      record[header] = valueOf(row.getCell(index + 1).value);
+    });
+    const firstName = asText(record['First Name (1557966)']);
+    const lastName = asText(record['Last Name (1557967)']);
+    const email = asText(record.Email);
+    if (!firstName && !lastName && !email) return;
+
+    const date = parseDate(record['Date Registered']);
+    const discountCode = asText(record['Discount Code']).toUpperCase();
+    const packageAmount = asNumber(record['Package Amount']);
+    const discountAmount = asNumber(record['Discount Amount Val']);
+    const amount = asNumber(record.Amount);
+    const userType = asText(record['User Type']);
+
+    rows.push({
+      name: `${firstName} ${lastName}`.trim() || email,
+      company: asText(record.Company) || 'Unspecified',
+      jobTitle: asText(record['Job Title']),
+      state: asText(record['State/ Province']),
+      dateRegistered: date ? date.toISOString().slice(0, 10) : '',
+      dateLabel: date ? date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) : '',
+      status: asText(record.Status),
+      hasPaid: /^yes$/i.test(asText(record['Has Paid'])),
+      userType,
+      isStaff: /@rev\.io$/i.test(email) || /staff/i.test(userType),
+      isSponsorPass: /sponsor/i.test(userType) || /sponsor/i.test(asText(record['Package Name'])),
+      businessType: cleanIndustry(record['Which Of The Following Best Describes Your Business?']),
+      jobRank: asText(record['Job Rank']) || 'Unspecified',
+      department: asText(record.Department) || 'Unspecified',
+      companySize: asText(record['Company Size']) || 'Unspecified',
+      packageName: cleanPackage(record['Package Name']),
+      packageAmount,
+      discountCode,
+      discountAmount,
+      amount,
+      paymentStatus: asText(record['Payment Status']) || 'Unspecified',
+      referral: `${asText(record['Referral First Name'])} ${asText(record['Referral Last Name'])}`.trim(),
+      receptions: normalizeReceptions(record['Which Receptions Are You Planning To Attend?']),
+      hotel: asText(record['Do You Need A Hotel Room For The 2026 Rev.io Summit?']) || 'Unspecified',
+      shirtSize: asText(record['T Shirt Size']) || 'Unspecified',
+      attendedBefore: asText(record['Have You Attended The Rev.io Summit Before?']) || 'Unspecified',
+      topics: normalizeTopics(record['Please Select The Topics That Best Match Your Areas Of Interest. (Select All That Apply.)'])
+    });
+  });
+
+  return rows.filter((row) => !/cancel/i.test(row.status));
+}
+
+function buildModel(rows) {
+  const uniqueCompanies = new Set(rows.map((row) => row.company.toLowerCase()).filter((v) => v && v !== 'unspecified')).size;
+  const staffRows = rows.filter((row) => row.isStaff);
+  const sponsorRows = rows.filter((row) => row.isSponsorPass);
+  const customerRows = rows.filter((row) => !row.isStaff && !row.isSponsorPass);
+  const paidRows = customerRows.filter((row) => row.amount > 0);
+  const compRows = customerRows.filter((row) => row.amount === 0);
+  const ticketRevenue = rows.reduce((sum, row) => sum + row.amount, 0);
+  const avgPaidTicket = paidRows.length ? Math.round(ticketRevenue / paidRows.length) : 0;
+  const fullComps = rows.filter((row) => row.amount === 0 && (row.discountAmount >= row.packageAmount || row.discountCode));
+  const referrals = rows.filter((row) => row.referral).map((row, index) => ({
+    id: index + 1,
+    registrant: row.name,
+    referrer: row.referral,
+    date: row.dateRegistered
+  }));
+
+  const ticketTypes = countBy(rows, (row) => row.packageName).map((entry) => {
+    const matching = rows.filter((row) => row.packageName === entry.name);
+    return {
+      ...entry,
+      paid: matching.filter((row) => row.amount > 0).length,
+      comp: matching.filter((row) => row.amount === 0).length,
+      revenue: matching.reduce((sum, row) => sum + row.amount, 0)
+    };
+  });
+
+  const discounts = countBy(rows, (row) => row.discountCode || null).map((entry) => {
+    const cap = Object.prototype.hasOwnProperty.call(DISCOUNT_CAPS, entry.name) ? DISCOUNT_CAPS[entry.name] : null;
+    return { ...entry, cap, remaining: cap == null ? null : Math.max(0, cap - entry.count) };
+  });
+
+  const byMonth = countBy(rows, (row) => {
+    if (!row.dateRegistered) return null;
+    const date = new Date(row.dateRegistered + 'T00:00:00Z');
+    return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+  });
+
+  return {
+    generatedAt: new Date().toISOString(),
+    sourceFile: path.basename(workbookPath),
+    goals: GOALS,
+    actual2025: ACTUAL_2025,
+    summary: {
+      totalRegistrants: rows.length,
+      uniqueCompanies,
+      customerProspectRegistrations: customerRows.length,
+      paidTickets: paidRows.length,
+      compTickets: compRows.length,
+      staffTickets: staffRows.length,
+      sponsorPasses: sponsorRows.length,
+      ticketRevenue,
+      sponsorRevenue: 0,
+      totalRevenue: ticketRevenue,
+      avgPaidTicket,
+      fullCompTickets: fullComps.length,
+      hotelRooms: rows.filter((row) => /^yes$/i.test(row.hotel)).length,
+      attendedBefore: rows.filter((row) => /^yes$/i.test(row.attendedBefore)).length,
+      referralCount: referrals.length
+    },
+    registrants: rows.map((row) => ({
+      name: row.name,
+      company: row.company,
+      jobTitle: row.jobTitle,
+      state: row.state,
+      dateLabel: row.dateLabel,
+      dateRegistered: row.dateRegistered,
+      businessType: row.businessType,
+      jobRank: row.jobRank,
+      department: row.department,
+      companySize: row.companySize,
+      packageName: row.packageName,
+      amount: row.amount,
+      discountCode: row.discountCode,
+      referral: row.referral,
+      hotel: row.hotel,
+      shirtSize: row.shirtSize,
+      attendedBefore: row.attendedBefore
+    })),
+    referrals,
+    breakdowns: {
+      ticketTypes,
+      discounts,
+      businessTypes: countBy(rows, (row) => row.businessType),
+      jobRanks: countBy(rows, (row) => row.jobRank),
+      departments: countBy(rows, (row) => row.department),
+      companySizes: countBy(rows, (row) => row.companySize),
+      states: countBy(rows, (row) => row.state || null),
+      hotel: countBy(rows, (row) => row.hotel),
+      shirts: countBy(rows, (row) => row.shirtSize),
+      topics: countBy(rows, (row) => row.topics),
+      registrationsByMonth: byMonth,
+      receptionPlans: countBy(rows, (row) => row.receptions)
+    }
+  };
+}
+
+function renderDashboard(model) {
+  const json = JSON.stringify(model).replace(/</g, '\\u003c');
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 Rev.io Client Summit Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1D3756;
+  --navy-dark: #10243a;
+  --navy-deep: #071726;
+  --teal: #2399B5;
+  --green: #6EBE4F;
+  --blue: #3b82f6;
+  --red: #ef4444;
+  --yellow: #f4c542;
+  --card: rgba(29, 55, 86, 0.92);
+  --card-soft: rgba(35, 153, 181, 0.09);
+  --line: rgba(255, 255, 255, 0.12);
+  --text: #FFFFFF;
+  --muted: #d6e2eb;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--navy-deep);
+  color: var(--text);
+  font-family: "Open Sans", Arial, sans-serif;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 18% 12%, rgba(35,153,181,.24), transparent 34%),
+    radial-gradient(ellipse at 88% 8%, rgba(110,190,79,.16), transparent 31%),
+    linear-gradient(180deg, #091b2d 0%, #10243a 34%, #071726 100%);
+}
+.gate {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: linear-gradient(135deg, #071726, #1D3756);
+}
+.gate.hidden { display: none; }
+.gate-box {
+  width: min(420px, 100%);
+  padding: 34px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 8px;
+  background: rgba(29,55,86,.94);
+  box-shadow: 0 24px 70px rgba(0,0,0,.42);
+}
+.gate-brand { font-family: Montserrat, sans-serif; color: var(--green); text-transform: uppercase; letter-spacing: 2px; font-size: 12px; font-weight: 800; }
+.gate h1 { margin: 10px 0 8px; font-family: Montserrat, sans-serif; font-size: 26px; }
+.gate p { margin: 0 0 22px; color: var(--muted); }
+.gate input, .gate button {
+  width: 100%;
+  height: 46px;
+  border-radius: 8px;
+  font: inherit;
+}
+.gate input {
+  border: 1px solid rgba(255,255,255,.18);
+  padding: 0 14px;
+  color: white;
+  background: rgba(7,23,38,.7);
+}
+.gate button {
+  margin-top: 12px;
+  border: 0;
+  color: white;
+  background: linear-gradient(135deg, var(--green), var(--teal));
+  font-weight: 800;
+  cursor: pointer;
+}
+.gate-error { display: none; margin-top: 10px; color: #ffb4b4; font-size: 13px; }
+.app { display: none; position: relative; z-index: 1; }
+.app.visible { display: block; }
+.hero {
+  min-height: 270px;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(29,55,86,.55), rgba(7,23,38,.25));
+}
+.hero-art {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .98;
+}
+.hero-inner {
+  width: min(1400px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 72px 0 30px;
+}
+.eyebrow {
+  display: inline-flex;
+  border: 1px solid rgba(110,190,79,.55);
+  color: white;
+  background: rgba(110,190,79,.14);
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+h1, h2, h3 { font-family: Montserrat, "Open Sans", sans-serif; }
+.hero h1 {
+  margin: 18px 0 8px;
+  font-size: clamp(42px, 7vw, 84px);
+  line-height: .92;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.hero-meta { color: white; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+.tabs {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  background: rgba(16,36,58,.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+.tab {
+  appearance: none;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  padding: 15px 28px 13px;
+  font: 800 12px "Open Sans", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.tab.active { color: white; border-bottom-color: var(--green); background: rgba(35,153,181,.12); }
+main { width: min(1400px, calc(100% - 40px)); margin: 0 auto; padding: 26px 0 42px; }
+.panel { display: none; }
+.panel.active { display: block; }
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 34px 0 16px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.section-title:first-child { margin-top: 0; }
+.section-title::before { content: ""; width: 4px; height: 20px; border-radius: 2px; background: linear-gradient(var(--green), var(--teal)); }
+.section-title::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(110,190,79,.55), transparent); }
+.metric-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.metric-card, .chart-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(145deg, var(--card), rgba(16,36,58,.82));
+  box-shadow: 0 12px 28px rgba(0,0,0,.18);
+}
+.metric-card { padding: 18px; min-height: 132px; }
+.metric-label { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .8px; text-transform: uppercase; }
+.metric-value { margin-top: 8px; font-size: 34px; font-weight: 800; line-height: 1; }
+.metric-note { margin-top: 10px; color: var(--muted); font-size: 12px; }
+.bar-track { height: 8px; margin-top: 16px; overflow: hidden; border-radius: 999px; background: rgba(255,255,255,.12); }
+.bar-fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--green), var(--teal)); }
+.chart-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.chart-card { padding: 18px; }
+.chart-title { margin: 0 0 14px; font-size: 14px; text-transform: uppercase; letter-spacing: .8px; }
+.row-bar { display: grid; grid-template-columns: minmax(130px, 1fr) minmax(110px, 2fr) 42px; gap: 10px; align-items: center; margin: 10px 0; font-size: 13px; }
+.row-name { color: white; overflow-wrap: anywhere; }
+.mini-track { height: 8px; border-radius: 999px; background: rgba(255,255,255,.1); overflow: hidden; }
+.mini-fill { height: 100%; border-radius: inherit; background: var(--teal); }
+.row-count { color: white; text-align: right; font-weight: 800; }
+.table-wrap {
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(16,36,58,.72);
+}
+table { width: 100%; border-collapse: collapse; min-width: 820px; }
+th, td { padding: 11px 13px; border-bottom: 1px solid rgba(255,255,255,.09); text-align: left; vertical-align: top; }
+th {
+  position: sticky;
+  top: 0;
+  color: white;
+  background: #1D3756;
+  font-size: 11px;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+  z-index: 1;
+}
+td { color: white; font-size: 13px; }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+.pill { display: inline-flex; padding: 3px 9px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(35,153,181,.12); font-size: 11px; font-weight: 800; color: white; }
+.toolbar { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+.toolbar input, .toolbar select {
+  min-height: 40px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 8px;
+  background: rgba(7,23,38,.7);
+  color: white;
+  padding: 0 12px;
+  font: inherit;
+}
+.toolbar input { flex: 1; min-width: 260px; }
+.action-button {
+  min-height: 40px;
+  border: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--green), var(--teal));
+  color: white;
+  padding: 0 18px;
+  font: 800 13px "Open Sans", Arial, sans-serif;
+  cursor: pointer;
+}
+.subtabs { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
+.subtab {
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  padding: 12px 18px 10px;
+  font-weight: 800;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  cursor: pointer;
+}
+.subtab.active { color: white; border-bottom-color: var(--green); }
+.subpanel { display: none; }
+.subpanel.active { display: block; }
+.footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; text-align: center; padding: 26px 20px 36px; position: relative; z-index: 1; }
+@media (max-width: 900px) {
+  .metric-grid, .chart-grid { grid-template-columns: 1fr; }
+  .tabs { overflow-x: auto; justify-content: flex-start; }
+  .tab { white-space: nowrap; }
+  main, .hero-inner { width: min(100% - 28px, 1400px); }
+}
+</style>
+</head>
+<body>
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <div class="gate-brand">Rev.io Summit 2026</div>
+    <h1>Internal Dashboard</h1>
+    <p>Enter the team password to continue.</p>
+    <input id="password" type="password" placeholder="Password" autocomplete="current-password">
+    <button id="unlock">Access Dashboard</button>
+    <div class="gate-error" id="gate-error">Incorrect password. Please try again.</div>
+  </div>
+</div>
+<div class="app" id="app">
+  <header class="hero">
+    <svg class="hero-art" viewBox="0 0 1400 300" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071726"/><stop offset=".55" stop-color="#1D3756"/><stop offset="1" stop-color="#2399B5"/></linearGradient>
+        <linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#285276"/><stop offset="1" stop-color="#071726"/></linearGradient>
+      </defs>
+      <rect width="1400" height="300" fill="url(#sky)"/>
+      <circle cx="1090" cy="80" r="140" fill="#6EBE4F" opacity=".08"/>
+      <path d="M0 230 L120 170 L230 195 L340 138 L460 178 L560 128 L680 168 L790 106 L920 160 L1030 118 L1160 178 L1280 132 L1400 168 L1400 300 L0 300Z" fill="url(#ridge)" opacity=".7"/>
+      <path d="M0 262 L170 230 L340 246 L520 218 L700 242 L870 210 L1060 238 L1230 214 L1400 236 L1400 300 L0 300Z" fill="#071726" opacity=".92"/>
+      <path d="M0 262 L170 230 L340 246 L520 218 L700 242 L870 210 L1060 238 L1230 214 L1400 236" fill="none" stroke="#6EBE4F" stroke-width="1" opacity=".35"/>
+    </svg>
+    <div class="hero-inner">
+      <div class="eyebrow">Internal Team Dashboard</div>
+      <h1>Rev.io Client Summit</h1>
+      <div class="hero-meta">September 1-3, 2026 &bull; Atlanta, GA</div>
+    </div>
+  </header>
+  <nav class="tabs" aria-label="Dashboard sections">
+    <button class="tab active" data-tab="home">Home</button>
+    <button class="tab" data-tab="registrants">Registrants</button>
+    <button class="tab" data-tab="referrals">Referrals</button>
+    <button class="tab" data-tab="sponsorships">Sponsorships</button>
+  </nav>
+  <main>
+    <section class="panel active" id="home">
+      <h2 class="section-title">Revenue Goals</h2>
+      <div class="metric-grid" id="revenueCards"></div>
+      <h2 class="section-title">Registration Goals</h2>
+      <div class="metric-grid" id="registrationCards"></div>
+      <h2 class="section-title">2025 Actuals vs 2026 Current</h2>
+      <div class="table-wrap"><table id="modelTable"></table></div>
+      <h2 class="section-title">Audience Mix</h2>
+      <div class="chart-grid">
+        <div class="chart-card"><h3 class="chart-title">Business Type</h3><div id="businessTypes"></div></div>
+        <div class="chart-card"><h3 class="chart-title">Department</h3><div id="departments"></div></div>
+        <div class="chart-card"><h3 class="chart-title">Job Rank</h3><div id="jobRanks"></div></div>
+        <div class="chart-card"><h3 class="chart-title">Registration Timeline</h3><div id="registrationsByMonth"></div></div>
+      </div>
+    </section>
+    <section class="panel" id="registrants">
+      <h2 class="section-title">Registration Summary</h2>
+      <div class="metric-grid" id="registrantCards"></div>
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="Search name, company, title, discount code">
+        <select id="ticketFilter"><option value="">All ticket types</option></select>
+        <select id="companyFilter"><option value="">All companies</option></select>
+      </div>
+      <div class="table-wrap"><table id="registrantsTable"></table></div>
+      <h2 class="section-title">Ticket Pricing</h2>
+      <div class="table-wrap"><table id="ticketTable"></table></div>
+    </section>
+    <section class="panel" id="referrals">
+      <h2 class="section-title">Referral Contest</h2>
+      <div class="metric-grid" id="referralCards"></div>
+      <div class="chart-grid">
+        <div class="chart-card"><h3 class="chart-title">Leaderboard</h3><div id="refLeaderboard"></div></div>
+        <div class="chart-card"><h3 class="chart-title">Referral Log</h3><div class="table-wrap"><table id="referralTable"></table></div></div>
+      </div>
+      <h2 class="section-title">Comp Ticket Allocation</h2>
+      <div id="discountCards" class="metric-grid"></div>
+    </section>
+    <section class="panel" id="sponsorships">
+      <div class="subtabs">
+        <button class="subtab active" data-subtab="signed">Signed Sponsors</button>
+        <button class="subtab" data-subtab="outreach">Outreach Tracker</button>
+        <button class="subtab" data-subtab="packages">Packages & Pricing</button>
+      </div>
+      <div class="subpanel active" id="signed">
+        <h2 class="section-title">Signed Sponsors</h2>
+        <div class="metric-grid" id="sponsorCards"></div>
+        <div class="chart-card">
+          <h3 class="chart-title">Local Sponsor Tracker</h3>
+          <p class="muted">Sponsors added here save in this browser until HubSpot sponsorship data is connected.</p>
+          <div class="toolbar">
+            <input id="sponsorCompany" placeholder="Company">
+            <select id="sponsorPackage"></select>
+            <button class="action-button" id="addSponsor">Add Sponsor</button>
+          </div>
+          <div class="table-wrap"><table id="sponsorTable"></table></div>
+        </div>
+      </div>
+      <div class="subpanel" id="outreach">
+        <h2 class="section-title">Outreach Tracker</h2>
+        <div class="metric-grid" id="outreachCards"></div>
+        <div class="table-wrap"><table id="outreachTable"></table></div>
+      </div>
+      <div class="subpanel" id="packages">
+        <h2 class="section-title">Packages & Pricing</h2>
+        <div class="table-wrap"><table id="packageTable"></table></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" id="footer"></footer>
+</div>
+<script>window.SUMMIT_DATA = ${json};</script>
+<script>
+const data = window.SUMMIT_DATA;
+const fmtMoney = (n) => (n < 0 ? '(' : '') + '$' + Math.abs(Math.round(n)).toLocaleString() + (n < 0 ? ')' : '');
+const fmtPct = (n, d) => d ? Math.round((n / d) * 100) + '%' : '0%';
+const top = (items, limit = 8) => [...items].slice(0, limit);
+const safe = (v) => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function card(label, value, note, progress) {
+  const width = Math.max(0, Math.min(100, progress || 0));
+  return '<article class="metric-card"><div class="metric-label">' + label + '</div><div class="metric-value">' + value + '</div><div class="metric-note">' + note + '</div><div class="bar-track"><div class="bar-fill" style="width:' + width + '%"></div></div></article>';
+}
+
+function bars(id, items, limit = 8) {
+  const max = Math.max(...items.map(i => i.count), 1);
+  document.getElementById(id).innerHTML = top(items, limit).map(i =>
+    '<div class="row-bar"><div class="row-name">' + safe(i.name) + '</div><div class="mini-track"><div class="mini-fill" style="width:' + ((i.count / max) * 100) + '%"></div></div><div class="row-count">' + i.count + '</div></div>'
+  ).join('');
+}
+
+function renderHome() {
+  const s = data.summary, g = data.goals;
+  document.getElementById('revenueCards').innerHTML = [
+    card('Total Revenue', fmtMoney(s.totalRevenue), fmtPct(s.totalRevenue, g.totalRevenue) + ' of ' + fmtMoney(g.totalRevenue), (s.totalRevenue / g.totalRevenue) * 100),
+    card('Ticket Revenue', fmtMoney(s.ticketRevenue), fmtPct(s.ticketRevenue, g.ticketRevenue) + ' of ' + fmtMoney(g.ticketRevenue), (s.ticketRevenue / g.ticketRevenue) * 100),
+    card('Sponsorship Revenue', fmtMoney(s.sponsorRevenue), 'Pending HubSpot sponsorship source', 0),
+    card('Projected Cost', fmtMoney(g.projectedCost), 'Net target ' + fmtMoney(g.netTarget), 100)
+  ].join('');
+  document.getElementById('registrationCards').innerHTML = [
+    card('Total Registrants', s.totalRegistrants, fmtPct(s.totalRegistrants, g.totalRegistrants) + ' of ' + g.totalRegistrants, (s.totalRegistrants / g.totalRegistrants) * 100),
+    card('Paid Tickets', s.paidTickets, fmtPct(s.paidTickets, g.paidTickets) + ' of ' + g.paidTickets, (s.paidTickets / g.paidTickets) * 100),
+    card('Comp Tickets', s.compTickets, s.fullCompTickets + ' full-discount tickets', Math.min(100, (s.compTickets / g.customerProspectComped) * 100)),
+    card('Unique Companies', s.uniqueCompanies, 'Current registered companies', Math.min(100, (s.uniqueCompanies / 100) * 100))
+  ].join('');
+  renderModelTable();
+  bars('businessTypes', data.breakdowns.businessTypes);
+  bars('departments', data.breakdowns.departments);
+  bars('jobRanks', data.breakdowns.jobRanks);
+  bars('registrationsByMonth', data.breakdowns.registrationsByMonth);
+}
+
+function renderModelTable() {
+  const s = data.summary, g = data.goals, a = data.actual2025;
+  const rows = [
+    ['Total Registrations', a.totalRegistrations, g.totalRegistrants, s.totalRegistrants, fmtPct(s.totalRegistrants, g.totalRegistrants)],
+    ['Staff Tickets', a.staffTickets, g.staffTickets, s.staffTickets, fmtPct(s.staffTickets, g.staffTickets)],
+    ['Customer/Prospect Registrations', a.customerProspectRegistrations, g.customerProspectRegistrations, s.customerProspectRegistrations, fmtPct(s.customerProspectRegistrations, g.customerProspectRegistrations)],
+    ['Customer/Prospect Paid', a.customerProspectPaid, g.customerProspectPaid, s.paidTickets, fmtPct(s.paidTickets, g.customerProspectPaid)],
+    ['Customer/Prospect Comped', a.customerProspectComped, g.customerProspectComped, s.compTickets, fmtPct(s.compTickets, g.customerProspectComped)],
+    ['Avg Paid Ticket Price', fmtMoney(a.avgTicketPrice), '$448 goal', fmtMoney(s.avgPaidTicket), ''],
+    ['Ticket Revenue', fmtMoney(a.ticketRevenue), fmtMoney(g.ticketRevenue), fmtMoney(s.ticketRevenue), fmtPct(s.ticketRevenue, g.ticketRevenue)],
+    ['Sponsor Tickets', a.sponsorTickets, g.sponsorPasses, s.sponsorPasses, fmtPct(s.sponsorPasses, g.sponsorPasses)],
+    ['# of Sponsors', a.sponsors, g.uniqueSponsors, 'Pending', ''],
+    ['Sponsorship Revenue', fmtMoney(a.sponsorshipRevenue), fmtMoney(g.sponsorRevenue), fmtMoney(s.sponsorRevenue), fmtPct(s.sponsorRevenue, g.sponsorRevenue)],
+    ['Total Revenue', fmtMoney(a.totalRevenue), fmtMoney(g.totalRevenue), fmtMoney(s.totalRevenue), fmtPct(s.totalRevenue, g.totalRevenue)],
+    ['Total Cost', fmtMoney(a.totalCost), fmtMoney(g.projectedCost), '--', '--'],
+    ['Net Profit (Loss)', fmtMoney(a.netProfit), fmtMoney(g.netTarget), '--', '--']
+  ];
+  document.getElementById('modelTable').innerHTML = '<thead><tr><th>Metric</th><th class="num">2025 Actuals</th><th class="num">2026 Goal</th><th class="num">2026 Current</th><th class="num">% to Goal</th></tr></thead><tbody>' +
+    rows.map(r => '<tr><td><strong>' + safe(r[0]) + '</strong></td><td class="num">' + r[1] + '</td><td class="num">' + r[2] + '</td><td class="num">' + r[3] + '</td><td class="num">' + r[4] + '</td></tr>').join('') +
+    '</tbody>';
+}
+
+function renderRegistrants() {
+  const s = data.summary, g = data.goals;
+  document.getElementById('registrantCards').innerHTML = [
+    card('Total Registrants', s.totalRegistrants, fmtPct(s.totalRegistrants, g.totalRegistrants) + ' to goal', (s.totalRegistrants / g.totalRegistrants) * 100),
+    card('Unique Companies', s.uniqueCompanies, 'Registered companies', Math.min(100, s.uniqueCompanies)),
+    card('Ticket Revenue', fmtMoney(s.ticketRevenue), fmtPct(s.ticketRevenue, g.ticketRevenue) + ' to goal', (s.ticketRevenue / g.ticketRevenue) * 100),
+    card('Hotel Rooms Needed', s.hotelRooms, 'Yes responses from registration', Math.min(100, (s.hotelRooms / s.totalRegistrants) * 100))
+  ].join('');
+  const ticketSelect = document.getElementById('ticketFilter');
+  ticketSelect.innerHTML = '<option value="">All ticket types</option>' + data.breakdowns.ticketTypes.map(i => '<option>' + safe(i.name) + '</option>').join('');
+  const companies = [...new Set(data.registrants.map(r => r.company))].sort((a,b) => a.localeCompare(b));
+  document.getElementById('companyFilter').innerHTML = '<option value="">All companies</option>' + companies.map(c => '<option>' + safe(c) + '</option>').join('');
+  document.getElementById('search').addEventListener('input', renderRegistrantTable);
+  ticketSelect.addEventListener('change', renderRegistrantTable);
+  document.getElementById('companyFilter').addEventListener('change', renderRegistrantTable);
+  renderRegistrantTable();
+  renderTicketTable();
+}
+
+function renderRegistrantTable() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const ticket = document.getElementById('ticketFilter').value;
+  const company = document.getElementById('companyFilter').value;
+  const rows = data.registrants.filter(r => {
+    const hay = [r.name, r.company, r.jobTitle, r.discountCode, r.referral].join(' ').toLowerCase();
+    return (!q || hay.includes(q)) && (!ticket || r.packageName === ticket) && (!company || r.company === company);
+  });
+  document.getElementById('registrantsTable').innerHTML =
+    '<thead><tr><th>Name</th><th>Company</th><th>Title</th><th>State</th><th>Registered</th><th>Referred By</th><th>Ticket</th><th class="num">Amount</th></tr></thead><tbody>' +
+    rows.map(r => '<tr><td><strong>' + safe(r.name) + '</strong></td><td>' + safe(r.company) + '</td><td>' + safe(r.jobTitle || '--') + '</td><td>' + safe(r.state || '--') + '</td><td>' + safe(r.dateLabel || '--') + '</td><td>' + (r.referral ? '<span class="pill">' + safe(r.referral) + '</span>' : '<span class="muted">--</span>') + '</td><td>' + safe(r.packageName) + (r.discountCode ? '<div class="muted">' + safe(r.discountCode) + '</div>' : '') + '</td><td class="num">' + (r.amount ? fmtMoney(r.amount) : '<span class="pill">Comp</span>') + '</td></tr>').join('') +
+    '</tbody>';
+}
+
+function renderTicketTable() {
+  document.getElementById('ticketTable').innerHTML =
+    '<thead><tr><th>Ticket Type</th><th class="num">Sold</th><th class="num">Paid</th><th class="num">Comp</th><th class="num">Revenue</th></tr></thead><tbody>' +
+    data.breakdowns.ticketTypes.map(r => '<tr><td><strong>' + safe(r.name) + '</strong></td><td class="num">' + r.count + '</td><td class="num">' + r.paid + '</td><td class="num">' + r.comp + '</td><td class="num">' + fmtMoney(r.revenue) + '</td></tr>').join('') +
+    '</tbody>';
+}
+
+function renderReferrals() {
+  const refs = data.referrals;
+  const leaderboard = {};
+  refs.forEach(r => leaderboard[r.referrer] = (leaderboard[r.referrer] || 0) + 1);
+  const ranked = Object.entries(leaderboard).map(([name, count]) => ({ name, count })).sort((a,b) => b.count - a.count || a.name.localeCompare(b.name));
+  document.getElementById('referralCards').innerHTML = [
+    card('Total Referrals', refs.length, 'Registrant referral field', Math.min(100, refs.length * 2)),
+    card('Unique Referrers', ranked.length, 'People credited', Math.min(100, ranked.length * 4)),
+    card('Current Leader', ranked[0] ? safe(ranked[0].name) : '--', ranked[0] ? ranked[0].count + ' referrals' : 'No referrals yet', ranked[0] ? 100 : 0),
+    card('Contest Deadline', 'Aug 21', 'Grand prize cutoff', 100)
+  ].join('');
+  document.getElementById('refLeaderboard').innerHTML = ranked.map((r, i) => '<div class="row-bar"><div class="row-name">' + (i + 1) + '. ' + safe(r.name) + '</div><div class="mini-track"><div class="mini-fill" style="width:' + ((r.count / Math.max(1, ranked[0]?.count || 1)) * 100) + '%"></div></div><div class="row-count">' + r.count + '</div></div>').join('');
+  document.getElementById('referralTable').innerHTML = '<thead><tr><th>Registrant</th><th>Referred By</th><th class="num">Date</th></tr></thead><tbody>' + refs.map(r => '<tr><td><strong>' + safe(r.registrant) + '</strong></td><td>' + safe(r.referrer) + '</td><td class="num">' + safe(r.date) + '</td></tr>').join('') + '</tbody>';
+  document.getElementById('discountCards').innerHTML = data.breakdowns.discounts.map(d => card(d.name, d.count, d.cap == null ? 'No cap set' : d.remaining + ' remaining of ' + d.cap, d.cap == null ? 100 : (d.count / d.cap) * 100)).join('');
+}
+
+const PACKAGES = [
+  ['Title Sponsor', 45000, 1, 10], ['Diamond Sponsor', 26000, 3, 6], ['Platinum Sponsor', 18000, 3, 4],
+  ['Gold Sponsor', 12000, 5, 3], ['Silver Sponsor', 9000, 4, 2], ['Bronze Sponsor', 6500, 4, 1],
+  ['Rookie Sponsor', 4500, 6, 1], ['Registration Sponsor', 7500, 2, 1], ['Mobile App Sponsor', 6500, 1, 1],
+  ['Custom / Barter', 0, 99, 0]
+];
+const DEFAULT_OUTREACH = [
+  ['Acronis','Title','Usman','Contacted','Platinum 2025'], ['Alianza','Rookie+','Usman','Contacted','Declined 2025'],
+  ['Altaworx','Emerald','Usman','Not Contacted','Gold 2025'], ['Crexendo','Learning Track','Christina','Meeting Scheduled','Platinum 2025'],
+  ['Pax8','Diamond Swap','Brook/Megan','Contacted',''], ['TaxConnex','Tier 2','Christina','Meeting Scheduled','Gold 2025'],
+  ['TRX Services','Platinum','Christina','Meeting Scheduled','Platinum 2025'], ['Wolters Kluwer','Diamond','Usman','Contacted','Diamond 2025'],
+  ['Cynomi','','Jake M.','Contacted',''], ['Pia','','Jake M.','Contacted','Sent prospectus']
+];
+
+function loadSponsors() {
+  try { return JSON.parse(localStorage.getItem('revio_client_summit_sponsors')) || []; } catch { return []; }
+}
+function saveSponsors(rows) { localStorage.setItem('revio_client_summit_sponsors', JSON.stringify(rows)); }
+function renderSponsorships() {
+  const rows = loadSponsors();
+  const revenue = rows.reduce((sum, r) => sum + r.price, 0);
+  const passes = rows.reduce((sum, r) => sum + r.passes, 0);
+  document.getElementById('sponsorCards').innerHTML = [
+    card('Signed Revenue', fmtMoney(revenue), fmtPct(revenue, data.goals.sponsorRevenue) + ' to sponsor goal', (revenue / data.goals.sponsorRevenue) * 100),
+    card('Signed Sponsors', rows.length, 'Stored in this browser', Math.min(100, rows.length * 4)),
+    card('Sponsor Passes', passes, fmtPct(passes, data.goals.sponsorPasses) + ' of pass goal', (passes / data.goals.sponsorPasses) * 100),
+    card('Remaining Goal', fmtMoney(Math.max(0, data.goals.sponsorRevenue - revenue)), 'Until HubSpot source is connected', 100)
+  ].join('');
+  document.getElementById('sponsorTable').innerHTML = '<thead><tr><th>Company</th><th>Package</th><th class="num">Revenue</th><th class="num">Passes</th><th></th></tr></thead><tbody>' +
+    (rows.length ? rows.map((r, i) => '<tr><td><strong>' + safe(r.company) + '</strong></td><td>' + safe(r.package) + '</td><td class="num">' + fmtMoney(r.price) + '</td><td class="num">' + r.passes + '</td><td class="num"><button onclick="removeSponsor(' + i + ')">Remove</button></td></tr>').join('') : '<tr><td colspan="5" class="muted">No signed sponsors added yet.</td></tr>') +
+    '</tbody>';
+}
+function removeSponsor(i) {
+  const rows = loadSponsors();
+  rows.splice(i, 1);
+  saveSponsors(rows);
+  renderSponsorships();
+}
+function setupSponsorForm() {
+  const select = document.getElementById('sponsorPackage');
+  select.innerHTML = '<option value="">Select package</option>' + PACKAGES.map(p => '<option value="' + safe(p.join('|')) + '">' + safe(p[0]) + ' - ' + fmtMoney(p[1]) + '</option>').join('');
+  document.getElementById('addSponsor').addEventListener('click', () => {
+    const company = document.getElementById('sponsorCompany').value.trim();
+    const value = select.value;
+    if (!company || !value) return;
+    const [pkg, price, , passes] = value.split('|');
+    const rows = loadSponsors();
+    rows.push({ company, package: pkg, price: Number(price), passes: Number(passes) });
+    saveSponsors(rows);
+    document.getElementById('sponsorCompany').value = '';
+    select.value = '';
+    renderSponsorships();
+  });
+}
+function renderOutreachAndPackages() {
+  const counts = DEFAULT_OUTREACH.reduce((acc, r) => (acc[r[3]] = (acc[r[3]] || 0) + 1, acc), {});
+  document.getElementById('outreachCards').innerHTML = ['Not Contacted','Contacted','Meeting Scheduled','Pending Contract'].map(k => card(k, counts[k] || 0, 'Prospects in tracker', Math.min(100, (counts[k] || 0) * 10))).join('');
+  document.getElementById('outreachTable').innerHTML = '<thead><tr><th>Company</th><th>Offer</th><th>Owner</th><th>Status</th><th>2025 Context</th></tr></thead><tbody>' + DEFAULT_OUTREACH.map(r => '<tr><td><strong>' + safe(r[0]) + '</strong></td><td>' + safe(r[1] || '--') + '</td><td>' + safe(r[2]) + '</td><td><span class="pill">' + safe(r[3]) + '</span></td><td>' + safe(r[4] || '--') + '</td></tr>').join('') + '</tbody>';
+  document.getElementById('packageTable').innerHTML = '<thead><tr><th>Package</th><th class="num">Price</th><th class="num">Qty Available</th><th class="num">Passes</th><th class="num">Potential</th></tr></thead><tbody>' + PACKAGES.filter(p => p[0] !== 'Custom / Barter').map(p => '<tr><td><strong>' + safe(p[0]) + '</strong></td><td class="num">' + fmtMoney(p[1]) + '</td><td class="num">' + p[2] + '</td><td class="num">' + p[3] + '</td><td class="num">' + fmtMoney(p[1] * p[2]) + '</td></tr>').join('') + '</tbody>';
+}
+
+document.querySelectorAll('.tab').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(btn.dataset.tab).classList.add('active');
+}));
+document.querySelectorAll('.subtab').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.subtab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.subpanel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(btn.dataset.subtab).classList.add('active');
+}));
+
+function unlock() {
+  if (document.getElementById('password').value === 'RevSummit2026') {
+    sessionStorage.setItem('summit_auth', 'true');
+    document.getElementById('gate').classList.add('hidden');
+    document.getElementById('app').classList.add('visible');
+  } else {
+    document.getElementById('gate-error').style.display = 'block';
+  }
+}
+document.getElementById('unlock').addEventListener('click', unlock);
+document.getElementById('password').addEventListener('keydown', e => { if (e.key === 'Enter') unlock(); });
+if (sessionStorage.getItem('summit_auth') === 'true') {
+  document.getElementById('gate').classList.add('hidden');
+  document.getElementById('app').classList.add('visible');
+}
+
+renderHome();
+renderRegistrants();
+renderReferrals();
+setupSponsorForm();
+renderSponsorships();
+renderOutreachAndPackages();
+document.getElementById('footer').textContent = 'Last updated: ' + new Date(data.generatedAt).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }) + ' · Source: ' + data.sourceFile + ' · Emails, phone numbers, and source user IDs excluded from dashboard build.';
+</script>
+</body>
+</html>`;
+}
+
+async function main() {
+  fs.mkdirSync(dataDir, { recursive: true });
+  const rows = await loadWorkbookRows();
+  const model = buildModel(rows);
+  fs.writeFileSync(path.join(dataDir, 'summit-data.json'), JSON.stringify(model, null, 2));
+  fs.writeFileSync(path.join(outDir, 'index.html'), renderDashboard(model));
+  console.log(`Built dashboard with ${model.summary.totalRegistrants} registrants, ${model.summary.uniqueCompanies} companies, ${money(model.summary.ticketRevenue)} ticket revenue.`);
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

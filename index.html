@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 Rev.io Client Summit Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1D3756;
+  --navy-dark: #10243a;
+  --navy-deep: #071726;
+  --teal: #2399B5;
+  --green: #6EBE4F;
+  --blue: #3b82f6;
+  --red: #ef4444;
+  --yellow: #f4c542;
+  --card: rgba(29, 55, 86, 0.92);
+  --card-soft: rgba(35, 153, 181, 0.09);
+  --line: rgba(255, 255, 255, 0.12);
+  --text: #FFFFFF;
+  --muted: #d6e2eb;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--navy-deep);
+  color: var(--text);
+  font-family: "Open Sans", Arial, sans-serif;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 18% 12%, rgba(35,153,181,.24), transparent 34%),
+    radial-gradient(ellipse at 88% 8%, rgba(110,190,79,.16), transparent 31%),
+    linear-gradient(180deg, #091b2d 0%, #10243a 34%, #071726 100%);
+}
+.gate {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: linear-gradient(135deg, #071726, #1D3756);
+}
+.gate.hidden { display: none; }
+.gate-box {
+  width: min(420px, 100%);
+  padding: 34px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 8px;
+  background: rgba(29,55,86,.94);
+  box-shadow: 0 24px 70px rgba(0,0,0,.42);
+}
+.gate-brand { font-family: Montserrat, sans-serif; color: var(--green); text-transform: uppercase; letter-spacing: 2px; font-size: 12px; font-weight: 800; }
+.gate h1 { margin: 10px 0 8px; font-family: Montserrat, sans-serif; font-size: 26px; }
+.gate p { margin: 0 0 22px; color: var(--muted); }
+.gate input, .gate button {
+  width: 100%;
+  height: 46px;
+  border-radius: 8px;
+  font: inherit;
+}
+.gate input {
+  border: 1px solid rgba(255,255,255,.18);
+  padding: 0 14px;
+  color: white;
+  background: rgba(7,23,38,.7);
+}
+.gate button {
+  margin-top: 12px;
+  border: 0;
+  color: white;
+  background: linear-gradient(135deg, var(--green), var(--teal));
+  font-weight: 800;
+  cursor: pointer;
+}
+.gate-error { display: none; margin-top: 10px; color: #ffb4b4; font-size: 13px; }
+.app { display: none; position: relative; z-index: 1; }
+.app.visible { display: block; }
+.hero {
+  min-height: 270px;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(29,55,86,.55), rgba(7,23,38,.25));
+}
+.hero-art {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .98;
+}
+.hero-inner {
+  width: min(1400px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 72px 0 30px;
+}
+.eyebrow {
+  display: inline-flex;
+  border: 1px solid rgba(110,190,79,.55);
+  color: white;
+  background: rgba(110,190,79,.14);
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+h1, h2, h3 { font-family: Montserrat, "Open Sans", sans-serif; }
+.hero h1 {
+  margin: 18px 0 8px;
+  font-size: clamp(42px, 7vw, 84px);
+  line-height: .92;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.hero-meta { color: white; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+.tabs {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  background: rgba(16,36,58,.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+.tab {
+  appearance: none;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  padding: 15px 28px 13px;
+  font: 800 12px "Open Sans", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.tab.active { color: white; border-bottom-color: var(--green); background: rgba(35,153,181,.12); }
+main { width: min(1400px, calc(100% - 40px)); margin: 0 auto; padding: 26px 0 42px; }
+.panel { display: none; }
+.panel.active { display: block; }
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 34px 0 16px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.section-title:first-child { margin-top: 0; }
+.section-title::before { content: ""; width: 4px; height: 20px; border-radius: 2px; background: linear-gradient(var(--green), var(--teal)); }
+.section-title::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(110,190,79,.55), transparent); }
+.metric-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.metric-card, .chart-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(145deg, var(--card), rgba(16,36,58,.82));
+  box-shadow: 0 12px 28px rgba(0,0,0,.18);
+}
+.metric-card { padding: 18px; min-height: 132px; }
+.metric-label { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .8px; text-transform: uppercase; }
+.metric-value { margin-top: 8px; font-size: 34px; font-weight: 800; line-height: 1; }
+.metric-note { margin-top: 10px; color: var(--muted); font-size: 12px; }
+.bar-track { height: 8px; margin-top: 16px; overflow: hidden; border-radius: 999px; background: rgba(255,255,255,.12); }
+.bar-fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--green), var(--teal)); }
+.chart-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.chart-card { padding: 18px; }
+.chart-title { margin: 0 0 14px; font-size: 14px; text-transform: uppercase; letter-spacing: .8px; }
+.row-bar { display: grid; grid-template-columns: minmax(130px, 1fr) minmax(110px, 2fr) 42px; gap: 10px; align-items: center; margin: 10px 0; font-size: 13px; }
+.row-name { color: white; overflow-wrap: anywhere; }
+.mini-track { height: 8px; border-radius: 999px; background: rgba(255,255,255,.1); overflow: hidden; }
+.mini-fill { height: 100%; border-radius: inherit; background: var(--teal); }
+.row-count { color: white; text-align: right; font-weight: 800; }
+.table-wrap {
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(16,36,58,.72);
+}
+table { width: 100%; border-collapse: collapse; min-width: 820px; }
+th, td { padding: 11px 13px; border-bottom: 1px solid rgba(255,255,255,.09); text-align: left; vertical-align: top; }
+th {
+  position: sticky;
+  top: 0;
+  color: white;
+  background: #1D3756;
+  font-size: 11px;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+  z-index: 1;
+}
+td { color: white; font-size: 13px; }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+.pill { display: inline-flex; padding: 3px 9px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(35,153,181,.12); font-size: 11px; font-weight: 800; color: white; }
+.toolbar { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+.toolbar input, .toolbar select {
+  min-height: 40px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 8px;
+  background: rgba(7,23,38,.7);
+  color: white;
+  padding: 0 12px;
+  font: inherit;
+}
+.toolbar input { flex: 1; min-width: 260px; }
+.action-button {
+  min-height: 40px;
+  border: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--green), var(--teal));
+  color: white;
+  padding: 0 18px;
+  font: 800 13px "Open Sans", Arial, sans-serif;
+  cursor: pointer;
+}
+.subtabs { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
+.subtab {
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  padding: 12px 18px 10px;
+  font-weight: 800;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  cursor: pointer;
+}
+.subtab.active { color: white; border-bottom-color: var(--green); }
+.subpanel { display: none; }
+.subpanel.active { display: block; }
+.footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; text-align: center; padding: 26px 20px 36px; position: relative; z-index: 1; }
+@media (max-width: 900px) {
+  .metric-grid, .chart-grid { grid-template-columns: 1fr; }
+  .tabs { overflow-x: auto; justify-content: flex-start; }
+  .tab { white-space: nowrap; }
+  main, .hero-inner { width: min(100% - 28px, 1400px); }
+}
+</style>
+</head>
+<body>
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <div class="gate-brand">Rev.io Summit 2026</div>
+    <h1>Internal Dashboard</h1>
+    <p>Enter the team password to continue.</p>
+    <input id="password" type="password" placeholder="Password" autocomplete="current-password">
+    <button id="unlock">Access Dashboard</button>
+    <div class="gate-error" id="gate-error">Incorrect password. Please try again.</div>
+  </div>
+</div>
+<div class="app" id="app">
+  <header class="hero">
+    <svg class="hero-art" viewBox="0 0 1400 300" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071726"/><stop offset=".55" stop-color="#1D3756"/><stop offset="1" stop-color="#2399B5"/></linearGradient>
+        <linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#285276"/><stop offset="1" stop-color="#071726"/></linearGradient>
+      </defs>
+      <rect width="1400" height="300" fill="url(#sky)"/>
+      <circle cx="1090" cy="80" r="140" fill="#6EBE4F" opacity=".08"/>
+      <path d="M0 230 L120 170 L230 195 L340 138 L460 178 L560 128 L680 168 L790 106 L920 160 L1030 118 L1160 178 L1280 132 L1400 168 L1400 300 L0 300Z" fill="url(#ridge)" opacity=".7"/>
+      <path d="M0 262 L170 230 L340 246 L520 218 L700 242 L870 210 L1060 238 L1230 214 L1400 236 L1400 300 L0 300Z" fill="#071726" opacity=".92"/>
+      <path d="M0 262 L170 230 L340 246 L520 218 L700 242 L870 210 L1060 238 L1230 214 L1400 236" fill="none" stroke="#6EBE4F" stroke-width="1" opacity=".35"/>
+    </svg>
+    <div class="hero-inner">
+      <div class="eyebrow">Internal Team Dashboard</div>
+      <h1>Rev.io Client Summit</h1>
+      <div class="hero-meta">September 1-3, 2026 &bull; Atlanta, GA</div>
+    </div>
+  </header>
+  <nav class="tabs" aria-label="Dashboard sections">
+    <button class="tab active" data-tab="home">Home</button>
+    <button class="tab" data-tab="registrants">Registrants</button>
+    <button class="tab" data-tab="referrals">Referrals</button>
+    <button class="tab" data-tab="sponsorships">Sponsorships</button>
+  </nav>
+  <main>
+    <section class="panel active" id="home">
+      <h2 class="section-title">Revenue Goals</h2>
+      <div class="metric-grid" id="revenueCards"></div>
+      <h2 class="section-title">Registration Goals</h2>
+      <div class="metric-grid" id="registrationCards"></div>
+      <h2 class="section-title">2025 Actuals vs 2026 Current</h2>
+      <div class="table-wrap"><table id="modelTable"></table></div>
+      <h2 class="section-title">Audience Mix</h2>
+      <div class="chart-grid">
+        <div class="chart-card"><h3 class="chart-title">Business Type</h3><div id="businessTypes"></div></div>
+        <div class="chart-card"><h3 class="chart-title">Department</h3><div id="departments"></div></div>
+        <div class="chart-card"><h3 class="chart-title">Job Rank</h3><div id="jobRanks"></div></div>
+        <div class="chart-card"><h3 class="chart-title">Registration Timeline</h3><div id="registrationsByMonth"></div></div>
+      </div>
+    </section>
+    <section class="panel" id="registrants">
+      <h2 class="section-title">Registration Summary</h2>
+      <div class="metric-grid" id="registrantCards"></div>
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="Search name, company, title, discount code">
+        <select id="ticketFilter"><option value="">All ticket types</option></select>
+        <select id="companyFilter"><option value="">All companies</option></select>
+      </div>
+      <div class="table-wrap"><table id="registrantsTable"></table></div>
+      <h2 class="section-title">Ticket Pricing</h2>
+      <div class="table-wrap"><table id="ticketTable"></table></div>
+    </section>
+    <section class="panel" id="referrals">
+      <h2 class="section-title">Referral Contest</h2>
+      <div class="metric-grid" id="referralCards"></div>
+      <div class="chart-grid">
+        <div class="chart-card"><h3 class="chart-title">Leaderboard</h3><div id="refLeaderboard"></div></div>
+        <div class="chart-card"><h3 class="chart-title">Referral Log</h3><div class="table-wrap"><table id="referralTable"></table></div></div>
+      </div>
+      <h2 class="section-title">Comp Ticket Allocation</h2>
+      <div id="discountCards" class="metric-grid"></div>
+    </section>
+    <section class="panel" id="sponsorships">
+      <div class="subtabs">
+        <button class="subtab active" data-subtab="signed">Signed Sponsors</button>
+        <button class="subtab" data-subtab="outreach">Outreach Tracker</button>
+        <button class="subtab" data-subtab="packages">Packages & Pricing</button>
+      </div>
+      <div class="subpanel active" id="signed">
+        <h2 class="section-title">Signed Sponsors</h2>
+        <div class="metric-grid" id="sponsorCards"></div>
+        <div class="chart-card">
+          <h3 class="chart-title">Local Sponsor Tracker</h3>
+          <p class="muted">Sponsors added here save in this browser until HubSpot sponsorship data is connected.</p>
+          <div class="toolbar">
+            <input id="sponsorCompany" placeholder="Company">
+            <select id="sponsorPackage"></select>
+            <button class="action-button" id="addSponsor">Add Sponsor</button>
+          </div>
+          <div class="table-wrap"><table id="sponsorTable"></table></div>
+        </div>
+      </div>
+      <div class="subpanel" id="outreach">
+        <h2 class="section-title">Outreach Tracker</h2>
+        <div class="metric-grid" id="outreachCards"></div>
+        <div class="table-wrap"><table id="outreachTable"></table></div>
+      </div>
+      <div class="subpanel" id="packages">
+        <h2 class="section-title">Packages & Pricing</h2>
+        <div class="table-wrap"><table id="packageTable"></table></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" id="footer"></footer>
+</div>
+<script>window.SUMMIT_DATA = {"generatedAt":"2026-07-24T17:59:16.276Z","sourceFile":"me-registration-report-27962-154818---2ba3c48a-dfc9-4c94-906a-c8f3eae1ae3c.xlsx","goals":{"totalRegistrants":400,"paidTickets":165,"ticketRevenue":74000,"sponsorRevenue":313950,"totalRevenue":387950,"sponsorPasses":57,"uniqueSponsors":25,"staffTickets":60,"customerProspectRegistrations":283,"customerProspectPaid":165,"customerProspectComped":118,"projectedCost":503636,"netTarget":-115686},"actual2025":{"totalRegistrations":301,"staffTickets":60,"customerProspectRegistrations":179,"customerProspectPaid":85,"customerProspectComped":94,"avgTicketPrice":471,"ticketRevenue":40040,"sponsorTickets":62,"sponsors":21,"sponsorshipRevenue":184000,"totalRevenue":224040,"totalCost":336402,"totalCostTe":315171,"netProfit":-112362,"profitMargin":-50.2,"totalCostPerAttendee":1047,"netCostPerAttendee":373},"summary":{"totalRegistrants":93,"uniqueCompanies":54,"customerProspectRegistrations":93,"paidTickets":30,"compTickets":63,"staffTickets":0,"sponsorPasses":0,"ticketRevenue":15825,"sponsorRevenue":0,"totalRevenue":15825,"avgPaidTicket":528,"fullCompTickets":63,"hotelRooms":79,"attendedBefore":48,"referralCount":56},"registrants":[{"name":"Alana Lee","company":"Viirtue Inc","jobTitle":"Billing and Services Coordinator","state":"FL","dateLabel":"Jul 13, 2026","dateRegistered":"2026-07-13","businessType":"CSP / Telecom","jobRank":"Non-Manager","department":"Finance/Billing","companySize":"51–250","packageName":"Summit Pass- Single ticket","amount":325,"discountCode":"REVGUEST-B","referral":"Ana Da Silva","hotel":"Yes","shirtSize":"Small (S)","attendedBefore":"No"},{"name":"Alex McKeague","company":"Sunrise Solutions Inc","jobTitle":"Owner","state":"MD","dateLabel":"Jun 30, 2026","dateRegistered":"2026-06-30","businessType":"CSP / Telecom","jobRank":"Manager","department":"Sales/Marketing","companySize":"1–10","packageName":"BOGO - Buy One, Get One","amount":0,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"3XL (XXXL)","attendedBefore":"No"},{"name":"Allen Reid","company":"JSI LogicomUSA","jobTitle":"Billing Manager","state":"AL","dateLabel":"Jun 24, 2026","dateRegistered":"2026-06-24","businessType":"CSP / Telecom","jobRank":"Manager","department":"Operations/Support","companySize":"250+","packageName":"Summit Pass- Single ticket","amount":650,"discountCode":"","referral":"Ryan Berthelsen","hotel":"Yes","shirtSize":"Large (L)","attendedBefore":"No"},{"name":"Alyssa Hutchinson","company":"Gamut","jobTitle":"Client and Project Operations Associate","state":"MA","dateLabel":"May 14, 2026","dateRegistered":"2026-05-14","businessType":"Unspecified","jobRank":"Unspecified","department":"Unspecified","companySize":"Unspecified","packageName":"Early Bird","amount":0,"discountCode":"CAMREVSUMMIT","referral":"Cam Sharpe","hotel":"Yes","shirtSize":"Medium (M)","attendedBefore":"Yes"},{"name":"Amanda Gath","company":"MNJ Technologies","jobTitle":"PMO Team Lead","state":"IL","dateLabel":"Jul 20, 2026","dateRegistered":"2026-07-20","businessType":"MSP","jobRank":"Non-Manager","department":"IT/Engineering","companySize":"51–250","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"REVGUEST-A","referral":"Rachel Buchtan","hotel":"Yes","shirtSize":"Small (S)","attendedBefore":"No"},{"name":"Amy Shirey","company":"AppDirect","jobTitle":"Billing Operations Manager","state":"SC","dateLabel":"Jul 16, 2026","dateRegistered":"2026-07-16","businessType":"CSP / Telecom","jobRank":"Manager","department":"Finance/Billing","companySize":"250+","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"REVGUEST-A","referral":"Ryan Burton","hotel":"Yes","shirtSize":"2XL (XXL)","attendedBefore":"Yes"},{"name":"Ana da Silva","company":"Viirtue Inc","jobTitle":"Sr. Billing Manager","state":"FL","dateLabel":"Mar 31, 2026","dateRegistered":"2026-03-31","businessType":"CSP / Telecom","jobRank":"Manager","department":"Finance/Billing","companySize":"51–250","packageName":"Early Bird","amount":0,"discountCode":"SUMMIT100VIIRTUE","referral":"Jon Yentema","hotel":"Yes","shirtSize":"Small (S)","attendedBefore":"No"},{"name":"Andrew Adair","company":"K&L Telecom","jobTitle":"Owner","state":"MI","dateLabel":"Jun 24, 2026","dateRegistered":"2026-06-24","businessType":"CSP / Telecom","jobRank":"C-Level","department":"Operations/Support","companySize":"1–10","packageName":"BOGO - Buy One, Get One","amount":0,"discountCode":"REVFAN100","referral":"Jamie Butler","hotel":"Yes","shirtSize":"2XL (XXL)","attendedBefore":"No"},{"name":"Andy Siemens","company":"TailWind Voice & Data","jobTitle":"CEO","state":"MN","dateLabel":"Mar 31, 2026","dateRegistered":"2026-03-31","businessType":"CSP / Telecom","jobRank":"C-Level","department":"C-Suite","companySize":"51–250","packageName":"Early Bird","amount":0,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"Yes"},{"name":"Atticus Brind","company":"CallSprout","jobTitle":"VP of Sales","state":"FL","dateLabel":"Jul 20, 2026","dateRegistered":"2026-07-20","businessType":"CSP / Telecom","jobRank":"VP-Level","department":"Sales/Marketing","companySize":"1–10","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"REVGUEST-A","referral":"Justin Lee","hotel":"Yes","shirtSize":"Large (L)","attendedBefore":"Yes"},{"name":"Ben Sims","company":"Fuse.Cloud","jobTitle":"COO","state":"MS","dateLabel":"May 7, 2026","dateRegistered":"2026-05-07","businessType":"MSP","jobRank":"C-Level","department":"C-Suite","companySize":"11–50","packageName":"Early Bird","amount":475,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"2XL (XXL)","attendedBefore":"Yes"},{"name":"Brad Muser","company":"Ten4","jobTitle":"Executive Vice President, Finance","state":"MD","dateLabel":"May 18, 2026","dateRegistered":"2026-05-18","businessType":"CSP / Telecom","jobRank":"VP-Level","department":"Finance/Billing","companySize":"51–250","packageName":"Early Bird","amount":0,"discountCode":"REVFAN100","referral":"","hotel":"Yes","shirtSize":"2XL (XXL)","attendedBefore":"Yes"},{"name":"Brandon Burchard","company":"MYSWITCH Communications","jobTitle":"President","state":"MI","dateLabel":"Jul 20, 2026","dateRegistered":"2026-07-20","businessType":"CSP / Telecom","jobRank":"C-Level","department":"C-Suite","companySize":"1–10","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"REVGUEST-A","referral":"Justin Lee","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"Yes"},{"name":"Brandon Lukens","company":"Truline Technologies","jobTitle":"VP of Operations","state":"SC","dateLabel":"Mar 16, 2026","dateRegistered":"2026-03-16","businessType":"Field Service Integrator (Alarm, Cabling, AV, Other)","jobRank":"VP-Level","department":"Operations/Support","companySize":"1–10","packageName":"Early Bird","amount":0,"discountCode":"","referral":"","hotel":"No","shirtSize":"Extra Large (XL)","attendedBefore":"No"},{"name":"Brant Yandell","company":"Converged Networks","jobTitle":"VoIP Engineer","state":"NC","dateLabel":"Jul 8, 2026","dateRegistered":"2026-07-08","businessType":"CSP / Telecom","jobRank":"Manager","department":"Operations/Support","companySize":"1–10","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"REVGUEST-A","referral":"Justin Lee","hotel":"No","shirtSize":"Extra Large (XL)","attendedBefore":"Yes"},{"name":"Brendan English","company":"Gamut","jobTitle":"Client and Project Operations Manager","state":"GA","dateLabel":"May 14, 2026","dateRegistered":"2026-05-14","businessType":"CSP / Telecom","jobRank":"Director","department":"Other","companySize":"1–10","packageName":"Early Bird","amount":0,"discountCode":"CAMREVSUMMIT","referral":"Cam Sharpe","hotel":"Yes","shirtSize":"Large (L)","attendedBefore":"Yes"},{"name":"Brenden Koop","company":"MYSWITCH Communications","jobTitle":"Service Manager","state":"MI","dateLabel":"Jul 20, 2026","dateRegistered":"2026-07-20","businessType":"CSP / Telecom","jobRank":"Manager","department":"Operations/Support","companySize":"1–10","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"REVGUEST-A","referral":"Justin Lee","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"No"},{"name":"Brittany Clester","company":"AppDirect","jobTitle":"Director of Finance","state":"GA","dateLabel":"Jul 16, 2026","dateRegistered":"2026-07-16","businessType":"CSP / Telecom","jobRank":"Director","department":"Finance/Billing","companySize":"250+","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"REVGUEST-A","referral":"Ryan Burton","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"Yes"},{"name":"Bryan Miller","company":"JSI","jobTitle":"Director, Customer Success Team","state":"MD","dateLabel":"Jul 22, 2026","dateRegistered":"2026-07-22","businessType":"Consulting","jobRank":"Non-Manager","department":"Sales/Marketing","companySize":"250+","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"SUMMITSPONSOR","referral":"Christina Oudin","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"No"},{"name":"CHRIS TABBERT","company":"A+ Communications & Security","jobTitle":"WHS Manager","state":"IA","dateLabel":"Jun 29, 2026","dateRegistered":"2026-06-29","businessType":"Field Service Integrator (Alarm, Cabling, AV, Other)","jobRank":"Manager","department":"Operations/Support","companySize":"51–250","packageName":"BOGO - Buy One, Get One","amount":650,"discountCode":"","referral":"Blaine Villafuerte","hotel":"Yes","shirtSize":"2XL (XXL)","attendedBefore":"No"},{"name":"Cassandra Monroe","company":"Skyswitch","jobTitle":"Director of Billing Operations","state":"NC","dateLabel":"May 27, 2026","dateRegistered":"2026-05-27","businessType":"CSP / Telecom","jobRank":"Director","department":"Finance/Billing","companySize":"250+","packageName":"Early Bird","amount":237.5,"discountCode":"SUMMIT50","referral":"Ryan Burton","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"No"},{"name":"Chris Turbyfill","company":"Dialog Telecom LLC","jobTitle":"Controller","state":"NC","dateLabel":"Nov 13, 2025","dateRegistered":"2025-11-13","businessType":"CSP / Telecom","jobRank":"C-Level","department":"C-Suite","companySize":"51–250","packageName":"Super Early Bird","amount":325,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"Yes"},{"name":"Christian Hernandez","company":"JCM Telecom","jobTitle":"President / Owner","state":"FL","dateLabel":"Jul 8, 2026","dateRegistered":"2026-07-08","businessType":"MSP","jobRank":"C-Level","department":"C-Suite","companySize":"11–50","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"REVGUEST-A","referral":"Justin Lee","hotel":"Yes","shirtSize":"Small (S)","attendedBefore":"Yes"},{"name":"Clay Lovelace","company":"CL Sams","jobTitle":"COO/Co-Owner","state":"NC","dateLabel":"Jun 23, 2026","dateRegistered":"2026-06-23","businessType":"MSP","jobRank":"C-Level","department":"Operations/Support","companySize":"11–50","packageName":"BOGO - Buy One, Get One","amount":0,"discountCode":"REVFAN100","referral":"Blaine Villafuerte","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"Yes"},{"name":"Danilo Jr Catacutan","company":"BCM One","jobTitle":"Sr. Manager for Implementation","state":"PA","dateLabel":"May 27, 2026","dateRegistered":"2026-05-27","businessType":"CSP / Telecom","jobRank":"Manager","department":"Finance/Billing","companySize":"250+","packageName":"Early Bird","amount":237.5,"discountCode":"SUMMIT50","referral":"","hotel":"Yes","shirtSize":"Medium (M)","attendedBefore":"No"},{"name":"David Cox","company":"AvTek Solutions, Inc.","jobTitle":"Chief Security Officer","state":"TX","dateLabel":"Jul 14, 2026","dateRegistered":"2026-07-14","businessType":"MSP","jobRank":"C-Level","department":"C-Suite","companySize":"11–50","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"2BLONDES","referral":"Brook Lee","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"No"},{"name":"Diane Michelin","company":"ANI Networks","jobTitle":"Director of Legal Compliance","state":"NV","dateLabel":"May 13, 2026","dateRegistered":"2026-05-13","businessType":"CSP / Telecom","jobRank":"Director","department":"Other","companySize":"51–250","packageName":"Early Bird","amount":475,"discountCode":"","referral":"Tim Smith","hotel":"Yes","shirtSize":"2XL (XXL)","attendedBefore":"Yes"},{"name":"Donald Campbell","company":"JES and Sons 2-Way LLC","jobTitle":"Owner","state":"IN","dateLabel":"Nov 13, 2025","dateRegistered":"2025-11-13","businessType":"CSP / Telecom","jobRank":"C-Level","department":"C-Suite","companySize":"11–50","packageName":"Super Early Bird","amount":650,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"Yes"},{"name":"Drew Aldinger","company":"Raven Tech LLC","jobTitle":"CEO","state":"NE","dateLabel":"Jun 11, 2026","dateRegistered":"2026-06-11","businessType":"MSP","jobRank":"C-Level","department":"C-Suite","companySize":"1–10","packageName":"BOGO - Buy One, Get One","amount":0,"discountCode":"REVFAN100","referral":"Olivia Sandefur","hotel":"Yes","shirtSize":"Large (L)","attendedBefore":"No"},{"name":"Dustin Lassiter","company":"Fuse.Cloud","jobTitle":"VP, Tech Ops","state":"MS","dateLabel":"May 12, 2026","dateRegistered":"2026-05-12","businessType":"MSP","jobRank":"VP-Level","department":"Operations/Support","companySize":"11–50","packageName":"Early Bird","amount":475,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"3XL (XXXL)","attendedBefore":"Yes"},{"name":"Dylan Hornaday","company":"Southeast Telephone Service","jobTitle":"Account Executive","state":"NC","dateLabel":"Jul 17, 2026","dateRegistered":"2026-07-17","businessType":"CSP / Telecom","jobRank":"Manager","department":"Operations/Support","companySize":"1–10","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"REVGUEST-A","referral":"Connor Flynn","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"No"},{"name":"Elise Cia","company":"Affiliated Technology Solutions","jobTitle":"Controller","state":"NJ","dateLabel":"Dec 9, 2025","dateRegistered":"2025-12-09","businessType":"MSP","jobRank":"Manager","department":"Finance/Billing","companySize":"51–250","packageName":"Super Early Bird","amount":325,"discountCode":"","referral":"","hotel":"No","shirtSize":"Extra Large (XL)","attendedBefore":"Yes"},{"name":"Felicia Turner","company":"Centerpoint IT","jobTitle":"VP","state":"GA","dateLabel":"Nov 20, 2025","dateRegistered":"2025-11-20","businessType":"MSP","jobRank":"VP-Level","department":"C-Suite","companySize":"11–50","packageName":"Super Early Bird","amount":650,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Small (S)","attendedBefore":"Yes"},{"name":"Francesco Rubiano","company":"Rubiano","jobTitle":"Project management","state":"NY","dateLabel":"Jun 4, 2026","dateRegistered":"2026-06-04","businessType":"CSP / Telecom","jobRank":"Manager","department":"Operations/Support","companySize":"1–10","packageName":"BOGO - Buy One, Get One","amount":0,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Large (L)","attendedBefore":"Yes"},{"name":"Frank Kadaf","company":"CallHarbor","jobTitle":"CEO","state":"MI","dateLabel":"May 19, 2026","dateRegistered":"2026-05-19","businessType":"CSP / Telecom","jobRank":"C-Level","department":"C-Suite","companySize":"11–50","packageName":"Early Bird","amount":475,"discountCode":"","referral":"Cam Sharpe-money","hotel":"Yes","shirtSize":"Large (L)","attendedBefore":"Yes"},{"name":"Frank Rubiano","company":"Rubiano","jobTitle":"Owner","state":"NY","dateLabel":"Jun 4, 2026","dateRegistered":"2026-06-04","businessType":"CSP / Telecom","jobRank":"C-Level","department":"C-Suite","companySize":"1–10","packageName":"BOGO - Buy One, Get One","amount":0,"discountCode":"REVFAN100","referral":"Jamie Butler","hotel":"Yes","shirtSize":"Large (L)","attendedBefore":"Yes"},{"name":"Gregory Marchand","company":"C1st Technologies","jobTitle":"Director of MSP Operations","state":"NV","dateLabel":"May 28, 2026","dateRegistered":"2026-05-28","businessType":"MSP","jobRank":"Director","department":"IT/Engineering","companySize":"11–50","packageName":"Early Bird","amount":0,"discountCode":"REVGUEST-A","referral":"Jamie Butler","hotel":"Yes","shirtSize":"3XL (XXXL)","attendedBefore":"No"},{"name":"Ismael Adames","company":"Digital Market POS","jobTitle":"Lead Tech","state":"IL","dateLabel":"Jul 9, 2026","dateRegistered":"2026-07-09","businessType":"Field Service Integrator (Alarm, Cabling, AV, Other)","jobRank":"Manager","department":"Operations/Support","companySize":"1–10","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"REVGUEST-A","referral":"Jeremy Adams","hotel":"Yes","shirtSize":"2XL (XXL)","attendedBefore":"No"},{"name":"James Mace","company":"MNJ Technologies","jobTitle":"PMO Manager","state":"OH","dateLabel":"Jul 20, 2026","dateRegistered":"2026-07-20","businessType":"Consulting","jobRank":"Manager","department":"IT/Engineering","companySize":"51–250","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"REVGUEST-A","referral":"Rachael Buchtan","hotel":"Yes","shirtSize":"Large (L)","attendedBefore":"No"},{"name":"Jamie Salata, PMP","company":"JSI LogicomUSA","jobTitle":"Sr. Director","state":"AL","dateLabel":"Jun 24, 2026","dateRegistered":"2026-06-24","businessType":"CSP / Telecom","jobRank":"Director","department":"Operations/Support","companySize":"250+","packageName":"BOGO - Buy One, Get One","amount":0,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"2XL (XXL)","attendedBefore":"No"},{"name":"Jared Downs","company":"Cynomi","jobTitle":"Account Executive","state":"TX","dateLabel":"Jul 2, 2026","dateRegistered":"2026-07-02","businessType":"other, Vendor","jobRank":"Non-Manager","department":"Sales/Marketing","companySize":"51–250","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"SUMMITSPONSOR","referral":"Brook Lee","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"No"},{"name":"Jennifer Torre","company":"JSI","jobTitle":"Manager – Tax Onboarding, Registrations, & Special Projects","state":"MD","dateLabel":"Jul 21, 2026","dateRegistered":"2026-07-21","businessType":"Consulting","jobRank":"Manager","department":"Other","companySize":"250+","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"SUMMITSPONSOR","referral":"Christina Oudin","hotel":"Yes","shirtSize":"2XL (XXL)","attendedBefore":"Yes"},{"name":"Jim Dalton","company":"TransNexus","jobTitle":"CEO","state":"GA","dateLabel":"Nov 13, 2025","dateRegistered":"2025-11-13","businessType":"other, Software Provider","jobRank":"C-Level","department":"C-Suite","companySize":"11–50","packageName":"Super Early Bird","amount":325,"discountCode":"","referral":"","hotel":"No","shirtSize":"Large (L)","attendedBefore":"Yes"},{"name":"Jordan Grindell","company":"Premier Companies","jobTitle":"CTO","state":"TN","dateLabel":"Jun 24, 2026","dateRegistered":"2026-06-24","businessType":"CSP / Telecom","jobRank":"C-Level","department":"Finance/Billing","companySize":"11–50","packageName":"BOGO - Buy One, Get One","amount":650,"discountCode":"","referral":"Justin Lee","hotel":"No","shirtSize":"Medium (M)","attendedBefore":"Yes"},{"name":"Josh Harrison","company":"Premier Companies","jobTitle":"COO","state":"TN","dateLabel":"Jun 24, 2026","dateRegistered":"2026-06-24","businessType":"CSP / Telecom","jobRank":"C-Level","department":"C-Suite","companySize":"11–50","packageName":"BOGO - Buy One, Get One","amount":0,"discountCode":"","referral":"","hotel":"No","shirtSize":"Large (L)","attendedBefore":"Yes"},{"name":"Joshua Faw","company":"Southeast Telephone Service","jobTitle":"President","state":"NC","dateLabel":"Jul 17, 2026","dateRegistered":"2026-07-17","businessType":"CSP / Telecom","jobRank":"C-Level","department":"C-Suite","companySize":"1–10","packageName":"BOGO - Buy One, Get One","amount":0,"discountCode":"SUMMIT100","referral":"Connor Flynn","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"No"},{"name":"Kaye Kelsey","company":"Losh Communications, Inc.","jobTitle":"Finance Director","state":"MO","dateLabel":"May 26, 2026","dateRegistered":"2026-05-26","businessType":"CSP / Telecom","jobRank":"Director","department":"Finance/Billing","companySize":"11–50","packageName":"Early Bird","amount":475,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Medium (M)","attendedBefore":"No"},{"name":"Kevin Brady","company":"Fuse.Cloud","jobTitle":"Director of Billing","state":"MS","dateLabel":"Jul 17, 2026","dateRegistered":"2026-07-17","businessType":"MSP","jobRank":"Director","department":"Finance/Billing","companySize":"11–50","packageName":"BOGO - Buy One, Get One","amount":0,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Large (L)","attendedBefore":"No"},{"name":"Kevin Durham","company":"Centerpoint IT","jobTitle":"Lead Manager","state":"GA","dateLabel":"Jul 21, 2026","dateRegistered":"2026-07-21","businessType":"MSP","jobRank":"Manager","department":"IT/Engineering","companySize":"11–50","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"REVGUEST-A","referral":"Felicia Turner","hotel":"No","shirtSize":"2XL (XXL)","attendedBefore":"No"},{"name":"Kim Zacharkiewicz","company":"COEO Solutions","jobTitle":"Director of Finance","state":"IL","dateLabel":"Jun 19, 2026","dateRegistered":"2026-06-19","businessType":"CSP / Telecom","jobRank":"Director","department":"Finance/Billing","companySize":"51–250","packageName":"BOGO - Buy One, Get One","amount":0,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Medium (M)","attendedBefore":"Yes"},{"name":"Kristen Addonizio","company":"TailWind Voice & Data","jobTitle":"Carrier Vendor Manager","state":"MN","dateLabel":"Jun 30, 2026","dateRegistered":"2026-06-30","businessType":"CSP / Telecom","jobRank":"Manager","department":"Operations/Support","companySize":"51–250","packageName":"Unspecified","amount":0,"discountCode":"","referral":"Ryan Burton","hotel":"No","shirtSize":"2XL (XXL)","attendedBefore":"Yes"},{"name":"Lance Schueneman","company":"Atron Solutions, LLC","jobTitle":"Operations Manager","state":"TX","dateLabel":"Dec 29, 2025","dateRegistered":"2025-12-29","businessType":"CSP / Telecom","jobRank":"C-Level","department":"Operations/Support","companySize":"1–10","packageName":"Super Early Bird","amount":650,"discountCode":"","referral":"Andrew Whisenant","hotel":"Yes","shirtSize":"2XL (XXL)","attendedBefore":"Yes"},{"name":"Lenny Ljungholm","company":"CallSprout","jobTitle":"Support Specialist","state":"FL","dateLabel":"Jul 20, 2026","dateRegistered":"2026-07-20","businessType":"CSP / Telecom","jobRank":"Non-Manager","department":"Operations/Support","companySize":"1–10","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"REVGUEST-A","referral":"Justin Lee","hotel":"Yes","shirtSize":"Large (L)","attendedBefore":"Yes"},{"name":"Lincoln Higdon","company":"Centerpoint IT","jobTitle":"CEO","state":"GA","dateLabel":"Nov 20, 2025","dateRegistered":"2025-11-20","businessType":"MSP","jobRank":"C-Level","department":"C-Suite","companySize":"11–50","packageName":"Super Early Bird","amount":0,"discountCode":"","referral":"","hotel":"No","shirtSize":"2XL (XXL)","attendedBefore":"Yes"},{"name":"Linda Wheeler","company":"A+ Communciations & Security","jobTitle":"Account Manager","state":"IA","dateLabel":"Jun 29, 2026","dateRegistered":"2026-06-29","businessType":"Field Service Integrator (Alarm, Cabling, AV, Other)","jobRank":"Manager","department":"Operations/Support","companySize":"51–250","packageName":"BOGO - Buy One, Get One","amount":0,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"2XL (XXL)","attendedBefore":"Yes"},{"name":"Mark Geier","company":"J&M Systems LLC","jobTitle":"Partner","state":"MD","dateLabel":"Jul 20, 2026","dateRegistered":"2026-07-20","businessType":"MSP","jobRank":"C-Level","department":"C-Suite","companySize":"1–10","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"REVGUEST-A","referral":"Katerra Stephenson-Greenwood","hotel":"Yes","shirtSize":"4XL (XXXXL)","attendedBefore":"Yes"},{"name":"Mark Fleeger","company":"Homeland Security Systems","jobTitle":"CEO","state":"OH","dateLabel":"Jul 2, 2026","dateRegistered":"2026-07-02","businessType":"Field Service Integrator (Alarm, Cabling, AV, Other)","jobRank":"VP-Level","department":"Other","companySize":"11–50","packageName":"Premium: Summit Pass","amount":0,"discountCode":"VIP-REVGUEST","referral":"Jacob Willimas","hotel":"Yes","shirtSize":"2XL (XXL)","attendedBefore":"No"},{"name":"Mark Bortz","company":"Premier Companies","jobTitle":"Founder","state":"TN","dateLabel":"Jul 15, 2026","dateRegistered":"2026-07-15","businessType":"CSP / Telecom","jobRank":"C-Level","department":"C-Suite","companySize":"11–50","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"REVGUEST-A","referral":"Justin Lee","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"Yes"},{"name":"Matthew Schiavetta","company":"Cynomi","jobTitle":"Sales Manager","state":"FL","dateLabel":"Jul 2, 2026","dateRegistered":"2026-07-02","businessType":"other, Vendor","jobRank":"Manager","department":"Sales/Marketing","companySize":"51–250","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"SUMMITSPONSOR","referral":"Brook Lee","hotel":"Yes","shirtSize":"Large (L)","attendedBefore":"No"},{"name":"Michael Cramer","company":"SoundLine Communications","jobTitle":"CEO","state":"WA","dateLabel":"Dec 9, 2025","dateRegistered":"2025-12-09","businessType":"CSP / Telecom","jobRank":"C-Level","department":"C-Suite","companySize":"1–10","packageName":"Premium: Super Early Bird","amount":650,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Medium (M)","attendedBefore":"Yes"},{"name":"Michael Rowland","company":"Truline Technologies","jobTitle":"President","state":"SC","dateLabel":"Mar 16, 2026","dateRegistered":"2026-03-16","businessType":"Field Service Integrator (Alarm, Cabling, AV, Other)","jobRank":"C-Level","department":"C-Suite","companySize":"1–10","packageName":"Early Bird","amount":0,"discountCode":"REVFAN100","referral":"","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"No"},{"name":"Michael Vicas","company":"COEO Solutions","jobTitle":"Billing Manager","state":"IL","dateLabel":"Jun 19, 2026","dateRegistered":"2026-06-19","businessType":"CSP / Telecom","jobRank":"Director","department":"Finance/Billing","companySize":"51–250","packageName":"BOGO - Buy One, Get One","amount":650,"discountCode":"","referral":"Ryan Burton","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"Yes"},{"name":"Michelle Marin","company":"Viirtue Inc","jobTitle":"Billing Supervisor","state":"FL","dateLabel":"Mar 31, 2026","dateRegistered":"2026-03-31","businessType":"CSP / Telecom","jobRank":"Non-Manager","department":"Finance/Billing","companySize":"51–250","packageName":"Early Bird","amount":0,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Medium (M)","attendedBefore":"No"},{"name":"Monica Theriot-Habetz","company":"Global Data Systems","jobTitle":"Vice President, SFC","state":"LA","dateLabel":"Jun 30, 2026","dateRegistered":"2026-06-30","businessType":"MSP","jobRank":"VP-Level","department":"Operations/Support","companySize":"51–250","packageName":"Premium: Summit Pass","amount":0,"discountCode":"VIP-REVGUEST","referral":"Monica Theriot-Habetz","hotel":"Yes","shirtSize":"Large (L)","attendedBefore":"No"},{"name":"Nic Carpenter","company":"Fuse.Cloud","jobTitle":"Director of Product","state":"MS","dateLabel":"Jul 17, 2026","dateRegistered":"2026-07-17","businessType":"MSP","jobRank":"Director","department":"Operations/Support","companySize":"11–50","packageName":"BOGO - Buy One, Get One","amount":650,"discountCode":"","referral":"Ben Sims","hotel":"Yes","shirtSize":"2XL (XXL)","attendedBefore":"No"},{"name":"Nicole Adair","company":"K&L Telecom","jobTitle":"Support","state":"MI","dateLabel":"Jun 24, 2026","dateRegistered":"2026-06-24","businessType":"CSP / Telecom","jobRank":"Director","department":"Operations/Support","companySize":"1–10","packageName":"BOGO - Buy One, Get One","amount":0,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"No"},{"name":"Patricia Diggins","company":"Reynwood Communications","jobTitle":"Chief Financial Officer","state":"NJ","dateLabel":"Jul 16, 2026","dateRegistered":"2026-07-16","businessType":"CSP / Telecom","jobRank":"C-Level","department":"C-Suite","companySize":"1–10","packageName":"BOGO - Buy One, Get One","amount":650,"discountCode":"","referral":"Jakob Champion","hotel":"Yes","shirtSize":"Medium (M)","attendedBefore":"Yes"},{"name":"Raylind Touchstone","company":"Dialog/AMA Techtel","jobTitle":"Quality/Training Coordinator","state":"TX","dateLabel":"Dec 30, 2025","dateRegistered":"2025-12-30","businessType":"CSP / Telecom","jobRank":"Non-Manager","department":"Other","companySize":"51–250","packageName":"Super Early Bird","amount":650,"discountCode":"","referral":"N/A N/A","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"No"},{"name":"Rich Kelly","company":"Reynwood Communications of NY/NJ LLC","jobTitle":"Chief Executive Officer","state":"FL","dateLabel":"Jul 16, 2026","dateRegistered":"2026-07-16","businessType":"CSP / Telecom","jobRank":"C-Level","department":"C-Suite","companySize":"1–10","packageName":"BOGO - Buy One, Get One","amount":0,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"Yes"},{"name":"Robert Guidry","company":"Global Data Systems, Inc","jobTitle":"CTO","state":"LA","dateLabel":"Jun 30, 2026","dateRegistered":"2026-06-30","businessType":"MSP","jobRank":"C-Level","department":"C-Suite","companySize":"51–250","packageName":"Premium: Summit Pass","amount":0,"discountCode":"VIP-REVGUEST","referral":"Ryan Koontz","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"No"},{"name":"Rosalyn Campbell","company":"JES & Sons 2-Way, LLC","jobTitle":"Operations Manager","state":"IN","dateLabel":"Nov 13, 2025","dateRegistered":"2025-11-13","businessType":"CSP / Telecom","jobRank":"Manager","department":"Operations/Support","companySize":"1–10","packageName":"Super Early Bird","amount":0,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Medium (M)","attendedBefore":"Yes"},{"name":"Rose Page","company":"VALHALLA CORP.","jobTitle":"Office Administrator","state":"VT","dateLabel":"Jun 29, 2026","dateRegistered":"2026-06-29","businessType":"CSP / Telecom","jobRank":"Manager","department":"Operations/Support","companySize":"1–10","packageName":"BOGO - Buy One, Get One","amount":650,"discountCode":"","referral":"Ingrid Beard","hotel":"Yes","shirtSize":"Large (L)","attendedBefore":"Yes"},{"name":"Samantha Bivens","company":"Atron Solutions","jobTitle":"Client Success Manager","state":"TX","dateLabel":"Dec 29, 2025","dateRegistered":"2025-12-29","businessType":"CSP / Telecom","jobRank":"Manager","department":"Sales/Marketing","companySize":"1–10","packageName":"Super Early Bird","amount":0,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Large (L)","attendedBefore":"No"},{"name":"Sanjeev Tirunagaram","company":"SoundLine Communications","jobTitle":"CMO","state":"WA","dateLabel":"Jul 2, 2026","dateRegistered":"2026-07-02","businessType":"CSP / Telecom","jobRank":"C-Level","department":"Sales/Marketing","companySize":"1–10","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"REVGUEST-A","referral":"Ryan Burton","hotel":"No","shirtSize":"Extra Large (XL)","attendedBefore":"No"},{"name":"Scott Williams","company":"Centerpoint IT","jobTitle":"Client Success Manager","state":"GA","dateLabel":"Jul 21, 2026","dateRegistered":"2026-07-21","businessType":"MSP","jobRank":"Manager","department":"IT/Engineering","companySize":"11–50","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"REVGUEST-A","referral":"Felicia Turner","hotel":"No","shirtSize":"Extra Large (XL)","attendedBefore":"No"},{"name":"Shane Deegan","company":"Cynomi","jobTitle":"Chief Revenue Officer","state":"FL","dateLabel":"Jul 2, 2026","dateRegistered":"2026-07-02","businessType":"other, Vendor","jobRank":"C-Level","department":"Sales/Marketing","companySize":"51–250","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"SUMMITSPONSOR","referral":"Brook Lee","hotel":"Yes","shirtSize":"Large (L)","attendedBefore":"No"},{"name":"Sherry Faw","company":"Southeast Telephone Service","jobTitle":"Owner","state":"NC","dateLabel":"Jul 17, 2026","dateRegistered":"2026-07-17","businessType":"CSP / Telecom","jobRank":"C-Level","department":"C-Suite","companySize":"1–10","packageName":"BOGO - Buy One, Get One","amount":0,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Large (L)","attendedBefore":"No"},{"name":"Stan George","company":"Broadband Office Solutions","jobTitle":"CEO","state":"NY","dateLabel":"May 5, 2026","dateRegistered":"2026-05-05","businessType":"MSP","jobRank":"C-Level","department":"Finance/Billing","companySize":"11–50","packageName":"Early Bird","amount":475,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"Yes"},{"name":"Stephanie Parker","company":"Raven Tech LLC","jobTitle":"Admin Assistant","state":"NE","dateLabel":"Jun 11, 2026","dateRegistered":"2026-06-11","businessType":"MSP","jobRank":"Other","department":"Operations/Support","companySize":"1–10","packageName":"BOGO - Buy One, Get One","amount":0,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"No"},{"name":"Stephanie Kern","company":"Decibel","jobTitle":"Director of Sales","state":"MO","dateLabel":"May 22, 2026","dateRegistered":"2026-05-22","businessType":"CSP / Telecom","jobRank":"Manager","department":"Sales/Marketing","companySize":"11–50","packageName":"Early Bird","amount":0,"discountCode":"REVGUEST-A","referral":"","hotel":"No","shirtSize":"Medium (M)","attendedBefore":"Yes"},{"name":"Steve Konetski","company":"AVIT, LLC","jobTitle":"CIO","state":"FL","dateLabel":"Jul 1, 2026","dateRegistered":"2026-07-01","businessType":"Field Service Integrator (Alarm, Cabling, AV, Other)","jobRank":"C-Level","department":"C-Suite","companySize":"51–250","packageName":"Premium: Summit Pass","amount":0,"discountCode":"VIP-REVGUEST","referral":"Ryan Koontz","hotel":"Yes","shirtSize":"Large (L)","attendedBefore":"No"},{"name":"Tammy Wooster","company":"Sunrise Solutions Inc","jobTitle":"Owner","state":"MD","dateLabel":"Jun 30, 2026","dateRegistered":"2026-06-30","businessType":"CSP / Telecom","jobRank":"Manager","department":"Finance/Billing","companySize":"1–10","packageName":"BOGO - Buy One, Get One","amount":650,"discountCode":"","referral":"Blaine Villafuerte","hotel":"Yes","shirtSize":"Medium (M)","attendedBefore":"No"},{"name":"Terri Firestein","company":"JSI LogicomUSA","jobTitle":"Sr Director Regulatory Compliance","state":"MD","dateLabel":"Jun 24, 2026","dateRegistered":"2026-06-24","businessType":"CSP / Telecom","jobRank":"Director","department":"Operations/Support","companySize":"250+","packageName":"BOGO - Buy One, Get One","amount":650,"discountCode":"","referral":"Ryan Berthelsen","hotel":"Yes","shirtSize":"2XL (XXL)","attendedBefore":"No"},{"name":"Thomas Welsh","company":"Affiliated Technology Solutions, LLC","jobTitle":"Founder & CEO","state":"NJ","dateLabel":"Dec 9, 2025","dateRegistered":"2025-12-09","businessType":"CSP / Telecom","jobRank":"C-Level","department":"C-Suite","companySize":"51–250","packageName":"Super Early Bird","amount":325,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"2XL (XXL)","attendedBefore":"Yes"},{"name":"Tiffany Hodgest","company":"Dialog/AMA Techtel","jobTitle":"Sr. Operations Manager","state":"TX","dateLabel":"Dec 30, 2025","dateRegistered":"2025-12-30","businessType":"CSP / Telecom","jobRank":"Manager","department":"Operations/Support","companySize":"51–250","packageName":"Super Early Bird","amount":0,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"Yes"},{"name":"Tim Coach","company":"Cynomi","jobTitle":"Chief Evangelist of Community and Channels","state":"FL","dateLabel":"Jul 2, 2026","dateRegistered":"2026-07-02","businessType":"other, Vendor","jobRank":"C-Level","department":"C-Suite","companySize":"51–250","packageName":"Summit Pass- Single ticket","amount":0,"discountCode":"SUMMITSPONSOR","referral":"Brook Lee","hotel":"Yes","shirtSize":"3XL (XXXL)","attendedBefore":"No"},{"name":"Tom McDonnell","company":"Ten4","jobTitle":"Vice President, Operations","state":"NJ","dateLabel":"May 18, 2026","dateRegistered":"2026-05-18","businessType":"CSP / Telecom","jobRank":"VP-Level","department":"Operations/Support","companySize":"51–250","packageName":"Early Bird","amount":0,"discountCode":"REVFAN100","referral":"","hotel":"Yes","shirtSize":"Medium (M)","attendedBefore":"Yes"},{"name":"Tom Murphy","company":"TailWind Voice & Data","jobTitle":"Senior Vice President","state":"MN","dateLabel":"Mar 31, 2026","dateRegistered":"2026-03-31","businessType":"CSP / Telecom","jobRank":"VP-Level","department":"C-Suite","companySize":"51–250","packageName":"Early Bird","amount":0,"discountCode":"REVFAN100","referral":"Jennifer Hopkins","hotel":"No","shirtSize":"3XL (XXXL)","attendedBefore":"Yes"},{"name":"Tony Hsieh","company":"C1st Technologies","jobTitle":"Partner","state":"WA","dateLabel":"May 28, 2026","dateRegistered":"2026-05-28","businessType":"MSP","jobRank":"C-Level","department":"C-Suite","companySize":"11–50","packageName":"Early Bird","amount":0,"discountCode":"REVGUEST-A","referral":"Jamie Butler","hotel":"Yes","shirtSize":"2XL (XXL)","attendedBefore":"No"},{"name":"Tony Sams","company":"CL Sams","jobTitle":"CFO/Co-Owner","state":"NC","dateLabel":"Jun 23, 2026","dateRegistered":"2026-06-23","businessType":"MSP","jobRank":"C-Level","department":"Finance/Billing","companySize":"11–50","packageName":"BOGO - Buy One, Get One","amount":0,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"No"},{"name":"Victoria Petrosyan","company":"SoundLine Communications","jobTitle":"CPO","state":"WA","dateLabel":"Dec 9, 2025","dateRegistered":"2025-12-09","businessType":"CSP / Telecom","jobRank":"Director","department":"Finance/Billing","companySize":"1–10","packageName":"Premium: Super Early Bird","amount":650,"discountCode":"","referral":"","hotel":"No","shirtSize":"Extra Large (XL)","attendedBefore":"Yes"},{"name":"Wayne Jaggers","company":"ANI Networks","jobTitle":"Director of Business Development, ILEC/CLEC Services","state":"OK","dateLabel":"May 13, 2026","dateRegistered":"2026-05-13","businessType":"CSP / Telecom","jobRank":"Director","department":"Sales/Marketing","companySize":"51–250","packageName":"Early Bird","amount":475,"discountCode":"","referral":"Tim Smith","hotel":"Yes","shirtSize":"3XL (XXXL)","attendedBefore":"Yes"},{"name":"William Brister","company":"SkySwitch","jobTitle":"Director Partner Onboarding","state":"TX","dateLabel":"May 20, 2026","dateRegistered":"2026-05-20","businessType":"CSP / Telecom","jobRank":"Director","department":"Finance/Billing","companySize":"250+","packageName":"Premium: Early Bird","amount":650,"discountCode":"","referral":"","hotel":"Yes","shirtSize":"Extra Large (XL)","attendedBefore":"Yes"}],"referrals":[{"id":1,"registrant":"Alana Lee","referrer":"Ana Da Silva","date":"2026-07-13"},{"id":2,"registrant":"Allen Reid","referrer":"Ryan Berthelsen","date":"2026-06-24"},{"id":3,"registrant":"Alyssa Hutchinson","referrer":"Cam Sharpe","date":"2026-05-14"},{"id":4,"registrant":"Amanda Gath","referrer":"Rachel Buchtan","date":"2026-07-20"},{"id":5,"registrant":"Amy Shirey","referrer":"Ryan Burton","date":"2026-07-16"},{"id":6,"registrant":"Ana da Silva","referrer":"Jon Yentema","date":"2026-03-31"},{"id":7,"registrant":"Andrew Adair","referrer":"Jamie Butler","date":"2026-06-24"},{"id":8,"registrant":"Atticus Brind","referrer":"Justin Lee","date":"2026-07-20"},{"id":9,"registrant":"Brandon Burchard","referrer":"Justin Lee","date":"2026-07-20"},{"id":10,"registrant":"Brant Yandell","referrer":"Justin Lee","date":"2026-07-08"},{"id":11,"registrant":"Brendan English","referrer":"Cam Sharpe","date":"2026-05-14"},{"id":12,"registrant":"Brenden Koop","referrer":"Justin Lee","date":"2026-07-20"},{"id":13,"registrant":"Brittany Clester","referrer":"Ryan Burton","date":"2026-07-16"},{"id":14,"registrant":"Bryan Miller","referrer":"Christina Oudin","date":"2026-07-22"},{"id":15,"registrant":"CHRIS TABBERT","referrer":"Blaine Villafuerte","date":"2026-06-29"},{"id":16,"registrant":"Cassandra Monroe","referrer":"Ryan Burton","date":"2026-05-27"},{"id":17,"registrant":"Christian Hernandez","referrer":"Justin Lee","date":"2026-07-08"},{"id":18,"registrant":"Clay Lovelace","referrer":"Blaine Villafuerte","date":"2026-06-23"},{"id":19,"registrant":"David Cox","referrer":"Brook Lee","date":"2026-07-14"},{"id":20,"registrant":"Diane Michelin","referrer":"Tim Smith","date":"2026-05-13"},{"id":21,"registrant":"Drew Aldinger","referrer":"Olivia Sandefur","date":"2026-06-11"},{"id":22,"registrant":"Dylan Hornaday","referrer":"Connor Flynn","date":"2026-07-17"},{"id":23,"registrant":"Frank Kadaf","referrer":"Cam Sharpe-money","date":"2026-05-19"},{"id":24,"registrant":"Frank Rubiano","referrer":"Jamie Butler","date":"2026-06-04"},{"id":25,"registrant":"Gregory Marchand","referrer":"Jamie Butler","date":"2026-05-28"},{"id":26,"registrant":"Ismael Adames","referrer":"Jeremy Adams","date":"2026-07-09"},{"id":27,"registrant":"James Mace","referrer":"Rachael Buchtan","date":"2026-07-20"},{"id":28,"registrant":"Jared Downs","referrer":"Brook Lee","date":"2026-07-02"},{"id":29,"registrant":"Jennifer Torre","referrer":"Christina Oudin","date":"2026-07-21"},{"id":30,"registrant":"Jordan Grindell","referrer":"Justin Lee","date":"2026-06-24"},{"id":31,"registrant":"Joshua Faw","referrer":"Connor Flynn","date":"2026-07-17"},{"id":32,"registrant":"Kevin Durham","referrer":"Felicia Turner","date":"2026-07-21"},{"id":33,"registrant":"Kristen Addonizio","referrer":"Ryan Burton","date":"2026-06-30"},{"id":34,"registrant":"Lance Schueneman","referrer":"Andrew Whisenant","date":"2025-12-29"},{"id":35,"registrant":"Lenny Ljungholm","referrer":"Justin Lee","date":"2026-07-20"},{"id":36,"registrant":"Mark Geier","referrer":"Katerra Stephenson-Greenwood","date":"2026-07-20"},{"id":37,"registrant":"Mark Fleeger","referrer":"Jacob Willimas","date":"2026-07-02"},{"id":38,"registrant":"Mark Bortz","referrer":"Justin Lee","date":"2026-07-15"},{"id":39,"registrant":"Matthew Schiavetta","referrer":"Brook Lee","date":"2026-07-02"},{"id":40,"registrant":"Michael Vicas","referrer":"Ryan Burton","date":"2026-06-19"},{"id":41,"registrant":"Monica Theriot-Habetz","referrer":"Monica Theriot-Habetz","date":"2026-06-30"},{"id":42,"registrant":"Nic Carpenter","referrer":"Ben Sims","date":"2026-07-17"},{"id":43,"registrant":"Patricia Diggins","referrer":"Jakob Champion","date":"2026-07-16"},{"id":44,"registrant":"Raylind Touchstone","referrer":"N/A N/A","date":"2025-12-30"},{"id":45,"registrant":"Robert Guidry","referrer":"Ryan Koontz","date":"2026-06-30"},{"id":46,"registrant":"Rose Page","referrer":"Ingrid Beard","date":"2026-06-29"},{"id":47,"registrant":"Sanjeev Tirunagaram","referrer":"Ryan Burton","date":"2026-07-02"},{"id":48,"registrant":"Scott Williams","referrer":"Felicia Turner","date":"2026-07-21"},{"id":49,"registrant":"Shane Deegan","referrer":"Brook Lee","date":"2026-07-02"},{"id":50,"registrant":"Steve Konetski","referrer":"Ryan Koontz","date":"2026-07-01"},{"id":51,"registrant":"Tammy Wooster","referrer":"Blaine Villafuerte","date":"2026-06-30"},{"id":52,"registrant":"Terri Firestein","referrer":"Ryan Berthelsen","date":"2026-06-24"},{"id":53,"registrant":"Tim Coach","referrer":"Brook Lee","date":"2026-07-02"},{"id":54,"registrant":"Tom Murphy","referrer":"Jennifer Hopkins","date":"2026-03-31"},{"id":55,"registrant":"Tony Hsieh","referrer":"Jamie Butler","date":"2026-05-28"},{"id":56,"registrant":"Wayne Jaggers","referrer":"Tim Smith","date":"2026-05-13"}],"breakdowns":{"ticketTypes":[{"name":"Summit Pass- Single ticket","count":26,"paid":2,"comp":24,"revenue":975},{"name":"BOGO - Buy One, Get One","count":25,"paid":8,"comp":17,"revenue":5200},{"name":"Early Bird","count":22,"paid":9,"comp":13,"revenue":3800},{"name":"Super Early Bird","count":12,"paid":8,"comp":4,"revenue":3900},{"name":"Premium: Summit Pass","count":4,"paid":0,"comp":4,"revenue":0},{"name":"Premium: Super Early Bird","count":2,"paid":2,"comp":0,"revenue":1300},{"name":"Premium: Early Bird","count":1,"paid":1,"comp":0,"revenue":650},{"name":"Unspecified","count":1,"paid":0,"comp":1,"revenue":0}],"discounts":[{"name":"REVGUEST-A","count":20,"cap":20,"remaining":0},{"name":"REVFAN100","count":8,"cap":15,"remaining":7},{"name":"SUMMITSPONSOR","count":6,"cap":null,"remaining":null},{"name":"VIP-REVGUEST","count":4,"cap":null,"remaining":null},{"name":"CAMREVSUMMIT","count":2,"cap":null,"remaining":null},{"name":"SUMMIT50","count":2,"cap":null,"remaining":null},{"name":"2BLONDES","count":1,"cap":null,"remaining":null},{"name":"REVGUEST-B","count":1,"cap":20,"remaining":19},{"name":"SUMMIT100","count":1,"cap":null,"remaining":null},{"name":"SUMMIT100VIIRTUE","count":1,"cap":null,"remaining":null}],"businessTypes":[{"name":"CSP / Telecom","count":55},{"name":"MSP","count":22},{"name":"Field Service Integrator (Alarm, Cabling, AV, Other)","count":7},{"name":"other, Vendor","count":4},{"name":"Consulting","count":3},{"name":"other, Software Provider","count":1},{"name":"Unspecified","count":1}],"jobRanks":[{"name":"C-Level","count":34},{"name":"Manager","count":25},{"name":"Director","count":16},{"name":"VP-Level","count":9},{"name":"Non-Manager","count":7},{"name":"Other","count":1},{"name":"Unspecified","count":1}],"departments":[{"name":"C-Suite","count":28},{"name":"Operations/Support","count":25},{"name":"Finance/Billing","count":19},{"name":"Sales/Marketing","count":10},{"name":"IT/Engineering","count":5},{"name":"Other","count":5},{"name":"Unspecified","count":1}],"companySizes":[{"name":"1–10","count":30},{"name":"51–250","count":28},{"name":"11–50","count":24},{"name":"250+","count":10},{"name":"Unspecified","count":1}],"states":[{"name":"FL","count":11},{"name":"NC","count":8},{"name":"GA","count":7},{"name":"MD","count":7},{"name":"TX","count":7},{"name":"MI","count":5},{"name":"IL","count":4},{"name":"MS","count":4},{"name":"NJ","count":4},{"name":"WA","count":4},{"name":"MN","count":3},{"name":"NY","count":3},{"name":"SC","count":3},{"name":"TN","count":3},{"name":"AL","count":2},{"name":"IA","count":2},{"name":"IN","count":2},{"name":"LA","count":2},{"name":"MO","count":2},{"name":"NE","count":2},{"name":"NV","count":2},{"name":"OH","count":2},{"name":"MA","count":1},{"name":"OK","count":1},{"name":"PA","count":1},{"name":"VT","count":1}],"hotel":[{"name":"Yes","count":79},{"name":"No","count":14}],"shirts":[{"name":"Extra Large (XL)","count":31},{"name":"2XL (XXL)","count":19},{"name":"Large (L)","count":19},{"name":"Medium (M)","count":12},{"name":"3XL (XXXL)","count":6},{"name":"Small (S)","count":5},{"name":"4XL (XXXXL)","count":1}],"topics":[{"name":"Business Growth, Strategy & Service Delivery","count":66},{"name":"Technology, AI & Innovation","count":66},{"name":"Customer Success & Experience","count":57},{"name":"PSA (service tickets, tech scheduling, inventory, quoting)","count":55},{"name":"Product & Platform Deep Dives","count":53},{"name":"Sales & Marketing","count":48},{"name":"Payment Processing (Accounts receivable, Accounts Payable)","count":47},{"name":"Communications Billing (Usage rating, Telecom Taxation)","count":46},{"name":"Industry & Regulatory Insights","count":30},{"name":"RMM (Remote Monitoring and Management)","count":17},{"name":"Women in Leadership","count":17}],"registrationsByMonth":[{"name":"Jul 2026","count":33},{"name":"Jun 2026","count":23},{"name":"May 2026","count":17},{"name":"Dec 2025","count":8},{"name":"Mar 2026","count":6},{"name":"Nov 2025","count":6}],"receptionPlans":[{"name":"Welcome Reception","count":88},{"name":"Networking Reception","count":83},{"name":"Not Attending Receptions","count":8}]}};</script>
+<script>
+const data = window.SUMMIT_DATA;
+const fmtMoney = (n) => (n < 0 ? '(' : '') + '$' + Math.abs(Math.round(n)).toLocaleString() + (n < 0 ? ')' : '');
+const fmtPct = (n, d) => d ? Math.round((n / d) * 100) + '%' : '0%';
+const top = (items, limit = 8) => [...items].slice(0, limit);
+const safe = (v) => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function card(label, value, note, progress) {
+  const width = Math.max(0, Math.min(100, progress || 0));
+  return '<article class="metric-card"><div class="metric-label">' + label + '</div><div class="metric-value">' + value + '</div><div class="metric-note">' + note + '</div><div class="bar-track"><div class="bar-fill" style="width:' + width + '%"></div></div></article>';
+}
+
+function bars(id, items, limit = 8) {
+  const max = Math.max(...items.map(i => i.count), 1);
+  document.getElementById(id).innerHTML = top(items, limit).map(i =>
+    '<div class="row-bar"><div class="row-name">' + safe(i.name) + '</div><div class="mini-track"><div class="mini-fill" style="width:' + ((i.count / max) * 100) + '%"></div></div><div class="row-count">' + i.count + '</div></div>'
+  ).join('');
+}
+
+function renderHome() {
+  const s = data.summary, g = data.goals;
+  document.getElementById('revenueCards').innerHTML = [
+    card('Total Revenue', fmtMoney(s.totalRevenue), fmtPct(s.totalRevenue, g.totalRevenue) + ' of ' + fmtMoney(g.totalRevenue), (s.totalRevenue / g.totalRevenue) * 100),
+    card('Ticket Revenue', fmtMoney(s.ticketRevenue), fmtPct(s.ticketRevenue, g.ticketRevenue) + ' of ' + fmtMoney(g.ticketRevenue), (s.ticketRevenue / g.ticketRevenue) * 100),
+    card('Sponsorship Revenue', fmtMoney(s.sponsorRevenue), 'Pending HubSpot sponsorship source', 0),
+    card('Projected Cost', fmtMoney(g.projectedCost), 'Net target ' + fmtMoney(g.netTarget), 100)
+  ].join('');
+  document.getElementById('registrationCards').innerHTML = [
+    card('Total Registrants', s.totalRegistrants, fmtPct(s.totalRegistrants, g.totalRegistrants) + ' of ' + g.totalRegistrants, (s.totalRegistrants / g.totalRegistrants) * 100),
+    card('Paid Tickets', s.paidTickets, fmtPct(s.paidTickets, g.paidTickets) + ' of ' + g.paidTickets, (s.paidTickets / g.paidTickets) * 100),
+    card('Comp Tickets', s.compTickets, s.fullCompTickets + ' full-discount tickets', Math.min(100, (s.compTickets / g.customerProspectComped) * 100)),
+    card('Unique Companies', s.uniqueCompanies, 'Current registered companies', Math.min(100, (s.uniqueCompanies / 100) * 100))
+  ].join('');
+  renderModelTable();
+  bars('businessTypes', data.breakdowns.businessTypes);
+  bars('departments', data.breakdowns.departments);
+  bars('jobRanks', data.breakdowns.jobRanks);
+  bars('registrationsByMonth', data.breakdowns.registrationsByMonth);
+}
+
+function renderModelTable() {
+  const s = data.summary, g = data.goals, a = data.actual2025;
+  const rows = [
+    ['Total Registrations', a.totalRegistrations, g.totalRegistrants, s.totalRegistrants, fmtPct(s.totalRegistrants, g.totalRegistrants)],
+    ['Staff Tickets', a.staffTickets, g.staffTickets, s.staffTickets, fmtPct(s.staffTickets, g.staffTickets)],
+    ['Customer/Prospect Registrations', a.customerProspectRegistrations, g.customerProspectRegistrations, s.customerProspectRegistrations, fmtPct(s.customerProspectRegistrations, g.customerProspectRegistrations)],
+    ['Customer/Prospect Paid', a.customerProspectPaid, g.customerProspectPaid, s.paidTickets, fmtPct(s.paidTickets, g.customerProspectPaid)],
+    ['Customer/Prospect Comped', a.customerProspectComped, g.customerProspectComped, s.compTickets, fmtPct(s.compTickets, g.customerProspectComped)],
+    ['Avg Paid Ticket Price', fmtMoney(a.avgTicketPrice), '$448 goal', fmtMoney(s.avgPaidTicket), ''],
+    ['Ticket Revenue', fmtMoney(a.ticketRevenue), fmtMoney(g.ticketRevenue), fmtMoney(s.ticketRevenue), fmtPct(s.ticketRevenue, g.ticketRevenue)],
+    ['Sponsor Tickets', a.sponsorTickets, g.sponsorPasses, s.sponsorPasses, fmtPct(s.sponsorPasses, g.sponsorPasses)],
+    ['# of Sponsors', a.sponsors, g.uniqueSponsors, 'Pending', ''],
+    ['Sponsorship Revenue', fmtMoney(a.sponsorshipRevenue), fmtMoney(g.sponsorRevenue), fmtMoney(s.sponsorRevenue), fmtPct(s.sponsorRevenue, g.sponsorRevenue)],
+    ['Total Revenue', fmtMoney(a.totalRevenue), fmtMoney(g.totalRevenue), fmtMoney(s.totalRevenue), fmtPct(s.totalRevenue, g.totalRevenue)],
+    ['Total Cost', fmtMoney(a.totalCost), fmtMoney(g.projectedCost), '--', '--'],
+    ['Net Profit (Loss)', fmtMoney(a.netProfit), fmtMoney(g.netTarget), '--', '--']
+  ];
+  document.getElementById('modelTable').innerHTML = '<thead><tr><th>Metric</th><th class="num">2025 Actuals</th><th class="num">2026 Goal</th><th class="num">2026 Current</th><th class="num">% to Goal</th></tr></thead><tbody>' +
+    rows.map(r => '<tr><td><strong>' + safe(r[0]) + '</strong></td><td class="num">' + r[1] + '</td><td class="num">' + r[2] + '</td><td class="num">' + r[3] + '</td><td class="num">' + r[4] + '</td></tr>').join('') +
+    '</tbody>';
+}
+
+function renderRegistrants() {
+  const s = data.summary, g = data.goals;
+  document.getElementById('registrantCards').innerHTML = [
+    card('Total Registrants', s.totalRegistrants, fmtPct(s.totalRegistrants, g.totalRegistrants) + ' to goal', (s.totalRegistrants / g.totalRegistrants) * 100),
+    card('Unique Companies', s.uniqueCompanies, 'Registered companies', Math.min(100, s.uniqueCompanies)),
+    card('Ticket Revenue', fmtMoney(s.ticketRevenue), fmtPct(s.ticketRevenue, g.ticketRevenue) + ' to goal', (s.ticketRevenue / g.ticketRevenue) * 100),
+    card('Hotel Rooms Needed', s.hotelRooms, 'Yes responses from registration', Math.min(100, (s.hotelRooms / s.totalRegistrants) * 100))
+  ].join('');
+  const ticketSelect = document.getElementById('ticketFilter');
+  ticketSelect.innerHTML = '<option value="">All ticket types</option>' + data.breakdowns.ticketTypes.map(i => '<option>' + safe(i.name) + '</option>').join('');
+  const companies = [...new Set(data.registrants.map(r => r.company))].sort((a,b) => a.localeCompare(b));
+  document.getElementById('companyFilter').innerHTML = '<option value="">All companies</option>' + companies.map(c => '<option>' + safe(c) + '</option>').join('');
+  document.getElementById('search').addEventListener('input', renderRegistrantTable);
+  ticketSelect.addEventListener('change', renderRegistrantTable);
+  document.getElementById('companyFilter').addEventListener('change', renderRegistrantTable);
+  renderRegistrantTable();
+  renderTicketTable();
+}
+
+function renderRegistrantTable() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const ticket = document.getElementById('ticketFilter').value;
+  const company = document.getElementById('companyFilter').value;
+  const rows = data.registrants.filter(r => {
+    const hay = [r.name, r.company, r.jobTitle, r.discountCode, r.referral].join(' ').toLowerCase();
+    return (!q || hay.includes(q)) && (!ticket || r.packageName === ticket) && (!company || r.company === company);
+  });
+  document.getElementById('registrantsTable').innerHTML =
+    '<thead><tr><th>Name</th><th>Company</th><th>Title</th><th>State</th><th>Registered</th><th>Referred By</th><th>Ticket</th><th class="num">Amount</th></tr></thead><tbody>' +
+    rows.map(r => '<tr><td><strong>' + safe(r.name) + '</strong></td><td>' + safe(r.company) + '</td><td>' + safe(r.jobTitle || '--') + '</td><td>' + safe(r.state || '--') + '</td><td>' + safe(r.dateLabel || '--') + '</td><td>' + (r.referral ? '<span class="pill">' + safe(r.referral) + '</span>' : '<span class="muted">--</span>') + '</td><td>' + safe(r.packageName) + (r.discountCode ? '<div class="muted">' + safe(r.discountCode) + '</div>' : '') + '</td><td class="num">' + (r.amount ? fmtMoney(r.amount) : '<span class="pill">Comp</span>') + '</td></tr>').join('') +
+    '</tbody>';
+}
+
+function renderTicketTable() {
+  document.getElementById('ticketTable').innerHTML =
+    '<thead><tr><th>Ticket Type</th><th class="num">Sold</th><th class="num">Paid</th><th class="num">Comp</th><th class="num">Revenue</th></tr></thead><tbody>' +
+    data.breakdowns.ticketTypes.map(r => '<tr><td><strong>' + safe(r.name) + '</strong></td><td class="num">' + r.count + '</td><td class="num">' + r.paid + '</td><td class="num">' + r.comp + '</td><td class="num">' + fmtMoney(r.revenue) + '</td></tr>').join('') +
+    '</tbody>';
+}
+
+function renderReferrals() {
+  const refs = data.referrals;
+  const leaderboard = {};
+  refs.forEach(r => leaderboard[r.referrer] = (leaderboard[r.referrer] || 0) + 1);
+  const ranked = Object.entries(leaderboard).map(([name, count]) => ({ name, count })).sort((a,b) => b.count - a.count || a.name.localeCompare(b.name));
+  document.getElementById('referralCards').innerHTML = [
+    card('Total Referrals', refs.length, 'Registrant referral field', Math.min(100, refs.length * 2)),
+    card('Unique Referrers', ranked.length, 'People credited', Math.min(100, ranked.length * 4)),
+    card('Current Leader', ranked[0] ? safe(ranked[0].name) : '--', ranked[0] ? ranked[0].count + ' referrals' : 'No referrals yet', ranked[0] ? 100 : 0),
+    card('Contest Deadline', 'Aug 21', 'Grand prize cutoff', 100)
+  ].join('');
+  document.getElementById('refLeaderboard').innerHTML = ranked.map((r, i) => '<div class="row-bar"><div class="row-name">' + (i + 1) + '. ' + safe(r.name) + '</div><div class="mini-track"><div class="mini-fill" style="width:' + ((r.count / Math.max(1, ranked[0]?.count || 1)) * 100) + '%"></div></div><div class="row-count">' + r.count + '</div></div>').join('');
+  document.getElementById('referralTable').innerHTML = '<thead><tr><th>Registrant</th><th>Referred By</th><th class="num">Date</th></tr></thead><tbody>' + refs.map(r => '<tr><td><strong>' + safe(r.registrant) + '</strong></td><td>' + safe(r.referrer) + '</td><td class="num">' + safe(r.date) + '</td></tr>').join('') + '</tbody>';
+  document.getElementById('discountCards').innerHTML = data.breakdowns.discounts.map(d => card(d.name, d.count, d.cap == null ? 'No cap set' : d.remaining + ' remaining of ' + d.cap, d.cap == null ? 100 : (d.count / d.cap) * 100)).join('');
+}
+
+const PACKAGES = [
+  ['Title Sponsor', 45000, 1, 10], ['Diamond Sponsor', 26000, 3, 6], ['Platinum Sponsor', 18000, 3, 4],
+  ['Gold Sponsor', 12000, 5, 3], ['Silver Sponsor', 9000, 4, 2], ['Bronze Sponsor', 6500, 4, 1],
+  ['Rookie Sponsor', 4500, 6, 1], ['Registration Sponsor', 7500, 2, 1], ['Mobile App Sponsor', 6500, 1, 1],
+  ['Custom / Barter', 0, 99, 0]
+];
+const DEFAULT_OUTREACH = [
+  ['Acronis','Title','Usman','Contacted','Platinum 2025'], ['Alianza','Rookie+','Usman','Contacted','Declined 2025'],
+  ['Altaworx','Emerald','Usman','Not Contacted','Gold 2025'], ['Crexendo','Learning Track','Christina','Meeting Scheduled','Platinum 2025'],
+  ['Pax8','Diamond Swap','Brook/Megan','Contacted',''], ['TaxConnex','Tier 2','Christina','Meeting Scheduled','Gold 2025'],
+  ['TRX Services','Platinum','Christina','Meeting Scheduled','Platinum 2025'], ['Wolters Kluwer','Diamond','Usman','Contacted','Diamond 2025'],
+  ['Cynomi','','Jake M.','Contacted',''], ['Pia','','Jake M.','Contacted','Sent prospectus']
+];
+
+function loadSponsors() {
+  try { return JSON.parse(localStorage.getItem('revio_client_summit_sponsors')) || []; } catch { return []; }
+}
+function saveSponsors(rows) { localStorage.setItem('revio_client_summit_sponsors', JSON.stringify(rows)); }
+function renderSponsorships() {
+  const rows = loadSponsors();
+  const revenue = rows.reduce((sum, r) => sum + r.price, 0);
+  const passes = rows.reduce((sum, r) => sum + r.passes, 0);
+  document.getElementById('sponsorCards').innerHTML = [
+    card('Signed Revenue', fmtMoney(revenue), fmtPct(revenue, data.goals.sponsorRevenue) + ' to sponsor goal', (revenue / data.goals.sponsorRevenue) * 100),
+    card('Signed Sponsors', rows.length, 'Stored in this browser', Math.min(100, rows.length * 4)),
+    card('Sponsor Passes', passes, fmtPct(passes, data.goals.sponsorPasses) + ' of pass goal', (passes / data.goals.sponsorPasses) * 100),
+    card('Remaining Goal', fmtMoney(Math.max(0, data.goals.sponsorRevenue - revenue)), 'Until HubSpot source is connected', 100)
+  ].join('');
+  document.getElementById('sponsorTable').innerHTML = '<thead><tr><th>Company</th><th>Package</th><th class="num">Revenue</th><th class="num">Passes</th><th></th></tr></thead><tbody>' +
+    (rows.length ? rows.map((r, i) => '<tr><td><strong>' + safe(r.company) + '</strong></td><td>' + safe(r.package) + '</td><td class="num">' + fmtMoney(r.price) + '</td><td class="num">' + r.passes + '</td><td class="num"><button onclick="removeSponsor(' + i + ')">Remove</button></td></tr>').join('') : '<tr><td colspan="5" class="muted">No signed sponsors added yet.</td></tr>') +
+    '</tbody>';
+}
+function removeSponsor(i) {
+  const rows = loadSponsors();
+  rows.splice(i, 1);
+  saveSponsors(rows);
+  renderSponsorships();
+}
+function setupSponsorForm() {
+  const select = document.getElementById('sponsorPackage');
+  select.innerHTML = '<option value="">Select package</option>' + PACKAGES.map(p => '<option value="' + safe(p.join('|')) + '">' + safe(p[0]) + ' - ' + fmtMoney(p[1]) + '</option>').join('');
+  document.getElementById('addSponsor').addEventListener('click', () => {
+    const company = document.getElementById('sponsorCompany').value.trim();
+    const value = select.value;
+    if (!company || !value) return;
+    const [pkg, price, , passes] = value.split('|');
+    const rows = loadSponsors();
+    rows.push({ company, package: pkg, price: Number(price), passes: Number(passes) });
+    saveSponsors(rows);
+    document.getElementById('sponsorCompany').value = '';
+    select.value = '';
+    renderSponsorships();
+  });
+}
+function renderOutreachAndPackages() {
+  const counts = DEFAULT_OUTREACH.reduce((acc, r) => (acc[r[3]] = (acc[r[3]] || 0) + 1, acc), {});
+  document.getElementById('outreachCards').innerHTML = ['Not Contacted','Contacted','Meeting Scheduled','Pending Contract'].map(k => card(k, counts[k] || 0, 'Prospects in tracker', Math.min(100, (counts[k] || 0) * 10))).join('');
+  document.getElementById('outreachTable').innerHTML = '<thead><tr><th>Company</th><th>Offer</th><th>Owner</th><th>Status</th><th>2025 Context</th></tr></thead><tbody>' + DEFAULT_OUTREACH.map(r => '<tr><td><strong>' + safe(r[0]) + '</strong></td><td>' + safe(r[1] || '--') + '</td><td>' + safe(r[2]) + '</td><td><span class="pill">' + safe(r[3]) + '</span></td><td>' + safe(r[4] || '--') + '</td></tr>').join('') + '</tbody>';
+  document.getElementById('packageTable').innerHTML = '<thead><tr><th>Package</th><th class="num">Price</th><th class="num">Qty Available</th><th class="num">Passes</th><th class="num">Potential</th></tr></thead><tbody>' + PACKAGES.filter(p => p[0] !== 'Custom / Barter').map(p => '<tr><td><strong>' + safe(p[0]) + '</strong></td><td class="num">' + fmtMoney(p[1]) + '</td><td class="num">' + p[2] + '</td><td class="num">' + p[3] + '</td><td class="num">' + fmtMoney(p[1] * p[2]) + '</td></tr>').join('') + '</tbody>';
+}
+
+document.querySelectorAll('.tab').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(btn.dataset.tab).classList.add('active');
+}));
+document.querySelectorAll('.subtab').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.subtab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.subpanel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(btn.dataset.subtab).classList.add('active');
+}));
+
+function unlock() {
+  if (document.getElementById('password').value === 'RevSummit2026') {
+    sessionStorage.setItem('summit_auth', 'true');
+    document.getElementById('gate').classList.add('hidden');
+    document.getElementById('app').classList.add('visible');
+  } else {
+    document.getElementById('gate-error').style.display = 'block';
+  }
+}
+document.getElementById('unlock').addEventListener('click', unlock);
+document.getElementById('password').addEventListener('keydown', e => { if (e.key === 'Enter') unlock(); });
+if (sessionStorage.getItem('summit_auth') === 'true') {
+  document.getElementById('gate').classList.add('hidden');
+  document.getElementById('app').classList.add('visible');
+}
+
+renderHome();
+renderRegistrants();
+renderReferrals();
+setupSponsorForm();
+renderSponsorships();
+renderOutreachAndPackages();
+document.getElementById('footer').textContent = 'Last updated: ' + new Date(data.generatedAt).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }) + ' · Source: ' + data.sourceFile + ' · Emails, phone numbers, and source user IDs excluded from dashboard build.';
+</script>
+</body>
+</html>
