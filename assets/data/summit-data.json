@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T18:00:22.256Z",
+  "generatedAt": "2026-07-27T18:15:21.787Z",
   "sourceFile": "me-registration-report-27962-154818---2ba3c48a-dfc9-4c94-906a-c8f3eae1ae3c.xlsx",
   "goals": {
     "totalRegistrants": 400,
@@ -44,8 +44,8 @@
     "staffTickets": 0,
     "sponsorPasses": 0,
     "ticketRevenue": 15825,
-    "sponsorRevenue": 0,
-    "totalRevenue": 15825,
+    "sponsorRevenue": 281487.5,
+    "totalRevenue": 297312.5,
     "avgPaidTicket": 528,
     "fullCompTickets": 63,
     "hotelRooms": 79,
@@ -2159,6 +2159,824 @@
       "date": "2026-05-13"
     }
   ],
+  "sponsorships": {
+    "sourceOpportunityType": "Summit Sponsorship",
+    "totalOpportunities": 66,
+    "uniqueCompanies": 66,
+    "totalAmount": 281487.5,
+    "wonAmount": 226487.5,
+    "openAmount": 55000,
+    "closedWon": 16,
+    "closedLost": 11,
+    "byStage": [
+      {
+        "name": "Closed Won",
+        "count": 16
+      },
+      {
+        "name": "1- Discovery Scheduled",
+        "count": 14
+      },
+      {
+        "name": "2 - Discovery Completed",
+        "count": 11
+      },
+      {
+        "name": "Closed Lost",
+        "count": 11
+      },
+      {
+        "name": "3 - Initial Product Demo",
+        "count": 6
+      },
+      {
+        "name": "6 - Verbal Commit",
+        "count": 5
+      },
+      {
+        "name": "4 - Proposal Sent",
+        "count": 3
+      }
+    ],
+    "byType": [
+      {
+        "name": "Rev.io Rookies (1st-Time)",
+        "count": 6
+      },
+      {
+        "name": "Session Sponsor",
+        "count": 4
+      },
+      {
+        "name": "Learning Track Sponsor",
+        "count": 2
+      },
+      {
+        "name": "Bronze",
+        "count": 1
+      },
+      {
+        "name": "Diamond",
+        "count": 1
+      },
+      {
+        "name": "Emerald",
+        "count": 1
+      },
+      {
+        "name": "Gold",
+        "count": 1
+      },
+      {
+        "name": "Mobile App Sponsor",
+        "count": 1
+      },
+      {
+        "name": "Platinum",
+        "count": 1
+      },
+      {
+        "name": "Registration Sponsor",
+        "count": 1
+      },
+      {
+        "name": "Silver",
+        "count": 1
+      },
+      {
+        "name": "Transportation",
+        "count": 1
+      }
+    ],
+    "opportunities": [
+      {
+        "opportunityName": "Acronis Summit Sponsorship 2026",
+        "company": "Acronis",
+        "stage": "6 - Verbal Commit",
+        "closeDate": "2026-08-31",
+        "amount": 14000,
+        "sponsorshipType": "Silver",
+        "sponsorshipPackage": "Emerald - VIP Dinner - $14,000",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Alianza Summit Sponsorship 2026",
+        "company": "Alianza",
+        "stage": "2 - Discovery Completed",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Augmentt Summit Sponsorship 2026",
+        "company": "Augmentt",
+        "stage": "1- Discovery Scheduled",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Avalara Summit Sponsorship 2026",
+        "company": "Avalara",
+        "stage": "6 - Verbal Commit",
+        "closeDate": "2026-08-31",
+        "amount": 10000,
+        "sponsorshipType": "Session Sponsor",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Bitdefender",
+        "company": "Bitdefender",
+        "stage": "2 - Discovery Completed",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Centric Summit Sponsorship 2026",
+        "company": "Centric Telecom, Inc.",
+        "stage": "1- Discovery Scheduled",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Ceretax Summit Sponsorship 2026",
+        "company": "CereTax",
+        "stage": "2 - Discovery Completed",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "CLA Summit Sponsorship 2026",
+        "company": "CLA",
+        "stage": "1- Discovery Scheduled",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Crexendo Summit Sponsorship 2026",
+        "company": "Crexendo Business Solutions",
+        "stage": "6 - Verbal Commit",
+        "closeDate": "2026-08-31",
+        "amount": 10000,
+        "sponsorshipType": "Session Sponsor",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Documo Summit Sponsorship 2026",
+        "company": "Documo",
+        "stage": "3 - Initial Product Demo",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Empath Summit Sponsorship 2026",
+        "company": "Empathmsp",
+        "stage": "2 - Discovery Completed",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Guardz Summit Sponsorship 2026",
+        "company": "Guardz",
+        "stage": "2 - Discovery Completed",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Huntress Summit Sponsorship 2026",
+        "company": "Huntress",
+        "stage": "1- Discovery Scheduled",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Inforcer Summit Sponsorship 2026",
+        "company": "Inforcer",
+        "stage": "1- Discovery Scheduled",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "JSitel Summit Sponsorship 2026",
+        "company": "Inteserra/JSI",
+        "stage": "Closed Won",
+        "closeDate": "2026-08-31",
+        "amount": 7125,
+        "sponsorshipType": "Registration Sponsor",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": true
+      },
+      {
+        "opportunityName": "Jenne Summit Sponsorship 2026",
+        "company": "Jenne",
+        "stage": "2 - Discovery Completed",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Mailprotector Summit Sponsorship 2026",
+        "company": "Mailprotector",
+        "stage": "2 - Discovery Completed",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Moovila Summit Sponsorship 2026",
+        "company": "Moovila",
+        "stage": "3 - Initial Product Demo",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "MSP Hub Summit Sponsorship 2026",
+        "company": "MSP Hub",
+        "stage": "2 - Discovery Completed",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Oculum Summit Sponsorship 2026",
+        "company": "Oculum",
+        "stage": "3 - Initial Product Demo",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Opentext Summit Sponsorship 2026",
+        "company": "OpenText",
+        "stage": "4 - Proposal Sent",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Pangea Summit Sponsorship 2026",
+        "company": "Pangea",
+        "stage": "1- Discovery Scheduled",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Petra Security Summit Sponsorship 2026",
+        "company": "Petra Security",
+        "stage": "1- Discovery Scheduled",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Rewst Summit Sponsorship 2026",
+        "company": "Rewst",
+        "stage": "1- Discovery Scheduled",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Walters Snelling Summit Sponsorship 2026",
+        "company": "Snellings Walters Insurance Agency",
+        "stage": "2 - Discovery Completed",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Stripe Summit Sponsorship 2026",
+        "company": "Stripe",
+        "stage": "1- Discovery Scheduled",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "TaleWind Summit Sponsorship 2026",
+        "company": "Talewind",
+        "stage": "1- Discovery Scheduled",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "TaxConnex Summit Sponsorship 2026",
+        "company": "TaxConnex",
+        "stage": "Closed Won",
+        "closeDate": "2026-08-31",
+        "amount": 12112.5,
+        "sponsorshipType": "Learning Track Sponsor",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": true
+      },
+      {
+        "opportunityName": "Telcloud",
+        "company": "TelCloud",
+        "stage": "1- Discovery Scheduled",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Telimatic Summit Sponsorship 2026",
+        "company": "Telimatic",
+        "stage": "3 - Initial Product Demo",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Telnyx Summit Sponsorship 2026",
+        "company": "Telnyx",
+        "stage": "1- Discovery Scheduled",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Business Growers Summit Sponsorship 2026",
+        "company": "The Business Growers",
+        "stage": "2 - Discovery Completed",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "The Connection Xchange Summit Sponsorship 2026",
+        "company": "The Connection Xchange",
+        "stage": "3 - Initial Product Demo",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "ThreatCaptain Summit Sponsorship 2026",
+        "company": "ThreatCaptain",
+        "stage": "4 - Proposal Sent",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "ThreatMate Summit Sponsorship 2026",
+        "company": "ThreatMate",
+        "stage": "1- Discovery Scheduled",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "TRX Summit Sponsorship 2026",
+        "company": "TRX Services",
+        "stage": "3 - Initial Product Demo",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Gold",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Verizon DTS Summit Sponsorship 2026",
+        "company": "Verizon",
+        "stage": "1- Discovery Scheduled",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "VoIPMS Summit Sponsorship 2026",
+        "company": "VoIP.ms",
+        "stage": "6 - Verbal Commit",
+        "closeDate": "2026-08-31",
+        "amount": 6000,
+        "sponsorshipType": "Transportation",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Voxtelesys Summit Sponsorship 2026",
+        "company": "Voxtelesys",
+        "stage": "2 - Discovery Completed",
+        "closeDate": "2026-08-31",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Summit Sponsorship",
+        "company": "Cytracom",
+        "stage": "4 - Proposal Sent",
+        "closeDate": "2026-07-31",
+        "amount": 7500,
+        "sponsorshipType": "Rev.io Rookies (1st-Time)",
+        "sponsorshipPackage": "Rev.io Rookies (1st-Time) - $7,500",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Summit Sponsorship",
+        "company": "Todyl",
+        "stage": "6 - Verbal Commit",
+        "closeDate": "2026-07-17",
+        "amount": 7500,
+        "sponsorshipType": "Rev.io Rookies (1st-Time)",
+        "sponsorshipPackage": "Rev.io Rookies (1st-Time) - $7,500",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Cavelo Summit Sponsorship 2026",
+        "company": "Cavelo Inc.",
+        "stage": "Closed Lost",
+        "closeDate": "2026-07-14",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "ScalePad Summit Sponsorship 2026",
+        "company": "ScalePad",
+        "stage": "Closed Lost",
+        "closeDate": "2026-07-08",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Cyberfox Summit Sponsorship 2026",
+        "company": "CyberFOX",
+        "stage": "Closed Lost",
+        "closeDate": "2026-07-02",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "N-Able Summit Sponsorship 2026",
+        "company": "N-able",
+        "stage": "Closed Lost",
+        "closeDate": "2026-07-01",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "NinjaOne Summit Sponsorship 2026",
+        "company": "NinjaOne",
+        "stage": "Closed Won",
+        "closeDate": "2026-07-01",
+        "amount": 26000,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": true
+      },
+      {
+        "opportunityName": "Sangoma Summit Sponsorship 2026",
+        "company": "Sangoma",
+        "stage": "Closed Won",
+        "closeDate": "2026-07-01",
+        "amount": 17500,
+        "sponsorshipType": "Session Sponsor",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": true
+      },
+      {
+        "opportunityName": "TaxTheta Summit Sponsorship 2026",
+        "company": "taxTheta",
+        "stage": "Closed Won",
+        "closeDate": "2026-07-01",
+        "amount": 12750,
+        "sponsorshipType": "Learning Track Sponsor",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": true
+      },
+      {
+        "opportunityName": "Wolters Kluwer Summit Sponsorship 2026",
+        "company": "Wolters Kluwer",
+        "stage": "Closed Won",
+        "closeDate": "2026-07-01",
+        "amount": 23750,
+        "sponsorshipType": "Platinum",
+        "sponsorshipPackage": "Platinum - Networking Reception - $25,000",
+        "isClosed": true,
+        "isWon": true
+      },
+      {
+        "opportunityName": "iReply Summit Sponsorship 2026",
+        "company": "Ireplyservices",
+        "stage": "Closed Won",
+        "closeDate": "2026-06-26",
+        "amount": 6000,
+        "sponsorshipType": "Rev.io Rookies (1st-Time)",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": true
+      },
+      {
+        "opportunityName": "Commio Summit Sponsorship 2026",
+        "company": "Commio",
+        "stage": "Closed Won",
+        "closeDate": "2026-06-19",
+        "amount": 7500,
+        "sponsorshipType": "Rev.io Rookies (1st-Time)",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": true
+      },
+      {
+        "opportunityName": "CCR KealyWalker Summit Sponsorship 2026",
+        "company": "CCR",
+        "stage": "Closed Won",
+        "closeDate": "2026-06-18",
+        "amount": 6000,
+        "sponsorshipType": "Rev.io Rookies (1st-Time)",
+        "sponsorshipPackage": "Rev.io Rookies (1st-Time) - $7,500",
+        "isClosed": true,
+        "isWon": true
+      },
+      {
+        "opportunityName": "Cynomi Summit Sponsorship 2026",
+        "company": "Cynomi",
+        "stage": "Closed Won",
+        "closeDate": "2026-06-18",
+        "amount": 17500,
+        "sponsorshipType": "Session Sponsor",
+        "sponsorshipPackage": "Rev.io Rookies (1st-Time) - $7,500",
+        "isClosed": true,
+        "isWon": true
+      },
+      {
+        "opportunityName": "EisnerAmper Summit Sponsorship 2026",
+        "company": "EisnerAmper",
+        "stage": "Closed Won",
+        "closeDate": "2026-06-18",
+        "amount": 14000,
+        "sponsorshipType": "Emerald",
+        "sponsorshipPackage": "Emerald - VIP Dinner - $14,000",
+        "isClosed": true,
+        "isWon": true
+      },
+      {
+        "opportunityName": "Liongard Summit Sponsorship 2026",
+        "company": "Liongard",
+        "stage": "Closed Won",
+        "closeDate": "2026-06-18",
+        "amount": 16000,
+        "sponsorshipType": "Bronze",
+        "sponsorshipPackage": "Bronze - Networking Breaks - $16,000",
+        "isClosed": true,
+        "isWon": true
+      },
+      {
+        "opportunityName": "Ooma Summit Sponsorship 2026",
+        "company": "Ooma",
+        "stage": "Closed Won",
+        "closeDate": "2026-06-18",
+        "amount": 7250,
+        "sponsorshipType": "Mobile App Sponsor",
+        "sponsorshipPackage": "Mobile App Sponsor - $6,500",
+        "isClosed": true,
+        "isWon": true
+      },
+      {
+        "opportunityName": "Pax8 Summit Sponsorship 2026",
+        "company": "Pax8",
+        "stage": "Closed Won",
+        "closeDate": "2026-06-18",
+        "amount": 30000,
+        "sponsorshipType": "Diamond",
+        "sponsorshipPackage": "Diamond - Welcome Reception - $30,000",
+        "isClosed": true,
+        "isWon": true
+      },
+      {
+        "opportunityName": "GTIA Summit Sponsorship",
+        "company": "GTIA",
+        "stage": "Closed Won",
+        "closeDate": "2026-06-12",
+        "amount": 5000,
+        "sponsorshipType": "Rev.io Rookies (1st-Time)",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": true
+      },
+      {
+        "opportunityName": "AiN Summit Sponsorship 2026",
+        "company": "AIN Group",
+        "stage": "Closed Lost",
+        "closeDate": "2026-06-09",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Altaworx Summit Sponsorship 2026",
+        "company": "Altaworx",
+        "stage": "Closed Lost",
+        "closeDate": "2026-06-09",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "AT&T Summit Sponsorship 2026",
+        "company": "AT&T Partner Exchange",
+        "stage": "Closed Lost",
+        "closeDate": "2026-06-09",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Great America Summit Sponsorship 2026",
+        "company": "Great America",
+        "stage": "Closed Won",
+        "closeDate": "2026-06-09",
+        "amount": 18000,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": true
+      },
+      {
+        "opportunityName": "Pia Summit Sponsorship 2026",
+        "company": "PIA Group",
+        "stage": "Closed Lost",
+        "closeDate": "2026-06-09",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Thread Summit Sponsorship 2026",
+        "company": "Thread",
+        "stage": "Closed Lost",
+        "closeDate": "2026-06-09",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "VoIPCX Summit Sponsorship 2026",
+        "company": "VoIPCX",
+        "stage": "Closed Lost",
+        "closeDate": "2026-06-09",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Yeastar Summit Sponsorship 2026",
+        "company": "Yeastar",
+        "stage": "Closed Lost",
+        "closeDate": "2026-06-09",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      }
+    ]
+  },
   "breakdowns": {
     "ticketTypes": [
       {

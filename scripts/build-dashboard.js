@@ -1,10 +1,14 @@
 const fs = require('fs');
+const https = require('https');
 const path = require('path');
 const ExcelJS = require('exceljs');
 
 const workbookPath = process.env.SUMMIT_XLSX || '/home/openclaw/.openclaw/media/inbound/me-registration-report-27962-154818---2ba3c48a-dfc9-4c94-906a-c8f3eae1ae3c.xlsx';
 const outDir = path.resolve(__dirname, '..');
 const dataDir = path.join(outDir, 'assets', 'data');
+const workspaceDir = path.resolve(outDir, '..');
+const API_VERSION = 'v59.0';
+const SPONSOR_OPPORTUNITY_TYPE = 'Summit Sponsorship';
 
 const GOALS = {
   totalRegistrants: 400,
@@ -50,6 +54,106 @@ const DISCOUNT_CAPS = {
   SUMMIT100VIIRTUE: null,
   CAMREVSUMMIT: null
 };
+
+function loadEnv() {
+  const envPath = path.join(workspaceDir, '.env');
+  if (!fs.existsSync(envPath)) return;
+
+  const env = fs.readFileSync(envPath, 'utf8');
+  for (const line of env.split('\n')) {
+    const [key, ...value] = line.split('=');
+    if (key && value.length && !process.env[key.trim()]) {
+      process.env[key.trim()] = value.join('=').trim();
+    }
+  }
+}
+
+function sfRequest({ method = 'GET', requestPath, token, body, headers = {} }) {
+  const instanceUrl = process.env.SF_INSTANCE_URL;
+  if (!instanceUrl) throw new Error('SF_INSTANCE_URL is not configured.');
+
+  return new Promise((resolve, reject) => {
+    const request = https.request({
+      hostname: new URL(instanceUrl).hostname,
+      path: requestPath,
+      method,
+      headers: {
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        ...headers
+      }
+    }, (response) => {
+      let data = '';
+      response.on('data', (chunk) => data += chunk);
+      response.on('end', () => {
+        let parsed = data;
+        try {
+          parsed = data ? JSON.parse(data) : null;
+        } catch {
+          // Preserve raw text for Salesforce diagnostic errors.
+        }
+
+        if (response.statusCode >= 400) {
+          const message = Array.isArray(parsed)
+            ? parsed.map((item) => item.message || item.errorCode).join('; ')
+            : parsed?.message || parsed?.error_description || data || `HTTP ${response.statusCode}`;
+          reject(new Error(message));
+          return;
+        }
+
+        resolve(parsed);
+      });
+    });
+
+    request.on('error', reject);
+    if (body) request.write(body);
+    request.end();
+  });
+}
+
+async function getSalesforceToken() {
+  loadEnv();
+  if (!process.env.SF_CLIENT_ID || !process.env.SF_CLIENT_SECRET || !process.env.SF_INSTANCE_URL) {
+    console.warn('Salesforce credentials not found; building without sponsorship opportunities.');
+    return null;
+  }
+
+  const body = new URLSearchParams({
+    grant_type: 'client_credentials',
+    client_id: process.env.SF_CLIENT_ID,
+    client_secret: process.env.SF_CLIENT_SECRET
+  }).toString();
+
+  const parsed = await sfRequest({
+    method: 'POST',
+    requestPath: '/services/oauth2/token',
+    body,
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Length': Buffer.byteLength(body)
+    }
+  });
+
+  return parsed.access_token;
+}
+
+async function sfQueryAll(token, soql) {
+  let result = await sfRequest({
+    token,
+    requestPath: `/services/data/${API_VERSION}/query?q=${encodeURIComponent(soql)}`
+  });
+  let records = result.records || [];
+
+  while (result.nextRecordsUrl) {
+    result = await sfRequest({ token, requestPath: result.nextRecordsUrl });
+    records = records.concat(result.records || []);
+  }
+
+  return records;
+}
+
+function soqlString(value) {
+  return String(value).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+}
 
 function valueOf(cell) {
   if (cell == null) return '';
@@ -210,7 +314,52 @@ async function loadWorkbookRows() {
   return rows.filter((row) => !/cancel/i.test(row.status));
 }
 
-function buildModel(rows) {
+async function loadSponsorshipOpportunities() {
+  const token = await getSalesforceToken();
+  if (!token) return [];
+
+  const records = await sfQueryAll(token, `
+    SELECT Id, Name, Account.Name, StageName, IsClosed, IsWon, CloseDate,
+           Sponsorship_Amount__c, Sponsorship_Type__c, Sponsorship_Package__c
+    FROM Opportunity
+    WHERE Type = '${soqlString(SPONSOR_OPPORTUNITY_TYPE)}'
+    ORDER BY CloseDate DESC, Account.Name ASC
+  `);
+
+  return records.map((record) => ({
+    opportunityName: record.Name || '',
+    company: record.Account?.Name || 'Unspecified',
+    stage: record.StageName || 'Unspecified',
+    closeDate: record.CloseDate || '',
+    amount: Number(record.Sponsorship_Amount__c || 0),
+    sponsorshipType: record.Sponsorship_Type__c || 'Unspecified',
+    sponsorshipPackage: record.Sponsorship_Package__c || '',
+    isClosed: Boolean(record.IsClosed),
+    isWon: Boolean(record.IsWon)
+  }));
+}
+
+function buildSponsorshipSummary(opportunities) {
+  const uniqueCompanies = new Set(opportunities.map((row) => row.company.toLowerCase()).filter((value) => value && value !== 'unspecified')).size;
+  const totalAmount = opportunities.reduce((sum, row) => sum + row.amount, 0);
+  const wonAmount = opportunities.filter((row) => row.isWon).reduce((sum, row) => sum + row.amount, 0);
+  const openAmount = opportunities.filter((row) => !row.isClosed).reduce((sum, row) => sum + row.amount, 0);
+
+  return {
+    sourceOpportunityType: SPONSOR_OPPORTUNITY_TYPE,
+    totalOpportunities: opportunities.length,
+    uniqueCompanies,
+    totalAmount,
+    wonAmount,
+    openAmount,
+    closedWon: opportunities.filter((row) => row.isWon).length,
+    closedLost: opportunities.filter((row) => row.isClosed && !row.isWon).length,
+    byStage: countBy(opportunities, (row) => row.stage),
+    byType: countBy(opportunities, (row) => row.sponsorshipType === 'Unspecified' ? null : row.sponsorshipType)
+  };
+}
+
+function buildModel(rows, sponsorshipOpportunities) {
   const uniqueCompanies = new Set(rows.map((row) => row.company.toLowerCase()).filter((v) => v && v !== 'unspecified')).size;
   const staffRows = rows.filter((row) => row.isStaff);
   const sponsorRows = rows.filter((row) => row.isSponsorPass);
@@ -218,6 +367,7 @@ function buildModel(rows) {
   const paidRows = customerRows.filter((row) => row.amount > 0);
   const compRows = customerRows.filter((row) => row.amount === 0);
   const ticketRevenue = rows.reduce((sum, row) => sum + row.amount, 0);
+  const sponsorshipSummary = buildSponsorshipSummary(sponsorshipOpportunities);
   const avgPaidTicket = paidRows.length ? Math.round(ticketRevenue / paidRows.length) : 0;
   const fullComps = rows.filter((row) => row.amount === 0 && (row.discountAmount >= row.packageAmount || row.discountCode));
   const referrals = rows.filter((row) => row.referral).map((row, index) => ({
@@ -262,8 +412,8 @@ function buildModel(rows) {
       staffTickets: staffRows.length,
       sponsorPasses: sponsorRows.length,
       ticketRevenue,
-      sponsorRevenue: 0,
-      totalRevenue: ticketRevenue,
+      sponsorRevenue: sponsorshipSummary.totalAmount,
+      totalRevenue: ticketRevenue + sponsorshipSummary.totalAmount,
       avgPaidTicket,
       fullCompTickets: fullComps.length,
       hotelRooms: rows.filter((row) => /^yes$/i.test(row.hotel)).length,
@@ -290,6 +440,10 @@ function buildModel(rows) {
       attendedBefore: row.attendedBefore
     })),
     referrals,
+    sponsorships: {
+      ...sponsorshipSummary,
+      opportunities: sponsorshipOpportunities
+    },
     breakdowns: {
       ticketTypes,
       discounts,
@@ -592,15 +746,14 @@ td { color: white; font-size: 13px; }
         <button class="subtab" data-subtab="packages">Packages & Pricing</button>
       </div>
       <div class="subpanel active" id="signed">
-        <h2 class="section-title">Signed Sponsors</h2>
+        <h2 class="section-title">Summit Sponsorship Opportunities</h2>
         <div class="metric-grid" id="sponsorCards"></div>
         <div class="chart-card">
-          <h3 class="chart-title">Local Sponsor Tracker</h3>
-          <p class="muted">Sponsors added here save in this browser until HubSpot sponsorship data is connected.</p>
+          <h3 class="chart-title">Salesforce Sponsor Tracker</h3>
           <div class="toolbar">
-            <input id="sponsorCompany" placeholder="Company">
-            <select id="sponsorPackage"></select>
-            <button class="action-button" id="addSponsor">Add Sponsor</button>
+            <input id="sponsorSearch" type="search" placeholder="Search company, opportunity, package">
+            <select id="sponsorStageFilter"><option value="">All stages</option></select>
+            <select id="sponsorTypeFilter"><option value="">All sponsorship types</option></select>
           </div>
           <div class="table-wrap"><table id="sponsorTable"></table></div>
         </div>
@@ -643,7 +796,7 @@ function renderHome() {
   document.getElementById('revenueCards').innerHTML = [
     card('Total Revenue', fmtMoney(s.totalRevenue), fmtPct(s.totalRevenue, g.totalRevenue) + ' of ' + fmtMoney(g.totalRevenue), (s.totalRevenue / g.totalRevenue) * 100),
     card('Ticket Revenue', fmtMoney(s.ticketRevenue), fmtPct(s.ticketRevenue, g.ticketRevenue) + ' of ' + fmtMoney(g.ticketRevenue), (s.ticketRevenue / g.ticketRevenue) * 100),
-    card('Sponsorship Revenue', fmtMoney(s.sponsorRevenue), 'Pending HubSpot sponsorship source', 0),
+    card('Sponsorship Revenue', fmtMoney(s.sponsorRevenue), fmtPct(s.sponsorRevenue, g.sponsorRevenue) + ' of ' + fmtMoney(g.sponsorRevenue), (s.sponsorRevenue / g.sponsorRevenue) * 100),
     card('Projected Cost', fmtMoney(g.projectedCost), 'Net target ' + fmtMoney(g.netTarget), 100)
   ].join('');
   document.getElementById('registrationCards').innerHTML = [
@@ -670,7 +823,7 @@ function renderModelTable() {
     ['Avg Paid Ticket Price', fmtMoney(a.avgTicketPrice), '$448 goal', fmtMoney(s.avgPaidTicket), ''],
     ['Ticket Revenue', fmtMoney(a.ticketRevenue), fmtMoney(g.ticketRevenue), fmtMoney(s.ticketRevenue), fmtPct(s.ticketRevenue, g.ticketRevenue)],
     ['Sponsor Tickets', a.sponsorTickets, g.sponsorPasses, s.sponsorPasses, fmtPct(s.sponsorPasses, g.sponsorPasses)],
-    ['# of Sponsors', a.sponsors, g.uniqueSponsors, 'Pending', ''],
+    ['# of Sponsors', a.sponsors, g.uniqueSponsors, data.sponsorships.uniqueCompanies, fmtPct(data.sponsorships.uniqueCompanies, g.uniqueSponsors)],
     ['Sponsorship Revenue', fmtMoney(a.sponsorshipRevenue), fmtMoney(g.sponsorRevenue), fmtMoney(s.sponsorRevenue), fmtPct(s.sponsorRevenue, g.sponsorRevenue)],
     ['Total Revenue', fmtMoney(a.totalRevenue), fmtMoney(g.totalRevenue), fmtMoney(s.totalRevenue), fmtPct(s.totalRevenue, g.totalRevenue)],
     ['Total Cost', fmtMoney(a.totalCost), fmtMoney(g.projectedCost), '--', '--'],
@@ -751,45 +904,36 @@ const DEFAULT_OUTREACH = [
   ['Cynomi','','Jake M.','Contacted',''], ['Pia','','Jake M.','Contacted','Sent prospectus']
 ];
 
-function loadSponsors() {
-  try { return JSON.parse(localStorage.getItem('revio_client_summit_sponsors')) || []; } catch { return []; }
-}
-function saveSponsors(rows) { localStorage.setItem('revio_client_summit_sponsors', JSON.stringify(rows)); }
 function renderSponsorships() {
-  const rows = loadSponsors();
-  const revenue = rows.reduce((sum, r) => sum + r.price, 0);
-  const passes = rows.reduce((sum, r) => sum + r.passes, 0);
+  const sponsorships = data.sponsorships;
+  const rows = filteredSponsorRows();
   document.getElementById('sponsorCards').innerHTML = [
-    card('Signed Revenue', fmtMoney(revenue), fmtPct(revenue, data.goals.sponsorRevenue) + ' to sponsor goal', (revenue / data.goals.sponsorRevenue) * 100),
-    card('Signed Sponsors', rows.length, 'Stored in this browser', Math.min(100, rows.length * 4)),
-    card('Sponsor Passes', passes, fmtPct(passes, data.goals.sponsorPasses) + ' of pass goal', (passes / data.goals.sponsorPasses) * 100),
-    card('Remaining Goal', fmtMoney(Math.max(0, data.goals.sponsorRevenue - revenue)), 'Until HubSpot source is connected', 100)
+    card('Sponsor Opp Amount', fmtMoney(sponsorships.totalAmount), fmtPct(sponsorships.totalAmount, data.goals.sponsorRevenue) + ' to sponsor goal', (sponsorships.totalAmount / data.goals.sponsorRevenue) * 100),
+    card('Closed Won Amount', fmtMoney(sponsorships.wonAmount), sponsorships.closedWon + ' closed won opps', (sponsorships.wonAmount / data.goals.sponsorRevenue) * 100),
+    card('Open Pipeline Amount', fmtMoney(sponsorships.openAmount), 'Open Summit Sponsorship opps', (sponsorships.openAmount / data.goals.sponsorRevenue) * 100),
+    card('Sponsor Opps', sponsorships.totalOpportunities, sponsorships.uniqueCompanies + ' unique companies', Math.min(100, (sponsorships.uniqueCompanies / data.goals.uniqueSponsors) * 100))
   ].join('');
-  document.getElementById('sponsorTable').innerHTML = '<thead><tr><th>Company</th><th>Package</th><th class="num">Revenue</th><th class="num">Passes</th><th></th></tr></thead><tbody>' +
-    (rows.length ? rows.map((r, i) => '<tr><td><strong>' + safe(r.company) + '</strong></td><td>' + safe(r.package) + '</td><td class="num">' + fmtMoney(r.price) + '</td><td class="num">' + r.passes + '</td><td class="num"><button onclick="removeSponsor(' + i + ')">Remove</button></td></tr>').join('') : '<tr><td colspan="5" class="muted">No signed sponsors added yet.</td></tr>') +
+  document.getElementById('sponsorTable').innerHTML = '<thead><tr><th>Company</th><th>Sponsorship Type</th><th>Package</th><th>Stage</th><th class="num">Close Date</th><th class="num">Amount</th></tr></thead><tbody>' +
+    (rows.length ? rows.map(r => '<tr><td><strong>' + safe(r.company) + '</strong><div class="muted">' + safe(r.opportunityName) + '</div></td><td>' + safe(r.sponsorshipType) + '</td><td>' + safe(r.sponsorshipPackage || '--') + '</td><td><span class="pill">' + safe(r.stage) + '</span></td><td class="num">' + safe(r.closeDate || '--') + '</td><td class="num">' + fmtMoney(r.amount) + '</td></tr>').join('') : '<tr><td colspan="6" class="muted">No Salesforce Summit Sponsorship opportunities found.</td></tr>') +
     '</tbody>';
 }
-function removeSponsor(i) {
-  const rows = loadSponsors();
-  rows.splice(i, 1);
-  saveSponsors(rows);
-  renderSponsorships();
-}
-function setupSponsorForm() {
-  const select = document.getElementById('sponsorPackage');
-  select.innerHTML = '<option value="">Select package</option>' + PACKAGES.map(p => '<option value="' + safe(p.join('|')) + '">' + safe(p[0]) + ' - ' + fmtMoney(p[1]) + '</option>').join('');
-  document.getElementById('addSponsor').addEventListener('click', () => {
-    const company = document.getElementById('sponsorCompany').value.trim();
-    const value = select.value;
-    if (!company || !value) return;
-    const [pkg, price, , passes] = value.split('|');
-    const rows = loadSponsors();
-    rows.push({ company, package: pkg, price: Number(price), passes: Number(passes) });
-    saveSponsors(rows);
-    document.getElementById('sponsorCompany').value = '';
-    select.value = '';
-    renderSponsorships();
+function filteredSponsorRows() {
+  const search = document.getElementById('sponsorSearch')?.value.toLowerCase() || '';
+  const stage = document.getElementById('sponsorStageFilter')?.value || '';
+  const type = document.getElementById('sponsorTypeFilter')?.value || '';
+  return data.sponsorships.opportunities.filter(r => {
+    const hay = [r.company, r.opportunityName, r.sponsorshipType, r.sponsorshipPackage, r.stage].join(' ').toLowerCase();
+    return (!search || hay.includes(search)) && (!stage || r.stage === stage) && (!type || r.sponsorshipType === type);
   });
+}
+function setupSponsorFilters() {
+  const stages = [...new Set(data.sponsorships.opportunities.map(r => r.stage))].sort((a,b) => a.localeCompare(b));
+  const types = [...new Set(data.sponsorships.opportunities.map(r => r.sponsorshipType).filter(t => t && t !== 'Unspecified'))].sort((a,b) => a.localeCompare(b));
+  document.getElementById('sponsorStageFilter').innerHTML = '<option value="">All stages</option>' + stages.map(v => '<option>' + safe(v) + '</option>').join('');
+  document.getElementById('sponsorTypeFilter').innerHTML = '<option value="">All sponsorship types</option>' + types.map(v => '<option>' + safe(v) + '</option>').join('');
+  document.getElementById('sponsorSearch').addEventListener('input', renderSponsorships);
+  document.getElementById('sponsorStageFilter').addEventListener('change', renderSponsorships);
+  document.getElementById('sponsorTypeFilter').addEventListener('change', renderSponsorships);
 }
 function renderOutreachAndPackages() {
   const counts = DEFAULT_OUTREACH.reduce((acc, r) => (acc[r[3]] = (acc[r[3]] || 0) + 1, acc), {});
@@ -814,10 +958,10 @@ document.querySelectorAll('.subtab').forEach(btn => btn.addEventListener('click'
 renderHome();
 renderRegistrants();
 renderReferrals();
-setupSponsorForm();
+setupSponsorFilters();
 renderSponsorships();
 renderOutreachAndPackages();
-document.getElementById('footer').textContent = 'Last updated: ' + new Date(data.generatedAt).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }) + ' · Source: ' + data.sourceFile + ' · Emails, phone numbers, and source user IDs excluded from dashboard build.';
+document.getElementById('footer').textContent = 'Last updated: ' + new Date(data.generatedAt).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }) + ' · Sources: ' + data.sourceFile + ' and Salesforce Opportunity Type = ' + data.sponsorships.sourceOpportunityType + ' · Emails, phone numbers, and source user IDs excluded from dashboard build.';
 </script>
 </body>
 </html>`;
@@ -826,10 +970,11 @@ document.getElementById('footer').textContent = 'Last updated: ' + new Date(data
 async function main() {
   fs.mkdirSync(dataDir, { recursive: true });
   const rows = await loadWorkbookRows();
-  const model = buildModel(rows);
+  const sponsorshipOpportunities = await loadSponsorshipOpportunities();
+  const model = buildModel(rows, sponsorshipOpportunities);
   fs.writeFileSync(path.join(dataDir, 'summit-data.json'), JSON.stringify(model, null, 2));
   fs.writeFileSync(path.join(outDir, 'index.html'), renderDashboard(model));
-  console.log(`Built dashboard with ${model.summary.totalRegistrants} registrants, ${model.summary.uniqueCompanies} companies, ${money(model.summary.ticketRevenue)} ticket revenue.`);
+  console.log(`Built dashboard with ${model.summary.totalRegistrants} registrants, ${model.summary.uniqueCompanies} companies, ${money(model.summary.ticketRevenue)} ticket revenue, and ${model.sponsorships.totalOpportunities} sponsor opps totaling ${money(model.sponsorships.totalAmount)}.`);
 }
 
 main().catch((error) => {
