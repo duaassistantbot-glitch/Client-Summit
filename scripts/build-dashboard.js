@@ -474,28 +474,36 @@ function renderDashboard(model) {
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
+  --ink-900: #0a141f;
+  --ink-850: #0c1925;
+  --ink-800: #0f1b2a;
+  --ink-700: #15283f;
   --navy: #1D3756;
   --navy-dark: #10243a;
   --navy-deep: #071726;
   --teal: #2399B5;
+  --cyan: #34bde5;
+  --cyan-soft: #7fd9ef;
+  --aurora-teal: #4fd1c5;
+  --aurora-lime: #c6f178;
   --green: #6EBE4F;
-  --blue: #3b82f6;
-  --red: #ef4444;
-  --yellow: #f4c542;
-  --card: rgba(29, 55, 86, 0.92);
-  --card-soft: rgba(35, 153, 181, 0.09);
-  --line: rgba(255, 255, 255, 0.12);
+  --card: rgba(15, 27, 42, 0.88);
+  --card-strong: rgba(21, 40, 63, 0.94);
+  --line: rgba(255, 255, 255, 0.11);
+  --line-strong: rgba(127, 217, 239, 0.24);
   --text: #FFFFFF;
-  --muted: #d6e2eb;
+  --muted: #b9c7d6;
+  --dim: #8ea3b9;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--navy-deep);
+  background: var(--ink-900);
   color: var(--text);
   font-family: "Open Sans", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 body::before {
   content: "";
@@ -503,17 +511,20 @@ body::before {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at 18% 12%, rgba(35,153,181,.24), transparent 34%),
-    radial-gradient(ellipse at 88% 8%, rgba(110,190,79,.16), transparent 31%),
-    linear-gradient(180deg, #091b2d 0%, #10243a 34%, #071726 100%);
+    linear-gradient(115deg, rgba(52,189,229,.16) 0%, transparent 34%),
+    linear-gradient(250deg, rgba(198,241,120,.12) 0%, transparent 38%),
+    linear-gradient(180deg, var(--ink-900) 0%, var(--ink-850) 42%, #060e18 100%);
 }
 .app { position: relative; z-index: 1; }
 .hero {
-  min-height: 270px;
+  position: relative;
+  min-height: 360px;
   display: grid;
   align-items: end;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(29,55,86,.55), rgba(7,23,38,.25));
+  background:
+    linear-gradient(180deg, rgba(10,20,31,.2), rgba(10,20,31,.96)),
+    radial-gradient(ellipse at 66% 16%, rgba(52,189,229,.22), transparent 34%);
 }
 .hero-art {
   position: absolute;
@@ -524,29 +535,61 @@ body::before {
 .hero-inner {
   width: min(1400px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 72px 0 30px;
+  padding: 82px 0 36px;
 }
 .eyebrow {
   display: inline-flex;
-  border: 1px solid rgba(110,190,79,.55);
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(127,217,239,.42);
   color: white;
-  background: rgba(110,190,79,.14);
+  background: rgba(52,189,229,.12);
   padding: 7px 13px;
   border-radius: 999px;
   font-size: 11px;
-  letter-spacing: 1.4px;
+  letter-spacing: 2.2px;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 700;
+}
+.eyebrow::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--cyan);
+  box-shadow: 0 0 0 4px rgba(52,189,229,.18), 0 0 16px rgba(52,189,229,.75);
 }
 h1, h2, h3 { font-family: Montserrat, "Open Sans", sans-serif; }
 .hero h1 {
-  margin: 18px 0 8px;
-  font-size: clamp(42px, 7vw, 84px);
-  line-height: .92;
+  max-width: 920px;
+  margin: 18px 0 12px;
+  font-size: clamp(44px, 7vw, 88px);
+  line-height: .96;
   letter-spacing: 0;
   text-transform: uppercase;
 }
-.hero-meta { color: white; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+.hero-subtitle {
+  margin: 0 0 16px;
+  color: white;
+  font-size: clamp(18px, 2.4vw, 30px);
+  font-weight: 700;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.hero-meta span {
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 999px;
+  background: rgba(10,20,31,.42);
+  padding: 8px 12px;
+  font-size: 12px;
+}
 .tabs {
   position: sticky;
   top: 0;
@@ -554,10 +597,12 @@ h1, h2, h3 { font-family: Montserrat, "Open Sans", sans-serif; }
   display: flex;
   justify-content: center;
   gap: 0;
-  background: rgba(16,36,58,.94);
-  border-bottom: 1px solid var(--line);
+  background: rgba(10,20,31,.9);
+  border-bottom: 1px solid var(--line-strong);
   backdrop-filter: blur(14px);
+  scrollbar-width: none;
 }
+.tabs::-webkit-scrollbar { display: none; }
 .tab {
   appearance: none;
   border: 0;
@@ -570,8 +615,9 @@ h1, h2, h3 { font-family: Montserrat, "Open Sans", sans-serif; }
   text-transform: uppercase;
   cursor: pointer;
 }
-.tab.active { color: white; border-bottom-color: var(--green); background: rgba(35,153,181,.12); }
-main { width: min(1400px, calc(100% - 40px)); margin: 0 auto; padding: 26px 0 42px; }
+.tab:hover { color: white; background: rgba(127,217,239,.08); }
+.tab.active { color: white; border-bottom-color: var(--cyan); background: rgba(52,189,229,.12); }
+main { width: min(1400px, calc(100% - 40px)); margin: 0 auto; padding: 34px 0 48px; }
 .panel { display: none; }
 .panel.active { display: block; }
 .section-title {
@@ -579,39 +625,42 @@ main { width: min(1400px, calc(100% - 40px)); margin: 0 auto; padding: 26px 0 42
   align-items: center;
   gap: 12px;
   margin: 34px 0 16px;
-  font-size: 15px;
-  letter-spacing: 1px;
+  color: white;
+  font-size: 13px;
+  letter-spacing: 2.2px;
   text-transform: uppercase;
 }
 .section-title:first-child { margin-top: 0; }
-.section-title::before { content: ""; width: 4px; height: 20px; border-radius: 2px; background: linear-gradient(var(--green), var(--teal)); }
-.section-title::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(110,190,79,.55), transparent); }
+.section-title::before { content: attr(data-num); color: var(--cyan); font-family: Montserrat, "Open Sans", sans-serif; font-size: 12px; font-weight: 800; }
+.section-title::after { content: ""; flex: 1; max-width: 120px; height: 1px; background: var(--line-strong); }
 .metric-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .metric-card, .chart-card {
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: linear-gradient(145deg, var(--card), rgba(16,36,58,.82));
-  box-shadow: 0 12px 28px rgba(0,0,0,.18);
+  background:
+    linear-gradient(145deg, rgba(21,40,63,.94), rgba(10,20,31,.82)),
+    linear-gradient(90deg, rgba(52,189,229,.08), rgba(110,190,79,.06));
+  box-shadow: 0 18px 36px rgba(0,0,0,.24);
 }
-.metric-card { padding: 18px; min-height: 132px; }
-.metric-label { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .8px; text-transform: uppercase; }
-.metric-value { margin-top: 8px; font-size: 34px; font-weight: 800; line-height: 1; }
+.metric-card { padding: 20px; min-height: 138px; }
+.metric-label { color: var(--cyan-soft); font-size: 11px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; }
+.metric-value { margin-top: 9px; font-family: Montserrat, "Open Sans", sans-serif; font-size: 36px; font-weight: 800; line-height: 1; overflow-wrap: anywhere; }
 .metric-note { margin-top: 10px; color: var(--muted); font-size: 12px; }
 .bar-track { height: 8px; margin-top: 16px; overflow: hidden; border-radius: 999px; background: rgba(255,255,255,.12); }
-.bar-fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--green), var(--teal)); }
+.bar-fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--aurora-lime), var(--cyan)); }
 .chart-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .chart-card { padding: 18px; }
 .chart-title { margin: 0 0 14px; font-size: 14px; text-transform: uppercase; letter-spacing: .8px; }
 .row-bar { display: grid; grid-template-columns: minmax(130px, 1fr) minmax(110px, 2fr) 42px; gap: 10px; align-items: center; margin: 10px 0; font-size: 13px; }
 .row-name { color: white; overflow-wrap: anywhere; }
 .mini-track { height: 8px; border-radius: 999px; background: rgba(255,255,255,.1); overflow: hidden; }
-.mini-fill { height: 100%; border-radius: inherit; background: var(--teal); }
+.mini-fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--cyan), var(--aurora-teal)); }
 .row-count { color: white; text-align: right; font-weight: 800; }
 .table-wrap {
   overflow: auto;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(16,36,58,.72);
+  background: rgba(10,20,31,.72);
 }
 table { width: 100%; border-collapse: collapse; min-width: 820px; }
 th, td { padding: 11px 13px; border-bottom: 1px solid rgba(255,255,255,.09); text-align: left; vertical-align: top; }
@@ -619,7 +668,7 @@ th {
   position: sticky;
   top: 0;
   color: white;
-  background: #1D3756;
+  background: #15283f;
   font-size: 11px;
   letter-spacing: .7px;
   text-transform: uppercase;
@@ -628,13 +677,13 @@ th {
 td { color: white; font-size: 13px; }
 .num { text-align: right; font-variant-numeric: tabular-nums; }
 .muted { color: var(--muted); }
-.pill { display: inline-flex; padding: 3px 9px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(35,153,181,.12); font-size: 11px; font-weight: 800; color: white; }
+.pill { display: inline-flex; padding: 3px 9px; border-radius: 999px; border: 1px solid rgba(127,217,239,.28); background: rgba(52,189,229,.12); font-size: 11px; font-weight: 800; color: white; }
 .toolbar { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
 .toolbar input, .toolbar select {
   min-height: 40px;
   border: 1px solid rgba(255,255,255,.16);
   border-radius: 8px;
-  background: rgba(7,23,38,.7);
+  background: rgba(10,20,31,.76);
   color: white;
   padding: 0 12px;
   font: inherit;
@@ -644,7 +693,7 @@ td { color: white; font-size: 13px; }
   min-height: 40px;
   border: 0;
   border-radius: 8px;
-  background: linear-gradient(135deg, var(--green), var(--teal));
+  background: linear-gradient(135deg, var(--aurora-lime), var(--cyan));
   color: white;
   padding: 0 18px;
   font: 800 13px "Open Sans", Arial, sans-serif;
@@ -663,7 +712,8 @@ td { color: white; font-size: 13px; }
   letter-spacing: .8px;
   cursor: pointer;
 }
-.subtab.active { color: white; border-bottom-color: var(--green); }
+.subtab:hover { color: white; background: rgba(127,217,239,.08); }
+.subtab.active { color: white; border-bottom-color: var(--cyan); }
 .subpanel { display: none; }
 .subpanel.active { display: block; }
 .footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; text-align: center; padding: 26px 20px 36px; position: relative; z-index: 1; }
@@ -672,27 +722,36 @@ td { color: white; font-size: 13px; }
   .tabs { overflow-x: auto; justify-content: flex-start; }
   .tab { white-space: nowrap; }
   main, .hero-inner { width: min(100% - 28px, 1400px); }
+  .hero { min-height: 330px; }
+  .hero-meta span { font-size: 11px; }
 }
 </style>
 </head>
 <body>
 <div class="app" id="app">
   <header class="hero">
-    <svg class="hero-art" viewBox="0 0 1400 300" preserveAspectRatio="none" aria-hidden="true">
+    <svg class="hero-art" viewBox="0 0 1400 420" preserveAspectRatio="none" aria-hidden="true">
       <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071726"/><stop offset=".55" stop-color="#1D3756"/><stop offset="1" stop-color="#2399B5"/></linearGradient>
-        <linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#285276"/><stop offset="1" stop-color="#071726"/></linearGradient>
+        <linearGradient id="summitSky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#060e18"/><stop offset=".52" stop-color="#15283f"/><stop offset="1" stop-color="#2399B5"/></linearGradient>
+        <linearGradient id="aurora" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#34bde5" stop-opacity=".03"/><stop offset=".45" stop-color="#4fd1c5" stop-opacity=".38"/><stop offset="1" stop-color="#c6f178" stop-opacity=".14"/></linearGradient>
+        <linearGradient id="farRidge" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#294b72"/><stop offset="1" stop-color="#0f1b2a"/></linearGradient>
+        <linearGradient id="nearRidge" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#1d3756"/><stop offset="1" stop-color="#060e18"/></linearGradient>
       </defs>
-      <rect width="1400" height="300" fill="url(#sky)"/>
-      <circle cx="1090" cy="80" r="140" fill="#6EBE4F" opacity=".08"/>
-      <path d="M0 230 L120 170 L230 195 L340 138 L460 178 L560 128 L680 168 L790 106 L920 160 L1030 118 L1160 178 L1280 132 L1400 168 L1400 300 L0 300Z" fill="url(#ridge)" opacity=".7"/>
-      <path d="M0 262 L170 230 L340 246 L520 218 L700 242 L870 210 L1060 238 L1230 214 L1400 236 L1400 300 L0 300Z" fill="#071726" opacity=".92"/>
-      <path d="M0 262 L170 230 L340 246 L520 218 L700 242 L870 210 L1060 238 L1230 214 L1400 236" fill="none" stroke="#6EBE4F" stroke-width="1" opacity=".35"/>
+      <rect width="1400" height="420" fill="url(#summitSky)"/>
+      <path d="M-40 84 C180 8 350 92 508 42 C674 -10 795 52 940 24 C1112 -9 1262 38 1440 4 L1440 176 C1262 198 1116 158 960 184 C780 216 662 146 502 196 C328 250 158 174 -40 244Z" fill="url(#aurora)" opacity=".9"/>
+      <g opacity=".58">
+        <circle cx="176" cy="74" r="1.6" fill="#f5f9ff"/><circle cx="328" cy="132" r="1.2" fill="#f5f9ff"/><circle cx="512" cy="76" r="1.4" fill="#f5f9ff"/><circle cx="746" cy="104" r="1.1" fill="#f5f9ff"/><circle cx="1018" cy="64" r="1.5" fill="#f5f9ff"/><circle cx="1212" cy="124" r="1.1" fill="#f5f9ff"/>
+      </g>
+      <path d="M0 296 L86 244 L172 270 L276 198 L372 246 L484 176 L596 250 L702 150 L816 238 L916 182 L1030 250 L1138 162 L1246 232 L1328 196 L1400 224 L1400 420 L0 420Z" fill="url(#farRidge)" opacity=".86"/>
+      <path d="M0 344 L126 298 L236 318 L354 254 L456 306 L570 232 L700 318 L842 218 L982 314 L1112 244 L1232 304 L1330 270 L1400 306 L1400 420 L0 420Z" fill="url(#nearRidge)" opacity=".96"/>
+      <path d="M0 344 L126 298 L236 318 L354 254 L456 306 L570 232 L700 318 L842 218 L982 314 L1112 244 L1232 304 L1330 270 L1400 306" fill="none" stroke="#7fd9ef" stroke-width="1.2" opacity=".34"/>
+      <path d="M0 382 C178 354 322 392 496 360 C660 330 808 384 960 352 C1146 312 1268 354 1400 328 L1400 420 L0 420Z" fill="#060e18" opacity=".82"/>
     </svg>
     <div class="hero-inner">
       <div class="eyebrow">Internal Team Dashboard</div>
       <h1>Rev.io Client Summit</h1>
-      <div class="hero-meta">September 1-3, 2026 &bull; Atlanta, GA</div>
+      <p class="hero-subtitle">Prepare for Tomorrow.</p>
+      <div class="hero-meta"><span>September 1-3, 2026</span><span>Atlanta, GA</span><span>Live registration + Salesforce sponsorship view</span></div>
     </div>
   </header>
   <nav class="tabs" aria-label="Dashboard sections">
@@ -703,13 +762,13 @@ td { color: white; font-size: 13px; }
   </nav>
   <main>
     <section class="panel active" id="home">
-      <h2 class="section-title">Revenue Goals</h2>
+      <h2 class="section-title" data-num="01">Revenue Goals</h2>
       <div class="metric-grid" id="revenueCards"></div>
-      <h2 class="section-title">Registration Goals</h2>
+      <h2 class="section-title" data-num="02">Registration Goals</h2>
       <div class="metric-grid" id="registrationCards"></div>
-      <h2 class="section-title">2025 Actuals vs 2026 Current</h2>
+      <h2 class="section-title" data-num="03">2025 Actuals vs 2026 Current</h2>
       <div class="table-wrap"><table id="modelTable"></table></div>
-      <h2 class="section-title">Audience Mix</h2>
+      <h2 class="section-title" data-num="04">Audience Mix</h2>
       <div class="chart-grid">
         <div class="chart-card"><h3 class="chart-title">Business Type</h3><div id="businessTypes"></div></div>
         <div class="chart-card"><h3 class="chart-title">Department</h3><div id="departments"></div></div>
@@ -718,7 +777,7 @@ td { color: white; font-size: 13px; }
       </div>
     </section>
     <section class="panel" id="registrants">
-      <h2 class="section-title">Registration Summary</h2>
+      <h2 class="section-title" data-num="01">Registration Summary</h2>
       <div class="metric-grid" id="registrantCards"></div>
       <div class="toolbar">
         <input id="search" type="search" placeholder="Search name, company, title, discount code">
@@ -726,17 +785,17 @@ td { color: white; font-size: 13px; }
         <select id="companyFilter"><option value="">All companies</option></select>
       </div>
       <div class="table-wrap"><table id="registrantsTable"></table></div>
-      <h2 class="section-title">Ticket Pricing</h2>
+      <h2 class="section-title" data-num="02">Ticket Pricing</h2>
       <div class="table-wrap"><table id="ticketTable"></table></div>
     </section>
     <section class="panel" id="referrals">
-      <h2 class="section-title">Referral Contest</h2>
+      <h2 class="section-title" data-num="01">Referral Contest</h2>
       <div class="metric-grid" id="referralCards"></div>
       <div class="chart-grid">
         <div class="chart-card"><h3 class="chart-title">Leaderboard</h3><div id="refLeaderboard"></div></div>
         <div class="chart-card"><h3 class="chart-title">Referral Log</h3><div class="table-wrap"><table id="referralTable"></table></div></div>
       </div>
-      <h2 class="section-title">Comp Ticket Allocation</h2>
+      <h2 class="section-title" data-num="02">Comp Ticket Allocation</h2>
       <div id="discountCards" class="metric-grid"></div>
     </section>
     <section class="panel" id="sponsorships">
@@ -746,7 +805,7 @@ td { color: white; font-size: 13px; }
         <button class="subtab" data-subtab="packages">Packages & Pricing</button>
       </div>
       <div class="subpanel active" id="signed">
-        <h2 class="section-title">Summit Sponsorship Opportunities</h2>
+        <h2 class="section-title" data-num="01">Summit Sponsorship Opportunities</h2>
         <div class="metric-grid" id="sponsorCards"></div>
         <div class="chart-card">
           <h3 class="chart-title">Salesforce Sponsor Tracker</h3>
@@ -759,12 +818,12 @@ td { color: white; font-size: 13px; }
         </div>
       </div>
       <div class="subpanel" id="outreach">
-        <h2 class="section-title">Outreach Tracker</h2>
+        <h2 class="section-title" data-num="02">Outreach Tracker</h2>
         <div class="metric-grid" id="outreachCards"></div>
         <div class="table-wrap"><table id="outreachTable"></table></div>
       </div>
       <div class="subpanel" id="packages">
-        <h2 class="section-title">Packages & Pricing</h2>
+        <h2 class="section-title" data-num="03">Packages & Pricing</h2>
         <div class="table-wrap"><table id="packageTable"></table></div>
       </div>
     </section>
@@ -794,7 +853,6 @@ function bars(id, items, limit = 8) {
 function renderHome() {
   const s = data.summary, g = data.goals;
   document.getElementById('revenueCards').innerHTML = [
-    card('Total Revenue', fmtMoney(s.totalRevenue), fmtPct(s.totalRevenue, g.totalRevenue) + ' of ' + fmtMoney(g.totalRevenue), (s.totalRevenue / g.totalRevenue) * 100),
     card('Ticket Revenue', fmtMoney(s.ticketRevenue), fmtPct(s.ticketRevenue, g.ticketRevenue) + ' of ' + fmtMoney(g.ticketRevenue), (s.ticketRevenue / g.ticketRevenue) * 100),
     card('Sponsorship Revenue', fmtMoney(s.sponsorRevenue), fmtPct(s.sponsorRevenue, g.sponsorRevenue) + ' of ' + fmtMoney(g.sponsorRevenue), (s.sponsorRevenue / g.sponsorRevenue) * 100)
   ].join('');
