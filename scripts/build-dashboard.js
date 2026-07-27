@@ -623,7 +623,7 @@ td { color: white; font-size: 13px; }
 const data = window.SUMMIT_DATA;
 const fmtMoney = (n) => (n < 0 ? '(' : '') + '$' + Math.abs(Math.round(n)).toLocaleString() + (n < 0 ? ')' : '');
 const fmtPct = (n, d) => d ? Math.round((n / d) * 100) + '%' : '0%';
-const top = (items, limit = 8) => [...items].slice(0, limit);
+const takeTop = (items, limit = 8) => [...items].slice(0, limit);
 const safe = (v) => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 function card(label, value, note, progress) {
@@ -633,7 +633,7 @@ function card(label, value, note, progress) {
 
 function bars(id, items, limit = 8) {
   const max = Math.max(...items.map(i => i.count), 1);
-  document.getElementById(id).innerHTML = top(items, limit).map(i =>
+  document.getElementById(id).innerHTML = takeTop(items, limit).map(i =>
     '<div class="row-bar"><div class="row-name">' + safe(i.name) + '</div><div class="mini-track"><div class="mini-fill" style="width:' + ((i.count / max) * 100) + '%"></div></div><div class="row-count">' + i.count + '</div></div>'
   ).join('');
 }
