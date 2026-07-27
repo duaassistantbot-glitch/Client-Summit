@@ -796,8 +796,7 @@ function renderHome() {
   document.getElementById('revenueCards').innerHTML = [
     card('Total Revenue', fmtMoney(s.totalRevenue), fmtPct(s.totalRevenue, g.totalRevenue) + ' of ' + fmtMoney(g.totalRevenue), (s.totalRevenue / g.totalRevenue) * 100),
     card('Ticket Revenue', fmtMoney(s.ticketRevenue), fmtPct(s.ticketRevenue, g.ticketRevenue) + ' of ' + fmtMoney(g.ticketRevenue), (s.ticketRevenue / g.ticketRevenue) * 100),
-    card('Sponsorship Revenue', fmtMoney(s.sponsorRevenue), fmtPct(s.sponsorRevenue, g.sponsorRevenue) + ' of ' + fmtMoney(g.sponsorRevenue), (s.sponsorRevenue / g.sponsorRevenue) * 100),
-    card('Projected Cost', fmtMoney(g.projectedCost), 'Net target ' + fmtMoney(g.netTarget), 100)
+    card('Sponsorship Revenue', fmtMoney(s.sponsorRevenue), fmtPct(s.sponsorRevenue, g.sponsorRevenue) + ' of ' + fmtMoney(g.sponsorRevenue), (s.sponsorRevenue / g.sponsorRevenue) * 100)
   ].join('');
   document.getElementById('registrationCards').innerHTML = [
     card('Total Registrants', s.totalRegistrants, fmtPct(s.totalRegistrants, g.totalRegistrants) + ' of ' + g.totalRegistrants, (s.totalRegistrants / g.totalRegistrants) * 100),
@@ -824,10 +823,7 @@ function renderModelTable() {
     ['Ticket Revenue', fmtMoney(a.ticketRevenue), fmtMoney(g.ticketRevenue), fmtMoney(s.ticketRevenue), fmtPct(s.ticketRevenue, g.ticketRevenue)],
     ['Sponsor Tickets', a.sponsorTickets, g.sponsorPasses, s.sponsorPasses, fmtPct(s.sponsorPasses, g.sponsorPasses)],
     ['# of Sponsors', a.sponsors, g.uniqueSponsors, data.sponsorships.uniqueCompanies, fmtPct(data.sponsorships.uniqueCompanies, g.uniqueSponsors)],
-    ['Sponsorship Revenue', fmtMoney(a.sponsorshipRevenue), fmtMoney(g.sponsorRevenue), fmtMoney(s.sponsorRevenue), fmtPct(s.sponsorRevenue, g.sponsorRevenue)],
-    ['Total Revenue', fmtMoney(a.totalRevenue), fmtMoney(g.totalRevenue), fmtMoney(s.totalRevenue), fmtPct(s.totalRevenue, g.totalRevenue)],
-    ['Total Cost', fmtMoney(a.totalCost), fmtMoney(g.projectedCost), '--', '--'],
-    ['Net Profit (Loss)', fmtMoney(a.netProfit), fmtMoney(g.netTarget), '--', '--']
+    ['Sponsorship Revenue', fmtMoney(a.sponsorshipRevenue), fmtMoney(g.sponsorRevenue), fmtMoney(s.sponsorRevenue), fmtPct(s.sponsorRevenue, g.sponsorRevenue)]
   ];
   document.getElementById('modelTable').innerHTML = '<thead><tr><th>Metric</th><th class="num">2025 Actuals</th><th class="num">2026 Goal</th><th class="num">2026 Current</th><th class="num">% to Goal</th></tr></thead><tbody>' +
     rows.map(r => '<tr><td><strong>' + safe(r[0]) + '</strong></td><td class="num">' + r[1] + '</td><td class="num">' + r[2] + '</td><td class="num">' + r[3] + '</td><td class="num">' + r[4] + '</td></tr>').join('') +
