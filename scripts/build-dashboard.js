@@ -3,7 +3,7 @@ const https = require('https');
 const path = require('path');
 const ExcelJS = require('exceljs');
 
-const workbookPath = process.env.SUMMIT_XLSX || '/home/openclaw/.openclaw/media/inbound/me-registration-report-27962-154818---2ba3c48a-dfc9-4c94-906a-c8f3eae1ae3c.xlsx';
+const workbookPath = process.env.SUMMIT_XLSX || '/home/openclaw/.openclaw/media/inbound/me-registration-report-28169-202545---b99379b9-624e-49d7-8057-6b7752f3270b.xlsx';
 const outDir = path.resolve(__dirname, '..');
 const dataDir = path.join(outDir, 'assets', 'data');
 const workspaceDir = path.resolve(outDir, '..');

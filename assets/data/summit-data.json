@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-27T18:36:12.626Z",
-  "sourceFile": "me-registration-report-27962-154818---2ba3c48a-dfc9-4c94-906a-c8f3eae1ae3c.xlsx",
+  "generatedAt": "2026-07-27T20:27:34.469Z",
+  "sourceFile": "me-registration-report-28169-202545---b99379b9-624e-49d7-8057-6b7752f3270b.xlsx",
   "goals": {
     "totalRegistrants": 400,
     "paidTickets": 165,
@@ -36,21 +36,21 @@
     "netCostPerAttendee": 373
   },
   "summary": {
-    "totalRegistrants": 93,
-    "uniqueCompanies": 54,
-    "customerProspectRegistrations": 93,
+    "totalRegistrants": 94,
+    "uniqueCompanies": 55,
+    "customerProspectRegistrations": 94,
     "paidTickets": 30,
-    "compTickets": 63,
+    "compTickets": 64,
     "staffTickets": 0,
     "sponsorPasses": 0,
     "ticketRevenue": 15825,
     "sponsorRevenue": 281487.5,
     "totalRevenue": 297312.5,
     "avgPaidTicket": 528,
-    "fullCompTickets": 63,
-    "hotelRooms": 79,
+    "fullCompTickets": 64,
+    "hotelRooms": 80,
     "attendedBefore": 48,
-    "referralCount": 56
+    "referralCount": 57
   },
   "registrants": [
     {
@@ -662,6 +662,25 @@
       "attendedBefore": "Yes"
     },
     {
+      "name": "Erica Carroll",
+      "company": "IPitomy",
+      "jobTitle": "Order Processing",
+      "state": "FL",
+      "dateLabel": "Jul 27, 2026",
+      "dateRegistered": "2026-07-27",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Non-Manager",
+      "department": "Operations/Support",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Ryan Burton",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "No"
+    },
+    {
       "name": "Felicia Turner",
       "company": "Centerpoint IT",
       "jobTitle": "VP",
@@ -947,25 +966,6 @@
       "attendedBefore": "No"
     },
     {
-      "name": "Kevin Brady",
-      "company": "Fuse.Cloud",
-      "jobTitle": "Director of Billing",
-      "state": "MS",
-      "dateLabel": "Jul 17, 2026",
-      "dateRegistered": "2026-07-17",
-      "businessType": "MSP",
-      "jobRank": "Director",
-      "department": "Finance/Billing",
-      "companySize": "11–50",
-      "packageName": "BOGO - Buy One, Get One",
-      "amount": 0,
-      "discountCode": "",
-      "referral": "",
-      "hotel": "Yes",
-      "shirtSize": "Large (L)",
-      "attendedBefore": "No"
-    },
-    {
       "name": "Kevin Durham",
       "company": "Centerpoint IT",
       "jobTitle": "Lead Manager",
@@ -982,6 +982,25 @@
       "referral": "Felicia Turner",
       "hotel": "No",
       "shirtSize": "2XL (XXL)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Kevin Brady",
+      "company": "Fuse.Cloud",
+      "jobTitle": "Director of Billing",
+      "state": "MS",
+      "dateLabel": "Jul 17, 2026",
+      "dateRegistered": "2026-07-17",
+      "businessType": "MSP",
+      "jobRank": "Director",
+      "department": "Finance/Billing",
+      "companySize": "11–50",
+      "packageName": "BOGO - Buy One, Get One",
+      "amount": 0,
+      "discountCode": "",
+      "referral": "",
+      "hotel": "Yes",
+      "shirtSize": "Large (L)",
       "attendedBefore": "No"
     },
     {
@@ -1194,25 +1213,6 @@
       "attendedBefore": "Yes"
     },
     {
-      "name": "Michael Rowland",
-      "company": "Truline Technologies",
-      "jobTitle": "President",
-      "state": "SC",
-      "dateLabel": "Mar 16, 2026",
-      "dateRegistered": "2026-03-16",
-      "businessType": "Field Service Integrator (Alarm, Cabling, AV, Other)",
-      "jobRank": "C-Level",
-      "department": "C-Suite",
-      "companySize": "1–10",
-      "packageName": "Early Bird",
-      "amount": 0,
-      "discountCode": "REVFAN100",
-      "referral": "",
-      "hotel": "Yes",
-      "shirtSize": "Extra Large (XL)",
-      "attendedBefore": "No"
-    },
-    {
       "name": "Michael Vicas",
       "company": "COEO Solutions",
       "jobTitle": "Billing Manager",
@@ -1230,6 +1230,25 @@
       "hotel": "Yes",
       "shirtSize": "Extra Large (XL)",
       "attendedBefore": "Yes"
+    },
+    {
+      "name": "Michael Rowland",
+      "company": "Truline Technologies",
+      "jobTitle": "President",
+      "state": "SC",
+      "dateLabel": "Mar 16, 2026",
+      "dateRegistered": "2026-03-16",
+      "businessType": "Field Service Integrator (Alarm, Cabling, AV, Other)",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "1–10",
+      "packageName": "Early Bird",
+      "amount": 0,
+      "discountCode": "REVFAN100",
+      "referral": "",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "No"
     },
     {
       "name": "Michelle Marin",
@@ -1536,25 +1555,6 @@
       "attendedBefore": "Yes"
     },
     {
-      "name": "Stephanie Parker",
-      "company": "Raven Tech LLC",
-      "jobTitle": "Admin Assistant",
-      "state": "NE",
-      "dateLabel": "Jun 11, 2026",
-      "dateRegistered": "2026-06-11",
-      "businessType": "MSP",
-      "jobRank": "Other",
-      "department": "Operations/Support",
-      "companySize": "1–10",
-      "packageName": "BOGO - Buy One, Get One",
-      "amount": 0,
-      "discountCode": "",
-      "referral": "",
-      "hotel": "Yes",
-      "shirtSize": "Extra Large (XL)",
-      "attendedBefore": "No"
-    },
-    {
       "name": "Stephanie Kern",
       "company": "Decibel",
       "jobTitle": "Director of Sales",
@@ -1572,6 +1572,25 @@
       "hotel": "No",
       "shirtSize": "Medium (M)",
       "attendedBefore": "Yes"
+    },
+    {
+      "name": "Stephanie Parker",
+      "company": "Raven Tech LLC",
+      "jobTitle": "Admin Assistant",
+      "state": "NE",
+      "dateLabel": "Jun 11, 2026",
+      "dateRegistered": "2026-06-11",
+      "businessType": "MSP",
+      "jobRank": "Other",
+      "department": "Operations/Support",
+      "companySize": "1–10",
+      "packageName": "BOGO - Buy One, Get One",
+      "amount": 0,
+      "discountCode": "",
+      "referral": "",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "No"
     },
     {
       "name": "Steve Konetski",
@@ -1688,25 +1707,6 @@
       "attendedBefore": "No"
     },
     {
-      "name": "Tom McDonnell",
-      "company": "Ten4",
-      "jobTitle": "Vice President, Operations",
-      "state": "NJ",
-      "dateLabel": "May 18, 2026",
-      "dateRegistered": "2026-05-18",
-      "businessType": "CSP / Telecom",
-      "jobRank": "VP-Level",
-      "department": "Operations/Support",
-      "companySize": "51–250",
-      "packageName": "Early Bird",
-      "amount": 0,
-      "discountCode": "REVFAN100",
-      "referral": "",
-      "hotel": "Yes",
-      "shirtSize": "Medium (M)",
-      "attendedBefore": "Yes"
-    },
-    {
       "name": "Tom Murphy",
       "company": "TailWind Voice & Data",
       "jobTitle": "Senior Vice President",
@@ -1726,23 +1726,23 @@
       "attendedBefore": "Yes"
     },
     {
-      "name": "Tony Hsieh",
-      "company": "C1st Technologies",
-      "jobTitle": "Partner",
-      "state": "WA",
-      "dateLabel": "May 28, 2026",
-      "dateRegistered": "2026-05-28",
-      "businessType": "MSP",
-      "jobRank": "C-Level",
-      "department": "C-Suite",
-      "companySize": "11–50",
+      "name": "Tom McDonnell",
+      "company": "Ten4",
+      "jobTitle": "Vice President, Operations",
+      "state": "NJ",
+      "dateLabel": "May 18, 2026",
+      "dateRegistered": "2026-05-18",
+      "businessType": "CSP / Telecom",
+      "jobRank": "VP-Level",
+      "department": "Operations/Support",
+      "companySize": "51–250",
       "packageName": "Early Bird",
       "amount": 0,
-      "discountCode": "REVGUEST-A",
-      "referral": "Jamie Butler",
+      "discountCode": "REVFAN100",
+      "referral": "",
       "hotel": "Yes",
-      "shirtSize": "2XL (XXL)",
-      "attendedBefore": "No"
+      "shirtSize": "Medium (M)",
+      "attendedBefore": "Yes"
     },
     {
       "name": "Tony Sams",
@@ -1761,6 +1761,25 @@
       "referral": "",
       "hotel": "Yes",
       "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Tony Hsieh",
+      "company": "C1st Technologies",
+      "jobTitle": "Partner",
+      "state": "WA",
+      "dateLabel": "May 28, 2026",
+      "dateRegistered": "2026-05-28",
+      "businessType": "MSP",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "11–50",
+      "packageName": "Early Bird",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Jamie Butler",
+      "hotel": "Yes",
+      "shirtSize": "2XL (XXL)",
       "attendedBefore": "No"
     },
     {
@@ -1956,204 +1975,210 @@
     },
     {
       "id": 23,
+      "registrant": "Erica Carroll",
+      "referrer": "Ryan Burton",
+      "date": "2026-07-27"
+    },
+    {
+      "id": 24,
       "registrant": "Frank Kadaf",
       "referrer": "Cam Sharpe-money",
       "date": "2026-05-19"
     },
     {
-      "id": 24,
+      "id": 25,
       "registrant": "Frank Rubiano",
       "referrer": "Jamie Butler",
       "date": "2026-06-04"
     },
     {
-      "id": 25,
+      "id": 26,
       "registrant": "Gregory Marchand",
       "referrer": "Jamie Butler",
       "date": "2026-05-28"
     },
     {
-      "id": 26,
+      "id": 27,
       "registrant": "Ismael Adames",
       "referrer": "Jeremy Adams",
       "date": "2026-07-09"
     },
     {
-      "id": 27,
+      "id": 28,
       "registrant": "James Mace",
       "referrer": "Rachael Buchtan",
       "date": "2026-07-20"
     },
     {
-      "id": 28,
+      "id": 29,
       "registrant": "Jared Downs",
       "referrer": "Brook Lee",
       "date": "2026-07-02"
     },
     {
-      "id": 29,
+      "id": 30,
       "registrant": "Jennifer Torre",
       "referrer": "Christina Oudin",
       "date": "2026-07-21"
     },
     {
-      "id": 30,
+      "id": 31,
       "registrant": "Jordan Grindell",
       "referrer": "Justin Lee",
       "date": "2026-06-24"
     },
     {
-      "id": 31,
+      "id": 32,
       "registrant": "Joshua Faw",
       "referrer": "Connor Flynn",
       "date": "2026-07-17"
     },
     {
-      "id": 32,
+      "id": 33,
       "registrant": "Kevin Durham",
       "referrer": "Felicia Turner",
       "date": "2026-07-21"
     },
     {
-      "id": 33,
+      "id": 34,
       "registrant": "Kristen Addonizio",
       "referrer": "Ryan Burton",
       "date": "2026-06-30"
     },
     {
-      "id": 34,
+      "id": 35,
       "registrant": "Lance Schueneman",
       "referrer": "Andrew Whisenant",
       "date": "2025-12-29"
     },
     {
-      "id": 35,
+      "id": 36,
       "registrant": "Lenny Ljungholm",
       "referrer": "Justin Lee",
       "date": "2026-07-20"
     },
     {
-      "id": 36,
+      "id": 37,
       "registrant": "Mark Geier",
       "referrer": "Katerra Stephenson-Greenwood",
       "date": "2026-07-20"
     },
     {
-      "id": 37,
+      "id": 38,
       "registrant": "Mark Fleeger",
       "referrer": "Jacob Willimas",
       "date": "2026-07-02"
     },
     {
-      "id": 38,
+      "id": 39,
       "registrant": "Mark Bortz",
       "referrer": "Justin Lee",
       "date": "2026-07-15"
     },
     {
-      "id": 39,
+      "id": 40,
       "registrant": "Matthew Schiavetta",
       "referrer": "Brook Lee",
       "date": "2026-07-02"
     },
     {
-      "id": 40,
+      "id": 41,
       "registrant": "Michael Vicas",
       "referrer": "Ryan Burton",
       "date": "2026-06-19"
     },
     {
-      "id": 41,
+      "id": 42,
       "registrant": "Monica Theriot-Habetz",
       "referrer": "Monica Theriot-Habetz",
       "date": "2026-06-30"
     },
     {
-      "id": 42,
+      "id": 43,
       "registrant": "Nic Carpenter",
       "referrer": "Ben Sims",
       "date": "2026-07-17"
     },
     {
-      "id": 43,
+      "id": 44,
       "registrant": "Patricia Diggins",
       "referrer": "Jakob Champion",
       "date": "2026-07-16"
     },
     {
-      "id": 44,
+      "id": 45,
       "registrant": "Raylind Touchstone",
       "referrer": "N/A N/A",
       "date": "2025-12-30"
     },
     {
-      "id": 45,
+      "id": 46,
       "registrant": "Robert Guidry",
       "referrer": "Ryan Koontz",
       "date": "2026-06-30"
     },
     {
-      "id": 46,
+      "id": 47,
       "registrant": "Rose Page",
       "referrer": "Ingrid Beard",
       "date": "2026-06-29"
     },
     {
-      "id": 47,
+      "id": 48,
       "registrant": "Sanjeev Tirunagaram",
       "referrer": "Ryan Burton",
       "date": "2026-07-02"
     },
     {
-      "id": 48,
+      "id": 49,
       "registrant": "Scott Williams",
       "referrer": "Felicia Turner",
       "date": "2026-07-21"
     },
     {
-      "id": 49,
+      "id": 50,
       "registrant": "Shane Deegan",
       "referrer": "Brook Lee",
       "date": "2026-07-02"
     },
     {
-      "id": 50,
+      "id": 51,
       "registrant": "Steve Konetski",
       "referrer": "Ryan Koontz",
       "date": "2026-07-01"
     },
     {
-      "id": 51,
+      "id": 52,
       "registrant": "Tammy Wooster",
       "referrer": "Blaine Villafuerte",
       "date": "2026-06-30"
     },
     {
-      "id": 52,
+      "id": 53,
       "registrant": "Terri Firestein",
       "referrer": "Ryan Berthelsen",
       "date": "2026-06-24"
     },
     {
-      "id": 53,
+      "id": 54,
       "registrant": "Tim Coach",
       "referrer": "Brook Lee",
       "date": "2026-07-02"
     },
     {
-      "id": 54,
+      "id": 55,
       "registrant": "Tom Murphy",
       "referrer": "Jennifer Hopkins",
       "date": "2026-03-31"
     },
     {
-      "id": 55,
+      "id": 56,
       "registrant": "Tony Hsieh",
       "referrer": "Jamie Butler",
       "date": "2026-05-28"
     },
     {
-      "id": 56,
+      "id": 57,
       "registrant": "Wayne Jaggers",
       "referrer": "Tim Smith",
       "date": "2026-05-13"
@@ -2981,9 +3006,9 @@
     "ticketTypes": [
       {
         "name": "Summit Pass- Single ticket",
-        "count": 26,
+        "count": 27,
         "paid": 2,
-        "comp": 24,
+        "comp": 25,
         "revenue": 975
       },
       {
@@ -3039,7 +3064,7 @@
     "discounts": [
       {
         "name": "REVGUEST-A",
-        "count": 20,
+        "count": 21,
         "cap": 20,
         "remaining": 0
       },
@@ -3101,7 +3126,7 @@
     "businessTypes": [
       {
         "name": "CSP / Telecom",
-        "count": 55
+        "count": 56
       },
       {
         "name": "MSP",
@@ -3147,7 +3172,7 @@
       },
       {
         "name": "Non-Manager",
-        "count": 7
+        "count": 8
       },
       {
         "name": "Other",
@@ -3165,7 +3190,7 @@
       },
       {
         "name": "Operations/Support",
-        "count": 25
+        "count": 26
       },
       {
         "name": "Finance/Billing",
@@ -3199,7 +3224,7 @@
       },
       {
         "name": "11–50",
-        "count": 24
+        "count": 25
       },
       {
         "name": "250+",
@@ -3213,7 +3238,7 @@
     "states": [
       {
         "name": "FL",
-        "count": 11
+        "count": 12
       },
       {
         "name": "NC",
@@ -3319,7 +3344,7 @@
     "hotel": [
       {
         "name": "Yes",
-        "count": 79
+        "count": 80
       },
       {
         "name": "No",
@@ -3329,7 +3354,7 @@
     "shirts": [
       {
         "name": "Extra Large (XL)",
-        "count": 31
+        "count": 32
       },
       {
         "name": "2XL (XXL)",
@@ -3367,7 +3392,7 @@
       },
       {
         "name": "Customer Success & Experience",
-        "count": 57
+        "count": 58
       },
       {
         "name": "PSA (service tickets, tech scheduling, inventory, quoting)",
@@ -3382,12 +3407,12 @@
         "count": 48
       },
       {
-        "name": "Payment Processing (Accounts receivable, Accounts Payable)",
+        "name": "Communications Billing (Usage rating, Telecom Taxation)",
         "count": 47
       },
       {
-        "name": "Communications Billing (Usage rating, Telecom Taxation)",
-        "count": 46
+        "name": "Payment Processing (Accounts receivable, Accounts Payable)",
+        "count": 47
       },
       {
         "name": "Industry & Regulatory Insights",
@@ -3405,7 +3430,7 @@
     "registrationsByMonth": [
       {
         "name": "Jul 2026",
-        "count": 33
+        "count": 34
       },
       {
         "name": "Jun 2026",
@@ -3431,11 +3456,11 @@
     "receptionPlans": [
       {
         "name": "Welcome Reception",
-        "count": 88
+        "count": 89
       },
       {
         "name": "Networking Reception",
-        "count": 83
+        "count": 84
       },
       {
         "name": "Not Attending Receptions",
