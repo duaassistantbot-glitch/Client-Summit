@@ -353,50 +353,7 @@ body::before {
     radial-gradient(ellipse at 88% 8%, rgba(110,190,79,.16), transparent 31%),
     linear-gradient(180deg, #091b2d 0%, #10243a 34%, #071726 100%);
 }
-.gate {
-  position: fixed;
-  inset: 0;
-  z-index: 20;
-  display: grid;
-  place-items: center;
-  padding: 24px;
-  background: linear-gradient(135deg, #071726, #1D3756);
-}
-.gate.hidden { display: none; }
-.gate-box {
-  width: min(420px, 100%);
-  padding: 34px;
-  border: 1px solid rgba(255,255,255,.16);
-  border-radius: 8px;
-  background: rgba(29,55,86,.94);
-  box-shadow: 0 24px 70px rgba(0,0,0,.42);
-}
-.gate-brand { font-family: Montserrat, sans-serif; color: var(--green); text-transform: uppercase; letter-spacing: 2px; font-size: 12px; font-weight: 800; }
-.gate h1 { margin: 10px 0 8px; font-family: Montserrat, sans-serif; font-size: 26px; }
-.gate p { margin: 0 0 22px; color: var(--muted); }
-.gate input, .gate button {
-  width: 100%;
-  height: 46px;
-  border-radius: 8px;
-  font: inherit;
-}
-.gate input {
-  border: 1px solid rgba(255,255,255,.18);
-  padding: 0 14px;
-  color: white;
-  background: rgba(7,23,38,.7);
-}
-.gate button {
-  margin-top: 12px;
-  border: 0;
-  color: white;
-  background: linear-gradient(135deg, var(--green), var(--teal));
-  font-weight: 800;
-  cursor: pointer;
-}
-.gate-error { display: none; margin-top: 10px; color: #ffb4b4; font-size: 13px; }
-.app { display: none; position: relative; z-index: 1; }
-.app.visible { display: block; }
+.app { position: relative; z-index: 1; }
 .hero {
   min-height: 270px;
   display: grid;
@@ -565,16 +522,6 @@ td { color: white; font-size: 13px; }
 </style>
 </head>
 <body>
-<div class="gate" id="gate">
-  <div class="gate-box">
-    <div class="gate-brand">Rev.io Summit 2026</div>
-    <h1>Internal Dashboard</h1>
-    <p>Enter the team password to continue.</p>
-    <input id="password" type="password" placeholder="Password" autocomplete="current-password">
-    <button id="unlock">Access Dashboard</button>
-    <div class="gate-error" id="gate-error">Incorrect password. Please try again.</div>
-  </div>
-</div>
 <div class="app" id="app">
   <header class="hero">
     <svg class="hero-art" viewBox="0 0 1400 300" preserveAspectRatio="none" aria-hidden="true">
@@ -863,22 +810,6 @@ document.querySelectorAll('.subtab').forEach(btn => btn.addEventListener('click'
   btn.classList.add('active');
   document.getElementById(btn.dataset.subtab).classList.add('active');
 }));
-
-function unlock() {
-  if (document.getElementById('password').value === 'RevSummit2026') {
-    sessionStorage.setItem('summit_auth', 'true');
-    document.getElementById('gate').classList.add('hidden');
-    document.getElementById('app').classList.add('visible');
-  } else {
-    document.getElementById('gate-error').style.display = 'block';
-  }
-}
-document.getElementById('unlock').addEventListener('click', unlock);
-document.getElementById('password').addEventListener('keydown', e => { if (e.key === 'Enter') unlock(); });
-if (sessionStorage.getItem('summit_auth') === 'true') {
-  document.getElementById('gate').classList.add('hidden');
-  document.getElementById('app').classList.add('visible');
-}
 
 renderHome();
 renderRegistrants();
