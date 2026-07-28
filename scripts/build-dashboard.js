@@ -762,10 +762,10 @@ td { color: white; font-size: 13px; }
   </nav>
   <main>
     <section class="panel active" id="home">
-      <h2 class="section-title" data-num="01">Revenue Goals</h2>
-      <div class="metric-grid" id="revenueCards"></div>
-      <h2 class="section-title" data-num="02">Registration Goals</h2>
+      <h2 class="section-title" data-num="01">Registration Goals</h2>
       <div class="metric-grid" id="registrationCards"></div>
+      <h2 class="section-title" data-num="02">Revenue Goals</h2>
+      <div class="metric-grid" id="revenueCards"></div>
       <h2 class="section-title" data-num="03">2025 Actuals vs 2026 Current</h2>
       <div class="table-wrap"><table id="modelTable"></table></div>
       <h2 class="section-title" data-num="04">Audience Mix</h2>
