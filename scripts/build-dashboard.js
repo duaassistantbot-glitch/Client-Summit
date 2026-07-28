@@ -656,6 +656,21 @@ main { width: min(1400px, calc(100% - 40px)); margin: 0 auto; padding: 34px 0 48
 .mini-track { height: 8px; border-radius: 999px; background: rgba(255,255,255,.1); overflow: hidden; }
 .mini-fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--cyan), var(--aurora-teal)); }
 .row-count { color: white; text-align: right; font-weight: 800; }
+.click-row {
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.click-row:hover, .click-row:focus-visible {
+  background: rgba(127,217,239,.08);
+  outline: 1px solid rgba(127,217,239,.22);
+}
+.pill.click-row { width: auto; }
 .table-wrap {
   overflow: auto;
   border: 1px solid var(--line);
@@ -689,6 +704,16 @@ td { color: white; font-size: 13px; }
   font: inherit;
 }
 .toolbar input { flex: 1; min-width: 260px; }
+.active-filter {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+}
+.active-filter.visible { display: flex; }
 .action-button {
   min-height: 40px;
   border: 0;
@@ -783,6 +808,8 @@ td { color: white; font-size: 13px; }
         <input id="search" type="search" placeholder="Search name, company, title, discount code">
         <select id="ticketFilter"><option value="">All ticket types</option></select>
         <select id="companyFilter"><option value="">All companies</option></select>
+        <select id="referrerFilter"><option value="">All referrers</option></select>
+        <div id="activeRegistrantFilter" class="active-filter"></div>
       </div>
       <div class="table-wrap"><table id="registrantsTable"></table></div>
       <h2 class="section-title" data-num="02">Ticket Pricing</h2>
@@ -900,9 +927,12 @@ function renderRegistrants() {
   ticketSelect.innerHTML = '<option value="">All ticket types</option>' + data.breakdowns.ticketTypes.map(i => '<option>' + safe(i.name) + '</option>').join('');
   const companies = [...new Set(data.registrants.map(r => r.company))].sort((a,b) => a.localeCompare(b));
   document.getElementById('companyFilter').innerHTML = '<option value="">All companies</option>' + companies.map(c => '<option>' + safe(c) + '</option>').join('');
+  const referrers = [...new Set(data.registrants.map(r => r.referral).filter(Boolean))].sort((a,b) => a.localeCompare(b));
+  document.getElementById('referrerFilter').innerHTML = '<option value="">All referrers</option>' + referrers.map(r => '<option>' + safe(r) + '</option>').join('');
   document.getElementById('search').addEventListener('input', renderRegistrantTable);
   ticketSelect.addEventListener('change', renderRegistrantTable);
   document.getElementById('companyFilter').addEventListener('change', renderRegistrantTable);
+  document.getElementById('referrerFilter').addEventListener('change', renderRegistrantTable);
   renderRegistrantTable();
   renderTicketTable();
 }
@@ -911,14 +941,45 @@ function renderRegistrantTable() {
   const q = document.getElementById('search').value.toLowerCase();
   const ticket = document.getElementById('ticketFilter').value;
   const company = document.getElementById('companyFilter').value;
+  const referrer = document.getElementById('referrerFilter').value;
   const rows = data.registrants.filter(r => {
     const hay = [r.name, r.company, r.jobTitle, r.discountCode, r.referral].join(' ').toLowerCase();
-    return (!q || hay.includes(q)) && (!ticket || r.packageName === ticket) && (!company || r.company === company);
+    return (!q || hay.includes(q)) && (!ticket || r.packageName === ticket) && (!company || r.company === company) && (!referrer || r.referral === referrer);
   });
+  renderActiveRegistrantFilter(rows.length);
   document.getElementById('registrantsTable').innerHTML =
     '<thead><tr><th>Name</th><th>Company</th><th>Title</th><th>State</th><th>Registered</th><th>Referred By</th><th>Ticket</th><th class="num">Amount</th></tr></thead><tbody>' +
-    rows.map(r => '<tr><td><strong>' + safe(r.name) + '</strong></td><td>' + safe(r.company) + '</td><td>' + safe(r.jobTitle || '--') + '</td><td>' + safe(r.state || '--') + '</td><td>' + safe(r.dateLabel || '--') + '</td><td>' + (r.referral ? '<span class="pill">' + safe(r.referral) + '</span>' : '<span class="muted">--</span>') + '</td><td>' + safe(r.packageName) + (r.discountCode ? '<div class="muted">' + safe(r.discountCode) + '</div>' : '') + '</td><td class="num">' + (r.amount ? fmtMoney(r.amount) : '<span class="pill">Comp</span>') + '</td></tr>').join('') +
+    (rows.length ? rows.map(r => '<tr><td><strong>' + safe(r.name) + '</strong></td><td>' + safe(r.company) + '</td><td>' + safe(r.jobTitle || '--') + '</td><td>' + safe(r.state || '--') + '</td><td>' + safe(r.dateLabel || '--') + '</td><td>' + (r.referral ? '<button class="pill click-row" type="button" data-referrer="' + safe(r.referral) + '">' + safe(r.referral) + '</button>' : '<span class="muted">--</span>') + '</td><td>' + safe(r.packageName) + (r.discountCode ? '<div class="muted">' + safe(r.discountCode) + '</div>' : '') + '</td><td class="num">' + (r.amount ? fmtMoney(r.amount) : '<span class="pill">Comp</span>') + '</td></tr>').join('') : '<tr><td colspan="8" class="muted">No registrants match the current filters.</td></tr>') +
     '</tbody>';
+  document.querySelectorAll('#registrantsTable [data-referrer]').forEach(btn => btn.addEventListener('click', () => applyReferralFilter(btn.dataset.referrer)));
+}
+
+function renderActiveRegistrantFilter(count) {
+  const referrer = document.getElementById('referrerFilter').value;
+  const target = document.getElementById('activeRegistrantFilter');
+  if (!referrer) {
+    target.classList.remove('visible');
+    target.innerHTML = '';
+    return;
+  }
+  target.classList.add('visible');
+  target.innerHTML = '<span class="pill">' + count + ' registrants referred by ' + safe(referrer) + '</span><button class="action-button" type="button" id="clearRegistrantFilters">Clear referral filter</button>';
+  document.getElementById('clearRegistrantFilters').addEventListener('click', () => applyReferralFilter(''));
+}
+
+function switchTab(tabName) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tabName));
+  document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === tabName));
+}
+
+function applyReferralFilter(referrer) {
+  switchTab('registrants');
+  document.getElementById('referrerFilter').value = referrer;
+  document.getElementById('search').value = '';
+  document.getElementById('ticketFilter').value = '';
+  document.getElementById('companyFilter').value = '';
+  renderRegistrantTable();
+  document.getElementById('registrants').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function renderTicketTable() {
@@ -939,8 +1000,9 @@ function renderReferrals() {
     card('Current Leader', ranked[0] ? safe(ranked[0].name) : '--', ranked[0] ? ranked[0].count + ' referrals' : 'No referrals yet', ranked[0] ? 100 : 0),
     card('Contest Deadline', 'Aug 21', 'Grand prize cutoff', 100)
   ].join('');
-  document.getElementById('refLeaderboard').innerHTML = ranked.map((r, i) => '<div class="row-bar"><div class="row-name">' + (i + 1) + '. ' + safe(r.name) + '</div><div class="mini-track"><div class="mini-fill" style="width:' + ((r.count / Math.max(1, ranked[0]?.count || 1)) * 100) + '%"></div></div><div class="row-count">' + r.count + '</div></div>').join('');
-  document.getElementById('referralTable').innerHTML = '<thead><tr><th>Registrant</th><th>Referred By</th><th class="num">Date</th></tr></thead><tbody>' + refs.map(r => '<tr><td><strong>' + safe(r.registrant) + '</strong></td><td>' + safe(r.referrer) + '</td><td class="num">' + safe(r.date) + '</td></tr>').join('') + '</tbody>';
+  document.getElementById('refLeaderboard').innerHTML = ranked.map((r, i) => '<button class="row-bar click-row" type="button" data-referrer="' + safe(r.name) + '" title="Filter registrants referred by ' + safe(r.name) + '"><div class="row-name">' + (i + 1) + '. ' + safe(r.name) + '</div><div class="mini-track"><div class="mini-fill" style="width:' + ((r.count / Math.max(1, ranked[0]?.count || 1)) * 100) + '%"></div></div><div class="row-count">' + r.count + '</div></button>').join('');
+  document.getElementById('referralTable').innerHTML = '<thead><tr><th>Registrant</th><th>Referred By</th><th class="num">Date</th></tr></thead><tbody>' + refs.map(r => '<tr><td><strong>' + safe(r.registrant) + '</strong></td><td><button class="pill click-row" type="button" data-referrer="' + safe(r.referrer) + '">' + safe(r.referrer) + '</button></td><td class="num">' + safe(r.date) + '</td></tr>').join('') + '</tbody>';
+  document.querySelectorAll('#referrals [data-referrer]').forEach(btn => btn.addEventListener('click', () => applyReferralFilter(btn.dataset.referrer)));
   document.getElementById('discountCards').innerHTML = data.breakdowns.discounts.map(d => card(d.name, d.count, d.cap == null ? 'No cap set' : d.remaining + ' remaining of ' + d.cap, d.cap == null ? 100 : (d.count / d.cap) * 100)).join('');
 }
 
@@ -997,10 +1059,7 @@ function renderOutreachAndPackages() {
 }
 
 document.querySelectorAll('.tab').forEach(btn => btn.addEventListener('click', () => {
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById(btn.dataset.tab).classList.add('active');
+  switchTab(btn.dataset.tab);
 }));
 document.querySelectorAll('.subtab').forEach(btn => btn.addEventListener('click', () => {
   document.querySelectorAll('.subtab').forEach(t => t.classList.remove('active'));
