@@ -2,6 +2,7 @@ const fs = require('fs');
 const https = require('https');
 const path = require('path');
 const ExcelJS = require('exceljs');
+const { AGENDA_DAYS } = require('./agenda-data');
 
 const workbookPath = process.env.SUMMIT_XLSX || '/home/openclaw/.openclaw/media/inbound/me-registration-report-28169-202545---b99379b9-624e-49d7-8057-6b7752f3270b.xlsx';
 const outDir = path.resolve(__dirname, '..');
@@ -440,6 +441,7 @@ function buildModel(rows, sponsorshipOpportunities) {
       attendedBefore: row.attendedBefore
     })),
     referrals,
+    agenda: AGENDA_DAYS,
     sponsorships: {
       ...sponsorshipSummary,
       opportunities: sponsorshipOpportunities
@@ -741,9 +743,90 @@ td { color: white; font-size: 13px; }
 .subtab.active { color: white; border-bottom-color: var(--cyan); }
 .subpanel { display: none; }
 .subpanel.active { display: block; }
+.agenda-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, .6fr);
+  gap: 18px;
+  align-items: stretch;
+}
+.agenda-intro {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 86% 8%, rgba(52,189,229,.18), transparent 32%),
+    linear-gradient(145deg, rgba(21,40,63,.94), rgba(10,20,31,.82));
+}
+.agenda-intro h3 {
+  margin: 10px 0 10px;
+  font-size: clamp(26px, 4vw, 46px);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.agenda-intro p { max-width: 760px; margin: 0; color: white; font-size: 15px; line-height: 1.55; }
+.agenda-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+.agenda-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--aurora-lime), var(--cyan));
+  color: white;
+  padding: 0 18px;
+  font: 800 13px "Open Sans", Arial, sans-serif;
+  text-decoration: none;
+}
+.agenda-stats { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.agenda-day {
+  margin-top: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(10,20,31,.62);
+}
+.agenda-day-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 20px;
+  background: linear-gradient(90deg, rgba(29,55,86,.98), rgba(35,153,181,.26));
+  border-bottom: 1px solid var(--line-strong);
+}
+.agenda-day-label {
+  color: var(--cyan-soft);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+.agenda-day-title { margin-top: 4px; color: white; font-family: Montserrat, "Open Sans", sans-serif; font-size: 21px; font-weight: 800; }
+.agenda-day-theme { color: white; font-weight: 800; text-align: right; }
+.agenda-list { display: grid; gap: 0; }
+.agenda-item {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr) 210px 120px;
+  gap: 14px;
+  padding: 15px 18px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.agenda-item:last-child { border-bottom: 0; }
+.agenda-time { color: white; font-weight: 800; font-variant-numeric: tabular-nums; }
+.agenda-title { color: white; font-weight: 800; line-height: 1.35; overflow-wrap: anywhere; }
+.agenda-meta { color: var(--muted); font-size: 12px; line-height: 1.45; }
+.agenda-room { color: white; font-size: 12px; font-weight: 800; text-align: right; }
 .footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; text-align: center; padding: 26px 20px 36px; position: relative; z-index: 1; }
 @media (max-width: 900px) {
   .metric-grid, .chart-grid { grid-template-columns: 1fr; }
+  .agenda-hero { grid-template-columns: 1fr; }
+  .agenda-item { grid-template-columns: 1fr; gap: 5px; }
+  .agenda-room, .agenda-day-theme { text-align: left; }
   .tabs { overflow-x: auto; justify-content: flex-start; }
   .tab { white-space: nowrap; }
   main, .hero-inner { width: min(100% - 28px, 1400px); }
@@ -782,6 +865,7 @@ td { color: white; font-size: 13px; }
   <nav class="tabs" aria-label="Dashboard sections">
     <button class="tab active" data-tab="home">Home</button>
     <button class="tab" data-tab="registrants">Registrants</button>
+    <button class="tab" data-tab="agenda">Agenda</button>
     <button class="tab" data-tab="referrals">Referrals</button>
     <button class="tab" data-tab="sponsorships">Sponsorships</button>
   </nav>
@@ -814,6 +898,21 @@ td { color: white; font-size: 13px; }
       <div class="table-wrap"><table id="registrantsTable"></table></div>
       <h2 class="section-title" data-num="02">Ticket Pricing</h2>
       <div class="table-wrap"><table id="ticketTable"></table></div>
+    </section>
+    <section class="panel" id="agenda">
+      <div class="agenda-hero">
+        <div class="agenda-intro">
+          <div class="eyebrow">Team-Shareable Agenda</div>
+          <h3>Summit Agenda</h3>
+          <p>Three days built around the next operating model for service providers: market perspective, Rev.io platform strategy, AI-enabled workflows, customer operations, and sponsor-led learning moments.</p>
+          <div class="agenda-actions">
+            <a class="agenda-download" href="assets/Revio-Summit-2026-Agenda.pdf" target="_blank" rel="noopener">Open Shareable PDF</a>
+          </div>
+        </div>
+        <div class="agenda-stats" id="agendaCards"></div>
+      </div>
+      <h2 class="section-title" data-num="01">Agenda Timeline</h2>
+      <div id="agendaTimeline"></div>
     </section>
     <section class="panel" id="referrals">
       <h2 class="section-title" data-num="01">Referral Contest</h2>
@@ -989,6 +1088,24 @@ function renderTicketTable() {
     '</tbody>';
 }
 
+function renderAgenda() {
+  const days = data.agenda || [];
+  const sessions = days.flatMap(day => day.sessions);
+  const breakoutCount = sessions.filter(s => s.type === 'Breakout' || s.type === 'Workshop').length;
+  const networkingCount = sessions.filter(s => /Networking|Meal|Expo|Break/i.test(s.type + ' ' + s.title)).length;
+  document.getElementById('agendaCards').innerHTML = [
+    card('Program Days', days.length, 'September 1-3, 2026', 100),
+    card('Sessions + Events', sessions.length, 'Agenda blocks currently listed', 100),
+    card('Breakouts + Workshops', breakoutCount, 'Track-based learning sessions', Math.min(100, breakoutCount * 8)),
+    card('Networking Moments', networkingCount, 'Meals, expo, breaks, receptions', Math.min(100, networkingCount * 6))
+  ].join('');
+  document.getElementById('agendaTimeline').innerHTML = days.map(day =>
+    '<article class="agenda-day"><div class="agenda-day-header"><div><div class="agenda-day-label">' + safe(day.label) + '</div><div class="agenda-day-title">' + safe(day.date) + '</div></div><div class="agenda-day-theme">' + safe(day.theme) + '</div></div><div class="agenda-list">' +
+    day.sessions.map(session => '<div class="agenda-item"><div class="agenda-time">' + safe(session.start) + ' - ' + safe(session.end) + '</div><div><div class="agenda-title">' + safe(session.title) + '</div><div class="agenda-meta">' + safe(session.type) + ' / ' + safe(session.track) + '</div></div><div class="agenda-meta">' + safe(session.track) + '</div><div class="agenda-room">' + safe(session.room) + '</div></div>').join('') +
+    '</div></article>'
+  ).join('');
+}
+
 function renderReferrals() {
   const refs = data.referrals;
   const leaderboard = {};
@@ -1070,6 +1187,7 @@ document.querySelectorAll('.subtab').forEach(btn => btn.addEventListener('click'
 
 renderHome();
 renderRegistrants();
+renderAgenda();
 renderReferrals();
 setupSponsorFilters();
 renderSponsorships();

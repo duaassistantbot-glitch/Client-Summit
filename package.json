@@ -5,6 +5,7 @@
   "description": "Static Rev.io Client Summit dashboard generated from registration exports.",
   "scripts": {
     "build": "node scripts/build-dashboard.js",
+    "agenda:pdf": "node scripts/generate-agenda-pdf.js",
     "serve": "npx http-server . -p 8096 -c-1"
   },
   "devDependencies": {
