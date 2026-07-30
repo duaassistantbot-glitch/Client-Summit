@@ -517,7 +517,84 @@ body::before {
     linear-gradient(250deg, rgba(198,241,120,.12) 0%, transparent 38%),
     linear-gradient(180deg, var(--ink-900) 0%, var(--ink-850) 42%, #060e18 100%);
 }
+body.auth-locked { overflow: hidden; }
+body.auth-locked .app { display: none; }
 .app { position: relative; z-index: 1; }
+.auth-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    linear-gradient(180deg, rgba(10,20,31,.18), rgba(10,20,31,.94)),
+    radial-gradient(ellipse at 65% 18%, rgba(52,189,229,.22), transparent 34%),
+    var(--ink-900);
+}
+.auth-gate.hidden { display: none; }
+.auth-panel {
+  width: min(420px, 100%);
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(52,189,229,.18), transparent 34%),
+    linear-gradient(145deg, rgba(21,40,63,.96), rgba(10,20,31,.9));
+  box-shadow: 0 24px 60px rgba(0,0,0,.38);
+  padding: 26px;
+}
+.auth-panel h1 {
+  margin: 14px 0 8px;
+  color: white;
+  font-size: 30px;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+.auth-panel p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.auth-form {
+  display: grid;
+  gap: 12px;
+}
+.auth-form label {
+  color: var(--cyan-soft);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+.auth-form input {
+  min-height: 46px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 8px;
+  background: rgba(10,20,31,.76);
+  color: white;
+  padding: 0 13px;
+  font: 700 16px "Open Sans", Arial, sans-serif;
+}
+.auth-form input:focus {
+  border-color: var(--cyan);
+  outline: 3px solid rgba(52,189,229,.18);
+}
+.auth-form button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--aurora-lime), var(--cyan));
+  color: white;
+  padding: 0 18px;
+  font: 800 13px "Open Sans", Arial, sans-serif;
+  cursor: pointer;
+}
+.auth-error {
+  min-height: 18px;
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+}
 .hero {
   position: relative;
   min-height: 360px;
@@ -892,7 +969,20 @@ td { color: white; font-size: 13px; }
 }
 </style>
 </head>
-<body>
+<body class="auth-locked">
+<div class="auth-gate" id="authGate">
+  <section class="auth-panel" aria-labelledby="authTitle">
+    <div class="eyebrow">Internal Access</div>
+    <h1 id="authTitle">Rev.io Client Summit</h1>
+    <p>Enter the dashboard password to continue.</p>
+    <form class="auth-form" id="authForm">
+      <label for="dashboardPassword">Password</label>
+      <input id="dashboardPassword" type="password" autocomplete="current-password" autofocus>
+      <button type="submit">Open Dashboard</button>
+      <div class="auth-error" id="authError" aria-live="polite"></div>
+    </form>
+  </section>
+</div>
 <div class="app" id="app">
   <header class="hero">
     <svg class="hero-art" viewBox="0 0 1400 420" preserveAspectRatio="none" aria-hidden="true">
@@ -1085,6 +1175,36 @@ td { color: white; font-size: 13px; }
 </div>
 <script>window.SUMMIT_DATA = ${json};</script>
 <script>
+const DASHBOARD_PASSWORD = 'Revii26';
+const AUTH_STORAGE_KEY = 'revioSummitDashboardAuthorized';
+const authGate = document.getElementById('authGate');
+const authForm = document.getElementById('authForm');
+const authInput = document.getElementById('dashboardPassword');
+const authError = document.getElementById('authError');
+
+function unlockDashboard() {
+  document.body.classList.remove('auth-locked');
+  authGate.classList.add('hidden');
+}
+
+if (sessionStorage.getItem(AUTH_STORAGE_KEY) === 'true') {
+  unlockDashboard();
+} else {
+  authInput.focus();
+}
+
+authForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (authInput.value === DASHBOARD_PASSWORD) {
+    sessionStorage.setItem(AUTH_STORAGE_KEY, 'true');
+    unlockDashboard();
+    return;
+  }
+  authInput.value = '';
+  authError.textContent = 'Incorrect password.';
+  authInput.focus();
+});
+
 const data = window.SUMMIT_DATA;
 const fmtMoney = (n) => (n < 0 ? '(' : '') + '$' + Math.abs(Math.round(n)).toLocaleString() + (n < 0 ? ')' : '');
 const fmtPct = (n, d) => d ? Math.round((n / d) * 100) + '%' : '0%';
