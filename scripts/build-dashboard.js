@@ -821,11 +821,68 @@ td { color: white; font-size: 13px; }
 .agenda-title { color: white; font-weight: 800; line-height: 1.35; overflow-wrap: anywhere; }
 .agenda-meta { color: var(--muted); font-size: 12px; line-height: 1.45; }
 .agenda-room { color: white; font-size: 12px; font-weight: 800; text-align: right; }
+.ops-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.ops-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(10,20,31,.72);
+  padding: 18px;
+}
+.ops-card h3 {
+  margin: 0 0 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+}
+.ops-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.ops-list li {
+  display: grid;
+  grid-template-columns: 122px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  color: white;
+  line-height: 1.42;
+}
+.ops-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+.ops-time {
+  color: var(--cyan-soft);
+  font-family: Montserrat, "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.ops-detail strong { display: block; color: white; font-weight: 800; }
+.ops-detail span { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; }
+.link-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.link-card {
+  display: block;
+  min-height: 132px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(10,20,31,.72);
+  padding: 18px;
+  color: white;
+  text-decoration: none;
+}
+.link-card:hover { border-color: rgba(127,217,239,.6); background: rgba(18,39,61,.82); }
+.link-card h3 { margin: 0 0 8px; color: white; font-size: 17px; }
+.link-card p { margin: 0; color: var(--muted); line-height: 1.45; }
+.link-url {
+  display: block;
+  margin-top: 14px;
+  color: var(--cyan-soft);
+  font-size: 12px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
 .footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; text-align: center; padding: 26px 20px 36px; position: relative; z-index: 1; }
 @media (max-width: 900px) {
-  .metric-grid, .chart-grid { grid-template-columns: 1fr; }
+  .metric-grid, .chart-grid, .ops-grid, .link-grid { grid-template-columns: 1fr; }
   .agenda-hero { grid-template-columns: 1fr; }
   .agenda-item { grid-template-columns: 1fr; gap: 5px; }
+  .ops-list li { grid-template-columns: 1fr; gap: 4px; }
   .agenda-room, .agenda-day-theme { text-align: left; }
   .tabs { overflow-x: auto; justify-content: flex-start; }
   .tab { white-space: nowrap; }
@@ -866,6 +923,8 @@ td { color: white; font-size: 13px; }
     <button class="tab active" data-tab="home">Home</button>
     <button class="tab" data-tab="registrants">Registrants</button>
     <button class="tab" data-tab="agenda">Agenda</button>
+    <button class="tab" data-tab="onsite">Onsite Ops</button>
+    <button class="tab" data-tab="links">Important Links</button>
     <button class="tab" data-tab="referrals">Referrals</button>
     <button class="tab" data-tab="sponsorships">Sponsorships</button>
   </nav>
@@ -913,6 +972,74 @@ td { color: white; font-size: 13px; }
       </div>
       <h2 class="section-title" data-num="01">Agenda Timeline</h2>
       <div id="agendaTimeline"></div>
+    </section>
+    <section class="panel" id="onsite">
+      <h2 class="section-title" data-num="01">Daily Agenda</h2>
+      <div class="ops-grid">
+        <article class="ops-card">
+          <h3>Day 1 · Tuesday, September 1</h3>
+          <ul class="ops-list">
+            <li><div class="ops-time">9:00a-4:00p</div><div class="ops-detail"><strong>Sponsor setup / load-in</strong><span>Expo tables in Grand Ballroom 3&4.</span></div></li>
+            <li><div class="ops-time">10:00a-5:00p</div><div class="ops-detail"><strong>Breakout room setup</strong><span>Classroom setup for breakout rooms.</span></div></li>
+            <li><div class="ops-time">1:00-5:00p</div><div class="ops-detail"><strong>Registration open</strong><span>All-attendee registration; staff shifts are 1-3 and 3-5.</span></div></li>
+            <li><div class="ops-time">5:00-7:00p</div><div class="ops-detail"><strong>Welcome Reception & Expo</strong><span>First all-attendee moment in the expo hall.</span></div></li>
+            <li><div class="ops-time">7:30-9:00p</div><div class="ops-detail"><strong>VIP Dinner</strong><span>C&S Oyster House for Premium ticket holders; volunteer support starts at 7:00p.</span></div></li>
+          </ul>
+        </article>
+        <article class="ops-card">
+          <h3>Day 2 · Wednesday, September 2</h3>
+          <ul class="ops-list">
+            <li><div class="ops-time">8:00-9:00a</div><div class="ops-detail"><strong>Breakfast & Expo</strong><span>General Session / expo opening block.</span></div></li>
+            <li><div class="ops-time">9:00a-5:00p</div><div class="ops-detail"><strong>General session + breakouts</strong><span>Keynotes, sponsor sessions, panels, Revii Showcase, and afternoon tracks.</span></div></li>
+            <li><div class="ops-time">2:30-4:00p</div><div class="ops-detail"><strong>Scanner pinch point</strong><span>Three concurrent rooms need six scanners; keep Sales working expo coverage.</span></div></li>
+            <li><div class="ops-time">5:00-6:30p</div><div class="ops-detail"><strong>All-attendee break</strong><span>No expo. Shuttles load from the hotel motor court starting at 6:00p.</span></div></li>
+            <li><div class="ops-time">6:30-10:00p</div><div class="ops-detail"><strong>Networking Reception</strong><span>Xfinity Club at Braves Stadium, sponsored by CCH Suretax, open to all attendees.</span></div></li>
+          </ul>
+        </article>
+        <article class="ops-card">
+          <h3>Day 3 · Thursday, September 3</h3>
+          <ul class="ops-list">
+            <li><div class="ops-time">8:00-9:00a</div><div class="ops-detail"><strong>Breakfast keynote spotlight</strong><span>Liongard sponsor keynote spotlight.</span></div></li>
+            <li><div class="ops-time">9:00a-3:15p</div><div class="ops-detail"><strong>Roadmap, workshops, breakouts</strong><span>Awards, product roadmap, AI monetization, onboarding, sales, BI, and operating model sessions.</span></div></li>
+            <li><div class="ops-time">3:00-3:15p</div><div class="ops-detail"><strong>Closing remarks</strong><span>Thank-you moment and 2027 sign-up push.</span></div></li>
+            <li><div class="ops-time">3:15-5:00p</div><div class="ops-detail"><strong>Teardown & pack-out</strong><span>All rooms; four-person crew noted in the handoff.</span></div></li>
+          </ul>
+        </article>
+        <article class="ops-card">
+          <h3>Volunteer / Scanner Needs</h3>
+          <ul class="ops-list">
+            <li><div class="ops-time">40 shifts</div><div class="ops-detail"><strong>Volunteer schedule</strong><span>76 slots across 58 staff.</span></div></li>
+            <li><div class="ops-time">2 per room</div><div class="ops-detail"><strong>Breakout coverage</strong><span>Scan attendees in Vfairs, track headcount, manage speaker timecards, escalate AV issues.</span></div></li>
+            <li><div class="ops-time">Tue/Wed</div><div class="ops-detail"><strong>Registration shifts</strong><span>Tue 1-3 / 3-5 and Wed 8-10 / 10-12.</span></div></li>
+            <li><div class="ops-time">Receptions</div><div class="ops-detail"><strong>Floaters + F&B monitors</strong><span>Welcome Reception uses two floaters and one F&B monitor; VIP Dinner uses two volunteers.</span></div></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <section class="panel" id="links">
+      <h2 class="section-title" data-num="01">Important Links</h2>
+      <div class="link-grid">
+        <a class="link-card" href="https://reviosummit.com/en/registration-form" target="_blank" rel="noopener">
+          <h3>Registration Form</h3>
+          <p>Vfairs-powered attendee registration and checkout.</p>
+          <span class="link-url">reviosummit.com/en/registration-form</span>
+        </a>
+        <a class="link-card" href="https://book.passkey.com/e/51170051" target="_blank" rel="noopener">
+          <h3>Hotel Room Block</h3>
+          <p>Attendee Passkey block for Renaissance Atlanta Waverly. Cut-off: Aug 10.</p>
+          <span class="link-url">book.passkey.com/e/51170051</span>
+        </a>
+        <a class="link-card" href="https://revio.sharepoint.com/sites/Marketing990/Shared%20Documents/Marketing%20Team/2026%20Projects/2026%20Rev.io%20Summit" target="_blank" rel="noopener">
+          <h3>Volunteer Schedule</h3>
+          <p>Summit2026_Volunteer_Schedule.xlsx: 40 shifts, 76 slots, registration shifts, scanner coverage, and onsite roles.</p>
+          <span class="link-url">SharePoint · 2026 Rev.io Summit folder</span>
+        </a>
+        <a class="link-card" href="https://rev.vfairs.com" target="_blank" rel="noopener">
+          <h3>Registration Exports</h3>
+          <p>Pull fresh Vfairs registration reports before quoting attendee, hotel, shirt, reception, or referral counts.</p>
+          <span class="link-url">Vfairs backend · RegReport export</span>
+        </a>
+      </div>
     </section>
     <section class="panel" id="referrals">
       <h2 class="section-title" data-num="01">Referral Contest</h2>
@@ -1101,7 +1228,10 @@ function renderAgenda() {
   ].join('');
   document.getElementById('agendaTimeline').innerHTML = days.map(day =>
     '<article class="agenda-day"><div class="agenda-day-header"><div><div class="agenda-day-label">' + safe(day.label) + '</div><div class="agenda-day-title">' + safe(day.date) + '</div></div><div class="agenda-day-theme">' + safe(day.theme) + '</div></div><div class="agenda-list">' +
-    day.sessions.map(session => '<div class="agenda-item"><div class="agenda-time">' + safe(session.start) + ' - ' + safe(session.end) + '</div><div><div class="agenda-title">' + safe(session.title) + '</div><div class="agenda-meta">' + safe(session.type) + ' / ' + safe(session.track) + '</div></div><div class="agenda-meta">' + safe(session.track) + '</div><div class="agenda-room">' + safe(session.room) + '</div></div>').join('') +
+    day.sessions.map(session => {
+      const meta = [session.type, session.track].filter(Boolean).join(' / ');
+      return '<div class="agenda-item"><div class="agenda-time">' + safe(session.start) + ' - ' + safe(session.end) + '</div><div><div class="agenda-title">' + safe(session.title) + '</div>' + (meta ? '<div class="agenda-meta">' + safe(meta) + '</div>' : '') + '</div><div class="agenda-meta">' + safe(session.track || '') + '</div><div class="agenda-room">' + safe(session.room || '') + '</div></div>';
+    }).join('') +
     '</div></article>'
   ).join('');
 }

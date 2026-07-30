@@ -47,68 +47,66 @@ function renderAgendaHtml() {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-@page { size: Letter landscape; margin: 0; }
+@page { size: Letter; margin: .42in .38in .44in; }
 * { box-sizing: border-box; }
-html, body { margin: 0; width: 11in; min-height: 8.5in; }
+html, body { margin: 0; }
 body {
-  background: #0a141f;
-  color: #FFFFFF;
+  background: #f5f7fa;
+  color: #1D3756;
   font-family: "Open Sans", Arial, sans-serif;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
+  font-size: 10px;
 }
-.page {
+.cover {
   position: relative;
-  width: 11in;
-  height: 8.5in;
   overflow: hidden;
-  padding: .28in .32in .24in;
+  min-height: 1.65in;
+  margin: -.42in -.38in .22in;
+  padding: .34in .38in .22in;
   background:
-    linear-gradient(115deg, rgba(52,189,229,.16), transparent 34%),
-    linear-gradient(250deg, rgba(198,241,120,.12), transparent 38%),
+    linear-gradient(115deg, rgba(52,189,229,.23), transparent 36%),
+    linear-gradient(250deg, rgba(198,241,120,.16), transparent 42%),
     linear-gradient(180deg, #0a141f 0%, #0c1925 52%, #060e18 100%);
 }
 .hero-art {
   position: absolute;
   inset: 0;
   z-index: 0;
-  opacity: .74;
+  opacity: .62;
 }
 .content { position: relative; z-index: 1; }
 .topbar {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: .22in;
+  gap: .18in;
   align-items: end;
-  padding-bottom: .12in;
-  border-bottom: 1px solid rgba(127,217,239,.24);
 }
 h1 {
   margin: 0;
   color: #FFFFFF;
   font-family: Montserrat, "Open Sans", sans-serif;
   font-size: 30px;
-  line-height: .95;
+  line-height: 1;
   letter-spacing: 0;
   text-transform: uppercase;
 }
 .subtitle {
-  margin-top: .04in;
+  margin-top: .05in;
   color: #FFFFFF;
-  font-size: 10px;
+  font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 1.2px;
   text-transform: uppercase;
 }
 .meta {
-  display: flex;
-  gap: .06in;
-  justify-content: flex-end;
-  flex-wrap: wrap;
+  display: grid;
+  gap: .045in;
+  justify-items: end;
 }
 .meta span, .type {
-  border: 1px solid rgba(127,217,239,.28);
-  border-radius: 999px;
+  border: 1px solid rgba(127,217,239,.36);
+  border-radius: 6px;
   background: rgba(52,189,229,.12);
   color: #FFFFFF;
   font-weight: 800;
@@ -116,114 +114,124 @@ h1 {
 }
 .meta span {
   padding: .045in .075in;
-  font-size: 6.8px;
+  font-size: 7.5px;
   letter-spacing: .7px;
 }
-.agenda-grid {
-  display: grid;
-  grid-template-columns: .65fr 1.35fr 1fr;
-  gap: .12in;
+.note {
   margin-top: .13in;
+  max-width: 6.6in;
+  color: #FFFFFF;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.35;
 }
 .day {
-  min-height: 7.08in;
-  border: 1px solid rgba(255,255,255,.11);
-  border-radius: 8px;
+  margin: 0 0 .18in;
+  border: 1px solid #DDE2E8;
+  border-radius: 7px;
   overflow: hidden;
-  background: rgba(10,20,31,.7);
+  background: #FFFFFF;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.day.allow-break {
+  break-inside: auto;
+  page-break-inside: auto;
 }
 .day-header {
-  min-height: .48in;
-  padding: .09in .11in .08in;
-  background: linear-gradient(90deg, rgba(29,55,86,.98), rgba(35,153,181,.28));
-  border-bottom: 1px solid rgba(127,217,239,.22);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .14in;
+  align-items: center;
+  padding: .105in .13in .1in;
+  background: linear-gradient(90deg, #1D3756, #2399B5);
 }
 .day-label {
-  color: #7fd9ef;
-  font-size: 6.6px;
+  color: #FFFFFF;
+  font-size: 7px;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 1.1px;
   text-transform: uppercase;
 }
 .day-date {
-  margin-top: .02in;
+  margin-top: .015in;
   color: #FFFFFF;
   font-family: Montserrat, "Open Sans", sans-serif;
-  font-size: 11.2px;
+  font-size: 14px;
   font-weight: 800;
 }
 .day-theme {
-  margin-top: .018in;
   color: #FFFFFF;
-  font-size: 6.9px;
+  font-size: 8px;
   font-weight: 800;
+  letter-spacing: .5px;
+  text-transform: uppercase;
 }
-.sessions { padding: .055in .085in .07in; }
+.sessions { padding: 0; }
 .session {
   display: grid;
-  grid-template-columns: .52in minmax(0, 1fr);
-  gap: .055in;
-  padding: .031in 0;
-  border-bottom: 1px solid rgba(255,255,255,.075);
+  grid-template-columns: 1.05in minmax(0, 1fr);
+  gap: .12in;
+  align-items: start;
+  padding: .074in .13in .07in;
+  border-bottom: 1px solid #DDE2E8;
+  break-inside: avoid;
+  page-break-inside: avoid;
 }
 .session:last-child { border-bottom: 0; }
 .time {
-  color: #FFFFFF;
-  font-size: 6.25px;
+  color: #1D3756;
+  font-size: 8.5px;
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.25;
   font-variant-numeric: tabular-nums;
+  text-transform: uppercase;
 }
 .title {
-  color: #FFFFFF;
-  font-size: 6.35px;
+  color: #1D3756;
+  font-size: 9.2px;
   font-weight: 800;
-  line-height: 1.17;
-}
-.detail {
-  display: flex;
-  gap: .035in;
-  align-items: center;
-  margin-top: .018in;
-  color: #b9c7d6;
-  font-size: 5.25px;
-  font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.24;
 }
 .type {
-  flex: none;
-  padding: .018in .038in;
-  font-size: 4.6px;
-  line-height: 1;
-  letter-spacing: .25px;
+  display: inline-block;
+  justify-self: start;
+  padding: .036in .052in;
+  border-color: rgba(35,153,181,.28);
+  background: rgba(35,153,181,.11);
+  color: #1D3756;
+  font-size: 6.6px;
+  line-height: 1.1;
+  letter-spacing: .35px;
 }
-.type.break, .type.meal-expo {
-  border-color: rgba(198,241,120,.35);
-  background: rgba(110,190,79,.12);
+.type.keynote, .type.general-session {
+  border-color: rgba(110,190,79,.45);
+  background: rgba(110,190,79,.14);
 }
-.type.networking { border-color: rgba(198,241,120,.38); }
-.room {
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.type.networking, .type.registration {
+  border-color: rgba(29,55,86,.24);
+  background: rgba(29,55,86,.08);
 }
 .footer {
-  position: absolute;
-  left: .32in;
-  right: .32in;
-  bottom: .09in;
+  margin-top: .1in;
   display: flex;
   justify-content: space-between;
-  color: #b9c7d6;
-  font-size: 6.5px;
+  color: #3d4d5c;
+  font-size: 7.5px;
+  font-weight: 700;
   border-top: 1px solid rgba(127,217,239,.18);
-  padding-top: .045in;
+  padding-top: .07in;
+}
+@media print {
+  .day:nth-of-type(n+3) {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
 }
 </style>
 </head>
 <body>
-<section class="page">
+<section class="cover">
   <svg class="hero-art" viewBox="0 0 1100 850" preserveAspectRatio="none" aria-hidden="true">
     <defs>
       <linearGradient id="summitSky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#060e18"/><stop offset=".52" stop-color="#15283f"/><stop offset="1" stop-color="#2399B5"/></linearGradient>
@@ -239,41 +247,40 @@ h1 {
   <div class="content topbar">
     <div>
       <h1>Rev.io Summit 2026 Agenda</h1>
-      <div class="subtitle">Prepare for Tomorrow.</div>
+      <div class="subtitle">Prepare for Tomorrow</div>
+      <div class="note">Updated team-share agenda with session titles and date times only.</div>
     </div>
     <div class="meta">
       <span>Sep 1-3, 2026</span>
       <span>Atlanta, GA</span>
-      <span>${allSessions.length} Agenda Blocks</span>
+      <span>${allSessions.length} Sessions</span>
     </div>
   </div>
-  <div class="content agenda-grid">
-    ${AGENDA_DAYS.map((day) => `
-      <article class="day">
+</section>
+<main>
+    ${AGENDA_DAYS.map((day, index) => `
+      <article class="day ${index > 0 ? 'allow-break' : ''}">
         <div class="day-header">
-          <div class="day-label">${safe(day.label)}</div>
-          <div class="day-date">${safe(day.date)}</div>
+          <div>
+            <div class="day-label">${safe(day.label)}</div>
+            <div class="day-date">${safe(day.date)}</div>
+          </div>
           <div class="day-theme">${safe(day.theme)}</div>
         </div>
         <div class="sessions">
           ${day.sessions.map((session) => `
             <div class="session">
-              <div class="time">${safe(session.start)}<br>${safe(session.end)}</div>
+              <div class="time">${safe(session.start)}<br>to ${safe(session.end)}</div>
               <div>
                 <div class="title">${safe(session.title)}</div>
-                <div class="detail">
-                  <span class="type ${sessionClass(session.type)}">${safe(session.type)}</span>
-                  <span class="room">${safe(session.track)} / ${safe(session.room)}</span>
-                </div>
               </div>
             </div>
           `).join('')}
         </div>
       </article>
     `).join('')}
-  </div>
-  <div class="footer"><span>Rev.io Summit 2026</span><span>One-page team agenda</span></div>
-</section>
+  <div class="footer"><span>Rev.io Summit 2026</span><span>Titles and date times only</span></div>
+</main>
 </body>
 </html>`;
 }
