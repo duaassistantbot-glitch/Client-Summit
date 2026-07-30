@@ -1,13 +1,16 @@
 const fs = require('fs');
 const https = require('https');
 const path = require('path');
+const { createRequire } = require('module');
 const ExcelJS = require('exceljs');
 const { AGENDA_DAYS } = require('./agenda-data');
 
-const workbookPath = process.env.SUMMIT_XLSX || '/home/openclaw/.openclaw/media/inbound/me-registration-report-28169-202545---b99379b9-624e-49d7-8057-6b7752f3270b.xlsx';
+const workbookPath = process.env.SUMMIT_XLSX || '/home/openclaw/.openclaw/workspace/exports/gmail-attachments/1785432829554-mosupdate-client-summit.csv';
 const outDir = path.resolve(__dirname, '..');
 const dataDir = path.join(outDir, 'assets', 'data');
 const workspaceDir = path.resolve(outDir, '..');
+const workspaceRequire = createRequire(path.join(workspaceDir, 'gmail-tool', 'package.json'));
+const XLSX = workspaceRequire('xlsx');
 const API_VERSION = 'v59.0';
 const SPONSOR_OPPORTUNITY_TYPE = 'Summit Sponsorship';
 
@@ -164,7 +167,10 @@ function valueOf(cell) {
 }
 
 function asText(value) {
-  return String(valueOf(value) ?? '').trim();
+  return String(valueOf(value) ?? '')
+    .replace(/\u0096/g, '–')
+    .replace(/\u0092/g, "'")
+    .trim();
 }
 
 function asNumber(value) {
@@ -256,12 +262,63 @@ function normalizeReceptions(value) {
   return receptions.length ? receptions : ['Unspecified'];
 }
 
-async function loadWorkbookRows() {
+function cleanReferral(firstName, lastName) {
+  const parts = [firstName, lastName]
+    .map(asText)
+    .filter((part) => part && !/^n\/?a$/i.test(part));
+  return parts.join(' ');
+}
+
+function normalizeRegistrationRecord(record) {
+  const firstName = asText(record['First Name (1557966)']);
+  const lastName = asText(record['Last Name (1557967)']);
+  const email = asText(record.Email);
+  if (!firstName && !lastName && !email) return null;
+
+  const date = parseDate(record['Date Registered']);
+  const discountCode = asText(record['Discount Code']).toUpperCase();
+  const packageAmount = asNumber(record['Package Amount']);
+  const discountAmount = asNumber(record['Discount Amount Val']);
+  const amount = asNumber(record.Amount);
+  const userType = asText(record['User Type']);
+
+  return {
+    name: `${firstName} ${lastName}`.trim() || email,
+    company: asText(record.Company) || 'Unspecified',
+    jobTitle: asText(record['Job Title']),
+    state: asText(record['State/ Province']),
+    dateRegistered: date ? date.toISOString().slice(0, 10) : '',
+    dateLabel: date ? date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) : '',
+    status: asText(record.Status),
+    hasPaid: /^yes$/i.test(asText(record['Has Paid'])),
+    userType,
+    isStaff: /@rev\.io$/i.test(email) || /staff/i.test(userType),
+    isSponsorPass: /sponsor/i.test(userType) || /sponsor/i.test(asText(record['Package Name'])),
+    businessType: cleanIndustry(record['Which Of The Following Best Describes Your Business?']),
+    jobRank: asText(record['Job Rank']) || 'Unspecified',
+    department: asText(record.Department) || 'Unspecified',
+    companySize: asText(record['Company Size']) || 'Unspecified',
+    packageName: cleanPackage(record['Package Name']),
+    packageAmount,
+    discountCode,
+    discountAmount,
+    amount,
+    paymentStatus: asText(record['Payment Status']) || 'Unspecified',
+    referral: cleanReferral(record['Referral First Name'], record['Referral Last Name']),
+    receptions: normalizeReceptions(record['Which Receptions Are You Planning To Attend?']),
+    hotel: asText(record['Do You Need A Hotel Room For The 2026 Rev.io Summit?']) || 'Unspecified',
+    shirtSize: asText(record['T Shirt Size']) || 'Unspecified',
+    attendedBefore: asText(record['Have You Attended The Rev.io Summit Before?']) || 'Unspecified',
+    topics: normalizeTopics(record['Please Select The Topics That Best Match Your Areas Of Interest. (Select All That Apply.)'])
+  };
+}
+
+async function loadExcelRecords() {
   const workbook = new ExcelJS.Workbook();
   await workbook.xlsx.readFile(workbookPath);
   const sheet = workbook.worksheets[0];
   const headers = sheet.getRow(1).values.slice(1).map(asText);
-  const rows = [];
+  const records = [];
 
   sheet.eachRow((row, rowNumber) => {
     if (rowNumber === 1) return;
@@ -269,50 +326,27 @@ async function loadWorkbookRows() {
     headers.forEach((header, index) => {
       record[header] = valueOf(row.getCell(index + 1).value);
     });
-    const firstName = asText(record['First Name (1557966)']);
-    const lastName = asText(record['Last Name (1557967)']);
-    const email = asText(record.Email);
-    if (!firstName && !lastName && !email) return;
-
-    const date = parseDate(record['Date Registered']);
-    const discountCode = asText(record['Discount Code']).toUpperCase();
-    const packageAmount = asNumber(record['Package Amount']);
-    const discountAmount = asNumber(record['Discount Amount Val']);
-    const amount = asNumber(record.Amount);
-    const userType = asText(record['User Type']);
-
-    rows.push({
-      name: `${firstName} ${lastName}`.trim() || email,
-      company: asText(record.Company) || 'Unspecified',
-      jobTitle: asText(record['Job Title']),
-      state: asText(record['State/ Province']),
-      dateRegistered: date ? date.toISOString().slice(0, 10) : '',
-      dateLabel: date ? date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) : '',
-      status: asText(record.Status),
-      hasPaid: /^yes$/i.test(asText(record['Has Paid'])),
-      userType,
-      isStaff: /@rev\.io$/i.test(email) || /staff/i.test(userType),
-      isSponsorPass: /sponsor/i.test(userType) || /sponsor/i.test(asText(record['Package Name'])),
-      businessType: cleanIndustry(record['Which Of The Following Best Describes Your Business?']),
-      jobRank: asText(record['Job Rank']) || 'Unspecified',
-      department: asText(record.Department) || 'Unspecified',
-      companySize: asText(record['Company Size']) || 'Unspecified',
-      packageName: cleanPackage(record['Package Name']),
-      packageAmount,
-      discountCode,
-      discountAmount,
-      amount,
-      paymentStatus: asText(record['Payment Status']) || 'Unspecified',
-      referral: `${asText(record['Referral First Name'])} ${asText(record['Referral Last Name'])}`.trim(),
-      receptions: normalizeReceptions(record['Which Receptions Are You Planning To Attend?']),
-      hotel: asText(record['Do You Need A Hotel Room For The 2026 Rev.io Summit?']) || 'Unspecified',
-      shirtSize: asText(record['T Shirt Size']) || 'Unspecified',
-      attendedBefore: asText(record['Have You Attended The Rev.io Summit Before?']) || 'Unspecified',
-      topics: normalizeTopics(record['Please Select The Topics That Best Match Your Areas Of Interest. (Select All That Apply.)'])
-    });
+    records.push(record);
   });
 
-  return rows.filter((row) => !/cancel/i.test(row.status));
+  return records;
+}
+
+function loadCsvRecords() {
+  const workbook = XLSX.readFile(workbookPath, { codepage: 1252, raw: false });
+  const sheet = workbook.Sheets[workbook.SheetNames[0]];
+  return XLSX.utils.sheet_to_json(sheet, { defval: '' });
+}
+
+async function loadWorkbookRows() {
+  const records = path.extname(workbookPath).toLowerCase() === '.csv'
+    ? loadCsvRecords()
+    : await loadExcelRecords();
+
+  return records
+    .map(normalizeRegistrationRecord)
+    .filter(Boolean)
+    .filter((row) => !/cancel/i.test(row.status));
 }
 
 async function loadSponsorshipOpportunities() {
