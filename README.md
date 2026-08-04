@@ -13,7 +13,7 @@ npm run agenda:pdf
 The current build reads the vFairs/registration Excel export from:
 
 ```text
-assets/source/registration-report-deduped-2026-07-31.xlsx
+assets/source/registration-report-deduped-2026-08-04.xlsx
 ```
 
 The committed dashboard intentionally excludes attendee emails, phone numbers, and source user IDs.

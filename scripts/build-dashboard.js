@@ -5,7 +5,7 @@ const { createRequire } = require('module');
 const ExcelJS = require('exceljs');
 const { AGENDA_DAYS } = require('./agenda-data');
 
-const workbookPath = process.env.SUMMIT_XLSX || path.resolve(__dirname, '..', 'assets', 'source', 'registration-report-deduped-2026-07-31.xlsx');
+const workbookPath = process.env.SUMMIT_XLSX || path.resolve(__dirname, '..', 'assets', 'source', 'registration-report-deduped-2026-08-04.xlsx');
 const outDir = path.resolve(__dirname, '..');
 const dataDir = path.join(outDir, 'assets', 'data');
 const workspaceDir = path.resolve(outDir, '..');
