@@ -806,6 +806,37 @@ td { color: white; font-size: 13px; }
 .num { text-align: right; font-variant-numeric: tabular-nums; }
 .muted { color: var(--muted); }
 .pill { display: inline-flex; padding: 3px 9px; border-radius: 999px; border: 1px solid rgba(127,217,239,.28); background: rgba(52,189,229,.12); font-size: 11px; font-weight: 800; color: white; }
+.sort-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  background: transparent;
+  color: white;
+  padding: 0;
+  font: inherit;
+  font-weight: 800;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+}
+.sort-button::after { content: '↕'; color: rgba(255,255,255,.46); font-size: 10px; }
+.sort-button.active.asc::after { content: '↑'; color: var(--cyan-soft); }
+.sort-button.active.desc::after { content: '↓'; color: var(--cyan-soft); }
+.filter-row th { top: 37px; background: #0f1d2d; padding: 7px 8px; z-index: 2; }
+.column-filter {
+  width: 100%;
+  min-height: 32px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 7px;
+  background: rgba(10,20,31,.88);
+  color: white;
+  padding: 0 8px;
+  font: 12px "Open Sans", sans-serif;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.column-filter::placeholder { color: rgba(255,255,255,.42); }
 .toolbar { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
 .toolbar input, .toolbar select {
   min-height: 40px;
@@ -1244,6 +1275,8 @@ const fmtMoney = (n) => (n < 0 ? '(' : '') + '$' + Math.abs(Math.round(n)).toLoc
 const fmtPct = (n, d) => d ? Math.round((n / d) * 100) + '%' : '0%';
 const takeTop = (items, limit = 8) => [...items].slice(0, limit);
 const safe = (v) => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let registrantSort = { key: 'dateRegistered', direction: 'desc' };
+const registrantColumnFilters = { name: '', company: '', jobTitle: '', state: '', dateRegistered: '', referral: '', packageName: '', amount: '' };
 
 function card(label, value, note, progress) {
   const width = Math.max(0, Math.min(100, progress || 0));
@@ -1317,21 +1350,112 @@ function renderRegistrants() {
   renderTicketTable();
 }
 
-function renderRegistrantTable() {
+function uniqueRegistrantValues(key) {
+  return [...new Set(data.registrants.map(r => r[key]).filter(Boolean))].sort((a,b) => String(a).localeCompare(String(b)));
+}
+
+function registrantMonthOptions() {
+  const byValue = new Map();
+  data.registrants.forEach(r => {
+    if (!r.dateRegistered) return;
+    const value = r.dateRegistered.slice(0, 7);
+    const label = new Date(value + '-01T00:00:00Z').toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+    byValue.set(value, label);
+  });
+  return [...byValue.entries()].sort((a,b) => b[0].localeCompare(a[0]));
+}
+
+function optionHtml(items, selectedValue = '') {
+  return items.map(item => {
+    const value = Array.isArray(item) ? item[0] : item;
+    const label = Array.isArray(item) ? item[1] : item;
+    return '<option value="' + safe(value) + '"' + (String(value) === String(selectedValue) ? ' selected' : '') + '>' + safe(label) + '</option>';
+  }).join('');
+}
+
+function columnInput(key, placeholder) {
+  return '<input class="column-filter" data-col-filter="' + key + '" value="' + safe(registrantColumnFilters[key]) + '" placeholder="' + safe(placeholder) + '">';
+}
+
+function columnSelect(key, placeholder, options) {
+  return '<select class="column-filter" data-col-filter="' + key + '"><option value="">' + safe(placeholder) + '</option>' + optionHtml(options, registrantColumnFilters[key]) + '</select>';
+}
+
+function amountBucket(row) {
+  return row.amount > 0 ? 'Paid' : 'Comp';
+}
+
+function sortValue(row, key) {
+  if (key === 'amount') return Number(row.amount || 0);
+  if (key === 'dateRegistered') return row.dateRegistered || '';
+  return String(row[key] || '').toLowerCase();
+}
+
+function sortRows(rows) {
+  const { key, direction } = registrantSort;
+  const dir = direction === 'asc' ? 1 : -1;
+  return [...rows].sort((a, b) => {
+    const av = sortValue(a, key), bv = sortValue(b, key);
+    if (av < bv) return -1 * dir;
+    if (av > bv) return 1 * dir;
+    return String(a.name || '').localeCompare(String(b.name || ''));
+  });
+}
+
+function sortHeader(label, key, cls = '') {
+  const active = registrantSort.key === key;
+  const direction = active ? registrantSort.direction : '';
+  return '<th' + (cls ? ' class="' + cls + '"' : '') + '><button class="sort-button ' + (active ? 'active ' + direction : '') + '" type="button" data-sort-key="' + key + '">' + safe(label) + '</button></th>';
+}
+
+function renderRegistrantTable(focusColumn = '') {
   const q = document.getElementById('search').value.toLowerCase();
   const ticket = document.getElementById('ticketFilter').value;
   const company = document.getElementById('companyFilter').value;
   const referrer = document.getElementById('referrerFilter').value;
-  const rows = data.registrants.filter(r => {
-    const hay = [r.name, r.company, r.jobTitle, r.discountCode, r.referral].join(' ').toLowerCase();
-    return (!q || hay.includes(q)) && (!ticket || r.packageName === ticket) && (!company || r.company === company) && (!referrer || r.referral === referrer);
-  });
+  const rows = sortRows(data.registrants.filter(r => {
+    const hay = [r.name, r.company, r.jobTitle, r.discountCode, r.referral, r.state, r.dateLabel, r.packageName, amountBucket(r)].join(' ').toLowerCase();
+    const f = registrantColumnFilters;
+    return (!q || hay.includes(q))
+      && (!ticket || r.packageName === ticket)
+      && (!company || r.company === company)
+      && (!referrer || r.referral === referrer)
+      && (!f.name || String(r.name || '').toLowerCase().includes(f.name.toLowerCase()))
+      && (!f.company || r.company === f.company)
+      && (!f.jobTitle || String(r.jobTitle || '').toLowerCase().includes(f.jobTitle.toLowerCase()))
+      && (!f.state || r.state === f.state)
+      && (!f.dateRegistered || String(r.dateRegistered || '').startsWith(f.dateRegistered))
+      && (!f.referral || r.referral === f.referral)
+      && (!f.packageName || r.packageName === f.packageName)
+      && (!f.amount || amountBucket(r) === f.amount);
+  }));
   renderActiveRegistrantFilter(rows.length);
   document.getElementById('registrantsTable').innerHTML =
-    '<thead><tr><th>Name</th><th>Company</th><th>Title</th><th>State</th><th>Registered</th><th>Referred By</th><th>Ticket</th><th class="num">Amount</th></tr></thead><tbody>' +
+    '<thead><tr>' +
+    sortHeader('Name', 'name') + sortHeader('Company', 'company') + sortHeader('Title', 'jobTitle') + sortHeader('State', 'state') + sortHeader('Registered', 'dateRegistered') + sortHeader('Referred By', 'referral') + sortHeader('Ticket', 'packageName') + sortHeader('Amount', 'amount', 'num') +
+    '</tr><tr class="filter-row"><th>' + columnInput('name', 'Filter name') + '</th><th>' + columnSelect('company', 'All', uniqueRegistrantValues('company')) + '</th><th>' + columnInput('jobTitle', 'Filter title') + '</th><th>' + columnSelect('state', 'All', uniqueRegistrantValues('state')) + '</th><th>' + columnSelect('dateRegistered', 'All months', registrantMonthOptions()) + '</th><th>' + columnSelect('referral', 'All', uniqueRegistrantValues('referral')) + '</th><th>' + columnSelect('packageName', 'All', uniqueRegistrantValues('packageName')) + '</th><th>' + columnSelect('amount', 'All', ['Paid', 'Comp']) + '</th></tr></thead><tbody>' +
     (rows.length ? rows.map(r => '<tr><td><strong>' + safe(r.name) + '</strong></td><td>' + safe(r.company) + '</td><td>' + safe(r.jobTitle || '--') + '</td><td>' + safe(r.state || '--') + '</td><td>' + safe(r.dateLabel || '--') + '</td><td>' + (r.referral ? '<button class="pill click-row" type="button" data-referrer="' + safe(r.referral) + '">' + safe(r.referral) + '</button>' : '<span class="muted">--</span>') + '</td><td>' + safe(r.packageName) + (r.discountCode ? '<div class="muted">' + safe(r.discountCode) + '</div>' : '') + '</td><td class="num">' + (r.amount ? fmtMoney(r.amount) : '<span class="pill">Comp</span>') + '</td></tr>').join('') : '<tr><td colspan="8" class="muted">No registrants match the current filters.</td></tr>') +
     '</tbody>';
   document.querySelectorAll('#registrantsTable [data-referrer]').forEach(btn => btn.addEventListener('click', () => applyReferralFilter(btn.dataset.referrer)));
+  document.querySelectorAll('#registrantsTable [data-sort-key]').forEach(btn => btn.addEventListener('click', () => {
+    const key = btn.dataset.sortKey;
+    registrantSort = registrantSort.key === key ? { key, direction: registrantSort.direction === 'asc' ? 'desc' : 'asc' } : { key, direction: key === 'dateRegistered' || key === 'amount' ? 'desc' : 'asc' };
+    renderRegistrantTable();
+  }));
+  document.querySelectorAll('#registrantsTable [data-col-filter]').forEach(control => {
+    control.addEventListener('input', () => { registrantColumnFilters[control.dataset.colFilter] = control.value; renderRegistrantTable(control.dataset.colFilter); });
+    control.addEventListener('change', () => { registrantColumnFilters[control.dataset.colFilter] = control.value; renderRegistrantTable(control.dataset.colFilter); });
+  });
+  if (focusColumn) {
+    const activeFilter = document.querySelector('#registrantsTable [data-col-filter="' + focusColumn + '"]');
+    if (activeFilter) {
+      activeFilter.focus();
+      if (activeFilter.setSelectionRange && activeFilter.tagName === 'INPUT') {
+        const pos = activeFilter.value.length;
+        activeFilter.setSelectionRange(pos, pos);
+      }
+    }
+  }
 }
 
 function renderActiveRegistrantFilter(count) {
@@ -1358,6 +1482,7 @@ function applyReferralFilter(referrer) {
   document.getElementById('search').value = '';
   document.getElementById('ticketFilter').value = '';
   document.getElementById('companyFilter').value = '';
+  Object.keys(registrantColumnFilters).forEach(key => { registrantColumnFilters[key] = ''; });
   renderRegistrantTable();
   document.getElementById('registrants').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
