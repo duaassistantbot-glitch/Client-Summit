@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-04T18:10:48.511Z",
-  "sourceFile": "registration-report-deduped-2026-08-04.xlsx",
+  "generatedAt": "2026-08-05T15:18:13.933Z",
+  "sourceFile": "registration-report-deduped-2026-08-05.xlsx",
   "goals": {
     "totalRegistrants": 400,
     "paidTickets": 165,
@@ -36,23 +36,99 @@
     "netCostPerAttendee": 373
   },
   "summary": {
-    "totalRegistrants": 120,
-    "uniqueCompanies": 68,
-    "customerProspectRegistrations": 120,
+    "totalRegistrants": 134,
+    "uniqueCompanies": 75,
+    "customerProspectRegistrations": 134,
     "paidTickets": 31,
-    "compTickets": 89,
+    "compTickets": 103,
     "staffTickets": 0,
     "sponsorPasses": 0,
     "ticketRevenue": 16150,
-    "sponsorRevenue": 281487.5,
-    "totalRevenue": 297637.5,
+    "sponsorRevenue": 295487.5,
+    "totalRevenue": 311637.5,
     "avgPaidTicket": 521,
-    "fullCompTickets": 89,
-    "hotelRooms": 103,
-    "attendedBefore": 64,
-    "referralCount": 95
+    "fullCompTickets": 103,
+    "hotelRooms": 111,
+    "attendedBefore": 65,
+    "referralCount": 110
   },
   "registrants": [
+    {
+      "name": "Atticus Brind",
+      "company": "CallSprout",
+      "jobTitle": "VP of Sales",
+      "state": "FL",
+      "dateLabel": "Jul 20, 2026",
+      "dateRegistered": "2026-07-20",
+      "businessType": "CSP / Telecom",
+      "jobRank": "VP-Level",
+      "department": "Sales/Marketing",
+      "companySize": "1–10",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Justin Lee",
+      "hotel": "Yes",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "ANASTASIYA CHAPMAN",
+      "company": "MNJ Technologies Direct, Inc.",
+      "jobTitle": "SENIOR STAFF ACCOUNTANT",
+      "state": "IL",
+      "dateLabel": "Aug 4, 2026",
+      "dateRegistered": "2026-08-04",
+      "businessType": "MSP",
+      "jobRank": "Non-Manager",
+      "department": "Finance/Billing",
+      "companySize": "51–250",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Rachel Buchtan",
+      "hotel": "Yes",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Stan George",
+      "company": "Broadband Office Solutions",
+      "jobTitle": "CEO",
+      "state": "NY",
+      "dateLabel": "May 5, 2026",
+      "dateRegistered": "2026-05-05",
+      "businessType": "MSP",
+      "jobRank": "C-Level",
+      "department": "Finance/Billing",
+      "companySize": "11–50",
+      "packageName": "Early Bird",
+      "amount": 475,
+      "discountCode": "",
+      "referral": "",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Amanda Gath",
+      "company": "MNJ Technologies",
+      "jobTitle": "PMO Team Lead",
+      "state": "IL",
+      "dateLabel": "Jul 20, 2026",
+      "dateRegistered": "2026-07-20",
+      "businessType": "MSP",
+      "jobRank": "Non-Manager",
+      "department": "IT/Engineering",
+      "companySize": "51–250",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Rachael Buchtan",
+      "hotel": "Yes",
+      "shirtSize": "Small (S)",
+      "attendedBefore": "No"
+    },
     {
       "name": "Alana Lee",
       "company": "Viirtue Inc",
@@ -89,25 +165,6 @@
       "referral": "None None",
       "hotel": "Yes",
       "shirtSize": "Large (L)",
-      "attendedBefore": "No"
-    },
-    {
-      "name": "Alex McKeague",
-      "company": "Sunrise Solutions Inc",
-      "jobTitle": "Owner",
-      "state": "MD",
-      "dateLabel": "Jun 30, 2026",
-      "dateRegistered": "2026-06-30",
-      "businessType": "CSP / Telecom",
-      "jobRank": "Manager",
-      "department": "Sales/Marketing",
-      "companySize": "1–10",
-      "packageName": "BOGO - Buy One, Get One",
-      "amount": 0,
-      "discountCode": "",
-      "referral": "Blaine Villafuerte",
-      "hotel": "Yes",
-      "shirtSize": "3XL (XXXL)",
       "attendedBefore": "No"
     },
     {
@@ -149,22 +206,22 @@
       "attendedBefore": "Yes"
     },
     {
-      "name": "Amanda Gath",
-      "company": "MNJ Technologies",
-      "jobTitle": "PMO Team Lead",
-      "state": "IL",
-      "dateLabel": "Jul 20, 2026",
-      "dateRegistered": "2026-07-20",
-      "businessType": "MSP",
-      "jobRank": "Non-Manager",
-      "department": "IT/Engineering",
-      "companySize": "51–250",
-      "packageName": "Summit Pass- Single ticket",
+      "name": "Alex McKeague",
+      "company": "Sunrise Solutions Inc",
+      "jobTitle": "Owner",
+      "state": "MD",
+      "dateLabel": "Jun 30, 2026",
+      "dateRegistered": "2026-06-30",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Manager",
+      "department": "Sales/Marketing",
+      "companySize": "1–10",
+      "packageName": "BOGO - Buy One, Get One",
       "amount": 0,
-      "discountCode": "REVGUEST-A",
-      "referral": "Rachael Buchtan",
+      "discountCode": "",
+      "referral": "Blaine Villafuerte",
       "hotel": "Yes",
-      "shirtSize": "Small (S)",
+      "shirtSize": "3XL (XXXL)",
       "attendedBefore": "No"
     },
     {
@@ -206,25 +263,6 @@
       "attendedBefore": "No"
     },
     {
-      "name": "Andrew Adair",
-      "company": "K&L Telecom",
-      "jobTitle": "Owner",
-      "state": "MI",
-      "dateLabel": "Jun 24, 2026",
-      "dateRegistered": "2026-06-24",
-      "businessType": "CSP / Telecom",
-      "jobRank": "C-Level",
-      "department": "Operations/Support",
-      "companySize": "1–10",
-      "packageName": "BOGO - Buy One, Get One",
-      "amount": 0,
-      "discountCode": "REVFAN100",
-      "referral": "Jamie Butler",
-      "hotel": "Yes",
-      "shirtSize": "2XL (XXL)",
-      "attendedBefore": "No"
-    },
-    {
       "name": "Andrew Turkington",
       "company": "Hosted America",
       "jobTitle": "CFO",
@@ -242,6 +280,25 @@
       "hotel": "Yes",
       "shirtSize": "Large (L)",
       "attendedBefore": "Yes"
+    },
+    {
+      "name": "Andrew Adair",
+      "company": "K&L Telecom",
+      "jobTitle": "Owner",
+      "state": "MI",
+      "dateLabel": "Jun 24, 2026",
+      "dateRegistered": "2026-06-24",
+      "businessType": "CSP / Telecom",
+      "jobRank": "C-Level",
+      "department": "Operations/Support",
+      "companySize": "1–10",
+      "packageName": "BOGO - Buy One, Get One",
+      "amount": 0,
+      "discountCode": "REVFAN100",
+      "referral": "Jamie Butler",
+      "hotel": "Yes",
+      "shirtSize": "2XL (XXL)",
+      "attendedBefore": "No"
     },
     {
       "name": "Andy Siemens",
@@ -263,22 +320,79 @@
       "attendedBefore": "Yes"
     },
     {
-      "name": "Atticus Brind",
-      "company": "CallSprout",
-      "jobTitle": "VP of Sales",
-      "state": "FL",
+      "name": "Brandon Burchard",
+      "company": "MYSWITCH Communications",
+      "jobTitle": "President",
+      "state": "MI",
       "dateLabel": "Jul 20, 2026",
       "dateRegistered": "2026-07-20",
       "businessType": "CSP / Telecom",
-      "jobRank": "VP-Level",
-      "department": "Sales/Marketing",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
       "companySize": "1–10",
       "packageName": "Summit Pass- Single ticket",
       "amount": 0,
       "discountCode": "REVGUEST-A",
       "referral": "Justin Lee",
       "hotel": "Yes",
-      "shirtSize": "Large (L)",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Raylind Touchstone",
+      "company": "Dialog/AMA Techtel",
+      "jobTitle": "Quality/Training Coordinator",
+      "state": "TX",
+      "dateLabel": "Dec 30, 2025",
+      "dateRegistered": "2025-12-30",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Non-Manager",
+      "department": "Other",
+      "companySize": "51–250",
+      "packageName": "Super Early Bird",
+      "amount": 650,
+      "discountCode": "",
+      "referral": "",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Ben Isbell",
+      "company": "Wolters Kluwer",
+      "jobTitle": "Regional Solutions Consultant",
+      "state": "NY",
+      "dateLabel": "Jul 30, 2026",
+      "dateRegistered": "2026-07-30",
+      "businessType": "other, Technology",
+      "jobRank": "Director",
+      "department": "Sales/Marketing",
+      "companySize": "250+",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "SUMMITSPONSOR",
+      "referral": "",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Ben Sims",
+      "company": "Fuse.Cloud",
+      "jobTitle": "COO",
+      "state": "MS",
+      "dateLabel": "May 7, 2026",
+      "dateRegistered": "2026-05-07",
+      "businessType": "MSP",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "11–50",
+      "packageName": "Early Bird",
+      "amount": 475,
+      "discountCode": "",
+      "referral": "",
+      "hotel": "Yes",
+      "shirtSize": "2XL (XXL)",
       "attendedBefore": "Yes"
     },
     {
@@ -320,42 +434,42 @@
       "attendedBefore": "Yes"
     },
     {
-      "name": "Ben Sims",
-      "company": "Fuse.Cloud",
-      "jobTitle": "COO",
-      "state": "MS",
-      "dateLabel": "May 7, 2026",
-      "dateRegistered": "2026-05-07",
-      "businessType": "MSP",
+      "name": "Sherry Faw",
+      "company": "Southeast Telephone Service",
+      "jobTitle": "Owner",
+      "state": "NC",
+      "dateLabel": "Jul 17, 2026",
+      "dateRegistered": "2026-07-17",
+      "businessType": "CSP / Telecom",
       "jobRank": "C-Level",
       "department": "C-Suite",
-      "companySize": "11–50",
-      "packageName": "Early Bird",
-      "amount": 475,
+      "companySize": "1–10",
+      "packageName": "BOGO - Buy One, Get One",
+      "amount": 0,
       "discountCode": "",
       "referral": "",
       "hotel": "Yes",
-      "shirtSize": "2XL (XXL)",
-      "attendedBefore": "Yes"
+      "shirtSize": "Large (L)",
+      "attendedBefore": "No"
     },
     {
-      "name": "Ben Isbell",
-      "company": "Wolters Kluwer",
-      "jobTitle": "Regional Solutions Consultant",
-      "state": "NY",
-      "dateLabel": "Jul 30, 2026",
-      "dateRegistered": "2026-07-30",
-      "businessType": "other, Technology",
-      "jobRank": "Director",
-      "department": "Sales/Marketing",
-      "companySize": "250+",
+      "name": "Brenden Koop",
+      "company": "MYSWITCH Communications",
+      "jobTitle": "Service Manager",
+      "state": "MI",
+      "dateLabel": "Jul 20, 2026",
+      "dateRegistered": "2026-07-20",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Manager",
+      "department": "Operations/Support",
+      "companySize": "1–10",
       "packageName": "Summit Pass- Single ticket",
       "amount": 0,
-      "discountCode": "SUMMITSPONSOR",
-      "referral": "",
+      "discountCode": "REVGUEST-A",
+      "referral": "Justin Lee",
       "hotel": "Yes",
       "shirtSize": "Extra Large (XL)",
-      "attendedBefore": "Yes"
+      "attendedBefore": "No"
     },
     {
       "name": "Brad Muser",
@@ -396,25 +510,6 @@
       "attendedBefore": "No"
     },
     {
-      "name": "Brandon Burchard",
-      "company": "MYSWITCH Communications",
-      "jobTitle": "President",
-      "state": "MI",
-      "dateLabel": "Jul 20, 2026",
-      "dateRegistered": "2026-07-20",
-      "businessType": "CSP / Telecom",
-      "jobRank": "C-Level",
-      "department": "C-Suite",
-      "companySize": "1–10",
-      "packageName": "Summit Pass- Single ticket",
-      "amount": 0,
-      "discountCode": "REVGUEST-A",
-      "referral": "Justin Lee",
-      "hotel": "Yes",
-      "shirtSize": "Extra Large (XL)",
-      "attendedBefore": "Yes"
-    },
-    {
       "name": "Brant Yandell",
       "company": "Converged Networks",
       "jobTitle": "VoIP Engineer",
@@ -451,25 +546,6 @@
       "hotel": "Yes",
       "shirtSize": "Large (L)",
       "attendedBefore": "Yes"
-    },
-    {
-      "name": "Brenden Koop",
-      "company": "MYSWITCH Communications",
-      "jobTitle": "Service Manager",
-      "state": "MI",
-      "dateLabel": "Jul 20, 2026",
-      "dateRegistered": "2026-07-20",
-      "businessType": "CSP / Telecom",
-      "jobRank": "Manager",
-      "department": "Operations/Support",
-      "companySize": "1–10",
-      "packageName": "Summit Pass- Single ticket",
-      "amount": 0,
-      "discountCode": "REVGUEST-A",
-      "referral": "Justin Lee",
-      "hotel": "Yes",
-      "shirtSize": "Extra Large (XL)",
-      "attendedBefore": "No"
     },
     {
       "name": "Brittany Clester",
@@ -510,6 +586,25 @@
       "attendedBefore": "No"
     },
     {
+      "name": "Christina Bentley",
+      "company": "Touchtone Communications",
+      "jobTitle": "Senior Billing Manager",
+      "state": "NJ",
+      "dateLabel": "Jul 30, 2026",
+      "dateRegistered": "2026-07-30",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Manager",
+      "department": "Finance/Billing",
+      "companySize": "51–250",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Jakob Champion",
+      "hotel": "No",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "Yes"
+    },
+    {
       "name": "CHRIS TABBERT",
       "company": "A+ Communications & Security",
       "jobTitle": "WHS Manager",
@@ -529,48 +624,10 @@
       "attendedBefore": "No"
     },
     {
-      "name": "Cassandra Monroe",
-      "company": "Skyswitch",
-      "jobTitle": "Director of Billing Operations",
-      "state": "NC",
-      "dateLabel": "May 27, 2026",
-      "dateRegistered": "2026-05-27",
-      "businessType": "CSP / Telecom",
-      "jobRank": "Director",
-      "department": "Finance/Billing",
-      "companySize": "250+",
-      "packageName": "Early Bird",
-      "amount": 237.5,
-      "discountCode": "SUMMIT50",
-      "referral": "Ryan Burton",
-      "hotel": "Yes",
-      "shirtSize": "Extra Large (XL)",
-      "attendedBefore": "No"
-    },
-    {
-      "name": "Charles Murray",
-      "company": "INET Communications, LLC",
-      "jobTitle": "CEO",
-      "state": "MA",
-      "dateLabel": "Jul 31, 2026",
-      "dateRegistered": "2026-07-31",
-      "businessType": "CSP / Telecom",
-      "jobRank": "C-Level",
-      "department": "C-Suite",
-      "companySize": "1–10",
-      "packageName": "Summit Pass- Single ticket",
-      "amount": 325,
-      "discountCode": "SUMMIT50",
-      "referral": "Reid Doster",
-      "hotel": "Yes",
-      "shirtSize": "Large (L)",
-      "attendedBefore": "Yes"
-    },
-    {
-      "name": "Charles Drapeau",
-      "company": "AIMERICA",
-      "jobTitle": "CTO",
-      "state": "FL",
+      "name": "Chris Reyes",
+      "company": "BluDog Telecom",
+      "jobTitle": "Owner",
+      "state": "CA",
       "dateLabel": "Aug 4, 2026",
       "dateRegistered": "2026-08-04",
       "businessType": "CSP / Telecom",
@@ -580,8 +637,8 @@
       "packageName": "Summit Pass- Single ticket",
       "amount": 0,
       "discountCode": "REVGUEST-A",
-      "referral": "Connor Flynn",
-      "hotel": "Yes",
+      "referral": "Ingrid Beard",
+      "hotel": "No",
       "shirtSize": "Extra Large (XL)",
       "attendedBefore": "No"
     },
@@ -624,25 +681,6 @@
       "attendedBefore": "Yes"
     },
     {
-      "name": "Christina Bentley",
-      "company": "Touchtone Communications",
-      "jobTitle": "Senior Billing Manager",
-      "state": "NJ",
-      "dateLabel": "Jul 30, 2026",
-      "dateRegistered": "2026-07-30",
-      "businessType": "CSP / Telecom",
-      "jobRank": "Manager",
-      "department": "Finance/Billing",
-      "companySize": "51–250",
-      "packageName": "Summit Pass- Single ticket",
-      "amount": 0,
-      "discountCode": "REVGUEST-A",
-      "referral": "Jakob Champion",
-      "hotel": "No",
-      "shirtSize": "Extra Large (XL)",
-      "attendedBefore": "Yes"
-    },
-    {
       "name": "Christopher Gordan",
       "company": "Minutemen Security Systems",
       "jobTitle": "COO",
@@ -681,6 +719,120 @@
       "attendedBefore": "Yes"
     },
     {
+      "name": "Cassandra Monroe",
+      "company": "Skyswitch",
+      "jobTitle": "Director of Billing Operations",
+      "state": "NC",
+      "dateLabel": "May 27, 2026",
+      "dateRegistered": "2026-05-27",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Director",
+      "department": "Finance/Billing",
+      "companySize": "250+",
+      "packageName": "Early Bird",
+      "amount": 237.5,
+      "discountCode": "SUMMIT50",
+      "referral": "Ryan Burton",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Charles Murray",
+      "company": "INET Communications, LLC",
+      "jobTitle": "CEO",
+      "state": "MA",
+      "dateLabel": "Jul 31, 2026",
+      "dateRegistered": "2026-07-31",
+      "businessType": "CSP / Telecom",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "1–10",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 325,
+      "discountCode": "SUMMIT50",
+      "referral": "Reid Doster",
+      "hotel": "Yes",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Tim Coach",
+      "company": "Cynomi",
+      "jobTitle": "Chief Evangelist of Community and Channels",
+      "state": "FL",
+      "dateLabel": "Jul 2, 2026",
+      "dateRegistered": "2026-07-02",
+      "businessType": "other, Vendor",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "51–250",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "SUMMITSPONSOR",
+      "referral": "Brook Lee",
+      "hotel": "Yes",
+      "shirtSize": "3XL (XXXL)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Corinne Bowden",
+      "company": "IMC Jax",
+      "jobTitle": "Customer Success Advisor",
+      "state": "FL",
+      "dateLabel": "Aug 5, 2026",
+      "dateRegistered": "2026-08-05",
+      "businessType": "MSP",
+      "jobRank": "Non-Manager",
+      "department": "Operations/Support",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Connor Flynn",
+      "hotel": "Yes",
+      "shirtSize": "Medium (M)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Darrell Lopez",
+      "company": "Public Telephone Company",
+      "jobTitle": "Chief Executive Officer",
+      "state": "FL",
+      "dateLabel": "Aug 4, 2026",
+      "dateRegistered": "2026-08-04",
+      "businessType": "CSP / Telecom",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Cam Sharpe",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "David Cox",
+      "company": "AvTek Solutions, Inc.",
+      "jobTitle": "Chief Security Officer",
+      "state": "TX",
+      "dateLabel": "Jul 14, 2026",
+      "dateRegistered": "2026-07-14",
+      "businessType": "MSP",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "2BLONDES",
+      "referral": "Brook Lee",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "No"
+    },
+    {
       "name": "Danilo Jr Catacutan",
       "company": "BCM One",
       "jobTitle": "Sr. Manager for Implementation",
@@ -700,20 +852,20 @@
       "attendedBefore": "No"
     },
     {
-      "name": "David Cox",
-      "company": "AvTek Solutions, Inc.",
-      "jobTitle": "Chief Security Officer",
-      "state": "TX",
-      "dateLabel": "Jul 14, 2026",
-      "dateRegistered": "2026-07-14",
-      "businessType": "MSP",
-      "jobRank": "C-Level",
-      "department": "C-Suite",
-      "companySize": "11–50",
+      "name": "Dylan Hornaday",
+      "company": "Southeast Telephone Service",
+      "jobTitle": "Account Executive",
+      "state": "NC",
+      "dateLabel": "Jul 17, 2026",
+      "dateRegistered": "2026-07-17",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Manager",
+      "department": "Operations/Support",
+      "companySize": "1–10",
       "packageName": "Summit Pass- Single ticket",
       "amount": 0,
-      "discountCode": "2BLONDES",
-      "referral": "Brook Lee",
+      "discountCode": "REVGUEST-A",
+      "referral": "Connor Flynn",
       "hotel": "Yes",
       "shirtSize": "Extra Large (XL)",
       "attendedBefore": "No"
@@ -757,6 +909,25 @@
       "attendedBefore": "Yes"
     },
     {
+      "name": "Charles Drapeau",
+      "company": "AIMERICA",
+      "jobTitle": "CTO",
+      "state": "FL",
+      "dateLabel": "Aug 4, 2026",
+      "dateRegistered": "2026-08-04",
+      "businessType": "CSP / Telecom",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "1–10",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Connor Flynn",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "No"
+    },
+    {
       "name": "Drew Aldinger",
       "company": "Raven Tech LLC",
       "jobTitle": "CEO",
@@ -795,20 +966,20 @@
       "attendedBefore": "Yes"
     },
     {
-      "name": "Dylan Hornaday",
-      "company": "Southeast Telephone Service",
-      "jobTitle": "Account Executive",
-      "state": "NC",
-      "dateLabel": "Jul 17, 2026",
-      "dateRegistered": "2026-07-17",
+      "name": "Erica Carroll",
+      "company": "IPitomy",
+      "jobTitle": "Order Processing",
+      "state": "FL",
+      "dateLabel": "Jul 27, 2026",
+      "dateRegistered": "2026-07-27",
       "businessType": "CSP / Telecom",
-      "jobRank": "Manager",
+      "jobRank": "Non-Manager",
       "department": "Operations/Support",
-      "companySize": "1–10",
+      "companySize": "11–50",
       "packageName": "Summit Pass- Single ticket",
       "amount": 0,
       "discountCode": "REVGUEST-A",
-      "referral": "Connor Flynn",
+      "referral": "Ryan Burton",
       "hotel": "Yes",
       "shirtSize": "Extra Large (XL)",
       "attendedBefore": "No"
@@ -833,20 +1004,20 @@
       "attendedBefore": "Yes"
     },
     {
-      "name": "Erica Carroll",
-      "company": "IPitomy",
-      "jobTitle": "Order Processing",
+      "name": "Eric Lewis",
+      "company": "IMC Jax",
+      "jobTitle": "Sales Manager",
       "state": "FL",
-      "dateLabel": "Jul 27, 2026",
-      "dateRegistered": "2026-07-27",
-      "businessType": "CSP / Telecom",
-      "jobRank": "Non-Manager",
-      "department": "Operations/Support",
+      "dateLabel": "Aug 5, 2026",
+      "dateRegistered": "2026-08-05",
+      "businessType": "MSP",
+      "jobRank": "Manager",
+      "department": "Sales/Marketing",
       "companySize": "11–50",
       "packageName": "Summit Pass- Single ticket",
       "amount": 0,
       "discountCode": "REVGUEST-A",
-      "referral": "Ryan Burton",
+      "referral": "Connor Flynn",
       "hotel": "Yes",
       "shirtSize": "Extra Large (XL)",
       "attendedBefore": "No"
@@ -868,25 +1039,6 @@
       "referral": "Rinor Berisha",
       "hotel": "Yes",
       "shirtSize": "Small (S)",
-      "attendedBefore": "Yes"
-    },
-    {
-      "name": "Francesco Rubiano",
-      "company": "TRICOM Technology",
-      "jobTitle": "Project management",
-      "state": "NY",
-      "dateLabel": "Jun 4, 2026",
-      "dateRegistered": "2026-06-04",
-      "businessType": "CSP / Telecom",
-      "jobRank": "Manager",
-      "department": "Operations/Support",
-      "companySize": "1–10",
-      "packageName": "BOGO - Buy One, Get One",
-      "amount": 0,
-      "discountCode": "",
-      "referral": "Jamie Butler",
-      "hotel": "Yes",
-      "shirtSize": "Large (L)",
       "attendedBefore": "Yes"
     },
     {
@@ -928,6 +1080,44 @@
       "attendedBefore": "Yes"
     },
     {
+      "name": "Francesco Rubiano",
+      "company": "TRICOM Technology",
+      "jobTitle": "Project management",
+      "state": "NY",
+      "dateLabel": "Jun 4, 2026",
+      "dateRegistered": "2026-06-04",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Manager",
+      "department": "Operations/Support",
+      "companySize": "1–10",
+      "packageName": "BOGO - Buy One, Get One",
+      "amount": 0,
+      "discountCode": "",
+      "referral": "Jamie Butler",
+      "hotel": "Yes",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Francesco Rubiano",
+      "company": "Rubiano",
+      "jobTitle": "Project management",
+      "state": "NY",
+      "dateLabel": "Jun 4, 2026",
+      "dateRegistered": "2026-06-04",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Manager",
+      "department": "Operations/Support",
+      "companySize": "1–10",
+      "packageName": "BOGO - Buy One, Get One",
+      "amount": 0,
+      "discountCode": "",
+      "referral": "Jamie Butler",
+      "hotel": "Yes",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "Yes"
+    },
+    {
       "name": "Gary Gordon",
       "company": "Minutemen Security Systems",
       "jobTitle": "Owner",
@@ -947,6 +1137,25 @@
       "attendedBefore": "No"
     },
     {
+      "name": "Georgia Higgins",
+      "company": "MNJ Technologies Direct, Inc.",
+      "jobTitle": "Accounts Receivable Manager",
+      "state": "IL",
+      "dateLabel": "Aug 4, 2026",
+      "dateRegistered": "2026-08-04",
+      "businessType": "MSP",
+      "jobRank": "Manager",
+      "department": "Finance/Billing",
+      "companySize": "51–250",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Rachel Buchtan",
+      "hotel": "Yes",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "No"
+    },
+    {
       "name": "Gigi Hasinger",
       "company": "Hosted America",
       "jobTitle": "VP Operations",
@@ -960,7 +1169,7 @@
       "packageName": "BOGO - Buy One, Get One",
       "amount": 0,
       "discountCode": "",
-      "referral": "",
+      "referral": "Justin Lee",
       "hotel": "Yes",
       "shirtSize": "Small (S)",
       "attendedBefore": "Yes"
@@ -1023,25 +1232,6 @@
       "attendedBefore": "No"
     },
     {
-      "name": "James Mace",
-      "company": "MNJ Technologies",
-      "jobTitle": "PMO Manager",
-      "state": "OH",
-      "dateLabel": "Jul 20, 2026",
-      "dateRegistered": "2026-07-20",
-      "businessType": "Consulting",
-      "jobRank": "Manager",
-      "department": "IT/Engineering",
-      "companySize": "51–250",
-      "packageName": "Summit Pass- Single ticket",
-      "amount": 0,
-      "discountCode": "REVGUEST-A",
-      "referral": "Rachael Buchtan",
-      "hotel": "Yes",
-      "shirtSize": "Large (L)",
-      "attendedBefore": "No"
-    },
-    {
       "name": "Jamie Salata, PMP",
       "company": "JSI LogicomUSA",
       "jobTitle": "Sr. Director",
@@ -1099,6 +1289,25 @@
       "attendedBefore": "Yes"
     },
     {
+      "name": "Joshua Faw",
+      "company": "Southeast Telephone Service",
+      "jobTitle": "President",
+      "state": "NC",
+      "dateLabel": "Jul 17, 2026",
+      "dateRegistered": "2026-07-17",
+      "businessType": "CSP / Telecom",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "1–10",
+      "packageName": "BOGO - Buy One, Get One",
+      "amount": 0,
+      "discountCode": "SUMMIT100",
+      "referral": "Connor Flynn",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "No"
+    },
+    {
       "name": "Jim Dalton",
       "company": "TransNexus",
       "jobTitle": "CEO",
@@ -1116,6 +1325,25 @@
       "hotel": "No",
       "shirtSize": "Large (L)",
       "attendedBefore": "Yes"
+    },
+    {
+      "name": "James Mace",
+      "company": "MNJ Technologies",
+      "jobTitle": "PMO Manager",
+      "state": "OH",
+      "dateLabel": "Jul 20, 2026",
+      "dateRegistered": "2026-07-20",
+      "businessType": "Consulting",
+      "jobRank": "Manager",
+      "department": "IT/Engineering",
+      "companySize": "51–250",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Rachael Buchtan",
+      "hotel": "Yes",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "No"
     },
     {
       "name": "Jordan Grindell",
@@ -1175,41 +1403,41 @@
       "attendedBefore": "No"
     },
     {
-      "name": "Joshua Faw",
-      "company": "Southeast Telephone Service",
-      "jobTitle": "President",
-      "state": "NC",
-      "dateLabel": "Jul 17, 2026",
-      "dateRegistered": "2026-07-17",
+      "name": "Kristen Addonizio",
+      "company": "TailWind Voice & Data",
+      "jobTitle": "Carrier Vendor Manager",
+      "state": "MN",
+      "dateLabel": "Jun 30, 2026",
+      "dateRegistered": "2026-06-30",
       "businessType": "CSP / Telecom",
-      "jobRank": "C-Level",
-      "department": "C-Suite",
-      "companySize": "1–10",
-      "packageName": "BOGO - Buy One, Get One",
+      "jobRank": "Manager",
+      "department": "Operations/Support",
+      "companySize": "51–250",
+      "packageName": "Unspecified",
       "amount": 0,
-      "discountCode": "SUMMIT100",
-      "referral": "Connor Flynn",
-      "hotel": "Yes",
-      "shirtSize": "Extra Large (XL)",
-      "attendedBefore": "No"
+      "discountCode": "",
+      "referral": "Ryan Burton",
+      "hotel": "No",
+      "shirtSize": "2XL (XXL)",
+      "attendedBefore": "Yes"
     },
     {
-      "name": "Kaye Kelsey",
-      "company": "Losh Communications, Inc.",
-      "jobTitle": "Finance Director",
-      "state": "MO",
-      "dateLabel": "May 26, 2026",
-      "dateRegistered": "2026-05-26",
-      "businessType": "CSP / Telecom",
-      "jobRank": "Director",
-      "department": "Finance/Billing",
+      "name": "Kevin Durham",
+      "company": "Centerpoint IT",
+      "jobTitle": "Lead Manager",
+      "state": "GA",
+      "dateLabel": "Jul 21, 2026",
+      "dateRegistered": "2026-07-21",
+      "businessType": "MSP",
+      "jobRank": "Manager",
+      "department": "IT/Engineering",
       "companySize": "11–50",
-      "packageName": "Early Bird",
-      "amount": 475,
-      "discountCode": "",
-      "referral": "Rachael Buchtan",
-      "hotel": "Yes",
-      "shirtSize": "Medium (M)",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Rinor Berisha",
+      "hotel": "No",
+      "shirtSize": "2XL (XXL)",
       "attendedBefore": "No"
     },
     {
@@ -1232,22 +1460,22 @@
       "attendedBefore": "No"
     },
     {
-      "name": "Kevin Durham",
-      "company": "Centerpoint IT",
-      "jobTitle": "Lead Manager",
-      "state": "GA",
-      "dateLabel": "Jul 21, 2026",
-      "dateRegistered": "2026-07-21",
-      "businessType": "MSP",
-      "jobRank": "Manager",
-      "department": "IT/Engineering",
+      "name": "Kaye Kelsey",
+      "company": "Losh Communications, Inc.",
+      "jobTitle": "Finance Director",
+      "state": "MO",
+      "dateLabel": "May 26, 2026",
+      "dateRegistered": "2026-05-26",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Director",
+      "department": "Finance/Billing",
       "companySize": "11–50",
-      "packageName": "Summit Pass- Single ticket",
-      "amount": 0,
-      "discountCode": "REVGUEST-A",
-      "referral": "Rinor Berisha",
-      "hotel": "No",
-      "shirtSize": "2XL (XXL)",
+      "packageName": "Early Bird",
+      "amount": 475,
+      "discountCode": "",
+      "referral": "Rachael Buchtan",
+      "hotel": "Yes",
+      "shirtSize": "Medium (M)",
       "attendedBefore": "No"
     },
     {
@@ -1265,44 +1493,6 @@
       "amount": 0,
       "discountCode": "",
       "referral": "Ryan Burton",
-      "hotel": "Yes",
-      "shirtSize": "Medium (M)",
-      "attendedBefore": "Yes"
-    },
-    {
-      "name": "Kristen Addonizio",
-      "company": "TailWind Voice & Data",
-      "jobTitle": "Carrier Vendor Manager",
-      "state": "MN",
-      "dateLabel": "Jun 30, 2026",
-      "dateRegistered": "2026-06-30",
-      "businessType": "CSP / Telecom",
-      "jobRank": "Manager",
-      "department": "Operations/Support",
-      "companySize": "51–250",
-      "packageName": "Unspecified",
-      "amount": 0,
-      "discountCode": "",
-      "referral": "Ryan Burton",
-      "hotel": "No",
-      "shirtSize": "2XL (XXL)",
-      "attendedBefore": "Yes"
-    },
-    {
-      "name": "Lacey Humphreys",
-      "company": "Simplicity VoIP",
-      "jobTitle": "Inventory Manager",
-      "state": "VA",
-      "dateLabel": "Jul 31, 2026",
-      "dateRegistered": "2026-07-31",
-      "businessType": "CSP / Telecom",
-      "jobRank": "Manager",
-      "department": "Operations/Support",
-      "companySize": "11–50",
-      "packageName": "Summit Pass- Single ticket",
-      "amount": 0,
-      "discountCode": "REVGUEST-A",
-      "referral": "Katerra Greenwood",
       "hotel": "Yes",
       "shirtSize": "Medium (M)",
       "attendedBefore": "Yes"
@@ -1365,6 +1555,25 @@
       "attendedBefore": "No"
     },
     {
+      "name": "Lacey Humphreys",
+      "company": "Simplicity VoIP",
+      "jobTitle": "Inventory Manager",
+      "state": "VA",
+      "dateLabel": "Jul 31, 2026",
+      "dateRegistered": "2026-07-31",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Manager",
+      "department": "Operations/Support",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Katerra Greenwood",
+      "hotel": "Yes",
+      "shirtSize": "Medium (M)",
+      "attendedBefore": "Yes"
+    },
+    {
       "name": "Lincoln Higdon",
       "company": "Centerpoint IT",
       "jobTitle": "CEO",
@@ -1403,23 +1612,42 @@
       "attendedBefore": "Yes"
     },
     {
-      "name": "Mark Geier",
-      "company": "J&M Systems LLC",
-      "jobTitle": "Partner",
-      "state": "MD",
-      "dateLabel": "Jul 20, 2026",
-      "dateRegistered": "2026-07-20",
+      "name": "Lori Rockwell",
+      "company": "IMC Jax",
+      "jobTitle": "Customer Success Advisor",
+      "state": "FL",
+      "dateLabel": "Aug 5, 2026",
+      "dateRegistered": "2026-08-05",
       "businessType": "MSP",
-      "jobRank": "C-Level",
-      "department": "C-Suite",
-      "companySize": "1–10",
+      "jobRank": "Non-Manager",
+      "department": "Operations/Support",
+      "companySize": "11–50",
       "packageName": "Summit Pass- Single ticket",
       "amount": 0,
       "discountCode": "REVGUEST-A",
-      "referral": "Katerra Stephenson-Greenwood",
+      "referral": "Connor Flynn",
       "hotel": "Yes",
-      "shirtSize": "4XL (XXXXL)",
-      "attendedBefore": "Yes"
+      "shirtSize": "Large (L)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Lauren Otts",
+      "company": "Bridge Communications",
+      "jobTitle": "Customer Success Specialist",
+      "state": "GA",
+      "dateLabel": "Aug 4, 2026",
+      "dateRegistered": "2026-08-04",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Non-Manager",
+      "department": "Operations/Support",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "2BLONDES",
+      "referral": "Jakob Champion",
+      "hotel": "No",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "No"
     },
     {
       "name": "Mark Fleeger",
@@ -1479,42 +1707,42 @@
       "attendedBefore": "No"
     },
     {
-      "name": "Melissa Maldonado",
-      "company": "Touchtone Communications",
-      "jobTitle": "Provisioning Manager",
-      "state": "NJ",
-      "dateLabel": "Jul 31, 2026",
-      "dateRegistered": "2026-07-31",
-      "businessType": "CSP / Telecom",
-      "jobRank": "Manager",
-      "department": "Other",
-      "companySize": "51–250",
+      "name": "Mark Geier",
+      "company": "J&M Systems LLC",
+      "jobTitle": "Partner",
+      "state": "MD",
+      "dateLabel": "Jul 20, 2026",
+      "dateRegistered": "2026-07-20",
+      "businessType": "MSP",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "1–10",
       "packageName": "Summit Pass- Single ticket",
       "amount": 0,
       "discountCode": "REVGUEST-A",
-      "referral": "Jakob Champion",
+      "referral": "Katerra Stephenson-Greenwood",
       "hotel": "Yes",
-      "shirtSize": "Medium (M)",
+      "shirtSize": "4XL (XXXXL)",
       "attendedBefore": "Yes"
     },
     {
-      "name": "Michael Vicas",
-      "company": "COEO Solutions",
-      "jobTitle": "Billing Manager",
-      "state": "IL",
-      "dateLabel": "Jun 19, 2026",
-      "dateRegistered": "2026-06-19",
+      "name": "Mike Hancock",
+      "company": "Bridge Communications",
+      "jobTitle": "Managing Partner",
+      "state": "GA",
+      "dateLabel": "Aug 4, 2026",
+      "dateRegistered": "2026-08-04",
       "businessType": "CSP / Telecom",
-      "jobRank": "Director",
-      "department": "Finance/Billing",
-      "companySize": "51–250",
-      "packageName": "BOGO - Buy One, Get One",
-      "amount": 650,
-      "discountCode": "",
-      "referral": "Ryan Burton",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "2BLONDES",
+      "referral": "Jakob Champion",
       "hotel": "Yes",
-      "shirtSize": "Extra Large (XL)",
-      "attendedBefore": "Yes"
+      "shirtSize": "Large (L)",
+      "attendedBefore": "No"
     },
     {
       "name": "Michael Cramer",
@@ -1574,6 +1802,25 @@
       "attendedBefore": "No"
     },
     {
+      "name": "Melissa Maldonado",
+      "company": "Touchtone Communications",
+      "jobTitle": "Provisioning Manager",
+      "state": "NJ",
+      "dateLabel": "Jul 31, 2026",
+      "dateRegistered": "2026-07-31",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Manager",
+      "department": "Other",
+      "companySize": "51–250",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Jakob Champion",
+      "hotel": "Yes",
+      "shirtSize": "Medium (M)",
+      "attendedBefore": "Yes"
+    },
+    {
       "name": "Monica Theriot-Habetz",
       "company": "Global Data Systems",
       "jobTitle": "Vice President, SFC",
@@ -1591,6 +1838,63 @@
       "hotel": "Yes",
       "shirtSize": "Large (L)",
       "attendedBefore": "No"
+    },
+    {
+      "name": "Matt Otts",
+      "company": "Bridge Communications",
+      "jobTitle": "Partner",
+      "state": "GA",
+      "dateLabel": "Aug 4, 2026",
+      "dateRegistered": "2026-08-04",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Manager",
+      "department": "Sales/Marketing",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "2BLONDES",
+      "referral": "Jakob Champion",
+      "hotel": "No",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Matt Pridemore",
+      "company": "Bridge Communications",
+      "jobTitle": "Managing Partner",
+      "state": "GA",
+      "dateLabel": "Aug 4, 2026",
+      "dateRegistered": "2026-08-04",
+      "businessType": "CSP / Telecom",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "2BLONDES",
+      "referral": "Jakob Champion",
+      "hotel": "No",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Michael Vicas",
+      "company": "COEO Solutions",
+      "jobTitle": "Billing Manager",
+      "state": "IL",
+      "dateLabel": "Jun 19, 2026",
+      "dateRegistered": "2026-06-19",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Director",
+      "department": "Finance/Billing",
+      "companySize": "51–250",
+      "packageName": "BOGO - Buy One, Get One",
+      "amount": 650,
+      "discountCode": "",
+      "referral": "Ryan Burton",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "Yes"
     },
     {
       "name": "Nic Carpenter",
@@ -1612,41 +1916,22 @@
       "attendedBefore": "No"
     },
     {
-      "name": "Nicole Adair",
-      "company": "K&L Telecom",
-      "jobTitle": "Support",
-      "state": "MI",
-      "dateLabel": "Jun 24, 2026",
-      "dateRegistered": "2026-06-24",
+      "name": "Patrick Brangan",
+      "company": "Centra IP",
+      "jobTitle": "CEO",
+      "state": "FL",
+      "dateLabel": "Aug 4, 2026",
+      "dateRegistered": "2026-08-04",
       "businessType": "CSP / Telecom",
-      "jobRank": "Director",
-      "department": "Operations/Support",
-      "companySize": "1–10",
-      "packageName": "BOGO - Buy One, Get One",
-      "amount": 0,
-      "discountCode": "",
-      "referral": "",
-      "hotel": "Yes",
-      "shirtSize": "Extra Large (XL)",
-      "attendedBefore": "No"
-    },
-    {
-      "name": "Pam Tyler",
-      "company": "Simplicity VoIP",
-      "jobTitle": "Billing Manager",
-      "state": "VA",
-      "dateLabel": "Jul 31, 2026",
-      "dateRegistered": "2026-07-31",
-      "businessType": "CSP / Telecom",
-      "jobRank": "Manager",
-      "department": "Finance/Billing",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
       "companySize": "11–50",
       "packageName": "Summit Pass- Single ticket",
       "amount": 0,
-      "discountCode": "REVGUEST-A",
-      "referral": "Katerra Greenwood",
+      "discountCode": "2BLONDES",
+      "referral": "Ryan Koontz",
       "hotel": "Yes",
-      "shirtSize": "Extra Large (XL)",
+      "shirtSize": "Large (L)",
       "attendedBefore": "Yes"
     },
     {
@@ -1669,42 +1954,42 @@
       "attendedBefore": "Yes"
     },
     {
-      "name": "Patrick Brangan",
-      "company": "Centra IP",
-      "jobTitle": "CEO",
-      "state": "FL",
-      "dateLabel": "Aug 4, 2026",
-      "dateRegistered": "2026-08-04",
+      "name": "Pam Tyler",
+      "company": "Simplicity VoIP",
+      "jobTitle": "Billing Manager",
+      "state": "VA",
+      "dateLabel": "Jul 31, 2026",
+      "dateRegistered": "2026-07-31",
       "businessType": "CSP / Telecom",
-      "jobRank": "C-Level",
-      "department": "C-Suite",
+      "jobRank": "Manager",
+      "department": "Finance/Billing",
       "companySize": "11–50",
       "packageName": "Summit Pass- Single ticket",
       "amount": 0,
-      "discountCode": "2BLONDES",
-      "referral": "Ryan Koontz",
+      "discountCode": "REVGUEST-A",
+      "referral": "Katerra Greenwood",
       "hotel": "Yes",
-      "shirtSize": "Large (L)",
+      "shirtSize": "Extra Large (XL)",
       "attendedBefore": "Yes"
     },
     {
-      "name": "Raylind Touchstone",
-      "company": "Dialog/AMA Techtel",
-      "jobTitle": "Quality/Training Coordinator",
-      "state": "TX",
-      "dateLabel": "Dec 30, 2025",
-      "dateRegistered": "2025-12-30",
+      "name": "Rosalyn Campbell",
+      "company": "JES & Sons 2-Way, LLC",
+      "jobTitle": "Operations Manager",
+      "state": "IN",
+      "dateLabel": "Nov 13, 2025",
+      "dateRegistered": "2025-11-13",
       "businessType": "CSP / Telecom",
-      "jobRank": "Non-Manager",
-      "department": "Other",
-      "companySize": "51–250",
+      "jobRank": "Manager",
+      "department": "Operations/Support",
+      "companySize": "1–10",
       "packageName": "Super Early Bird",
-      "amount": 650,
+      "amount": 0,
       "discountCode": "",
       "referral": "",
       "hotel": "Yes",
-      "shirtSize": "Extra Large (XL)",
-      "attendedBefore": "No"
+      "shirtSize": "Medium (M)",
+      "attendedBefore": "Yes"
     },
     {
       "name": "Rich Kelly",
@@ -1723,25 +2008,6 @@
       "referral": "Jakob Champion",
       "hotel": "Yes",
       "shirtSize": "Extra Large (XL)",
-      "attendedBefore": "Yes"
-    },
-    {
-      "name": "Rickie Richey",
-      "company": "Altaworx",
-      "jobTitle": "CEO",
-      "state": "AL",
-      "dateLabel": "Aug 4, 2026",
-      "dateRegistered": "2026-08-04",
-      "businessType": "CSP / Telecom",
-      "jobRank": "C-Level",
-      "department": "C-Suite",
-      "companySize": "11–50",
-      "packageName": "Summit Pass- Single ticket",
-      "amount": 0,
-      "discountCode": "2BLONDES",
-      "referral": "Ryan Koontz",
-      "hotel": "Yes",
-      "shirtSize": "Large (L)",
       "attendedBefore": "Yes"
     },
     {
@@ -1783,25 +2049,6 @@
       "attendedBefore": "No"
     },
     {
-      "name": "Rosalyn Campbell",
-      "company": "JES & Sons 2-Way, LLC",
-      "jobTitle": "Operations Manager",
-      "state": "IN",
-      "dateLabel": "Nov 13, 2025",
-      "dateRegistered": "2025-11-13",
-      "businessType": "CSP / Telecom",
-      "jobRank": "Manager",
-      "department": "Operations/Support",
-      "companySize": "1–10",
-      "packageName": "Super Early Bird",
-      "amount": 0,
-      "discountCode": "",
-      "referral": "",
-      "hotel": "Yes",
-      "shirtSize": "Medium (M)",
-      "attendedBefore": "Yes"
-    },
-    {
       "name": "Rose Page",
       "company": "VALHALLA CORP.",
       "jobTitle": "Office Administrator",
@@ -1816,6 +2063,25 @@
       "amount": 650,
       "discountCode": "",
       "referral": "Ingrid Beard",
+      "hotel": "Yes",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Rickie Richey",
+      "company": "Altaworx",
+      "jobTitle": "CEO",
+      "state": "AL",
+      "dateLabel": "Aug 4, 2026",
+      "dateRegistered": "2026-08-04",
+      "businessType": "CSP / Telecom",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "2BLONDES",
+      "referral": "Ryan Koontz",
       "hotel": "Yes",
       "shirtSize": "Large (L)",
       "attendedBefore": "Yes"
@@ -1935,23 +2201,23 @@
       "attendedBefore": "Yes"
     },
     {
-      "name": "Sherry Faw",
-      "company": "Southeast Telephone Service",
-      "jobTitle": "Owner",
-      "state": "NC",
-      "dateLabel": "Jul 17, 2026",
-      "dateRegistered": "2026-07-17",
+      "name": "Stephanie Kern",
+      "company": "Decibel",
+      "jobTitle": "Director of Sales",
+      "state": "MO",
+      "dateLabel": "May 22, 2026",
+      "dateRegistered": "2026-05-22",
       "businessType": "CSP / Telecom",
-      "jobRank": "C-Level",
-      "department": "C-Suite",
-      "companySize": "1–10",
-      "packageName": "BOGO - Buy One, Get One",
+      "jobRank": "Manager",
+      "department": "Sales/Marketing",
+      "companySize": "11–50",
+      "packageName": "Early Bird",
       "amount": 0,
-      "discountCode": "",
-      "referral": "",
-      "hotel": "Yes",
-      "shirtSize": "Large (L)",
-      "attendedBefore": "No"
+      "discountCode": "REVGUEST-A",
+      "referral": "Rachael Buchtan",
+      "hotel": "No",
+      "shirtSize": "Medium (M)",
+      "attendedBefore": "Yes"
     },
     {
       "name": "Stacey Hutton",
@@ -1970,44 +2236,6 @@
       "referral": "Ryan Koontz",
       "hotel": "Yes",
       "shirtSize": "Large (L)",
-      "attendedBefore": "Yes"
-    },
-    {
-      "name": "Stan George",
-      "company": "Broadband Office Solutions",
-      "jobTitle": "CEO",
-      "state": "NY",
-      "dateLabel": "May 5, 2026",
-      "dateRegistered": "2026-05-05",
-      "businessType": "MSP",
-      "jobRank": "C-Level",
-      "department": "Finance/Billing",
-      "companySize": "11–50",
-      "packageName": "Early Bird",
-      "amount": 475,
-      "discountCode": "",
-      "referral": "",
-      "hotel": "Yes",
-      "shirtSize": "Extra Large (XL)",
-      "attendedBefore": "Yes"
-    },
-    {
-      "name": "Stephanie Kern",
-      "company": "Decibel",
-      "jobTitle": "Director of Sales",
-      "state": "MO",
-      "dateLabel": "May 22, 2026",
-      "dateRegistered": "2026-05-22",
-      "businessType": "CSP / Telecom",
-      "jobRank": "Manager",
-      "department": "Sales/Marketing",
-      "companySize": "11–50",
-      "packageName": "Early Bird",
-      "amount": 0,
-      "discountCode": "REVGUEST-A",
-      "referral": "Rachael Buchtan",
-      "hotel": "No",
-      "shirtSize": "Medium (M)",
       "attendedBefore": "Yes"
     },
     {
@@ -2049,22 +2277,22 @@
       "attendedBefore": "No"
     },
     {
-      "name": "Tammy Wooster",
-      "company": "Sunrise Solutions Inc",
-      "jobTitle": "Owner",
-      "state": "MD",
-      "dateLabel": "Jun 30, 2026",
-      "dateRegistered": "2026-06-30",
+      "name": "Nicole Adair",
+      "company": "K&L Telecom",
+      "jobTitle": "Support",
+      "state": "MI",
+      "dateLabel": "Jun 24, 2026",
+      "dateRegistered": "2026-06-24",
       "businessType": "CSP / Telecom",
-      "jobRank": "Manager",
-      "department": "Finance/Billing",
+      "jobRank": "Director",
+      "department": "Operations/Support",
       "companySize": "1–10",
       "packageName": "BOGO - Buy One, Get One",
-      "amount": 650,
+      "amount": 0,
       "discountCode": "",
-      "referral": "Blaine Villafuerte",
+      "referral": "",
       "hotel": "Yes",
-      "shirtSize": "Medium (M)",
+      "shirtSize": "Extra Large (XL)",
       "attendedBefore": "No"
     },
     {
@@ -2087,22 +2315,22 @@
       "attendedBefore": "No"
     },
     {
-      "name": "Thomas Welsh",
-      "company": "Affiliated Technology Solutions, LLC",
-      "jobTitle": "Founder & CEO",
-      "state": "NJ",
-      "dateLabel": "Dec 9, 2025",
-      "dateRegistered": "2025-12-09",
+      "name": "Tom Ford",
+      "company": "Touchtone Communications",
+      "jobTitle": "Director of Billing",
+      "state": "PA",
+      "dateLabel": "Jul 30, 2026",
+      "dateRegistered": "2026-07-30",
       "businessType": "CSP / Telecom",
-      "jobRank": "C-Level",
-      "department": "C-Suite",
+      "jobRank": "Director",
+      "department": "Finance/Billing",
       "companySize": "51–250",
-      "packageName": "Super Early Bird",
-      "amount": 325,
-      "discountCode": "",
-      "referral": "Reid Doster",
-      "hotel": "Yes",
-      "shirtSize": "2XL (XXL)",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "2BLONDES",
+      "referral": "Tom Ford",
+      "hotel": "No",
+      "shirtSize": "Extra Large (XL)",
       "attendedBefore": "Yes"
     },
     {
@@ -2125,23 +2353,23 @@
       "attendedBefore": "Yes"
     },
     {
-      "name": "Tim Coach",
-      "company": "Cynomi",
-      "jobTitle": "Chief Evangelist of Community and Channels",
-      "state": "FL",
-      "dateLabel": "Jul 2, 2026",
-      "dateRegistered": "2026-07-02",
-      "businessType": "other, Vendor",
-      "jobRank": "C-Level",
-      "department": "C-Suite",
+      "name": "Tom McDonnell",
+      "company": "Ten4",
+      "jobTitle": "Vice President, Operations",
+      "state": "NJ",
+      "dateLabel": "May 18, 2026",
+      "dateRegistered": "2026-05-18",
+      "businessType": "CSP / Telecom",
+      "jobRank": "VP-Level",
+      "department": "Operations/Support",
       "companySize": "51–250",
-      "packageName": "Summit Pass- Single ticket",
+      "packageName": "Early Bird",
       "amount": 0,
-      "discountCode": "SUMMITSPONSOR",
-      "referral": "Brook Lee",
+      "discountCode": "REVFAN100",
+      "referral": "Cam Sharpe",
       "hotel": "Yes",
-      "shirtSize": "3XL (XXXL)",
-      "attendedBefore": "No"
+      "shirtSize": "Medium (M)",
+      "attendedBefore": "Yes"
     },
     {
       "name": "Tom Murphy",
@@ -2182,44 +2410,6 @@
       "attendedBefore": "No"
     },
     {
-      "name": "Tom Ford",
-      "company": "Touchtone Communications",
-      "jobTitle": "Director of Billing",
-      "state": "PA",
-      "dateLabel": "Jul 30, 2026",
-      "dateRegistered": "2026-07-30",
-      "businessType": "CSP / Telecom",
-      "jobRank": "Director",
-      "department": "Finance/Billing",
-      "companySize": "51–250",
-      "packageName": "Summit Pass- Single ticket",
-      "amount": 0,
-      "discountCode": "2BLONDES",
-      "referral": "Tom Ford",
-      "hotel": "No",
-      "shirtSize": "Extra Large (XL)",
-      "attendedBefore": "Yes"
-    },
-    {
-      "name": "Tom McDonnell",
-      "company": "Ten4",
-      "jobTitle": "Vice President, Operations",
-      "state": "NJ",
-      "dateLabel": "May 18, 2026",
-      "dateRegistered": "2026-05-18",
-      "businessType": "CSP / Telecom",
-      "jobRank": "VP-Level",
-      "department": "Operations/Support",
-      "companySize": "51–250",
-      "packageName": "Early Bird",
-      "amount": 0,
-      "discountCode": "REVFAN100",
-      "referral": "Cam Sharpe",
-      "hotel": "Yes",
-      "shirtSize": "Medium (M)",
-      "attendedBefore": "Yes"
-    },
-    {
       "name": "Tony Hsieh",
       "company": "C1st Technologies",
       "jobTitle": "Partner",
@@ -2258,6 +2448,44 @@
       "attendedBefore": "No"
     },
     {
+      "name": "Thomas Welsh",
+      "company": "Affiliated Technology Solutions, LLC",
+      "jobTitle": "Founder & CEO",
+      "state": "NJ",
+      "dateLabel": "Dec 9, 2025",
+      "dateRegistered": "2025-12-09",
+      "businessType": "CSP / Telecom",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "51–250",
+      "packageName": "Super Early Bird",
+      "amount": 325,
+      "discountCode": "",
+      "referral": "Reid Doster",
+      "hotel": "Yes",
+      "shirtSize": "2XL (XXL)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Tammy Wooster",
+      "company": "Sunrise Solutions Inc",
+      "jobTitle": "Owner",
+      "state": "MD",
+      "dateLabel": "Jun 30, 2026",
+      "dateRegistered": "2026-06-30",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Manager",
+      "department": "Finance/Billing",
+      "companySize": "1–10",
+      "packageName": "BOGO - Buy One, Get One",
+      "amount": 650,
+      "discountCode": "",
+      "referral": "Blaine Villafuerte",
+      "hotel": "Yes",
+      "shirtSize": "Medium (M)",
+      "attendedBefore": "No"
+    },
+    {
       "name": "Victoria Petrosyan",
       "company": "SoundLine Communications",
       "jobTitle": "CPO",
@@ -2275,6 +2503,44 @@
       "hotel": "No",
       "shirtSize": "Extra Large (XL)",
       "attendedBefore": "Yes"
+    },
+    {
+      "name": "William Brister",
+      "company": "SkySwitch",
+      "jobTitle": "Director Partner Onboarding",
+      "state": "TX",
+      "dateLabel": "May 20, 2026",
+      "dateRegistered": "2026-05-20",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Director",
+      "department": "Finance/Billing",
+      "companySize": "250+",
+      "packageName": "Premium: Early Bird",
+      "amount": 650,
+      "discountCode": "",
+      "referral": "Ryan Burton",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "William Oppermann",
+      "company": "Southeast Networks",
+      "jobTitle": "CEO",
+      "state": "GA",
+      "dateLabel": "Aug 5, 2026",
+      "dateRegistered": "2026-08-05",
+      "businessType": "CSP / Telecom",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "1–10",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "2BLONDES",
+      "referral": "Ryan Koontz",
+      "hotel": "No",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "No"
     },
     {
       "name": "Wayne Jaggers",
@@ -2296,23 +2562,23 @@
       "attendedBefore": "Yes"
     },
     {
-      "name": "William Brister",
-      "company": "SkySwitch",
-      "jobTitle": "Director Partner Onboarding",
-      "state": "TX",
-      "dateLabel": "May 20, 2026",
-      "dateRegistered": "2026-05-20",
+      "name": "Yan Carter",
+      "company": "AIMERICA",
+      "jobTitle": "General Manager",
+      "state": "FL",
+      "dateLabel": "Aug 4, 2026",
+      "dateRegistered": "2026-08-04",
       "businessType": "CSP / Telecom",
-      "jobRank": "Director",
-      "department": "Finance/Billing",
-      "companySize": "250+",
-      "packageName": "Premium: Early Bird",
-      "amount": 650,
-      "discountCode": "",
-      "referral": "Ryan Burton",
-      "hotel": "Yes",
-      "shirtSize": "Extra Large (XL)",
-      "attendedBefore": "Yes"
+      "jobRank": "Manager",
+      "department": "Operations/Support",
+      "companySize": "1–10",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Connor Flynn",
+      "hotel": "No",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "No"
     },
     {
       "name": "Zack Killpack",
@@ -2337,146 +2603,146 @@
   "referrals": [
     {
       "id": 1,
-      "registrant": "Alana Lee",
-      "referrer": "Rachael Buchtan",
-      "date": "2026-07-13"
-    },
-    {
-      "id": 2,
-      "registrant": "Alec Lowman",
-      "referrer": "None None",
-      "date": "2026-08-03"
-    },
-    {
-      "id": 3,
-      "registrant": "Alex McKeague",
-      "referrer": "Blaine Villafuerte",
-      "date": "2026-06-30"
-    },
-    {
-      "id": 4,
-      "registrant": "Allen Reid",
-      "referrer": "Ryan Berthelsen",
-      "date": "2026-06-24"
-    },
-    {
-      "id": 5,
-      "registrant": "Alyssa Hutchinson",
-      "referrer": "Cam Sharpe",
-      "date": "2026-05-14"
-    },
-    {
-      "id": 6,
-      "registrant": "Amanda Gath",
-      "referrer": "Rachael Buchtan",
-      "date": "2026-07-20"
-    },
-    {
-      "id": 7,
-      "registrant": "Amy Shirey",
-      "referrer": "Ryan Burton",
-      "date": "2026-07-16"
-    },
-    {
-      "id": 8,
-      "registrant": "Ana da Silva",
-      "referrer": "Rachael Buchtan",
-      "date": "2026-03-31"
-    },
-    {
-      "id": 9,
-      "registrant": "Andrew Adair",
-      "referrer": "Jamie Butler",
-      "date": "2026-06-24"
-    },
-    {
-      "id": 10,
-      "registrant": "Andrew Turkington",
-      "referrer": "Justin Lee",
-      "date": "2026-07-31"
-    },
-    {
-      "id": 11,
       "registrant": "Atticus Brind",
       "referrer": "Justin Lee",
       "date": "2026-07-20"
     },
     {
-      "id": 12,
-      "registrant": "Ben Lawrence",
-      "referrer": "Blaine Villafuerte",
-      "date": "2026-07-29"
+      "id": 2,
+      "registrant": "ANASTASIYA CHAPMAN",
+      "referrer": "Rachel Buchtan",
+      "date": "2026-08-04"
     },
     {
-      "id": 13,
-      "registrant": "Ben Humphreys",
-      "referrer": "Katerra Greenwood",
+      "id": 3,
+      "registrant": "Amanda Gath",
+      "referrer": "Rachael Buchtan",
+      "date": "2026-07-20"
+    },
+    {
+      "id": 4,
+      "registrant": "Alana Lee",
+      "referrer": "Rachael Buchtan",
+      "date": "2026-07-13"
+    },
+    {
+      "id": 5,
+      "registrant": "Alec Lowman",
+      "referrer": "None None",
+      "date": "2026-08-03"
+    },
+    {
+      "id": 6,
+      "registrant": "Allen Reid",
+      "referrer": "Ryan Berthelsen",
+      "date": "2026-06-24"
+    },
+    {
+      "id": 7,
+      "registrant": "Alyssa Hutchinson",
+      "referrer": "Cam Sharpe",
+      "date": "2026-05-14"
+    },
+    {
+      "id": 8,
+      "registrant": "Alex McKeague",
+      "referrer": "Blaine Villafuerte",
+      "date": "2026-06-30"
+    },
+    {
+      "id": 9,
+      "registrant": "Amy Shirey",
+      "referrer": "Ryan Burton",
+      "date": "2026-07-16"
+    },
+    {
+      "id": 10,
+      "registrant": "Ana da Silva",
+      "referrer": "Rachael Buchtan",
+      "date": "2026-03-31"
+    },
+    {
+      "id": 11,
+      "registrant": "Andrew Turkington",
+      "referrer": "Justin Lee",
       "date": "2026-07-31"
     },
     {
-      "id": 14,
-      "registrant": "Brad Muser",
-      "referrer": "Cam Sharpe",
-      "date": "2026-05-18"
+      "id": 12,
+      "registrant": "Andrew Adair",
+      "referrer": "Jamie Butler",
+      "date": "2026-06-24"
     },
     {
-      "id": 15,
+      "id": 13,
       "registrant": "Brandon Burchard",
       "referrer": "Justin Lee",
       "date": "2026-07-20"
     },
     {
+      "id": 14,
+      "registrant": "Ben Lawrence",
+      "referrer": "Blaine Villafuerte",
+      "date": "2026-07-29"
+    },
+    {
+      "id": 15,
+      "registrant": "Ben Humphreys",
+      "referrer": "Katerra Greenwood",
+      "date": "2026-07-31"
+    },
+    {
       "id": 16,
-      "registrant": "Brant Yandell",
-      "referrer": "Justin Lee",
-      "date": "2026-07-08"
-    },
-    {
-      "id": 17,
-      "registrant": "Brendan English",
-      "referrer": "Cam Sharpe",
-      "date": "2026-05-14"
-    },
-    {
-      "id": 18,
       "registrant": "Brenden Koop",
       "referrer": "Justin Lee",
       "date": "2026-07-20"
     },
     {
+      "id": 17,
+      "registrant": "Brad Muser",
+      "referrer": "Cam Sharpe",
+      "date": "2026-05-18"
+    },
+    {
+      "id": 18,
+      "registrant": "Brant Yandell",
+      "referrer": "Justin Lee",
+      "date": "2026-07-08"
+    },
+    {
       "id": 19,
+      "registrant": "Brendan English",
+      "referrer": "Cam Sharpe",
+      "date": "2026-05-14"
+    },
+    {
+      "id": 20,
       "registrant": "Brittany Clester",
       "referrer": "Ryan Burton",
       "date": "2026-07-16"
     },
     {
-      "id": 20,
+      "id": 21,
       "registrant": "Bryan Miller",
       "referrer": "Christina Oudin",
       "date": "2026-07-22"
     },
     {
-      "id": 21,
+      "id": 22,
+      "registrant": "Christina Bentley",
+      "referrer": "Jakob Champion",
+      "date": "2026-07-30"
+    },
+    {
+      "id": 23,
       "registrant": "CHRIS TABBERT",
       "referrer": "Blaine Villafuerte",
       "date": "2026-06-29"
     },
     {
-      "id": 22,
-      "registrant": "Cassandra Monroe",
-      "referrer": "Ryan Burton",
-      "date": "2026-05-27"
-    },
-    {
-      "id": 23,
-      "registrant": "Charles Murray",
-      "referrer": "Reid Doster",
-      "date": "2026-07-31"
-    },
-    {
       "id": 24,
-      "registrant": "Charles Drapeau",
-      "referrer": "Connor Flynn",
+      "registrant": "Chris Reyes",
+      "referrer": "Ingrid Beard",
       "date": "2026-08-04"
     },
     {
@@ -2487,420 +2753,510 @@
     },
     {
       "id": 26,
-      "registrant": "Christina Bentley",
-      "referrer": "Jakob Champion",
-      "date": "2026-07-30"
-    },
-    {
-      "id": 27,
       "registrant": "Christopher Gordan",
       "referrer": "Jaylin Bender",
       "date": "2026-07-30"
     },
     {
-      "id": 28,
+      "id": 27,
       "registrant": "Clay Lovelace",
       "referrer": "Blaine Villafuerte",
       "date": "2026-06-23"
     },
     {
+      "id": 28,
+      "registrant": "Cassandra Monroe",
+      "referrer": "Ryan Burton",
+      "date": "2026-05-27"
+    },
+    {
       "id": 29,
-      "registrant": "David Cox",
-      "referrer": "Brook Lee",
-      "date": "2026-07-14"
+      "registrant": "Charles Murray",
+      "referrer": "Reid Doster",
+      "date": "2026-07-31"
     },
     {
       "id": 30,
-      "registrant": "Diane Michelin",
-      "referrer": "Tim Smith",
-      "date": "2026-05-13"
-    },
-    {
-      "id": 31,
-      "registrant": "Drew Aldinger",
-      "referrer": "Olivia Sandefur",
-      "date": "2026-06-11"
-    },
-    {
-      "id": 32,
-      "registrant": "Dylan Hornaday",
-      "referrer": "Connor Flynn",
-      "date": "2026-07-17"
-    },
-    {
-      "id": 33,
-      "registrant": "Elise Cia",
-      "referrer": "Reid Doster",
-      "date": "2025-12-09"
-    },
-    {
-      "id": 34,
-      "registrant": "Erica Carroll",
-      "referrer": "Ryan Burton",
-      "date": "2026-07-27"
-    },
-    {
-      "id": 35,
-      "registrant": "Felicia Turner",
-      "referrer": "Rinor Berisha",
-      "date": "2025-11-20"
-    },
-    {
-      "id": 36,
-      "registrant": "Francesco Rubiano",
-      "referrer": "Jamie Butler",
-      "date": "2026-06-04"
-    },
-    {
-      "id": 37,
-      "registrant": "Frank Kadaf",
-      "referrer": "Cam Sharpe",
-      "date": "2026-05-19"
-    },
-    {
-      "id": 38,
-      "registrant": "Frank Rubiano",
-      "referrer": "Jamie Butler",
-      "date": "2026-06-04"
-    },
-    {
-      "id": 39,
-      "registrant": "Gary Gordon",
-      "referrer": "Jaylin Bender",
-      "date": "2026-07-30"
-    },
-    {
-      "id": 40,
-      "registrant": "Gregory Marchand",
-      "referrer": "Jamie Butler",
-      "date": "2026-05-28"
-    },
-    {
-      "id": 41,
-      "registrant": "Ismael Adames",
-      "referrer": "Jeremy Adams",
-      "date": "2026-07-09"
-    },
-    {
-      "id": 42,
-      "registrant": "Jaclyn Cooper",
-      "referrer": "Jakob Champion",
-      "date": "2026-08-04"
-    },
-    {
-      "id": 43,
-      "registrant": "James Mace",
-      "referrer": "Rachael Buchtan",
-      "date": "2026-07-20"
-    },
-    {
-      "id": 44,
-      "registrant": "Jamie Salata, PMP",
-      "referrer": "Ryan Berthelsen",
-      "date": "2026-06-24"
-    },
-    {
-      "id": 45,
-      "registrant": "Jared Downs",
-      "referrer": "Brook Lee",
-      "date": "2026-07-02"
-    },
-    {
-      "id": 46,
-      "registrant": "Jennifer Torre",
-      "referrer": "Christina Oudin",
-      "date": "2026-07-21"
-    },
-    {
-      "id": 47,
-      "registrant": "Jordan Grindell",
-      "referrer": "Justin Lee",
-      "date": "2026-06-24"
-    },
-    {
-      "id": 48,
-      "registrant": "Josh Harrison",
-      "referrer": "Justin Lee",
-      "date": "2026-06-24"
-    },
-    {
-      "id": 49,
-      "registrant": "Joshua Faw",
-      "referrer": "Connor Flynn",
-      "date": "2026-07-17"
-    },
-    {
-      "id": 50,
-      "registrant": "Kaye Kelsey",
-      "referrer": "Rachael Buchtan",
-      "date": "2026-05-26"
-    },
-    {
-      "id": 51,
-      "registrant": "Kevin Durham",
-      "referrer": "Rinor Berisha",
-      "date": "2026-07-21"
-    },
-    {
-      "id": 52,
-      "registrant": "Kim Zacharkiewicz",
-      "referrer": "Ryan Burton",
-      "date": "2026-06-19"
-    },
-    {
-      "id": 53,
-      "registrant": "Kristen Addonizio",
-      "referrer": "Ryan Burton",
-      "date": "2026-06-30"
-    },
-    {
-      "id": 54,
-      "registrant": "Lacey Humphreys",
-      "referrer": "Katerra Greenwood",
-      "date": "2026-07-31"
-    },
-    {
-      "id": 55,
-      "registrant": "Lance Schueneman",
-      "referrer": "Andrew Whisenant",
-      "date": "2025-12-29"
-    },
-    {
-      "id": 56,
-      "registrant": "Lenny Ljungholm",
-      "referrer": "Justin Lee",
-      "date": "2026-07-20"
-    },
-    {
-      "id": 57,
-      "registrant": "Lincoln Higdon",
-      "referrer": "Rinor Berisha",
-      "date": "2025-11-20"
-    },
-    {
-      "id": 58,
-      "registrant": "Linda Wheeler",
-      "referrer": "Blaine Villafuerte",
-      "date": "2026-06-29"
-    },
-    {
-      "id": 59,
-      "registrant": "Mark Geier",
-      "referrer": "Katerra Stephenson-Greenwood",
-      "date": "2026-07-20"
-    },
-    {
-      "id": 60,
-      "registrant": "Mark Fleeger",
-      "referrer": "Jacob Willimas",
-      "date": "2026-07-02"
-    },
-    {
-      "id": 61,
-      "registrant": "Mark Bortz",
-      "referrer": "Justin Lee",
-      "date": "2026-07-15"
-    },
-    {
-      "id": 62,
-      "registrant": "Matthew Schiavetta",
-      "referrer": "Brook Lee",
-      "date": "2026-07-02"
-    },
-    {
-      "id": 63,
-      "registrant": "Melissa Maldonado",
-      "referrer": "Jakob Champion",
-      "date": "2026-07-31"
-    },
-    {
-      "id": 64,
-      "registrant": "Michael Vicas",
-      "referrer": "Ryan Burton",
-      "date": "2026-06-19"
-    },
-    {
-      "id": 65,
-      "registrant": "Michelle Marin",
-      "referrer": "Rachael Buchtan",
-      "date": "2026-03-31"
-    },
-    {
-      "id": 66,
-      "registrant": "Monica Theriot-Habetz",
-      "referrer": "Ryan Koontz",
-      "date": "2026-06-30"
-    },
-    {
-      "id": 67,
-      "registrant": "Nic Carpenter",
-      "referrer": "Ben Sims",
-      "date": "2026-07-17"
-    },
-    {
-      "id": 68,
-      "registrant": "Pam Tyler",
-      "referrer": "Katerra Greenwood",
-      "date": "2026-07-31"
-    },
-    {
-      "id": 69,
-      "registrant": "Patricia Diggins",
-      "referrer": "Jakob Champion",
-      "date": "2026-07-16"
-    },
-    {
-      "id": 70,
-      "registrant": "Patrick Brangan",
-      "referrer": "Ryan Koontz",
-      "date": "2026-08-04"
-    },
-    {
-      "id": 71,
-      "registrant": "Rich Kelly",
-      "referrer": "Jakob Champion",
-      "date": "2026-07-16"
-    },
-    {
-      "id": 72,
-      "registrant": "Rickie Richey",
-      "referrer": "Ryan Koontz",
-      "date": "2026-08-04"
-    },
-    {
-      "id": 73,
-      "registrant": "Rita Lawrence",
-      "referrer": "Blaine Villafuerte",
-      "date": "2026-07-29"
-    },
-    {
-      "id": 74,
-      "registrant": "Robert Guidry",
-      "referrer": "Ryan Koontz",
-      "date": "2026-06-30"
-    },
-    {
-      "id": 75,
-      "registrant": "Rose Page",
-      "referrer": "Ingrid Beard",
-      "date": "2026-06-29"
-    },
-    {
-      "id": 76,
-      "registrant": "Samantha Bivens",
-      "referrer": "Andrew Whisenant",
-      "date": "2025-12-29"
-    },
-    {
-      "id": 77,
-      "registrant": "Sanjeev Tirunagaram",
-      "referrer": "Ryan Burton",
-      "date": "2026-07-02"
-    },
-    {
-      "id": 78,
-      "registrant": "Scott Williams",
-      "referrer": "Rinor Berisha",
-      "date": "2026-07-21"
-    },
-    {
-      "id": 79,
-      "registrant": "Sean Tishler",
-      "referrer": "Connor Flynn",
-      "date": "2026-08-04"
-    },
-    {
-      "id": 80,
-      "registrant": "Shane Deegan",
-      "referrer": "Brook Lee",
-      "date": "2026-07-02"
-    },
-    {
-      "id": 81,
-      "registrant": "Stacey Hutton",
-      "referrer": "Ryan Koontz",
-      "date": "2026-08-04"
-    },
-    {
-      "id": 82,
-      "registrant": "Stephanie Kern",
-      "referrer": "Rachael Buchtan",
-      "date": "2026-05-22"
-    },
-    {
-      "id": 83,
-      "registrant": "Steve Konetski",
-      "referrer": "Ryan Koontz",
-      "date": "2026-07-01"
-    },
-    {
-      "id": 84,
-      "registrant": "Tammy Wooster",
-      "referrer": "Blaine Villafuerte",
-      "date": "2026-06-30"
-    },
-    {
-      "id": 85,
-      "registrant": "Terri Firestein",
-      "referrer": "Ryan Berthelsen",
-      "date": "2026-06-24"
-    },
-    {
-      "id": 86,
-      "registrant": "Thomas Welsh",
-      "referrer": "Reid Doster",
-      "date": "2025-12-09"
-    },
-    {
-      "id": 87,
       "registrant": "Tim Coach",
       "referrer": "Brook Lee",
       "date": "2026-07-02"
     },
     {
-      "id": 88,
-      "registrant": "Tom Plantamura",
-      "referrer": "Usman Zahoor",
+      "id": 31,
+      "registrant": "Corinne Bowden",
+      "referrer": "Connor Flynn",
+      "date": "2026-08-05"
+    },
+    {
+      "id": 32,
+      "registrant": "Darrell Lopez",
+      "referrer": "Cam Sharpe",
+      "date": "2026-08-04"
+    },
+    {
+      "id": 33,
+      "registrant": "David Cox",
+      "referrer": "Brook Lee",
+      "date": "2026-07-14"
+    },
+    {
+      "id": 34,
+      "registrant": "Dylan Hornaday",
+      "referrer": "Connor Flynn",
+      "date": "2026-07-17"
+    },
+    {
+      "id": 35,
+      "registrant": "Diane Michelin",
+      "referrer": "Tim Smith",
+      "date": "2026-05-13"
+    },
+    {
+      "id": 36,
+      "registrant": "Charles Drapeau",
+      "referrer": "Connor Flynn",
+      "date": "2026-08-04"
+    },
+    {
+      "id": 37,
+      "registrant": "Drew Aldinger",
+      "referrer": "Olivia Sandefur",
+      "date": "2026-06-11"
+    },
+    {
+      "id": 38,
+      "registrant": "Erica Carroll",
+      "referrer": "Ryan Burton",
+      "date": "2026-07-27"
+    },
+    {
+      "id": 39,
+      "registrant": "Elise Cia",
+      "referrer": "Reid Doster",
+      "date": "2025-12-09"
+    },
+    {
+      "id": 40,
+      "registrant": "Eric Lewis",
+      "referrer": "Connor Flynn",
+      "date": "2026-08-05"
+    },
+    {
+      "id": 41,
+      "registrant": "Felicia Turner",
+      "referrer": "Rinor Berisha",
+      "date": "2025-11-20"
+    },
+    {
+      "id": 42,
+      "registrant": "Frank Kadaf",
+      "referrer": "Cam Sharpe",
+      "date": "2026-05-19"
+    },
+    {
+      "id": 43,
+      "registrant": "Frank Rubiano",
+      "referrer": "Jamie Butler",
+      "date": "2026-06-04"
+    },
+    {
+      "id": 44,
+      "registrant": "Francesco Rubiano",
+      "referrer": "Jamie Butler",
+      "date": "2026-06-04"
+    },
+    {
+      "id": 45,
+      "registrant": "Francesco Rubiano",
+      "referrer": "Jamie Butler",
+      "date": "2026-06-04"
+    },
+    {
+      "id": 46,
+      "registrant": "Gary Gordon",
+      "referrer": "Jaylin Bender",
       "date": "2026-07-30"
     },
     {
+      "id": 47,
+      "registrant": "Georgia Higgins",
+      "referrer": "Rachel Buchtan",
+      "date": "2026-08-04"
+    },
+    {
+      "id": 48,
+      "registrant": "Gigi Hasinger",
+      "referrer": "Justin Lee",
+      "date": "2026-07-31"
+    },
+    {
+      "id": 49,
+      "registrant": "Gregory Marchand",
+      "referrer": "Jamie Butler",
+      "date": "2026-05-28"
+    },
+    {
+      "id": 50,
+      "registrant": "Ismael Adames",
+      "referrer": "Jeremy Adams",
+      "date": "2026-07-09"
+    },
+    {
+      "id": 51,
+      "registrant": "Jaclyn Cooper",
+      "referrer": "Jakob Champion",
+      "date": "2026-08-04"
+    },
+    {
+      "id": 52,
+      "registrant": "Jamie Salata, PMP",
+      "referrer": "Ryan Berthelsen",
+      "date": "2026-06-24"
+    },
+    {
+      "id": 53,
+      "registrant": "Jared Downs",
+      "referrer": "Brook Lee",
+      "date": "2026-07-02"
+    },
+    {
+      "id": 54,
+      "registrant": "Jennifer Torre",
+      "referrer": "Christina Oudin",
+      "date": "2026-07-21"
+    },
+    {
+      "id": 55,
+      "registrant": "Joshua Faw",
+      "referrer": "Connor Flynn",
+      "date": "2026-07-17"
+    },
+    {
+      "id": 56,
+      "registrant": "James Mace",
+      "referrer": "Rachael Buchtan",
+      "date": "2026-07-20"
+    },
+    {
+      "id": 57,
+      "registrant": "Jordan Grindell",
+      "referrer": "Justin Lee",
+      "date": "2026-06-24"
+    },
+    {
+      "id": 58,
+      "registrant": "Josh Harrison",
+      "referrer": "Justin Lee",
+      "date": "2026-06-24"
+    },
+    {
+      "id": 59,
+      "registrant": "Kristen Addonizio",
+      "referrer": "Ryan Burton",
+      "date": "2026-06-30"
+    },
+    {
+      "id": 60,
+      "registrant": "Kevin Durham",
+      "referrer": "Rinor Berisha",
+      "date": "2026-07-21"
+    },
+    {
+      "id": 61,
+      "registrant": "Kaye Kelsey",
+      "referrer": "Rachael Buchtan",
+      "date": "2026-05-26"
+    },
+    {
+      "id": 62,
+      "registrant": "Kim Zacharkiewicz",
+      "referrer": "Ryan Burton",
+      "date": "2026-06-19"
+    },
+    {
+      "id": 63,
+      "registrant": "Lance Schueneman",
+      "referrer": "Andrew Whisenant",
+      "date": "2025-12-29"
+    },
+    {
+      "id": 64,
+      "registrant": "Lenny Ljungholm",
+      "referrer": "Justin Lee",
+      "date": "2026-07-20"
+    },
+    {
+      "id": 65,
+      "registrant": "Lacey Humphreys",
+      "referrer": "Katerra Greenwood",
+      "date": "2026-07-31"
+    },
+    {
+      "id": 66,
+      "registrant": "Lincoln Higdon",
+      "referrer": "Rinor Berisha",
+      "date": "2025-11-20"
+    },
+    {
+      "id": 67,
+      "registrant": "Linda Wheeler",
+      "referrer": "Blaine Villafuerte",
+      "date": "2026-06-29"
+    },
+    {
+      "id": 68,
+      "registrant": "Lori Rockwell",
+      "referrer": "Connor Flynn",
+      "date": "2026-08-05"
+    },
+    {
+      "id": 69,
+      "registrant": "Lauren Otts",
+      "referrer": "Jakob Champion",
+      "date": "2026-08-04"
+    },
+    {
+      "id": 70,
+      "registrant": "Mark Fleeger",
+      "referrer": "Jacob Willimas",
+      "date": "2026-07-02"
+    },
+    {
+      "id": 71,
+      "registrant": "Mark Bortz",
+      "referrer": "Justin Lee",
+      "date": "2026-07-15"
+    },
+    {
+      "id": 72,
+      "registrant": "Matthew Schiavetta",
+      "referrer": "Brook Lee",
+      "date": "2026-07-02"
+    },
+    {
+      "id": 73,
+      "registrant": "Mark Geier",
+      "referrer": "Katerra Stephenson-Greenwood",
+      "date": "2026-07-20"
+    },
+    {
+      "id": 74,
+      "registrant": "Mike Hancock",
+      "referrer": "Jakob Champion",
+      "date": "2026-08-04"
+    },
+    {
+      "id": 75,
+      "registrant": "Michelle Marin",
+      "referrer": "Rachael Buchtan",
+      "date": "2026-03-31"
+    },
+    {
+      "id": 76,
+      "registrant": "Melissa Maldonado",
+      "referrer": "Jakob Champion",
+      "date": "2026-07-31"
+    },
+    {
+      "id": 77,
+      "registrant": "Monica Theriot-Habetz",
+      "referrer": "Ryan Koontz",
+      "date": "2026-06-30"
+    },
+    {
+      "id": 78,
+      "registrant": "Matt Otts",
+      "referrer": "Jakob Champion",
+      "date": "2026-08-04"
+    },
+    {
+      "id": 79,
+      "registrant": "Matt Pridemore",
+      "referrer": "Jakob Champion",
+      "date": "2026-08-04"
+    },
+    {
+      "id": 80,
+      "registrant": "Michael Vicas",
+      "referrer": "Ryan Burton",
+      "date": "2026-06-19"
+    },
+    {
+      "id": 81,
+      "registrant": "Nic Carpenter",
+      "referrer": "Ben Sims",
+      "date": "2026-07-17"
+    },
+    {
+      "id": 82,
+      "registrant": "Patrick Brangan",
+      "referrer": "Ryan Koontz",
+      "date": "2026-08-04"
+    },
+    {
+      "id": 83,
+      "registrant": "Patricia Diggins",
+      "referrer": "Jakob Champion",
+      "date": "2026-07-16"
+    },
+    {
+      "id": 84,
+      "registrant": "Pam Tyler",
+      "referrer": "Katerra Greenwood",
+      "date": "2026-07-31"
+    },
+    {
+      "id": 85,
+      "registrant": "Rich Kelly",
+      "referrer": "Jakob Champion",
+      "date": "2026-07-16"
+    },
+    {
+      "id": 86,
+      "registrant": "Rita Lawrence",
+      "referrer": "Blaine Villafuerte",
+      "date": "2026-07-29"
+    },
+    {
+      "id": 87,
+      "registrant": "Robert Guidry",
+      "referrer": "Ryan Koontz",
+      "date": "2026-06-30"
+    },
+    {
+      "id": 88,
+      "registrant": "Rose Page",
+      "referrer": "Ingrid Beard",
+      "date": "2026-06-29"
+    },
+    {
       "id": 89,
+      "registrant": "Rickie Richey",
+      "referrer": "Ryan Koontz",
+      "date": "2026-08-04"
+    },
+    {
+      "id": 90,
+      "registrant": "Samantha Bivens",
+      "referrer": "Andrew Whisenant",
+      "date": "2025-12-29"
+    },
+    {
+      "id": 91,
+      "registrant": "Sanjeev Tirunagaram",
+      "referrer": "Ryan Burton",
+      "date": "2026-07-02"
+    },
+    {
+      "id": 92,
+      "registrant": "Scott Williams",
+      "referrer": "Rinor Berisha",
+      "date": "2026-07-21"
+    },
+    {
+      "id": 93,
+      "registrant": "Sean Tishler",
+      "referrer": "Connor Flynn",
+      "date": "2026-08-04"
+    },
+    {
+      "id": 94,
+      "registrant": "Shane Deegan",
+      "referrer": "Brook Lee",
+      "date": "2026-07-02"
+    },
+    {
+      "id": 95,
+      "registrant": "Stephanie Kern",
+      "referrer": "Rachael Buchtan",
+      "date": "2026-05-22"
+    },
+    {
+      "id": 96,
+      "registrant": "Stacey Hutton",
+      "referrer": "Ryan Koontz",
+      "date": "2026-08-04"
+    },
+    {
+      "id": 97,
+      "registrant": "Steve Konetski",
+      "referrer": "Ryan Koontz",
+      "date": "2026-07-01"
+    },
+    {
+      "id": 98,
+      "registrant": "Terri Firestein",
+      "referrer": "Ryan Berthelsen",
+      "date": "2026-06-24"
+    },
+    {
+      "id": 99,
       "registrant": "Tom Ford",
       "referrer": "Tom Ford",
       "date": "2026-07-30"
     },
     {
-      "id": 90,
+      "id": 100,
       "registrant": "Tom McDonnell",
       "referrer": "Cam Sharpe",
       "date": "2026-05-18"
     },
     {
-      "id": 91,
+      "id": 101,
+      "registrant": "Tom Plantamura",
+      "referrer": "Usman Zahoor",
+      "date": "2026-07-30"
+    },
+    {
+      "id": 102,
       "registrant": "Tony Hsieh",
       "referrer": "Jamie Butler",
       "date": "2026-05-28"
     },
     {
-      "id": 92,
+      "id": 103,
       "registrant": "Tony Sams",
       "referrer": "Blaine Villafuerte",
       "date": "2026-06-23"
     },
     {
-      "id": 93,
-      "registrant": "Wayne Jaggers",
-      "referrer": "Tim Smith",
-      "date": "2026-05-13"
+      "id": 104,
+      "registrant": "Thomas Welsh",
+      "referrer": "Reid Doster",
+      "date": "2025-12-09"
     },
     {
-      "id": 94,
+      "id": 105,
+      "registrant": "Tammy Wooster",
+      "referrer": "Blaine Villafuerte",
+      "date": "2026-06-30"
+    },
+    {
+      "id": 106,
       "registrant": "William Brister",
       "referrer": "Ryan Burton",
       "date": "2026-05-20"
     },
     {
-      "id": 95,
+      "id": 107,
+      "registrant": "William Oppermann",
+      "referrer": "Ryan Koontz",
+      "date": "2026-08-05"
+    },
+    {
+      "id": 108,
+      "registrant": "Wayne Jaggers",
+      "referrer": "Tim Smith",
+      "date": "2026-05-13"
+    },
+    {
+      "id": 109,
+      "registrant": "Yan Carter",
+      "referrer": "Connor Flynn",
+      "date": "2026-08-04"
+    },
+    {
+      "id": 110,
       "registrant": "Zack Killpack",
       "referrer": "Jakob Champion",
       "date": "2026-08-04"
@@ -3151,41 +3507,37 @@
   ],
   "sponsorships": {
     "sourceOpportunityType": "Summit Sponsorship",
-    "totalOpportunities": 66,
-    "uniqueCompanies": 66,
-    "totalAmount": 281487.5,
-    "wonAmount": 226487.5,
-    "openAmount": 55000,
-    "closedWon": 16,
-    "closedLost": 11,
+    "totalOpportunities": 67,
+    "uniqueCompanies": 67,
+    "totalAmount": 295487.5,
+    "wonAmount": 208987.5,
+    "openAmount": 71500,
+    "closedWon": 15,
+    "closedLost": 38,
     "byStage": [
       {
-        "name": "Closed Won",
-        "count": 16
-      },
-      {
-        "name": "1- Discovery Scheduled",
-        "count": 14
-      },
-      {
-        "name": "2 - Discovery Completed",
-        "count": 11
-      },
-      {
         "name": "Closed Lost",
-        "count": 11
+        "count": 38
       },
       {
-        "name": "3 - Initial Product Demo",
-        "count": 6
+        "name": "Closed Won",
+        "count": 15
       },
       {
         "name": "6 - Verbal Commit",
-        "count": 5
+        "count": 6
       },
       {
-        "name": "4 - Proposal Sent",
+        "name": "1- Discovery Scheduled",
         "count": 3
+      },
+      {
+        "name": "2 - Discovery Completed",
+        "count": 3
+      },
+      {
+        "name": "3 - Initial Product Demo",
+        "count": 2
       }
     ],
     "byType": [
@@ -3251,28 +3603,6 @@
         "isWon": false
       },
       {
-        "opportunityName": "Alianza Summit Sponsorship 2026",
-        "company": "Alianza",
-        "stage": "2 - Discovery Completed",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "Augmentt Summit Sponsorship 2026",
-        "company": "Augmentt",
-        "stage": "1- Discovery Scheduled",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
         "opportunityName": "Avalara Summit Sponsorship 2026",
         "company": "Avalara",
         "stage": "6 - Verbal Commit",
@@ -3284,41 +3614,8 @@
         "isWon": false
       },
       {
-        "opportunityName": "Bitdefender",
-        "company": "Bitdefender",
-        "stage": "2 - Discovery Completed",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
         "opportunityName": "Centric Summit Sponsorship 2026",
         "company": "Centric Telecom, Inc.",
-        "stage": "1- Discovery Scheduled",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "Ceretax Summit Sponsorship 2026",
-        "company": "CereTax",
-        "stage": "2 - Discovery Completed",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "CLA Summit Sponsorship 2026",
-        "company": "CLA",
         "stage": "1- Discovery Scheduled",
         "closeDate": "2026-08-31",
         "amount": 0,
@@ -3339,53 +3636,9 @@
         "isWon": false
       },
       {
-        "opportunityName": "Documo Summit Sponsorship 2026",
-        "company": "Documo",
-        "stage": "3 - Initial Product Demo",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "Empath Summit Sponsorship 2026",
-        "company": "Empathmsp",
-        "stage": "2 - Discovery Completed",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
         "opportunityName": "Guardz Summit Sponsorship 2026",
         "company": "Guardz",
         "stage": "2 - Discovery Completed",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "Huntress Summit Sponsorship 2026",
-        "company": "Huntress",
-        "stage": "1- Discovery Scheduled",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "Inforcer Summit Sponsorship 2026",
-        "company": "Inforcer",
-        "stage": "1- Discovery Scheduled",
         "closeDate": "2026-08-31",
         "amount": 0,
         "sponsorshipType": "Unspecified",
@@ -3403,39 +3656,6 @@
         "sponsorshipPackage": "",
         "isClosed": true,
         "isWon": true
-      },
-      {
-        "opportunityName": "Jenne Summit Sponsorship 2026",
-        "company": "Jenne",
-        "stage": "2 - Discovery Completed",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "Mailprotector Summit Sponsorship 2026",
-        "company": "Mailprotector",
-        "stage": "2 - Discovery Completed",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "Moovila Summit Sponsorship 2026",
-        "company": "Moovila",
-        "stage": "3 - Initial Product Demo",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
       },
       {
         "opportunityName": "MSP Hub Summit Sponsorship 2026",
@@ -3460,74 +3680,8 @@
         "isWon": false
       },
       {
-        "opportunityName": "Opentext Summit Sponsorship 2026",
-        "company": "OpenText",
-        "stage": "4 - Proposal Sent",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
         "opportunityName": "Pangea Summit Sponsorship 2026",
         "company": "Pangea",
-        "stage": "1- Discovery Scheduled",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "Petra Security Summit Sponsorship 2026",
-        "company": "Petra Security",
-        "stage": "1- Discovery Scheduled",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "Rewst Summit Sponsorship 2026",
-        "company": "Rewst",
-        "stage": "1- Discovery Scheduled",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "Walters Snelling Summit Sponsorship 2026",
-        "company": "Snellings Walters Insurance Agency",
-        "stage": "2 - Discovery Completed",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "Stripe Summit Sponsorship 2026",
-        "company": "Stripe",
-        "stage": "1- Discovery Scheduled",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "TaleWind Summit Sponsorship 2026",
-        "company": "Talewind",
         "stage": "1- Discovery Scheduled",
         "closeDate": "2026-08-31",
         "amount": 0,
@@ -3559,89 +3713,12 @@
         "isWon": false
       },
       {
-        "opportunityName": "Telimatic Summit Sponsorship 2026",
-        "company": "Telimatic",
-        "stage": "3 - Initial Product Demo",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "Telnyx Summit Sponsorship 2026",
-        "company": "Telnyx",
-        "stage": "1- Discovery Scheduled",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "Business Growers Summit Sponsorship 2026",
-        "company": "The Business Growers",
-        "stage": "2 - Discovery Completed",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "The Connection Xchange Summit Sponsorship 2026",
-        "company": "The Connection Xchange",
-        "stage": "3 - Initial Product Demo",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "ThreatCaptain Summit Sponsorship 2026",
-        "company": "ThreatCaptain",
-        "stage": "4 - Proposal Sent",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "ThreatMate Summit Sponsorship 2026",
-        "company": "ThreatMate",
-        "stage": "1- Discovery Scheduled",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
         "opportunityName": "TRX Summit Sponsorship 2026",
         "company": "TRX Services",
         "stage": "3 - Initial Product Demo",
         "closeDate": "2026-08-31",
         "amount": 0,
         "sponsorshipType": "Gold",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
-        "opportunityName": "Verizon DTS Summit Sponsorship 2026",
-        "company": "Verizon",
-        "stage": "1- Discovery Scheduled",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
         "sponsorshipPackage": "",
         "isClosed": false,
         "isWon": false
@@ -3669,25 +3746,311 @@
         "isWon": false
       },
       {
+        "opportunityName": "CrewHu Summit Sponsorship 2026",
+        "company": "Crewhu",
+        "stage": "6 - Verbal Commit",
+        "closeDate": "2026-08-07",
+        "amount": 14000,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Alianza Summit Sponsorship 2026",
+        "company": "Alianza",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Augmentt Summit Sponsorship 2026",
+        "company": "Augmentt",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Bitdefender",
+        "company": "Bitdefender",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Ceretax Summit Sponsorship 2026",
+        "company": "CereTax",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "CLA Summit Sponsorship 2026",
+        "company": "CLA",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
         "opportunityName": "Summit Sponsorship",
         "company": "Cytracom",
-        "stage": "4 - Proposal Sent",
-        "closeDate": "2026-07-31",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
         "amount": 7500,
         "sponsorshipType": "Rev.io Rookies (1st-Time)",
         "sponsorshipPackage": "Rev.io Rookies (1st-Time) - $7,500",
-        "isClosed": false,
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Documo Summit Sponsorship 2026",
+        "company": "Documo",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Empath Summit Sponsorship 2026",
+        "company": "Empathmsp",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Huntress Summit Sponsorship 2026",
+        "company": "Huntress",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Inforcer Summit Sponsorship 2026",
+        "company": "Inforcer",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Jenne Summit Sponsorship 2026",
+        "company": "Jenne",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Mailprotector Summit Sponsorship 2026",
+        "company": "Mailprotector",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Moovila Summit Sponsorship 2026",
+        "company": "Moovila",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Opentext Summit Sponsorship 2026",
+        "company": "OpenText",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Petra Security Summit Sponsorship 2026",
+        "company": "Petra Security",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Rewst Summit Sponsorship 2026",
+        "company": "Rewst",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Walters Snelling Summit Sponsorship 2026",
+        "company": "Snellings Walters Insurance Agency",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Stripe Summit Sponsorship 2026",
+        "company": "Stripe",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "TaleWind Summit Sponsorship 2026",
+        "company": "Talewind",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Telimatic Summit Sponsorship 2026",
+        "company": "Telimatic",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Telnyx Summit Sponsorship 2026",
+        "company": "Telnyx",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Business Growers Summit Sponsorship 2026",
+        "company": "The Business Growers",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "The Connection Xchange Summit Sponsorship 2026",
+        "company": "The Connection Xchange",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "ThreatCaptain Summit Sponsorship 2026",
+        "company": "ThreatCaptain",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "ThreatMate Summit Sponsorship 2026",
+        "company": "ThreatMate",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
         "isWon": false
       },
       {
         "opportunityName": "Summit Sponsorship",
         "company": "Todyl",
-        "stage": "6 - Verbal Commit",
-        "closeDate": "2026-07-17",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
         "amount": 7500,
         "sponsorshipType": "Rev.io Rookies (1st-Time)",
         "sponsorshipPackage": "Rev.io Rookies (1st-Time) - $7,500",
-        "isClosed": false,
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Verizon DTS Summit Sponsorship 2026",
+        "company": "Verizon",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-04",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
         "isWon": false
       },
       {
@@ -3748,13 +4111,13 @@
       {
         "opportunityName": "Sangoma Summit Sponsorship 2026",
         "company": "Sangoma",
-        "stage": "Closed Won",
+        "stage": "6 - Verbal Commit",
         "closeDate": "2026-07-01",
         "amount": 17500,
         "sponsorshipType": "Session Sponsor",
         "sponsorshipPackage": "",
-        "isClosed": true,
-        "isWon": true
+        "isClosed": false,
+        "isWon": false
       },
       {
         "opportunityName": "TaxTheta Summit Sponsorship 2026",
@@ -3971,16 +4334,16 @@
     "ticketTypes": [
       {
         "name": "Summit Pass- Single ticket",
-        "count": 51,
+        "count": 64,
         "paid": 3,
-        "comp": 48,
+        "comp": 61,
         "revenue": 1300
       },
       {
         "name": "BOGO - Buy One, Get One",
-        "count": 27,
+        "count": 28,
         "paid": 8,
-        "comp": 19,
+        "comp": 20,
         "revenue": 5200
       },
       {
@@ -4029,9 +4392,15 @@
     "discounts": [
       {
         "name": "REVGUEST-A",
-        "count": 32,
+        "count": 40,
         "cap": 20,
         "remaining": 0
+      },
+      {
+        "name": "2BLONDES",
+        "count": 12,
+        "cap": null,
+        "remaining": null
       },
       {
         "name": "SUMMITSPONSOR",
@@ -4044,12 +4413,6 @@
         "count": 8,
         "cap": 15,
         "remaining": 7
-      },
-      {
-        "name": "2BLONDES",
-        "count": 7,
-        "cap": null,
-        "remaining": null
       },
       {
         "name": "VIP-REVGUEST",
@@ -4091,11 +4454,11 @@
     "businessTypes": [
       {
         "name": "CSP / Telecom",
-        "count": 70
+        "count": 79
       },
       {
         "name": "MSP",
-        "count": 24
+        "count": 29
       },
       {
         "name": "Field Service Integrator (Alarm, Cabling, AV, Other)",
@@ -4141,23 +4504,23 @@
     "jobRanks": [
       {
         "name": "C-Level",
-        "count": 45
+        "count": 50
       },
       {
         "name": "Manager",
-        "count": 32
+        "count": 37
       },
       {
         "name": "Director",
         "count": 20
       },
       {
-        "name": "VP-Level",
-        "count": 11
+        "name": "Non-Manager",
+        "count": 13
       },
       {
-        "name": "Non-Manager",
-        "count": 9
+        "name": "VP-Level",
+        "count": 11
       },
       {
         "name": "Other",
@@ -4171,19 +4534,19 @@
     "departments": [
       {
         "name": "C-Suite",
-        "count": 39
+        "count": 44
       },
       {
         "name": "Operations/Support",
-        "count": 30
+        "count": 35
       },
       {
         "name": "Finance/Billing",
-        "count": 23
+        "count": 25
       },
       {
         "name": "Sales/Marketing",
-        "count": 15
+        "count": 17
       },
       {
         "name": "Other",
@@ -4200,16 +4563,16 @@
     ],
     "companySizes": [
       {
-        "name": "1–10",
-        "count": 36
+        "name": "11–50",
+        "count": 44
       },
       {
-        "name": "11–50",
-        "count": 36
+        "name": "1–10",
+        "count": 40
       },
       {
         "name": "51–250",
-        "count": 31
+        "count": 33
       },
       {
         "name": "250+",
@@ -4223,7 +4586,11 @@
     "states": [
       {
         "name": "FL",
-        "count": 17
+        "count": 22
+      },
+      {
+        "name": "GA",
+        "count": 12
       },
       {
         "name": "NC",
@@ -4234,19 +4601,19 @@
         "count": 10
       },
       {
-        "name": "GA",
-        "count": 7
-      },
-      {
         "name": "MD",
         "count": 7
       },
       {
-        "name": "NJ",
+        "name": "NY",
+        "count": 7
+      },
+      {
+        "name": "IL",
         "count": 6
       },
       {
-        "name": "NY",
+        "name": "NJ",
         "count": 6
       },
       {
@@ -4254,7 +4621,7 @@
         "count": 5
       },
       {
-        "name": "IL",
+        "name": "CA",
         "count": 4
       },
       {
@@ -4267,10 +4634,6 @@
       },
       {
         "name": "AL",
-        "count": 3
-      },
-      {
-        "name": "CA",
         "count": 3
       },
       {
@@ -4341,21 +4704,21 @@
     "hotel": [
       {
         "name": "Yes",
-        "count": 103
+        "count": 111
       },
       {
         "name": "No",
-        "count": 17
+        "count": 23
       }
     ],
     "shirts": [
       {
         "name": "Extra Large (XL)",
-        "count": 40
+        "count": 44
       },
       {
         "name": "Large (L)",
-        "count": 32
+        "count": 41
       },
       {
         "name": "2XL (XXL)",
@@ -4363,7 +4726,7 @@
       },
       {
         "name": "Medium (M)",
-        "count": 15
+        "count": 16
       },
       {
         "name": "3XL (XXXL)",
@@ -4381,47 +4744,47 @@
     "topics": [
       {
         "name": "Business Growth, Strategy & Service Delivery",
-        "count": 86
+        "count": 98
       },
       {
         "name": "Technology, AI & Innovation",
-        "count": 78
+        "count": 85
       },
       {
         "name": "Customer Success & Experience",
-        "count": 75
+        "count": 84
       },
       {
         "name": "Product & Platform Deep Dives",
-        "count": 61
+        "count": 68
       },
       {
         "name": "PSA (service tickets, tech scheduling, inventory, quoting)",
-        "count": 61
+        "count": 66
       },
       {
         "name": "Communications Billing (Usage rating, Telecom Taxation)",
-        "count": 54
-      },
-      {
-        "name": "Payment Processing (Accounts receivable, Accounts Payable)",
-        "count": 54
+        "count": 63
       },
       {
         "name": "Sales & Marketing",
-        "count": 53
+        "count": 60
+      },
+      {
+        "name": "Payment Processing (Accounts receivable, Accounts Payable)",
+        "count": 59
       },
       {
         "name": "Industry & Regulatory Insights",
-        "count": 40
-      },
-      {
-        "name": "RMM (Remote Monitoring and Management)",
-        "count": 21
+        "count": 45
       },
       {
         "name": "Women in Leadership",
-        "count": 20
+        "count": 24
+      },
+      {
+        "name": "RMM (Remote Monitoring and Management)",
+        "count": 22
       }
     ],
     "registrationsByMonth": [
@@ -4431,15 +4794,15 @@
       },
       {
         "name": "Jun 2026",
-        "count": 23
+        "count": 24
+      },
+      {
+        "name": "Aug 2026",
+        "count": 21
       },
       {
         "name": "May 2026",
         "count": 17
-      },
-      {
-        "name": "Aug 2026",
-        "count": 8
       },
       {
         "name": "Dec 2025",
@@ -4457,11 +4820,11 @@
     "receptionPlans": [
       {
         "name": "Welcome Reception",
-        "count": 115
+        "count": 127
       },
       {
         "name": "Networking Reception",
-        "count": 110
+        "count": 124
       },
       {
         "name": "Not Attending Receptions",
