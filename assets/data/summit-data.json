@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-06T13:22:17.953Z",
-  "sourceFile": "registration-report-deduped-2026-08-06.xlsx",
+  "generatedAt": "2026-08-11T02:39:26.220Z",
+  "sourceFile": "registration-report-deduped-2026-08-11.xlsx",
   "goals": {
     "totalRegistrants": 400,
     "paidTickets": 165,
@@ -36,21 +36,21 @@
     "netCostPerAttendee": 373
   },
   "summary": {
-    "totalRegistrants": 153,
-    "uniqueCompanies": 82,
-    "customerProspectRegistrations": 153,
+    "totalRegistrants": 159,
+    "uniqueCompanies": 86,
+    "customerProspectRegistrations": 159,
     "paidTickets": 35,
-    "compTickets": 118,
+    "compTickets": 124,
     "staffTickets": 0,
     "sponsorPasses": 0,
     "ticketRevenue": 18575,
     "sponsorRevenue": 295487.5,
     "totalRevenue": 314062.5,
     "avgPaidTicket": 531,
-    "fullCompTickets": 118,
-    "hotelRooms": 121,
-    "attendedBefore": 79,
-    "referralCount": 128
+    "fullCompTickets": 124,
+    "hotelRooms": 126,
+    "attendedBefore": 83,
+    "referralCount": 134
   },
   "registrants": [
     {
@@ -2959,6 +2959,120 @@
       "hotel": "Yes",
       "shirtSize": "Medium (M)",
       "attendedBefore": "Yes"
+    },
+    {
+      "name": "Paula Anderson",
+      "company": "MACH Networks",
+      "jobTitle": "Director",
+      "state": "GA",
+      "dateLabel": "Aug 6, 2026",
+      "dateRegistered": "2026-08-06",
+      "businessType": "MSP",
+      "jobRank": "Director",
+      "department": "Sales/Marketing",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "2BLONDES",
+      "referral": "Jamie Butler",
+      "hotel": "No",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Mitch Wright",
+      "company": "Spectrotel",
+      "jobTitle": "VP of IT",
+      "state": "NC",
+      "dateLabel": "Aug 6, 2026",
+      "dateRegistered": "2026-08-06",
+      "businessType": "MSP",
+      "jobRank": "VP-Level",
+      "department": "IT/Engineering",
+      "companySize": "250+",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Jamie Butler",
+      "hotel": "Yes",
+      "shirtSize": "2XL (XXL)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Bob Bouquet",
+      "company": "LightSpar",
+      "jobTitle": "CFO",
+      "state": "TX",
+      "dateLabel": "Aug 7, 2026",
+      "dateRegistered": "2026-08-07",
+      "businessType": "CSP / Telecom",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Ingrid Beard",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Robin Brownmiller",
+      "company": "Bank-Tec South",
+      "jobTitle": "NCR Liaison",
+      "state": "LA",
+      "dateLabel": "Aug 10, 2026",
+      "dateRegistered": "2026-08-10",
+      "businessType": "Field Service Integrator (Alarm, Cabling, AV, Other)",
+      "jobRank": "Other",
+      "department": "Other",
+      "companySize": "51–250",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Blaine Villafuerte",
+      "hotel": "Yes",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Tammy Kay Robbins",
+      "company": "Bank-Tec South",
+      "jobTitle": "Accounting Manager",
+      "state": "LA",
+      "dateLabel": "Aug 10, 2026",
+      "dateRegistered": "2026-08-10",
+      "businessType": "Field Service Integrator (Alarm, Cabling, AV, Other)",
+      "jobRank": "Manager",
+      "department": "Finance/Billing",
+      "companySize": "51–250",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Blaine Villafuerte",
+      "hotel": "Yes",
+      "shirtSize": "2XL (XXL)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Salena Collins",
+      "company": "Bank-Tec South",
+      "jobTitle": "Sales Order Specialist",
+      "state": "LA",
+      "dateLabel": "Aug 10, 2026",
+      "dateRegistered": "2026-08-10",
+      "businessType": "Field Service Integrator (Alarm, Cabling, AV, Other)",
+      "jobRank": "Other",
+      "department": "Sales/Marketing",
+      "companySize": "51–250",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Blaine Villafuerte",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "No"
     }
   ],
   "referrals": [
@@ -3729,6 +3843,42 @@
       "registrant": "Melissa Maldonado",
       "referrer": "Jakob Champion",
       "date": "2026-07-31"
+    },
+    {
+      "id": 129,
+      "registrant": "Paula Anderson",
+      "referrer": "Jamie Butler",
+      "date": "2026-08-06"
+    },
+    {
+      "id": 130,
+      "registrant": "Mitch Wright",
+      "referrer": "Jamie Butler",
+      "date": "2026-08-06"
+    },
+    {
+      "id": 131,
+      "registrant": "Bob Bouquet",
+      "referrer": "Ingrid Beard",
+      "date": "2026-08-07"
+    },
+    {
+      "id": 132,
+      "registrant": "Robin Brownmiller",
+      "referrer": "Blaine Villafuerte",
+      "date": "2026-08-10"
+    },
+    {
+      "id": 133,
+      "registrant": "Tammy Kay Robbins",
+      "referrer": "Blaine Villafuerte",
+      "date": "2026-08-10"
+    },
+    {
+      "id": 134,
+      "registrant": "Salena Collins",
+      "referrer": "Blaine Villafuerte",
+      "date": "2026-08-10"
     }
   ],
   "agenda": [
@@ -3980,13 +4130,13 @@
     "uniqueCompanies": 67,
     "totalAmount": 295487.5,
     "wonAmount": 208987.5,
-    "openAmount": 71500,
+    "openAmount": 65500,
     "closedWon": 15,
-    "closedLost": 38,
+    "closedLost": 41,
     "byStage": [
       {
         "name": "Closed Lost",
-        "count": 38
+        "count": 41
       },
       {
         "name": "Closed Won",
@@ -3994,11 +4144,7 @@
       },
       {
         "name": "6 - Verbal Commit",
-        "count": 6
-      },
-      {
-        "name": "1- Discovery Scheduled",
-        "count": 3
+        "count": 5
       },
       {
         "name": "2 - Discovery Completed",
@@ -4007,6 +4153,10 @@
       {
         "name": "3 - Initial Product Demo",
         "count": 2
+      },
+      {
+        "name": "1- Discovery Scheduled",
+        "count": 1
       }
     ],
     "byType": [
@@ -4083,17 +4233,6 @@
         "isWon": false
       },
       {
-        "opportunityName": "Centric Summit Sponsorship 2026",
-        "company": "Centric Telecom, Inc.",
-        "stage": "1- Discovery Scheduled",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
         "opportunityName": "Crexendo Summit Sponsorship 2026",
         "company": "Crexendo Business Solutions",
         "stage": "6 - Verbal Commit",
@@ -4149,17 +4288,6 @@
         "isWon": false
       },
       {
-        "opportunityName": "Pangea Summit Sponsorship 2026",
-        "company": "Pangea",
-        "stage": "1- Discovery Scheduled",
-        "closeDate": "2026-08-31",
-        "amount": 0,
-        "sponsorshipType": "Unspecified",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
         "opportunityName": "TaxConnex Summit Sponsorship 2026",
         "company": "TaxConnex",
         "stage": "Closed Won",
@@ -4193,17 +4321,6 @@
         "isWon": false
       },
       {
-        "opportunityName": "VoIPMS Summit Sponsorship 2026",
-        "company": "VoIP.ms",
-        "stage": "6 - Verbal Commit",
-        "closeDate": "2026-08-31",
-        "amount": 6000,
-        "sponsorshipType": "Transportation",
-        "sponsorshipPackage": "",
-        "isClosed": false,
-        "isWon": false
-      },
-      {
         "opportunityName": "Voxtelesys Summit Sponsorship 2026",
         "company": "Voxtelesys",
         "stage": "2 - Discovery Completed",
@@ -4223,6 +4340,39 @@
         "sponsorshipType": "Unspecified",
         "sponsorshipPackage": "",
         "isClosed": false,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Centric Summit Sponsorship 2026",
+        "company": "Centric Telecom, Inc.",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-06",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "Pangea Summit Sponsorship 2026",
+        "company": "Pangea",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-06",
+        "amount": 0,
+        "sponsorshipType": "Unspecified",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": false
+      },
+      {
+        "opportunityName": "VoIPMS Summit Sponsorship 2026",
+        "company": "VoIP.ms",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-06",
+        "amount": 6000,
+        "sponsorshipType": "Transportation",
+        "sponsorshipPackage": "",
+        "isClosed": true,
         "isWon": false
       },
       {
@@ -4803,9 +4953,9 @@
     "ticketTypes": [
       {
         "name": "Summit Pass- Single ticket",
-        "count": 82,
+        "count": 88,
         "paid": 6,
-        "comp": 76,
+        "comp": 82,
         "revenue": 3250
       },
       {
@@ -4861,13 +5011,13 @@
     "discounts": [
       {
         "name": "REVGUEST-A",
-        "count": 50,
+        "count": 55,
         "cap": 20,
         "remaining": 0
       },
       {
         "name": "2BLONDES",
-        "count": 12,
+        "count": 13,
         "cap": null,
         "remaining": null
       },
@@ -4929,15 +5079,15 @@
     "businessTypes": [
       {
         "name": "CSP / Telecom",
-        "count": 85
+        "count": 86
       },
       {
         "name": "MSP",
-        "count": 36
+        "count": 38
       },
       {
         "name": "Field Service Integrator (Alarm, Cabling, AV, Other)",
-        "count": 9
+        "count": 12
       },
       {
         "name": "Consulting",
@@ -4983,19 +5133,19 @@
     "jobRanks": [
       {
         "name": "C-Level",
-        "count": 57
+        "count": 58
       },
       {
         "name": "Manager",
-        "count": 40
+        "count": 41
       },
       {
         "name": "Director",
-        "count": 23
+        "count": 24
       },
       {
         "name": "VP-Level",
-        "count": 15
+        "count": 16
       },
       {
         "name": "Non-Manager",
@@ -5003,7 +5153,7 @@
       },
       {
         "name": "Other",
-        "count": 3
+        "count": 5
       },
       {
         "name": "Unspecified",
@@ -5013,7 +5163,7 @@
     "departments": [
       {
         "name": "C-Suite",
-        "count": 51
+        "count": 52
       },
       {
         "name": "Operations/Support",
@@ -5021,19 +5171,19 @@
       },
       {
         "name": "Finance/Billing",
-        "count": 30
+        "count": 31
       },
       {
         "name": "Sales/Marketing",
-        "count": 18
+        "count": 20
       },
       {
         "name": "Other",
-        "count": 7
+        "count": 8
       },
       {
         "name": "IT/Engineering",
-        "count": 6
+        "count": 7
       },
       {
         "name": "Unspecified",
@@ -5043,7 +5193,7 @@
     "companySizes": [
       {
         "name": "11–50",
-        "count": 59
+        "count": 61
       },
       {
         "name": "1–10",
@@ -5051,11 +5201,11 @@
       },
       {
         "name": "51–250",
-        "count": 34
+        "count": 37
       },
       {
         "name": "250+",
-        "count": 17
+        "count": 18
       },
       {
         "name": "Unspecified",
@@ -5069,15 +5219,15 @@
       },
       {
         "name": "GA",
-        "count": 15
+        "count": 16
       },
       {
         "name": "NC",
-        "count": 10
+        "count": 11
       },
       {
         "name": "TX",
-        "count": 10
+        "count": 11
       },
       {
         "name": "NY",
@@ -5098,6 +5248,10 @@
       {
         "name": "TN",
         "count": 6
+      },
+      {
+        "name": "LA",
+        "count": 5
       },
       {
         "name": "MI",
@@ -5148,10 +5302,6 @@
         "count": 2
       },
       {
-        "name": "LA",
-        "count": 2
-      },
-      {
         "name": "MA",
         "count": 2
       },
@@ -5187,25 +5337,25 @@
     "hotel": [
       {
         "name": "Yes",
-        "count": 121
+        "count": 126
       },
       {
         "name": "No",
-        "count": 32
+        "count": 33
       }
     ],
     "shirts": [
       {
         "name": "Extra Large (XL)",
-        "count": 50
+        "count": 52
       },
       {
         "name": "Large (L)",
-        "count": 48
+        "count": 50
       },
       {
         "name": "2XL (XXL)",
-        "count": 21
+        "count": 23
       },
       {
         "name": "Medium (M)",
@@ -5227,46 +5377,46 @@
     "topics": [
       {
         "name": "Business Growth, Strategy & Service Delivery",
-        "count": 109
-      },
-      {
-        "name": "Customer Success & Experience",
-        "count": 94
+        "count": 113
       },
       {
         "name": "Technology, AI & Innovation",
-        "count": 94
+        "count": 98
+      },
+      {
+        "name": "Customer Success & Experience",
+        "count": 97
       },
       {
         "name": "PSA (service tickets, tech scheduling, inventory, quoting)",
-        "count": 80
+        "count": 81
       },
       {
         "name": "Product & Platform Deep Dives",
-        "count": 78
+        "count": 80
       },
       {
         "name": "Communications Billing (Usage rating, Telecom Taxation)",
-        "count": 74
+        "count": 76
       },
       {
         "name": "Payment Processing (Accounts receivable, Accounts Payable)",
-        "count": 71
+        "count": 75
       },
       {
         "name": "Sales & Marketing",
-        "count": 68
+        "count": 71
       },
       {
         "name": "Industry & Regulatory Insights",
         "count": 51
       },
       {
-        "name": "RMM (Remote Monitoring and Management)",
-        "count": 30
+        "name": "Women in Leadership",
+        "count": 32
       },
       {
-        "name": "Women in Leadership",
+        "name": "RMM (Remote Monitoring and Management)",
         "count": 30
       }
     ],
@@ -5277,7 +5427,7 @@
       },
       {
         "name": "Aug 2026",
-        "count": 39
+        "count": 45
       },
       {
         "name": "Jun 2026",
@@ -5303,11 +5453,11 @@
     "receptionPlans": [
       {
         "name": "Welcome Reception",
-        "count": 145
+        "count": 150
       },
       {
         "name": "Networking Reception",
-        "count": 143
+        "count": 149
       },
       {
         "name": "Not Attending Receptions",
