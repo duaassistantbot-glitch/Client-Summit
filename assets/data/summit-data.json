@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T02:39:26.220Z",
+  "generatedAt": "2026-08-11T17:15:47.537Z",
   "sourceFile": "registration-report-deduped-2026-08-11.xlsx",
   "goals": {
     "totalRegistrants": 400,
@@ -36,21 +36,21 @@
     "netCostPerAttendee": 373
   },
   "summary": {
-    "totalRegistrants": 159,
-    "uniqueCompanies": 86,
-    "customerProspectRegistrations": 159,
+    "totalRegistrants": 162,
+    "uniqueCompanies": 87,
+    "customerProspectRegistrations": 162,
     "paidTickets": 35,
-    "compTickets": 124,
+    "compTickets": 127,
     "staffTickets": 0,
     "sponsorPasses": 0,
     "ticketRevenue": 18575,
     "sponsorRevenue": 295487.5,
     "totalRevenue": 314062.5,
     "avgPaidTicket": 531,
-    "fullCompTickets": 124,
-    "hotelRooms": 126,
+    "fullCompTickets": 127,
+    "hotelRooms": 129,
     "attendedBefore": 83,
-    "referralCount": 134
+    "referralCount": 137
   },
   "registrants": [
     {
@@ -3073,6 +3073,63 @@
       "hotel": "Yes",
       "shirtSize": "Extra Large (XL)",
       "attendedBefore": "No"
+    },
+    {
+      "name": "Jason Veasey",
+      "company": "ICS Communications",
+      "jobTitle": "Owner",
+      "state": "AL",
+      "dateLabel": "Aug 11, 2026",
+      "dateRegistered": "2026-08-11",
+      "businessType": "MSP",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "1–10",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Blaine Villafuerte",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Malik Chatman",
+      "company": "Cynomi",
+      "jobTitle": "Account Executive",
+      "state": "FL",
+      "dateLabel": "Aug 11, 2026",
+      "dateRegistered": "2026-08-11",
+      "businessType": "other, Vendor",
+      "jobRank": "Non-Manager",
+      "department": "Sales/Marketing",
+      "companySize": "51–250",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "SUMMITSPONSOR",
+      "referral": "Ardit Berdyna",
+      "hotel": "Yes",
+      "shirtSize": "2XL (XXL)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Susie Veasey",
+      "company": "ICS Communications",
+      "jobTitle": "VP of Operations",
+      "state": "AL",
+      "dateLabel": "Aug 11, 2026",
+      "dateRegistered": "2026-08-11",
+      "businessType": "MSP",
+      "jobRank": "VP-Level",
+      "department": "Operations/Support",
+      "companySize": "1–10",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Blaine Villafuerte",
+      "hotel": "Yes",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "No"
     }
   ],
   "referrals": [
@@ -3879,6 +3936,24 @@
       "registrant": "Salena Collins",
       "referrer": "Blaine Villafuerte",
       "date": "2026-08-10"
+    },
+    {
+      "id": 135,
+      "registrant": "Jason Veasey",
+      "referrer": "Blaine Villafuerte",
+      "date": "2026-08-11"
+    },
+    {
+      "id": 136,
+      "registrant": "Malik Chatman",
+      "referrer": "Ardit Berdyna",
+      "date": "2026-08-11"
+    },
+    {
+      "id": 137,
+      "registrant": "Susie Veasey",
+      "referrer": "Blaine Villafuerte",
+      "date": "2026-08-11"
     }
   ],
   "agenda": [
@@ -4953,9 +5028,9 @@
     "ticketTypes": [
       {
         "name": "Summit Pass- Single ticket",
-        "count": 88,
+        "count": 91,
         "paid": 6,
-        "comp": 82,
+        "comp": 85,
         "revenue": 3250
       },
       {
@@ -5011,7 +5086,7 @@
     "discounts": [
       {
         "name": "REVGUEST-A",
-        "count": 55,
+        "count": 57,
         "cap": 20,
         "remaining": 0
       },
@@ -5023,7 +5098,7 @@
       },
       {
         "name": "SUMMITSPONSOR",
-        "count": 12,
+        "count": 13,
         "cap": null,
         "remaining": null
       },
@@ -5083,7 +5158,7 @@
       },
       {
         "name": "MSP",
-        "count": 38
+        "count": 40
       },
       {
         "name": "Field Service Integrator (Alarm, Cabling, AV, Other)",
@@ -5094,11 +5169,11 @@
         "count": 5
       },
       {
-        "name": "other, POS",
-        "count": 4
+        "name": "other, Vendor",
+        "count": 5
       },
       {
-        "name": "other, Vendor",
+        "name": "other, POS",
         "count": 4
       },
       {
@@ -5133,7 +5208,7 @@
     "jobRanks": [
       {
         "name": "C-Level",
-        "count": 58
+        "count": 59
       },
       {
         "name": "Manager",
@@ -5145,11 +5220,11 @@
       },
       {
         "name": "VP-Level",
-        "count": 16
+        "count": 17
       },
       {
         "name": "Non-Manager",
-        "count": 14
+        "count": 15
       },
       {
         "name": "Other",
@@ -5163,11 +5238,11 @@
     "departments": [
       {
         "name": "C-Suite",
-        "count": 52
+        "count": 53
       },
       {
         "name": "Operations/Support",
-        "count": 40
+        "count": 41
       },
       {
         "name": "Finance/Billing",
@@ -5175,7 +5250,7 @@
       },
       {
         "name": "Sales/Marketing",
-        "count": 20
+        "count": 21
       },
       {
         "name": "Other",
@@ -5197,11 +5272,11 @@
       },
       {
         "name": "1–10",
-        "count": 42
+        "count": 44
       },
       {
         "name": "51–250",
-        "count": 37
+        "count": 38
       },
       {
         "name": "250+",
@@ -5215,7 +5290,7 @@
     "states": [
       {
         "name": "FL",
-        "count": 30
+        "count": 31
       },
       {
         "name": "GA",
@@ -5250,6 +5325,10 @@
         "count": 6
       },
       {
+        "name": "AL",
+        "count": 5
+      },
+      {
         "name": "LA",
         "count": 5
       },
@@ -5272,10 +5351,6 @@
       {
         "name": "WA",
         "count": 4
-      },
-      {
-        "name": "AL",
-        "count": 3
       },
       {
         "name": "MN",
@@ -5337,7 +5412,7 @@
     "hotel": [
       {
         "name": "Yes",
-        "count": 126
+        "count": 129
       },
       {
         "name": "No",
@@ -5347,15 +5422,15 @@
     "shirts": [
       {
         "name": "Extra Large (XL)",
-        "count": 52
+        "count": 53
       },
       {
         "name": "Large (L)",
-        "count": 50
+        "count": 51
       },
       {
         "name": "2XL (XXL)",
-        "count": 23
+        "count": 24
       },
       {
         "name": "Medium (M)",
@@ -5377,27 +5452,27 @@
     "topics": [
       {
         "name": "Business Growth, Strategy & Service Delivery",
-        "count": 113
+        "count": 114
       },
       {
         "name": "Technology, AI & Innovation",
-        "count": 98
+        "count": 101
       },
       {
         "name": "Customer Success & Experience",
-        "count": 97
-      },
-      {
-        "name": "PSA (service tickets, tech scheduling, inventory, quoting)",
-        "count": 81
+        "count": 98
       },
       {
         "name": "Product & Platform Deep Dives",
-        "count": 80
+        "count": 83
+      },
+      {
+        "name": "PSA (service tickets, tech scheduling, inventory, quoting)",
+        "count": 83
       },
       {
         "name": "Communications Billing (Usage rating, Telecom Taxation)",
-        "count": 76
+        "count": 78
       },
       {
         "name": "Payment Processing (Accounts receivable, Accounts Payable)",
@@ -5405,11 +5480,11 @@
       },
       {
         "name": "Sales & Marketing",
-        "count": 71
+        "count": 72
       },
       {
         "name": "Industry & Regulatory Insights",
-        "count": 51
+        "count": 52
       },
       {
         "name": "Women in Leadership",
@@ -5427,7 +5502,7 @@
       },
       {
         "name": "Aug 2026",
-        "count": 45
+        "count": 48
       },
       {
         "name": "Jun 2026",
@@ -5452,12 +5527,12 @@
     ],
     "receptionPlans": [
       {
-        "name": "Welcome Reception",
-        "count": 150
+        "name": "Networking Reception",
+        "count": 152
       },
       {
-        "name": "Networking Reception",
-        "count": 149
+        "name": "Welcome Reception",
+        "count": 151
       },
       {
         "name": "Not Attending Receptions",
