@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T18:20:29.775Z",
+  "generatedAt": "2026-08-12T18:22:52.365Z",
   "sourceFile": "registration-report-deduped-2026-08-12.xlsx",
   "goals": {
     "totalRegistrants": 400,
@@ -36,20 +36,20 @@
     "netCostPerAttendee": 373
   },
   "summary": {
-    "totalRegistrants": 177,
-    "uniqueCompanies": 95,
-    "customerProspectRegistrations": 177,
-    "paidTickets": 36,
-    "compTickets": 141,
+    "totalRegistrants": 173,
+    "uniqueCompanies": 94,
+    "customerProspectRegistrations": 173,
+    "paidTickets": 34,
+    "compTickets": 139,
     "staffTickets": 0,
     "sponsorPasses": 0,
-    "ticketRevenue": 19400,
+    "ticketRevenue": 18100,
     "sponsorRevenue": 296487.5,
-    "totalRevenue": 315887.5,
-    "avgPaidTicket": 539,
-    "fullCompTickets": 141,
-    "hotelRooms": 136,
-    "attendedBefore": 89,
+    "totalRevenue": 314587.5,
+    "avgPaidTicket": 532,
+    "fullCompTickets": 139,
+    "hotelRooms": 135,
+    "attendedBefore": 86,
     "referralCount": 130
   },
   "registrants": [
@@ -1004,25 +1004,6 @@
       "attendedBefore": "Yes"
     },
     {
-      "name": "Doug Hoff",
-      "company": "CLA",
-      "jobTitle": "Technical Director • Tax",
-      "state": "GA",
-      "dateLabel": "Jul 31, 2026",
-      "dateRegistered": "2026-07-31",
-      "businessType": "Consulting",
-      "jobRank": "Other",
-      "department": "Operations/Support",
-      "companySize": "250+",
-      "packageName": "BOGO - Buy One, Get One",
-      "amount": 0,
-      "discountCode": "",
-      "referral": "",
-      "hotel": "No",
-      "shirtSize": "Extra Large (XL)",
-      "attendedBefore": "Yes"
-    },
-    {
       "name": "Drew Aldinger",
       "company": "Raven Tech LLC",
       "jobTitle": "CEO",
@@ -1669,44 +1650,6 @@
       "attendedBefore": "No"
     },
     {
-      "name": "Justin Houston",
-      "company": "CLA",
-      "jobTitle": "Telecom Senior • Tax",
-      "state": "GA",
-      "dateLabel": "Jul 31, 2026",
-      "dateRegistered": "2026-07-31",
-      "businessType": "Consulting",
-      "jobRank": "Other",
-      "department": "Operations/Support",
-      "companySize": "250+",
-      "packageName": "BOGO - Buy One, Get One",
-      "amount": 0,
-      "discountCode": "",
-      "referral": "",
-      "hotel": "No",
-      "shirtSize": "3XL (XXXL)",
-      "attendedBefore": "No"
-    },
-    {
-      "name": "Karine Vosberg",
-      "company": "CLA",
-      "jobTitle": "Principal • Tax",
-      "state": "GA",
-      "dateLabel": "Jul 31, 2026",
-      "dateRegistered": "2026-07-31",
-      "businessType": "Consulting",
-      "jobRank": "Other",
-      "department": "Operations/Support",
-      "companySize": "250+",
-      "packageName": "BOGO - Buy One, Get One",
-      "amount": 650,
-      "discountCode": "",
-      "referral": "",
-      "hotel": "Yes",
-      "shirtSize": "Medium (M)",
-      "attendedBefore": "Yes"
-    },
-    {
       "name": "Kaye Kelsey",
       "company": "Losh Communications, Inc.",
       "jobTitle": "Finance Director",
@@ -1970,25 +1913,6 @@
       "referral": "",
       "hotel": "Yes",
       "shirtSize": "2XL (XXL)",
-      "attendedBefore": "Yes"
-    },
-    {
-      "name": "Lori Smith",
-      "company": "CLA",
-      "jobTitle": "Telecom Director • Tax",
-      "state": "GA",
-      "dateLabel": "Jul 31, 2026",
-      "dateRegistered": "2026-07-31",
-      "businessType": "Consulting",
-      "jobRank": "Other",
-      "department": "Operations/Support",
-      "companySize": "250+",
-      "packageName": "BOGO - Buy One, Get One",
-      "amount": 650,
-      "discountCode": "",
-      "referral": "",
-      "hotel": "No",
-      "shirtSize": "Extra Large (XL)",
       "attendedBefore": "Yes"
     },
     {
@@ -5274,10 +5198,10 @@
       },
       {
         "name": "BOGO - Buy One, Get One",
-        "count": 31,
-        "paid": 10,
-        "comp": 21,
-        "revenue": 6500
+        "count": 27,
+        "paid": 8,
+        "comp": 19,
+        "revenue": 5200
       },
       {
         "name": "Early Bird",
@@ -5405,7 +5329,7 @@
       },
       {
         "name": "Consulting",
-        "count": 9
+        "count": 5
       },
       {
         "name": "other, Vendor",
@@ -5475,7 +5399,7 @@
       },
       {
         "name": "Other",
-        "count": 9
+        "count": 5
       },
       {
         "name": "Unspecified",
@@ -5489,7 +5413,7 @@
       },
       {
         "name": "Operations/Support",
-        "count": 46
+        "count": 42
       },
       {
         "name": "Finance/Billing",
@@ -5527,7 +5451,7 @@
       },
       {
         "name": "250+",
-        "count": 24
+        "count": 20
       },
       {
         "name": "Unspecified",
@@ -5541,7 +5465,7 @@
       },
       {
         "name": "GA",
-        "count": 24
+        "count": 20
       },
       {
         "name": "NC",
@@ -5659,17 +5583,17 @@
     "hotel": [
       {
         "name": "Yes",
-        "count": 136
+        "count": 135
       },
       {
         "name": "No",
-        "count": 41
+        "count": 38
       }
     ],
     "shirts": [
       {
         "name": "Extra Large (XL)",
-        "count": 59
+        "count": 57
       },
       {
         "name": "Large (L)",
@@ -5681,15 +5605,15 @@
       },
       {
         "name": "Medium (M)",
-        "count": 24
-      },
-      {
-        "name": "3XL (XXXL)",
-        "count": 7
+        "count": 23
       },
       {
         "name": "Small (S)",
         "count": 7
+      },
+      {
+        "name": "3XL (XXXL)",
+        "count": 6
       },
       {
         "name": "4XL (XXXXL)",
@@ -5703,7 +5627,7 @@
       },
       {
         "name": "Technology, AI & Innovation",
-        "count": 110
+        "count": 106
       },
       {
         "name": "Customer Success & Experience",
@@ -5711,7 +5635,7 @@
       },
       {
         "name": "Product & Platform Deep Dives",
-        "count": 89
+        "count": 88
       },
       {
         "name": "PSA (service tickets, tech scheduling, inventory, quoting)",
@@ -5719,7 +5643,7 @@
       },
       {
         "name": "Communications Billing (Usage rating, Telecom Taxation)",
-        "count": 84
+        "count": 80
       },
       {
         "name": "Payment Processing (Accounts receivable, Accounts Payable)",
@@ -5749,7 +5673,7 @@
       },
       {
         "name": "Jul 2026",
-        "count": 56
+        "count": 52
       },
       {
         "name": "Jun 2026",
@@ -5775,11 +5699,11 @@
     "receptionPlans": [
       {
         "name": "Networking Reception",
-        "count": 167
+        "count": 163
       },
       {
         "name": "Welcome Reception",
-        "count": 166
+        "count": 162
       },
       {
         "name": "Not Attending Receptions",

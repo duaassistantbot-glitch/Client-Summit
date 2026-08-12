@@ -13,6 +13,8 @@ const workspaceRequire = createRequire(path.join(workspaceDir, 'gmail-tool', 'pa
 const XLSX = workspaceRequire('xlsx');
 const API_VERSION = 'v59.0';
 const SPONSOR_OPPORTUNITY_TYPE = 'Summit Sponsorship';
+const EXCLUDED_REGISTRANT_COMPANIES = new Set(['cla']);
+const EXCLUDED_REGISTRANT_EMAIL_DOMAINS = new Set(['claconnect.com']);
 
 const GOALS = {
   totalRegistrants: 400,
@@ -275,6 +277,12 @@ function normalizeRegistrationRecord(record) {
   const email = asText(record.Email);
   if (!firstName && !lastName && !email) return null;
 
+  const company = asText(record.Company) || 'Unspecified';
+  const emailDomain = email.split('@')[1]?.toLowerCase() || '';
+  if (EXCLUDED_REGISTRANT_COMPANIES.has(company.toLowerCase()) || EXCLUDED_REGISTRANT_EMAIL_DOMAINS.has(emailDomain)) {
+    return null;
+  }
+
   const date = parseDate(record['Date Registered']);
   const discountCode = asText(record['Discount Code']).toUpperCase();
   const packageAmount = asNumber(record['Package Amount']);
@@ -284,7 +292,7 @@ function normalizeRegistrationRecord(record) {
 
   return {
     name: `${firstName} ${lastName}`.trim() || email,
-    company: asText(record.Company) || 'Unspecified',
+    company,
     jobTitle: asText(record['Job Title']),
     state: asText(record['State/ Province']),
     dateRegistered: date ? date.toISOString().slice(0, 10) : '',
