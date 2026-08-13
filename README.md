@@ -13,10 +13,22 @@ npm run agenda:pdf
 The current build reads the vFairs/registration Excel export from:
 
 ```text
-assets/source/registration-report-deduped-2026-08-11.xlsx
+assets/source/registration-report-deduped-2026-08-12.xlsx
 ```
 
 The committed dashboard intentionally excludes attendee emails, phone numbers, and source user IDs.
+
+## Updating registration data
+
+Do **not** replace the full workbook with each new vFairs export. Referral attribution can change or disappear in later exports, so updates must append only net-new registrants by email and leave all existing rows untouched.
+
+```bash
+cd revio-client-summit-dashboard
+INCOMING_XLSX=/path/to/latest-vfairs-export.xlsx node scripts/append-new-registrants-only.js
+node scripts/build-dashboard.js
+```
+
+The append script writes a timestamped backup before changing the current workbook.
 
 ## Future HubSpot Source
 
