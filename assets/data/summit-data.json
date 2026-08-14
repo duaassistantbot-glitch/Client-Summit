@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-13T20:50:18.462Z",
+  "generatedAt": "2026-08-14T21:19:13.310Z",
   "sourceFile": "registration-report-deduped-2026-08-12.xlsx",
   "goals": {
     "totalRegistrants": 400,
@@ -36,21 +36,21 @@
     "netCostPerAttendee": 373
   },
   "summary": {
-    "totalRegistrants": 173,
-    "uniqueCompanies": 94,
-    "customerProspectRegistrations": 173,
+    "totalRegistrants": 178,
+    "uniqueCompanies": 96,
+    "customerProspectRegistrations": 178,
     "paidTickets": 34,
-    "compTickets": 139,
+    "compTickets": 144,
     "staffTickets": 0,
     "sponsorPasses": 0,
     "ticketRevenue": 18100,
     "sponsorRevenue": 296487.5,
     "totalRevenue": 314587.5,
     "avgPaidTicket": 532,
-    "fullCompTickets": 139,
-    "hotelRooms": 135,
-    "attendedBefore": 86,
-    "referralCount": 149
+    "fullCompTickets": 144,
+    "hotelRooms": 136,
+    "attendedBefore": 87,
+    "referralCount": 153
   },
   "registrants": [
     {
@@ -3339,6 +3339,101 @@
       "hotel": "Yes",
       "shirtSize": "Large (L)",
       "attendedBefore": "No"
+    },
+    {
+      "name": "Richard Crancer",
+      "company": "The Crancer Group",
+      "jobTitle": "Chief Operating Officer",
+      "state": "CA",
+      "dateLabel": "Aug 14, 2026",
+      "dateRegistered": "2026-08-14",
+      "businessType": "Consulting",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "1–10",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "2BLONDES",
+      "referral": "Brook Lee - she won GTIA Member of the Year she is amazing",
+      "hotel": "Yes",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Kris Kokell",
+      "company": "VanRan Communications",
+      "jobTitle": "Dispatcher/Customer Service",
+      "state": "GA",
+      "dateLabel": "Aug 12, 2026",
+      "dateRegistered": "2026-08-12",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Other",
+      "department": "Operations/Support",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Blaine Villafuerte",
+      "hotel": "No",
+      "shirtSize": "Medium (M)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Ron Bohannon",
+      "company": "VanRan Communications",
+      "jobTitle": "Vice President",
+      "state": "GA",
+      "dateLabel": "Aug 14, 2026",
+      "dateRegistered": "2026-08-14",
+      "businessType": "CSP / Telecom",
+      "jobRank": "VP-Level",
+      "department": "IT/Engineering",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Blaine Villafuerte",
+      "hotel": "No",
+      "shirtSize": "2XL (XXL)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Sheila Greene",
+      "company": "VanRan Communications",
+      "jobTitle": "Office Manager",
+      "state": "GA",
+      "dateLabel": "Aug 12, 2026",
+      "dateRegistered": "2026-08-12",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Other",
+      "department": "Operations/Support",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Blaine Villafuerte",
+      "hotel": "No",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Matthew LaHood",
+      "company": "Wolters Kluwer",
+      "jobTitle": "Sr. Consultant/CUO",
+      "state": "NY",
+      "dateLabel": "Aug 12, 2026",
+      "dateRegistered": "2026-08-12",
+      "businessType": "other, Technology",
+      "jobRank": "Director",
+      "department": "Sales/Marketing",
+      "companySize": "250+",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "SUMMITSPONSOR",
+      "referral": "",
+      "hotel": "No",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "Yes"
     }
   ],
   "referrals": [
@@ -4235,6 +4330,30 @@
       "registrant": "Zack Killpack",
       "referrer": "Jakob Champion",
       "date": "2026-08-04"
+    },
+    {
+      "id": 150,
+      "registrant": "Richard Crancer",
+      "referrer": "Brook Lee - she won GTIA Member of the Year she is amazing",
+      "date": "2026-08-14"
+    },
+    {
+      "id": 151,
+      "registrant": "Kris Kokell",
+      "referrer": "Blaine Villafuerte",
+      "date": "2026-08-12"
+    },
+    {
+      "id": 152,
+      "registrant": "Ron Bohannon",
+      "referrer": "Blaine Villafuerte",
+      "date": "2026-08-14"
+    },
+    {
+      "id": 153,
+      "registrant": "Sheila Greene",
+      "referrer": "Blaine Villafuerte",
+      "date": "2026-08-12"
     }
   ],
   "agenda": [
@@ -4488,22 +4607,22 @@
     "wonAmount": 233987.5,
     "openAmount": 14000,
     "closedWon": 17,
-    "closedLost": 46,
+    "closedLost": 47,
     "byStage": [
       {
         "name": "Closed Lost",
-        "count": 46
+        "count": 47
       },
       {
         "name": "Closed Won",
         "count": 17
       },
       {
-        "name": "2 - Discovery Completed",
-        "count": 2
+        "name": "1- Discovery Scheduled",
+        "count": 1
       },
       {
-        "name": "1- Discovery Scheduled",
+        "name": "2 - Discovery Completed",
         "count": 1
       },
       {
@@ -4620,12 +4739,12 @@
       {
         "opportunityName": "Voxtelesys Summit Sponsorship 2026",
         "company": "Voxtelesys",
-        "stage": "2 - Discovery Completed",
-        "closeDate": "2026-08-31",
+        "stage": "Closed Lost",
+        "closeDate": "2026-08-14",
         "amount": 0,
         "sponsorshipType": "Unspecified",
         "sponsorshipPackage": "",
-        "isClosed": false,
+        "isClosed": true,
         "isWon": false
       },
       {
@@ -5305,9 +5424,9 @@
     "ticketTypes": [
       {
         "name": "Summit Pass- Single ticket",
-        "count": 104,
+        "count": 109,
         "paid": 6,
-        "comp": 98,
+        "comp": 103,
         "revenue": 3250
       },
       {
@@ -5363,19 +5482,19 @@
     "discounts": [
       {
         "name": "REVGUEST-A",
-        "count": 67,
+        "count": 70,
         "cap": 20,
         "remaining": 0
       },
       {
         "name": "SUMMITSPONSOR",
-        "count": 16,
+        "count": 17,
         "cap": null,
         "remaining": null
       },
       {
         "name": "2BLONDES",
-        "count": 13,
+        "count": 14,
         "cap": null,
         "remaining": null
       },
@@ -5431,7 +5550,7 @@
     "businessTypes": [
       {
         "name": "CSP / Telecom",
-        "count": 90
+        "count": 93
       },
       {
         "name": "MSP",
@@ -5443,7 +5562,7 @@
       },
       {
         "name": "Consulting",
-        "count": 5
+        "count": 6
       },
       {
         "name": "other, Vendor",
@@ -5455,7 +5574,7 @@
       },
       {
         "name": "other, Technology",
-        "count": 3
+        "count": 4
       },
       {
         "name": "other, Marketplace",
@@ -5493,7 +5612,7 @@
     "jobRanks": [
       {
         "name": "C-Level",
-        "count": 64
+        "count": 65
       },
       {
         "name": "Manager",
@@ -5501,11 +5620,11 @@
       },
       {
         "name": "Director",
-        "count": 24
+        "count": 25
       },
       {
         "name": "VP-Level",
-        "count": 21
+        "count": 22
       },
       {
         "name": "Non-Manager",
@@ -5513,7 +5632,7 @@
       },
       {
         "name": "Other",
-        "count": 5
+        "count": 7
       },
       {
         "name": "Unspecified",
@@ -5523,11 +5642,11 @@
     "departments": [
       {
         "name": "C-Suite",
-        "count": 59
+        "count": 60
       },
       {
         "name": "Operations/Support",
-        "count": 42
+        "count": 44
       },
       {
         "name": "Finance/Billing",
@@ -5535,7 +5654,7 @@
       },
       {
         "name": "Sales/Marketing",
-        "count": 22
+        "count": 23
       },
       {
         "name": "Other",
@@ -5543,7 +5662,7 @@
       },
       {
         "name": "IT/Engineering",
-        "count": 7
+        "count": 8
       },
       {
         "name": "Unspecified",
@@ -5553,11 +5672,11 @@
     "companySizes": [
       {
         "name": "11–50",
-        "count": 66
+        "count": 69
       },
       {
         "name": "1–10",
-        "count": 45
+        "count": 46
       },
       {
         "name": "51–250",
@@ -5565,7 +5684,7 @@
       },
       {
         "name": "250+",
-        "count": 20
+        "count": 21
       },
       {
         "name": "Unspecified",
@@ -5579,7 +5698,7 @@
       },
       {
         "name": "GA",
-        "count": 20
+        "count": 23
       },
       {
         "name": "NC",
@@ -5598,15 +5717,15 @@
         "count": 7
       },
       {
+        "name": "NY",
+        "count": 7
+      },
+      {
         "name": "IL",
         "count": 6
       },
       {
         "name": "NJ",
-        "count": 6
-      },
-      {
-        "name": "NY",
         "count": 6
       },
       {
@@ -5618,12 +5737,12 @@
         "count": 5
       },
       {
-        "name": "LA",
+        "name": "CA",
         "count": 5
       },
       {
-        "name": "CA",
-        "count": 4
+        "name": "LA",
+        "count": 5
       },
       {
         "name": "CO",
@@ -5697,29 +5816,29 @@
     "hotel": [
       {
         "name": "Yes",
-        "count": 135
+        "count": 136
       },
       {
         "name": "No",
-        "count": 38
+        "count": 42
       }
     ],
     "shirts": [
       {
         "name": "Extra Large (XL)",
-        "count": 57
+        "count": 58
       },
       {
         "name": "Large (L)",
-        "count": 55
+        "count": 57
       },
       {
         "name": "2XL (XXL)",
-        "count": 24
+        "count": 25
       },
       {
         "name": "Medium (M)",
-        "count": 23
+        "count": 24
       },
       {
         "name": "Small (S)",
@@ -5737,39 +5856,39 @@
     "topics": [
       {
         "name": "Business Growth, Strategy & Service Delivery",
-        "count": 123
+        "count": 125
       },
       {
         "name": "Technology, AI & Innovation",
-        "count": 106
+        "count": 109
       },
       {
         "name": "Customer Success & Experience",
-        "count": 104
+        "count": 107
       },
       {
         "name": "Product & Platform Deep Dives",
-        "count": 88
+        "count": 89
       },
       {
         "name": "PSA (service tickets, tech scheduling, inventory, quoting)",
-        "count": 86
+        "count": 88
       },
       {
         "name": "Communications Billing (Usage rating, Telecom Taxation)",
-        "count": 80
+        "count": 83
       },
       {
         "name": "Payment Processing (Accounts receivable, Accounts Payable)",
-        "count": 77
+        "count": 79
       },
       {
         "name": "Sales & Marketing",
-        "count": 73
+        "count": 74
       },
       {
         "name": "Industry & Regulatory Insights",
-        "count": 55
+        "count": 56
       },
       {
         "name": "Women in Leadership",
@@ -5777,13 +5896,13 @@
       },
       {
         "name": "RMM (Remote Monitoring and Management)",
-        "count": 30
+        "count": 32
       }
     ],
     "registrationsByMonth": [
       {
         "name": "Aug 2026",
-        "count": 61
+        "count": 66
       },
       {
         "name": "Jul 2026",
@@ -5813,15 +5932,15 @@
     "receptionPlans": [
       {
         "name": "Networking Reception",
-        "count": 163
+        "count": 168
       },
       {
         "name": "Welcome Reception",
-        "count": 162
+        "count": 166
       },
       {
         "name": "Not Attending Receptions",
-        "count": 8
+        "count": 9
       }
     ]
   }
