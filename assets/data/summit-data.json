@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T21:19:13.310Z",
+  "generatedAt": "2026-08-21T14:29:05.487Z",
   "sourceFile": "registration-report-deduped-2026-08-12.xlsx",
   "goals": {
     "totalRegistrants": 400,
@@ -36,21 +36,21 @@
     "netCostPerAttendee": 373
   },
   "summary": {
-    "totalRegistrants": 178,
-    "uniqueCompanies": 96,
-    "customerProspectRegistrations": 178,
-    "paidTickets": 34,
-    "compTickets": 144,
+    "totalRegistrants": 208,
+    "uniqueCompanies": 109,
+    "customerProspectRegistrations": 208,
+    "paidTickets": 35,
+    "compTickets": 173,
     "staffTickets": 0,
     "sponsorPasses": 0,
-    "ticketRevenue": 18100,
+    "ticketRevenue": 18750,
     "sponsorRevenue": 296487.5,
-    "totalRevenue": 314587.5,
-    "avgPaidTicket": 532,
-    "fullCompTickets": 144,
-    "hotelRooms": 136,
-    "attendedBefore": 87,
-    "referralCount": 153
+    "totalRevenue": 315237.5,
+    "avgPaidTicket": 536,
+    "fullCompTickets": 173,
+    "hotelRooms": 147,
+    "attendedBefore": 99,
+    "referralCount": 166
   },
   "registrants": [
     {
@@ -3434,6 +3434,576 @@
       "hotel": "No",
       "shirtSize": "Extra Large (XL)",
       "attendedBefore": "Yes"
+    },
+    {
+      "name": "Ardit Berdyna",
+      "company": "RKS",
+      "jobTitle": "RKS",
+      "state": "GA",
+      "dateLabel": "Aug 18, 2026",
+      "dateRegistered": "2026-08-18",
+      "businessType": "Consulting",
+      "jobRank": "Non-Manager",
+      "department": "Other",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "SUMMITSPONSOR",
+      "referral": "none none",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Asa Morgan",
+      "company": "Unspecified",
+      "jobTitle": "",
+      "state": "",
+      "dateLabel": "Aug 4, 2026",
+      "dateRegistered": "2026-08-04",
+      "businessType": "Unspecified",
+      "jobRank": "Unspecified",
+      "department": "Unspecified",
+      "companySize": "Unspecified",
+      "packageName": "Unspecified",
+      "amount": 0,
+      "discountCode": "",
+      "referral": "",
+      "hotel": "Unspecified",
+      "shirtSize": "Unspecified",
+      "attendedBefore": "Unspecified"
+    },
+    {
+      "name": "Brent Reeves",
+      "company": "KealyWalker",
+      "jobTitle": "Strategic Advisor",
+      "state": "GA",
+      "dateLabel": "Aug 17, 2026",
+      "dateRegistered": "2026-08-17",
+      "businessType": "Consulting",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "2BLONDES",
+      "referral": "",
+      "hotel": "No",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Britt Koltay",
+      "company": "Unspecified",
+      "jobTitle": "",
+      "state": "",
+      "dateLabel": "Aug 18, 2026",
+      "dateRegistered": "2026-08-18",
+      "businessType": "Unspecified",
+      "jobRank": "Unspecified",
+      "department": "Unspecified",
+      "companySize": "Unspecified",
+      "packageName": "Unspecified",
+      "amount": 0,
+      "discountCode": "",
+      "referral": "",
+      "hotel": "Unspecified",
+      "shirtSize": "Unspecified",
+      "attendedBefore": "Unspecified"
+    },
+    {
+      "name": "Carol Kemp",
+      "company": "TaxConnex",
+      "jobTitle": "Director, Client Activation Services – Telecommunications",
+      "state": "GA",
+      "dateLabel": "Aug 17, 2026",
+      "dateRegistered": "2026-08-17",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Director",
+      "department": "Other",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "SUMMITSPONSOR",
+      "referral": "",
+      "hotel": "No",
+      "shirtSize": "Medium (M)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Chelsea McBride",
+      "company": "Savvy Communcations Inc.",
+      "jobTitle": "Billing & Operations Coordinator",
+      "state": "TX",
+      "dateLabel": "Aug 19, 2026",
+      "dateRegistered": "2026-08-19",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Other",
+      "department": "Finance/Billing",
+      "companySize": "1–10",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Shane Frost",
+      "hotel": "Yes",
+      "shirtSize": "Medium (M)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Chessie Huber",
+      "company": "Unspecified",
+      "jobTitle": "",
+      "state": "",
+      "dateLabel": "Aug 18, 2026",
+      "dateRegistered": "2026-08-18",
+      "businessType": "Unspecified",
+      "jobRank": "Unspecified",
+      "department": "Unspecified",
+      "companySize": "Unspecified",
+      "packageName": "Unspecified",
+      "amount": 0,
+      "discountCode": "",
+      "referral": "",
+      "hotel": "Unspecified",
+      "shirtSize": "Unspecified",
+      "attendedBefore": "Unspecified"
+    },
+    {
+      "name": "Chuck Flaherty",
+      "company": "Net Sapiens",
+      "jobTitle": "VP of Sales",
+      "state": "AZ",
+      "dateLabel": "Aug 21, 2026",
+      "dateRegistered": "2026-08-21",
+      "businessType": "CSP / Telecom",
+      "jobRank": "VP-Level",
+      "department": "Sales/Marketing",
+      "companySize": "250+",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "SUMMITSPONSOR",
+      "referral": "",
+      "hotel": "No",
+      "shirtSize": "2XL (XXL)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Dan Wensley",
+      "company": "GTIA",
+      "jobTitle": "CEO",
+      "state": "ON",
+      "dateLabel": "Aug 17, 2026",
+      "dateRegistered": "2026-08-17",
+      "businessType": "other, Industry Association",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "51–250",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 650,
+      "discountCode": "",
+      "referral": "Brook Lee",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Emily Sanders",
+      "company": "VanRan Communications",
+      "jobTitle": "Director of Quality Assurance",
+      "state": "GA",
+      "dateLabel": "Aug 17, 2026",
+      "dateRegistered": "2026-08-17",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Director",
+      "department": "Operations/Support",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Blaine Villafuerte",
+      "hotel": "No",
+      "shirtSize": "Small (S)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Eric Torres",
+      "company": "Unspecified",
+      "jobTitle": "",
+      "state": "",
+      "dateLabel": "Aug 12, 2026",
+      "dateRegistered": "2026-08-12",
+      "businessType": "Unspecified",
+      "jobRank": "Unspecified",
+      "department": "Unspecified",
+      "companySize": "Unspecified",
+      "packageName": "Unspecified",
+      "amount": 0,
+      "discountCode": "",
+      "referral": "",
+      "hotel": "Unspecified",
+      "shirtSize": "Unspecified",
+      "attendedBefore": "Unspecified"
+    },
+    {
+      "name": "Gary Luffman",
+      "company": "Hiscall",
+      "jobTitle": "President",
+      "state": "AL",
+      "dateLabel": "Aug 20, 2026",
+      "dateRegistered": "2026-08-20",
+      "businessType": "MSP",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "51–250",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "none none",
+      "hotel": "Yes",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Ian Pugh",
+      "company": "GreatAmerica",
+      "jobTitle": "National Accounts Director",
+      "state": "CA",
+      "dateLabel": "Aug 17, 2026",
+      "dateRegistered": "2026-08-17",
+      "businessType": "other, Finance",
+      "jobRank": "Director",
+      "department": "Sales/Marketing",
+      "companySize": "250+",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "SUMMITSPONSOR",
+      "referral": "Ardit Berdyna",
+      "hotel": "Yes",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Jake Leidy",
+      "company": "SpectrumVoIP",
+      "jobTitle": "Chief Operations Officer",
+      "state": "TX",
+      "dateLabel": "Aug 18, 2026",
+      "dateRegistered": "2026-08-18",
+      "businessType": "MSP",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "250+",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Justin Lee",
+      "hotel": "Yes",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Jeffery Forrester",
+      "company": "Unspecified",
+      "jobTitle": "",
+      "state": "",
+      "dateLabel": "Aug 4, 2026",
+      "dateRegistered": "2026-08-04",
+      "businessType": "Unspecified",
+      "jobRank": "Unspecified",
+      "department": "Unspecified",
+      "companySize": "Unspecified",
+      "packageName": "Unspecified",
+      "amount": 0,
+      "discountCode": "",
+      "referral": "",
+      "hotel": "Unspecified",
+      "shirtSize": "Unspecified",
+      "attendedBefore": "Unspecified"
+    },
+    {
+      "name": "Jennifer Ogle",
+      "company": "Unspecified",
+      "jobTitle": "",
+      "state": "",
+      "dateLabel": "Jul 16, 2026",
+      "dateRegistered": "2026-07-16",
+      "businessType": "Unspecified",
+      "jobRank": "Unspecified",
+      "department": "Unspecified",
+      "companySize": "Unspecified",
+      "packageName": "Unspecified",
+      "amount": 0,
+      "discountCode": "",
+      "referral": "",
+      "hotel": "Unspecified",
+      "shirtSize": "Unspecified",
+      "attendedBefore": "Unspecified"
+    },
+    {
+      "name": "Joe Marinello",
+      "company": "JCT Solutions",
+      "jobTitle": "Director of Information Systems",
+      "state": "NJ",
+      "dateLabel": "Aug 18, 2026",
+      "dateRegistered": "2026-08-18",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Director",
+      "department": "IT/Engineering",
+      "companySize": "51–250",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Blaine Villafuerte",
+      "hotel": "Yes",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Michael Yokay",
+      "company": "KealyWalker",
+      "jobTitle": "President & CEO",
+      "state": "MD",
+      "dateLabel": "Aug 17, 2026",
+      "dateRegistered": "2026-08-17",
+      "businessType": "Consulting",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "2BLONDES",
+      "referral": "",
+      "hotel": "No",
+      "shirtSize": "3XL (XXXL)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Michael Abenhaim",
+      "company": "Ooma",
+      "jobTitle": "VP of Sales",
+      "state": "FL",
+      "dateLabel": "Aug 18, 2026",
+      "dateRegistered": "2026-08-18",
+      "businessType": "CSP / Telecom",
+      "jobRank": "VP-Level",
+      "department": "Sales/Marketing",
+      "companySize": "250+",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "2BLONDES",
+      "referral": "Jake Mitchell",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Michelle Accardi",
+      "company": "Unspecified",
+      "jobTitle": "",
+      "state": "",
+      "dateLabel": "Aug 18, 2026",
+      "dateRegistered": "2026-08-18",
+      "businessType": "Unspecified",
+      "jobRank": "Unspecified",
+      "department": "Unspecified",
+      "companySize": "Unspecified",
+      "packageName": "Unspecified",
+      "amount": 0,
+      "discountCode": "",
+      "referral": "",
+      "hotel": "Unspecified",
+      "shirtSize": "Unspecified",
+      "attendedBefore": "Unspecified"
+    },
+    {
+      "name": "Mike Osborne",
+      "company": "NetSapiens",
+      "jobTitle": "Software Solutions Rep",
+      "state": "CA",
+      "dateLabel": "Aug 21, 2026",
+      "dateRegistered": "2026-08-21",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Other",
+      "department": "Sales/Marketing",
+      "companySize": "250+",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "SUMMITSPONSOR",
+      "referral": "",
+      "hotel": "No",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Nick Nielsen",
+      "company": "Great America",
+      "jobTitle": "Senior Director of Sales",
+      "state": "IA",
+      "dateLabel": "Aug 18, 2026",
+      "dateRegistered": "2026-08-18",
+      "businessType": "Consulting",
+      "jobRank": "VP-Level",
+      "department": "Sales/Marketing",
+      "companySize": "51–250",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "SUMMITSPONSOR",
+      "referral": "None None",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Nicole Leith",
+      "company": "Unspecified",
+      "jobTitle": "",
+      "state": "",
+      "dateLabel": "Aug 18, 2026",
+      "dateRegistered": "2026-08-18",
+      "businessType": "Unspecified",
+      "jobRank": "Unspecified",
+      "department": "Unspecified",
+      "companySize": "Unspecified",
+      "packageName": "Unspecified",
+      "amount": 0,
+      "discountCode": "",
+      "referral": "",
+      "hotel": "Unspecified",
+      "shirtSize": "Unspecified",
+      "attendedBefore": "Unspecified"
+    },
+    {
+      "name": "Randy Dillard",
+      "company": "Unspecified",
+      "jobTitle": "",
+      "state": "",
+      "dateLabel": "Aug 17, 2026",
+      "dateRegistered": "2026-08-17",
+      "businessType": "Unspecified",
+      "jobRank": "Unspecified",
+      "department": "Unspecified",
+      "companySize": "Unspecified",
+      "packageName": "Unspecified",
+      "amount": 0,
+      "discountCode": "",
+      "referral": "",
+      "hotel": "Unspecified",
+      "shirtSize": "Unspecified",
+      "attendedBefore": "Unspecified"
+    },
+    {
+      "name": "Rob Mcknight",
+      "company": "Southern Telecommunications, LLC",
+      "jobTitle": "Operations Manager",
+      "state": "MS",
+      "dateLabel": "Aug 18, 2026",
+      "dateRegistered": "2026-08-18",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Director",
+      "department": "Operations/Support",
+      "companySize": "11–50",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "Shane Frost",
+      "hotel": "No",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "No"
+    },
+    {
+      "name": "Robert Lafrance",
+      "company": "Ooma",
+      "jobTitle": "Strategic Sales Director",
+      "state": "CT",
+      "dateLabel": "Aug 18, 2026",
+      "dateRegistered": "2026-08-18",
+      "businessType": "CSP / Telecom",
+      "jobRank": "Director",
+      "department": "Sales/Marketing",
+      "companySize": "250+",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "2BLONDES",
+      "referral": "Jake Mitchell",
+      "hotel": "Yes",
+      "shirtSize": "Extra Large (XL)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Scott Campbell",
+      "company": "Unspecified",
+      "jobTitle": "",
+      "state": "",
+      "dateLabel": "Aug 18, 2026",
+      "dateRegistered": "2026-08-18",
+      "businessType": "Unspecified",
+      "jobRank": "Unspecified",
+      "department": "Unspecified",
+      "companySize": "Unspecified",
+      "packageName": "Unspecified",
+      "amount": 0,
+      "discountCode": "",
+      "referral": "",
+      "hotel": "Unspecified",
+      "shirtSize": "Unspecified",
+      "attendedBefore": "Unspecified"
+    },
+    {
+      "name": "Scotty Amos",
+      "company": "Unspecified",
+      "jobTitle": "",
+      "state": "",
+      "dateLabel": "Aug 18, 2026",
+      "dateRegistered": "2026-08-18",
+      "businessType": "Unspecified",
+      "jobRank": "Unspecified",
+      "department": "Unspecified",
+      "companySize": "Unspecified",
+      "packageName": "Unspecified",
+      "amount": 0,
+      "discountCode": "",
+      "referral": "",
+      "hotel": "Unspecified",
+      "shirtSize": "Unspecified",
+      "attendedBefore": "Unspecified"
+    },
+    {
+      "name": "Shae Pfieffer",
+      "company": "Hiscall",
+      "jobTitle": "IT Manager",
+      "state": "AL",
+      "dateLabel": "Aug 20, 2026",
+      "dateRegistered": "2026-08-20",
+      "businessType": "MSP",
+      "jobRank": "C-Level",
+      "department": "C-Suite",
+      "companySize": "51–250",
+      "packageName": "Summit Pass- Single ticket",
+      "amount": 0,
+      "discountCode": "REVGUEST-A",
+      "referral": "none none",
+      "hotel": "Yes",
+      "shirtSize": "Large (L)",
+      "attendedBefore": "Yes"
+    },
+    {
+      "name": "Stacy Whitley",
+      "company": "Unspecified",
+      "jobTitle": "",
+      "state": "",
+      "dateLabel": "Aug 18, 2026",
+      "dateRegistered": "2026-08-18",
+      "businessType": "Unspecified",
+      "jobRank": "Unspecified",
+      "department": "Unspecified",
+      "companySize": "Unspecified",
+      "packageName": "Unspecified",
+      "amount": 0,
+      "discountCode": "",
+      "referral": "",
+      "hotel": "Unspecified",
+      "shirtSize": "Unspecified",
+      "attendedBefore": "Unspecified"
     }
   ],
   "referrals": [
@@ -4354,6 +4924,84 @@
       "registrant": "Sheila Greene",
       "referrer": "Blaine Villafuerte",
       "date": "2026-08-12"
+    },
+    {
+      "id": 154,
+      "registrant": "Ardit Berdyna",
+      "referrer": "none none",
+      "date": "2026-08-18"
+    },
+    {
+      "id": 155,
+      "registrant": "Chelsea McBride",
+      "referrer": "Shane Frost",
+      "date": "2026-08-19"
+    },
+    {
+      "id": 156,
+      "registrant": "Dan Wensley",
+      "referrer": "Brook Lee",
+      "date": "2026-08-17"
+    },
+    {
+      "id": 157,
+      "registrant": "Emily Sanders",
+      "referrer": "Blaine Villafuerte",
+      "date": "2026-08-17"
+    },
+    {
+      "id": 158,
+      "registrant": "Gary Luffman",
+      "referrer": "none none",
+      "date": "2026-08-20"
+    },
+    {
+      "id": 159,
+      "registrant": "Ian Pugh",
+      "referrer": "Ardit Berdyna",
+      "date": "2026-08-17"
+    },
+    {
+      "id": 160,
+      "registrant": "Jake Leidy",
+      "referrer": "Justin Lee",
+      "date": "2026-08-18"
+    },
+    {
+      "id": 161,
+      "registrant": "Joe Marinello",
+      "referrer": "Blaine Villafuerte",
+      "date": "2026-08-18"
+    },
+    {
+      "id": 162,
+      "registrant": "Michael Abenhaim",
+      "referrer": "Jake Mitchell",
+      "date": "2026-08-18"
+    },
+    {
+      "id": 163,
+      "registrant": "Nick Nielsen",
+      "referrer": "None None",
+      "date": "2026-08-18"
+    },
+    {
+      "id": 164,
+      "registrant": "Rob Mcknight",
+      "referrer": "Shane Frost",
+      "date": "2026-08-18"
+    },
+    {
+      "id": 165,
+      "registrant": "Robert Lafrance",
+      "referrer": "Jake Mitchell",
+      "date": "2026-08-18"
+    },
+    {
+      "id": 166,
+      "registrant": "Shae Pfieffer",
+      "referrer": "none none",
+      "date": "2026-08-20"
     }
   ],
   "agenda": [
@@ -5424,10 +6072,10 @@
     "ticketTypes": [
       {
         "name": "Summit Pass- Single ticket",
-        "count": 109,
-        "paid": 6,
-        "comp": 103,
-        "revenue": 3250
+        "count": 127,
+        "paid": 7,
+        "comp": 120,
+        "revenue": 3900
       },
       {
         "name": "BOGO - Buy One, Get One",
@@ -5442,6 +6090,13 @@
         "paid": 9,
         "comp": 13,
         "revenue": 3800
+      },
+      {
+        "name": "Unspecified",
+        "count": 13,
+        "paid": 0,
+        "comp": 13,
+        "revenue": 0
       },
       {
         "name": "Super Early Bird",
@@ -5470,31 +6125,24 @@
         "paid": 1,
         "comp": 0,
         "revenue": 650
-      },
-      {
-        "name": "Unspecified",
-        "count": 1,
-        "paid": 0,
-        "comp": 1,
-        "revenue": 0
       }
     ],
     "discounts": [
       {
         "name": "REVGUEST-A",
-        "count": 70,
+        "count": 77,
         "cap": 20,
         "remaining": 0
       },
       {
         "name": "SUMMITSPONSOR",
-        "count": 17,
+        "count": 23,
         "cap": null,
         "remaining": null
       },
       {
         "name": "2BLONDES",
-        "count": 14,
+        "count": 18,
         "cap": null,
         "remaining": null
       },
@@ -5550,19 +6198,23 @@
     "businessTypes": [
       {
         "name": "CSP / Telecom",
-        "count": 93
+        "count": 102
       },
       {
         "name": "MSP",
-        "count": 40
+        "count": 43
       },
       {
         "name": "Field Service Integrator (Alarm, Cabling, AV, Other)",
         "count": 16
       },
       {
+        "name": "Unspecified",
+        "count": 13
+      },
+      {
         "name": "Consulting",
-        "count": 6
+        "count": 10
       },
       {
         "name": "other, Vendor",
@@ -5585,6 +6237,14 @@
         "count": 2
       },
       {
+        "name": "other, Finance",
+        "count": 1
+      },
+      {
+        "name": "other, Industry Association",
+        "count": 1
+      },
+      {
         "name": "other, RMM",
         "count": 1
       },
@@ -5603,16 +6263,12 @@
       {
         "name": "other, xx",
         "count": 1
-      },
-      {
-        "name": "Unspecified",
-        "count": 1
       }
     ],
     "jobRanks": [
       {
         "name": "C-Level",
-        "count": 65
+        "count": 71
       },
       {
         "name": "Manager",
@@ -5620,100 +6276,112 @@
       },
       {
         "name": "Director",
-        "count": 25
+        "count": 31
       },
       {
         "name": "VP-Level",
-        "count": 22
+        "count": 25
       },
       {
         "name": "Non-Manager",
-        "count": 15
-      },
-      {
-        "name": "Other",
-        "count": 7
+        "count": 16
       },
       {
         "name": "Unspecified",
-        "count": 1
+        "count": 13
+      },
+      {
+        "name": "Other",
+        "count": 9
       }
     ],
     "departments": [
       {
         "name": "C-Suite",
-        "count": 60
+        "count": 66
       },
       {
         "name": "Operations/Support",
-        "count": 44
+        "count": 46
       },
       {
         "name": "Finance/Billing",
-        "count": 32
+        "count": 33
       },
       {
         "name": "Sales/Marketing",
-        "count": 23
-      },
-      {
-        "name": "Other",
-        "count": 10
-      },
-      {
-        "name": "IT/Engineering",
-        "count": 8
+        "count": 29
       },
       {
         "name": "Unspecified",
-        "count": 1
+        "count": 13
+      },
+      {
+        "name": "Other",
+        "count": 12
+      },
+      {
+        "name": "IT/Engineering",
+        "count": 9
       }
     ],
     "companySizes": [
       {
         "name": "11–50",
-        "count": 69
+        "count": 75
       },
       {
         "name": "1–10",
-        "count": 46
+        "count": 47
       },
       {
         "name": "51–250",
-        "count": 41
+        "count": 46
       },
       {
         "name": "250+",
-        "count": 21
+        "count": 27
       },
       {
         "name": "Unspecified",
-        "count": 1
+        "count": 13
       }
     ],
     "states": [
       {
         "name": "FL",
-        "count": 33
+        "count": 34
       },
       {
         "name": "GA",
-        "count": 23
+        "count": 27
+      },
+      {
+        "name": "TX",
+        "count": 13
       },
       {
         "name": "NC",
         "count": 12
       },
       {
-        "name": "TX",
-        "count": 11
+        "name": "MD",
+        "count": 9
       },
       {
-        "name": "MD",
-        "count": 8
+        "name": "AL",
+        "count": 7
+      },
+      {
+        "name": "CA",
+        "count": 7
       },
       {
         "name": "MI",
+        "count": 7
+      },
+      {
+        "name": "NJ",
         "count": 7
       },
       {
@@ -5725,23 +6393,15 @@
         "count": 6
       },
       {
-        "name": "NJ",
-        "count": 6
-      },
-      {
         "name": "TN",
         "count": 6
       },
       {
-        "name": "AL",
-        "count": 5
-      },
-      {
-        "name": "CA",
-        "count": 5
-      },
-      {
         "name": "LA",
+        "count": 5
+      },
+      {
+        "name": "MS",
         "count": 5
       },
       {
@@ -5753,12 +6413,12 @@
         "count": 4
       },
       {
-        "name": "MS",
+        "name": "WA",
         "count": 4
       },
       {
-        "name": "WA",
-        "count": 4
+        "name": "IA",
+        "count": 3
       },
       {
         "name": "MN",
@@ -5775,10 +6435,6 @@
       {
         "name": "VA",
         "count": 3
-      },
-      {
-        "name": "IA",
-        "count": 2
       },
       {
         "name": "IN",
@@ -5805,7 +6461,19 @@
         "count": 2
       },
       {
+        "name": "AZ",
+        "count": 1
+      },
+      {
+        "name": "CT",
+        "count": 1
+      },
+      {
         "name": "OK",
+        "count": 1
+      },
+      {
+        "name": "ON",
         "count": 1
       },
       {
@@ -5816,37 +6484,45 @@
     "hotel": [
       {
         "name": "Yes",
-        "count": 136
+        "count": 147
       },
       {
         "name": "No",
-        "count": 42
+        "count": 49
+      },
+      {
+        "name": "Unspecified",
+        "count": 12
       }
     ],
     "shirts": [
       {
         "name": "Extra Large (XL)",
-        "count": 58
+        "count": 65
       },
       {
         "name": "Large (L)",
-        "count": 57
+        "count": 63
       },
       {
         "name": "2XL (XXL)",
-        "count": 25
+        "count": 26
       },
       {
         "name": "Medium (M)",
-        "count": 24
+        "count": 26
+      },
+      {
+        "name": "Unspecified",
+        "count": 12
       },
       {
         "name": "Small (S)",
-        "count": 7
+        "count": 8
       },
       {
         "name": "3XL (XXXL)",
-        "count": 6
+        "count": 7
       },
       {
         "name": "4XL (XXXXL)",
@@ -5856,57 +6532,57 @@
     "topics": [
       {
         "name": "Business Growth, Strategy & Service Delivery",
-        "count": 125
+        "count": 136
       },
       {
         "name": "Technology, AI & Innovation",
-        "count": 109
+        "count": 120
       },
       {
         "name": "Customer Success & Experience",
-        "count": 107
+        "count": 116
       },
       {
         "name": "Product & Platform Deep Dives",
-        "count": 89
+        "count": 99
       },
       {
         "name": "PSA (service tickets, tech scheduling, inventory, quoting)",
-        "count": 88
+        "count": 96
       },
       {
         "name": "Communications Billing (Usage rating, Telecom Taxation)",
-        "count": 83
+        "count": 92
       },
       {
         "name": "Payment Processing (Accounts receivable, Accounts Payable)",
-        "count": 79
+        "count": 87
       },
       {
         "name": "Sales & Marketing",
-        "count": 74
+        "count": 83
       },
       {
         "name": "Industry & Regulatory Insights",
-        "count": 56
-      },
-      {
-        "name": "Women in Leadership",
-        "count": 33
+        "count": 65
       },
       {
         "name": "RMM (Remote Monitoring and Management)",
-        "count": 32
+        "count": 39
+      },
+      {
+        "name": "Women in Leadership",
+        "count": 34
       }
     ],
     "registrationsByMonth": [
       {
         "name": "Aug 2026",
-        "count": 66
+        "count": 95
       },
       {
         "name": "Jul 2026",
-        "count": 52
+        "count": 53
       },
       {
         "name": "Jun 2026",
@@ -5932,15 +6608,19 @@
     "receptionPlans": [
       {
         "name": "Networking Reception",
-        "count": 168
+        "count": 184
       },
       {
         "name": "Welcome Reception",
-        "count": 166
+        "count": 183
+      },
+      {
+        "name": "Unspecified",
+        "count": 12
       },
       {
         "name": "Not Attending Receptions",
-        "count": 9
+        "count": 11
       }
     ]
   }

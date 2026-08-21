@@ -54,6 +54,7 @@ function readIncomingRows(file) {
   const added = [];
   const skippedExisting = [];
   const skippedCancelled = [];
+  const skippedInternal = [];
   const skippedNoEmail = [];
 
   for (const row of incomingRows) {
@@ -67,6 +68,10 @@ function readIncomingRows(file) {
     }
     if (/cancel/i.test(status)) {
       skippedCancelled.push({ name, email, status });
+      continue;
+    }
+    if (email.endsWith('@rev.io')) {
+      skippedInternal.push({ name, email });
       continue;
     }
     if (existingEmails.has(email)) {
@@ -95,6 +100,7 @@ function readIncomingRows(file) {
     added: added.length,
     skippedExisting: skippedExisting.length,
     skippedCancelled: skippedCancelled.length,
+    skippedInternal: skippedInternal.length,
     skippedNoEmail: skippedNoEmail.length,
     addedPeople: added
   }, null, 2));
