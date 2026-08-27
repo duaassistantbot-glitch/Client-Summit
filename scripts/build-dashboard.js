@@ -413,12 +413,14 @@ function buildModel(rows, sponsorshipOpportunities) {
   const sponsorshipSummary = buildSponsorshipSummary(sponsorshipOpportunities);
   const avgPaidTicket = paidRows.length ? Math.round(ticketRevenue / paidRows.length) : 0;
   const fullComps = rows.filter((row) => row.amount === 0 && (row.discountAmount >= row.packageAmount || row.discountCode));
-  const referrals = rows.filter((row) => row.referral).map((row, index) => ({
-    id: index + 1,
-    registrant: row.name,
-    referrer: row.referral,
-    date: row.dateRegistered
-  }));
+  const referrals = rows
+    .filter((row) => row.referral && row.discountCode !== 'REVII')
+    .map((row, index) => ({
+      id: index + 1,
+      registrant: row.name,
+      referrer: row.referral,
+      date: row.dateRegistered
+    }));
 
   const ticketTypes = countBy(rows, (row) => row.packageName).map((entry) => {
     const matching = rows.filter((row) => row.packageName === entry.name);
