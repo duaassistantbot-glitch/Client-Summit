@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const https = require('https');
 const ExcelJS = require('exceljs');
 
 const repoDir = path.resolve(__dirname, '..');
@@ -10,11 +11,14 @@ const outDataPath = path.join(repoDir, 'assets', 'data', 'summit-target-data.jso
 const outHtmlPath = path.join(repoDir, 'target-dashboard.html');
 const outCsvPath = path.join(repoDir, 'assets', 'data', 'summit-target-accounts.csv');
 
-const PRODUCTS = ['Billing', 'PSA Web', 'Tigerpaw', 'Odin', 'Payments'];
+const PRODUCTS = ['Billing', 'New Rev.io', 'Payments'];
+const PRODUCT_SOURCE_LABELS = { 'New Rev.io': 'PSA Web' };
+const API_VERSION = 'v59.0';
 const EXCLUDED_CODES = new Set(['REVII', 'SUMMITSPONSOR']);
 const EXCLUDED_SPONSOR_COMPANIES = new Set(['ooma', 'kealywalker']);
 const COMPANY_SUFFIX_RE = /\b(incorporated|inc|llc|l\.l\.c|ltd|limited|corp|corporation|co|company|communications|communication|telecom|technologies|technology|solutions|services|service|systems|group|direct|usa|c\/o)\b/g;
 const GENERIC_SINGLE_MATCH_TOKENS = new Set(['telephone', 'phone', 'voice', 'network', 'networks', 'security', 'secure', 'data', 'digital', 'global', 'premier', 'southeast', 'technology', 'technologies', 'solution', 'solutions', 'system', 'systems']);
+const GENERIC_CLIENT_CODE_TOKENS = new Set(['demo', 'training', 'sales', 'template', 'product', 'solutions', 'solution', 'inventory', 'sandbox', 'testdrive', 'learn']);
 
 function text(value) {
   if (value == null) return '';
@@ -62,11 +66,85 @@ function splitProducts(value) {
   const raw = text(value).toLowerCase();
   const set = new Set();
   if (/billing/.test(raw)) set.add('Billing');
-  if (/psa\s*web|psa/.test(raw)) set.add('PSA Web');
-  if (/tigerpaw/.test(raw)) set.add('Tigerpaw');
-  if (/odin/.test(raw)) set.add('Odin');
+  if (/psa\s*web|psa/.test(raw)) set.add('New Rev.io');
   if (/payment/.test(raw)) set.add('Payments');
   return [...set];
+}
+
+function loadEnv() {
+  const envPath = path.join(workspaceDir, '.env');
+  if (!fs.existsSync(envPath)) return;
+  for (const line of fs.readFileSync(envPath, 'utf8').split('\n')) {
+    const match = line.match(/^([^#=]+)=(.*)$/);
+    if (match && !process.env[match[1].trim()]) process.env[match[1].trim()] = match[2].trim();
+  }
+}
+
+function sfRequest({ method = 'GET', requestPath, token, body, headers = {} }) {
+  const instanceUrl = process.env.SF_INSTANCE_URL;
+  if (!instanceUrl) throw new Error('SF_INSTANCE_URL is not configured.');
+  return new Promise((resolve, reject) => {
+    const request = https.request({
+      hostname: new URL(instanceUrl).hostname,
+      path: requestPath,
+      method,
+      headers: {
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        ...headers
+      }
+    }, (response) => {
+      let data = '';
+      response.on('data', chunk => data += chunk);
+      response.on('end', () => {
+        let parsed = data;
+        try { parsed = data ? JSON.parse(data) : null; } catch {}
+        if (response.statusCode >= 400) {
+          const message = Array.isArray(parsed) ? parsed.map(item => item.message || item.errorCode).join('; ') : parsed?.message || parsed?.error_description || data || `HTTP ${response.statusCode}`;
+          reject(new Error(message));
+          return;
+        }
+        resolve(parsed);
+      });
+    });
+    request.on('error', reject);
+    if (body) request.write(body);
+    request.end();
+  });
+}
+
+async function getSalesforceToken() {
+  loadEnv();
+  if (!process.env.SF_CLIENT_ID || !process.env.SF_CLIENT_SECRET || !process.env.SF_INSTANCE_URL) return null;
+  const body = new URLSearchParams({
+    grant_type: 'client_credentials',
+    client_id: process.env.SF_CLIENT_ID,
+    client_secret: process.env.SF_CLIENT_SECRET
+  }).toString();
+  const parsed = await sfRequest({
+    method: 'POST',
+    requestPath: '/services/oauth2/token',
+    body,
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Length': Buffer.byteLength(body)
+    }
+  });
+  return parsed.access_token;
+}
+
+function soqlString(value) {
+  return String(value).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+}
+
+async function sfQuery(token, soql) {
+  const records = [];
+  let requestPath = `/services/data/${API_VERSION}/query?q=${encodeURIComponent(soql)}`;
+  while (requestPath) {
+    const result = await sfRequest({ requestPath, token });
+    records.push(...(result.records || []));
+    requestPath = result.nextRecordsUrl || null;
+  }
+  return records;
 }
 
 async function loadClientRows() {
@@ -105,7 +183,10 @@ function matchClient(company, clientRows) {
     const companyTokenList = [...companyTokens];
     const companyIsGenericSingle = companyTokenList.length === 1 && GENERIC_SINGLE_MATCH_TOKENS.has(companyTokenList[0]);
     if (norm === cn) score = 1;
-    else if (client.clientCodeTokens.some(code => code === norm || (code.length >= 4 && norm.includes(code)) || (norm.length >= 4 && code.includes(norm)))) score = 0.96;
+    else if (client.clientCodeTokens.some(code => {
+      const codeIsGeneric = GENERIC_CLIENT_CODE_TOKENS.has(code);
+      return code === norm || (!codeIsGeneric && ((code.length >= 4 && norm.includes(code)) || (norm.length >= 4 && code.includes(norm))));
+    })) score = 0.96;
     else if (!companyIsGenericSingle && norm.length > 3 && cn.includes(norm)) score = 0.94;
     else if (!clientIsGenericSingle && cn.length > 3 && norm.includes(cn)) score = 0.92;
     else {
@@ -122,6 +203,112 @@ function matchClient(company, clientRows) {
     if (!best || score > best.score) best = { client, score };
   }
   return best && best.score >= 0.55 ? best : null;
+}
+
+async function loadSalesforceAccountData(accounts) {
+  let token;
+  try {
+    token = await getSalesforceToken();
+  } catch (error) {
+    console.warn(`Salesforce auth failed; cohort badges unavailable: ${error.message}`);
+    return { byKey: new Map(), available: false, error: error.message };
+  }
+  if (!token) return { byKey: new Map(), available: false, error: 'Salesforce credentials unavailable' };
+
+  const sfAccounts = await sfQuery(token, `
+    SELECT Id, Name, Client_Code__c, TigerPaw_Account_Status__c, Tigerpaw__c, Odin__c,
+           Odin_Account_Status__c, Broadsoft_Type__c, Billing_Platform__c, Current_Platform__c,
+           PSA_Web__c, PSA_Platform__c
+    FROM Account
+    WHERE Client_Code__c != null
+       OR TigerPaw_Account_Status__c != null
+       OR Tigerpaw__c = true
+       OR Odin__c = true
+       OR Odin_Account_Status__c != null
+       OR PSA_Web__c = true
+       OR Broadsoft_Type__c != null
+  `);
+
+  const matched = new Map();
+  const accountIds = new Set();
+  for (const account of accounts) {
+    const sfMatch = matchSalesforceAccount(account, sfAccounts);
+    if (sfMatch) {
+      matched.set(account.account, sfMatch);
+      accountIds.add(sfMatch.Id);
+    }
+  }
+
+  const oppsByAccount = new Map();
+  const ids = [...accountIds];
+  for (let i = 0; i < ids.length; i += 80) {
+    const chunk = ids.slice(i, i + 80).map(id => `'${soqlString(id)}'`).join(',');
+    const opps = await sfQuery(token, `
+      SELECT Id, AccountId, Name, Type, Product_Type__c, StageName, IsWon, CloseDate, CreatedDate
+      FROM Opportunity
+      WHERE AccountId IN (${chunk}) AND IsWon = true
+      ORDER BY CloseDate ASC, CreatedDate ASC
+    `);
+    for (const opp of opps) {
+      if (!oppsByAccount.has(opp.AccountId)) oppsByAccount.set(opp.AccountId, []);
+      oppsByAccount.get(opp.AccountId).push(opp);
+    }
+  }
+
+  const byKey = new Map();
+  for (const [accountName, sfAccount] of matched.entries()) {
+    byKey.set(accountName, {
+      sfAccountId: sfAccount.Id,
+      sfAccountName: sfAccount.Name,
+      cohort: determineCohort(sfAccount, oppsByAccount.get(sfAccount.Id) || []),
+      usesBroadworks: hasBroadworks(sfAccount, oppsByAccount.get(sfAccount.Id) || [])
+    });
+  }
+  return { byKey, available: true, matchedAccounts: byKey.size, queriedAccounts: sfAccounts.length };
+}
+
+function matchSalesforceAccount(account, sfAccounts) {
+  const codeParts = text(account.clientCode).split(',').map(c => normalizeCompany(c)).filter(Boolean);
+  let best = null;
+  for (const sf of sfAccounts) {
+    const sfCodes = text(sf.Client_Code__c).split(',').map(c => normalizeCompany(c)).filter(Boolean);
+    let score = 0;
+    if (codeParts.length && sfCodes.length && codeParts.some(c => sfCodes.includes(c))) score = 1;
+    else {
+      const match = matchClient(sf.Name, [{
+        Client: account.account,
+        normalizedClient: normalizeCompany(account.account),
+        clientTokens: tokens(account.account),
+        clientCodeTokens: codeParts
+      }]);
+      score = match?.score || 0;
+    }
+    if (!best || score > best.score) best = { ...sf, score };
+  }
+  return best && best.score >= 0.55 ? best : null;
+}
+
+function hasBroadworks(sfAccount, opps) {
+  const haystack = [sfAccount.Broadsoft_Type__c, sfAccount.Current_Platform__c, sfAccount.Billing_Platform__c, sfAccount.PSA_Platform__c, ...opps.flatMap(o => [o.Name, o.Type, o.Product_Type__c])].join(' ').toLowerCase();
+  return /broadworks|broadsoft/.test(haystack);
+}
+
+function inferFallbackCohort(productsRaw) {
+  const raw = text(productsRaw).toLowerCase();
+  if (/tigerpaw/.test(raw)) return 'Tigerpaw';
+  if (/odin|broadworks|broadsoft/.test(raw)) return 'Odin';
+  return 'Rev.io Billing';
+}
+
+function determineCohort(sfAccount, opps) {
+  if (text(sfAccount.TigerPaw_Account_Status__c)) return 'Tigerpaw';
+  const firstWon = [...opps].sort((a, b) => text(a.CloseDate).localeCompare(text(b.CloseDate)) || text(a.CreatedDate).localeCompare(text(b.CreatedDate)))[0];
+  const firstText = firstWon ? [firstWon.Name, firstWon.Type, firstWon.Product_Type__c].join(' ').toLowerCase() : '';
+  if (/tigerpaw|psa/.test(firstText)) return 'Tigerpaw';
+  if (/odin|broadworks|broadsoft/.test(firstText) || sfAccount.Odin__c || text(sfAccount.Odin_Account_Status__c)) return 'Odin';
+  if (/billing|rev\.io|revio/.test(firstText)) return 'Rev.io Billing';
+  if (hasBroadworks(sfAccount, opps)) return 'Odin';
+  return 'Rev.io Billing';
 }
 
 function htmlEscape(value) {
@@ -201,9 +388,21 @@ async function main() {
     referrers: [...acct.referrers].sort(),
     attendeeCount: acct.registrants.length,
     targetOwner: [...acct.referrers].sort().join(', ') || acct.assignedAm || 'Unassigned',
+    originalCohort: 'Checking Salesforce…',
+    usesBroadworks: false,
     missingCount: acct.missing.length,
     hasMissingProducts: acct.missing.length > 0
   })).sort((a, b) => (b.missingCount - a.missingCount) || b.attendeeCount - a.attendeeCount || a.account.localeCompare(b.account));
+
+  const sfCohorts = await loadSalesforceAccountData(accounts);
+  for (const account of accounts) {
+    const sf = sfCohorts.byKey.get(account.account);
+    account.originalCohort = sf?.cohort || inferFallbackCohort(account.productsRaw);
+    account.usesBroadworks = Boolean(sf?.usesBroadworks);
+    account.sfAccountId = sf?.sfAccountId || '';
+    account.sfAccountName = sf?.sfAccountName || '';
+    delete account.clientCode;
+  }
 
   const referrerRollup = new Map();
   for (const acct of accounts) {
@@ -242,6 +441,7 @@ async function main() {
     source: {
       summitData: path.relative(repoDir, summitDataPath),
       clientProducts: path.relative(repoDir, clientCsvPath),
+      salesforceCohorts: sfCohorts,
       liveNotionAccess: false,
       liveNotionNote: 'Notion API returned object_not_found/not shared; used cached CSV export for the same Notion page ID.'
     },
@@ -269,12 +469,13 @@ async function main() {
   fs.writeFileSync(outDataPath, JSON.stringify(data, null, 2));
 
   const csvRows = [
-    ['Target Owner','Account','Attendees','Registrant Names','Registered Company Names','Assigned AM','Current Products','Missing Products',...PRODUCTS,'Client Codes','Match Score']
+    ['Target Owner','Account','Original Cohort','Attendees','Registrant Names','Registered Company Names','Assigned AM','Current Products','Missing Products',...PRODUCTS,'Match Score']
   ];
   for (const a of accounts) {
     csvRows.push([
       a.targetOwner,
       a.account,
+      a.originalCohort,
       a.attendeeCount,
       a.registrants.map(r => `${r.name}${r.title ? ` (${r.title})` : ''}`).join('; '),
       a.registeredCompanyNames.join('; '),
@@ -282,7 +483,6 @@ async function main() {
       PRODUCTS.filter(p => a.products[p]).join(', '),
       a.missing.join(', '),
       ...PRODUCTS.map(p => a.products[p] ? 'Yes' : 'No'),
-      a.clientCode,
       a.matchScore
     ]);
   }
@@ -299,19 +499,19 @@ async function main() {
 function buildHtml(data) {
   const stat = (label, value, sub='') => `<div class="stat"><div class="stat-value">${htmlEscape(value)}</div><div class="stat-label">${htmlEscape(label)}</div>${sub ? `<div class="stat-sub">${htmlEscape(sub)}</div>` : ''}</div>`;
   const productHeader = PRODUCTS.map(p => `<th>${htmlEscape(p)}</th>`).join('');
-  const productCells = a => PRODUCTS.map(p => `<td class="product ${a.products[p] ? 'yes' : 'no'}">${a.products[p] ? '✓' : '—'}</td>`).join('');
+  const productCells = a => PRODUCTS.map(p => `<td data-label="${htmlEscape(p)}" class="product ${a.products[p] ? 'yes' : 'no'}">${a.products[p] ? '✓' : '—'}</td>`).join('');
   const rows = data.accounts.map(a => `
     <tr data-owner="${htmlEscape(a.targetOwner.toLowerCase())}" data-products="${htmlEscape(PRODUCTS.filter(p => a.products[p]).join(' ').toLowerCase())}" data-missing="${htmlEscape(a.missing.join(' ').toLowerCase())}" data-search="${htmlEscape([a.account, a.targetOwner, a.assignedAm, a.registeredCompanyNames.join(' '), a.registrants.map(r => r.name).join(' ')].join(' ').toLowerCase())}">
-      <td class="sticky"><strong>${htmlEscape(a.account)}</strong><span>${htmlEscape(a.registeredCompanyNames.join(' / '))}</span></td>
-      <td>${htmlEscape(a.targetOwner || 'Unassigned')}<span>Assigned AM: ${htmlEscape(a.assignedAm || '—')}</span></td>
-      <td class="num">${a.attendeeCount}<span>${htmlEscape(a.registrants.map(r => r.name).join('; '))}</span></td>
+      <td data-label="Account" class="sticky"><strong>${htmlEscape(a.account)}</strong><span class="cohort">${htmlEscape(a.originalCohort)}</span><span>${htmlEscape(a.registeredCompanyNames.join(' / '))}</span></td>
+      <td data-label="Target owner">${htmlEscape(a.targetOwner || 'Unassigned')}<span>Assigned AM: ${htmlEscape(a.assignedAm || '—')}</span></td>
+      <td data-label="Attendees" class="num">${a.attendeeCount}<span>${htmlEscape(a.registrants.map(r => r.name).join('; '))}</span></td>
       ${productCells(a)}
-      <td class="missing">${a.missing.length ? a.missing.map(p => `<b>${htmlEscape(p)}</b>`).join(' ') : '<em>Complete set</em>'}</td>
-      <td><button class="details" type="button">View</button></td>
+      <td data-label="Missing / target" class="missing">${a.missing.length ? a.missing.map(p => `<b>${htmlEscape(p)}</b>`).join(' ') : '<em>Complete set</em>'}</td>
+      <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
-    <tr class="detail-row"><td colspan="${10 + PRODUCTS.length}"><div class="details-box">
+    <tr class="detail-row"><td colspan="${5 + PRODUCTS.length}"><div class="details-box">
       <div><strong>Registrant targeting notes</strong><ul>${a.registrants.map(r => `<li>${htmlEscape(r.name)}${r.title ? ` — ${htmlEscape(r.title)}` : ''}${r.department ? ` · ${htmlEscape(r.department)}` : ''}${r.referral ? ` · referred by ${htmlEscape(r.referral)}` : ''}${r.attendedBefore ? ` · attended before: ${htmlEscape(r.attendedBefore)}` : ''}</li>`).join('')}</ul></div>
-      <div><strong>Client codes</strong><p>${htmlEscape(a.clientCode || '—')}</p><strong>Raw product field</strong><p>${htmlEscape(a.productsRaw || '—')}</p><strong>Match score</strong><p>${htmlEscape(a.matchScore)}</p></div>
+      <div><strong>Source product field</strong><p>${htmlEscape(a.productsRaw || '—')}</p><strong>Salesforce account</strong><p>${htmlEscape(a.sfAccountName || '—')}</p><strong>Match score</strong><p>${htmlEscape(a.matchScore)}</p></div>
     </div></td></tr>`).join('');
 
   const rollupRows = data.rollup.map(r => `<tr><td>${htmlEscape(r.owner)}</td><td class="num">${r.accounts}</td><td class="num">${r.attendees}</td><td class="num">${r.missingOpportunities}</td></tr>`).join('');
@@ -333,18 +533,19 @@ function buildHtml(data) {
 .hero{background:radial-gradient(circle at 15% 20%,rgba(35,153,181,.34),transparent 34%),radial-gradient(circle at 82% 5%,rgba(110,190,79,.22),transparent 30%),linear-gradient(135deg,#112a43,var(--navy));color:var(--white);padding:34px 28px 46px;}
 .wrap{max-width:1400px;margin:0 auto}.eyebrow{font:800 12px/1 'Montserrat';letter-spacing:.18em;text-transform:uppercase;color:var(--green);}.hero h1{margin:12px 0 8px;font-size:clamp(30px,4vw,56px);line-height:1.02;color:var(--white);}.hero p{max-width:920px;margin:0;color:var(--white);font-size:17px;line-height:1.5}.meta{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}.pill{border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 12px;color:var(--white);font-size:12px;font-weight:700;background:rgba(255,255,255,.08)}
 main{max-width:1400px;margin:-26px auto 60px;padding:0 20px}.stats{display:grid;grid-template-columns:repeat(6,minmax(140px,1fr));gap:14px}.stat{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 10px 30px rgba(29,55,86,.08)}.stat-value{font-family:'Montserrat';font-weight:800;font-size:30px;color:var(--navy)}.stat-label{font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.06em}.stat-sub{font-size:12px;margin-top:4px;color:#647386}
-.panel{background:var(--white);border:1px solid var(--border);border-radius:20px;margin-top:18px;padding:18px;box-shadow:0 10px 30px rgba(29,55,86,.06)}.panel h2{color:var(--navy);margin:0 0 12px;font-size:21px}.controls{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:10px;margin-bottom:14px}.controls input,.controls select{border:1px solid var(--border);border-radius:12px;padding:11px 12px;font:inherit;color:var(--body);background:white}.actions{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.download{display:inline-block;background:var(--green);color:#113024;text-decoration:none;font-weight:800;border-radius:12px;padding:10px 14px}.note{font-size:12px;color:#647386}.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:16px}table{width:100%;border-collapse:separate;border-spacing:0;min-width:1280px}th{position:sticky;top:0;background:#eef6f8;color:var(--navy);font-size:12px;text-align:left;text-transform:uppercase;letter-spacing:.04em;padding:12px;border-bottom:1px solid var(--border);z-index:2}td{padding:12px;border-bottom:1px solid var(--border);vertical-align:top;font-size:13px}td span{display:block;color:#6b7787;font-size:11px;margin-top:3px;max-width:320px}.sticky{position:sticky;left:0;background:white;z-index:1;box-shadow:1px 0 0 var(--border)}.num{text-align:right;font-family:'Montserrat';font-weight:700;color:var(--navy)}.product{text-align:center;font:800 18px/1 'Montserrat'}.product.yes{color:var(--green)}.product.no{color:#b6c0cb}.missing b{display:inline-block;margin:0 4px 4px 0;background:#eaf6ea;color:#2d6530;border:1px solid #cce8c8;border-radius:999px;padding:4px 8px;font-size:11px}.missing em{color:#7a8795}.details{border:0;background:var(--teal);color:white;border-radius:10px;padding:7px 11px;font-weight:800;cursor:pointer}.detail-row{display:none}.detail-row.open{display:table-row}.details-box{display:grid;grid-template-columns:2fr 1fr;gap:20px;background:#f8fbfc;border-radius:14px;padding:14px}.details-box ul{margin:8px 0 0;padding-left:18px}.details-box p{margin:6px 0 12px}.rollup{max-width:680px;min-width:520px}.warning{border-left:5px solid var(--teal);background:#f6fbfc}.footer{margin:22px 0;color:#6b7787;font-size:12px}@media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}.controls{grid-template-columns:1fr}.details-box{grid-template-columns:1fr}}
+.panel{background:var(--white);border:1px solid var(--border);border-radius:20px;margin-top:18px;padding:18px;box-shadow:0 10px 30px rgba(29,55,86,.06)}.panel h2{color:var(--navy);margin:0 0 12px;font-size:21px}.controls{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:10px;margin-bottom:14px}.controls input,.controls select{border:1px solid var(--border);border-radius:12px;padding:11px 12px;font:inherit;color:var(--body);background:white}.actions{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.download{display:inline-block;background:var(--green);color:#113024;text-decoration:none;font-weight:800;border-radius:12px;padding:10px 14px}.note{font-size:12px;color:#647386}.table-wrap{overflow-x:auto;overflow-y:visible;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:16px}table{width:100%;border-collapse:separate;border-spacing:0;min-width:980px}th{position:sticky;top:0;background:#eef6f8;color:var(--navy);font-size:12px;text-align:left;text-transform:uppercase;letter-spacing:.04em;padding:12px;border-bottom:1px solid var(--border);z-index:2}td{padding:12px;border-bottom:1px solid var(--border);vertical-align:top;font-size:13px}td span{display:block;color:#6b7787;font-size:11px;margin-top:3px;max-width:320px}.sticky{position:sticky;left:0;background:white;z-index:1;box-shadow:1px 0 0 var(--border)}.num{text-align:right;font-family:'Montserrat';font-weight:700;color:var(--navy)}.product{text-align:center;font:800 18px/1 'Montserrat'}.product.yes{color:var(--green)}.product.no{color:#b6c0cb}.cohort{display:inline-block!important;width:max-content;margin:7px 0 2px!important;background:var(--navy);color:var(--white)!important;border-radius:999px;padding:4px 9px;font-size:10px!important;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.missing b{display:inline-block;margin:0 4px 4px 0;background:#eaf6ea;color:#2d6530;border:1px solid #cce8c8;border-radius:999px;padding:4px 8px;font-size:11px}.missing em{color:#7a8795}.details{border:0;background:var(--teal);color:white;border-radius:10px;padding:7px 11px;font-weight:800;cursor:pointer}.detail-row{display:none}.detail-row.open{display:table-row}.details-box{display:grid;grid-template-columns:2fr 1fr;gap:20px;background:#f8fbfc;border-radius:14px;padding:14px}.details-box ul{margin:8px 0 0;padding-left:18px}.details-box p{margin:6px 0 12px}.rollup{max-width:680px;min-width:520px}.warning{border-left:5px solid var(--teal);background:#f6fbfc}.footer{margin:22px 0;color:#6b7787;font-size:12px}
+@media(max-width:900px){main{padding:0 12px}.hero{padding:28px 18px 42px}.stats{grid-template-columns:repeat(2,1fr)}.controls{grid-template-columns:1fr}.details-box{grid-template-columns:1fr}.table-wrap{overflow:visible;border:0}#accounts{min-width:0;border-spacing:0 12px}#accounts thead{display:none}#accounts tbody,#accounts tr,#accounts td{display:block;width:100%}#accounts tr:not(.detail-row){background:white;border:1px solid var(--border);border-radius:16px;padding:10px;box-shadow:0 8px 22px rgba(29,55,86,.07)}#accounts td{border:0;padding:8px 10px}#accounts td::before{content:attr(data-label);display:block;margin-bottom:3px;color:#647386;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.sticky{position:static;box-shadow:none}.num{text-align:left}.product{text-align:left;display:inline-block!important;width:auto!important;min-width:31%;font-size:16px}.missing b{margin-top:2px}.detail-row.open{display:block;background:white;border:1px solid var(--border);border-radius:16px;margin-top:-8px}.detail-row td{padding:10px}.rollup{min-width:0}.rollup table{min-width:520px}}
 </style>
 </head>
 <body>
 <div class="topbar"></div>
-<header class="hero"><div class="wrap"><div class="eyebrow">Rev.io Summit 2026 · Client Targeting</div><h1>Client target dashboard</h1><p>Account-level view of Summit attendees who used non-sponsor/non-REVII discount codes, matched to the Master Client List products so referrers know which clients they own and which products to target onsite.</p><div class="meta"><span class="pill">Excludes REVII</span><span class="pill">Excludes SUMMITSPONSOR</span><span class="pill">Products: Billing · PSA Web · Tigerpaw · Odin · Payments</span><span class="pill">Generated ${htmlEscape(new Date(data.generatedAt).toLocaleString('en-US', { timeZone: 'UTC', dateStyle: 'medium', timeStyle: 'short' }))} UTC</span></div></div></header>
+<header class="hero"><div class="wrap"><div class="eyebrow">Rev.io Summit 2026 · Client Targeting</div><h1>Client target dashboard</h1><p>Account-level view of Summit attendees who used non-sponsor/non-REVII discount codes, matched to the Master Client List products so referrers know which clients they own and which products to target onsite.</p><div class="meta"><span class="pill">Excludes REVII</span><span class="pill">Excludes SUMMITSPONSOR</span><span class="pill">Targets: Billing · New Rev.io · Payments</span><span class="pill">Cohort from Salesforce</span><span class="pill">Generated ${htmlEscape(new Date(data.generatedAt).toLocaleString('en-US', { timeZone: 'UTC', dateStyle: 'medium', timeStyle: 'short' }))} UTC</span></div></div></header>
 <main>
 <section class="stats">
 ${stat('Target accounts', data.summary.targetAccounts)}${stat('Matched attendees', data.summary.matchedClientRegistrants, `${data.summary.discountedNonSponsorRegistrants} discounted non-sponsor registrants`)}${stat('Referrers / owners', data.summary.referrers)}${stat('Accounts missing products', data.summary.accountsWithMissingProducts)}${stat('Missing product opps', data.summary.missingProductOpportunities)}${stat('Unmatched registrants', data.summary.unmatchedRegistrants, `${data.summary.ignoredSponsorRegistrants} sponsor registrants ignored`)}
 </section>
-<section class="panel"><div class="actions"><div><h2>Target account list</h2><div class="note">Owner = registrant referral name when present; falls back to Assigned AM. Product checks come from Master Client List “Rev.io Product”.</div></div><a class="download" href="assets/data/summit-target-accounts.csv">Download CSV</a></div>
-<div class="controls"><input id="search" placeholder="Search account, attendee, owner, code…"><select id="owner"><option value="">All owners</option>${data.rollup.map(r => `<option>${htmlEscape(r.owner)}</option>`).join('')}</select><select id="missing"><option value="">All missing products</option>${PRODUCTS.map(p => `<option>${htmlEscape(p)}</option>`).join('')}<option value="none">No missing products</option></select><select id="have"><option value="">All current products</option>${PRODUCTS.map(p => `<option>${htmlEscape(p)}</option>`).join('')}</select></div>
+<section class="panel"><div class="actions"><div><h2>Target account list</h2><div class="note">Owner = registrant referral name when present; falls back to Assigned AM. Product checks come from Master Client List “Rev.io Product”; New Rev.io maps to PSA Web. Original cohort is pulled from Salesforce; Tigerpaw cohort is driven by PSA Account Status.</div></div><a class="download" href="assets/data/summit-target-accounts.csv">Download CSV</a></div>
+<div class="controls"><input id="search" placeholder="Search account, attendee, owner…"><select id="owner"><option value="">All owners</option>${data.rollup.map(r => `<option>${htmlEscape(r.owner)}</option>`).join('')}</select><select id="missing"><option value="">All missing products</option>${PRODUCTS.map(p => `<option>${htmlEscape(p)}</option>`).join('')}<option value="none">No missing products</option></select><select id="have"><option value="">All current products</option>${PRODUCTS.map(p => `<option>${htmlEscape(p)}</option>`).join('')}</select></div>
 <div class="table-wrap"><table id="accounts"><thead><tr><th class="sticky">Account</th><th>Target owner</th><th>Attendees</th>${productHeader}<th>Missing / target</th><th>Details</th></tr></thead><tbody>${rows}</tbody></table></div></section>
 <section class="panel"><h2>Referrer workload</h2><div class="table-wrap rollup"><table><thead><tr><th>Owner</th><th>Accounts</th><th>Attendees</th><th>Missing product opps</th></tr></thead><tbody>${rollupRows}</tbody></table></div></section>
 <section class="panel warning"><h2>Unmatched discounted registrants</h2><p class="note">These passed the discount-code rule but did not confidently match a Master Client List account. They are excluded from target account stats until manually mapped.</p><div class="table-wrap"><table><thead><tr><th>Company</th><th>Registrant</th><th>Referral</th></tr></thead><tbody>${unmatchedRows || '<tr><td colspan="3">No unmatched registrants.</td></tr>'}</tbody></table></div></section>

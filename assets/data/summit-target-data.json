@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-08-31T04:38:21.325Z",
+  "generatedAt": "2026-08-31T12:47:33.426Z",
   "source": {
     "summitData": "assets/data/summit-data.json",
     "clientProducts": "../exports/gmail-attachments/1783436761907-master-client-list-a2654cf0c7e34c57bff58f4ea63d241f_all.csv",
+    "salesforceCohorts": {
+      "byKey": {},
+      "available": true,
+      "matchedAccounts": 56,
+      "queriedAccounts": 3564
+    },
     "liveNotionAccess": false,
     "liveNotionNote": "Notion API returned object_not_found/not shared; used cached CSV export for the same Notion page ID."
   },
@@ -10,102 +16,23 @@
     "accountFilter": "Registrant has a non-empty discount code other than REVII or SUMMITSPONSOR, then company is matched to Master Client List. Ooma and KealyWalker are ignored as sponsors if unmatched.",
     "products": [
       "Billing",
-      "PSA Web",
-      "Tigerpaw",
-      "Odin",
+      "New Rev.io",
       "Payments"
     ]
   },
   "summary": {
     "sourceRegistrants": 224,
     "discountedNonSponsorRegistrants": 130,
-    "matchedClientRegistrants": 107,
-    "targetAccounts": 58,
+    "matchedClientRegistrants": 106,
+    "targetAccounts": 57,
     "referrers": 25,
-    "accountsWithMissingProducts": 58,
-    "missingProductOpportunities": 202,
-    "unmatchedRegistrants": 19,
+    "accountsWithMissingProducts": 56,
+    "missingProductOpportunities": 94,
+    "unmatchedRegistrants": 20,
     "ignoredSponsorRegistrants": 4,
     "clientMasterRows": 1074
   },
   "accounts": [
-    {
-      "account": "Bank-Tec South",
-      "registeredCompanyNames": [
-        "Bank-Tec South"
-      ],
-      "assignedAm": "Blaine Villafuerte",
-      "status": "Active, Onboarding",
-      "clientCode": "BANKTECSOUTHPSA",
-      "products": {
-        "Billing": false,
-        "PSA Web": true,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": false
-      },
-      "productsRaw": "PSA Web",
-      "missing": [
-        "Billing",
-        "Tigerpaw",
-        "Odin",
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Robin Brownmiller",
-          "title": "NCR Liaison",
-          "department": "Other",
-          "rank": "Other",
-          "email": "",
-          "referral": "Blaine Villafuerte",
-          "dateRegistered": "Aug 10, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        },
-        {
-          "name": "Salena Collins",
-          "title": "Sales Order Specialist",
-          "department": "Sales/Marketing",
-          "rank": "Other",
-          "email": "",
-          "referral": "Blaine Villafuerte",
-          "dateRegistered": "Aug 10, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "No"
-        },
-        {
-          "name": "Tammy Kay Robbins",
-          "title": "Accounting Manager",
-          "department": "Finance/Billing",
-          "rank": "Manager",
-          "email": "",
-          "referral": "Blaine Villafuerte",
-          "dateRegistered": "Aug 10, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        },
-        {
-          "name": "Matt Sanders",
-          "title": "Senior Director of Internal Operations",
-          "department": "Sales/Marketing",
-          "rank": "Director",
-          "email": "",
-          "referral": "Blaine Villafuerte",
-          "dateRegistered": "Aug 26, 2026",
-          "hotel": "No",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Blaine Villafuerte"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 4,
-      "targetOwner": "Blaine Villafuerte",
-      "missingCount": 4,
-      "hasMissingProducts": true
-    },
     {
       "account": "RSS (Restaurant Service Solutions)",
       "registeredCompanyNames": [
@@ -113,19 +40,15 @@
       ],
       "assignedAm": "Blaine Villafuerte",
       "status": "At Risk",
-      "clientCode": "",
       "products": {
         "Billing": false,
-        "PSA Web": false,
-        "Tigerpaw": true,
-        "Odin": false,
+        "New Rev.io": false,
         "Payments": false
       },
       "productsRaw": "Tigerpaw",
       "missing": [
         "Billing",
-        "PSA Web",
-        "Odin",
+        "New Rev.io",
         "Payments"
       ],
       "registrants": [
@@ -180,76 +103,12 @@
       "matchScore": 0.86,
       "attendeeCount": 4,
       "targetOwner": "Blaine Villafuerte",
-      "missingCount": 4,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "BCM ONE C/O InvoiceIQ",
-      "registeredCompanyNames": [
-        "BCM One",
-        "Skyswitch"
-      ],
-      "assignedAm": "Ryan Burton",
-      "status": "Active",
-      "clientCode": "CHARLESTONTEL, PRIMARYWAVE, SKYSWITCH, SKYSWITCH_SANDBOX, SKYSWITCHMAIN, TUCTECHNOLOGIES",
-      "products": {
-        "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": false
-      },
-      "productsRaw": "Billing",
-      "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin",
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Adnon Dow",
-          "title": "Chief Product & Strategy Officer",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Jamie Butler",
-          "dateRegistered": "Aug 5, 2026",
-          "hotel": "No",
-          "attendedBefore": "No"
-        },
-        {
-          "name": "Cassandra Monroe",
-          "title": "Director of Billing Operations",
-          "department": "Finance/Billing",
-          "rank": "Director",
-          "email": "",
-          "referral": "Ryan Burton",
-          "dateRegistered": "May 27, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "No"
-        },
-        {
-          "name": "Danilo Jr Catacutan",
-          "title": "Sr. Manager for Implementation",
-          "department": "Finance/Billing",
-          "rank": "Manager",
-          "email": "",
-          "referral": "",
-          "dateRegistered": "May 27, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "No"
-        }
-      ],
-      "referrers": [
-        "Jamie Butler",
-        "Ryan Burton"
-      ],
-      "matchScore": 0.94,
-      "attendeeCount": 3,
-      "targetOwner": "Jamie Butler, Ryan Burton",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 3,
+      "hasMissingProducts": true,
+      "sfAccountId": "0016O00003dmuYVQAY",
+      "sfAccountName": "RSS (Restaurant Service Solutions)"
     },
     {
       "account": "Homeland Technology Group",
@@ -258,19 +117,15 @@
       ],
       "assignedAm": "jacob.williams",
       "status": "Active",
-      "clientCode": "",
       "products": {
         "Billing": false,
-        "PSA Web": false,
-        "Tigerpaw": true,
-        "Odin": false,
+        "New Rev.io": false,
         "Payments": false
       },
       "productsRaw": "Tigerpaw",
       "missing": [
         "Billing",
-        "PSA Web",
-        "Odin",
+        "New Rev.io",
         "Payments"
       ],
       "registrants": [
@@ -315,8 +170,408 @@
       "matchScore": 0.92,
       "attendeeCount": 3,
       "targetOwner": "Jacob Williams, Jacob Willimas",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 3,
+      "hasMissingProducts": true,
+      "sfAccountId": "0016O00003dmuQ5QAI",
+      "sfAccountName": "Homeland Technology Group"
+    },
+    {
+      "account": "Centerpoint IT, Inc",
+      "registeredCompanyNames": [
+        "Centerpoint IT"
+      ],
+      "assignedAm": "rinor.berisha",
+      "status": "Active",
+      "products": {
+        "Billing": false,
+        "New Rev.io": false,
+        "Payments": false
+      },
+      "productsRaw": "Tigerpaw",
+      "missing": [
+        "Billing",
+        "New Rev.io",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Kevin Durham",
+          "title": "Lead Manager",
+          "department": "IT/Engineering",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Rinor Berisha",
+          "dateRegistered": "Jul 21, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Scott Williams",
+          "title": "Client Success Manager",
+          "department": "IT/Engineering",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Rinor Berisha",
+          "dateRegistered": "Jul 21, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Rinor Berisha"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Rinor Berisha",
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 3,
+      "hasMissingProducts": true,
+      "sfAccountId": "0016O00003dmuLAQAY",
+      "sfAccountName": "Centerpoint IT"
+    },
+    {
+      "account": "ICS Communications",
+      "registeredCompanyNames": [
+        "ICS Communications"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "",
+      "products": {
+        "Billing": false,
+        "New Rev.io": false,
+        "Payments": false
+      },
+      "productsRaw": "Tigerpaw",
+      "missing": [
+        "Billing",
+        "New Rev.io",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Jason Veasey",
+          "title": "Owner",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "dateRegistered": "Aug 11, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Susie Veasey",
+          "title": "VP of Operations",
+          "department": "Operations/Support",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "dateRegistered": "Aug 11, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Blaine Villafuerte"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Blaine Villafuerte",
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 3,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001HNQIWAA5",
+      "sfAccountName": "ICS Communications"
+    },
+    {
+      "account": "Minuteman Security Technologies, Inc.",
+      "registeredCompanyNames": [
+        "Minutemen Security Systems"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "",
+      "products": {
+        "Billing": false,
+        "New Rev.io": false,
+        "Payments": false
+      },
+      "productsRaw": "Tigerpaw",
+      "missing": [
+        "Billing",
+        "New Rev.io",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Christopher Gordan",
+          "title": "COO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Jaylin Bender",
+          "dateRegistered": "Jul 30, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Gary Gordon",
+          "title": "Owner",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Jaylin Bender",
+          "dateRegistered": "Jul 30, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Jaylin Bender"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Jaylin Bender",
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 3,
+      "hasMissingProducts": true,
+      "sfAccountId": "0016O00003dmuU7QAI",
+      "sfAccountName": "Minuteman Security Technologies"
+    },
+    {
+      "account": "J & M Systems LLC",
+      "registeredCompanyNames": [
+        "J&M Systems LLC"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "",
+      "products": {
+        "Billing": false,
+        "New Rev.io": false,
+        "Payments": false
+      },
+      "productsRaw": "Tigerpaw",
+      "missing": [
+        "Billing",
+        "New Rev.io",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Mark Geier",
+          "title": "Partner",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Katerra Stephenson-Greenwood",
+          "dateRegistered": "Jul 20, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Katerra Stephenson-Greenwood"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Katerra Stephenson-Greenwood",
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 3,
+      "hasMissingProducts": true,
+      "sfAccountId": "0016O00003dmuQtQAI",
+      "sfAccountName": "J & M Systems LLC"
+    },
+    {
+      "account": "JCT (Johnston Communications Voice & Data)",
+      "registeredCompanyNames": [
+        "JCT Solutions"
+      ],
+      "assignedAm": "Blaine Villafuerte",
+      "status": "Active",
+      "products": {
+        "Billing": false,
+        "New Rev.io": false,
+        "Payments": false
+      },
+      "productsRaw": "Tigerpaw",
+      "missing": [
+        "Billing",
+        "New Rev.io",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Joe Marinello",
+          "title": "Director of Information Systems",
+          "department": "IT/Engineering",
+          "rank": "Director",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "dateRegistered": "Aug 18, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Blaine Villafuerte"
+      ],
+      "matchScore": 0.86,
+      "attendeeCount": 1,
+      "targetOwner": "Blaine Villafuerte",
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 3,
+      "hasMissingProducts": true,
+      "sfAccountId": "001PX000004hVWNYA2",
+      "sfAccountName": "Voice-N-Data Solutions"
+    },
+    {
+      "account": "Bank-Tec South",
+      "registeredCompanyNames": [
+        "Bank-Tec South"
+      ],
+      "assignedAm": "Blaine Villafuerte",
+      "status": "Active, Onboarding",
+      "products": {
+        "Billing": false,
+        "New Rev.io": true,
+        "Payments": false
+      },
+      "productsRaw": "PSA Web",
+      "missing": [
+        "Billing",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Robin Brownmiller",
+          "title": "NCR Liaison",
+          "department": "Other",
+          "rank": "Other",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "dateRegistered": "Aug 10, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Salena Collins",
+          "title": "Sales Order Specialist",
+          "department": "Sales/Marketing",
+          "rank": "Other",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "dateRegistered": "Aug 10, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Tammy Kay Robbins",
+          "title": "Accounting Manager",
+          "department": "Finance/Billing",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "dateRegistered": "Aug 10, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Matt Sanders",
+          "title": "Senior Director of Internal Operations",
+          "department": "Sales/Marketing",
+          "rank": "Director",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "dateRegistered": "Aug 26, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Blaine Villafuerte"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 4,
+      "targetOwner": "Blaine Villafuerte",
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "0016O00003doC3SQAU",
+      "sfAccountName": "Bank-Tec South"
+    },
+    {
+      "account": "BCM ONE C/O InvoiceIQ",
+      "registeredCompanyNames": [
+        "BCM One",
+        "Skyswitch"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing",
+      "missing": [
+        "New Rev.io",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Adnon Dow",
+          "title": "Chief Product & Strategy Officer",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Jamie Butler",
+          "dateRegistered": "Aug 5, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Cassandra Monroe",
+          "title": "Director of Billing Operations",
+          "department": "Finance/Billing",
+          "rank": "Director",
+          "email": "",
+          "referral": "Ryan Burton",
+          "dateRegistered": "May 27, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Danilo Jr Catacutan",
+          "title": "Sr. Manager for Implementation",
+          "department": "Finance/Billing",
+          "rank": "Manager",
+          "email": "",
+          "referral": "",
+          "dateRegistered": "May 27, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Jamie Butler",
+        "Ryan Burton"
+      ],
+      "matchScore": 0.94,
+      "attendeeCount": 3,
+      "targetOwner": "Jamie Butler, Ryan Burton",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001nQiaxAAC",
+      "sfAccountName": "SkySwitch"
     },
     {
       "account": "ACS Fire & Security",
@@ -325,19 +580,14 @@
       ],
       "assignedAm": "rinor.berisha",
       "status": "Active",
-      "clientCode": "ACSFIRESEACURITYPSA",
       "products": {
         "Billing": false,
-        "PSA Web": true,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": true,
         "Payments": false
       },
       "productsRaw": "PSA Web",
       "missing": [
         "Billing",
-        "Tigerpaw",
-        "Odin",
         "Payments"
       ],
       "registrants": [
@@ -371,8 +621,12 @@
       "matchScore": 1,
       "attendeeCount": 2,
       "targetOwner": "Lorrie Browne, Roman Rudzik",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "001PX000004hVnfYAE",
+      "sfAccountName": "ACS Fire & Security"
     },
     {
       "account": "All Secured Security Services",
@@ -381,19 +635,14 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active, Onboarding",
-      "clientCode": "AllSECUREDSECURITYPSA",
       "products": {
         "Billing": false,
-        "PSA Web": true,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": true,
         "Payments": false
       },
       "productsRaw": "PSA Web",
       "missing": [
         "Billing",
-        "Tigerpaw",
-        "Odin",
         "Payments"
       ],
       "registrants": [
@@ -426,8 +675,12 @@
       "matchScore": 0.94,
       "attendeeCount": 2,
       "targetOwner": "Blaine Villafuerte",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "001PX000002AHZaYAO",
+      "sfAccountName": "All Secured Security Services"
     },
     {
       "account": "C1st Technologies",
@@ -436,19 +689,14 @@
       ],
       "assignedAm": "Unassigned",
       "status": "Active",
-      "clientCode": "C1STTECHNOLOGIESPSA",
       "products": {
         "Billing": false,
-        "PSA Web": true,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": true,
         "Payments": false
       },
       "productsRaw": "PSA Web",
       "missing": [
         "Billing",
-        "Tigerpaw",
-        "Odin",
         "Payments"
       ],
       "registrants": [
@@ -481,63 +729,12 @@
       "matchScore": 1,
       "attendeeCount": 2,
       "targetOwner": "Jamie Butler",
-      "missingCount": 4,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Centerpoint IT, Inc",
-      "registeredCompanyNames": [
-        "Centerpoint IT"
-      ],
-      "assignedAm": "rinor.berisha",
-      "status": "Active",
-      "clientCode": "",
-      "products": {
-        "Billing": false,
-        "PSA Web": false,
-        "Tigerpaw": true,
-        "Odin": false,
-        "Payments": false
-      },
-      "productsRaw": "Tigerpaw",
-      "missing": [
-        "Billing",
-        "PSA Web",
-        "Odin",
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Kevin Durham",
-          "title": "Lead Manager",
-          "department": "IT/Engineering",
-          "rank": "Manager",
-          "email": "",
-          "referral": "Rinor Berisha",
-          "dateRegistered": "Jul 21, 2026",
-          "hotel": "No",
-          "attendedBefore": "No"
-        },
-        {
-          "name": "Scott Williams",
-          "title": "Client Success Manager",
-          "department": "IT/Engineering",
-          "rank": "Manager",
-          "email": "",
-          "referral": "Rinor Berisha",
-          "dateRegistered": "Jul 21, 2026",
-          "hotel": "No",
-          "attendedBefore": "No"
-        }
-      ],
-      "referrers": [
-        "Rinor Berisha"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 2,
-      "targetOwner": "Rinor Berisha",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "001PX00000hAr5YYAS",
+      "sfAccountName": "C1st Technologies"
     },
     {
       "account": "Global Data Systems",
@@ -547,19 +744,14 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "clientCode": "GLOBALDATASYSTEMS",
       "products": {
         "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": false,
         "Payments": false
       },
       "productsRaw": "Billing",
       "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin",
+        "New Rev.io",
         "Payments"
       ],
       "registrants": [
@@ -592,8 +784,12 @@
       "matchScore": 1,
       "attendeeCount": 2,
       "targetOwner": "Ryan Koontz",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "001PX000006YRK9YAO",
+      "sfAccountName": "Global Data Systems, Inc"
     },
     {
       "account": "Hiscall, Inc.",
@@ -602,19 +798,14 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "clientCode": "HISCALL",
       "products": {
         "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": false,
         "Payments": false
       },
       "productsRaw": "Billing",
       "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin",
+        "New Rev.io",
         "Payments"
       ],
       "registrants": [
@@ -645,118 +836,66 @@
       "matchScore": 1,
       "attendeeCount": 2,
       "targetOwner": "Unassigned",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011C00002xtnRIQAY",
+      "sfAccountName": "Hiscall"
     },
     {
-      "account": "ICS Communications",
+      "account": "Hosted America, LLC",
       "registeredCompanyNames": [
-        "ICS Communications"
+        "Hosted America"
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "clientCode": "",
       "products": {
         "Billing": false,
-        "PSA Web": false,
-        "Tigerpaw": true,
-        "Odin": false,
+        "New Rev.io": true,
         "Payments": false
       },
-      "productsRaw": "Tigerpaw",
+      "productsRaw": "PSA Web, Tigerpaw",
       "missing": [
         "Billing",
-        "PSA Web",
-        "Odin",
         "Payments"
       ],
       "registrants": [
         {
-          "name": "Jason Veasey",
-          "title": "Owner",
-          "department": "C-Suite",
+          "name": "Andrew Turkington",
+          "title": "CFO",
+          "department": "Finance/Billing",
           "rank": "C-Level",
           "email": "",
-          "referral": "Blaine Villafuerte",
-          "dateRegistered": "Aug 11, 2026",
+          "referral": "Justin Lee",
+          "dateRegistered": "Jul 31, 2026",
           "hotel": "Yes",
-          "attendedBefore": "No"
+          "attendedBefore": "Yes"
         },
         {
-          "name": "Susie Veasey",
-          "title": "VP of Operations",
+          "name": "Mark Robbins",
+          "title": "VP, Director of Voice Operations",
           "department": "Operations/Support",
           "rank": "VP-Level",
           "email": "",
-          "referral": "Blaine Villafuerte",
-          "dateRegistered": "Aug 11, 2026",
+          "referral": "Justin Lee",
+          "dateRegistered": "Aug 26, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
         }
       ],
       "referrers": [
-        "Blaine Villafuerte"
+        "Justin Lee"
       ],
       "matchScore": 1,
       "attendeeCount": 2,
-      "targetOwner": "Blaine Villafuerte",
-      "missingCount": 4,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Minuteman Security Technologies, Inc.",
-      "registeredCompanyNames": [
-        "Minutemen Security Systems"
-      ],
-      "assignedAm": "Unassigned",
-      "status": "",
-      "clientCode": "",
-      "products": {
-        "Billing": false,
-        "PSA Web": false,
-        "Tigerpaw": true,
-        "Odin": false,
-        "Payments": false
-      },
-      "productsRaw": "Tigerpaw",
-      "missing": [
-        "Billing",
-        "PSA Web",
-        "Odin",
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Christopher Gordan",
-          "title": "COO",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Jaylin Bender",
-          "dateRegistered": "Jul 30, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "No"
-        },
-        {
-          "name": "Gary Gordon",
-          "title": "Owner",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Jaylin Bender",
-          "dateRegistered": "Jul 30, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "No"
-        }
-      ],
-      "referrers": [
-        "Jaylin Bender"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 2,
-      "targetOwner": "Jaylin Bender",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "targetOwner": "Justin Lee",
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011C00002KRBkAQAX",
+      "sfAccountName": "Hosted America"
     },
     {
       "account": "Next Step Communications",
@@ -766,19 +905,14 @@
       ],
       "assignedAm": "Unassigned",
       "status": "Active",
-      "clientCode": "NEXTSTEPCOMMSPSA",
       "products": {
         "Billing": false,
-        "PSA Web": true,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": true,
         "Payments": false
       },
       "productsRaw": "PSA Web",
       "missing": [
         "Billing",
-        "Tigerpaw",
-        "Odin",
         "Payments"
       ],
       "registrants": [
@@ -811,8 +945,12 @@
       "matchScore": 1,
       "attendeeCount": 2,
       "targetOwner": "Bryan Bettiol",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "001PX000002cXwIYAU",
+      "sfAccountName": "Next Step Communications"
     },
     {
       "account": "SpectrumVoIP",
@@ -821,19 +959,14 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
-      "clientCode": "SPECTRUM, SPECTRUM (1510)",
       "products": {
         "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": false,
         "Payments": false
       },
       "productsRaw": "Billing",
       "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin",
+        "New Rev.io",
         "Payments"
       ],
       "registrants": [
@@ -867,8 +1000,12 @@
       "matchScore": 1,
       "attendeeCount": 2,
       "targetOwner": "Justin Lee, Ryan Koontz",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001HNPj2AAH",
+      "sfAccountName": "SpectrumVoIP"
     },
     {
       "account": "Viirtue LLC (Apollo)",
@@ -877,19 +1014,14 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
-      "clientCode": "SYNTEL",
       "products": {
         "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": false,
         "Payments": false
       },
       "productsRaw": "Billing",
       "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin",
+        "New Rev.io",
         "Payments"
       ],
       "registrants": [
@@ -922,8 +1054,12 @@
       "matchScore": 0.94,
       "attendeeCount": 2,
       "targetOwner": "Rachael Buchtan",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "0016O00003QyGNZQA3",
+      "sfAccountName": "Viirtue"
     },
     {
       "account": "AVIT",
@@ -932,19 +1068,14 @@
       ],
       "assignedAm": "Unassigned",
       "status": "Active",
-      "clientCode": "avit.psarev.io",
       "products": {
         "Billing": false,
-        "PSA Web": true,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": true,
         "Payments": false
       },
       "productsRaw": "PSA Web",
       "missing": [
         "Billing",
-        "Tigerpaw",
-        "Odin",
         "Payments"
       ],
       "registrants": [
@@ -966,8 +1097,12 @@
       "matchScore": 1,
       "attendeeCount": 1,
       "targetOwner": "Ryan Koontz",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "001PX000004hVOkYAM",
+      "sfAccountName": "AVIT"
     },
     {
       "account": "BluDog Telecom",
@@ -976,19 +1111,14 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "clientCode": "BLUDOG",
       "products": {
         "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": false,
         "Payments": false
       },
       "productsRaw": "Billing",
       "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin",
+        "New Rev.io",
         "Payments"
       ],
       "registrants": [
@@ -1010,8 +1140,12 @@
       "matchScore": 1,
       "attendeeCount": 1,
       "targetOwner": "Ingrid Beard",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "001PX000004N1qkYAC",
+      "sfAccountName": "BluDog Telecom"
     },
     {
       "account": "CL Sams Business Solutions LLC",
@@ -1020,19 +1154,14 @@
       ],
       "assignedAm": "Olivia Sandefur",
       "status": "Active, On Hold",
-      "clientCode": "CLSAMSPSA",
       "products": {
         "Billing": false,
-        "PSA Web": true,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": true,
         "Payments": false
       },
       "productsRaw": "PSA Web",
       "missing": [
         "Billing",
-        "Tigerpaw",
-        "Odin",
         "Payments"
       ],
       "registrants": [
@@ -1054,8 +1183,12 @@
       "matchScore": 0.94,
       "attendeeCount": 1,
       "targetOwner": "Blaine Villafuerte",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "001PX00000XEo0OYAT",
+      "sfAccountName": "CL Sams"
     },
     {
       "account": "Converged Networks",
@@ -1064,19 +1197,14 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active",
-      "clientCode": "CONVERGEDNETWORKS",
       "products": {
         "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": false,
         "Payments": false
       },
       "productsRaw": "Billing",
       "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin",
+        "New Rev.io",
         "Payments"
       ],
       "registrants": [
@@ -1098,8 +1226,12 @@
       "matchScore": 1,
       "attendeeCount": 1,
       "targetOwner": "Justin Lee",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011C000021D9oLQAS",
+      "sfAccountName": "Converged Networks"
     },
     {
       "account": "Decibel",
@@ -1108,19 +1240,14 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
-      "clientCode": "DECIBEL",
       "products": {
         "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": false,
         "Payments": false
       },
       "productsRaw": "Billing",
       "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin",
+        "New Rev.io",
         "Payments"
       ],
       "registrants": [
@@ -1142,8 +1269,12 @@
       "matchScore": 1,
       "attendeeCount": 1,
       "targetOwner": "Rachael Buchtan",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "",
+      "sfAccountName": ""
     },
     {
       "account": "Digital Market POS",
@@ -1152,19 +1283,14 @@
       ],
       "assignedAm": "jacob.williams",
       "status": "Active",
-      "clientCode": "DIGITALMARKETPOSPSA",
       "products": {
         "Billing": false,
-        "PSA Web": true,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": true,
         "Payments": false
       },
       "productsRaw": "PSA Web",
       "missing": [
         "Billing",
-        "Tigerpaw",
-        "Odin",
         "Payments"
       ],
       "registrants": [
@@ -1186,96 +1312,12 @@
       "matchScore": 1,
       "attendeeCount": 1,
       "targetOwner": "Jeremy Adams",
-      "missingCount": 4,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "J & M Systems LLC",
-      "registeredCompanyNames": [
-        "J&M Systems LLC"
-      ],
-      "assignedAm": "Unassigned",
-      "status": "",
-      "clientCode": "",
-      "products": {
-        "Billing": false,
-        "PSA Web": false,
-        "Tigerpaw": true,
-        "Odin": false,
-        "Payments": false
-      },
-      "productsRaw": "Tigerpaw",
-      "missing": [
-        "Billing",
-        "PSA Web",
-        "Odin",
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Mark Geier",
-          "title": "Partner",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Katerra Stephenson-Greenwood",
-          "dateRegistered": "Jul 20, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Katerra Stephenson-Greenwood"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 1,
-      "targetOwner": "Katerra Stephenson-Greenwood",
-      "missingCount": 4,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "JCT (Johnston Communications Voice & Data)",
-      "registeredCompanyNames": [
-        "JCT Solutions"
-      ],
-      "assignedAm": "Blaine Villafuerte",
-      "status": "Active",
-      "clientCode": "",
-      "products": {
-        "Billing": false,
-        "PSA Web": false,
-        "Tigerpaw": true,
-        "Odin": false,
-        "Payments": false
-      },
-      "productsRaw": "Tigerpaw",
-      "missing": [
-        "Billing",
-        "PSA Web",
-        "Odin",
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Joe Marinello",
-          "title": "Director of Information Systems",
-          "department": "IT/Engineering",
-          "rank": "Director",
-          "email": "",
-          "referral": "Blaine Villafuerte",
-          "dateRegistered": "Aug 18, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Blaine Villafuerte"
-      ],
-      "matchScore": 0.86,
-      "attendeeCount": 1,
-      "targetOwner": "Blaine Villafuerte",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "0016O00003ebhSgQAI",
+      "sfAccountName": "Digital Market POS"
     },
     {
       "account": "K&L Telecom",
@@ -1284,19 +1326,14 @@
       ],
       "assignedAm": "Unassigned",
       "status": "Active",
-      "clientCode": "KLTELECOM",
       "products": {
         "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": false,
         "Payments": false
       },
       "productsRaw": "Billing",
       "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin",
+        "New Rev.io",
         "Payments"
       ],
       "registrants": [
@@ -1318,8 +1355,12 @@
       "matchScore": 1,
       "attendeeCount": 1,
       "targetOwner": "Jamie Butler",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "001PX00000WBqleYAD",
+      "sfAccountName": "K&L Telecom"
     },
     {
       "account": "Northwest Digits LLC",
@@ -1328,19 +1369,14 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "clientCode": "SoundLine",
       "products": {
         "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": false,
         "Payments": false
       },
       "productsRaw": "Billing",
       "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin",
+        "New Rev.io",
         "Payments"
       ],
       "registrants": [
@@ -1362,8 +1398,12 @@
       "matchScore": 0.96,
       "attendeeCount": 1,
       "targetOwner": "Ryan Burton",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001V2jrcAAB",
+      "sfAccountName": "SoundLine Communications"
     },
     {
       "account": "Raven Tech LLC",
@@ -1372,19 +1412,14 @@
       ],
       "assignedAm": "Olivia Sandefur",
       "status": "Active",
-      "clientCode": "RAVENTECHPSA",
       "products": {
         "Billing": false,
-        "PSA Web": true,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": true,
         "Payments": false
       },
       "productsRaw": "PSA Web",
       "missing": [
         "Billing",
-        "Tigerpaw",
-        "Odin",
         "Payments"
       ],
       "registrants": [
@@ -1406,52 +1441,12 @@
       "matchScore": 1,
       "attendeeCount": 1,
       "targetOwner": "Olivia Sandefur",
-      "missingCount": 4,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Rev.io",
-      "registeredCompanyNames": [
-        "YorN Sales Training"
-      ],
-      "assignedAm": "Unassigned",
-      "status": "",
-      "clientCode": "ACME, API_SANDBOX, API_SANDBOX_TEMPLATE, AUTOMATED_TESTS, BULLSEYE, DEMO, DEMO_SANDBOX, DM_Testing_TEST, H20123, H2O, H2O_SANDBOX, H2O1, INTELIQUENT, INVENTORY, JERMAINE, LEARN, LIONGARD, MOMENTUM, MSP, NORTHLAND, ODIN_DEMO, PARLOR, PRODUCT, SALES, sales_SANDBOX, SANDBOX, SE, SOLUTIONS, TEMPLATE, TEMPLATE_SANDBOX, TEMPLATE_WIRELESS, TESTDRIVE, TRAINING, TRAINING_SANDBOX",
-      "products": {
-        "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": false
-      },
-      "productsRaw": "Billing",
-      "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin",
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Lucy Shriver",
-          "title": "Founder",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Ryan Koontz",
-          "dateRegistered": "Aug 26, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "No"
-        }
-      ],
-      "referrers": [
-        "Ryan Koontz"
-      ],
-      "matchScore": 0.96,
-      "attendeeCount": 1,
-      "targetOwner": "Ryan Koontz",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "001PX00000H25JbYAJ",
+      "sfAccountName": "Raven Tech LLC"
     },
     {
       "account": "Southeast Network Specialists LLC",
@@ -1460,19 +1455,14 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active",
-      "clientCode": "SNS",
       "products": {
         "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": false,
         "Payments": false
       },
       "productsRaw": "Billing",
       "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin",
+        "New Rev.io",
         "Payments"
       ],
       "registrants": [
@@ -1494,8 +1484,12 @@
       "matchScore": 0.86,
       "attendeeCount": 1,
       "targetOwner": "Ryan Koontz",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "0016O00003WDAAYQA5",
+      "sfAccountName": "Southeast Network Specialists"
     },
     {
       "account": "Southern Telecom",
@@ -1504,19 +1498,14 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "clientCode": "SOUTHERNTELECOM",
       "products": {
         "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": false,
         "Payments": false
       },
       "productsRaw": "Billing",
       "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin",
+        "New Rev.io",
         "Payments"
       ],
       "registrants": [
@@ -1538,8 +1527,12 @@
       "matchScore": 0.92,
       "attendeeCount": 1,
       "targetOwner": "Shane Frost",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001HNProAAH",
+      "sfAccountName": "Southern Telecom"
     },
     {
       "account": "TruLine Technologies",
@@ -1548,19 +1541,14 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active",
-      "clientCode": "TRULINETECHNOLOGIESPSA",
       "products": {
         "Billing": false,
-        "PSA Web": true,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": true,
         "Payments": false
       },
       "productsRaw": "PSA Web",
       "missing": [
         "Billing",
-        "Tigerpaw",
-        "Odin",
         "Payments"
       ],
       "registrants": [
@@ -1580,8 +1568,12 @@
       "matchScore": 1,
       "attendeeCount": 1,
       "targetOwner": "Sarah McGovern",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "001PX00000gMYEUYA4",
+      "sfAccountName": "TruLine Technologies"
     },
     {
       "account": "VTi Communications",
@@ -1590,19 +1582,14 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "clientCode": "VTICOMMUNICATIONS",
       "products": {
         "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": false,
         "Payments": false
       },
       "productsRaw": "Billing",
       "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin",
+        "New Rev.io",
         "Payments"
       ],
       "registrants": [
@@ -1624,8 +1611,12 @@
       "matchScore": 1,
       "attendeeCount": 1,
       "targetOwner": "Shane Frost",
-      "missingCount": 4,
-      "hasMissingProducts": true
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 2,
+      "hasMissingProducts": true,
+      "sfAccountId": "001PX00000AENn1YAH",
+      "sfAccountName": "VTi Communications"
     },
     {
       "account": "Blueline Telecom",
@@ -1634,18 +1625,13 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
-      "clientCode": "BLUELINE, BLUELINEPSA",
       "products": {
         "Billing": true,
-        "PSA Web": true,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": true,
         "Payments": false
       },
       "productsRaw": "Billing, PSA Web",
       "missing": [
-        "Tigerpaw",
-        "Odin",
         "Payments"
       ],
       "registrants": [
@@ -1700,8 +1686,12 @@
       "matchScore": 1,
       "attendeeCount": 4,
       "targetOwner": "Reid Doster",
-      "missingCount": 3,
-      "hasMissingProducts": true
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011C00002KUhaWQAT",
+      "sfAccountName": "Blueline Telecom"
     },
     {
       "account": "MNJ Technologies",
@@ -1711,19 +1701,14 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
-      "clientCode": "MNJ, MNJ_SANDBOX",
       "products": {
         "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
+        "New Rev.io": false,
         "Payments": true
       },
       "productsRaw": "Billing, Payments",
       "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin"
+        "New Rev.io"
       ],
       "registrants": [
         {
@@ -1778,1184 +1763,12 @@
       "matchScore": 1,
       "attendeeCount": 4,
       "targetOwner": "Rachael Buchtan, Rachel Buchtan",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Digital Agent",
-      "registeredCompanyNames": [
-        "Digital Agent"
-      ],
-      "assignedAm": "Rachael Buchtan",
-      "status": "Active",
-      "clientCode": "DIGITALAGENT",
-      "products": {
-        "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": true
-      },
-      "productsRaw": "Billing, Payments",
-      "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin"
-      ],
-      "registrants": [
-        {
-          "name": "Howard Hunter",
-          "title": "Owner",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Ingrid Beard",
-          "dateRegistered": "Aug 12, 2026",
-          "hotel": "No",
-          "attendedBefore": "Yes"
-        },
-        {
-          "name": "John Reinhardt",
-          "title": "Operation Manager",
-          "department": "Operations/Support",
-          "rank": "Manager",
-          "email": "",
-          "referral": "Ingrid Beard",
-          "dateRegistered": "Aug 12, 2026",
-          "hotel": "No",
-          "attendedBefore": "Yes"
-        },
-        {
-          "name": "Keyur Patel",
-          "title": "COO",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Ingrid Beard",
-          "dateRegistered": "Aug 12, 2026",
-          "hotel": "No",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Ingrid Beard"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 3,
-      "targetOwner": "Ingrid Beard",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Simplicity VoIP",
-      "registeredCompanyNames": [
-        "Simplicity VoIP"
-      ],
-      "assignedAm": "Rachael Buchtan",
-      "status": "Active",
-      "clientCode": "SIMPLICITYVOIP",
-      "products": {
-        "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": true
-      },
-      "productsRaw": "Billing, Payments",
-      "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin"
-      ],
-      "registrants": [
-        {
-          "name": "Ben Humphreys",
-          "title": "President",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Katerra Greenwood",
-          "dateRegistered": "Jul 31, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        },
-        {
-          "name": "Lacey Humphreys",
-          "title": "Inventory Manager",
-          "department": "Operations/Support",
-          "rank": "Manager",
-          "email": "",
-          "referral": "Katerra Greenwood",
-          "dateRegistered": "Jul 31, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        },
-        {
-          "name": "Pam Tyler",
-          "title": "Billing Manager",
-          "department": "Finance/Billing",
-          "rank": "Manager",
-          "email": "",
-          "referral": "Katerra Greenwood",
-          "dateRegistered": "Jul 31, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Katerra Greenwood"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 3,
-      "targetOwner": "Katerra Greenwood",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "TouchTone",
-      "registeredCompanyNames": [
-        "Touchtone Communications"
-      ],
-      "assignedAm": "Rachael Buchtan",
-      "status": "Active",
-      "clientCode": "TOUCHTONE, TOUCHTONE_SANDBOX",
-      "products": {
-        "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": true
-      },
-      "productsRaw": "Billing, Payments",
-      "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin"
-      ],
-      "registrants": [
-        {
-          "name": "Christina Bentley",
-          "title": "Senior Billing Manager",
-          "department": "Finance/Billing",
-          "rank": "Manager",
-          "email": "",
-          "referral": "Jakob Champion",
-          "dateRegistered": "Jul 30, 2026",
-          "hotel": "No",
-          "attendedBefore": "Yes"
-        },
-        {
-          "name": "Melissa Maldonado",
-          "title": "Provisioning Manager",
-          "department": "Other",
-          "rank": "Manager",
-          "email": "",
-          "referral": "Jakob Champion",
-          "dateRegistered": "Jul 31, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        },
-        {
-          "name": "Tom Ford",
-          "title": "Director of Billing",
-          "department": "Finance/Billing",
-          "rank": "Director",
-          "email": "",
-          "referral": "Jakob Champion",
-          "dateRegistered": "Jul 30, 2026",
-          "hotel": "No",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Jakob Champion"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 3,
-      "targetOwner": "Jakob Champion",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "CallSprout",
-      "registeredCompanyNames": [
-        "CallSprout"
-      ],
-      "assignedAm": "Rachael Buchtan",
-      "status": "Active",
-      "clientCode": "CALLSPROUT, CALLSPROUTPSA",
-      "products": {
-        "Billing": true,
-        "PSA Web": true,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": false
-      },
-      "productsRaw": "Billing, PSA Web",
-      "missing": [
-        "Tigerpaw",
-        "Odin",
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Atticus Brind",
-          "title": "VP of Sales",
-          "department": "Sales/Marketing",
-          "rank": "VP-Level",
-          "email": "",
-          "referral": "Justin Lee",
-          "dateRegistered": "Jul 20, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        },
-        {
-          "name": "Lenny Ljungholm",
-          "title": "Support Specialist",
-          "department": "Operations/Support",
-          "rank": "Non-Manager",
-          "email": "",
-          "referral": "Justin Lee",
-          "dateRegistered": "Jul 20, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Justin Lee"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 2,
-      "targetOwner": "Justin Lee",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Centra IP Networks",
-      "registeredCompanyNames": [
-        "Centra IP",
-        "Centra IP Networks"
-      ],
-      "assignedAm": "Olivia Sandefur",
-      "status": "Active",
-      "clientCode": "ADVANCEDCOMMUNICATIONS, ADVANCEDCOMMUNICATIONSRMM, CENTRAIPPSA, CENTRAIPRMM",
-      "products": {
-        "Billing": true,
-        "PSA Web": true,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": false
-      },
-      "productsRaw": "Billing, PSA Web",
-      "missing": [
-        "Tigerpaw",
-        "Odin",
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Patrick Brangan",
-          "title": "CEO",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Ryan Koontz",
-          "dateRegistered": "Aug 4, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        },
-        {
-          "name": "Stacey Hutton",
-          "title": "Operations Manager",
-          "department": "Operations/Support",
-          "rank": "Manager",
-          "email": "",
-          "referral": "Ryan Koontz",
-          "dateRegistered": "Aug 4, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Ryan Koontz"
-      ],
-      "matchScore": 0.94,
-      "attendeeCount": 2,
-      "targetOwner": "Ryan Koontz",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Grid4 Communications",
-      "registeredCompanyNames": [
-        "Grid4 Communications"
-      ],
-      "assignedAm": "Ryan Burton",
-      "status": "Active",
-      "clientCode": "GRID4",
-      "products": {
-        "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": true
-      },
-      "productsRaw": "Billing, Payments",
-      "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin"
-      ],
-      "registrants": [
-        {
-          "name": "Christopher Hopkins",
-          "title": "CEO",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Justin Lee",
-          "dateRegistered": "Aug 12, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        },
-        {
-          "name": "Michael Hopkins",
-          "title": "Senior Vice President",
-          "department": "C-Suite",
-          "rank": "VP-Level",
-          "email": "",
-          "referral": "Justin Lee",
-          "dateRegistered": "Aug 12, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Justin Lee"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 2,
-      "targetOwner": "Justin Lee",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Hosted America, LLC",
-      "registeredCompanyNames": [
-        "Hosted America"
-      ],
-      "assignedAm": "Unassigned",
-      "status": "",
-      "clientCode": "HOSTEDAMERICAPSAPSA",
-      "products": {
-        "Billing": false,
-        "PSA Web": true,
-        "Tigerpaw": true,
-        "Odin": false,
-        "Payments": false
-      },
-      "productsRaw": "PSA Web, Tigerpaw",
-      "missing": [
-        "Billing",
-        "Odin",
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Andrew Turkington",
-          "title": "CFO",
-          "department": "Finance/Billing",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Justin Lee",
-          "dateRegistered": "Jul 31, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        },
-        {
-          "name": "Mark Robbins",
-          "title": "VP, Director of Voice Operations",
-          "department": "Operations/Support",
-          "rank": "VP-Level",
-          "email": "",
-          "referral": "Justin Lee",
-          "dateRegistered": "Aug 26, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "No"
-        }
-      ],
-      "referrers": [
-        "Justin Lee"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 2,
-      "targetOwner": "Justin Lee",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "IPitomy",
-      "registeredCompanyNames": [
-        "IPitomy",
-        "IPitomy Communications LLC"
-      ],
-      "assignedAm": "Ryan Burton",
-      "status": "Active",
-      "clientCode": "IPITOMY",
-      "products": {
-        "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": true
-      },
-      "productsRaw": "Billing, Payments",
-      "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin"
-      ],
-      "registrants": [
-        {
-          "name": "Erica Carroll",
-          "title": "Order Processing",
-          "department": "Operations/Support",
-          "rank": "Non-Manager",
-          "email": "",
-          "referral": "Ryan Burton",
-          "dateRegistered": "Jul 27, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "No"
-        },
-        {
-          "name": "Joseph Haines",
-          "title": "President/CEO",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Ryan Burton",
-          "dateRegistered": "Aug 5, 2026",
-          "hotel": "No",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Ryan Burton"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 2,
-      "targetOwner": "Ryan Burton",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "S-Net Communications, Inc.",
-      "registeredCompanyNames": [
-        "Safety Net IT"
-      ],
-      "assignedAm": "Ryan Burton",
-      "status": "Active",
-      "clientCode": "SNET, SNET_SANDBOX",
-      "products": {
-        "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": true
-      },
-      "productsRaw": "Billing, Payments",
-      "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin"
-      ],
-      "registrants": [
-        {
-          "name": "Jaclyn Cooper",
-          "title": "Director",
-          "department": "C-Suite",
-          "rank": "Director",
-          "email": "",
-          "referral": "Jakob Champion",
-          "dateRegistered": "Aug 4, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "No"
-        },
-        {
-          "name": "Zack Killpack",
-          "title": "Director",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Jakob Champion",
-          "dateRegistered": "Aug 4, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "No"
-        }
-      ],
-      "referrers": [
-        "Jakob Champion"
-      ],
-      "matchScore": 0.86,
-      "attendeeCount": 2,
-      "targetOwner": "Jakob Champion",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Savvy Communications",
-      "registeredCompanyNames": [
-        "Savvy Communcations Inc.",
-        "Savvy Communications Inc"
-      ],
-      "assignedAm": "Rachael Buchtan",
-      "status": "Active",
-      "clientCode": "SAVVY, SAVVYPSA",
-      "products": {
-        "Billing": true,
-        "PSA Web": true,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": false
-      },
-      "productsRaw": "Billing, PSA Web",
-      "missing": [
-        "Tigerpaw",
-        "Odin",
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Chelsea McBride",
-          "title": "Billing & Operations Coordinator",
-          "department": "Finance/Billing",
-          "rank": "Other",
-          "email": "",
-          "referral": "Shane Frost",
-          "dateRegistered": "Aug 19, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "No"
-        },
-        {
-          "name": "Nicole Curry",
-          "title": "CSR",
-          "department": "Other",
-          "rank": "VP-Level",
-          "email": "",
-          "referral": "Shane Frost",
-          "dateRegistered": "Aug 25, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "No"
-        }
-      ],
-      "referrers": [
-        "Shane Frost"
-      ],
-      "matchScore": 0.96,
-      "attendeeCount": 2,
-      "targetOwner": "Shane Frost",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Ten4",
-      "registeredCompanyNames": [
-        "Ten4"
-      ],
-      "assignedAm": "Sarah McGovern",
-      "status": "Active",
-      "clientCode": "TEN4, TEN4PSA",
-      "products": {
-        "Billing": true,
-        "PSA Web": true,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": false
-      },
-      "productsRaw": "Billing, PSA Web",
-      "missing": [
-        "Tigerpaw",
-        "Odin",
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Brad Muser",
-          "title": "Executive Vice President, Finance",
-          "department": "Finance/Billing",
-          "rank": "VP-Level",
-          "email": "",
-          "referral": "Cam Sharpe",
-          "dateRegistered": "May 18, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        },
-        {
-          "name": "Tom McDonnell",
-          "title": "Vice President, Operations",
-          "department": "Operations/Support",
-          "rank": "VP-Level",
-          "email": "",
-          "referral": "Cam Sharpe",
-          "dateRegistered": "May 18, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Cam Sharpe"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 2,
-      "targetOwner": "Cam Sharpe",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Altaworx",
-      "registeredCompanyNames": [
-        "Altaworx"
-      ],
-      "assignedAm": "Ryan Burton",
-      "status": "Active",
-      "clientCode": "ALTAWORX, ALTAWORX_SANDBOX, CATAPULT_SANDBOX",
-      "products": {
-        "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": true
-      },
-      "productsRaw": "Billing, Payments",
-      "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin"
-      ],
-      "registrants": [
-        {
-          "name": "Rickie Richey",
-          "title": "CEO",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Ryan Koontz",
-          "dateRegistered": "Aug 4, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Ryan Koontz"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 1,
-      "targetOwner": "Ryan Koontz",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Clear Rate Communications",
-      "registeredCompanyNames": [
-        "Clear Rate Communications"
-      ],
-      "assignedAm": "Ryan Burton",
-      "status": "Active",
-      "clientCode": "CLEARRATE, CLEARRATE_SANDBOX, CLEARRATE_TEST",
-      "products": {
-        "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": true
-      },
-      "productsRaw": "Billing, Payments",
-      "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin"
-      ],
-      "registrants": [
-        {
-          "name": "Erik Kubs",
-          "title": "Manager Service Delivery",
-          "department": "Operations/Support",
-          "rank": "Manager",
-          "email": "",
-          "referral": "Ryan Burton",
-          "dateRegistered": "Aug 25, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Ryan Burton"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 1,
-      "targetOwner": "Ryan Burton",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Glacier Networks Inc",
-      "registeredCompanyNames": [
-        "Glacier Networks Inc"
-      ],
-      "assignedAm": "Ryan Burton",
-      "status": "Active",
-      "clientCode": "GLACIER, GLACIER_SANDBOX",
-      "products": {
-        "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": true
-      },
-      "productsRaw": "Billing, Payments",
-      "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin"
-      ],
-      "registrants": [
-        {
-          "name": "Feliks Kiliski",
-          "title": "Partner",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Ryan Burton",
-          "dateRegistered": "Aug 27, 2026",
-          "hotel": "No",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Ryan Burton"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 1,
-      "targetOwner": "Ryan Burton",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "iNet Communications",
-      "registeredCompanyNames": [
-        "INET Communications, LLC"
-      ],
-      "assignedAm": "Rachael Buchtan",
-      "status": "Active",
-      "clientCode": "INETCOMMUNICATIONS, INETCOMMUNICATIONSPSA",
-      "products": {
-        "Billing": true,
-        "PSA Web": true,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": false
-      },
-      "productsRaw": "Billing, PSA Web",
-      "missing": [
-        "Tigerpaw",
-        "Odin",
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Charles Murray",
-          "title": "CEO",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Reid Doster",
-          "dateRegistered": "Jul 31, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Reid Doster"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 1,
-      "targetOwner": "Reid Doster",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "JCM Telecom LLC",
-      "registeredCompanyNames": [
-        "JCM Telecom"
-      ],
-      "assignedAm": "Ryan Burton",
-      "status": "Active",
-      "clientCode": "JCMTELECOM",
-      "products": {
-        "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": true
-      },
-      "productsRaw": "Billing, Payments",
-      "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin"
-      ],
-      "registrants": [
-        {
-          "name": "Christian Hernandez",
-          "title": "President / Owner",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Justin Lee",
-          "dateRegistered": "Jul 8, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Justin Lee"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 1,
-      "targetOwner": "Justin Lee",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "LightSpar",
-      "registeredCompanyNames": [
-        "LightSpar"
-      ],
-      "assignedAm": "Sarah McGovern",
-      "status": "Active",
-      "clientCode": "LIGHTSPAR",
-      "products": {
-        "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": true
-      },
-      "productsRaw": "Billing, Payments",
-      "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin"
-      ],
-      "registrants": [
-        {
-          "name": "Bob Bouquet",
-          "title": "CFO",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Ingrid Beard",
-          "dateRegistered": "Aug 7, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Ingrid Beard"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 1,
-      "targetOwner": "Ingrid Beard",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Mach Networks",
-      "registeredCompanyNames": [
-        "MACH Networks"
-      ],
-      "assignedAm": "Ryan Burton",
-      "status": "Active",
-      "clientCode": "MACHNETWORKS, MACHNETWORKS_SANDBOX, MACHNETWORKS_TEST",
-      "products": {
-        "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": true
-      },
-      "productsRaw": "Billing, Payments",
-      "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin"
-      ],
-      "registrants": [
-        {
-          "name": "Paula Anderson",
-          "title": "Director",
-          "department": "Sales/Marketing",
-          "rank": "Director",
-          "email": "",
-          "referral": "Jamie Butler",
-          "dateRegistered": "Aug 6, 2026",
-          "hotel": "No",
-          "attendedBefore": "No"
-        }
-      ],
-      "referrers": [
-        "Jamie Butler"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 1,
-      "targetOwner": "Jamie Butler",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Premier Companies",
-      "registeredCompanyNames": [
-        "Premier Companies"
-      ],
-      "assignedAm": "Ryan Burton",
-      "status": "Active",
-      "clientCode": "PREMIER, Premier_SANDBOX",
-      "products": {
-        "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": true
-      },
-      "productsRaw": "Billing, Payments",
-      "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin"
-      ],
-      "registrants": [
-        {
-          "name": "Mark Bortz",
-          "title": "Founder",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Justin Lee",
-          "dateRegistered": "Jul 15, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Justin Lee"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 1,
-      "targetOwner": "Justin Lee",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Public Telephone Company",
-      "registeredCompanyNames": [
-        "Public Telephone Company"
-      ],
-      "assignedAm": "Unassigned",
-      "status": "",
-      "clientCode": "PTCOA",
-      "products": {
-        "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": true
-      },
-      "productsRaw": "Billing, Payments",
-      "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin"
-      ],
-      "registrants": [
-        {
-          "name": "Darrell Lopez",
-          "title": "Chief Executive Officer",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Cam Sharpe",
-          "dateRegistered": "Aug 4, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "No"
-        }
-      ],
-      "referrers": [
-        "Cam Sharpe"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 1,
-      "targetOwner": "Cam Sharpe",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Spectrotel",
-      "registeredCompanyNames": [
-        "Spectrotel"
-      ],
-      "assignedAm": "Ryan Burton",
-      "status": "Active",
-      "clientCode": "SPECTROTEL, SPECTROTEL_NEW1, SPECTROTEL_SANDBOX",
-      "products": {
-        "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": true
-      },
-      "productsRaw": "Billing, Payments",
-      "missing": [
-        "PSA Web",
-        "Tigerpaw",
-        "Odin"
-      ],
-      "registrants": [
-        {
-          "name": "Mitch Wright",
-          "title": "VP of IT",
-          "department": "IT/Engineering",
-          "rank": "VP-Level",
-          "email": "",
-          "referral": "Jamie Butler",
-          "dateRegistered": "Aug 6, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Jamie Butler"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 1,
-      "targetOwner": "Jamie Butler",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Tailwinds Voice & Data, Inc.",
-      "registeredCompanyNames": [
-        "TailWind Voice & Data"
-      ],
-      "assignedAm": "Ryan Burton",
-      "status": "Active, Raving Fan",
-      "clientCode": "TAILWINDS_SANDBOX, WORX1, WORX1PSA",
-      "products": {
-        "Billing": true,
-        "PSA Web": true,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": false
-      },
-      "productsRaw": "Billing, PSA Web",
-      "missing": [
-        "Tigerpaw",
-        "Odin",
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Tom Murphy",
-          "title": "Senior Vice President",
-          "department": "C-Suite",
-          "rank": "VP-Level",
-          "email": "",
-          "referral": "",
-          "dateRegistered": "Mar 31, 2026",
-          "hotel": "No",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [],
-      "matchScore": 1,
-      "attendeeCount": 1,
-      "targetOwner": "Ryan Burton",
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Bridge Communications, LLC",
-      "registeredCompanyNames": [
-        "Bridge Communications"
-      ],
-      "assignedAm": "jacob.williams",
-      "status": "Active",
-      "clientCode": "BRIDGECOMM, BRIDGECOMMPSA",
-      "products": {
-        "Billing": true,
-        "PSA Web": true,
-        "Tigerpaw": false,
-        "Odin": false,
-        "Payments": true
-      },
-      "productsRaw": "Billing, PSA Web, Payments",
-      "missing": [
-        "Tigerpaw",
-        "Odin"
-      ],
-      "registrants": [
-        {
-          "name": "Lauren Otts",
-          "title": "Customer Success Specialist",
-          "department": "Operations/Support",
-          "rank": "Non-Manager",
-          "email": "",
-          "referral": "Jakob Champion",
-          "dateRegistered": "Aug 4, 2026",
-          "hotel": "No",
-          "attendedBefore": "No"
-        },
-        {
-          "name": "Matt Pridemore",
-          "title": "Managing Partner",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Jakob Champion",
-          "dateRegistered": "Aug 4, 2026",
-          "hotel": "No",
-          "attendedBefore": "No"
-        },
-        {
-          "name": "Matt Otts",
-          "title": "Partner",
-          "department": "Sales/Marketing",
-          "rank": "Manager",
-          "email": "",
-          "referral": "Jakob Champion",
-          "dateRegistered": "Aug 4, 2026",
-          "hotel": "No",
-          "attendedBefore": "No"
-        },
-        {
-          "name": "Mike Hancock",
-          "title": "Managing Partner",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Jakob Champion",
-          "dateRegistered": "Aug 4, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "No"
-        }
-      ],
-      "referrers": [
-        "Jakob Champion"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 4,
-      "targetOwner": "Jakob Champion",
-      "missingCount": 2,
-      "hasMissingProducts": true
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011C00002G6GNUQA3",
+      "sfAccountName": "MNJ Technologies"
     },
     {
       "account": "Vanran Communications",
@@ -2964,17 +1777,13 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active, Onboarding",
-      "clientCode": "VANRAN, VANRANPSA",
       "products": {
         "Billing": true,
-        "PSA Web": true,
-        "Tigerpaw": true,
-        "Odin": false,
+        "New Rev.io": true,
         "Payments": false
       },
       "productsRaw": "Billing, PSA Web, Tigerpaw",
       "missing": [
-        "Odin",
         "Payments"
       ],
       "registrants": [
@@ -3029,8 +1838,76 @@
       "matchScore": 1,
       "attendeeCount": 4,
       "targetOwner": "Blaine Villafuerte",
-      "missingCount": 2,
-      "hasMissingProducts": true
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011C000021EV9PQAW",
+      "sfAccountName": "VanRan Communications Services, Inc."
+    },
+    {
+      "account": "Digital Agent",
+      "registeredCompanyNames": [
+        "Digital Agent"
+      ],
+      "assignedAm": "Rachael Buchtan",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "New Rev.io"
+      ],
+      "registrants": [
+        {
+          "name": "Howard Hunter",
+          "title": "Owner",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ingrid Beard",
+          "dateRegistered": "Aug 12, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "John Reinhardt",
+          "title": "Operation Manager",
+          "department": "Operations/Support",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Ingrid Beard",
+          "dateRegistered": "Aug 12, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Keyur Patel",
+          "title": "COO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ingrid Beard",
+          "dateRegistered": "Aug 12, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Ingrid Beard"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 3,
+      "targetOwner": "Ingrid Beard",
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001HNQ9CAAX",
+      "sfAccountName": "Digital Agent"
     },
     {
       "account": "Scipio Technologies",
@@ -3039,18 +1916,14 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
-      "clientCode": "PEACE, PEACEODIN, PEACERESELLER",
       "products": {
         "Billing": true,
-        "PSA Web": false,
-        "Tigerpaw": false,
-        "Odin": true,
+        "New Rev.io": false,
         "Payments": true
       },
       "productsRaw": "Billing, Odin, Payments",
       "missing": [
-        "PSA Web",
-        "Tigerpaw"
+        "New Rev.io"
       ],
       "registrants": [
         {
@@ -3093,8 +1966,1047 @@
       "matchScore": 1,
       "attendeeCount": 3,
       "targetOwner": "Ryan Burton",
-      "missingCount": 2,
-      "hasMissingProducts": true
+      "originalCohort": "Odin",
+      "usesBroadworks": true,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001HNQNnAAP",
+      "sfAccountName": "Scipio Technologies (Peace Communications)"
+    },
+    {
+      "account": "Simplicity VoIP",
+      "registeredCompanyNames": [
+        "Simplicity VoIP"
+      ],
+      "assignedAm": "Rachael Buchtan",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "New Rev.io"
+      ],
+      "registrants": [
+        {
+          "name": "Ben Humphreys",
+          "title": "President",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Katerra Greenwood",
+          "dateRegistered": "Jul 31, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Lacey Humphreys",
+          "title": "Inventory Manager",
+          "department": "Operations/Support",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Katerra Greenwood",
+          "dateRegistered": "Jul 31, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Pam Tyler",
+          "title": "Billing Manager",
+          "department": "Finance/Billing",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Katerra Greenwood",
+          "dateRegistered": "Jul 31, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Katerra Greenwood"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 3,
+      "targetOwner": "Katerra Greenwood",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001dyHjsAAE",
+      "sfAccountName": "Simplicity VoIP"
+    },
+    {
+      "account": "TouchTone",
+      "registeredCompanyNames": [
+        "Touchtone Communications"
+      ],
+      "assignedAm": "Rachael Buchtan",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "New Rev.io"
+      ],
+      "registrants": [
+        {
+          "name": "Christina Bentley",
+          "title": "Senior Billing Manager",
+          "department": "Finance/Billing",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Jakob Champion",
+          "dateRegistered": "Jul 30, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Melissa Maldonado",
+          "title": "Provisioning Manager",
+          "department": "Other",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Jakob Champion",
+          "dateRegistered": "Jul 31, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Tom Ford",
+          "title": "Director of Billing",
+          "department": "Finance/Billing",
+          "rank": "Director",
+          "email": "",
+          "referral": "Jakob Champion",
+          "dateRegistered": "Jul 30, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Jakob Champion"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 3,
+      "targetOwner": "Jakob Champion",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001HNQItAAP",
+      "sfAccountName": "TouchTone Communications"
+    },
+    {
+      "account": "CallSprout",
+      "registeredCompanyNames": [
+        "CallSprout"
+      ],
+      "assignedAm": "Rachael Buchtan",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": true,
+        "Payments": false
+      },
+      "productsRaw": "Billing, PSA Web",
+      "missing": [
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Atticus Brind",
+          "title": "VP of Sales",
+          "department": "Sales/Marketing",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Justin Lee",
+          "dateRegistered": "Jul 20, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Lenny Ljungholm",
+          "title": "Support Specialist",
+          "department": "Operations/Support",
+          "rank": "Non-Manager",
+          "email": "",
+          "referral": "Justin Lee",
+          "dateRegistered": "Jul 20, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Justin Lee"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Justin Lee",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011C000021GB3QQAW",
+      "sfAccountName": "CallSprout"
+    },
+    {
+      "account": "Centra IP Networks",
+      "registeredCompanyNames": [
+        "Centra IP",
+        "Centra IP Networks"
+      ],
+      "assignedAm": "Olivia Sandefur",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": true,
+        "Payments": false
+      },
+      "productsRaw": "Billing, PSA Web",
+      "missing": [
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Patrick Brangan",
+          "title": "CEO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ryan Koontz",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Stacey Hutton",
+          "title": "Operations Manager",
+          "department": "Operations/Support",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Ryan Koontz",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Ryan Koontz"
+      ],
+      "matchScore": 0.94,
+      "attendeeCount": 2,
+      "targetOwner": "Ryan Koontz",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011C00001sb1uDQAQ",
+      "sfAccountName": "Centra IP Networks"
+    },
+    {
+      "account": "Grid4 Communications",
+      "registeredCompanyNames": [
+        "Grid4 Communications"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "New Rev.io"
+      ],
+      "registrants": [
+        {
+          "name": "Christopher Hopkins",
+          "title": "CEO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Justin Lee",
+          "dateRegistered": "Aug 12, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Michael Hopkins",
+          "title": "Senior Vice President",
+          "department": "C-Suite",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Justin Lee",
+          "dateRegistered": "Aug 12, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Justin Lee"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Justin Lee",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001HNQKeAAP",
+      "sfAccountName": "Grid4 Communications"
+    },
+    {
+      "account": "IPitomy",
+      "registeredCompanyNames": [
+        "IPitomy",
+        "IPitomy Communications LLC"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "New Rev.io"
+      ],
+      "registrants": [
+        {
+          "name": "Erica Carroll",
+          "title": "Order Processing",
+          "department": "Operations/Support",
+          "rank": "Non-Manager",
+          "email": "",
+          "referral": "Ryan Burton",
+          "dateRegistered": "Jul 27, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Joseph Haines",
+          "title": "President/CEO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ryan Burton",
+          "dateRegistered": "Aug 5, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Ryan Burton"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Ryan Burton",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001HNQJIAA5",
+      "sfAccountName": "IPitomy"
+    },
+    {
+      "account": "S-Net Communications, Inc.",
+      "registeredCompanyNames": [
+        "Safety Net IT"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "New Rev.io"
+      ],
+      "registrants": [
+        {
+          "name": "Jaclyn Cooper",
+          "title": "Director",
+          "department": "C-Suite",
+          "rank": "Director",
+          "email": "",
+          "referral": "Jakob Champion",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Zack Killpack",
+          "title": "Director",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Jakob Champion",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Jakob Champion"
+      ],
+      "matchScore": 0.86,
+      "attendeeCount": 2,
+      "targetOwner": "Jakob Champion",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001HNPlDAAX",
+      "sfAccountName": "S-Net Communications"
+    },
+    {
+      "account": "Savvy Communications",
+      "registeredCompanyNames": [
+        "Savvy Communcations Inc.",
+        "Savvy Communications Inc"
+      ],
+      "assignedAm": "Rachael Buchtan",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": true,
+        "Payments": false
+      },
+      "productsRaw": "Billing, PSA Web",
+      "missing": [
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Chelsea McBride",
+          "title": "Billing & Operations Coordinator",
+          "department": "Finance/Billing",
+          "rank": "Other",
+          "email": "",
+          "referral": "Shane Frost",
+          "dateRegistered": "Aug 19, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Nicole Curry",
+          "title": "CSR",
+          "department": "Other",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Shane Frost",
+          "dateRegistered": "Aug 25, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Shane Frost"
+      ],
+      "matchScore": 0.96,
+      "attendeeCount": 2,
+      "targetOwner": "Shane Frost",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011C00002dO1CfQAK",
+      "sfAccountName": "Savvy Communications"
+    },
+    {
+      "account": "Ten4",
+      "registeredCompanyNames": [
+        "Ten4"
+      ],
+      "assignedAm": "Sarah McGovern",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": true,
+        "Payments": false
+      },
+      "productsRaw": "Billing, PSA Web",
+      "missing": [
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Brad Muser",
+          "title": "Executive Vice President, Finance",
+          "department": "Finance/Billing",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Cam Sharpe",
+          "dateRegistered": "May 18, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Tom McDonnell",
+          "title": "Vice President, Operations",
+          "department": "Operations/Support",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Cam Sharpe",
+          "dateRegistered": "May 18, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Cam Sharpe"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Cam Sharpe",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0016O00003YUGuAQAX",
+      "sfAccountName": "Ten4"
+    },
+    {
+      "account": "Altaworx",
+      "registeredCompanyNames": [
+        "Altaworx"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "New Rev.io"
+      ],
+      "registrants": [
+        {
+          "name": "Rickie Richey",
+          "title": "CEO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ryan Koontz",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Ryan Koontz"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Ryan Koontz",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001KmPCbAAN",
+      "sfAccountName": "Altaworx"
+    },
+    {
+      "account": "Clear Rate Communications",
+      "registeredCompanyNames": [
+        "Clear Rate Communications"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "New Rev.io"
+      ],
+      "registrants": [
+        {
+          "name": "Erik Kubs",
+          "title": "Manager Service Delivery",
+          "department": "Operations/Support",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Ryan Burton",
+          "dateRegistered": "Aug 25, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Ryan Burton"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Ryan Burton",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001ecpJJAAY",
+      "sfAccountName": "Clear Rate Communications"
+    },
+    {
+      "account": "Glacier Networks Inc",
+      "registeredCompanyNames": [
+        "Glacier Networks Inc"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "New Rev.io"
+      ],
+      "registrants": [
+        {
+          "name": "Feliks Kiliski",
+          "title": "Partner",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ryan Burton",
+          "dateRegistered": "Aug 27, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Ryan Burton"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Ryan Burton",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001djcCAAAY",
+      "sfAccountName": "Glacier Networks"
+    },
+    {
+      "account": "iNet Communications",
+      "registeredCompanyNames": [
+        "INET Communications, LLC"
+      ],
+      "assignedAm": "Rachael Buchtan",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": true,
+        "Payments": false
+      },
+      "productsRaw": "Billing, PSA Web",
+      "missing": [
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Charles Murray",
+          "title": "CEO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Reid Doster",
+          "dateRegistered": "Jul 31, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Reid Doster"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Reid Doster",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001HNPoRAAX",
+      "sfAccountName": "iNet Communications"
+    },
+    {
+      "account": "JCM Telecom LLC",
+      "registeredCompanyNames": [
+        "JCM Telecom"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "New Rev.io"
+      ],
+      "registrants": [
+        {
+          "name": "Christian Hernandez",
+          "title": "President / Owner",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Justin Lee",
+          "dateRegistered": "Jul 8, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Justin Lee"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Justin Lee",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0016O000034YLkzQAG",
+      "sfAccountName": "JCM Telecom"
+    },
+    {
+      "account": "LightSpar",
+      "registeredCompanyNames": [
+        "LightSpar"
+      ],
+      "assignedAm": "Sarah McGovern",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "New Rev.io"
+      ],
+      "registrants": [
+        {
+          "name": "Bob Bouquet",
+          "title": "CFO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ingrid Beard",
+          "dateRegistered": "Aug 7, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Ingrid Beard"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Ingrid Beard",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001HNQB2AAP",
+      "sfAccountName": "LightSpar"
+    },
+    {
+      "account": "Mach Networks",
+      "registeredCompanyNames": [
+        "MACH Networks"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "New Rev.io"
+      ],
+      "registrants": [
+        {
+          "name": "Paula Anderson",
+          "title": "Director",
+          "department": "Sales/Marketing",
+          "rank": "Director",
+          "email": "",
+          "referral": "Jamie Butler",
+          "dateRegistered": "Aug 6, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Jamie Butler"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Jamie Butler",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001ioVPGAA2",
+      "sfAccountName": "MACH Networks"
+    },
+    {
+      "account": "Premier Companies",
+      "registeredCompanyNames": [
+        "Premier Companies"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "New Rev.io"
+      ],
+      "registrants": [
+        {
+          "name": "Mark Bortz",
+          "title": "Founder",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Justin Lee",
+          "dateRegistered": "Jul 15, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Justin Lee"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Justin Lee",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011C00002vv8xkQAA",
+      "sfAccountName": "Premier Companies"
+    },
+    {
+      "account": "Public Telephone Company",
+      "registeredCompanyNames": [
+        "Public Telephone Company"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "",
+      "products": {
+        "Billing": true,
+        "New Rev.io": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "New Rev.io"
+      ],
+      "registrants": [
+        {
+          "name": "Darrell Lopez",
+          "title": "Chief Executive Officer",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Cam Sharpe",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Cam Sharpe"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Cam Sharpe",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011C00002jZHI9QAO",
+      "sfAccountName": "Public Telephone Company"
+    },
+    {
+      "account": "Spectrotel",
+      "registeredCompanyNames": [
+        "Spectrotel"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "New Rev.io"
+      ],
+      "registrants": [
+        {
+          "name": "Mitch Wright",
+          "title": "VP of IT",
+          "department": "IT/Engineering",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Jamie Butler",
+          "dateRegistered": "Aug 6, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Jamie Butler"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Jamie Butler",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001HNPjiAAH",
+      "sfAccountName": "Spectrotel"
+    },
+    {
+      "account": "Tailwinds Voice & Data, Inc.",
+      "registeredCompanyNames": [
+        "TailWind Voice & Data"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active, Raving Fan",
+      "products": {
+        "Billing": true,
+        "New Rev.io": true,
+        "Payments": false
+      },
+      "productsRaw": "Billing, PSA Web",
+      "missing": [
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Tom Murphy",
+          "title": "Senior Vice President",
+          "department": "C-Suite",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "",
+          "dateRegistered": "Mar 31, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Ryan Burton",
+      "originalCohort": "Rev.io Billing",
+      "usesBroadworks": false,
+      "missingCount": 1,
+      "hasMissingProducts": true,
+      "sfAccountId": "0011500001HNPyFAAX",
+      "sfAccountName": "Tailwinds Voice & Data"
+    },
+    {
+      "account": "Bridge Communications, LLC",
+      "registeredCompanyNames": [
+        "Bridge Communications"
+      ],
+      "assignedAm": "jacob.williams",
+      "status": "Active",
+      "products": {
+        "Billing": true,
+        "New Rev.io": true,
+        "Payments": true
+      },
+      "productsRaw": "Billing, PSA Web, Payments",
+      "missing": [],
+      "registrants": [
+        {
+          "name": "Lauren Otts",
+          "title": "Customer Success Specialist",
+          "department": "Operations/Support",
+          "rank": "Non-Manager",
+          "email": "",
+          "referral": "Jakob Champion",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Matt Pridemore",
+          "title": "Managing Partner",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Jakob Champion",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Matt Otts",
+          "title": "Partner",
+          "department": "Sales/Marketing",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Jakob Champion",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Mike Hancock",
+          "title": "Managing Partner",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Jakob Champion",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Jakob Champion"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 4,
+      "targetOwner": "Jakob Champion",
+      "originalCohort": "Tigerpaw",
+      "usesBroadworks": false,
+      "missingCount": 0,
+      "hasMissingProducts": false,
+      "sfAccountId": "0011500001eNpDxAAK",
+      "sfAccountName": "Bridge Communications"
     }
   ],
   "rollup": [
@@ -3102,151 +3014,151 @@
       "owner": "Blaine Villafuerte",
       "accounts": 7,
       "attendees": 18,
-      "missingOpportunities": 26
-    },
-    {
-      "owner": "Ryan Koontz",
-      "accounts": 7,
-      "attendees": 10,
-      "missingOpportunities": 26
+      "missingOpportunities": 16
     },
     {
       "owner": "Justin Lee",
       "accounts": 7,
       "attendees": 11,
-      "missingOpportunities": 23
+      "missingOpportunities": 10
+    },
+    {
+      "owner": "Ryan Koontz",
+      "accounts": 6,
+      "attendees": 9,
+      "missingOpportunities": 10
     },
     {
       "owner": "Ryan Burton",
       "accounts": 7,
       "attendees": 12,
-      "missingOpportunities": 22
+      "missingOpportunities": 9
     },
     {
       "owner": "Jamie Butler",
       "accounts": 5,
       "attendees": 8,
-      "missingOpportunities": 18
+      "missingOpportunities": 8
     },
     {
       "owner": "Rachael Buchtan",
       "accounts": 3,
       "attendees": 7,
-      "missingOpportunities": 11
+      "missingOpportunities": 5
     },
     {
       "owner": "Shane Frost",
       "accounts": 3,
       "attendees": 4,
-      "missingOpportunities": 11
+      "missingOpportunities": 5
     },
     {
       "owner": "Ingrid Beard",
       "accounts": 3,
       "attendees": 5,
-      "missingOpportunities": 10
-    },
-    {
-      "owner": "Jakob Champion",
-      "accounts": 3,
-      "attendees": 9,
-      "missingOpportunities": 8
-    },
-    {
-      "owner": "Reid Doster",
-      "accounts": 2,
-      "attendees": 5,
-      "missingOpportunities": 6
-    },
-    {
-      "owner": "Cam Sharpe",
-      "accounts": 2,
-      "attendees": 3,
-      "missingOpportunities": 6
+      "missingOpportunities": 4
     },
     {
       "owner": "Jacob Williams",
       "accounts": 1,
       "attendees": 3,
-      "missingOpportunities": 4
+      "missingOpportunities": 3
     },
     {
       "owner": "Jacob Willimas",
       "accounts": 1,
       "attendees": 3,
-      "missingOpportunities": 4
-    },
-    {
-      "owner": "Bryan Bettiol",
-      "accounts": 1,
-      "attendees": 2,
-      "missingOpportunities": 4
+      "missingOpportunities": 3
     },
     {
       "owner": "Jaylin Bender",
       "accounts": 1,
       "attendees": 2,
-      "missingOpportunities": 4
-    },
-    {
-      "owner": "Lorrie Browne",
-      "accounts": 1,
-      "attendees": 2,
-      "missingOpportunities": 4
+      "missingOpportunities": 3
     },
     {
       "owner": "Rinor Berisha",
       "accounts": 1,
       "attendees": 2,
-      "missingOpportunities": 4
-    },
-    {
-      "owner": "Roman Rudzik",
-      "accounts": 1,
-      "attendees": 2,
-      "missingOpportunities": 4
-    },
-    {
-      "owner": "Unassigned",
-      "accounts": 1,
-      "attendees": 2,
-      "missingOpportunities": 4
-    },
-    {
-      "owner": "Jeremy Adams",
-      "accounts": 1,
-      "attendees": 1,
-      "missingOpportunities": 4
+      "missingOpportunities": 3
     },
     {
       "owner": "Katerra Stephenson-Greenwood",
       "accounts": 1,
       "attendees": 1,
-      "missingOpportunities": 4
+      "missingOpportunities": 3
+    },
+    {
+      "owner": "Jakob Champion",
+      "accounts": 3,
+      "attendees": 9,
+      "missingOpportunities": 2
+    },
+    {
+      "owner": "Reid Doster",
+      "accounts": 2,
+      "attendees": 5,
+      "missingOpportunities": 2
+    },
+    {
+      "owner": "Cam Sharpe",
+      "accounts": 2,
+      "attendees": 3,
+      "missingOpportunities": 2
+    },
+    {
+      "owner": "Bryan Bettiol",
+      "accounts": 1,
+      "attendees": 2,
+      "missingOpportunities": 2
+    },
+    {
+      "owner": "Lorrie Browne",
+      "accounts": 1,
+      "attendees": 2,
+      "missingOpportunities": 2
+    },
+    {
+      "owner": "Roman Rudzik",
+      "accounts": 1,
+      "attendees": 2,
+      "missingOpportunities": 2
+    },
+    {
+      "owner": "Unassigned",
+      "accounts": 1,
+      "attendees": 2,
+      "missingOpportunities": 2
+    },
+    {
+      "owner": "Jeremy Adams",
+      "accounts": 1,
+      "attendees": 1,
+      "missingOpportunities": 2
     },
     {
       "owner": "Olivia Sandefur",
       "accounts": 1,
       "attendees": 1,
-      "missingOpportunities": 4
+      "missingOpportunities": 2
     },
     {
       "owner": "Sarah McGovern",
       "accounts": 1,
       "attendees": 1,
-      "missingOpportunities": 4
+      "missingOpportunities": 2
     },
     {
       "owner": "Rachel Buchtan",
       "accounts": 1,
       "attendees": 4,
-      "missingOpportunities": 3
+      "missingOpportunities": 1
     },
     {
       "owner": "Katerra Greenwood",
       "accounts": 1,
       "attendees": 3,
-      "missingOpportunities": 3
+      "missingOpportunities": 1
     }
   ],
   "unmatched": [
@@ -3363,6 +3275,12 @@
       "company": "True Choice Technology",
       "referral": "Reid Doster",
       "dateRegistered": "2026-08-06"
+    },
+    {
+      "name": "Lucy Shriver",
+      "company": "YorN Sales Training",
+      "referral": "Ryan Koontz",
+      "dateRegistered": "2026-08-26"
     }
   ],
   "ignoredSponsorRegistrants": [
