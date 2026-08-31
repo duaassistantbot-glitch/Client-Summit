@@ -15,7 +15,12 @@ const PRODUCTS = ['Billing', 'New Rev.io', 'Payments'];
 const PRODUCT_SOURCE_LABELS = { 'New Rev.io': 'PSA Web' };
 const API_VERSION = 'v59.0';
 const EXCLUDED_CODES = new Set(['REVII', 'SUMMITSPONSOR']);
-const EXCLUDED_SPONSOR_COMPANIES = new Set(['ooma', 'kealywalker']);
+const EXCLUDED_NON_TARGET_COMPANIES = new Set(['ooma', 'kealywalker', 'yorn sales training', 'crancer', 'the crancer']);
+const MANUAL_SF_LOOKUP_NAMES = new Map([
+  ['aimerica', 'Empire Telecom'],
+  ['southeast telephone', 'SouthEast Telephone'],
+  ['true choice', 'Blueline Telecom']
+]);
 const COMPANY_SUFFIX_RE = /\b(incorporated|inc|llc|l\.l\.c|ltd|limited|corp|corporation|co|company|communications|communication|telecom|technologies|technology|solutions|services|service|systems|group|direct|usa|c\/o)\b/g;
 const GENERIC_SINGLE_MATCH_TOKENS = new Set(['telephone', 'phone', 'voice', 'network', 'networks', 'security', 'secure', 'data', 'digital', 'global', 'premier', 'southeast', 'technology', 'technologies', 'solution', 'solutions', 'system', 'systems']);
 const GENERIC_CLIENT_CODE_TOKENS = new Set(['demo', 'training', 'sales', 'template', 'product', 'solutions', 'solution', 'inventory', 'sandbox', 'testdrive', 'learn']);
@@ -35,6 +40,14 @@ function normalizeCompany(value) {
     .replace(COMPANY_SUFFIX_RE, ' ')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+function manualSfLookupName(company) {
+  const norm = normalizeCompany(company);
+  for (const [key, value] of MANUAL_SF_LOOKUP_NAMES.entries()) {
+    if (norm === key || norm.includes(key)) return value;
+  }
+  return text(company);
 }
 
 function canonicalToken(token) {
@@ -68,6 +81,15 @@ function splitProducts(value) {
   if (/billing/.test(raw)) set.add('Billing');
   if (/psa\s*web|psa/.test(raw)) set.add('New Rev.io');
   if (/payment/.test(raw)) set.add('Payments');
+  return [...set];
+}
+
+function productsFromSfSignals(sfAccount, opps = []) {
+  const set = new Set();
+  const fields = [sfAccount?.Billing_Platform__c, sfAccount?.Current_Platform__c, sfAccount?.PSA_Platform__c, ...(opps.filter(o => o.IsWon).flatMap(o => [o.Name, o.Type, o.Product_Type__c]))].join(' ').toLowerCase();
+  if (/billing|rev\.io|revio/.test(fields)) set.add('Billing');
+  if (/psa|new rev\.io|new revio/.test(fields) || sfAccount?.PSA_Web__c) set.add('New Rev.io');
+  if (/payment/.test(fields)) set.add('Payments');
   return [...set];
 }
 
@@ -215,12 +237,14 @@ async function loadSalesforceAccountData(accounts) {
   }
   if (!token) return { byKey: new Map(), available: false, error: 'Salesforce credentials unavailable' };
 
+  const directIds = [...new Set(accounts.map(account => account.sfAccountId).filter(Boolean))];
+  const directIdClause = directIds.length ? `Id IN (${directIds.map(id => `'${soqlString(id)}'`).join(',')}) OR` : '';
   const sfAccounts = await sfQuery(token, `
     SELECT Id, Name, Client_Code__c, Owner.Name, TigerPaw_Account_Status__c, Tigerpaw__c, Odin__c,
            Odin_Account_Status__c, Broadsoft_Type__c, Billing_Platform__c, Current_Platform__c,
            PSA_Web__c, PSA_Platform__c
     FROM Account
-    WHERE Client_Code__c != null
+    WHERE ${directIdClause} Client_Code__c != null
        OR TigerPaw_Account_Status__c != null
        OR Tigerpaw__c = true
        OR Odin__c = true
@@ -292,7 +316,117 @@ async function loadSalesforceAccountData(accounts) {
   return { byKey, available: true, matchedAccounts: byKey.size, queriedAccounts: sfAccounts.length, eventAccounts: eventsByAccount.size, eventCount: [...eventsByAccount.values()].reduce((sum, rows) => sum + rows.length, 0) };
 }
 
+async function loadSalesforceFallbackClientRows(companies, existingClientRows) {
+  const unmatchedCompanies = [...new Set(companies)]
+    .filter(company => !matchClient(company, existingClientRows))
+    .filter(company => !EXCLUDED_NON_TARGET_COMPANIES.has(normalizeCompany(company)));
+  if (!unmatchedCompanies.length) return { rows: [], source: { attemptedCompanies: 0, matchedCompanies: 0 } };
+
+  let token;
+  try {
+    token = await getSalesforceToken();
+  } catch (error) {
+    console.warn(`Salesforce fallback matching failed: ${error.message}`);
+    return { rows: [], source: { attemptedCompanies: unmatchedCompanies.length, matchedCompanies: 0, error: error.message } };
+  }
+  if (!token) return { rows: [], source: { attemptedCompanies: unmatchedCompanies.length, matchedCompanies: 0, error: 'Salesforce credentials unavailable' } };
+
+  const rows = [];
+  for (const company of unmatchedCompanies) {
+    const lookupName = manualSfLookupName(company);
+    const candidates = await findSalesforceAccountCandidates(token, company, lookupName);
+    const best = chooseBestSalesforceCandidate(company, lookupName, candidates);
+    if (!best) continue;
+
+    const scoredCandidates = [];
+    for (const candidate of candidates.filter(c => normalizeCompany(c.Name) === normalizeCompany(best.Name))) {
+      const candidateOpps = await sfQuery(token, `
+        SELECT Id, AccountId, Name, Type, Product_Type__c, StageName, IsWon, CloseDate, CreatedDate
+        FROM Opportunity
+        WHERE AccountId = '${soqlString(candidate.Id)}'
+        ORDER BY CloseDate ASC, CreatedDate ASC
+      `);
+      const candidateProducts = productsFromSfSignals(candidate, candidateOpps);
+      scoredCandidates.push({ candidate, opps: candidateOpps, products: candidateProducts });
+    }
+    const selected = scoredCandidates.sort((a, b) => b.products.length - a.products.length || b.opps.filter(o => o.IsWon).length - a.opps.filter(o => o.IsWon).length)[0] || { candidate: best, opps: [], products: [] };
+    const bestAccount = selected.candidate;
+    const products = selected.products;
+    rows.push({
+      Client: company,
+      Status: '',
+      'Assigned AM': bestAccount.Owner?.Name || 'Unassigned',
+      'Rev.io Product': products.join(', '),
+      products,
+      normalizedClient: normalizeCompany(company),
+      clientTokens: tokens(company),
+      clientCodeTokens: [],
+      sfFallback: true,
+      sfLookupName: lookupName,
+      sfAccountId: bestAccount.Id,
+      sfAccountName: bestAccount.Name
+    });
+  }
+  return { rows, source: { attemptedCompanies: unmatchedCompanies.length, matchedCompanies: rows.length } };
+}
+
+async function findSalesforceAccountCandidates(token, company, lookupName) {
+  const terms = [...new Set([lookupName, company, text(company).replace(/, Inc\.?$/i, ''), text(company).split(/\s+/)[0]].filter(Boolean))];
+  const byId = new Map();
+  for (const term of terms) {
+    const like = `%${soqlString(term)}%`;
+    const accounts = await sfQuery(token, `
+      SELECT Id, Name, Owner.Name, Client_Code__c, TigerPaw_Account_Status__c, Tigerpaw__c, Odin__c,
+             Odin_Account_Status__c, Broadsoft_Type__c, Billing_Platform__c, Current_Platform__c,
+             PSA_Web__c, PSA_Platform__c
+      FROM Account
+      WHERE Name LIKE '${like}' OR Client_Code__c LIKE '${like}'
+      LIMIT 20
+    `);
+    for (const account of accounts) byId.set(account.Id, account);
+
+    const opps = await sfQuery(token, `
+      SELECT AccountId, Account.Name, Account.Owner.Name, Account.Client_Code__c, Account.TigerPaw_Account_Status__c,
+             Account.Tigerpaw__c, Account.Odin__c, Account.Odin_Account_Status__c, Account.Broadsoft_Type__c,
+             Account.Billing_Platform__c, Account.Current_Platform__c, Account.PSA_Web__c, Account.PSA_Platform__c
+      FROM Opportunity
+      WHERE Name LIKE '${like}' OR Client_Name__c LIKE '${like}' OR Account.Name LIKE '${like}'
+      ORDER BY IsWon DESC, CloseDate DESC
+      LIMIT 20
+    `);
+    for (const opp of opps) {
+      if (!opp.AccountId || !opp.Account) continue;
+      byId.set(opp.AccountId, { Id: opp.AccountId, ...opp.Account });
+    }
+  }
+  return [...byId.values()];
+}
+
+function chooseBestSalesforceCandidate(company, lookupName, candidates) {
+  if (!candidates.length) return null;
+  const companyNorm = normalizeCompany(company);
+  const lookupNorm = normalizeCompany(lookupName);
+  let best = null;
+  for (const account of candidates) {
+    const nameNorm = normalizeCompany(account.Name);
+    let score = 0;
+    if (nameNorm === lookupNorm) score = 1;
+    else if (nameNorm === companyNorm) score = 0.99;
+    else if (lookupNorm.length > 3 && nameNorm.includes(lookupNorm)) score = 0.92;
+    else if (companyNorm.length > 3 && nameNorm.includes(companyNorm)) score = 0.9;
+    else {
+      const a = new Set(tokens(lookupName));
+      const b = new Set(tokens(account.Name));
+      const inter = [...a].filter(t => b.has(t)).length;
+      score = inter / Math.max(1, Math.min(a.size, b.size));
+    }
+    if (!best || score > best.score) best = { ...account, score };
+  }
+  return best && best.score >= 0.75 ? best : null;
+}
+
 function matchSalesforceAccount(account, sfAccounts) {
+  if (account.sfAccountId) return sfAccounts.find(sf => sf.Id === account.sfAccountId) || null;
   const codeParts = text(account.clientCode).split(',').map(c => normalizeCompany(c)).filter(Boolean);
   let best = null;
   for (const sf of sfAccounts) {
@@ -349,11 +483,15 @@ async function main() {
   const summit = JSON.parse(fs.readFileSync(summitDataPath, 'utf8'));
   const clientRows = await loadClientRows();
   const clientCount = clientRows.length;
-
-  const targetedRegistrants = summit.registrants
+  const eligibleRegistrants = summit.registrants
     .filter(r => normalizeCode(r.discountCode) && !EXCLUDED_CODES.has(normalizeCode(r.discountCode)))
+    .filter(r => !EXCLUDED_NON_TARGET_COMPANIES.has(normalizeCompany(r.company)));
+  const sfFallback = await loadSalesforceFallbackClientRows(eligibleRegistrants.map(r => r.company), clientRows);
+  const allClientRows = [...clientRows, ...sfFallback.rows];
+
+  const targetedRegistrants = eligibleRegistrants
     .map(r => {
-      const match = matchClient(r.company, clientRows);
+      const match = matchClient(r.company, allClientRows);
       if (!match) return { ...r, match: null };
       const have = new Set(match.client.products);
       const missing = PRODUCTS.filter(p => !have.has(p));
@@ -363,6 +501,10 @@ async function main() {
           client: match.client.Client,
           status: match.client.Status,
           assignedAm: match.client['Assigned AM'],
+          sfFallback: Boolean(match.client.sfFallback),
+          sfLookupName: match.client.sfLookupName || '',
+          sfAccountId: match.client.sfAccountId || '',
+          sfAccountName: match.client.sfAccountName || '',
           clientCode: match.client['Client Code'],
           products: PRODUCTS.reduce((acc, p) => ({ ...acc, [p]: have.has(p) }), {}),
           productsRaw: match.client['Rev.io Product'],
@@ -382,6 +524,10 @@ async function main() {
         assignedAm: r.match.assignedAm || 'Unassigned',
         status: r.match.status || '',
         clientCode: r.match.clientCode || '',
+        sfFallback: Boolean(r.match.sfFallback),
+        sfLookupName: r.match.sfLookupName || '',
+        sfAccountId: r.match.sfAccountId || '',
+        sfAccountName: r.match.sfAccountName || '',
         products: r.match.products,
         productsRaw: r.match.productsRaw,
         missing: r.match.missing,
@@ -447,8 +593,9 @@ async function main() {
   }
   const rollup = [...referrerRollup.values()].sort((a, b) => b.missingOpportunities - a.missingOpportunities || b.attendees - a.attendees || a.owner.localeCompare(b.owner));
 
-  const ignoredSponsorRegistrants = targetedRegistrants
-    .filter(r => !r.match && EXCLUDED_SPONSOR_COMPANIES.has(normalizeCompany(r.company)))
+  const ignoredSponsorRegistrants = summit.registrants
+    .filter(r => normalizeCode(r.discountCode) && !EXCLUDED_CODES.has(normalizeCode(r.discountCode)))
+    .filter(r => EXCLUDED_NON_TARGET_COMPANIES.has(normalizeCompany(r.company)))
     .map(r => ({
       name: r.name,
       company: r.company,
@@ -458,7 +605,7 @@ async function main() {
     .sort((a, b) => a.company.localeCompare(b.company));
 
   const unmatched = targetedRegistrants
-    .filter(r => !r.match && !EXCLUDED_SPONSOR_COMPANIES.has(normalizeCompany(r.company)))
+    .filter(r => !r.match && !EXCLUDED_NON_TARGET_COMPANIES.has(normalizeCompany(r.company)))
     .map(r => ({
       name: r.name,
       company: r.company,
@@ -472,11 +619,12 @@ async function main() {
       summitData: path.relative(repoDir, summitDataPath),
       clientProducts: path.relative(repoDir, clientCsvPath),
       salesforceCohorts: sfCohorts,
+      salesforceFallbackMatches: sfFallback.source,
       liveNotionAccess: false,
       liveNotionNote: 'Notion API returned object_not_found/not shared; used cached CSV export for the same Notion page ID.'
     },
     rules: {
-      accountFilter: 'Registrant has a non-empty discount code other than REVII or SUMMITSPONSOR, then company is matched to Master Client List. Ooma and KealyWalker are ignored as sponsors if unmatched.',
+      accountFilter: 'Registrant has a non-empty discount code other than REVII or SUMMITSPONSOR, then company is matched to Master Client List with Salesforce Account/Opportunity fallback. Ooma, KealyWalker, YorN Sales Training, and The Crancer Group are ignored as non-target sponsor/speaker records.',
       products: PRODUCTS
     },
     summary: {
@@ -489,6 +637,7 @@ async function main() {
       missingProductOpportunities: accounts.reduce((sum, a) => sum + a.missingCount, 0),
       unmatchedRegistrants: unmatched.length,
       ignoredSponsorRegistrants: ignoredSponsorRegistrants.length,
+      sfFallbackMatchedAccounts: sfFallback.rows.length,
       clientMasterRows: clientCount
     },
     accounts,
@@ -576,7 +725,7 @@ main{max-width:1400px;margin:-26px auto 60px;padding:0 20px}.stats{display:grid;
 <header class="hero"><div class="wrap"><div class="eyebrow">Rev.io Summit 2026 · Client Targeting</div><h1>Client target dashboard</h1><p>Account-level view of Summit attendees who used non-sponsor/non-REVII discount codes, matched to the Master Client List products so referrers know which clients they own and which products to target onsite.</p><div class="meta"><span class="pill">Excludes REVII</span><span class="pill">Excludes SUMMITSPONSOR</span><span class="pill">Targets: Billing · New Rev.io · Payments</span><span class="pill">Cohort from Salesforce</span><span class="pill">Generated ${htmlEscape(new Date(data.generatedAt).toLocaleString('en-US', { timeZone: 'UTC', dateStyle: 'medium', timeStyle: 'short' }))} UTC</span></div></div></header>
 <main>
 <section class="stats">
-${stat('Target accounts', data.summary.targetAccounts)}${stat('Matched attendees', data.summary.matchedClientRegistrants, `${data.summary.discountedNonSponsorRegistrants} discounted non-sponsor registrants`)}${stat('Referrers / owners', data.summary.referrers)}${stat('Accounts missing products', data.summary.accountsWithMissingProducts)}${stat('Missing product opps', data.summary.missingProductOpportunities)}${stat('Unmatched registrants', data.summary.unmatchedRegistrants, `${data.summary.ignoredSponsorRegistrants} sponsor registrants ignored`)}
+${stat('Target accounts', data.summary.targetAccounts)}${stat('Matched attendees', data.summary.matchedClientRegistrants, `${data.summary.discountedNonSponsorRegistrants} discounted non-sponsor registrants`)}${stat('Referrers / owners', data.summary.referrers)}${stat('Accounts missing products', data.summary.accountsWithMissingProducts)}${stat('Missing product opps', data.summary.missingProductOpportunities)}${stat('Unmatched registrants', data.summary.unmatchedRegistrants, `${data.summary.ignoredSponsorRegistrants} sponsor/speaker records ignored`)}
 </section>
 <section class="panel"><div class="actions"><div><h2>Target account list</h2><div class="note">Owners show Referral Owner, Salesforce Account Owner, and AM Owner. Product checks come from Master Client List “Rev.io Product”; New Rev.io maps to PSA Web. Original cohort is pulled from Salesforce; Tigerpaw cohort is driven by PSA Account Status. Meetings are Salesforce Events dated Sep 1–3, 2026.</div></div><a class="download" href="assets/data/summit-target-accounts.csv">Download CSV</a></div>
 <div class="controls"><input id="search" placeholder="Search account, attendee, owner…"><select id="owner"><option value="">All owners</option>${data.rollup.map(r => `<option>${htmlEscape(r.owner)}</option>`).join('')}</select><select id="missing"><option value="">All missing products</option>${PRODUCTS.map(p => `<option>${htmlEscape(p)}</option>`).join('')}<option value="none">No missing products</option></select><select id="have"><option value="">All current products</option>${PRODUCTS.map(p => `<option>${htmlEscape(p)}</option>`).join('')}</select></div>

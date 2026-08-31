@@ -1,21 +1,25 @@
 {
-  "generatedAt": "2026-08-31T12:56:37.038Z",
+  "generatedAt": "2026-08-31T14:51:05.999Z",
   "source": {
     "summitData": "assets/data/summit-data.json",
     "clientProducts": "../exports/gmail-attachments/1783436761907-master-client-list-a2654cf0c7e34c57bff58f4ea63d241f_all.csv",
     "salesforceCohorts": {
       "byKey": {},
       "available": true,
-      "matchedAccounts": 56,
-      "queriedAccounts": 3564,
+      "matchedAccounts": 65,
+      "queriedAccounts": 3570,
       "eventAccounts": 10,
       "eventCount": 11
+    },
+    "salesforceFallbackMatches": {
+      "attemptedCompanies": 10,
+      "matchedCompanies": 9
     },
     "liveNotionAccess": false,
     "liveNotionNote": "Notion API returned object_not_found/not shared; used cached CSV export for the same Notion page ID."
   },
   "rules": {
-    "accountFilter": "Registrant has a non-empty discount code other than REVII or SUMMITSPONSOR, then company is matched to Master Client List. Ooma and KealyWalker are ignored as sponsors if unmatched.",
+    "accountFilter": "Registrant has a non-empty discount code other than REVII or SUMMITSPONSOR, then company is matched to Master Client List with Salesforce Account/Opportunity fallback. Ooma, KealyWalker, YorN Sales Training, and The Crancer Group are ignored as non-target sponsor/speaker records.",
     "products": [
       "Billing",
       "New Rev.io",
@@ -24,14 +28,15 @@
   },
   "summary": {
     "sourceRegistrants": 224,
-    "discountedNonSponsorRegistrants": 130,
-    "matchedClientRegistrants": 106,
-    "targetAccounts": 57,
-    "referrers": 25,
-    "accountsWithMissingProducts": 56,
-    "missingProductOpportunities": 94,
-    "unmatchedRegistrants": 20,
-    "ignoredSponsorRegistrants": 4,
+    "discountedNonSponsorRegistrants": 124,
+    "matchedClientRegistrants": 123,
+    "targetAccounts": 66,
+    "referrers": 27,
+    "accountsWithMissingProducts": 64,
+    "missingProductOpportunities": 112,
+    "unmatchedRegistrants": 1,
+    "ignoredSponsorRegistrants": 6,
+    "sfFallbackMatchedAccounts": 9,
     "clientMasterRows": 1074
   },
   "accounts": [
@@ -42,6 +47,10 @@
       ],
       "assignedAm": "Blaine Villafuerte",
       "status": "At Risk",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0016O00003dmuYVQAY",
+      "sfAccountName": "RSS (Restaurant Service Solutions)",
       "products": {
         "Billing": false,
         "New Rev.io": false,
@@ -119,9 +128,7 @@
         }
       ],
       "missingCount": 3,
-      "hasMissingProducts": true,
-      "sfAccountId": "0016O00003dmuYVQAY",
-      "sfAccountName": "RSS (Restaurant Service Solutions)"
+      "hasMissingProducts": true
     },
     {
       "account": "Homeland Technology Group",
@@ -130,6 +137,10 @@
       ],
       "assignedAm": "jacob.williams",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0016O00003dmuQ5QAI",
+      "sfAccountName": "Homeland Technology Group",
       "products": {
         "Billing": false,
         "New Rev.io": false,
@@ -189,9 +200,67 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 3,
-      "hasMissingProducts": true,
-      "sfAccountId": "0016O00003dmuQ5QAI",
-      "sfAccountName": "Homeland Technology Group"
+      "hasMissingProducts": true
+    },
+    {
+      "account": "AppDirect",
+      "registeredCompanyNames": [
+        "AppDirect"
+      ],
+      "assignedAm": "Katerra Stephenson Greenwood",
+      "status": "",
+      "sfFallback": true,
+      "sfLookupName": "AppDirect",
+      "sfAccountId": "001PX0000075K71YAE",
+      "sfAccountName": "Appdirect",
+      "products": {
+        "Billing": false,
+        "New Rev.io": false,
+        "Payments": false
+      },
+      "productsRaw": "",
+      "missing": [
+        "Billing",
+        "New Rev.io",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Amy Shirey",
+          "title": "Billing Operations Manager",
+          "department": "Finance/Billing",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Ryan Burton",
+          "dateRegistered": "Jul 16, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Brittany Clester",
+          "title": "Director of Finance",
+          "department": "Finance/Billing",
+          "rank": "Director",
+          "email": "",
+          "referral": "Ryan Burton",
+          "dateRegistered": "Jul 16, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Ryan Burton"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "referralOwner": "Ryan Burton",
+      "targetOwner": "Ryan Burton",
+      "originalCohort": "Rev.io Billing",
+      "accountOwner": "Katerra Stephenson Greenwood",
+      "usesBroadworks": false,
+      "summitEvents": [],
+      "missingCount": 3,
+      "hasMissingProducts": true
     },
     {
       "account": "Centerpoint IT, Inc",
@@ -200,6 +269,10 @@
       ],
       "assignedAm": "rinor.berisha",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0016O00003dmuLAQAY",
+      "sfAccountName": "Centerpoint IT",
       "products": {
         "Billing": false,
         "New Rev.io": false,
@@ -247,9 +320,67 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 3,
-      "hasMissingProducts": true,
-      "sfAccountId": "0016O00003dmuLAQAY",
-      "sfAccountName": "Centerpoint IT"
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Gamut",
+      "registeredCompanyNames": [
+        "Gamut"
+      ],
+      "assignedAm": "Justin Lee",
+      "status": "",
+      "sfFallback": true,
+      "sfLookupName": "Gamut",
+      "sfAccountId": "001PX00000S11uuYAB",
+      "sfAccountName": "Gamut, LLC",
+      "products": {
+        "Billing": false,
+        "New Rev.io": false,
+        "Payments": false
+      },
+      "productsRaw": "",
+      "missing": [
+        "Billing",
+        "New Rev.io",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Alyssa Hutchinson",
+          "title": "Client and Project Operations Associate",
+          "department": "Unspecified",
+          "rank": "Unspecified",
+          "email": "",
+          "referral": "Cam Sharpe",
+          "dateRegistered": "May 14, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Brendan English",
+          "title": "Client and Project Operations Manager",
+          "department": "Other",
+          "rank": "Director",
+          "email": "",
+          "referral": "Cam Sharpe",
+          "dateRegistered": "May 14, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Cam Sharpe"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "referralOwner": "Cam Sharpe",
+      "targetOwner": "Cam Sharpe",
+      "originalCohort": "Rev.io Billing",
+      "accountOwner": "Justin Lee",
+      "usesBroadworks": false,
+      "summitEvents": [],
+      "missingCount": 3,
+      "hasMissingProducts": true
     },
     {
       "account": "ICS Communications",
@@ -258,6 +389,10 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001HNQIWAA5",
+      "sfAccountName": "ICS Communications",
       "products": {
         "Billing": false,
         "New Rev.io": false,
@@ -305,9 +440,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 3,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001HNQIWAA5",
-      "sfAccountName": "ICS Communications"
+      "hasMissingProducts": true
     },
     {
       "account": "Minuteman Security Technologies, Inc.",
@@ -316,6 +449,10 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0016O00003dmuU7QAI",
+      "sfAccountName": "Minuteman Security Technologies",
       "products": {
         "Billing": false,
         "New Rev.io": false,
@@ -363,9 +500,165 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 3,
-      "hasMissingProducts": true,
-      "sfAccountId": "0016O00003dmuU7QAI",
-      "sfAccountName": "Minuteman Security Technologies"
+      "hasMissingProducts": true
+    },
+    {
+      "account": "MYSWITCH Communications",
+      "registeredCompanyNames": [
+        "MYSWITCH Communications"
+      ],
+      "assignedAm": "Jamie Butler",
+      "status": "",
+      "sfFallback": true,
+      "sfLookupName": "MYSWITCH Communications",
+      "sfAccountId": "001PX00000ZBAzIYAX",
+      "sfAccountName": "MYSWITCH Communications",
+      "products": {
+        "Billing": false,
+        "New Rev.io": false,
+        "Payments": false
+      },
+      "productsRaw": "",
+      "missing": [
+        "Billing",
+        "New Rev.io",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Brandon Burchard",
+          "title": "President",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Justin Lee",
+          "dateRegistered": "Jul 20, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Brenden Koop",
+          "title": "Service Manager",
+          "department": "Operations/Support",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Justin Lee",
+          "dateRegistered": "Jul 20, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Justin Lee"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "referralOwner": "Justin Lee",
+      "targetOwner": "Justin Lee",
+      "originalCohort": "Rev.io Billing",
+      "accountOwner": "Jamie Butler",
+      "usesBroadworks": false,
+      "summitEvents": [],
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "AvTek Solutions, Inc.",
+      "registeredCompanyNames": [
+        "AvTek Solutions, Inc."
+      ],
+      "assignedAm": "Andy Whisenant",
+      "status": "",
+      "sfFallback": true,
+      "sfLookupName": "AvTek Solutions, Inc.",
+      "sfAccountId": "0016O00003dmp9JQAQ",
+      "sfAccountName": "AvTek Solutions, Inc",
+      "products": {
+        "Billing": false,
+        "New Rev.io": false,
+        "Payments": false
+      },
+      "productsRaw": "",
+      "missing": [
+        "Billing",
+        "New Rev.io",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "David Cox",
+          "title": "Chief Security Officer",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Brook Lee",
+          "dateRegistered": "Jul 14, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Brook Lee"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "referralOwner": "Brook Lee",
+      "targetOwner": "Brook Lee",
+      "originalCohort": "Rev.io Billing",
+      "accountOwner": "Andy Whisenant",
+      "usesBroadworks": false,
+      "summitEvents": [],
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Enitech Solutions",
+      "registeredCompanyNames": [
+        "Enitech Solutions"
+      ],
+      "assignedAm": "Connor Flynn",
+      "status": "",
+      "sfFallback": true,
+      "sfLookupName": "Enitech Solutions",
+      "sfAccountId": "0011C00002dwWjIQAU",
+      "sfAccountName": "Enitech Solutions",
+      "products": {
+        "Billing": false,
+        "New Rev.io": false,
+        "Payments": false
+      },
+      "productsRaw": "",
+      "missing": [
+        "Billing",
+        "New Rev.io",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Antwine Jackson",
+          "title": "CEO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Connor Flynn",
+          "dateRegistered": "Aug 12, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Connor Flynn"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "referralOwner": "Connor Flynn",
+      "targetOwner": "Connor Flynn",
+      "originalCohort": "Rev.io Billing",
+      "accountOwner": "Connor Flynn",
+      "usesBroadworks": false,
+      "summitEvents": [],
+      "missingCount": 3,
+      "hasMissingProducts": true
     },
     {
       "account": "J & M Systems LLC",
@@ -374,6 +667,10 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0016O00003dmuQtQAI",
+      "sfAccountName": "J & M Systems LLC",
       "products": {
         "Billing": false,
         "New Rev.io": false,
@@ -410,9 +707,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 3,
-      "hasMissingProducts": true,
-      "sfAccountId": "0016O00003dmuQtQAI",
-      "sfAccountName": "J & M Systems LLC"
+      "hasMissingProducts": true
     },
     {
       "account": "JCT (Johnston Communications Voice & Data)",
@@ -421,6 +716,10 @@
       ],
       "assignedAm": "Blaine Villafuerte",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "001PX000004hVWNYA2",
+      "sfAccountName": "Voice-N-Data Solutions",
       "products": {
         "Billing": false,
         "New Rev.io": false,
@@ -457,9 +756,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 3,
-      "hasMissingProducts": true,
-      "sfAccountId": "001PX000004hVWNYA2",
-      "sfAccountName": "Voice-N-Data Solutions"
+      "hasMissingProducts": true
     },
     {
       "account": "Bank-Tec South",
@@ -468,6 +765,10 @@
       ],
       "assignedAm": "Blaine Villafuerte",
       "status": "Active, Onboarding",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0016O00003doC3SQAU",
+      "sfAccountName": "Bank-Tec South",
       "products": {
         "Billing": false,
         "New Rev.io": true,
@@ -544,9 +845,7 @@
         }
       ],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "0016O00003doC3SQAU",
-      "sfAccountName": "Bank-Tec South"
+      "hasMissingProducts": true
     },
     {
       "account": "BCM ONE C/O InvoiceIQ",
@@ -556,6 +855,10 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001nQiaxAAC",
+      "sfAccountName": "SkySwitch",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -622,9 +925,7 @@
         }
       ],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001nQiaxAAC",
-      "sfAccountName": "SkySwitch"
+      "hasMissingProducts": true
     },
     {
       "account": "ACS Fire & Security",
@@ -633,6 +934,10 @@
       ],
       "assignedAm": "rinor.berisha",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "001PX000004hVnfYAE",
+      "sfAccountName": "ACS Fire & Security",
       "products": {
         "Billing": false,
         "New Rev.io": true,
@@ -680,9 +985,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "001PX000004hVnfYAE",
-      "sfAccountName": "ACS Fire & Security"
+      "hasMissingProducts": true
     },
     {
       "account": "All Secured Security Services",
@@ -691,6 +994,10 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active, Onboarding",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "001PX000002AHZaYAO",
+      "sfAccountName": "All Secured Security Services",
       "products": {
         "Billing": false,
         "New Rev.io": true,
@@ -737,9 +1044,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "001PX000002AHZaYAO",
-      "sfAccountName": "All Secured Security Services"
+      "hasMissingProducts": true
     },
     {
       "account": "C1st Technologies",
@@ -748,6 +1053,10 @@
       ],
       "assignedAm": "Unassigned",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "001PX00000hAr5YYAS",
+      "sfAccountName": "C1st Technologies",
       "products": {
         "Billing": false,
         "New Rev.io": true,
@@ -794,9 +1103,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "001PX00000hAr5YYAS",
-      "sfAccountName": "C1st Technologies"
+      "hasMissingProducts": true
     },
     {
       "account": "Global Data Systems",
@@ -806,6 +1113,10 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "001PX000006YRK9YAO",
+      "sfAccountName": "Global Data Systems, Inc",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -852,9 +1163,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "001PX000006YRK9YAO",
-      "sfAccountName": "Global Data Systems, Inc"
+      "hasMissingProducts": true
     },
     {
       "account": "Hiscall, Inc.",
@@ -863,6 +1172,10 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011C00002xtnRIQAY",
+      "sfAccountName": "Hiscall",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -907,9 +1220,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011C00002xtnRIQAY",
-      "sfAccountName": "Hiscall"
+      "hasMissingProducts": true
     },
     {
       "account": "Hosted America, LLC",
@@ -918,6 +1229,10 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011C00002KRBkAQAX",
+      "sfAccountName": "Hosted America",
       "products": {
         "Billing": false,
         "New Rev.io": true,
@@ -972,9 +1287,7 @@
         }
       ],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011C00002KRBkAQAX",
-      "sfAccountName": "Hosted America"
+      "hasMissingProducts": true
     },
     {
       "account": "Next Step Communications",
@@ -984,6 +1297,10 @@
       ],
       "assignedAm": "Unassigned",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "001PX000002cXwIYAU",
+      "sfAccountName": "Next Step Communications",
       "products": {
         "Billing": false,
         "New Rev.io": true,
@@ -1030,9 +1347,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "001PX000002cXwIYAU",
-      "sfAccountName": "Next Step Communications"
+      "hasMissingProducts": true
     },
     {
       "account": "SpectrumVoIP",
@@ -1041,6 +1356,10 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001HNPj2AAH",
+      "sfAccountName": "SpectrumVoIP",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -1088,9 +1407,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001HNPj2AAH",
-      "sfAccountName": "SpectrumVoIP"
+      "hasMissingProducts": true
     },
     {
       "account": "Viirtue LLC (Apollo)",
@@ -1099,6 +1416,10 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0016O00003QyGNZQA3",
+      "sfAccountName": "Viirtue",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -1145,9 +1466,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "0016O00003QyGNZQA3",
-      "sfAccountName": "Viirtue"
+      "hasMissingProducts": true
     },
     {
       "account": "AVIT",
@@ -1156,6 +1475,10 @@
       ],
       "assignedAm": "Unassigned",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "001PX000004hVOkYAM",
+      "sfAccountName": "AVIT",
       "products": {
         "Billing": false,
         "New Rev.io": true,
@@ -1191,9 +1514,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "001PX000004hVOkYAM",
-      "sfAccountName": "AVIT"
+      "hasMissingProducts": true
     },
     {
       "account": "BluDog Telecom",
@@ -1202,6 +1523,10 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "001PX000004N1qkYAC",
+      "sfAccountName": "BluDog Telecom",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -1237,9 +1562,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "001PX000004N1qkYAC",
-      "sfAccountName": "BluDog Telecom"
+      "hasMissingProducts": true
     },
     {
       "account": "CL Sams Business Solutions LLC",
@@ -1248,6 +1571,10 @@
       ],
       "assignedAm": "Olivia Sandefur",
       "status": "Active, On Hold",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "001PX00000XEo0OYAT",
+      "sfAccountName": "CL Sams",
       "products": {
         "Billing": false,
         "New Rev.io": true,
@@ -1283,9 +1610,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "001PX00000XEo0OYAT",
-      "sfAccountName": "CL Sams"
+      "hasMissingProducts": true
     },
     {
       "account": "Converged Networks",
@@ -1294,6 +1619,10 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011C000021D9oLQAS",
+      "sfAccountName": "Converged Networks",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -1329,9 +1658,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011C000021D9oLQAS",
-      "sfAccountName": "Converged Networks"
+      "hasMissingProducts": true
     },
     {
       "account": "Decibel",
@@ -1340,6 +1667,10 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "",
+      "sfAccountName": "",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -1375,9 +1706,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "",
-      "sfAccountName": ""
+      "hasMissingProducts": true
     },
     {
       "account": "Digital Market POS",
@@ -1386,6 +1715,10 @@
       ],
       "assignedAm": "jacob.williams",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0016O00003ebhSgQAI",
+      "sfAccountName": "Digital Market POS",
       "products": {
         "Billing": false,
         "New Rev.io": true,
@@ -1421,9 +1754,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "0016O00003ebhSgQAI",
-      "sfAccountName": "Digital Market POS"
+      "hasMissingProducts": true
     },
     {
       "account": "K&L Telecom",
@@ -1432,6 +1763,10 @@
       ],
       "assignedAm": "Unassigned",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "001PX00000WBqleYAD",
+      "sfAccountName": "K&L Telecom",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -1467,9 +1802,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "001PX00000WBqleYAD",
-      "sfAccountName": "K&L Telecom"
+      "hasMissingProducts": true
     },
     {
       "account": "Northwest Digits LLC",
@@ -1478,6 +1811,10 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001V2jrcAAB",
+      "sfAccountName": "SoundLine Communications",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -1513,9 +1850,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001V2jrcAAB",
-      "sfAccountName": "SoundLine Communications"
+      "hasMissingProducts": true
     },
     {
       "account": "Raven Tech LLC",
@@ -1524,6 +1859,10 @@
       ],
       "assignedAm": "Olivia Sandefur",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "001PX00000H25JbYAJ",
+      "sfAccountName": "Raven Tech LLC",
       "products": {
         "Billing": false,
         "New Rev.io": true,
@@ -1559,9 +1898,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "001PX00000H25JbYAJ",
-      "sfAccountName": "Raven Tech LLC"
+      "hasMissingProducts": true
     },
     {
       "account": "Southeast Network Specialists LLC",
@@ -1570,6 +1907,10 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0016O00003WDAAYQA5",
+      "sfAccountName": "Southeast Network Specialists",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -1605,9 +1946,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "0016O00003WDAAYQA5",
-      "sfAccountName": "Southeast Network Specialists"
+      "hasMissingProducts": true
     },
     {
       "account": "Southern Telecom",
@@ -1616,6 +1955,10 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001HNProAAH",
+      "sfAccountName": "Southern Telecom",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -1651,9 +1994,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001HNProAAH",
-      "sfAccountName": "Southern Telecom"
+      "hasMissingProducts": true
     },
     {
       "account": "TruLine Technologies",
@@ -1662,6 +2003,10 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "001PX00000gMYEUYA4",
+      "sfAccountName": "TruLine Technologies",
       "products": {
         "Billing": false,
         "New Rev.io": true,
@@ -1695,9 +2040,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "001PX00000gMYEUYA4",
-      "sfAccountName": "TruLine Technologies"
+      "hasMissingProducts": true
     },
     {
       "account": "VTi Communications",
@@ -1706,6 +2049,10 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "001PX00000AENn1YAH",
+      "sfAccountName": "VTi Communications",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -1741,9 +2088,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 2,
-      "hasMissingProducts": true,
-      "sfAccountId": "001PX00000AENn1YAH",
-      "sfAccountName": "VTi Communications"
+      "hasMissingProducts": true
     },
     {
       "account": "Blueline Telecom",
@@ -1752,6 +2097,10 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011C00002KUhaWQAT",
+      "sfAccountName": "Blueline Telecom",
       "products": {
         "Billing": true,
         "New Rev.io": true,
@@ -1819,9 +2168,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011C00002KUhaWQAT",
-      "sfAccountName": "Blueline Telecom"
+      "hasMissingProducts": true
     },
     {
       "account": "MNJ Technologies",
@@ -1831,6 +2178,10 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011C00002G6GNUQA3",
+      "sfAccountName": "MNJ Technologies",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -1907,9 +2258,7 @@
         }
       ],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011C00002G6GNUQA3",
-      "sfAccountName": "MNJ Technologies"
+      "hasMissingProducts": true
     },
     {
       "account": "Vanran Communications",
@@ -1918,6 +2267,10 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active, Onboarding",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011C000021EV9PQAW",
+      "sfAccountName": "VanRan Communications Services, Inc.",
       "products": {
         "Billing": true,
         "New Rev.io": true,
@@ -1993,9 +2346,76 @@
         }
       ],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011C000021EV9PQAW",
-      "sfAccountName": "VanRan Communications Services, Inc."
+      "hasMissingProducts": true
+    },
+    {
+      "account": "AIMERICA",
+      "registeredCompanyNames": [
+        "AIMERICA"
+      ],
+      "assignedAm": "Justin Lee",
+      "status": "",
+      "sfFallback": true,
+      "sfLookupName": "Empire Telecom",
+      "sfAccountId": "0016O00003ZLRUpQAP",
+      "sfAccountName": "Empire Telecom",
+      "products": {
+        "Billing": true,
+        "New Rev.io": true,
+        "Payments": false
+      },
+      "productsRaw": "Billing, New Rev.io",
+      "missing": [
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Charles Drapeau",
+          "title": "CTO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Connor Flynn",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Sean Tishler",
+          "title": "President",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Connor Flynn",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Yan Carter",
+          "title": "General Manager",
+          "department": "Operations/Support",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Connor Flynn",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Connor Flynn"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 3,
+      "referralOwner": "Connor Flynn",
+      "targetOwner": "Connor Flynn",
+      "originalCohort": "Rev.io Billing",
+      "accountOwner": "Justin Lee",
+      "usesBroadworks": false,
+      "summitEvents": [],
+      "missingCount": 1,
+      "hasMissingProducts": true
     },
     {
       "account": "Digital Agent",
@@ -2004,6 +2424,10 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001HNQ9CAAX",
+      "sfAccountName": "Digital Agent",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -2060,9 +2484,76 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001HNQ9CAAX",
-      "sfAccountName": "Digital Agent"
+      "hasMissingProducts": true
+    },
+    {
+      "account": "IMC Jax",
+      "registeredCompanyNames": [
+        "IMC Jax"
+      ],
+      "assignedAm": "Justin Lee",
+      "status": "",
+      "sfFallback": true,
+      "sfLookupName": "IMC Jax",
+      "sfAccountId": "001PX00000ZVzjgYAD",
+      "sfAccountName": "IMC Jax",
+      "products": {
+        "Billing": true,
+        "New Rev.io": true,
+        "Payments": false
+      },
+      "productsRaw": "Billing, New Rev.io",
+      "missing": [
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Corinne Bowden",
+          "title": "Customer Success Advisor",
+          "department": "Operations/Support",
+          "rank": "Non-Manager",
+          "email": "",
+          "referral": "Connor Flynn",
+          "dateRegistered": "Aug 5, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Eric Lewis",
+          "title": "Sales Manager",
+          "department": "Sales/Marketing",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Connor Flynn",
+          "dateRegistered": "Aug 5, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Lori Rockwell",
+          "title": "Customer Success Advisor",
+          "department": "Operations/Support",
+          "rank": "Non-Manager",
+          "email": "",
+          "referral": "Connor Flynn",
+          "dateRegistered": "Aug 5, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Connor Flynn"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 3,
+      "referralOwner": "Connor Flynn",
+      "targetOwner": "Connor Flynn",
+      "originalCohort": "Tigerpaw",
+      "accountOwner": "Justin Lee",
+      "usesBroadworks": false,
+      "summitEvents": [],
+      "missingCount": 1,
+      "hasMissingProducts": true
     },
     {
       "account": "Scipio Technologies",
@@ -2071,6 +2562,10 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001HNQNnAAP",
+      "sfAccountName": "Scipio Technologies (Peace Communications)",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -2127,9 +2622,7 @@
       "usesBroadworks": true,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001HNQNnAAP",
-      "sfAccountName": "Scipio Technologies (Peace Communications)"
+      "hasMissingProducts": true
     },
     {
       "account": "Simplicity VoIP",
@@ -2138,6 +2631,10 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001dyHjsAAE",
+      "sfAccountName": "Simplicity VoIP",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -2202,9 +2699,7 @@
         }
       ],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001dyHjsAAE",
-      "sfAccountName": "Simplicity VoIP"
+      "hasMissingProducts": true
     },
     {
       "account": "TouchTone",
@@ -2213,6 +2708,10 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001HNQItAAP",
+      "sfAccountName": "TouchTone Communications",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -2284,9 +2783,7 @@
         }
       ],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001HNQItAAP",
-      "sfAccountName": "TouchTone Communications"
+      "hasMissingProducts": true
     },
     {
       "account": "CallSprout",
@@ -2295,6 +2792,10 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011C000021GB3QQAW",
+      "sfAccountName": "CallSprout",
       "products": {
         "Billing": true,
         "New Rev.io": true,
@@ -2340,9 +2841,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011C000021GB3QQAW",
-      "sfAccountName": "CallSprout"
+      "hasMissingProducts": true
     },
     {
       "account": "Centra IP Networks",
@@ -2352,6 +2851,10 @@
       ],
       "assignedAm": "Olivia Sandefur",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011C00001sb1uDQAQ",
+      "sfAccountName": "Centra IP Networks",
       "products": {
         "Billing": true,
         "New Rev.io": true,
@@ -2397,9 +2900,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011C00001sb1uDQAQ",
-      "sfAccountName": "Centra IP Networks"
+      "hasMissingProducts": true
     },
     {
       "account": "Grid4 Communications",
@@ -2408,6 +2909,10 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001HNQKeAAP",
+      "sfAccountName": "Grid4 Communications",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -2453,9 +2958,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001HNQKeAAP",
-      "sfAccountName": "Grid4 Communications"
+      "hasMissingProducts": true
     },
     {
       "account": "IPitomy",
@@ -2465,6 +2968,10 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001HNQJIAA5",
+      "sfAccountName": "IPitomy",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -2510,9 +3017,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001HNQJIAA5",
-      "sfAccountName": "IPitomy"
+      "hasMissingProducts": true
     },
     {
       "account": "S-Net Communications, Inc.",
@@ -2521,6 +3026,10 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001HNPlDAAX",
+      "sfAccountName": "S-Net Communications",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -2566,9 +3075,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001HNPlDAAX",
-      "sfAccountName": "S-Net Communications"
+      "hasMissingProducts": true
     },
     {
       "account": "Savvy Communications",
@@ -2578,6 +3085,10 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011C00002dO1CfQAK",
+      "sfAccountName": "Savvy Communications",
       "products": {
         "Billing": true,
         "New Rev.io": true,
@@ -2631,9 +3142,65 @@
         }
       ],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011C00002dO1CfQAK",
-      "sfAccountName": "Savvy Communications"
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Southeast Telephone Service",
+      "registeredCompanyNames": [
+        "Southeast Telephone Service"
+      ],
+      "assignedAm": "Connor Flynn",
+      "status": "",
+      "sfFallback": true,
+      "sfLookupName": "SouthEast Telephone",
+      "sfAccountId": "001PX00000qKI9KYAW",
+      "sfAccountName": "SouthEast Telephone",
+      "products": {
+        "Billing": true,
+        "New Rev.io": true,
+        "Payments": false
+      },
+      "productsRaw": "Billing, New Rev.io",
+      "missing": [
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Dylan Hornaday",
+          "title": "Account Executive",
+          "department": "Operations/Support",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Connor Flynn",
+          "dateRegistered": "Jul 17, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Joshua Faw",
+          "title": "President",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Connor Flynn",
+          "dateRegistered": "Jul 17, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Connor Flynn"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "referralOwner": "Connor Flynn",
+      "targetOwner": "Connor Flynn",
+      "originalCohort": "Rev.io Billing",
+      "accountOwner": "Connor Flynn",
+      "usesBroadworks": false,
+      "summitEvents": [],
+      "missingCount": 1,
+      "hasMissingProducts": true
     },
     {
       "account": "Ten4",
@@ -2642,6 +3209,10 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0016O00003YUGuAQAX",
+      "sfAccountName": "Ten4",
       "products": {
         "Billing": true,
         "New Rev.io": true,
@@ -2687,9 +3258,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0016O00003YUGuAQAX",
-      "sfAccountName": "Ten4"
+      "hasMissingProducts": true
     },
     {
       "account": "Altaworx",
@@ -2698,6 +3267,10 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001KmPCbAAN",
+      "sfAccountName": "Altaworx",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -2732,9 +3305,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001KmPCbAAN",
-      "sfAccountName": "Altaworx"
+      "hasMissingProducts": true
     },
     {
       "account": "Clear Rate Communications",
@@ -2743,6 +3314,10 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001ecpJJAAY",
+      "sfAccountName": "Clear Rate Communications",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -2777,9 +3352,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001ecpJJAAY",
-      "sfAccountName": "Clear Rate Communications"
+      "hasMissingProducts": true
     },
     {
       "account": "Glacier Networks Inc",
@@ -2788,6 +3361,10 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001djcCAAAY",
+      "sfAccountName": "Glacier Networks",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -2822,9 +3399,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001djcCAAAY",
-      "sfAccountName": "Glacier Networks"
+      "hasMissingProducts": true
     },
     {
       "account": "iNet Communications",
@@ -2833,6 +3408,10 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001HNPoRAAX",
+      "sfAccountName": "iNet Communications",
       "products": {
         "Billing": true,
         "New Rev.io": true,
@@ -2867,9 +3446,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001HNPoRAAX",
-      "sfAccountName": "iNet Communications"
+      "hasMissingProducts": true
     },
     {
       "account": "JCM Telecom LLC",
@@ -2878,6 +3455,10 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0016O000034YLkzQAG",
+      "sfAccountName": "JCM Telecom",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -2912,9 +3493,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0016O000034YLkzQAG",
-      "sfAccountName": "JCM Telecom"
+      "hasMissingProducts": true
     },
     {
       "account": "LightSpar",
@@ -2923,6 +3502,10 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001HNQB2AAP",
+      "sfAccountName": "LightSpar",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -2957,9 +3540,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001HNQB2AAP",
-      "sfAccountName": "LightSpar"
+      "hasMissingProducts": true
     },
     {
       "account": "Mach Networks",
@@ -2968,6 +3549,10 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001ioVPGAA2",
+      "sfAccountName": "MACH Networks",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -3002,9 +3587,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001ioVPGAA2",
-      "sfAccountName": "MACH Networks"
+      "hasMissingProducts": true
     },
     {
       "account": "Premier Companies",
@@ -3013,6 +3596,10 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011C00002vv8xkQAA",
+      "sfAccountName": "Premier Companies",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -3047,9 +3634,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011C00002vv8xkQAA",
-      "sfAccountName": "Premier Companies"
+      "hasMissingProducts": true
     },
     {
       "account": "Public Telephone Company",
@@ -3058,6 +3643,10 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011C00002jZHI9QAO",
+      "sfAccountName": "Public Telephone Company",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -3092,9 +3681,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011C00002jZHI9QAO",
-      "sfAccountName": "Public Telephone Company"
+      "hasMissingProducts": true
     },
     {
       "account": "Spectrotel",
@@ -3103,6 +3690,10 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001HNPjiAAH",
+      "sfAccountName": "Spectrotel",
       "products": {
         "Billing": true,
         "New Rev.io": false,
@@ -3137,9 +3728,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001HNPjiAAH",
-      "sfAccountName": "Spectrotel"
+      "hasMissingProducts": true
     },
     {
       "account": "Tailwinds Voice & Data, Inc.",
@@ -3148,6 +3737,10 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active, Raving Fan",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001HNPyFAAX",
+      "sfAccountName": "Tailwinds Voice & Data",
       "products": {
         "Billing": true,
         "New Rev.io": true,
@@ -3180,9 +3773,7 @@
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
-      "hasMissingProducts": true,
-      "sfAccountId": "0011500001HNPyFAAX",
-      "sfAccountName": "Tailwinds Voice & Data"
+      "hasMissingProducts": true
     },
     {
       "account": "Bridge Communications, LLC",
@@ -3191,6 +3782,10 @@
       ],
       "assignedAm": "jacob.williams",
       "status": "Active",
+      "sfFallback": false,
+      "sfLookupName": "",
+      "sfAccountId": "0011500001eNpDxAAK",
+      "sfAccountName": "Bridge Communications",
       "products": {
         "Billing": true,
         "New Rev.io": true,
@@ -3264,9 +3859,52 @@
         }
       ],
       "missingCount": 0,
-      "hasMissingProducts": false,
-      "sfAccountId": "0011500001eNpDxAAK",
-      "sfAccountName": "Bridge Communications"
+      "hasMissingProducts": false
+    },
+    {
+      "account": "True Choice Technology",
+      "registeredCompanyNames": [
+        "True Choice Technology"
+      ],
+      "assignedAm": "Justin Lee",
+      "status": "",
+      "sfFallback": true,
+      "sfLookupName": "Blueline Telecom",
+      "sfAccountId": "0011C00002KUhaWQAT",
+      "sfAccountName": "Blueline Telecom",
+      "products": {
+        "Billing": true,
+        "New Rev.io": true,
+        "Payments": true
+      },
+      "productsRaw": "Billing, New Rev.io, Payments",
+      "missing": [],
+      "registrants": [
+        {
+          "name": "Lori Williams",
+          "title": "President",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Reid Doster",
+          "dateRegistered": "Aug 6, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Reid Doster"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "referralOwner": "Reid Doster",
+      "targetOwner": "Reid Doster",
+      "originalCohort": "Rev.io Billing",
+      "accountOwner": "Justin Lee",
+      "usesBroadworks": false,
+      "summitEvents": [],
+      "missingCount": 0,
+      "hasMissingProducts": false
     }
   ],
   "rollup": [
@@ -3278,9 +3916,15 @@
     },
     {
       "owner": "Justin Lee",
-      "accounts": 7,
-      "attendees": 11,
-      "missingOpportunities": 10
+      "accounts": 8,
+      "attendees": 13,
+      "missingOpportunities": 13
+    },
+    {
+      "owner": "Ryan Burton",
+      "accounts": 8,
+      "attendees": 14,
+      "missingOpportunities": 12
     },
     {
       "owner": "Ryan Koontz",
@@ -3289,21 +3933,27 @@
       "missingOpportunities": 10
     },
     {
-      "owner": "Ryan Burton",
-      "accounts": 7,
-      "attendees": 12,
-      "missingOpportunities": 9
-    },
-    {
       "owner": "Jamie Butler",
       "accounts": 5,
       "attendees": 8,
       "missingOpportunities": 8
     },
     {
+      "owner": "Connor Flynn",
+      "accounts": 4,
+      "attendees": 9,
+      "missingOpportunities": 6
+    },
+    {
       "owner": "Rachael Buchtan",
       "accounts": 3,
       "attendees": 7,
+      "missingOpportunities": 5
+    },
+    {
+      "owner": "Cam Sharpe",
+      "accounts": 3,
+      "attendees": 5,
       "missingOpportunities": 5
     },
     {
@@ -3343,6 +3993,12 @@
       "missingOpportunities": 3
     },
     {
+      "owner": "Brook Lee",
+      "accounts": 1,
+      "attendees": 1,
+      "missingOpportunities": 3
+    },
+    {
       "owner": "Katerra Stephenson-Greenwood",
       "accounts": 1,
       "attendees": 1,
@@ -3356,14 +4012,8 @@
     },
     {
       "owner": "Reid Doster",
-      "accounts": 2,
-      "attendees": 5,
-      "missingOpportunities": 2
-    },
-    {
-      "owner": "Cam Sharpe",
-      "accounts": 2,
-      "attendees": 3,
+      "accounts": 3,
+      "attendees": 6,
       "missingOpportunities": 2
     },
     {
@@ -3423,124 +4073,10 @@
   ],
   "unmatched": [
     {
-      "name": "Charles Drapeau",
-      "company": "AIMERICA",
-      "referral": "Connor Flynn",
-      "dateRegistered": "2026-08-04"
-    },
-    {
-      "name": "Sean Tishler",
-      "company": "AIMERICA",
-      "referral": "Connor Flynn",
-      "dateRegistered": "2026-08-04"
-    },
-    {
-      "name": "Yan Carter",
-      "company": "AIMERICA",
-      "referral": "Connor Flynn",
-      "dateRegistered": "2026-08-04"
-    },
-    {
-      "name": "Amy Shirey",
-      "company": "AppDirect",
-      "referral": "Ryan Burton",
-      "dateRegistered": "2026-07-16"
-    },
-    {
-      "name": "Brittany Clester",
-      "company": "AppDirect",
-      "referral": "Ryan Burton",
-      "dateRegistered": "2026-07-16"
-    },
-    {
-      "name": "David Cox",
-      "company": "AvTek Solutions, Inc.",
-      "referral": "Brook Lee",
-      "dateRegistered": "2026-07-14"
-    },
-    {
-      "name": "Antwine Jackson",
-      "company": "Enitech Solutions",
-      "referral": "Connor Flynn",
-      "dateRegistered": "2026-08-12"
-    },
-    {
-      "name": "Alyssa Hutchinson",
-      "company": "Gamut",
-      "referral": "Cam Sharpe",
-      "dateRegistered": "2026-05-14"
-    },
-    {
-      "name": "Brendan English",
-      "company": "Gamut",
-      "referral": "Cam Sharpe",
-      "dateRegistered": "2026-05-14"
-    },
-    {
-      "name": "Corinne Bowden",
-      "company": "IMC Jax",
-      "referral": "Connor Flynn",
-      "dateRegistered": "2026-08-05"
-    },
-    {
-      "name": "Eric Lewis",
-      "company": "IMC Jax",
-      "referral": "Connor Flynn",
-      "dateRegistered": "2026-08-05"
-    },
-    {
-      "name": "Lori Rockwell",
-      "company": "IMC Jax",
-      "referral": "Connor Flynn",
-      "dateRegistered": "2026-08-05"
-    },
-    {
-      "name": "Brandon Burchard",
-      "company": "MYSWITCH Communications",
-      "referral": "Justin Lee",
-      "dateRegistered": "2026-07-20"
-    },
-    {
-      "name": "Brenden Koop",
-      "company": "MYSWITCH Communications",
-      "referral": "Justin Lee",
-      "dateRegistered": "2026-07-20"
-    },
-    {
       "name": "Frank Rubiano",
       "company": "Rubiano",
       "referral": "Jamie Butler",
       "dateRegistered": "2026-06-04"
-    },
-    {
-      "name": "Dylan Hornaday",
-      "company": "Southeast Telephone Service",
-      "referral": "Connor Flynn",
-      "dateRegistered": "2026-07-17"
-    },
-    {
-      "name": "Joshua Faw",
-      "company": "Southeast Telephone Service",
-      "referral": "Connor Flynn",
-      "dateRegistered": "2026-07-17"
-    },
-    {
-      "name": "Richard Crancer",
-      "company": "The Crancer Group",
-      "referral": "Brook Lee - she won GTIA Member of the Year she is amazing",
-      "dateRegistered": "2026-08-14"
-    },
-    {
-      "name": "Lori Williams",
-      "company": "True Choice Technology",
-      "referral": "Reid Doster",
-      "dateRegistered": "2026-08-06"
-    },
-    {
-      "name": "Lucy Shriver",
-      "company": "YorN Sales Training",
-      "referral": "Ryan Koontz",
-      "dateRegistered": "2026-08-26"
     }
   ],
   "ignoredSponsorRegistrants": [
@@ -3567,6 +4103,18 @@
       "company": "Ooma",
       "referral": "Jake Mitchell",
       "dateRegistered": "2026-08-18"
+    },
+    {
+      "name": "Richard Crancer",
+      "company": "The Crancer Group",
+      "referral": "Brook Lee - she won GTIA Member of the Year she is amazing",
+      "dateRegistered": "2026-08-14"
+    },
+    {
+      "name": "Lucy Shriver",
+      "company": "YorN Sales Training",
+      "referral": "Ryan Koontz",
+      "dateRegistered": "2026-08-26"
     }
   ]
 }
