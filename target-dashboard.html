@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rev.io Summit Client Target Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1D3756;--teal:#2399B5;--green:#6EBE4F;--light:#F5F7FA;--border:#DDE2E8;--body:#3d4d5c;--white:#FFFFFF;}
+*{box-sizing:border-box} body{margin:0;background:var(--light);color:var(--body);font-family:'Open Sans',Arial,sans-serif;} .topbar{height:5px;background:linear-gradient(90deg,var(--teal),var(--green));}
+.hero{background:radial-gradient(circle at 15% 20%,rgba(35,153,181,.34),transparent 34%),radial-gradient(circle at 82% 5%,rgba(110,190,79,.22),transparent 30%),linear-gradient(135deg,#112a43,var(--navy));color:var(--white);padding:34px 28px 46px;}
+.wrap{max-width:1400px;margin:0 auto}.eyebrow{font:800 12px/1 'Montserrat';letter-spacing:.18em;text-transform:uppercase;color:var(--green);}.hero h1{margin:12px 0 8px;font-size:clamp(30px,4vw,56px);line-height:1.02;color:var(--white);}.hero p{max-width:920px;margin:0;color:var(--white);font-size:17px;line-height:1.5}.meta{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}.pill{border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 12px;color:var(--white);font-size:12px;font-weight:700;background:rgba(255,255,255,.08)}
+main{max-width:1400px;margin:-26px auto 60px;padding:0 20px}.stats{display:grid;grid-template-columns:repeat(6,minmax(140px,1fr));gap:14px}.stat{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 10px 30px rgba(29,55,86,.08)}.stat-value{font-family:'Montserrat';font-weight:800;font-size:30px;color:var(--navy)}.stat-label{font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.06em}.stat-sub{font-size:12px;margin-top:4px;color:#647386}
+.panel{background:var(--white);border:1px solid var(--border);border-radius:20px;margin-top:18px;padding:18px;box-shadow:0 10px 30px rgba(29,55,86,.06)}.panel h2{color:var(--navy);margin:0 0 12px;font-size:21px}.controls{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:10px;margin-bottom:14px}.controls input,.controls select{border:1px solid var(--border);border-radius:12px;padding:11px 12px;font:inherit;color:var(--body);background:white}.actions{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.download{display:inline-block;background:var(--green);color:#113024;text-decoration:none;font-weight:800;border-radius:12px;padding:10px 14px}.note{font-size:12px;color:#647386}.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:16px}table{width:100%;border-collapse:separate;border-spacing:0;min-width:1280px}th{position:sticky;top:0;background:#eef6f8;color:var(--navy);font-size:12px;text-align:left;text-transform:uppercase;letter-spacing:.04em;padding:12px;border-bottom:1px solid var(--border);z-index:2}td{padding:12px;border-bottom:1px solid var(--border);vertical-align:top;font-size:13px}td span{display:block;color:#6b7787;font-size:11px;margin-top:3px;max-width:320px}.sticky{position:sticky;left:0;background:white;z-index:1;box-shadow:1px 0 0 var(--border)}.num{text-align:right;font-family:'Montserrat';font-weight:700;color:var(--navy)}.product{text-align:center;font:800 18px/1 'Montserrat'}.product.yes{color:var(--green)}.product.no{color:#b6c0cb}.missing b{display:inline-block;margin:0 4px 4px 0;background:#eaf6ea;color:#2d6530;border:1px solid #cce8c8;border-radius:999px;padding:4px 8px;font-size:11px}.missing em{color:#7a8795}.details{border:0;background:var(--teal);color:white;border-radius:10px;padding:7px 11px;font-weight:800;cursor:pointer}.detail-row{display:none}.detail-row.open{display:table-row}.details-box{display:grid;grid-template-columns:2fr 1fr;gap:20px;background:#f8fbfc;border-radius:14px;padding:14px}.details-box ul{margin:8px 0 0;padding-left:18px}.details-box p{margin:6px 0 12px}.rollup{max-width:680px;min-width:520px}.warning{border-left:5px solid var(--teal);background:#f6fbfc}.footer{margin:22px 0;color:#6b7787;font-size:12px}@media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}.controls{grid-template-columns:1fr}.details-box{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+<header class="hero"><div class="wrap"><div class="eyebrow">Rev.io Summit 2026 · Client Targeting</div><h1>Client target dashboard</h1><p>Account-level view of Summit attendees who used non-sponsor/non-REVII discount codes, matched to the Master Client List products so referrers know which clients they own and which products to target onsite.</p><div class="meta"><span class="pill">Excludes REVII</span><span class="pill">Excludes SUMMITSPONSOR</span><span class="pill">Products: Billing · PSA Web · Tigerpaw · Odin · Payments</span><span class="pill">Generated Aug 31, 2026, 4:07 AM UTC</span></div></div></header>
+<main>
+<section class="stats">
+<div class="stat"><div class="stat-value">58</div><div class="stat-label">Target accounts</div></div><div class="stat"><div class="stat-value">107</div><div class="stat-label">Matched attendees</div><div class="stat-sub">130 discounted non-sponsor registrants</div></div><div class="stat"><div class="stat-value">25</div><div class="stat-label">Referrers / owners</div></div><div class="stat"><div class="stat-value">58</div><div class="stat-label">Accounts missing products</div></div><div class="stat"><div class="stat-value">202</div><div class="stat-label">Missing product opps</div></div><div class="stat"><div class="stat-value">23</div><div class="stat-label">Unmatched registrants</div><div class="stat-sub">Need manual account match</div></div>
+</section>
+<section class="panel"><div class="actions"><div><h2>Target account list</h2><div class="note">Owner = registrant referral name when present; falls back to Assigned AM. Product checks come from Master Client List “Rev.io Product”.</div></div><a class="download" href="assets/data/summit-target-accounts.csv">Download CSV</a></div>
+<div class="controls"><input id="search" placeholder="Search account, attendee, owner, code…"><select id="owner"><option value="">All owners</option><option>Blaine Villafuerte</option><option>Ryan Koontz</option><option>Justin Lee</option><option>Ryan Burton</option><option>Jamie Butler</option><option>Rachael Buchtan</option><option>Shane Frost</option><option>Ingrid Beard</option><option>Jakob Champion</option><option>Reid Doster</option><option>Cam Sharpe</option><option>Jacob Williams</option><option>Jacob Willimas</option><option>Bryan Bettiol</option><option>Jaylin Bender</option><option>Lorrie Browne</option><option>Rinor Berisha</option><option>Roman Rudzik</option><option>Unassigned</option><option>Jeremy Adams</option><option>Katerra Stephenson-Greenwood</option><option>Olivia Sandefur</option><option>Sarah McGovern</option><option>Rachel Buchtan</option><option>Katerra Greenwood</option></select><select id="missing"><option value="">All missing products</option><option>Billing</option><option>PSA Web</option><option>Tigerpaw</option><option>Odin</option><option>Payments</option><option value="none">No missing products</option></select><select id="have"><option value="">All current products</option><option>Billing</option><option>PSA Web</option><option>Tigerpaw</option><option>Odin</option><option>Payments</option></select></div>
+<div class="table-wrap"><table id="accounts"><thead><tr><th class="sticky">Account</th><th>Target owner</th><th>Attendees</th><th>Codes</th><th>Billing</th><th>PSA Web</th><th>Tigerpaw</th><th>Odin</th><th>Payments</th><th>Missing / target</th><th>Avg MRR</th><th>Details</th></tr></thead><tbody>
+    <tr data-owner="blaine villafuerte" data-products="psa web" data-missing="billing tigerpaw odin payments" data-search="bank-tec south blaine villafuerte blaine villafuerte bank-tec south robin brownmiller salena collins tammy kay robbins matt sanders revguest-a">
+      <td class="sticky"><strong>Bank-Tec South</strong><span>Bank-Tec South</span></td>
+      <td>Blaine Villafuerte<span>Assigned AM: Blaine Villafuerte</span></td>
+      <td class="num">4<span>Robin Brownmiller; Salena Collins; Tammy Kay Robbins; Matt Sanders</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product no">—</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Billing</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$6,520.00</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Robin Brownmiller — NCR Liaison · Other · referred by Blaine Villafuerte · attended before: Yes</li><li>Salena Collins — Sales Order Specialist · Sales/Marketing · referred by Blaine Villafuerte · attended before: No</li><li>Tammy Kay Robbins — Accounting Manager · Finance/Billing · referred by Blaine Villafuerte · attended before: Yes</li><li>Matt Sanders — Senior Director of Internal Operations · Sales/Marketing · referred by Blaine Villafuerte · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>BANKTECSOUTHPSA</p><strong>Raw product field</strong><p>PSA Web</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="blaine villafuerte" data-products="tigerpaw" data-missing="billing psa web odin payments" data-search="rss (restaurant service solutions) blaine villafuerte blaine villafuerte rss brandon sauer mandy hughs rich vale wes watson revguest-a">
+      <td class="sticky"><strong>RSS (Restaurant Service Solutions)</strong><span>RSS</span></td>
+      <td>Blaine Villafuerte<span>Assigned AM: Blaine Villafuerte</span></td>
+      <td class="num">4<span>Brandon Sauer; Mandy Hughs; Rich Vale; Wes Watson</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Billing</b> <b>PSA Web</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$3,088.22</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Brandon Sauer — Head of Sales · Sales/Marketing · referred by Blaine Villafuerte · attended before: No</li><li>Mandy Hughs — Director of HR &amp; Admin · Operations/Support · referred by Blaine Villafuerte · attended before: Yes</li><li>Rich Vale — Field Service &amp; Product Manager · Operations/Support · referred by Blaine Villafuerte · attended before: No</li><li>Wes Watson — Director of Technology · IT/Engineering · referred by Blaine Villafuerte · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>—</p><strong>Raw product field</strong><p>Tigerpaw</p><strong>Match score</strong><p>0.86</p></div>
+    </div></td></tr>
+    <tr data-owner="jamie butler, ryan burton" data-products="billing" data-missing="psa web tigerpaw odin payments" data-search="bcm one c/o invoiceiq jamie butler, ryan burton ryan burton bcm one skyswitch adnon dow cassandra monroe danilo jr catacutan revguest-a summit50">
+      <td class="sticky"><strong>BCM ONE C/O InvoiceIQ</strong><span>BCM One / Skyswitch</span></td>
+      <td>Jamie Butler, Ryan Burton<span>Assigned AM: Ryan Burton</span></td>
+      <td class="num">3<span>Adnon Dow; Cassandra Monroe; Danilo Jr Catacutan</span></td>
+      <td>REVGUEST-A, SUMMIT50</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$82,118.70</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Adnon Dow — Chief Product &amp; Strategy Officer · C-Suite · referred by Jamie Butler · attended before: No</li><li>Cassandra Monroe — Director of Billing Operations · Finance/Billing · referred by Ryan Burton · attended before: No</li><li>Danilo Jr Catacutan — Sr. Manager for Implementation · Finance/Billing · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>CHARLESTONTEL, PRIMARYWAVE, SKYSWITCH, SKYSWITCH_SANDBOX, SKYSWITCHMAIN, TUCTECHNOLOGIES</p><strong>Raw product field</strong><p>Billing</p><strong>Match score</strong><p>0.94</p></div>
+    </div></td></tr>
+    <tr data-owner="jacob williams, jacob willimas" data-products="tigerpaw" data-missing="billing psa web odin payments" data-search="homeland technology group jacob williams, jacob willimas jacob.williams homeland security systems mark fleeger jeremy staley kevin ewing revguest-a vip-revguest">
+      <td class="sticky"><strong>Homeland Technology Group</strong><span>Homeland Security Systems</span></td>
+      <td>Jacob Williams, Jacob Willimas<span>Assigned AM: jacob.williams</span></td>
+      <td class="num">3<span>Mark Fleeger; Jeremy Staley; Kevin Ewing</span></td>
+      <td>REVGUEST-A, VIP-REVGUEST</td>
+      <td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Billing</b> <b>PSA Web</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$2,158.80</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Mark Fleeger — CEO · Other · referred by Jacob Willimas · attended before: No</li><li>Jeremy Staley — President · C-Suite · referred by Jacob Williams · attended before: No</li><li>Kevin Ewing — IT Director · IT/Engineering · referred by Jacob Williams · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>—</p><strong>Raw product field</strong><p>Tigerpaw</p><strong>Match score</strong><p>0.92</p></div>
+    </div></td></tr>
+    <tr data-owner="lorrie browne, roman rudzik" data-products="psa web" data-missing="billing tigerpaw odin payments" data-search="acs fire &amp; security lorrie browne, roman rudzik rinor.berisha acs fire &amp; security martin rudzik roman rudzik revguest-a">
+      <td class="sticky"><strong>ACS Fire &amp; Security</strong><span>ACS Fire &amp; Security</span></td>
+      <td>Lorrie Browne, Roman Rudzik<span>Assigned AM: rinor.berisha</span></td>
+      <td class="num">2<span>Martin Rudzik; Roman Rudzik</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product no">—</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Billing</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$466.67</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Martin Rudzik — VP · Operations/Support · referred by Roman Rudzik · attended before: No</li><li>Roman Rudzik — CFO · Finance/Billing · referred by Lorrie Browne · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>ACSFIRESEACURITYPSA</p><strong>Raw product field</strong><p>PSA Web</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="blaine villafuerte" data-products="psa web" data-missing="billing tigerpaw odin payments" data-search="all secured security services blaine villafuerte sarah mcgovern all secure ben lawrence rita lawrence revguest-a">
+      <td class="sticky"><strong>All Secured Security Services</strong><span>All Secure</span></td>
+      <td>Blaine Villafuerte<span>Assigned AM: Sarah McGovern</span></td>
+      <td class="num">2<span>Ben Lawrence; Rita Lawrence</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product no">—</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Billing</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$1,917.00</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Ben Lawrence — President · C-Suite · referred by Blaine Villafuerte · attended before: Yes</li><li>Rita Lawrence — VP Partner Development · Operations/Support · referred by Blaine Villafuerte · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>AllSECUREDSECURITYPSA</p><strong>Raw product field</strong><p>PSA Web</p><strong>Match score</strong><p>0.94</p></div>
+    </div></td></tr>
+    <tr data-owner="jamie butler" data-products="psa web" data-missing="billing tigerpaw odin payments" data-search="c1st technologies jamie butler unassigned c1st technologies gregory marchand tony hsieh revguest-a">
+      <td class="sticky"><strong>C1st Technologies</strong><span>C1st Technologies</span></td>
+      <td>Jamie Butler<span>Assigned AM: Unassigned</span></td>
+      <td class="num">2<span>Gregory Marchand; Tony Hsieh</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product no">—</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Billing</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$0.00</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Gregory Marchand — Director of MSP Operations · IT/Engineering · referred by Jamie Butler · attended before: No</li><li>Tony Hsieh — Partner · C-Suite · referred by Jamie Butler · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>C1STTECHNOLOGIESPSA</p><strong>Raw product field</strong><p>PSA Web</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="rinor berisha" data-products="tigerpaw" data-missing="billing psa web odin payments" data-search="centerpoint it, inc rinor berisha rinor.berisha centerpoint it kevin durham scott williams revguest-a">
+      <td class="sticky"><strong>Centerpoint IT, Inc</strong><span>Centerpoint IT</span></td>
+      <td>Rinor Berisha<span>Assigned AM: rinor.berisha</span></td>
+      <td class="num">2<span>Kevin Durham; Scott Williams</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Billing</b> <b>PSA Web</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$2,956.40</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Kevin Durham — Lead Manager · IT/Engineering · referred by Rinor Berisha · attended before: No</li><li>Scott Williams — Client Success Manager · IT/Engineering · referred by Rinor Berisha · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>—</p><strong>Raw product field</strong><p>Tigerpaw</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="ryan koontz" data-products="billing" data-missing="psa web tigerpaw odin payments" data-search="global data systems ryan koontz unassigned global data systems global data systems, inc monica theriot-habetz robert guidry vip-revguest">
+      <td class="sticky"><strong>Global Data Systems</strong><span>Global Data Systems / Global Data Systems, Inc</span></td>
+      <td>Ryan Koontz<span>Assigned AM: Unassigned</span></td>
+      <td class="num">2<span>Monica Theriot-Habetz; Robert Guidry</span></td>
+      <td>VIP-REVGUEST</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$1,503.23</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Monica Theriot-Habetz — Vice President, SFC · Operations/Support · referred by Ryan Koontz · attended before: No</li><li>Robert Guidry — CTO · C-Suite · referred by Ryan Koontz · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>GLOBALDATASYSTEMS</p><strong>Raw product field</strong><p>Billing</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="unassigned" data-products="billing" data-missing="psa web tigerpaw odin payments" data-search="hiscall, inc. unassigned unassigned hiscall gary luffman shae pfieffer revguest-a">
+      <td class="sticky"><strong>Hiscall, Inc.</strong><span>Hiscall</span></td>
+      <td>Unassigned<span>Assigned AM: Unassigned</span></td>
+      <td class="num">2<span>Gary Luffman; Shae Pfieffer</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$1,000.00</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Gary Luffman — President · C-Suite · attended before: Yes</li><li>Shae Pfieffer — IT Manager · C-Suite · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>HISCALL</p><strong>Raw product field</strong><p>Billing</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="blaine villafuerte" data-products="tigerpaw" data-missing="billing psa web odin payments" data-search="ics communications blaine villafuerte unassigned ics communications jason veasey susie veasey revguest-a">
+      <td class="sticky"><strong>ICS Communications</strong><span>ICS Communications</span></td>
+      <td>Blaine Villafuerte<span>Assigned AM: Unassigned</span></td>
+      <td class="num">2<span>Jason Veasey; Susie Veasey</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Billing</b> <b>PSA Web</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$537.25</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Jason Veasey — Owner · C-Suite · referred by Blaine Villafuerte · attended before: No</li><li>Susie Veasey — VP of Operations · Operations/Support · referred by Blaine Villafuerte · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>—</p><strong>Raw product field</strong><p>Tigerpaw</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="jaylin bender" data-products="tigerpaw" data-missing="billing psa web odin payments" data-search="minuteman security technologies, inc. jaylin bender unassigned minutemen security systems christopher gordan gary gordon revguest-a">
+      <td class="sticky"><strong>Minuteman Security Technologies, Inc.</strong><span>Minutemen Security Systems</span></td>
+      <td>Jaylin Bender<span>Assigned AM: Unassigned</span></td>
+      <td class="num">2<span>Christopher Gordan; Gary Gordon</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Billing</b> <b>PSA Web</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$474.00</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Christopher Gordan — COO · C-Suite · referred by Jaylin Bender · attended before: No</li><li>Gary Gordon — Owner · C-Suite · referred by Jaylin Bender · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>—</p><strong>Raw product field</strong><p>Tigerpaw</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="bryan bettiol" data-products="psa web" data-missing="billing tigerpaw odin payments" data-search="next step communications bryan bettiol unassigned next step communication next step communications john jason parmley shannon parmley revguest-a">
+      <td class="sticky"><strong>Next Step Communications</strong><span>Next Step Communication / Next Step Communications</span></td>
+      <td>Bryan Bettiol<span>Assigned AM: Unassigned</span></td>
+      <td class="num">2<span>John Jason Parmley; Shannon Parmley</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product no">—</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Billing</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$20.67</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>John Jason Parmley — CEO · C-Suite · referred by Bryan Bettiol · attended before: No</li><li>Shannon Parmley — Business Manager · Finance/Billing · referred by Bryan Bettiol · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>NEXTSTEPCOMMSPSA</p><strong>Raw product field</strong><p>PSA Web</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="justin lee, ryan koontz" data-products="billing" data-missing="psa web tigerpaw odin payments" data-search="spectrumvoip justin lee, ryan koontz ryan burton spectrumvoip jake leidy michael ruggiere revguest-a">
+      <td class="sticky"><strong>SpectrumVoIP</strong><span>SpectrumVoIP</span></td>
+      <td>Justin Lee, Ryan Koontz<span>Assigned AM: Ryan Burton</span></td>
+      <td class="num">2<span>Jake Leidy; Michael Ruggiere</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$28,428.93</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Jake Leidy — Chief Operations Officer · C-Suite · referred by Justin Lee · attended before: Yes</li><li>Michael Ruggiere — Controller · Finance/Billing · referred by Ryan Koontz · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>SPECTRUM, SPECTRUM (1510)</p><strong>Raw product field</strong><p>Billing</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="rachael buchtan" data-products="billing" data-missing="psa web tigerpaw odin payments" data-search="viirtue llc (apollo) rachael buchtan rachael buchtan viirtue inc alana lee ana da silva revguest-b summit100viirtue">
+      <td class="sticky"><strong>Viirtue LLC (Apollo)</strong><span>Viirtue Inc</span></td>
+      <td>Rachael Buchtan<span>Assigned AM: Rachael Buchtan</span></td>
+      <td class="num">2<span>Alana Lee; Ana da Silva</span></td>
+      <td>REVGUEST-B, SUMMIT100VIIRTUE</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$24,659.85</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Alana Lee — Billing and Services Coordinator · Finance/Billing · referred by Rachael Buchtan · attended before: No</li><li>Ana da Silva — Sr. Billing Manager · Finance/Billing · referred by Rachael Buchtan · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>SYNTEL</p><strong>Raw product field</strong><p>Billing</p><strong>Match score</strong><p>0.94</p></div>
+    </div></td></tr>
+    <tr data-owner="ryan koontz" data-products="psa web" data-missing="billing tigerpaw odin payments" data-search="avit ryan koontz unassigned avit, llc steve konetski vip-revguest">
+      <td class="sticky"><strong>AVIT</strong><span>AVIT, LLC</span></td>
+      <td>Ryan Koontz<span>Assigned AM: Unassigned</span></td>
+      <td class="num">1<span>Steve Konetski</span></td>
+      <td>VIP-REVGUEST</td>
+      <td class="product no">—</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Billing</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$433.33</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Steve Konetski — CIO · C-Suite · referred by Ryan Koontz · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>avit.psarev.io</p><strong>Raw product field</strong><p>PSA Web</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="ingrid beard" data-products="billing" data-missing="psa web tigerpaw odin payments" data-search="bludog telecom ingrid beard unassigned bludog telecom chris reyes revguest-a">
+      <td class="sticky"><strong>BluDog Telecom</strong><span>BluDog Telecom</span></td>
+      <td>Ingrid Beard<span>Assigned AM: Unassigned</span></td>
+      <td class="num">1<span>Chris Reyes</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$1,652.24</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Chris Reyes — Owner · C-Suite · referred by Ingrid Beard · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>BLUDOG</p><strong>Raw product field</strong><p>Billing</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="blaine villafuerte" data-products="psa web" data-missing="billing tigerpaw odin payments" data-search="cl sams business solutions llc blaine villafuerte olivia sandefur cl sams clay lovelace revfan100">
+      <td class="sticky"><strong>CL Sams Business Solutions LLC</strong><span>CL Sams</span></td>
+      <td>Blaine Villafuerte<span>Assigned AM: Olivia Sandefur</span></td>
+      <td class="num">1<span>Clay Lovelace</span></td>
+      <td>REVFAN100</td>
+      <td class="product no">—</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Billing</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$1,100.00</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Clay Lovelace — COO/Co-Owner · Operations/Support · referred by Blaine Villafuerte · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>CLSAMSPSA</p><strong>Raw product field</strong><p>PSA Web</p><strong>Match score</strong><p>0.94</p></div>
+    </div></td></tr>
+    <tr data-owner="justin lee" data-products="billing" data-missing="psa web tigerpaw odin payments" data-search="converged networks justin lee sarah mcgovern converged networks brant yandell revguest-a">
+      <td class="sticky"><strong>Converged Networks</strong><span>Converged Networks</span></td>
+      <td>Justin Lee<span>Assigned AM: Sarah McGovern</span></td>
+      <td class="num">1<span>Brant Yandell</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$4,144.79</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Brant Yandell — VoIP Engineer · Operations/Support · referred by Justin Lee · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>CONVERGEDNETWORKS</p><strong>Raw product field</strong><p>Billing</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="rachael buchtan" data-products="billing" data-missing="psa web tigerpaw odin payments" data-search="decibel rachael buchtan rachael buchtan decibel stephanie kern revguest-a">
+      <td class="sticky"><strong>Decibel</strong><span>Decibel</span></td>
+      <td>Rachael Buchtan<span>Assigned AM: Rachael Buchtan</span></td>
+      <td class="num">1<span>Stephanie Kern</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$2,303.98</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Stephanie Kern — Director of Sales · Sales/Marketing · referred by Rachael Buchtan · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>DECIBEL</p><strong>Raw product field</strong><p>Billing</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="jeremy adams" data-products="psa web" data-missing="billing tigerpaw odin payments" data-search="digital market pos jeremy adams jacob.williams digital market pos ismael adames revguest-a">
+      <td class="sticky"><strong>Digital Market POS</strong><span>Digital Market POS</span></td>
+      <td>Jeremy Adams<span>Assigned AM: jacob.williams</span></td>
+      <td class="num">1<span>Ismael Adames</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product no">—</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Billing</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$990.00</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Ismael Adames — Lead Tech · Operations/Support · referred by Jeremy Adams · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>DIGITALMARKETPOSPSA</p><strong>Raw product field</strong><p>PSA Web</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="katerra stephenson-greenwood" data-products="tigerpaw" data-missing="billing psa web odin payments" data-search="j &amp; m systems llc katerra stephenson-greenwood unassigned j&amp;m systems llc mark geier revguest-a">
+      <td class="sticky"><strong>J &amp; M Systems LLC</strong><span>J&amp;M Systems LLC</span></td>
+      <td>Katerra Stephenson-Greenwood<span>Assigned AM: Unassigned</span></td>
+      <td class="num">1<span>Mark Geier</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Billing</b> <b>PSA Web</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$656.37</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Mark Geier — Partner · C-Suite · referred by Katerra Stephenson-Greenwood · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>—</p><strong>Raw product field</strong><p>Tigerpaw</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="blaine villafuerte" data-products="tigerpaw" data-missing="billing psa web odin payments" data-search="jct (johnston communications voice &amp; data) blaine villafuerte blaine villafuerte jct solutions joe marinello revguest-a">
+      <td class="sticky"><strong>JCT (Johnston Communications Voice &amp; Data)</strong><span>JCT Solutions</span></td>
+      <td>Blaine Villafuerte<span>Assigned AM: Blaine Villafuerte</span></td>
+      <td class="num">1<span>Joe Marinello</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Billing</b> <b>PSA Web</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$9,628.89</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Joe Marinello — Director of Information Systems · IT/Engineering · referred by Blaine Villafuerte · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>—</p><strong>Raw product field</strong><p>Tigerpaw</p><strong>Match score</strong><p>0.86</p></div>
+    </div></td></tr>
+    <tr data-owner="jamie butler" data-products="billing" data-missing="psa web tigerpaw odin payments" data-search="k&amp;l telecom jamie butler unassigned k&amp;l telecom andrew adair revfan100">
+      <td class="sticky"><strong>K&amp;L Telecom</strong><span>K&amp;L Telecom</span></td>
+      <td>Jamie Butler<span>Assigned AM: Unassigned</span></td>
+      <td class="num">1<span>Andrew Adair</span></td>
+      <td>REVFAN100</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$2,500.00</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Andrew Adair — Owner · Operations/Support · referred by Jamie Butler · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>KLTELECOM</p><strong>Raw product field</strong><p>Billing</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="ryan burton" data-products="billing" data-missing="psa web tigerpaw odin payments" data-search="northwest digits llc ryan burton unassigned soundline communications sanjeev tirunagaram revguest-a">
+      <td class="sticky"><strong>Northwest Digits LLC</strong><span>SoundLine Communications</span></td>
+      <td>Ryan Burton<span>Assigned AM: Unassigned</span></td>
+      <td class="num">1<span>Sanjeev Tirunagaram</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$3,127.22</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Sanjeev Tirunagaram — CMO · Sales/Marketing · referred by Ryan Burton · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>SoundLine</p><strong>Raw product field</strong><p>Billing</p><strong>Match score</strong><p>0.96</p></div>
+    </div></td></tr>
+    <tr data-owner="olivia sandefur" data-products="psa web" data-missing="billing tigerpaw odin payments" data-search="raven tech llc olivia sandefur olivia sandefur raven tech llc drew aldinger revfan100">
+      <td class="sticky"><strong>Raven Tech LLC</strong><span>Raven Tech LLC</span></td>
+      <td>Olivia Sandefur<span>Assigned AM: Olivia Sandefur</span></td>
+      <td class="num">1<span>Drew Aldinger</span></td>
+      <td>REVFAN100</td>
+      <td class="product no">—</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Billing</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$400.00</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Drew Aldinger — CEO · C-Suite · referred by Olivia Sandefur · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>RAVENTECHPSA</p><strong>Raw product field</strong><p>PSA Web</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="ryan koontz" data-products="billing" data-missing="psa web tigerpaw odin payments" data-search="rev.io ryan koontz unassigned yorn sales training lucy shriver revguest-a">
+      <td class="sticky"><strong>Rev.io</strong><span>YorN Sales Training</span></td>
+      <td>Ryan Koontz<span>Assigned AM: Unassigned</span></td>
+      <td class="num">1<span>Lucy Shriver</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$0.00</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Lucy Shriver — Founder · C-Suite · referred by Ryan Koontz · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>ACME, API_SANDBOX, API_SANDBOX_TEMPLATE, AUTOMATED_TESTS, BULLSEYE, DEMO, DEMO_SANDBOX, DM_Testing_TEST, H20123, H2O, H2O_SANDBOX, H2O1, INTELIQUENT, INVENTORY, JERMAINE, LEARN, LIONGARD, MOMENTUM, MSP, NORTHLAND, ODIN_DEMO, PARLOR, PRODUCT, SALES, sales_SANDBOX, SANDBOX, SE, SOLUTIONS, TEMPLATE, TEMPLATE_SANDBOX, TEMPLATE_WIRELESS, TESTDRIVE, TRAINING, TRAINING_SANDBOX</p><strong>Raw product field</strong><p>Billing</p><strong>Match score</strong><p>0.96</p></div>
+    </div></td></tr>
+    <tr data-owner="ryan koontz" data-products="billing" data-missing="psa web tigerpaw odin payments" data-search="southeast network specialists llc ryan koontz sarah mcgovern southeast networks william oppermann 2blondes">
+      <td class="sticky"><strong>Southeast Network Specialists LLC</strong><span>Southeast Networks</span></td>
+      <td>Ryan Koontz<span>Assigned AM: Sarah McGovern</span></td>
+      <td class="num">1<span>William Oppermann</span></td>
+      <td>2BLONDES</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$6,667.46</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>William Oppermann — CEO · C-Suite · referred by Ryan Koontz · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>SNS</p><strong>Raw product field</strong><p>Billing</p><strong>Match score</strong><p>0.86</p></div>
+    </div></td></tr>
+    <tr data-owner="shane frost" data-products="billing" data-missing="psa web tigerpaw odin payments" data-search="southern telecom shane frost unassigned southern telecommunications, llc rob mcknight revguest-a">
+      <td class="sticky"><strong>Southern Telecom</strong><span>Southern Telecommunications, LLC</span></td>
+      <td>Shane Frost<span>Assigned AM: Unassigned</span></td>
+      <td class="num">1<span>Rob Mcknight</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$1,333.33</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Rob Mcknight — Operations Manager · Operations/Support · referred by Shane Frost · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>SOUTHERNTELECOM</p><strong>Raw product field</strong><p>Billing</p><strong>Match score</strong><p>0.92</p></div>
+    </div></td></tr>
+    <tr data-owner="sarah mcgovern" data-products="psa web" data-missing="billing tigerpaw odin payments" data-search="truline technologies sarah mcgovern sarah mcgovern truline technologies michael rowland revfan100">
+      <td class="sticky"><strong>TruLine Technologies</strong><span>Truline Technologies</span></td>
+      <td>Sarah McGovern<span>Assigned AM: Sarah McGovern</span></td>
+      <td class="num">1<span>Michael Rowland</span></td>
+      <td>REVFAN100</td>
+      <td class="product no">—</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Billing</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$500.00</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Michael Rowland — President · C-Suite · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>TRULINETECHNOLOGIESPSA</p><strong>Raw product field</strong><p>PSA Web</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="shane frost" data-products="billing" data-missing="psa web tigerpaw odin payments" data-search="vti communications shane frost unassigned vti communications megan ehmen revguest-a">
+      <td class="sticky"><strong>VTi Communications</strong><span>VTI Communications</span></td>
+      <td>Shane Frost<span>Assigned AM: Unassigned</span></td>
+      <td class="num">1<span>Megan Ehmen</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$925.76</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Megan Ehmen — Manager · Operations/Support · referred by Shane Frost · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>VTICOMMUNICATIONS</p><strong>Raw product field</strong><p>Billing</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="reid doster" data-products="billing psa web" data-missing="tigerpaw odin payments" data-search="blueline telecom reid doster rachael buchtan blueline telecom group, llc andres abeledo dagmar lynch jessica soto-perez tabitha abeledo blueline">
+      <td class="sticky"><strong>Blueline Telecom</strong><span>Blueline Telecom Group, LLC</span></td>
+      <td>Reid Doster<span>Assigned AM: Rachael Buchtan</span></td>
+      <td class="num">4<span>Andres Abeledo; Dagmar Lynch; Jessica Soto-Perez; Tabitha Abeledo</span></td>
+      <td>BLUELINE</td>
+      <td class="product yes">✓</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$11,884.30</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Andres Abeledo — Vice President of Engineering and Operations · Operations/Support · referred by Reid Doster · attended before: Yes</li><li>Dagmar Lynch — Accounts Payable · Finance/Billing · referred by Reid Doster · attended before: No</li><li>Jessica Soto-Perez — Accounting Manager · Finance/Billing · referred by Reid Doster · attended before: Yes</li><li>Tabitha Abeledo — Director of Operations · Operations/Support · referred by Reid Doster · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>BLUELINE, BLUELINEPSA</p><strong>Raw product field</strong><p>Billing, PSA Web</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="rachael buchtan, rachel buchtan" data-products="billing payments" data-missing="psa web tigerpaw odin" data-search="mnj technologies rachael buchtan, rachel buchtan rachael buchtan mnj technologies mnj technologies direct, inc. anastasiya chapman amanda gath georgia higgins james mace revguest-a">
+      <td class="sticky"><strong>MNJ Technologies</strong><span>MNJ Technologies / MNJ Technologies Direct, Inc.</span></td>
+      <td>Rachael Buchtan, Rachel Buchtan<span>Assigned AM: Rachael Buchtan</span></td>
+      <td class="num">4<span>ANASTASIYA CHAPMAN; Amanda Gath; Georgia Higgins; James Mace</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b></td>
+      <td>$11,988.20</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>ANASTASIYA CHAPMAN — SENIOR STAFF ACCOUNTANT · Finance/Billing · referred by Rachel Buchtan · attended before: No</li><li>Amanda Gath — PMO Team Lead · IT/Engineering · referred by Rachael Buchtan · attended before: No</li><li>Georgia Higgins — Accounts Receivable Manager · Finance/Billing · referred by Rachel Buchtan · attended before: No</li><li>James Mace — PMO Manager · IT/Engineering · referred by Rachael Buchtan · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>MNJ, MNJ_SANDBOX</p><strong>Raw product field</strong><p>Billing, Payments</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="ingrid beard" data-products="billing payments" data-missing="psa web tigerpaw odin" data-search="digital agent ingrid beard rachael buchtan digital agent howard hunter john reinhardt keyur patel revguest-a">
+      <td class="sticky"><strong>Digital Agent</strong><span>Digital Agent</span></td>
+      <td>Ingrid Beard<span>Assigned AM: Rachael Buchtan</span></td>
+      <td class="num">3<span>Howard Hunter; John Reinhardt; Keyur Patel</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b></td>
+      <td>$5,490.05</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Howard Hunter — Owner · C-Suite · referred by Ingrid Beard · attended before: Yes</li><li>John Reinhardt — Operation Manager · Operations/Support · referred by Ingrid Beard · attended before: Yes</li><li>Keyur Patel — COO · C-Suite · referred by Ingrid Beard · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>DIGITALAGENT</p><strong>Raw product field</strong><p>Billing, Payments</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="katerra greenwood" data-products="billing payments" data-missing="psa web tigerpaw odin" data-search="simplicity voip katerra greenwood rachael buchtan simplicity voip ben humphreys lacey humphreys pam tyler revguest-a">
+      <td class="sticky"><strong>Simplicity VoIP</strong><span>Simplicity VoIP</span></td>
+      <td>Katerra Greenwood<span>Assigned AM: Rachael Buchtan</span></td>
+      <td class="num">3<span>Ben Humphreys; Lacey Humphreys; Pam Tyler</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b></td>
+      <td>$8,661.92</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Ben Humphreys — President · C-Suite · referred by Katerra Greenwood · attended before: Yes</li><li>Lacey Humphreys — Inventory Manager · Operations/Support · referred by Katerra Greenwood · attended before: Yes</li><li>Pam Tyler — Billing Manager · Finance/Billing · referred by Katerra Greenwood · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>SIMPLICITYVOIP</p><strong>Raw product field</strong><p>Billing, Payments</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="jakob champion" data-products="billing payments" data-missing="psa web tigerpaw odin" data-search="touchtone jakob champion rachael buchtan touchtone communications christina bentley melissa maldonado tom ford 2blondes revguest-a">
+      <td class="sticky"><strong>TouchTone</strong><span>Touchtone Communications</span></td>
+      <td>Jakob Champion<span>Assigned AM: Rachael Buchtan</span></td>
+      <td class="num">3<span>Christina Bentley; Melissa Maldonado; Tom Ford</span></td>
+      <td>2BLONDES, REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b></td>
+      <td>$29,656.02</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Christina Bentley — Senior Billing Manager · Finance/Billing · referred by Jakob Champion · attended before: Yes</li><li>Melissa Maldonado — Provisioning Manager · Other · referred by Jakob Champion · attended before: Yes</li><li>Tom Ford — Director of Billing · Finance/Billing · referred by Jakob Champion · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>TOUCHTONE, TOUCHTONE_SANDBOX</p><strong>Raw product field</strong><p>Billing, Payments</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="justin lee" data-products="billing psa web" data-missing="tigerpaw odin payments" data-search="callsprout justin lee rachael buchtan callsprout atticus brind lenny ljungholm revguest-a">
+      <td class="sticky"><strong>CallSprout</strong><span>CallSprout</span></td>
+      <td>Justin Lee<span>Assigned AM: Rachael Buchtan</span></td>
+      <td class="num">2<span>Atticus Brind; Lenny Ljungholm</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$3,175.06</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Atticus Brind — VP of Sales · Sales/Marketing · referred by Justin Lee · attended before: Yes</li><li>Lenny Ljungholm — Support Specialist · Operations/Support · referred by Justin Lee · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>CALLSPROUT, CALLSPROUTPSA</p><strong>Raw product field</strong><p>Billing, PSA Web</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="ryan koontz" data-products="billing psa web" data-missing="tigerpaw odin payments" data-search="centra ip networks ryan koontz olivia sandefur centra ip centra ip networks patrick brangan stacey hutton 2blondes">
+      <td class="sticky"><strong>Centra IP Networks</strong><span>Centra IP / Centra IP Networks</span></td>
+      <td>Ryan Koontz<span>Assigned AM: Olivia Sandefur</span></td>
+      <td class="num">2<span>Patrick Brangan; Stacey Hutton</span></td>
+      <td>2BLONDES</td>
+      <td class="product yes">✓</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$5,081.76</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Patrick Brangan — CEO · C-Suite · referred by Ryan Koontz · attended before: Yes</li><li>Stacey Hutton — Operations Manager · Operations/Support · referred by Ryan Koontz · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>ADVANCEDCOMMUNICATIONS, ADVANCEDCOMMUNICATIONSRMM, CENTRAIPPSA, CENTRAIPRMM</p><strong>Raw product field</strong><p>Billing, PSA Web</p><strong>Match score</strong><p>0.94</p></div>
+    </div></td></tr>
+    <tr data-owner="justin lee" data-products="billing payments" data-missing="psa web tigerpaw odin" data-search="grid4 communications justin lee ryan burton grid4 communications christopher hopkins michael hopkins revguest-a">
+      <td class="sticky"><strong>Grid4 Communications</strong><span>Grid4 Communications</span></td>
+      <td>Justin Lee<span>Assigned AM: Ryan Burton</span></td>
+      <td class="num">2<span>Christopher Hopkins; Michael Hopkins</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b></td>
+      <td>$8,185.94</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Christopher Hopkins — CEO · C-Suite · referred by Justin Lee · attended before: Yes</li><li>Michael Hopkins — Senior Vice President · C-Suite · referred by Justin Lee · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>GRID4</p><strong>Raw product field</strong><p>Billing, Payments</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="justin lee" data-products="psa web tigerpaw" data-missing="billing odin payments" data-search="hosted america, llc justin lee unassigned hosted america andrew turkington mark robbins revguest-a summit100">
+      <td class="sticky"><strong>Hosted America, LLC</strong><span>Hosted America</span></td>
+      <td>Justin Lee<span>Assigned AM: Unassigned</span></td>
+      <td class="num">2<span>Andrew Turkington; Mark Robbins</span></td>
+      <td>REVGUEST-A, SUMMIT100</td>
+      <td class="product no">—</td><td class="product yes">✓</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Billing</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$1,179.72</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Andrew Turkington — CFO · Finance/Billing · referred by Justin Lee · attended before: Yes</li><li>Mark Robbins — VP, Director of Voice Operations · Operations/Support · referred by Justin Lee · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>HOSTEDAMERICAPSAPSA</p><strong>Raw product field</strong><p>PSA Web, Tigerpaw</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="ryan burton" data-products="billing payments" data-missing="psa web tigerpaw odin" data-search="ipitomy ryan burton ryan burton ipitomy ipitomy communications llc erica carroll joseph haines revguest-a">
+      <td class="sticky"><strong>IPitomy</strong><span>IPitomy / IPitomy Communications LLC</span></td>
+      <td>Ryan Burton<span>Assigned AM: Ryan Burton</span></td>
+      <td class="num">2<span>Erica Carroll; Joseph Haines</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b></td>
+      <td>$9,620.92</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Erica Carroll — Order Processing · Operations/Support · referred by Ryan Burton · attended before: No</li><li>Joseph Haines — President/CEO · C-Suite · referred by Ryan Burton · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>IPITOMY</p><strong>Raw product field</strong><p>Billing, Payments</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="jakob champion" data-products="billing payments" data-missing="psa web tigerpaw odin" data-search="s-net communications, inc. jakob champion ryan burton safety net it jaclyn cooper zack killpack 2blondes">
+      <td class="sticky"><strong>S-Net Communications, Inc.</strong><span>Safety Net IT</span></td>
+      <td>Jakob Champion<span>Assigned AM: Ryan Burton</span></td>
+      <td class="num">2<span>Jaclyn Cooper; Zack Killpack</span></td>
+      <td>2BLONDES</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b></td>
+      <td>$19,699.45</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Jaclyn Cooper — Director · C-Suite · referred by Jakob Champion · attended before: No</li><li>Zack Killpack — Director · C-Suite · referred by Jakob Champion · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>SNET, SNET_SANDBOX</p><strong>Raw product field</strong><p>Billing, Payments</p><strong>Match score</strong><p>0.86</p></div>
+    </div></td></tr>
+    <tr data-owner="shane frost" data-products="billing psa web" data-missing="tigerpaw odin payments" data-search="savvy communications shane frost rachael buchtan savvy communcations inc. savvy communications inc chelsea mcbride nicole curry revguest-a">
+      <td class="sticky"><strong>Savvy Communications</strong><span>Savvy Communcations Inc. / Savvy Communications Inc</span></td>
+      <td>Shane Frost<span>Assigned AM: Rachael Buchtan</span></td>
+      <td class="num">2<span>Chelsea McBride; Nicole Curry</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$2,900.00</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Chelsea McBride — Billing &amp; Operations Coordinator · Finance/Billing · referred by Shane Frost · attended before: No</li><li>Nicole Curry — CSR · Other · referred by Shane Frost · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>SAVVY, SAVVYPSA</p><strong>Raw product field</strong><p>Billing, PSA Web</p><strong>Match score</strong><p>0.96</p></div>
+    </div></td></tr>
+    <tr data-owner="cam sharpe" data-products="billing psa web" data-missing="tigerpaw odin payments" data-search="ten4 cam sharpe sarah mcgovern ten4 brad muser tom mcdonnell revfan100">
+      <td class="sticky"><strong>Ten4</strong><span>Ten4</span></td>
+      <td>Cam Sharpe<span>Assigned AM: Sarah McGovern</span></td>
+      <td class="num">2<span>Brad Muser; Tom McDonnell</span></td>
+      <td>REVFAN100</td>
+      <td class="product yes">✓</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$5,826.49</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Brad Muser — Executive Vice President, Finance · Finance/Billing · referred by Cam Sharpe · attended before: Yes</li><li>Tom McDonnell — Vice President, Operations · Operations/Support · referred by Cam Sharpe · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>TEN4, TEN4PSA</p><strong>Raw product field</strong><p>Billing, PSA Web</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="ryan koontz" data-products="billing payments" data-missing="psa web tigerpaw odin" data-search="altaworx ryan koontz ryan burton altaworx rickie richey 2blondes">
+      <td class="sticky"><strong>Altaworx</strong><span>Altaworx</span></td>
+      <td>Ryan Koontz<span>Assigned AM: Ryan Burton</span></td>
+      <td class="num">1<span>Rickie Richey</span></td>
+      <td>2BLONDES</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b></td>
+      <td>$18,250.70</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Rickie Richey — CEO · C-Suite · referred by Ryan Koontz · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>ALTAWORX, ALTAWORX_SANDBOX, CATAPULT_SANDBOX</p><strong>Raw product field</strong><p>Billing, Payments</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="ryan burton" data-products="billing payments" data-missing="psa web tigerpaw odin" data-search="clear rate communications ryan burton ryan burton clear rate communications erik kubs clearrate">
+      <td class="sticky"><strong>Clear Rate Communications</strong><span>Clear Rate Communications</span></td>
+      <td>Ryan Burton<span>Assigned AM: Ryan Burton</span></td>
+      <td class="num">1<span>Erik Kubs</span></td>
+      <td>CLEARRATE</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b></td>
+      <td>$20,987.92</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Erik Kubs — Manager Service Delivery · Operations/Support · referred by Ryan Burton · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>CLEARRATE, CLEARRATE_SANDBOX, CLEARRATE_TEST</p><strong>Raw product field</strong><p>Billing, Payments</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="ryan burton" data-products="billing payments" data-missing="psa web tigerpaw odin" data-search="glacier networks inc ryan burton ryan burton glacier networks inc feliks kiliski revguest-a">
+      <td class="sticky"><strong>Glacier Networks Inc</strong><span>Glacier Networks Inc</span></td>
+      <td>Ryan Burton<span>Assigned AM: Ryan Burton</span></td>
+      <td class="num">1<span>Feliks Kiliski</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b></td>
+      <td>$5,393.81</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Feliks Kiliski — Partner · C-Suite · referred by Ryan Burton · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>GLACIER, GLACIER_SANDBOX</p><strong>Raw product field</strong><p>Billing, Payments</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="reid doster" data-products="billing psa web" data-missing="tigerpaw odin payments" data-search="inet communications reid doster rachael buchtan inet communications, llc charles murray summit50">
+      <td class="sticky"><strong>iNet Communications</strong><span>INET Communications, LLC</span></td>
+      <td>Reid Doster<span>Assigned AM: Rachael Buchtan</span></td>
+      <td class="num">1<span>Charles Murray</span></td>
+      <td>SUMMIT50</td>
+      <td class="product yes">✓</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$3,408.78</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Charles Murray — CEO · C-Suite · referred by Reid Doster · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>INETCOMMUNICATIONS, INETCOMMUNICATIONSPSA</p><strong>Raw product field</strong><p>Billing, PSA Web</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="justin lee" data-products="billing payments" data-missing="psa web tigerpaw odin" data-search="jcm telecom llc justin lee ryan burton jcm telecom christian hernandez revguest-a">
+      <td class="sticky"><strong>JCM Telecom LLC</strong><span>JCM Telecom</span></td>
+      <td>Justin Lee<span>Assigned AM: Ryan Burton</span></td>
+      <td class="num">1<span>Christian Hernandez</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b></td>
+      <td>$4,828.28</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Christian Hernandez — President / Owner · C-Suite · referred by Justin Lee · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>JCMTELECOM</p><strong>Raw product field</strong><p>Billing, Payments</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="ingrid beard" data-products="billing payments" data-missing="psa web tigerpaw odin" data-search="lightspar ingrid beard sarah mcgovern lightspar bob bouquet revguest-a">
+      <td class="sticky"><strong>LightSpar</strong><span>LightSpar</span></td>
+      <td>Ingrid Beard<span>Assigned AM: Sarah McGovern</span></td>
+      <td class="num">1<span>Bob Bouquet</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b></td>
+      <td>$8,513.56</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Bob Bouquet — CFO · C-Suite · referred by Ingrid Beard · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>LIGHTSPAR</p><strong>Raw product field</strong><p>Billing, Payments</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="jamie butler" data-products="billing payments" data-missing="psa web tigerpaw odin" data-search="mach networks jamie butler ryan burton mach networks paula anderson 2blondes">
+      <td class="sticky"><strong>Mach Networks</strong><span>MACH Networks</span></td>
+      <td>Jamie Butler<span>Assigned AM: Ryan Burton</span></td>
+      <td class="num">1<span>Paula Anderson</span></td>
+      <td>2BLONDES</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b></td>
+      <td>$13,389.22</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Paula Anderson — Director · Sales/Marketing · referred by Jamie Butler · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>MACHNETWORKS, MACHNETWORKS_SANDBOX, MACHNETWORKS_TEST</p><strong>Raw product field</strong><p>Billing, Payments</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="justin lee" data-products="billing payments" data-missing="psa web tigerpaw odin" data-search="premier companies justin lee ryan burton premier companies mark bortz revguest-a">
+      <td class="sticky"><strong>Premier Companies</strong><span>Premier Companies</span></td>
+      <td>Justin Lee<span>Assigned AM: Ryan Burton</span></td>
+      <td class="num">1<span>Mark Bortz</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b></td>
+      <td>$4,500.00</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Mark Bortz — Founder · C-Suite · referred by Justin Lee · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>PREMIER, Premier_SANDBOX</p><strong>Raw product field</strong><p>Billing, Payments</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="cam sharpe" data-products="billing payments" data-missing="psa web tigerpaw odin" data-search="public telephone company cam sharpe unassigned public telephone company darrell lopez revguest-a">
+      <td class="sticky"><strong>Public Telephone Company</strong><span>Public Telephone Company</span></td>
+      <td>Cam Sharpe<span>Assigned AM: Unassigned</span></td>
+      <td class="num">1<span>Darrell Lopez</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b></td>
+      <td>$1,009.22</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Darrell Lopez — Chief Executive Officer · C-Suite · referred by Cam Sharpe · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>PTCOA</p><strong>Raw product field</strong><p>Billing, Payments</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="jamie butler" data-products="billing payments" data-missing="psa web tigerpaw odin" data-search="spectrotel jamie butler ryan burton spectrotel mitch wright revguest-a">
+      <td class="sticky"><strong>Spectrotel</strong><span>Spectrotel</span></td>
+      <td>Jamie Butler<span>Assigned AM: Ryan Burton</span></td>
+      <td class="num">1<span>Mitch Wright</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b> <b>Odin</b></td>
+      <td>$52,403.27</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Mitch Wright — VP of IT · IT/Engineering · referred by Jamie Butler · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>SPECTROTEL, SPECTROTEL_NEW1, SPECTROTEL_SANDBOX</p><strong>Raw product field</strong><p>Billing, Payments</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="ryan burton" data-products="billing psa web" data-missing="tigerpaw odin payments" data-search="tailwinds voice &amp; data, inc. ryan burton ryan burton tailwind voice &amp; data tom murphy revfan100">
+      <td class="sticky"><strong>Tailwinds Voice &amp; Data, Inc.</strong><span>TailWind Voice &amp; Data</span></td>
+      <td>Ryan Burton<span>Assigned AM: Ryan Burton</span></td>
+      <td class="num">1<span>Tom Murphy</span></td>
+      <td>REVFAN100</td>
+      <td class="product yes">✓</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Tigerpaw</b> <b>Odin</b> <b>Payments</b></td>
+      <td>$31,000.00</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Tom Murphy — Senior Vice President · C-Suite · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>TAILWINDS_SANDBOX, WORX1, WORX1PSA</p><strong>Raw product field</strong><p>Billing, PSA Web</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="jakob champion" data-products="billing psa web payments" data-missing="tigerpaw odin" data-search="bridge communications, llc jakob champion jacob.williams bridge communications lauren otts matt pridemore matt otts mike hancock 2blondes">
+      <td class="sticky"><strong>Bridge Communications, LLC</strong><span>Bridge Communications</span></td>
+      <td>Jakob Champion<span>Assigned AM: jacob.williams</span></td>
+      <td class="num">4<span>Lauren Otts; Matt Pridemore; Matt Otts; Mike Hancock</span></td>
+      <td>2BLONDES</td>
+      <td class="product yes">✓</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td>
+      <td class="missing"><b>Tigerpaw</b> <b>Odin</b></td>
+      <td>$3,232.71</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Lauren Otts — Customer Success Specialist · Operations/Support · referred by Jakob Champion · attended before: No</li><li>Matt Pridemore — Managing Partner · C-Suite · referred by Jakob Champion · attended before: No</li><li>Matt Otts — Partner · Sales/Marketing · referred by Jakob Champion · attended before: No</li><li>Mike Hancock — Managing Partner · C-Suite · referred by Jakob Champion · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>BRIDGECOMM, BRIDGECOMMPSA</p><strong>Raw product field</strong><p>Billing, PSA Web, Payments</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="blaine villafuerte" data-products="billing psa web tigerpaw" data-missing="odin payments" data-search="vanran communications blaine villafuerte sarah mcgovern vanran communications kris kokell ron bohannon sheila greene emily sanders revguest-a">
+      <td class="sticky"><strong>Vanran Communications</strong><span>VanRan Communications</span></td>
+      <td>Blaine Villafuerte<span>Assigned AM: Sarah McGovern</span></td>
+      <td class="num">4<span>Kris Kokell; Ron Bohannon; Sheila Greene; Emily Sanders</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product yes">✓</td><td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td>
+      <td class="missing"><b>Odin</b> <b>Payments</b></td>
+      <td>$5,040.03</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Kris Kokell — Dispatcher/Customer Service · Operations/Support · referred by Blaine Villafuerte · attended before: No</li><li>Ron Bohannon — Vice President · IT/Engineering · referred by Blaine Villafuerte · attended before: No</li><li>Sheila Greene — Office Manager · Operations/Support · referred by Blaine Villafuerte · attended before: No</li><li>Emily Sanders — Director of Quality Assurance · Operations/Support · referred by Blaine Villafuerte · attended before: No</li></ul></div>
+      <div><strong>Client codes</strong><p>VANRAN, VANRANPSA</p><strong>Raw product field</strong><p>Billing, PSA Web, Tigerpaw</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr>
+    <tr data-owner="ryan burton" data-products="billing odin payments" data-missing="psa web tigerpaw" data-search="scipio technologies ryan burton ryan burton scipio technologies jim peace john geary steve blankenship revguest-a">
+      <td class="sticky"><strong>Scipio Technologies</strong><span>Scipio Technologies</span></td>
+      <td>Ryan Burton<span>Assigned AM: Ryan Burton</span></td>
+      <td class="num">3<span>Jim Peace; John Geary; Steve Blankenship</span></td>
+      <td>REVGUEST-A</td>
+      <td class="product yes">✓</td><td class="product no">—</td><td class="product no">—</td><td class="product yes">✓</td><td class="product yes">✓</td>
+      <td class="missing"><b>PSA Web</b> <b>Tigerpaw</b></td>
+      <td>$16,646.78</td>
+      <td><button class="details" type="button">View</button></td>
+    </tr>
+    <tr class="detail-row"><td colspan="15"><div class="details-box">
+      <div><strong>Registrant targeting notes</strong><ul><li>Jim Peace — CEO · C-Suite · referred by Ryan Burton · attended before: Yes</li><li>John Geary — Assistant Controller · Finance/Billing · referred by Ryan Burton · attended before: Yes</li><li>Steve Blankenship — Financial Consultant · Finance/Billing · referred by Ryan Burton · attended before: Yes</li></ul></div>
+      <div><strong>Client codes</strong><p>PEACE, PEACEODIN, PEACERESELLER</p><strong>Raw product field</strong><p>Billing, Odin, Payments</p><strong>Match score</strong><p>1</p></div>
+    </div></td></tr></tbody></table></div></section>
+<section class="panel"><h2>Referrer workload</h2><div class="table-wrap rollup"><table><thead><tr><th>Owner</th><th>Accounts</th><th>Attendees</th><th>Missing product opps</th></tr></thead><tbody><tr><td>Blaine Villafuerte</td><td class="num">7</td><td class="num">18</td><td class="num">26</td></tr><tr><td>Ryan Koontz</td><td class="num">7</td><td class="num">10</td><td class="num">26</td></tr><tr><td>Justin Lee</td><td class="num">7</td><td class="num">11</td><td class="num">23</td></tr><tr><td>Ryan Burton</td><td class="num">7</td><td class="num">12</td><td class="num">22</td></tr><tr><td>Jamie Butler</td><td class="num">5</td><td class="num">8</td><td class="num">18</td></tr><tr><td>Rachael Buchtan</td><td class="num">3</td><td class="num">7</td><td class="num">11</td></tr><tr><td>Shane Frost</td><td class="num">3</td><td class="num">4</td><td class="num">11</td></tr><tr><td>Ingrid Beard</td><td class="num">3</td><td class="num">5</td><td class="num">10</td></tr><tr><td>Jakob Champion</td><td class="num">3</td><td class="num">9</td><td class="num">8</td></tr><tr><td>Reid Doster</td><td class="num">2</td><td class="num">5</td><td class="num">6</td></tr><tr><td>Cam Sharpe</td><td class="num">2</td><td class="num">3</td><td class="num">6</td></tr><tr><td>Jacob Williams</td><td class="num">1</td><td class="num">3</td><td class="num">4</td></tr><tr><td>Jacob Willimas</td><td class="num">1</td><td class="num">3</td><td class="num">4</td></tr><tr><td>Bryan Bettiol</td><td class="num">1</td><td class="num">2</td><td class="num">4</td></tr><tr><td>Jaylin Bender</td><td class="num">1</td><td class="num">2</td><td class="num">4</td></tr><tr><td>Lorrie Browne</td><td class="num">1</td><td class="num">2</td><td class="num">4</td></tr><tr><td>Rinor Berisha</td><td class="num">1</td><td class="num">2</td><td class="num">4</td></tr><tr><td>Roman Rudzik</td><td class="num">1</td><td class="num">2</td><td class="num">4</td></tr><tr><td>Unassigned</td><td class="num">1</td><td class="num">2</td><td class="num">4</td></tr><tr><td>Jeremy Adams</td><td class="num">1</td><td class="num">1</td><td class="num">4</td></tr><tr><td>Katerra Stephenson-Greenwood</td><td class="num">1</td><td class="num">1</td><td class="num">4</td></tr><tr><td>Olivia Sandefur</td><td class="num">1</td><td class="num">1</td><td class="num">4</td></tr><tr><td>Sarah McGovern</td><td class="num">1</td><td class="num">1</td><td class="num">4</td></tr><tr><td>Rachel Buchtan</td><td class="num">1</td><td class="num">4</td><td class="num">3</td></tr><tr><td>Katerra Greenwood</td><td class="num">1</td><td class="num">3</td><td class="num">3</td></tr></tbody></table></div></section>
+<section class="panel warning"><h2>Unmatched discounted registrants</h2><p class="note">These passed the discount-code rule but did not confidently match a Master Client List account. They are excluded from target account stats until manually mapped.</p><div class="table-wrap"><table><thead><tr><th>Company</th><th>Registrant</th><th>Referral</th><th>Code</th></tr></thead><tbody><tr><td>AIMERICA</td><td>Charles Drapeau</td><td>Connor Flynn</td><td>REVGUEST-A</td></tr><tr><td>AIMERICA</td><td>Sean Tishler</td><td>Connor Flynn</td><td>REVGUEST-A</td></tr><tr><td>AIMERICA</td><td>Yan Carter</td><td>Connor Flynn</td><td>REVGUEST-A</td></tr><tr><td>AppDirect</td><td>Amy Shirey</td><td>Ryan Burton</td><td>REVGUEST-A</td></tr><tr><td>AppDirect</td><td>Brittany Clester</td><td>Ryan Burton</td><td>REVGUEST-A</td></tr><tr><td>AvTek Solutions, Inc.</td><td>David Cox</td><td>Brook Lee</td><td>2BLONDES</td></tr><tr><td>Enitech Solutions</td><td>Antwine Jackson</td><td>Connor Flynn</td><td>REVGUEST-A</td></tr><tr><td>Gamut</td><td>Alyssa Hutchinson</td><td>Cam Sharpe</td><td>CAMREVSUMMIT</td></tr><tr><td>Gamut</td><td>Brendan English</td><td>Cam Sharpe</td><td>CAMREVSUMMIT</td></tr><tr><td>IMC Jax</td><td>Corinne Bowden</td><td>Connor Flynn</td><td>REVGUEST-A</td></tr><tr><td>IMC Jax</td><td>Eric Lewis</td><td>Connor Flynn</td><td>REVGUEST-A</td></tr><tr><td>IMC Jax</td><td>Lori Rockwell</td><td>Connor Flynn</td><td>REVGUEST-A</td></tr><tr><td>KealyWalker</td><td>Brent Reeves</td><td>—</td><td>2BLONDES</td></tr><tr><td>KealyWalker</td><td>Michael Yokay</td><td>—</td><td>2BLONDES</td></tr><tr><td>MYSWITCH Communications</td><td>Brandon Burchard</td><td>Justin Lee</td><td>REVGUEST-A</td></tr><tr><td>MYSWITCH Communications</td><td>Brenden Koop</td><td>Justin Lee</td><td>REVGUEST-A</td></tr><tr><td>Ooma</td><td>Michael Abenhaim</td><td>Jake Mitchell</td><td>2BLONDES</td></tr><tr><td>Ooma</td><td>Robert Lafrance</td><td>Jake Mitchell</td><td>2BLONDES</td></tr><tr><td>Rubiano</td><td>Frank Rubiano</td><td>Jamie Butler</td><td>REVFAN100</td></tr><tr><td>Southeast Telephone Service</td><td>Dylan Hornaday</td><td>Connor Flynn</td><td>REVGUEST-A</td></tr><tr><td>Southeast Telephone Service</td><td>Joshua Faw</td><td>Connor Flynn</td><td>SUMMIT100</td></tr><tr><td>The Crancer Group</td><td>Richard Crancer</td><td>Brook Lee - she won GTIA Member of the Year she is amazing</td><td>2BLONDES</td></tr><tr><td>True Choice Technology</td><td>Lori Williams</td><td>Reid Doster</td><td>BLUELINE</td></tr></tbody></table></div></section>
+<div class="footer">Source note: Live Notion page access returned not shared/object_not_found, so this build used the cached Master Client List CSV export with matching page ID.</div>
+</main>
+<script>
+const rows=[...document.querySelectorAll('#accounts tbody tr:not(.detail-row)')];
+function filter(){const q=document.querySelector('#search').value.toLowerCase().trim();const owner=document.querySelector('#owner').value.toLowerCase();const missing=document.querySelector('#missing').value.toLowerCase();const have=document.querySelector('#have').value.toLowerCase();for(const tr of rows){const detail=tr.nextElementSibling;let ok=true;if(q&&!tr.dataset.search.includes(q))ok=false;if(owner&&!tr.dataset.owner.includes(owner))ok=false;if(missing==='none'&&tr.dataset.missing)ok=false;else if(missing&&missing!=='none'&&!tr.dataset.missing.includes(missing))ok=false;if(have&&!tr.dataset.products.includes(have))ok=false;tr.style.display=ok?'':'none';if(!ok)detail.classList.remove('open');}}
+document.querySelectorAll('.controls input,.controls select').forEach(el=>el.addEventListener('input',filter));
+document.querySelectorAll('.details').forEach(btn=>btn.addEventListener('click',e=>e.target.closest('tr').nextElementSibling.classList.toggle('open')));
+</script>
+</body></html>

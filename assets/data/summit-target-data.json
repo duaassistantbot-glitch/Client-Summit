@@ -1,0 +1,3758 @@
+{
+  "generatedAt": "2026-08-31T04:07:51.668Z",
+  "source": {
+    "summitData": "assets/data/summit-data.json",
+    "clientProducts": "../exports/gmail-attachments/1783436761907-master-client-list-a2654cf0c7e34c57bff58f4ea63d241f_all.csv",
+    "liveNotionAccess": false,
+    "liveNotionNote": "Notion API returned object_not_found/not shared; used cached CSV export for the same Notion page ID."
+  },
+  "rules": {
+    "accountFilter": "Registrant has a non-empty discount code other than REVII or SUMMITSPONSOR, then company is matched to Master Client List.",
+    "products": [
+      "Billing",
+      "PSA Web",
+      "Tigerpaw",
+      "Odin",
+      "Payments"
+    ]
+  },
+  "summary": {
+    "sourceRegistrants": 224,
+    "discountedNonSponsorRegistrants": 130,
+    "matchedClientRegistrants": 107,
+    "targetAccounts": 58,
+    "referrers": 25,
+    "accountsWithMissingProducts": 58,
+    "missingProductOpportunities": 202,
+    "unmatchedRegistrants": 23,
+    "clientMasterRows": 1074
+  },
+  "accounts": [
+    {
+      "account": "Bank-Tec South",
+      "registeredCompanyNames": [
+        "Bank-Tec South"
+      ],
+      "assignedAm": "Blaine Villafuerte",
+      "status": "Active, Onboarding",
+      "averageMrr": "$6,520.00",
+      "clientCode": "BANKTECSOUTHPSA",
+      "products": {
+        "Billing": false,
+        "PSA Web": true,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "PSA Web",
+      "missing": [
+        "Billing",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Robin Brownmiller",
+          "title": "NCR Liaison",
+          "department": "Other",
+          "rank": "Other",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 10, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Salena Collins",
+          "title": "Sales Order Specialist",
+          "department": "Sales/Marketing",
+          "rank": "Other",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 10, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Tammy Kay Robbins",
+          "title": "Accounting Manager",
+          "department": "Finance/Billing",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 10, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Matt Sanders",
+          "title": "Senior Director of Internal Operations",
+          "department": "Sales/Marketing",
+          "rank": "Director",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 26, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Blaine Villafuerte"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 4,
+      "targetOwner": "Blaine Villafuerte",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "RSS (Restaurant Service Solutions)",
+      "registeredCompanyNames": [
+        "RSS"
+      ],
+      "assignedAm": "Blaine Villafuerte",
+      "status": "At Risk",
+      "averageMrr": "$3,088.22",
+      "clientCode": "",
+      "products": {
+        "Billing": false,
+        "PSA Web": false,
+        "Tigerpaw": true,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Tigerpaw",
+      "missing": [
+        "Billing",
+        "PSA Web",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Brandon Sauer",
+          "title": "Head of Sales",
+          "department": "Sales/Marketing",
+          "rank": "Other",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 5, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Mandy Hughs",
+          "title": "Director of HR & Admin",
+          "department": "Operations/Support",
+          "rank": "Director",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 5, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Rich Vale",
+          "title": "Field Service & Product Manager",
+          "department": "Operations/Support",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 5, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Wes Watson",
+          "title": "Director of Technology",
+          "department": "IT/Engineering",
+          "rank": "Director",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 5, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Blaine Villafuerte"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 0.86,
+      "attendeeCount": 4,
+      "targetOwner": "Blaine Villafuerte",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "BCM ONE C/O InvoiceIQ",
+      "registeredCompanyNames": [
+        "BCM One",
+        "Skyswitch"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "averageMrr": "$82,118.70",
+      "clientCode": "CHARLESTONTEL, PRIMARYWAVE, SKYSWITCH, SKYSWITCH_SANDBOX, SKYSWITCHMAIN, TUCTECHNOLOGIES",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Adnon Dow",
+          "title": "Chief Product & Strategy Officer",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Jamie Butler",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 5, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Cassandra Monroe",
+          "title": "Director of Billing Operations",
+          "department": "Finance/Billing",
+          "rank": "Director",
+          "email": "",
+          "referral": "Ryan Burton",
+          "discountCode": "SUMMIT50",
+          "dateRegistered": "May 27, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Danilo Jr Catacutan",
+          "title": "Sr. Manager for Implementation",
+          "department": "Finance/Billing",
+          "rank": "Manager",
+          "email": "",
+          "referral": "",
+          "discountCode": "SUMMIT50",
+          "dateRegistered": "May 27, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Jamie Butler",
+        "Ryan Burton"
+      ],
+      "discountCodes": [
+        "REVGUEST-A",
+        "SUMMIT50"
+      ],
+      "matchScore": 0.94,
+      "attendeeCount": 3,
+      "targetOwner": "Jamie Butler, Ryan Burton",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Homeland Technology Group",
+      "registeredCompanyNames": [
+        "Homeland Security Systems"
+      ],
+      "assignedAm": "jacob.williams",
+      "status": "Active",
+      "averageMrr": "$2,158.80",
+      "clientCode": "",
+      "products": {
+        "Billing": false,
+        "PSA Web": false,
+        "Tigerpaw": true,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Tigerpaw",
+      "missing": [
+        "Billing",
+        "PSA Web",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Mark Fleeger",
+          "title": "CEO",
+          "department": "Other",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Jacob Willimas",
+          "discountCode": "VIP-REVGUEST",
+          "dateRegistered": "Jul 2, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Jeremy Staley",
+          "title": "President",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Jacob Williams",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 26, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Kevin Ewing",
+          "title": "IT Director",
+          "department": "IT/Engineering",
+          "rank": "Director",
+          "email": "",
+          "referral": "Jacob Williams",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 26, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Jacob Williams",
+        "Jacob Willimas"
+      ],
+      "discountCodes": [
+        "REVGUEST-A",
+        "VIP-REVGUEST"
+      ],
+      "matchScore": 0.92,
+      "attendeeCount": 3,
+      "targetOwner": "Jacob Williams, Jacob Willimas",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "ACS Fire & Security",
+      "registeredCompanyNames": [
+        "ACS Fire & Security"
+      ],
+      "assignedAm": "rinor.berisha",
+      "status": "Active",
+      "averageMrr": "$466.67",
+      "clientCode": "ACSFIRESEACURITYPSA",
+      "products": {
+        "Billing": false,
+        "PSA Web": true,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "PSA Web",
+      "missing": [
+        "Billing",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Martin Rudzik",
+          "title": "VP",
+          "department": "Operations/Support",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Roman Rudzik",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 12, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Roman Rudzik",
+          "title": "CFO",
+          "department": "Finance/Billing",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Lorrie Browne",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 12, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Lorrie Browne",
+        "Roman Rudzik"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Lorrie Browne, Roman Rudzik",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "All Secured Security Services",
+      "registeredCompanyNames": [
+        "All Secure"
+      ],
+      "assignedAm": "Sarah McGovern",
+      "status": "Active, Onboarding",
+      "averageMrr": "$1,917.00",
+      "clientCode": "AllSECUREDSECURITYPSA",
+      "products": {
+        "Billing": false,
+        "PSA Web": true,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "PSA Web",
+      "missing": [
+        "Billing",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Ben Lawrence",
+          "title": "President",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 29, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Rita Lawrence",
+          "title": "VP Partner Development",
+          "department": "Operations/Support",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 29, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Blaine Villafuerte"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 0.94,
+      "attendeeCount": 2,
+      "targetOwner": "Blaine Villafuerte",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "C1st Technologies",
+      "registeredCompanyNames": [
+        "C1st Technologies"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "Active",
+      "averageMrr": "$0.00",
+      "clientCode": "C1STTECHNOLOGIESPSA",
+      "products": {
+        "Billing": false,
+        "PSA Web": true,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "PSA Web",
+      "missing": [
+        "Billing",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Gregory Marchand",
+          "title": "Director of MSP Operations",
+          "department": "IT/Engineering",
+          "rank": "Director",
+          "email": "",
+          "referral": "Jamie Butler",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "May 28, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Tony Hsieh",
+          "title": "Partner",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Jamie Butler",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "May 28, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Jamie Butler"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Jamie Butler",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Centerpoint IT, Inc",
+      "registeredCompanyNames": [
+        "Centerpoint IT"
+      ],
+      "assignedAm": "rinor.berisha",
+      "status": "Active",
+      "averageMrr": "$2,956.40",
+      "clientCode": "",
+      "products": {
+        "Billing": false,
+        "PSA Web": false,
+        "Tigerpaw": true,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Tigerpaw",
+      "missing": [
+        "Billing",
+        "PSA Web",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Kevin Durham",
+          "title": "Lead Manager",
+          "department": "IT/Engineering",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Rinor Berisha",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 21, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Scott Williams",
+          "title": "Client Success Manager",
+          "department": "IT/Engineering",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Rinor Berisha",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 21, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Rinor Berisha"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Rinor Berisha",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Global Data Systems",
+      "registeredCompanyNames": [
+        "Global Data Systems",
+        "Global Data Systems, Inc"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "",
+      "averageMrr": "$1,503.23",
+      "clientCode": "GLOBALDATASYSTEMS",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Monica Theriot-Habetz",
+          "title": "Vice President, SFC",
+          "department": "Operations/Support",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Ryan Koontz",
+          "discountCode": "VIP-REVGUEST",
+          "dateRegistered": "Jun 30, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Robert Guidry",
+          "title": "CTO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ryan Koontz",
+          "discountCode": "VIP-REVGUEST",
+          "dateRegistered": "Jun 30, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Ryan Koontz"
+      ],
+      "discountCodes": [
+        "VIP-REVGUEST"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Ryan Koontz",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Hiscall, Inc.",
+      "registeredCompanyNames": [
+        "Hiscall"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "",
+      "averageMrr": "$1,000.00",
+      "clientCode": "HISCALL",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Gary Luffman",
+          "title": "President",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 20, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Shae Pfieffer",
+          "title": "IT Manager",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 20, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Unassigned",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "ICS Communications",
+      "registeredCompanyNames": [
+        "ICS Communications"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "",
+      "averageMrr": "$537.25",
+      "clientCode": "",
+      "products": {
+        "Billing": false,
+        "PSA Web": false,
+        "Tigerpaw": true,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Tigerpaw",
+      "missing": [
+        "Billing",
+        "PSA Web",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Jason Veasey",
+          "title": "Owner",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 11, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Susie Veasey",
+          "title": "VP of Operations",
+          "department": "Operations/Support",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 11, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Blaine Villafuerte"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Blaine Villafuerte",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Minuteman Security Technologies, Inc.",
+      "registeredCompanyNames": [
+        "Minutemen Security Systems"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "",
+      "averageMrr": "$474.00",
+      "clientCode": "",
+      "products": {
+        "Billing": false,
+        "PSA Web": false,
+        "Tigerpaw": true,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Tigerpaw",
+      "missing": [
+        "Billing",
+        "PSA Web",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Christopher Gordan",
+          "title": "COO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Jaylin Bender",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 30, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Gary Gordon",
+          "title": "Owner",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Jaylin Bender",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 30, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Jaylin Bender"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Jaylin Bender",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Next Step Communications",
+      "registeredCompanyNames": [
+        "Next Step Communication",
+        "Next Step Communications"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "Active",
+      "averageMrr": "$20.67",
+      "clientCode": "NEXTSTEPCOMMSPSA",
+      "products": {
+        "Billing": false,
+        "PSA Web": true,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "PSA Web",
+      "missing": [
+        "Billing",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "John Jason Parmley",
+          "title": "CEO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Bryan Bettiol",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 11, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Shannon Parmley",
+          "title": "Business Manager",
+          "department": "Finance/Billing",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Bryan Bettiol",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 11, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Bryan Bettiol"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Bryan Bettiol",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "SpectrumVoIP",
+      "registeredCompanyNames": [
+        "SpectrumVoIP"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "averageMrr": "$28,428.93",
+      "clientCode": "SPECTRUM, SPECTRUM (1510)",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Jake Leidy",
+          "title": "Chief Operations Officer",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Justin Lee",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 18, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Michael Ruggiere",
+          "title": "Controller",
+          "department": "Finance/Billing",
+          "rank": "Director",
+          "email": "",
+          "referral": "Ryan Koontz",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 26, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Justin Lee",
+        "Ryan Koontz"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Justin Lee, Ryan Koontz",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Viirtue LLC (Apollo)",
+      "registeredCompanyNames": [
+        "Viirtue Inc"
+      ],
+      "assignedAm": "Rachael Buchtan",
+      "status": "Active",
+      "averageMrr": "$24,659.85",
+      "clientCode": "SYNTEL",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Alana Lee",
+          "title": "Billing and Services Coordinator",
+          "department": "Finance/Billing",
+          "rank": "Non-Manager",
+          "email": "",
+          "referral": "Rachael Buchtan",
+          "discountCode": "REVGUEST-B",
+          "dateRegistered": "Jul 13, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Ana da Silva",
+          "title": "Sr. Billing Manager",
+          "department": "Finance/Billing",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Rachael Buchtan",
+          "discountCode": "SUMMIT100VIIRTUE",
+          "dateRegistered": "Mar 31, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Rachael Buchtan"
+      ],
+      "discountCodes": [
+        "REVGUEST-B",
+        "SUMMIT100VIIRTUE"
+      ],
+      "matchScore": 0.94,
+      "attendeeCount": 2,
+      "targetOwner": "Rachael Buchtan",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "AVIT",
+      "registeredCompanyNames": [
+        "AVIT, LLC"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "Active",
+      "averageMrr": "$433.33",
+      "clientCode": "avit.psarev.io",
+      "products": {
+        "Billing": false,
+        "PSA Web": true,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "PSA Web",
+      "missing": [
+        "Billing",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Steve Konetski",
+          "title": "CIO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ryan Koontz",
+          "discountCode": "VIP-REVGUEST",
+          "dateRegistered": "Jul 1, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Ryan Koontz"
+      ],
+      "discountCodes": [
+        "VIP-REVGUEST"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Ryan Koontz",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "BluDog Telecom",
+      "registeredCompanyNames": [
+        "BluDog Telecom"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "",
+      "averageMrr": "$1,652.24",
+      "clientCode": "BLUDOG",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Chris Reyes",
+          "title": "Owner",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ingrid Beard",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Ingrid Beard"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Ingrid Beard",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "CL Sams Business Solutions LLC",
+      "registeredCompanyNames": [
+        "CL Sams"
+      ],
+      "assignedAm": "Olivia Sandefur",
+      "status": "Active, On Hold",
+      "averageMrr": "$1,100.00",
+      "clientCode": "CLSAMSPSA",
+      "products": {
+        "Billing": false,
+        "PSA Web": true,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "PSA Web",
+      "missing": [
+        "Billing",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Clay Lovelace",
+          "title": "COO/Co-Owner",
+          "department": "Operations/Support",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "discountCode": "REVFAN100",
+          "dateRegistered": "Jun 23, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Blaine Villafuerte"
+      ],
+      "discountCodes": [
+        "REVFAN100"
+      ],
+      "matchScore": 0.94,
+      "attendeeCount": 1,
+      "targetOwner": "Blaine Villafuerte",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Converged Networks",
+      "registeredCompanyNames": [
+        "Converged Networks"
+      ],
+      "assignedAm": "Sarah McGovern",
+      "status": "Active",
+      "averageMrr": "$4,144.79",
+      "clientCode": "CONVERGEDNETWORKS",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Brant Yandell",
+          "title": "VoIP Engineer",
+          "department": "Operations/Support",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Justin Lee",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 8, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Justin Lee"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Justin Lee",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Decibel",
+      "registeredCompanyNames": [
+        "Decibel"
+      ],
+      "assignedAm": "Rachael Buchtan",
+      "status": "Active",
+      "averageMrr": "$2,303.98",
+      "clientCode": "DECIBEL",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Stephanie Kern",
+          "title": "Director of Sales",
+          "department": "Sales/Marketing",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Rachael Buchtan",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "May 22, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Rachael Buchtan"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Rachael Buchtan",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Digital Market POS",
+      "registeredCompanyNames": [
+        "Digital Market POS"
+      ],
+      "assignedAm": "jacob.williams",
+      "status": "Active",
+      "averageMrr": "$990.00",
+      "clientCode": "DIGITALMARKETPOSPSA",
+      "products": {
+        "Billing": false,
+        "PSA Web": true,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "PSA Web",
+      "missing": [
+        "Billing",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Ismael Adames",
+          "title": "Lead Tech",
+          "department": "Operations/Support",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Jeremy Adams",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 9, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Jeremy Adams"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Jeremy Adams",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "J & M Systems LLC",
+      "registeredCompanyNames": [
+        "J&M Systems LLC"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "",
+      "averageMrr": "$656.37",
+      "clientCode": "",
+      "products": {
+        "Billing": false,
+        "PSA Web": false,
+        "Tigerpaw": true,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Tigerpaw",
+      "missing": [
+        "Billing",
+        "PSA Web",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Mark Geier",
+          "title": "Partner",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Katerra Stephenson-Greenwood",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 20, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Katerra Stephenson-Greenwood"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Katerra Stephenson-Greenwood",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "JCT (Johnston Communications Voice & Data)",
+      "registeredCompanyNames": [
+        "JCT Solutions"
+      ],
+      "assignedAm": "Blaine Villafuerte",
+      "status": "Active",
+      "averageMrr": "$9,628.89",
+      "clientCode": "",
+      "products": {
+        "Billing": false,
+        "PSA Web": false,
+        "Tigerpaw": true,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Tigerpaw",
+      "missing": [
+        "Billing",
+        "PSA Web",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Joe Marinello",
+          "title": "Director of Information Systems",
+          "department": "IT/Engineering",
+          "rank": "Director",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 18, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Blaine Villafuerte"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 0.86,
+      "attendeeCount": 1,
+      "targetOwner": "Blaine Villafuerte",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "K&L Telecom",
+      "registeredCompanyNames": [
+        "K&L Telecom"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "Active",
+      "averageMrr": "$2,500.00",
+      "clientCode": "KLTELECOM",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Andrew Adair",
+          "title": "Owner",
+          "department": "Operations/Support",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Jamie Butler",
+          "discountCode": "REVFAN100",
+          "dateRegistered": "Jun 24, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Jamie Butler"
+      ],
+      "discountCodes": [
+        "REVFAN100"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Jamie Butler",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Northwest Digits LLC",
+      "registeredCompanyNames": [
+        "SoundLine Communications"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "",
+      "averageMrr": "$3,127.22",
+      "clientCode": "SoundLine",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Sanjeev Tirunagaram",
+          "title": "CMO",
+          "department": "Sales/Marketing",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ryan Burton",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 2, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Ryan Burton"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 0.96,
+      "attendeeCount": 1,
+      "targetOwner": "Ryan Burton",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Raven Tech LLC",
+      "registeredCompanyNames": [
+        "Raven Tech LLC"
+      ],
+      "assignedAm": "Olivia Sandefur",
+      "status": "Active",
+      "averageMrr": "$400.00",
+      "clientCode": "RAVENTECHPSA",
+      "products": {
+        "Billing": false,
+        "PSA Web": true,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "PSA Web",
+      "missing": [
+        "Billing",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Drew Aldinger",
+          "title": "CEO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Olivia Sandefur",
+          "discountCode": "REVFAN100",
+          "dateRegistered": "Jun 11, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Olivia Sandefur"
+      ],
+      "discountCodes": [
+        "REVFAN100"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Olivia Sandefur",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Rev.io",
+      "registeredCompanyNames": [
+        "YorN Sales Training"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "",
+      "averageMrr": "$0.00",
+      "clientCode": "ACME, API_SANDBOX, API_SANDBOX_TEMPLATE, AUTOMATED_TESTS, BULLSEYE, DEMO, DEMO_SANDBOX, DM_Testing_TEST, H20123, H2O, H2O_SANDBOX, H2O1, INTELIQUENT, INVENTORY, JERMAINE, LEARN, LIONGARD, MOMENTUM, MSP, NORTHLAND, ODIN_DEMO, PARLOR, PRODUCT, SALES, sales_SANDBOX, SANDBOX, SE, SOLUTIONS, TEMPLATE, TEMPLATE_SANDBOX, TEMPLATE_WIRELESS, TESTDRIVE, TRAINING, TRAINING_SANDBOX",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Lucy Shriver",
+          "title": "Founder",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ryan Koontz",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 26, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Ryan Koontz"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 0.96,
+      "attendeeCount": 1,
+      "targetOwner": "Ryan Koontz",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Southeast Network Specialists LLC",
+      "registeredCompanyNames": [
+        "Southeast Networks"
+      ],
+      "assignedAm": "Sarah McGovern",
+      "status": "Active",
+      "averageMrr": "$6,667.46",
+      "clientCode": "SNS",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "William Oppermann",
+          "title": "CEO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ryan Koontz",
+          "discountCode": "2BLONDES",
+          "dateRegistered": "Aug 5, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Ryan Koontz"
+      ],
+      "discountCodes": [
+        "2BLONDES"
+      ],
+      "matchScore": 0.86,
+      "attendeeCount": 1,
+      "targetOwner": "Ryan Koontz",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Southern Telecom",
+      "registeredCompanyNames": [
+        "Southern Telecommunications, LLC"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "",
+      "averageMrr": "$1,333.33",
+      "clientCode": "SOUTHERNTELECOM",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Rob Mcknight",
+          "title": "Operations Manager",
+          "department": "Operations/Support",
+          "rank": "Director",
+          "email": "",
+          "referral": "Shane Frost",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 18, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Shane Frost"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 0.92,
+      "attendeeCount": 1,
+      "targetOwner": "Shane Frost",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "TruLine Technologies",
+      "registeredCompanyNames": [
+        "Truline Technologies"
+      ],
+      "assignedAm": "Sarah McGovern",
+      "status": "Active",
+      "averageMrr": "$500.00",
+      "clientCode": "TRULINETECHNOLOGIESPSA",
+      "products": {
+        "Billing": false,
+        "PSA Web": true,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "PSA Web",
+      "missing": [
+        "Billing",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Michael Rowland",
+          "title": "President",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "",
+          "discountCode": "REVFAN100",
+          "dateRegistered": "Mar 16, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [],
+      "discountCodes": [
+        "REVFAN100"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Sarah McGovern",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "VTi Communications",
+      "registeredCompanyNames": [
+        "VTI Communications"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "",
+      "averageMrr": "$925.76",
+      "clientCode": "VTICOMMUNICATIONS",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Megan Ehmen",
+          "title": "Manager",
+          "department": "Operations/Support",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Shane Frost",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 6, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Shane Frost"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Shane Frost",
+      "missingCount": 4,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Blueline Telecom",
+      "registeredCompanyNames": [
+        "Blueline Telecom Group, LLC"
+      ],
+      "assignedAm": "Rachael Buchtan",
+      "status": "Active",
+      "averageMrr": "$11,884.30",
+      "clientCode": "BLUELINE, BLUELINEPSA",
+      "products": {
+        "Billing": true,
+        "PSA Web": true,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing, PSA Web",
+      "missing": [
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Andres Abeledo",
+          "title": "Vice President of Engineering and Operations",
+          "department": "Operations/Support",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Reid Doster",
+          "discountCode": "BLUELINE",
+          "dateRegistered": "Aug 6, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Dagmar Lynch",
+          "title": "Accounts Payable",
+          "department": "Finance/Billing",
+          "rank": "Non-Manager",
+          "email": "",
+          "referral": "Reid Doster",
+          "discountCode": "BLUELINE",
+          "dateRegistered": "Aug 6, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Jessica Soto-Perez",
+          "title": "Accounting Manager",
+          "department": "Finance/Billing",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Reid Doster",
+          "discountCode": "BLUELINE",
+          "dateRegistered": "Aug 6, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Tabitha Abeledo",
+          "title": "Director of Operations",
+          "department": "Operations/Support",
+          "rank": "Director",
+          "email": "",
+          "referral": "Reid Doster",
+          "discountCode": "BLUELINE",
+          "dateRegistered": "Aug 6, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Reid Doster"
+      ],
+      "discountCodes": [
+        "BLUELINE"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 4,
+      "targetOwner": "Reid Doster",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "MNJ Technologies",
+      "registeredCompanyNames": [
+        "MNJ Technologies",
+        "MNJ Technologies Direct, Inc."
+      ],
+      "assignedAm": "Rachael Buchtan",
+      "status": "Active",
+      "averageMrr": "$11,988.20",
+      "clientCode": "MNJ, MNJ_SANDBOX",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin"
+      ],
+      "registrants": [
+        {
+          "name": "ANASTASIYA CHAPMAN",
+          "title": "SENIOR STAFF ACCOUNTANT",
+          "department": "Finance/Billing",
+          "rank": "Non-Manager",
+          "email": "",
+          "referral": "Rachel Buchtan",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Amanda Gath",
+          "title": "PMO Team Lead",
+          "department": "IT/Engineering",
+          "rank": "Non-Manager",
+          "email": "",
+          "referral": "Rachael Buchtan",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 20, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Georgia Higgins",
+          "title": "Accounts Receivable Manager",
+          "department": "Finance/Billing",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Rachel Buchtan",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "James Mace",
+          "title": "PMO Manager",
+          "department": "IT/Engineering",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Rachael Buchtan",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 20, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Rachael Buchtan",
+        "Rachel Buchtan"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 4,
+      "targetOwner": "Rachael Buchtan, Rachel Buchtan",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Digital Agent",
+      "registeredCompanyNames": [
+        "Digital Agent"
+      ],
+      "assignedAm": "Rachael Buchtan",
+      "status": "Active",
+      "averageMrr": "$5,490.05",
+      "clientCode": "DIGITALAGENT",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin"
+      ],
+      "registrants": [
+        {
+          "name": "Howard Hunter",
+          "title": "Owner",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ingrid Beard",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 12, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "John Reinhardt",
+          "title": "Operation Manager",
+          "department": "Operations/Support",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Ingrid Beard",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 12, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Keyur Patel",
+          "title": "COO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ingrid Beard",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 12, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Ingrid Beard"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 3,
+      "targetOwner": "Ingrid Beard",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Simplicity VoIP",
+      "registeredCompanyNames": [
+        "Simplicity VoIP"
+      ],
+      "assignedAm": "Rachael Buchtan",
+      "status": "Active",
+      "averageMrr": "$8,661.92",
+      "clientCode": "SIMPLICITYVOIP",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin"
+      ],
+      "registrants": [
+        {
+          "name": "Ben Humphreys",
+          "title": "President",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Katerra Greenwood",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 31, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Lacey Humphreys",
+          "title": "Inventory Manager",
+          "department": "Operations/Support",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Katerra Greenwood",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 31, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Pam Tyler",
+          "title": "Billing Manager",
+          "department": "Finance/Billing",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Katerra Greenwood",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 31, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Katerra Greenwood"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 3,
+      "targetOwner": "Katerra Greenwood",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "TouchTone",
+      "registeredCompanyNames": [
+        "Touchtone Communications"
+      ],
+      "assignedAm": "Rachael Buchtan",
+      "status": "Active",
+      "averageMrr": "$29,656.02",
+      "clientCode": "TOUCHTONE, TOUCHTONE_SANDBOX",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin"
+      ],
+      "registrants": [
+        {
+          "name": "Christina Bentley",
+          "title": "Senior Billing Manager",
+          "department": "Finance/Billing",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Jakob Champion",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 30, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Melissa Maldonado",
+          "title": "Provisioning Manager",
+          "department": "Other",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Jakob Champion",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 31, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Tom Ford",
+          "title": "Director of Billing",
+          "department": "Finance/Billing",
+          "rank": "Director",
+          "email": "",
+          "referral": "Jakob Champion",
+          "discountCode": "2BLONDES",
+          "dateRegistered": "Jul 30, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Jakob Champion"
+      ],
+      "discountCodes": [
+        "2BLONDES",
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 3,
+      "targetOwner": "Jakob Champion",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "CallSprout",
+      "registeredCompanyNames": [
+        "CallSprout"
+      ],
+      "assignedAm": "Rachael Buchtan",
+      "status": "Active",
+      "averageMrr": "$3,175.06",
+      "clientCode": "CALLSPROUT, CALLSPROUTPSA",
+      "products": {
+        "Billing": true,
+        "PSA Web": true,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing, PSA Web",
+      "missing": [
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Atticus Brind",
+          "title": "VP of Sales",
+          "department": "Sales/Marketing",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Justin Lee",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 20, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Lenny Ljungholm",
+          "title": "Support Specialist",
+          "department": "Operations/Support",
+          "rank": "Non-Manager",
+          "email": "",
+          "referral": "Justin Lee",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 20, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Justin Lee"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Justin Lee",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Centra IP Networks",
+      "registeredCompanyNames": [
+        "Centra IP",
+        "Centra IP Networks"
+      ],
+      "assignedAm": "Olivia Sandefur",
+      "status": "Active",
+      "averageMrr": "$5,081.76",
+      "clientCode": "ADVANCEDCOMMUNICATIONS, ADVANCEDCOMMUNICATIONSRMM, CENTRAIPPSA, CENTRAIPRMM",
+      "products": {
+        "Billing": true,
+        "PSA Web": true,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing, PSA Web",
+      "missing": [
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Patrick Brangan",
+          "title": "CEO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ryan Koontz",
+          "discountCode": "2BLONDES",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Stacey Hutton",
+          "title": "Operations Manager",
+          "department": "Operations/Support",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Ryan Koontz",
+          "discountCode": "2BLONDES",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Ryan Koontz"
+      ],
+      "discountCodes": [
+        "2BLONDES"
+      ],
+      "matchScore": 0.94,
+      "attendeeCount": 2,
+      "targetOwner": "Ryan Koontz",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Grid4 Communications",
+      "registeredCompanyNames": [
+        "Grid4 Communications"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "averageMrr": "$8,185.94",
+      "clientCode": "GRID4",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin"
+      ],
+      "registrants": [
+        {
+          "name": "Christopher Hopkins",
+          "title": "CEO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Justin Lee",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 12, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Michael Hopkins",
+          "title": "Senior Vice President",
+          "department": "C-Suite",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Justin Lee",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 12, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Justin Lee"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Justin Lee",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Hosted America, LLC",
+      "registeredCompanyNames": [
+        "Hosted America"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "",
+      "averageMrr": "$1,179.72",
+      "clientCode": "HOSTEDAMERICAPSAPSA",
+      "products": {
+        "Billing": false,
+        "PSA Web": true,
+        "Tigerpaw": true,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "PSA Web, Tigerpaw",
+      "missing": [
+        "Billing",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Andrew Turkington",
+          "title": "CFO",
+          "department": "Finance/Billing",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Justin Lee",
+          "discountCode": "SUMMIT100",
+          "dateRegistered": "Jul 31, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Mark Robbins",
+          "title": "VP, Director of Voice Operations",
+          "department": "Operations/Support",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Justin Lee",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 26, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Justin Lee"
+      ],
+      "discountCodes": [
+        "REVGUEST-A",
+        "SUMMIT100"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Justin Lee",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "IPitomy",
+      "registeredCompanyNames": [
+        "IPitomy",
+        "IPitomy Communications LLC"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "averageMrr": "$9,620.92",
+      "clientCode": "IPITOMY",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin"
+      ],
+      "registrants": [
+        {
+          "name": "Erica Carroll",
+          "title": "Order Processing",
+          "department": "Operations/Support",
+          "rank": "Non-Manager",
+          "email": "",
+          "referral": "Ryan Burton",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 27, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Joseph Haines",
+          "title": "President/CEO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ryan Burton",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 5, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Ryan Burton"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Ryan Burton",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "S-Net Communications, Inc.",
+      "registeredCompanyNames": [
+        "Safety Net IT"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "averageMrr": "$19,699.45",
+      "clientCode": "SNET, SNET_SANDBOX",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin"
+      ],
+      "registrants": [
+        {
+          "name": "Jaclyn Cooper",
+          "title": "Director",
+          "department": "C-Suite",
+          "rank": "Director",
+          "email": "",
+          "referral": "Jakob Champion",
+          "discountCode": "2BLONDES",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Zack Killpack",
+          "title": "Director",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Jakob Champion",
+          "discountCode": "2BLONDES",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Jakob Champion"
+      ],
+      "discountCodes": [
+        "2BLONDES"
+      ],
+      "matchScore": 0.86,
+      "attendeeCount": 2,
+      "targetOwner": "Jakob Champion",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Savvy Communications",
+      "registeredCompanyNames": [
+        "Savvy Communcations Inc.",
+        "Savvy Communications Inc"
+      ],
+      "assignedAm": "Rachael Buchtan",
+      "status": "Active",
+      "averageMrr": "$2,900.00",
+      "clientCode": "SAVVY, SAVVYPSA",
+      "products": {
+        "Billing": true,
+        "PSA Web": true,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing, PSA Web",
+      "missing": [
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Chelsea McBride",
+          "title": "Billing & Operations Coordinator",
+          "department": "Finance/Billing",
+          "rank": "Other",
+          "email": "",
+          "referral": "Shane Frost",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 19, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Nicole Curry",
+          "title": "CSR",
+          "department": "Other",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Shane Frost",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 25, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Shane Frost"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 0.96,
+      "attendeeCount": 2,
+      "targetOwner": "Shane Frost",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Ten4",
+      "registeredCompanyNames": [
+        "Ten4"
+      ],
+      "assignedAm": "Sarah McGovern",
+      "status": "Active",
+      "averageMrr": "$5,826.49",
+      "clientCode": "TEN4, TEN4PSA",
+      "products": {
+        "Billing": true,
+        "PSA Web": true,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing, PSA Web",
+      "missing": [
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Brad Muser",
+          "title": "Executive Vice President, Finance",
+          "department": "Finance/Billing",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Cam Sharpe",
+          "discountCode": "REVFAN100",
+          "dateRegistered": "May 18, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Tom McDonnell",
+          "title": "Vice President, Operations",
+          "department": "Operations/Support",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Cam Sharpe",
+          "discountCode": "REVFAN100",
+          "dateRegistered": "May 18, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Cam Sharpe"
+      ],
+      "discountCodes": [
+        "REVFAN100"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "targetOwner": "Cam Sharpe",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Altaworx",
+      "registeredCompanyNames": [
+        "Altaworx"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "averageMrr": "$18,250.70",
+      "clientCode": "ALTAWORX, ALTAWORX_SANDBOX, CATAPULT_SANDBOX",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin"
+      ],
+      "registrants": [
+        {
+          "name": "Rickie Richey",
+          "title": "CEO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ryan Koontz",
+          "discountCode": "2BLONDES",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Ryan Koontz"
+      ],
+      "discountCodes": [
+        "2BLONDES"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Ryan Koontz",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Clear Rate Communications",
+      "registeredCompanyNames": [
+        "Clear Rate Communications"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "averageMrr": "$20,987.92",
+      "clientCode": "CLEARRATE, CLEARRATE_SANDBOX, CLEARRATE_TEST",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin"
+      ],
+      "registrants": [
+        {
+          "name": "Erik Kubs",
+          "title": "Manager Service Delivery",
+          "department": "Operations/Support",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Ryan Burton",
+          "discountCode": "CLEARRATE",
+          "dateRegistered": "Aug 25, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Ryan Burton"
+      ],
+      "discountCodes": [
+        "CLEARRATE"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Ryan Burton",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Glacier Networks Inc",
+      "registeredCompanyNames": [
+        "Glacier Networks Inc"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "averageMrr": "$5,393.81",
+      "clientCode": "GLACIER, GLACIER_SANDBOX",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin"
+      ],
+      "registrants": [
+        {
+          "name": "Feliks Kiliski",
+          "title": "Partner",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ryan Burton",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 27, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Ryan Burton"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Ryan Burton",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "iNet Communications",
+      "registeredCompanyNames": [
+        "INET Communications, LLC"
+      ],
+      "assignedAm": "Rachael Buchtan",
+      "status": "Active",
+      "averageMrr": "$3,408.78",
+      "clientCode": "INETCOMMUNICATIONS, INETCOMMUNICATIONSPSA",
+      "products": {
+        "Billing": true,
+        "PSA Web": true,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing, PSA Web",
+      "missing": [
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Charles Murray",
+          "title": "CEO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Reid Doster",
+          "discountCode": "SUMMIT50",
+          "dateRegistered": "Jul 31, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Reid Doster"
+      ],
+      "discountCodes": [
+        "SUMMIT50"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Reid Doster",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "JCM Telecom LLC",
+      "registeredCompanyNames": [
+        "JCM Telecom"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "averageMrr": "$4,828.28",
+      "clientCode": "JCMTELECOM",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin"
+      ],
+      "registrants": [
+        {
+          "name": "Christian Hernandez",
+          "title": "President / Owner",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Justin Lee",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 8, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Justin Lee"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Justin Lee",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "LightSpar",
+      "registeredCompanyNames": [
+        "LightSpar"
+      ],
+      "assignedAm": "Sarah McGovern",
+      "status": "Active",
+      "averageMrr": "$8,513.56",
+      "clientCode": "LIGHTSPAR",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin"
+      ],
+      "registrants": [
+        {
+          "name": "Bob Bouquet",
+          "title": "CFO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ingrid Beard",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 7, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Ingrid Beard"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Ingrid Beard",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Mach Networks",
+      "registeredCompanyNames": [
+        "MACH Networks"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "averageMrr": "$13,389.22",
+      "clientCode": "MACHNETWORKS, MACHNETWORKS_SANDBOX, MACHNETWORKS_TEST",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin"
+      ],
+      "registrants": [
+        {
+          "name": "Paula Anderson",
+          "title": "Director",
+          "department": "Sales/Marketing",
+          "rank": "Director",
+          "email": "",
+          "referral": "Jamie Butler",
+          "discountCode": "2BLONDES",
+          "dateRegistered": "Aug 6, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Jamie Butler"
+      ],
+      "discountCodes": [
+        "2BLONDES"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Jamie Butler",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Premier Companies",
+      "registeredCompanyNames": [
+        "Premier Companies"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "averageMrr": "$4,500.00",
+      "clientCode": "PREMIER, Premier_SANDBOX",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin"
+      ],
+      "registrants": [
+        {
+          "name": "Mark Bortz",
+          "title": "Founder",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Justin Lee",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Jul 15, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Justin Lee"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Justin Lee",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Public Telephone Company",
+      "registeredCompanyNames": [
+        "Public Telephone Company"
+      ],
+      "assignedAm": "Unassigned",
+      "status": "",
+      "averageMrr": "$1,009.22",
+      "clientCode": "PTCOA",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin"
+      ],
+      "registrants": [
+        {
+          "name": "Darrell Lopez",
+          "title": "Chief Executive Officer",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Cam Sharpe",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Cam Sharpe"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Cam Sharpe",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Spectrotel",
+      "registeredCompanyNames": [
+        "Spectrotel"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "averageMrr": "$52,403.27",
+      "clientCode": "SPECTROTEL, SPECTROTEL_NEW1, SPECTROTEL_SANDBOX",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Payments",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw",
+        "Odin"
+      ],
+      "registrants": [
+        {
+          "name": "Mitch Wright",
+          "title": "VP of IT",
+          "department": "IT/Engineering",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Jamie Butler",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 6, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Jamie Butler"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Jamie Butler",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Tailwinds Voice & Data, Inc.",
+      "registeredCompanyNames": [
+        "TailWind Voice & Data"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active, Raving Fan",
+      "averageMrr": "$31,000.00",
+      "clientCode": "TAILWINDS_SANDBOX, WORX1, WORX1PSA",
+      "products": {
+        "Billing": true,
+        "PSA Web": true,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing, PSA Web",
+      "missing": [
+        "Tigerpaw",
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Tom Murphy",
+          "title": "Senior Vice President",
+          "department": "C-Suite",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "",
+          "discountCode": "REVFAN100",
+          "dateRegistered": "Mar 31, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [],
+      "discountCodes": [
+        "REVFAN100"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "targetOwner": "Ryan Burton",
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Bridge Communications, LLC",
+      "registeredCompanyNames": [
+        "Bridge Communications"
+      ],
+      "assignedAm": "jacob.williams",
+      "status": "Active",
+      "averageMrr": "$3,232.71",
+      "clientCode": "BRIDGECOMM, BRIDGECOMMPSA",
+      "products": {
+        "Billing": true,
+        "PSA Web": true,
+        "Tigerpaw": false,
+        "Odin": false,
+        "Payments": true
+      },
+      "productsRaw": "Billing, PSA Web, Payments",
+      "missing": [
+        "Tigerpaw",
+        "Odin"
+      ],
+      "registrants": [
+        {
+          "name": "Lauren Otts",
+          "title": "Customer Success Specialist",
+          "department": "Operations/Support",
+          "rank": "Non-Manager",
+          "email": "",
+          "referral": "Jakob Champion",
+          "discountCode": "2BLONDES",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Matt Pridemore",
+          "title": "Managing Partner",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Jakob Champion",
+          "discountCode": "2BLONDES",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Matt Otts",
+          "title": "Partner",
+          "department": "Sales/Marketing",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Jakob Champion",
+          "discountCode": "2BLONDES",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Mike Hancock",
+          "title": "Managing Partner",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Jakob Champion",
+          "discountCode": "2BLONDES",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Jakob Champion"
+      ],
+      "discountCodes": [
+        "2BLONDES"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 4,
+      "targetOwner": "Jakob Champion",
+      "missingCount": 2,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Vanran Communications",
+      "registeredCompanyNames": [
+        "VanRan Communications"
+      ],
+      "assignedAm": "Sarah McGovern",
+      "status": "Active, Onboarding",
+      "averageMrr": "$5,040.03",
+      "clientCode": "VANRAN, VANRANPSA",
+      "products": {
+        "Billing": true,
+        "PSA Web": true,
+        "Tigerpaw": true,
+        "Odin": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing, PSA Web, Tigerpaw",
+      "missing": [
+        "Odin",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Kris Kokell",
+          "title": "Dispatcher/Customer Service",
+          "department": "Operations/Support",
+          "rank": "Other",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 12, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Ron Bohannon",
+          "title": "Vice President",
+          "department": "IT/Engineering",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 14, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Sheila Greene",
+          "title": "Office Manager",
+          "department": "Operations/Support",
+          "rank": "Other",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 12, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Emily Sanders",
+          "title": "Director of Quality Assurance",
+          "department": "Operations/Support",
+          "rank": "Director",
+          "email": "",
+          "referral": "Blaine Villafuerte",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 17, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Blaine Villafuerte"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 4,
+      "targetOwner": "Blaine Villafuerte",
+      "missingCount": 2,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Scipio Technologies",
+      "registeredCompanyNames": [
+        "Scipio Technologies"
+      ],
+      "assignedAm": "Ryan Burton",
+      "status": "Active",
+      "averageMrr": "$16,646.78",
+      "clientCode": "PEACE, PEACEODIN, PEACERESELLER",
+      "products": {
+        "Billing": true,
+        "PSA Web": false,
+        "Tigerpaw": false,
+        "Odin": true,
+        "Payments": true
+      },
+      "productsRaw": "Billing, Odin, Payments",
+      "missing": [
+        "PSA Web",
+        "Tigerpaw"
+      ],
+      "registrants": [
+        {
+          "name": "Jim Peace",
+          "title": "CEO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Ryan Burton",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 5, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "John Geary",
+          "title": "Assistant Controller",
+          "department": "Finance/Billing",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Ryan Burton",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 5, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Steve Blankenship",
+          "title": "Financial Consultant",
+          "department": "Finance/Billing",
+          "rank": "VP-Level",
+          "email": "",
+          "referral": "Ryan Burton",
+          "discountCode": "REVGUEST-A",
+          "dateRegistered": "Aug 5, 2026",
+          "hotel": "No",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Ryan Burton"
+      ],
+      "discountCodes": [
+        "REVGUEST-A"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 3,
+      "targetOwner": "Ryan Burton",
+      "missingCount": 2,
+      "hasMissingProducts": true
+    }
+  ],
+  "rollup": [
+    {
+      "owner": "Blaine Villafuerte",
+      "accounts": 7,
+      "attendees": 18,
+      "missingOpportunities": 26
+    },
+    {
+      "owner": "Ryan Koontz",
+      "accounts": 7,
+      "attendees": 10,
+      "missingOpportunities": 26
+    },
+    {
+      "owner": "Justin Lee",
+      "accounts": 7,
+      "attendees": 11,
+      "missingOpportunities": 23
+    },
+    {
+      "owner": "Ryan Burton",
+      "accounts": 7,
+      "attendees": 12,
+      "missingOpportunities": 22
+    },
+    {
+      "owner": "Jamie Butler",
+      "accounts": 5,
+      "attendees": 8,
+      "missingOpportunities": 18
+    },
+    {
+      "owner": "Rachael Buchtan",
+      "accounts": 3,
+      "attendees": 7,
+      "missingOpportunities": 11
+    },
+    {
+      "owner": "Shane Frost",
+      "accounts": 3,
+      "attendees": 4,
+      "missingOpportunities": 11
+    },
+    {
+      "owner": "Ingrid Beard",
+      "accounts": 3,
+      "attendees": 5,
+      "missingOpportunities": 10
+    },
+    {
+      "owner": "Jakob Champion",
+      "accounts": 3,
+      "attendees": 9,
+      "missingOpportunities": 8
+    },
+    {
+      "owner": "Reid Doster",
+      "accounts": 2,
+      "attendees": 5,
+      "missingOpportunities": 6
+    },
+    {
+      "owner": "Cam Sharpe",
+      "accounts": 2,
+      "attendees": 3,
+      "missingOpportunities": 6
+    },
+    {
+      "owner": "Jacob Williams",
+      "accounts": 1,
+      "attendees": 3,
+      "missingOpportunities": 4
+    },
+    {
+      "owner": "Jacob Willimas",
+      "accounts": 1,
+      "attendees": 3,
+      "missingOpportunities": 4
+    },
+    {
+      "owner": "Bryan Bettiol",
+      "accounts": 1,
+      "attendees": 2,
+      "missingOpportunities": 4
+    },
+    {
+      "owner": "Jaylin Bender",
+      "accounts": 1,
+      "attendees": 2,
+      "missingOpportunities": 4
+    },
+    {
+      "owner": "Lorrie Browne",
+      "accounts": 1,
+      "attendees": 2,
+      "missingOpportunities": 4
+    },
+    {
+      "owner": "Rinor Berisha",
+      "accounts": 1,
+      "attendees": 2,
+      "missingOpportunities": 4
+    },
+    {
+      "owner": "Roman Rudzik",
+      "accounts": 1,
+      "attendees": 2,
+      "missingOpportunities": 4
+    },
+    {
+      "owner": "Unassigned",
+      "accounts": 1,
+      "attendees": 2,
+      "missingOpportunities": 4
+    },
+    {
+      "owner": "Jeremy Adams",
+      "accounts": 1,
+      "attendees": 1,
+      "missingOpportunities": 4
+    },
+    {
+      "owner": "Katerra Stephenson-Greenwood",
+      "accounts": 1,
+      "attendees": 1,
+      "missingOpportunities": 4
+    },
+    {
+      "owner": "Olivia Sandefur",
+      "accounts": 1,
+      "attendees": 1,
+      "missingOpportunities": 4
+    },
+    {
+      "owner": "Sarah McGovern",
+      "accounts": 1,
+      "attendees": 1,
+      "missingOpportunities": 4
+    },
+    {
+      "owner": "Rachel Buchtan",
+      "accounts": 1,
+      "attendees": 4,
+      "missingOpportunities": 3
+    },
+    {
+      "owner": "Katerra Greenwood",
+      "accounts": 1,
+      "attendees": 3,
+      "missingOpportunities": 3
+    }
+  ],
+  "unmatched": [
+    {
+      "name": "Charles Drapeau",
+      "company": "AIMERICA",
+      "referral": "Connor Flynn",
+      "discountCode": "REVGUEST-A",
+      "dateRegistered": "2026-08-04"
+    },
+    {
+      "name": "Sean Tishler",
+      "company": "AIMERICA",
+      "referral": "Connor Flynn",
+      "discountCode": "REVGUEST-A",
+      "dateRegistered": "2026-08-04"
+    },
+    {
+      "name": "Yan Carter",
+      "company": "AIMERICA",
+      "referral": "Connor Flynn",
+      "discountCode": "REVGUEST-A",
+      "dateRegistered": "2026-08-04"
+    },
+    {
+      "name": "Amy Shirey",
+      "company": "AppDirect",
+      "referral": "Ryan Burton",
+      "discountCode": "REVGUEST-A",
+      "dateRegistered": "2026-07-16"
+    },
+    {
+      "name": "Brittany Clester",
+      "company": "AppDirect",
+      "referral": "Ryan Burton",
+      "discountCode": "REVGUEST-A",
+      "dateRegistered": "2026-07-16"
+    },
+    {
+      "name": "David Cox",
+      "company": "AvTek Solutions, Inc.",
+      "referral": "Brook Lee",
+      "discountCode": "2BLONDES",
+      "dateRegistered": "2026-07-14"
+    },
+    {
+      "name": "Antwine Jackson",
+      "company": "Enitech Solutions",
+      "referral": "Connor Flynn",
+      "discountCode": "REVGUEST-A",
+      "dateRegistered": "2026-08-12"
+    },
+    {
+      "name": "Alyssa Hutchinson",
+      "company": "Gamut",
+      "referral": "Cam Sharpe",
+      "discountCode": "CAMREVSUMMIT",
+      "dateRegistered": "2026-05-14"
+    },
+    {
+      "name": "Brendan English",
+      "company": "Gamut",
+      "referral": "Cam Sharpe",
+      "discountCode": "CAMREVSUMMIT",
+      "dateRegistered": "2026-05-14"
+    },
+    {
+      "name": "Corinne Bowden",
+      "company": "IMC Jax",
+      "referral": "Connor Flynn",
+      "discountCode": "REVGUEST-A",
+      "dateRegistered": "2026-08-05"
+    },
+    {
+      "name": "Eric Lewis",
+      "company": "IMC Jax",
+      "referral": "Connor Flynn",
+      "discountCode": "REVGUEST-A",
+      "dateRegistered": "2026-08-05"
+    },
+    {
+      "name": "Lori Rockwell",
+      "company": "IMC Jax",
+      "referral": "Connor Flynn",
+      "discountCode": "REVGUEST-A",
+      "dateRegistered": "2026-08-05"
+    },
+    {
+      "name": "Brent Reeves",
+      "company": "KealyWalker",
+      "referral": "",
+      "discountCode": "2BLONDES",
+      "dateRegistered": "2026-08-17"
+    },
+    {
+      "name": "Michael Yokay",
+      "company": "KealyWalker",
+      "referral": "",
+      "discountCode": "2BLONDES",
+      "dateRegistered": "2026-08-17"
+    },
+    {
+      "name": "Brandon Burchard",
+      "company": "MYSWITCH Communications",
+      "referral": "Justin Lee",
+      "discountCode": "REVGUEST-A",
+      "dateRegistered": "2026-07-20"
+    },
+    {
+      "name": "Brenden Koop",
+      "company": "MYSWITCH Communications",
+      "referral": "Justin Lee",
+      "discountCode": "REVGUEST-A",
+      "dateRegistered": "2026-07-20"
+    },
+    {
+      "name": "Michael Abenhaim",
+      "company": "Ooma",
+      "referral": "Jake Mitchell",
+      "discountCode": "2BLONDES",
+      "dateRegistered": "2026-08-18"
+    },
+    {
+      "name": "Robert Lafrance",
+      "company": "Ooma",
+      "referral": "Jake Mitchell",
+      "discountCode": "2BLONDES",
+      "dateRegistered": "2026-08-18"
+    },
+    {
+      "name": "Frank Rubiano",
+      "company": "Rubiano",
+      "referral": "Jamie Butler",
+      "discountCode": "REVFAN100",
+      "dateRegistered": "2026-06-04"
+    },
+    {
+      "name": "Dylan Hornaday",
+      "company": "Southeast Telephone Service",
+      "referral": "Connor Flynn",
+      "discountCode": "REVGUEST-A",
+      "dateRegistered": "2026-07-17"
+    },
+    {
+      "name": "Joshua Faw",
+      "company": "Southeast Telephone Service",
+      "referral": "Connor Flynn",
+      "discountCode": "SUMMIT100",
+      "dateRegistered": "2026-07-17"
+    },
+    {
+      "name": "Richard Crancer",
+      "company": "The Crancer Group",
+      "referral": "Brook Lee - she won GTIA Member of the Year she is amazing",
+      "discountCode": "2BLONDES",
+      "dateRegistered": "2026-08-14"
+    },
+    {
+      "name": "Lori Williams",
+      "company": "True Choice Technology",
+      "referral": "Reid Doster",
+      "discountCode": "BLUELINE",
+      "dateRegistered": "2026-08-06"
+    }
+  ]
+}
