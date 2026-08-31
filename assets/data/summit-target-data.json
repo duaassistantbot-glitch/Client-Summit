@@ -1,25 +1,25 @@
 {
-  "generatedAt": "2026-08-31T14:51:05.999Z",
+  "generatedAt": "2026-08-31T15:34:54.665Z",
   "source": {
     "summitData": "assets/data/summit-data.json",
     "clientProducts": "../exports/gmail-attachments/1783436761907-master-client-list-a2654cf0c7e34c57bff58f4ea63d241f_all.csv",
     "salesforceCohorts": {
       "byKey": {},
       "available": true,
-      "matchedAccounts": 65,
-      "queriedAccounts": 3570,
+      "matchedAccounts": 64,
+      "queriedAccounts": 3569,
       "eventAccounts": 10,
       "eventCount": 11
     },
     "salesforceFallbackMatches": {
-      "attemptedCompanies": 10,
-      "matchedCompanies": 9
+      "attemptedCompanies": 9,
+      "matchedCompanies": 8
     },
     "liveNotionAccess": false,
     "liveNotionNote": "Notion API returned object_not_found/not shared; used cached CSV export for the same Notion page ID."
   },
   "rules": {
-    "accountFilter": "Registrant has a non-empty discount code other than REVII or SUMMITSPONSOR, then company is matched to Master Client List with Salesforce Account/Opportunity fallback. Ooma, KealyWalker, YorN Sales Training, and The Crancer Group are ignored as non-target sponsor/speaker records.",
+    "accountFilter": "Registrant has a non-empty discount code other than REVII or SUMMITSPONSOR, then company is matched to Master Client List with Salesforce Account/Opportunity fallback. Ooma, KealyWalker, YorN Sales Training, The Crancer Group, and Enitech are ignored as non-target sponsor/speaker/prospect records.",
     "products": [
       "Billing",
       "New Rev.io",
@@ -28,15 +28,15 @@
   },
   "summary": {
     "sourceRegistrants": 224,
-    "discountedNonSponsorRegistrants": 124,
-    "matchedClientRegistrants": 123,
-    "targetAccounts": 66,
+    "discountedNonSponsorRegistrants": 123,
+    "matchedClientRegistrants": 122,
+    "targetAccounts": 65,
     "referrers": 27,
     "accountsWithMissingProducts": 64,
-    "missingProductOpportunities": 112,
+    "missingProductOpportunities": 108,
     "unmatchedRegistrants": 1,
-    "ignoredSponsorRegistrants": 6,
-    "sfFallbackMatchedAccounts": 9,
+    "ignoredSponsorRegistrants": 7,
+    "sfFallbackMatchedAccounts": 8,
     "clientMasterRows": 1074
   },
   "accounts": [
@@ -131,6 +131,77 @@
       "hasMissingProducts": true
     },
     {
+      "account": "AIMERICA",
+      "registeredCompanyNames": [
+        "AIMERICA"
+      ],
+      "assignedAm": "Justin Lee",
+      "status": "",
+      "sfFallback": true,
+      "sfLookupName": "Empire Telecom",
+      "sfAccountId": "0016O00003ZLRUpQAP",
+      "sfAccountName": "Empire Telecom",
+      "products": {
+        "Billing": false,
+        "New Rev.io": false,
+        "Payments": false
+      },
+      "productsRaw": "",
+      "missing": [
+        "Billing",
+        "New Rev.io",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Charles Drapeau",
+          "title": "CTO",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Connor Flynn",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Sean Tishler",
+          "title": "President",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Connor Flynn",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        },
+        {
+          "name": "Yan Carter",
+          "title": "General Manager",
+          "department": "Operations/Support",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Connor Flynn",
+          "dateRegistered": "Aug 4, 2026",
+          "hotel": "No",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Connor Flynn"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 3,
+      "referralOwner": "Connor Flynn",
+      "targetOwner": "Connor Flynn",
+      "originalCohort": "Rev.io Billing",
+      "accountOwner": "Justin Lee",
+      "usesBroadworks": false,
+      "summitEvents": [],
+      "missingCount": 3,
+      "hasMissingProducts": true
+    },
+    {
       "account": "Homeland Technology Group",
       "registeredCompanyNames": [
         "Homeland Security Systems"
@@ -203,66 +274,6 @@
       "hasMissingProducts": true
     },
     {
-      "account": "AppDirect",
-      "registeredCompanyNames": [
-        "AppDirect"
-      ],
-      "assignedAm": "Katerra Stephenson Greenwood",
-      "status": "",
-      "sfFallback": true,
-      "sfLookupName": "AppDirect",
-      "sfAccountId": "001PX0000075K71YAE",
-      "sfAccountName": "Appdirect",
-      "products": {
-        "Billing": false,
-        "New Rev.io": false,
-        "Payments": false
-      },
-      "productsRaw": "",
-      "missing": [
-        "Billing",
-        "New Rev.io",
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Amy Shirey",
-          "title": "Billing Operations Manager",
-          "department": "Finance/Billing",
-          "rank": "Manager",
-          "email": "",
-          "referral": "Ryan Burton",
-          "dateRegistered": "Jul 16, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        },
-        {
-          "name": "Brittany Clester",
-          "title": "Director of Finance",
-          "department": "Finance/Billing",
-          "rank": "Director",
-          "email": "",
-          "referral": "Ryan Burton",
-          "dateRegistered": "Jul 16, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Ryan Burton"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 2,
-      "referralOwner": "Ryan Burton",
-      "targetOwner": "Ryan Burton",
-      "originalCohort": "Rev.io Billing",
-      "accountOwner": "Katerra Stephenson Greenwood",
-      "usesBroadworks": false,
-      "summitEvents": [],
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
       "account": "Centerpoint IT, Inc",
       "registeredCompanyNames": [
         "Centerpoint IT"
@@ -317,66 +328,6 @@
       "targetOwner": "Rinor Berisha",
       "originalCohort": "Tigerpaw",
       "accountOwner": "Jakob Champion",
-      "usesBroadworks": false,
-      "summitEvents": [],
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Gamut",
-      "registeredCompanyNames": [
-        "Gamut"
-      ],
-      "assignedAm": "Justin Lee",
-      "status": "",
-      "sfFallback": true,
-      "sfLookupName": "Gamut",
-      "sfAccountId": "001PX00000S11uuYAB",
-      "sfAccountName": "Gamut, LLC",
-      "products": {
-        "Billing": false,
-        "New Rev.io": false,
-        "Payments": false
-      },
-      "productsRaw": "",
-      "missing": [
-        "Billing",
-        "New Rev.io",
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Alyssa Hutchinson",
-          "title": "Client and Project Operations Associate",
-          "department": "Unspecified",
-          "rank": "Unspecified",
-          "email": "",
-          "referral": "Cam Sharpe",
-          "dateRegistered": "May 14, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        },
-        {
-          "name": "Brendan English",
-          "title": "Client and Project Operations Manager",
-          "department": "Other",
-          "rank": "Director",
-          "email": "",
-          "referral": "Cam Sharpe",
-          "dateRegistered": "May 14, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Cam Sharpe"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 2,
-      "referralOwner": "Cam Sharpe",
-      "targetOwner": "Cam Sharpe",
-      "originalCohort": "Rev.io Billing",
-      "accountOwner": "Justin Lee",
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 3,
@@ -503,66 +454,6 @@
       "hasMissingProducts": true
     },
     {
-      "account": "MYSWITCH Communications",
-      "registeredCompanyNames": [
-        "MYSWITCH Communications"
-      ],
-      "assignedAm": "Jamie Butler",
-      "status": "",
-      "sfFallback": true,
-      "sfLookupName": "MYSWITCH Communications",
-      "sfAccountId": "001PX00000ZBAzIYAX",
-      "sfAccountName": "MYSWITCH Communications",
-      "products": {
-        "Billing": false,
-        "New Rev.io": false,
-        "Payments": false
-      },
-      "productsRaw": "",
-      "missing": [
-        "Billing",
-        "New Rev.io",
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Brandon Burchard",
-          "title": "President",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Justin Lee",
-          "dateRegistered": "Jul 20, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        },
-        {
-          "name": "Brenden Koop",
-          "title": "Service Manager",
-          "department": "Operations/Support",
-          "rank": "Manager",
-          "email": "",
-          "referral": "Justin Lee",
-          "dateRegistered": "Jul 20, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "No"
-        }
-      ],
-      "referrers": [
-        "Justin Lee"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 2,
-      "referralOwner": "Justin Lee",
-      "targetOwner": "Justin Lee",
-      "originalCohort": "Rev.io Billing",
-      "accountOwner": "Jamie Butler",
-      "usesBroadworks": false,
-      "summitEvents": [],
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
       "account": "AvTek Solutions, Inc.",
       "registeredCompanyNames": [
         "AvTek Solutions, Inc."
@@ -606,55 +497,6 @@
       "targetOwner": "Brook Lee",
       "originalCohort": "Rev.io Billing",
       "accountOwner": "Andy Whisenant",
-      "usesBroadworks": false,
-      "summitEvents": [],
-      "missingCount": 3,
-      "hasMissingProducts": true
-    },
-    {
-      "account": "Enitech Solutions",
-      "registeredCompanyNames": [
-        "Enitech Solutions"
-      ],
-      "assignedAm": "Connor Flynn",
-      "status": "",
-      "sfFallback": true,
-      "sfLookupName": "Enitech Solutions",
-      "sfAccountId": "0011C00002dwWjIQAU",
-      "sfAccountName": "Enitech Solutions",
-      "products": {
-        "Billing": false,
-        "New Rev.io": false,
-        "Payments": false
-      },
-      "productsRaw": "",
-      "missing": [
-        "Billing",
-        "New Rev.io",
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Antwine Jackson",
-          "title": "CEO",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Connor Flynn",
-          "dateRegistered": "Aug 12, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "No"
-        }
-      ],
-      "referrers": [
-        "Connor Flynn"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 1,
-      "referralOwner": "Connor Flynn",
-      "targetOwner": "Connor Flynn",
-      "originalCohort": "Rev.io Billing",
-      "accountOwner": "Connor Flynn",
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 3,
@@ -1047,6 +889,65 @@
       "hasMissingProducts": true
     },
     {
+      "account": "AppDirect",
+      "registeredCompanyNames": [
+        "AppDirect"
+      ],
+      "assignedAm": "Katerra Stephenson Greenwood",
+      "status": "",
+      "sfFallback": true,
+      "sfLookupName": "AppDirect",
+      "sfAccountId": "001PX0000075K71YAE",
+      "sfAccountName": "Appdirect",
+      "products": {
+        "Billing": true,
+        "New Rev.io": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing",
+      "missing": [
+        "New Rev.io",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Amy Shirey",
+          "title": "Billing Operations Manager",
+          "department": "Finance/Billing",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Ryan Burton",
+          "dateRegistered": "Jul 16, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Brittany Clester",
+          "title": "Director of Finance",
+          "department": "Finance/Billing",
+          "rank": "Director",
+          "email": "",
+          "referral": "Ryan Burton",
+          "dateRegistered": "Jul 16, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Ryan Burton"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "referralOwner": "Ryan Burton",
+      "targetOwner": "Ryan Burton",
+      "originalCohort": "Rev.io Billing",
+      "accountOwner": "Katerra Stephenson Greenwood",
+      "usesBroadworks": false,
+      "summitEvents": [],
+      "missingCount": 2,
+      "hasMissingProducts": true
+    },
+    {
       "account": "C1st Technologies",
       "registeredCompanyNames": [
         "C1st Technologies"
@@ -1099,6 +1000,65 @@
       "referralOwner": "Jamie Butler",
       "targetOwner": "Jamie Butler",
       "originalCohort": "Tigerpaw",
+      "accountOwner": "Ingrid Beard",
+      "usesBroadworks": false,
+      "summitEvents": [],
+      "missingCount": 2,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "Gamut",
+      "registeredCompanyNames": [
+        "Gamut"
+      ],
+      "assignedAm": "Ingrid Beard",
+      "status": "",
+      "sfFallback": true,
+      "sfLookupName": "Cielo",
+      "sfAccountId": "0016O00003WEGWeQAP",
+      "sfAccountName": "Cielo",
+      "products": {
+        "Billing": true,
+        "New Rev.io": false,
+        "Payments": false
+      },
+      "productsRaw": "Billing",
+      "missing": [
+        "New Rev.io",
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Alyssa Hutchinson",
+          "title": "Client and Project Operations Associate",
+          "department": "Unspecified",
+          "rank": "Unspecified",
+          "email": "",
+          "referral": "Cam Sharpe",
+          "dateRegistered": "May 14, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Brendan English",
+          "title": "Client and Project Operations Manager",
+          "department": "Other",
+          "rank": "Director",
+          "email": "",
+          "referral": "Cam Sharpe",
+          "dateRegistered": "May 14, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Cam Sharpe"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "referralOwner": "Cam Sharpe",
+      "targetOwner": "Cam Sharpe",
+      "originalCohort": "Rev.io Billing",
       "accountOwner": "Ingrid Beard",
       "usesBroadworks": false,
       "summitEvents": [],
@@ -2349,75 +2309,6 @@
       "hasMissingProducts": true
     },
     {
-      "account": "AIMERICA",
-      "registeredCompanyNames": [
-        "AIMERICA"
-      ],
-      "assignedAm": "Justin Lee",
-      "status": "",
-      "sfFallback": true,
-      "sfLookupName": "Empire Telecom",
-      "sfAccountId": "0016O00003ZLRUpQAP",
-      "sfAccountName": "Empire Telecom",
-      "products": {
-        "Billing": true,
-        "New Rev.io": true,
-        "Payments": false
-      },
-      "productsRaw": "Billing, New Rev.io",
-      "missing": [
-        "Payments"
-      ],
-      "registrants": [
-        {
-          "name": "Charles Drapeau",
-          "title": "CTO",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Connor Flynn",
-          "dateRegistered": "Aug 4, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "No"
-        },
-        {
-          "name": "Sean Tishler",
-          "title": "President",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Connor Flynn",
-          "dateRegistered": "Aug 4, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "No"
-        },
-        {
-          "name": "Yan Carter",
-          "title": "General Manager",
-          "department": "Operations/Support",
-          "rank": "Manager",
-          "email": "",
-          "referral": "Connor Flynn",
-          "dateRegistered": "Aug 4, 2026",
-          "hotel": "No",
-          "attendedBefore": "No"
-        }
-      ],
-      "referrers": [
-        "Connor Flynn"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 3,
-      "referralOwner": "Connor Flynn",
-      "targetOwner": "Connor Flynn",
-      "originalCohort": "Rev.io Billing",
-      "accountOwner": "Justin Lee",
-      "usesBroadworks": false,
-      "summitEvents": [],
-      "missingCount": 1,
-      "hasMissingProducts": true
-    },
-    {
       "account": "Digital Agent",
       "registeredCompanyNames": [
         "Digital Agent"
@@ -3014,6 +2905,64 @@
       "targetOwner": "Ryan Burton",
       "originalCohort": "Rev.io Billing",
       "accountOwner": "Jakob Champion",
+      "usesBroadworks": false,
+      "summitEvents": [],
+      "missingCount": 1,
+      "hasMissingProducts": true
+    },
+    {
+      "account": "MYSWITCH Communications",
+      "registeredCompanyNames": [
+        "MYSWITCH Communications"
+      ],
+      "assignedAm": "Jamie Butler",
+      "status": "",
+      "sfFallback": true,
+      "sfLookupName": "MYSWITCH Communications",
+      "sfAccountId": "001PX00000ZBAzIYAX",
+      "sfAccountName": "MYSWITCH Communications",
+      "products": {
+        "Billing": true,
+        "New Rev.io": true,
+        "Payments": false
+      },
+      "productsRaw": "Billing, New Rev.io",
+      "missing": [
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Brandon Burchard",
+          "title": "President",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Justin Lee",
+          "dateRegistered": "Jul 20, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        },
+        {
+          "name": "Brenden Koop",
+          "title": "Service Manager",
+          "department": "Operations/Support",
+          "rank": "Manager",
+          "email": "",
+          "referral": "Justin Lee",
+          "dateRegistered": "Jul 20, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "No"
+        }
+      ],
+      "referrers": [
+        "Justin Lee"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 2,
+      "referralOwner": "Justin Lee",
+      "targetOwner": "Justin Lee",
+      "originalCohort": "Rev.io Billing",
+      "accountOwner": "Jamie Butler",
       "usesBroadworks": false,
       "summitEvents": [],
       "missingCount": 1,
@@ -3776,6 +3725,53 @@
       "hasMissingProducts": true
     },
     {
+      "account": "True Choice Technology",
+      "registeredCompanyNames": [
+        "True Choice Technology"
+      ],
+      "assignedAm": "Justin Lee",
+      "status": "",
+      "sfFallback": true,
+      "sfLookupName": "Blueline Telecom",
+      "sfAccountId": "0011C00002KUhaWQAT",
+      "sfAccountName": "Blueline Telecom",
+      "products": {
+        "Billing": true,
+        "New Rev.io": true,
+        "Payments": false
+      },
+      "productsRaw": "Billing, New Rev.io",
+      "missing": [
+        "Payments"
+      ],
+      "registrants": [
+        {
+          "name": "Lori Williams",
+          "title": "President",
+          "department": "C-Suite",
+          "rank": "C-Level",
+          "email": "",
+          "referral": "Reid Doster",
+          "dateRegistered": "Aug 6, 2026",
+          "hotel": "Yes",
+          "attendedBefore": "Yes"
+        }
+      ],
+      "referrers": [
+        "Reid Doster"
+      ],
+      "matchScore": 1,
+      "attendeeCount": 1,
+      "referralOwner": "Reid Doster",
+      "targetOwner": "Reid Doster",
+      "originalCohort": "Rev.io Billing",
+      "accountOwner": "Justin Lee",
+      "usesBroadworks": false,
+      "summitEvents": [],
+      "missingCount": 1,
+      "hasMissingProducts": true
+    },
+    {
       "account": "Bridge Communications, LLC",
       "registeredCompanyNames": [
         "Bridge Communications"
@@ -3860,51 +3856,6 @@
       ],
       "missingCount": 0,
       "hasMissingProducts": false
-    },
-    {
-      "account": "True Choice Technology",
-      "registeredCompanyNames": [
-        "True Choice Technology"
-      ],
-      "assignedAm": "Justin Lee",
-      "status": "",
-      "sfFallback": true,
-      "sfLookupName": "Blueline Telecom",
-      "sfAccountId": "0011C00002KUhaWQAT",
-      "sfAccountName": "Blueline Telecom",
-      "products": {
-        "Billing": true,
-        "New Rev.io": true,
-        "Payments": true
-      },
-      "productsRaw": "Billing, New Rev.io, Payments",
-      "missing": [],
-      "registrants": [
-        {
-          "name": "Lori Williams",
-          "title": "President",
-          "department": "C-Suite",
-          "rank": "C-Level",
-          "email": "",
-          "referral": "Reid Doster",
-          "dateRegistered": "Aug 6, 2026",
-          "hotel": "Yes",
-          "attendedBefore": "Yes"
-        }
-      ],
-      "referrers": [
-        "Reid Doster"
-      ],
-      "matchScore": 1,
-      "attendeeCount": 1,
-      "referralOwner": "Reid Doster",
-      "targetOwner": "Reid Doster",
-      "originalCohort": "Rev.io Billing",
-      "accountOwner": "Justin Lee",
-      "usesBroadworks": false,
-      "summitEvents": [],
-      "missingCount": 0,
-      "hasMissingProducts": false
     }
   ],
   "rollup": [
@@ -3915,16 +3866,16 @@
       "missingOpportunities": 16
     },
     {
-      "owner": "Justin Lee",
-      "accounts": 8,
-      "attendees": 13,
-      "missingOpportunities": 13
-    },
-    {
       "owner": "Ryan Burton",
       "accounts": 8,
       "attendees": 14,
-      "missingOpportunities": 12
+      "missingOpportunities": 11
+    },
+    {
+      "owner": "Justin Lee",
+      "accounts": 8,
+      "attendees": 13,
+      "missingOpportunities": 11
     },
     {
       "owner": "Ryan Koontz",
@@ -3940,20 +3891,14 @@
     },
     {
       "owner": "Connor Flynn",
-      "accounts": 4,
-      "attendees": 9,
-      "missingOpportunities": 6
+      "accounts": 3,
+      "attendees": 8,
+      "missingOpportunities": 5
     },
     {
       "owner": "Rachael Buchtan",
       "accounts": 3,
       "attendees": 7,
-      "missingOpportunities": 5
-    },
-    {
-      "owner": "Cam Sharpe",
-      "accounts": 3,
-      "attendees": 5,
       "missingOpportunities": 5
     },
     {
@@ -3963,10 +3908,22 @@
       "missingOpportunities": 5
     },
     {
+      "owner": "Cam Sharpe",
+      "accounts": 3,
+      "attendees": 5,
+      "missingOpportunities": 4
+    },
+    {
       "owner": "Ingrid Beard",
       "accounts": 3,
       "attendees": 5,
       "missingOpportunities": 4
+    },
+    {
+      "owner": "Reid Doster",
+      "accounts": 3,
+      "attendees": 6,
+      "missingOpportunities": 3
     },
     {
       "owner": "Jacob Williams",
@@ -4008,12 +3965,6 @@
       "owner": "Jakob Champion",
       "accounts": 3,
       "attendees": 9,
-      "missingOpportunities": 2
-    },
-    {
-      "owner": "Reid Doster",
-      "accounts": 3,
-      "attendees": 6,
       "missingOpportunities": 2
     },
     {
@@ -4080,6 +4031,12 @@
     }
   ],
   "ignoredSponsorRegistrants": [
+    {
+      "name": "Antwine Jackson",
+      "company": "Enitech Solutions",
+      "referral": "Connor Flynn",
+      "dateRegistered": "2026-08-12"
+    },
     {
       "name": "Brent Reeves",
       "company": "KealyWalker",

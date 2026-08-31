@@ -15,11 +15,16 @@ const PRODUCTS = ['Billing', 'New Rev.io', 'Payments'];
 const PRODUCT_SOURCE_LABELS = { 'New Rev.io': 'PSA Web' };
 const API_VERSION = 'v59.0';
 const EXCLUDED_CODES = new Set(['REVII', 'SUMMITSPONSOR']);
-const EXCLUDED_NON_TARGET_COMPANIES = new Set(['ooma', 'kealywalker', 'yorn sales training', 'crancer', 'the crancer']);
+const EXCLUDED_NON_TARGET_COMPANIES = new Set(['ooma', 'kealywalker', 'yorn sales training', 'crancer', 'the crancer', 'enitech']);
 const MANUAL_SF_LOOKUP_NAMES = new Map([
   ['aimerica', 'Empire Telecom'],
+  ['gamut', 'Cielo'],
   ['southeast telephone', 'SouthEast Telephone'],
   ['true choice', 'Blueline Telecom']
+]);
+const MANUAL_PRODUCT_OVERRIDES = new Map([
+  ['appdirect', ['Billing']],
+  ['myswitch', ['Billing', 'New Rev.io']]
 ]);
 const COMPANY_SUFFIX_RE = /\b(incorporated|inc|llc|l\.l\.c|ltd|limited|corp|corporation|co|company|communications|communication|telecom|technologies|technology|solutions|services|service|systems|group|direct|usa|c\/o)\b/g;
 const GENERIC_SINGLE_MATCH_TOKENS = new Set(['telephone', 'phone', 'voice', 'network', 'networks', 'security', 'secure', 'data', 'digital', 'global', 'premier', 'southeast', 'technology', 'technologies', 'solution', 'solutions', 'system', 'systems']);
@@ -48,6 +53,14 @@ function manualSfLookupName(company) {
     if (norm === key || norm.includes(key)) return value;
   }
   return text(company);
+}
+
+function manualProductOverride(company) {
+  const norm = normalizeCompany(company);
+  for (const [key, value] of MANUAL_PRODUCT_OVERRIDES.entries()) {
+    if (norm === key || norm.includes(key)) return value;
+  }
+  return null;
 }
 
 function canonicalToken(token) {
@@ -334,12 +347,13 @@ async function loadSalesforceFallbackClientRows(companies, existingClientRows) {
   const rows = [];
   for (const company of unmatchedCompanies) {
     const lookupName = manualSfLookupName(company);
+    const notionLookup = lookupName !== company ? matchClient(lookupName, existingClientRows) : null;
     const candidates = await findSalesforceAccountCandidates(token, company, lookupName);
     const best = chooseBestSalesforceCandidate(company, lookupName, candidates);
-    if (!best) continue;
+    if (!best && !notionLookup) continue;
 
     const scoredCandidates = [];
-    for (const candidate of candidates.filter(c => normalizeCompany(c.Name) === normalizeCompany(best.Name))) {
+    for (const candidate of candidates.filter(c => best && normalizeCompany(c.Name) === normalizeCompany(best.Name))) {
       const candidateOpps = await sfQuery(token, `
         SELECT Id, AccountId, Name, Type, Product_Type__c, StageName, IsWon, CloseDate, CreatedDate
         FROM Opportunity
@@ -350,8 +364,8 @@ async function loadSalesforceFallbackClientRows(companies, existingClientRows) {
       scoredCandidates.push({ candidate, opps: candidateOpps, products: candidateProducts });
     }
     const selected = scoredCandidates.sort((a, b) => b.products.length - a.products.length || b.opps.filter(o => o.IsWon).length - a.opps.filter(o => o.IsWon).length)[0] || { candidate: best, opps: [], products: [] };
-    const bestAccount = selected.candidate;
-    const products = selected.products;
+    const bestAccount = selected.candidate || {};
+    const products = manualProductOverride(company) || notionLookup?.client.products || selected.products;
     rows.push({
       Client: company,
       Status: '',
@@ -624,7 +638,7 @@ async function main() {
       liveNotionNote: 'Notion API returned object_not_found/not shared; used cached CSV export for the same Notion page ID.'
     },
     rules: {
-      accountFilter: 'Registrant has a non-empty discount code other than REVII or SUMMITSPONSOR, then company is matched to Master Client List with Salesforce Account/Opportunity fallback. Ooma, KealyWalker, YorN Sales Training, and The Crancer Group are ignored as non-target sponsor/speaker records.',
+      accountFilter: 'Registrant has a non-empty discount code other than REVII or SUMMITSPONSOR, then company is matched to Master Client List with Salesforce Account/Opportunity fallback. Ooma, KealyWalker, YorN Sales Training, The Crancer Group, and Enitech are ignored as non-target sponsor/speaker/prospect records.',
       products: PRODUCTS
     },
     summary: {
@@ -725,7 +739,7 @@ main{max-width:1400px;margin:-26px auto 60px;padding:0 20px}.stats{display:grid;
 <header class="hero"><div class="wrap"><div class="eyebrow">Rev.io Summit 2026 · Client Targeting</div><h1>Client target dashboard</h1><p>Account-level view of Summit attendees who used non-sponsor/non-REVII discount codes, matched to the Master Client List products so referrers know which clients they own and which products to target onsite.</p><div class="meta"><span class="pill">Excludes REVII</span><span class="pill">Excludes SUMMITSPONSOR</span><span class="pill">Targets: Billing · New Rev.io · Payments</span><span class="pill">Cohort from Salesforce</span><span class="pill">Generated ${htmlEscape(new Date(data.generatedAt).toLocaleString('en-US', { timeZone: 'UTC', dateStyle: 'medium', timeStyle: 'short' }))} UTC</span></div></div></header>
 <main>
 <section class="stats">
-${stat('Target accounts', data.summary.targetAccounts)}${stat('Matched attendees', data.summary.matchedClientRegistrants, `${data.summary.discountedNonSponsorRegistrants} discounted non-sponsor registrants`)}${stat('Referrers / owners', data.summary.referrers)}${stat('Accounts missing products', data.summary.accountsWithMissingProducts)}${stat('Missing product opps', data.summary.missingProductOpportunities)}${stat('Unmatched registrants', data.summary.unmatchedRegistrants, `${data.summary.ignoredSponsorRegistrants} sponsor/speaker records ignored`)}
+${stat('Target accounts', data.summary.targetAccounts)}${stat('Matched attendees', data.summary.matchedClientRegistrants, `${data.summary.discountedNonSponsorRegistrants} discounted non-sponsor registrants`)}${stat('Referrers / owners', data.summary.referrers)}${stat('Accounts missing products', data.summary.accountsWithMissingProducts)}${stat('Missing product opps', data.summary.missingProductOpportunities)}${stat('Unmatched registrants', data.summary.unmatchedRegistrants, `${data.summary.ignoredSponsorRegistrants} sponsor/speaker/prospect records ignored`)}
 </section>
 <section class="panel"><div class="actions"><div><h2>Target account list</h2><div class="note">Owners show Referral Owner, Salesforce Account Owner, and AM Owner. Product checks come from Master Client List “Rev.io Product”; New Rev.io maps to PSA Web. Original cohort is pulled from Salesforce; Tigerpaw cohort is driven by PSA Account Status. Meetings are Salesforce Events dated Sep 1–3, 2026.</div></div><a class="download" href="assets/data/summit-target-accounts.csv">Download CSV</a></div>
 <div class="controls"><input id="search" placeholder="Search account, attendee, owner…"><select id="owner"><option value="">All owners</option>${data.rollup.map(r => `<option>${htmlEscape(r.owner)}</option>`).join('')}</select><select id="missing"><option value="">All missing products</option>${PRODUCTS.map(p => `<option>${htmlEscape(p)}</option>`).join('')}<option value="none">No missing products</option></select><select id="have"><option value="">All current products</option>${PRODUCTS.map(p => `<option>${htmlEscape(p)}</option>`).join('')}</select></div>
