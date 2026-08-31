@@ -150,7 +150,6 @@ async function main() {
           client: match.client.Client,
           status: match.client.Status,
           assignedAm: match.client['Assigned AM'],
-          averageMrr: match.client['Average MRR'],
           clientCode: match.client['Client Code'],
           products: PRODUCTS.reduce((acc, p) => ({ ...acc, [p]: have.has(p) }), {}),
           productsRaw: match.client['Rev.io Product'],
@@ -169,14 +168,12 @@ async function main() {
         registeredCompanyNames: new Set(),
         assignedAm: r.match.assignedAm || 'Unassigned',
         status: r.match.status || '',
-        averageMrr: r.match.averageMrr || '',
         clientCode: r.match.clientCode || '',
         products: r.match.products,
         productsRaw: r.match.productsRaw,
         missing: r.match.missing,
         registrants: [],
         referrers: new Set(),
-        discountCodes: new Set(),
         matchScore: r.match.score
       });
     }
@@ -189,13 +186,11 @@ async function main() {
       rank: r.jobRank,
       email: r.email || '',
       referral: r.referral && !/^none none$/i.test(r.referral) ? r.referral : '',
-      discountCode: r.discountCode || '',
       dateRegistered: r.dateLabel || r.dateRegistered || '',
       hotel: r.hotel || '',
       attendedBefore: r.attendedBefore || ''
     });
     if (r.referral && !/^none none$/i.test(r.referral)) acct.referrers.add(r.referral);
-    if (r.discountCode) acct.discountCodes.add(r.discountCode);
     acct.matchScore = Math.min(acct.matchScore, r.match.score);
   }
 
@@ -203,7 +198,6 @@ async function main() {
     ...acct,
     registeredCompanyNames: [...acct.registeredCompanyNames].sort(),
     referrers: [...acct.referrers].sort(),
-    discountCodes: [...acct.discountCodes].sort(),
     attendeeCount: acct.registrants.length,
     targetOwner: [...acct.referrers].sort().join(', ') || acct.assignedAm || 'Unassigned',
     missingCount: acct.missing.length,
@@ -227,7 +221,6 @@ async function main() {
     name: r.name,
     company: r.company,
     referral: r.referral,
-    discountCode: r.discountCode,
     dateRegistered: r.dateRegistered || r.dateLabel || ''
   })).sort((a, b) => a.company.localeCompare(b.company));
 
@@ -261,7 +254,7 @@ async function main() {
   fs.writeFileSync(outDataPath, JSON.stringify(data, null, 2));
 
   const csvRows = [
-    ['Target Owner','Account','Attendees','Registrant Names','Registered Company Names','Discount Codes','Assigned AM','Current Products','Missing Products',...PRODUCTS,'Average MRR','Client Codes','Match Score']
+    ['Target Owner','Account','Attendees','Registrant Names','Registered Company Names','Assigned AM','Current Products','Missing Products',...PRODUCTS,'Client Codes','Match Score']
   ];
   for (const a of accounts) {
     csvRows.push([
@@ -270,12 +263,10 @@ async function main() {
       a.attendeeCount,
       a.registrants.map(r => `${r.name}${r.title ? ` (${r.title})` : ''}`).join('; '),
       a.registeredCompanyNames.join('; '),
-      a.discountCodes.join('; '),
       a.assignedAm,
       PRODUCTS.filter(p => a.products[p]).join(', '),
       a.missing.join(', '),
       ...PRODUCTS.map(p => a.products[p] ? 'Yes' : 'No'),
-      a.averageMrr,
       a.clientCode,
       a.matchScore
     ]);
@@ -295,14 +286,12 @@ function buildHtml(data) {
   const productHeader = PRODUCTS.map(p => `<th>${htmlEscape(p)}</th>`).join('');
   const productCells = a => PRODUCTS.map(p => `<td class="product ${a.products[p] ? 'yes' : 'no'}">${a.products[p] ? '✓' : '—'}</td>`).join('');
   const rows = data.accounts.map(a => `
-    <tr data-owner="${htmlEscape(a.targetOwner.toLowerCase())}" data-products="${htmlEscape(PRODUCTS.filter(p => a.products[p]).join(' ').toLowerCase())}" data-missing="${htmlEscape(a.missing.join(' ').toLowerCase())}" data-search="${htmlEscape([a.account, a.targetOwner, a.assignedAm, a.registeredCompanyNames.join(' '), a.registrants.map(r => r.name).join(' '), a.discountCodes.join(' ')].join(' ').toLowerCase())}">
+    <tr data-owner="${htmlEscape(a.targetOwner.toLowerCase())}" data-products="${htmlEscape(PRODUCTS.filter(p => a.products[p]).join(' ').toLowerCase())}" data-missing="${htmlEscape(a.missing.join(' ').toLowerCase())}" data-search="${htmlEscape([a.account, a.targetOwner, a.assignedAm, a.registeredCompanyNames.join(' '), a.registrants.map(r => r.name).join(' ')].join(' ').toLowerCase())}">
       <td class="sticky"><strong>${htmlEscape(a.account)}</strong><span>${htmlEscape(a.registeredCompanyNames.join(' / '))}</span></td>
       <td>${htmlEscape(a.targetOwner || 'Unassigned')}<span>Assigned AM: ${htmlEscape(a.assignedAm || '—')}</span></td>
       <td class="num">${a.attendeeCount}<span>${htmlEscape(a.registrants.map(r => r.name).join('; '))}</span></td>
-      <td>${htmlEscape(a.discountCodes.join(', ') || '—')}</td>
       ${productCells(a)}
       <td class="missing">${a.missing.length ? a.missing.map(p => `<b>${htmlEscape(p)}</b>`).join(' ') : '<em>Complete set</em>'}</td>
-      <td>${htmlEscape(a.averageMrr || '—')}</td>
       <td><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="${10 + PRODUCTS.length}"><div class="details-box">
@@ -312,7 +301,7 @@ function buildHtml(data) {
 
   const rollupRows = data.rollup.map(r => `<tr><td>${htmlEscape(r.owner)}</td><td class="num">${r.accounts}</td><td class="num">${r.attendees}</td><td class="num">${r.missingOpportunities}</td></tr>`).join('');
 
-  const unmatchedRows = data.unmatched.map(u => `<tr><td>${htmlEscape(u.company)}</td><td>${htmlEscape(u.name)}</td><td>${htmlEscape(u.referral || '—')}</td><td>${htmlEscape(u.discountCode || '—')}</td></tr>`).join('');
+  const unmatchedRows = data.unmatched.map(u => `<tr><td>${htmlEscape(u.company)}</td><td>${htmlEscape(u.name)}</td><td>${htmlEscape(u.referral || '—')}</td></tr>`).join('');
 
   return `<!doctype html>
 <html lang="en">
@@ -341,9 +330,9 @@ ${stat('Target accounts', data.summary.targetAccounts)}${stat('Matched attendees
 </section>
 <section class="panel"><div class="actions"><div><h2>Target account list</h2><div class="note">Owner = registrant referral name when present; falls back to Assigned AM. Product checks come from Master Client List “Rev.io Product”.</div></div><a class="download" href="assets/data/summit-target-accounts.csv">Download CSV</a></div>
 <div class="controls"><input id="search" placeholder="Search account, attendee, owner, code…"><select id="owner"><option value="">All owners</option>${data.rollup.map(r => `<option>${htmlEscape(r.owner)}</option>`).join('')}</select><select id="missing"><option value="">All missing products</option>${PRODUCTS.map(p => `<option>${htmlEscape(p)}</option>`).join('')}<option value="none">No missing products</option></select><select id="have"><option value="">All current products</option>${PRODUCTS.map(p => `<option>${htmlEscape(p)}</option>`).join('')}</select></div>
-<div class="table-wrap"><table id="accounts"><thead><tr><th class="sticky">Account</th><th>Target owner</th><th>Attendees</th><th>Codes</th>${productHeader}<th>Missing / target</th><th>Avg MRR</th><th>Details</th></tr></thead><tbody>${rows}</tbody></table></div></section>
+<div class="table-wrap"><table id="accounts"><thead><tr><th class="sticky">Account</th><th>Target owner</th><th>Attendees</th>${productHeader}<th>Missing / target</th><th>Details</th></tr></thead><tbody>${rows}</tbody></table></div></section>
 <section class="panel"><h2>Referrer workload</h2><div class="table-wrap rollup"><table><thead><tr><th>Owner</th><th>Accounts</th><th>Attendees</th><th>Missing product opps</th></tr></thead><tbody>${rollupRows}</tbody></table></div></section>
-<section class="panel warning"><h2>Unmatched discounted registrants</h2><p class="note">These passed the discount-code rule but did not confidently match a Master Client List account. They are excluded from target account stats until manually mapped.</p><div class="table-wrap"><table><thead><tr><th>Company</th><th>Registrant</th><th>Referral</th><th>Code</th></tr></thead><tbody>${unmatchedRows || '<tr><td colspan="4">No unmatched registrants.</td></tr>'}</tbody></table></div></section>
+<section class="panel warning"><h2>Unmatched discounted registrants</h2><p class="note">These passed the discount-code rule but did not confidently match a Master Client List account. They are excluded from target account stats until manually mapped.</p><div class="table-wrap"><table><thead><tr><th>Company</th><th>Registrant</th><th>Referral</th></tr></thead><tbody>${unmatchedRows || '<tr><td colspan="3">No unmatched registrants.</td></tr>'}</tbody></table></div></section>
 <div class="footer">Source note: Live Notion page access returned not shared/object_not_found, so this build used the cached Master Client List CSV export with matching page ID.</div>
 </main>
 <script>

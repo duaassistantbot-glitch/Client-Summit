@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T04:07:51.668Z",
+  "generatedAt": "2026-08-31T04:30:50.374Z",
   "source": {
     "summitData": "assets/data/summit-data.json",
     "clientProducts": "../exports/gmail-attachments/1783436761907-master-client-list-a2654cf0c7e34c57bff58f4ea63d241f_all.csv",
@@ -35,7 +35,6 @@
       ],
       "assignedAm": "Blaine Villafuerte",
       "status": "Active, Onboarding",
-      "averageMrr": "$6,520.00",
       "clientCode": "BANKTECSOUTHPSA",
       "products": {
         "Billing": false,
@@ -59,7 +58,6 @@
           "rank": "Other",
           "email": "",
           "referral": "Blaine Villafuerte",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 10, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -71,7 +69,6 @@
           "rank": "Other",
           "email": "",
           "referral": "Blaine Villafuerte",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 10, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -83,7 +80,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Blaine Villafuerte",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 10, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -95,7 +91,6 @@
           "rank": "Director",
           "email": "",
           "referral": "Blaine Villafuerte",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 26, 2026",
           "hotel": "No",
           "attendedBefore": "Yes"
@@ -103,9 +98,6 @@
       ],
       "referrers": [
         "Blaine Villafuerte"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 4,
@@ -120,7 +112,6 @@
       ],
       "assignedAm": "Blaine Villafuerte",
       "status": "At Risk",
-      "averageMrr": "$3,088.22",
       "clientCode": "",
       "products": {
         "Billing": false,
@@ -144,7 +135,6 @@
           "rank": "Other",
           "email": "",
           "referral": "Blaine Villafuerte",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 5, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -156,7 +146,6 @@
           "rank": "Director",
           "email": "",
           "referral": "Blaine Villafuerte",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 5, 2026",
           "hotel": "No",
           "attendedBefore": "Yes"
@@ -168,7 +157,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Blaine Villafuerte",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 5, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -180,7 +168,6 @@
           "rank": "Director",
           "email": "",
           "referral": "Blaine Villafuerte",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 5, 2026",
           "hotel": "No",
           "attendedBefore": "Yes"
@@ -188,9 +175,6 @@
       ],
       "referrers": [
         "Blaine Villafuerte"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 0.86,
       "attendeeCount": 4,
@@ -206,7 +190,6 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
-      "averageMrr": "$82,118.70",
       "clientCode": "CHARLESTONTEL, PRIMARYWAVE, SKYSWITCH, SKYSWITCH_SANDBOX, SKYSWITCHMAIN, TUCTECHNOLOGIES",
       "products": {
         "Billing": true,
@@ -230,7 +213,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Jamie Butler",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 5, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -242,7 +224,6 @@
           "rank": "Director",
           "email": "",
           "referral": "Ryan Burton",
-          "discountCode": "SUMMIT50",
           "dateRegistered": "May 27, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -254,7 +235,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "",
-          "discountCode": "SUMMIT50",
           "dateRegistered": "May 27, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -263,10 +243,6 @@
       "referrers": [
         "Jamie Butler",
         "Ryan Burton"
-      ],
-      "discountCodes": [
-        "REVGUEST-A",
-        "SUMMIT50"
       ],
       "matchScore": 0.94,
       "attendeeCount": 3,
@@ -281,7 +257,6 @@
       ],
       "assignedAm": "jacob.williams",
       "status": "Active",
-      "averageMrr": "$2,158.80",
       "clientCode": "",
       "products": {
         "Billing": false,
@@ -305,7 +280,6 @@
           "rank": "VP-Level",
           "email": "",
           "referral": "Jacob Willimas",
-          "discountCode": "VIP-REVGUEST",
           "dateRegistered": "Jul 2, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -317,7 +291,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Jacob Williams",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 26, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -329,7 +302,6 @@
           "rank": "Director",
           "email": "",
           "referral": "Jacob Williams",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 26, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -338,10 +310,6 @@
       "referrers": [
         "Jacob Williams",
         "Jacob Willimas"
-      ],
-      "discountCodes": [
-        "REVGUEST-A",
-        "VIP-REVGUEST"
       ],
       "matchScore": 0.92,
       "attendeeCount": 3,
@@ -356,7 +324,6 @@
       ],
       "assignedAm": "rinor.berisha",
       "status": "Active",
-      "averageMrr": "$466.67",
       "clientCode": "ACSFIRESEACURITYPSA",
       "products": {
         "Billing": false,
@@ -380,7 +347,6 @@
           "rank": "VP-Level",
           "email": "",
           "referral": "Roman Rudzik",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 12, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -392,7 +358,6 @@
           "rank": "VP-Level",
           "email": "",
           "referral": "Lorrie Browne",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 12, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -401,9 +366,6 @@
       "referrers": [
         "Lorrie Browne",
         "Roman Rudzik"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 2,
@@ -418,7 +380,6 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active, Onboarding",
-      "averageMrr": "$1,917.00",
       "clientCode": "AllSECUREDSECURITYPSA",
       "products": {
         "Billing": false,
@@ -442,7 +403,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Blaine Villafuerte",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 29, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -454,7 +414,6 @@
           "rank": "VP-Level",
           "email": "",
           "referral": "Blaine Villafuerte",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 29, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -462,9 +421,6 @@
       ],
       "referrers": [
         "Blaine Villafuerte"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 0.94,
       "attendeeCount": 2,
@@ -479,7 +435,6 @@
       ],
       "assignedAm": "Unassigned",
       "status": "Active",
-      "averageMrr": "$0.00",
       "clientCode": "C1STTECHNOLOGIESPSA",
       "products": {
         "Billing": false,
@@ -503,7 +458,6 @@
           "rank": "Director",
           "email": "",
           "referral": "Jamie Butler",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "May 28, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -515,7 +469,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Jamie Butler",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "May 28, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -523,9 +476,6 @@
       ],
       "referrers": [
         "Jamie Butler"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 2,
@@ -540,7 +490,6 @@
       ],
       "assignedAm": "rinor.berisha",
       "status": "Active",
-      "averageMrr": "$2,956.40",
       "clientCode": "",
       "products": {
         "Billing": false,
@@ -564,7 +513,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Rinor Berisha",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 21, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -576,7 +524,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Rinor Berisha",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 21, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -584,9 +531,6 @@
       ],
       "referrers": [
         "Rinor Berisha"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 2,
@@ -602,7 +546,6 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "averageMrr": "$1,503.23",
       "clientCode": "GLOBALDATASYSTEMS",
       "products": {
         "Billing": true,
@@ -626,7 +569,6 @@
           "rank": "VP-Level",
           "email": "",
           "referral": "Ryan Koontz",
-          "discountCode": "VIP-REVGUEST",
           "dateRegistered": "Jun 30, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -638,7 +580,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Ryan Koontz",
-          "discountCode": "VIP-REVGUEST",
           "dateRegistered": "Jun 30, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -646,9 +587,6 @@
       ],
       "referrers": [
         "Ryan Koontz"
-      ],
-      "discountCodes": [
-        "VIP-REVGUEST"
       ],
       "matchScore": 1,
       "attendeeCount": 2,
@@ -663,7 +601,6 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "averageMrr": "$1,000.00",
       "clientCode": "HISCALL",
       "products": {
         "Billing": true,
@@ -687,7 +624,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 20, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -699,16 +635,12 @@
           "rank": "C-Level",
           "email": "",
           "referral": "",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 20, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
         }
       ],
       "referrers": [],
-      "discountCodes": [
-        "REVGUEST-A"
-      ],
       "matchScore": 1,
       "attendeeCount": 2,
       "targetOwner": "Unassigned",
@@ -722,7 +654,6 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "averageMrr": "$537.25",
       "clientCode": "",
       "products": {
         "Billing": false,
@@ -746,7 +677,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Blaine Villafuerte",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 11, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -758,7 +688,6 @@
           "rank": "VP-Level",
           "email": "",
           "referral": "Blaine Villafuerte",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 11, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -766,9 +695,6 @@
       ],
       "referrers": [
         "Blaine Villafuerte"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 2,
@@ -783,7 +709,6 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "averageMrr": "$474.00",
       "clientCode": "",
       "products": {
         "Billing": false,
@@ -807,7 +732,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Jaylin Bender",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 30, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -819,7 +743,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Jaylin Bender",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 30, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -827,9 +750,6 @@
       ],
       "referrers": [
         "Jaylin Bender"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 2,
@@ -845,7 +765,6 @@
       ],
       "assignedAm": "Unassigned",
       "status": "Active",
-      "averageMrr": "$20.67",
       "clientCode": "NEXTSTEPCOMMSPSA",
       "products": {
         "Billing": false,
@@ -869,7 +788,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Bryan Bettiol",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 11, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -881,7 +799,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Bryan Bettiol",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 11, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -889,9 +806,6 @@
       ],
       "referrers": [
         "Bryan Bettiol"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 2,
@@ -906,7 +820,6 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
-      "averageMrr": "$28,428.93",
       "clientCode": "SPECTRUM, SPECTRUM (1510)",
       "products": {
         "Billing": true,
@@ -930,7 +843,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Justin Lee",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 18, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -942,7 +854,6 @@
           "rank": "Director",
           "email": "",
           "referral": "Ryan Koontz",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 26, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -951,9 +862,6 @@
       "referrers": [
         "Justin Lee",
         "Ryan Koontz"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 2,
@@ -968,7 +876,6 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
-      "averageMrr": "$24,659.85",
       "clientCode": "SYNTEL",
       "products": {
         "Billing": true,
@@ -992,7 +899,6 @@
           "rank": "Non-Manager",
           "email": "",
           "referral": "Rachael Buchtan",
-          "discountCode": "REVGUEST-B",
           "dateRegistered": "Jul 13, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -1004,7 +910,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Rachael Buchtan",
-          "discountCode": "SUMMIT100VIIRTUE",
           "dateRegistered": "Mar 31, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -1012,10 +917,6 @@
       ],
       "referrers": [
         "Rachael Buchtan"
-      ],
-      "discountCodes": [
-        "REVGUEST-B",
-        "SUMMIT100VIIRTUE"
       ],
       "matchScore": 0.94,
       "attendeeCount": 2,
@@ -1030,7 +931,6 @@
       ],
       "assignedAm": "Unassigned",
       "status": "Active",
-      "averageMrr": "$433.33",
       "clientCode": "avit.psarev.io",
       "products": {
         "Billing": false,
@@ -1054,7 +954,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Ryan Koontz",
-          "discountCode": "VIP-REVGUEST",
           "dateRegistered": "Jul 1, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -1062,9 +961,6 @@
       ],
       "referrers": [
         "Ryan Koontz"
-      ],
-      "discountCodes": [
-        "VIP-REVGUEST"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -1079,7 +975,6 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "averageMrr": "$1,652.24",
       "clientCode": "BLUDOG",
       "products": {
         "Billing": true,
@@ -1103,7 +998,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Ingrid Beard",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 4, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -1111,9 +1005,6 @@
       ],
       "referrers": [
         "Ingrid Beard"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -1128,7 +1019,6 @@
       ],
       "assignedAm": "Olivia Sandefur",
       "status": "Active, On Hold",
-      "averageMrr": "$1,100.00",
       "clientCode": "CLSAMSPSA",
       "products": {
         "Billing": false,
@@ -1152,7 +1042,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Blaine Villafuerte",
-          "discountCode": "REVFAN100",
           "dateRegistered": "Jun 23, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -1160,9 +1049,6 @@
       ],
       "referrers": [
         "Blaine Villafuerte"
-      ],
-      "discountCodes": [
-        "REVFAN100"
       ],
       "matchScore": 0.94,
       "attendeeCount": 1,
@@ -1177,7 +1063,6 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active",
-      "averageMrr": "$4,144.79",
       "clientCode": "CONVERGEDNETWORKS",
       "products": {
         "Billing": true,
@@ -1201,7 +1086,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Justin Lee",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 8, 2026",
           "hotel": "No",
           "attendedBefore": "Yes"
@@ -1209,9 +1093,6 @@
       ],
       "referrers": [
         "Justin Lee"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -1226,7 +1107,6 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
-      "averageMrr": "$2,303.98",
       "clientCode": "DECIBEL",
       "products": {
         "Billing": true,
@@ -1250,7 +1130,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Rachael Buchtan",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "May 22, 2026",
           "hotel": "No",
           "attendedBefore": "Yes"
@@ -1258,9 +1137,6 @@
       ],
       "referrers": [
         "Rachael Buchtan"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -1275,7 +1151,6 @@
       ],
       "assignedAm": "jacob.williams",
       "status": "Active",
-      "averageMrr": "$990.00",
       "clientCode": "DIGITALMARKETPOSPSA",
       "products": {
         "Billing": false,
@@ -1299,7 +1174,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Jeremy Adams",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 9, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -1307,9 +1181,6 @@
       ],
       "referrers": [
         "Jeremy Adams"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -1324,7 +1195,6 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "averageMrr": "$656.37",
       "clientCode": "",
       "products": {
         "Billing": false,
@@ -1348,7 +1218,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Katerra Stephenson-Greenwood",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 20, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -1356,9 +1225,6 @@
       ],
       "referrers": [
         "Katerra Stephenson-Greenwood"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -1373,7 +1239,6 @@
       ],
       "assignedAm": "Blaine Villafuerte",
       "status": "Active",
-      "averageMrr": "$9,628.89",
       "clientCode": "",
       "products": {
         "Billing": false,
@@ -1397,7 +1262,6 @@
           "rank": "Director",
           "email": "",
           "referral": "Blaine Villafuerte",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 18, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -1405,9 +1269,6 @@
       ],
       "referrers": [
         "Blaine Villafuerte"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 0.86,
       "attendeeCount": 1,
@@ -1422,7 +1283,6 @@
       ],
       "assignedAm": "Unassigned",
       "status": "Active",
-      "averageMrr": "$2,500.00",
       "clientCode": "KLTELECOM",
       "products": {
         "Billing": true,
@@ -1446,7 +1306,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Jamie Butler",
-          "discountCode": "REVFAN100",
           "dateRegistered": "Jun 24, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -1454,9 +1313,6 @@
       ],
       "referrers": [
         "Jamie Butler"
-      ],
-      "discountCodes": [
-        "REVFAN100"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -1471,7 +1327,6 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "averageMrr": "$3,127.22",
       "clientCode": "SoundLine",
       "products": {
         "Billing": true,
@@ -1495,7 +1350,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Ryan Burton",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 2, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -1503,9 +1357,6 @@
       ],
       "referrers": [
         "Ryan Burton"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 0.96,
       "attendeeCount": 1,
@@ -1520,7 +1371,6 @@
       ],
       "assignedAm": "Olivia Sandefur",
       "status": "Active",
-      "averageMrr": "$400.00",
       "clientCode": "RAVENTECHPSA",
       "products": {
         "Billing": false,
@@ -1544,7 +1394,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Olivia Sandefur",
-          "discountCode": "REVFAN100",
           "dateRegistered": "Jun 11, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -1552,9 +1401,6 @@
       ],
       "referrers": [
         "Olivia Sandefur"
-      ],
-      "discountCodes": [
-        "REVFAN100"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -1569,7 +1415,6 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "averageMrr": "$0.00",
       "clientCode": "ACME, API_SANDBOX, API_SANDBOX_TEMPLATE, AUTOMATED_TESTS, BULLSEYE, DEMO, DEMO_SANDBOX, DM_Testing_TEST, H20123, H2O, H2O_SANDBOX, H2O1, INTELIQUENT, INVENTORY, JERMAINE, LEARN, LIONGARD, MOMENTUM, MSP, NORTHLAND, ODIN_DEMO, PARLOR, PRODUCT, SALES, sales_SANDBOX, SANDBOX, SE, SOLUTIONS, TEMPLATE, TEMPLATE_SANDBOX, TEMPLATE_WIRELESS, TESTDRIVE, TRAINING, TRAINING_SANDBOX",
       "products": {
         "Billing": true,
@@ -1593,7 +1438,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Ryan Koontz",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 26, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -1601,9 +1445,6 @@
       ],
       "referrers": [
         "Ryan Koontz"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 0.96,
       "attendeeCount": 1,
@@ -1618,7 +1459,6 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active",
-      "averageMrr": "$6,667.46",
       "clientCode": "SNS",
       "products": {
         "Billing": true,
@@ -1642,7 +1482,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Ryan Koontz",
-          "discountCode": "2BLONDES",
           "dateRegistered": "Aug 5, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -1650,9 +1489,6 @@
       ],
       "referrers": [
         "Ryan Koontz"
-      ],
-      "discountCodes": [
-        "2BLONDES"
       ],
       "matchScore": 0.86,
       "attendeeCount": 1,
@@ -1667,7 +1503,6 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "averageMrr": "$1,333.33",
       "clientCode": "SOUTHERNTELECOM",
       "products": {
         "Billing": true,
@@ -1691,7 +1526,6 @@
           "rank": "Director",
           "email": "",
           "referral": "Shane Frost",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 18, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -1699,9 +1533,6 @@
       ],
       "referrers": [
         "Shane Frost"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 0.92,
       "attendeeCount": 1,
@@ -1716,7 +1547,6 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active",
-      "averageMrr": "$500.00",
       "clientCode": "TRULINETECHNOLOGIESPSA",
       "products": {
         "Billing": false,
@@ -1740,16 +1570,12 @@
           "rank": "C-Level",
           "email": "",
           "referral": "",
-          "discountCode": "REVFAN100",
           "dateRegistered": "Mar 16, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
         }
       ],
       "referrers": [],
-      "discountCodes": [
-        "REVFAN100"
-      ],
       "matchScore": 1,
       "attendeeCount": 1,
       "targetOwner": "Sarah McGovern",
@@ -1763,7 +1589,6 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "averageMrr": "$925.76",
       "clientCode": "VTICOMMUNICATIONS",
       "products": {
         "Billing": true,
@@ -1787,7 +1612,6 @@
           "rank": "VP-Level",
           "email": "",
           "referral": "Shane Frost",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 6, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -1795,9 +1619,6 @@
       ],
       "referrers": [
         "Shane Frost"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -1812,7 +1633,6 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
-      "averageMrr": "$11,884.30",
       "clientCode": "BLUELINE, BLUELINEPSA",
       "products": {
         "Billing": true,
@@ -1835,7 +1655,6 @@
           "rank": "VP-Level",
           "email": "",
           "referral": "Reid Doster",
-          "discountCode": "BLUELINE",
           "dateRegistered": "Aug 6, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -1847,7 +1666,6 @@
           "rank": "Non-Manager",
           "email": "",
           "referral": "Reid Doster",
-          "discountCode": "BLUELINE",
           "dateRegistered": "Aug 6, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -1859,7 +1677,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Reid Doster",
-          "discountCode": "BLUELINE",
           "dateRegistered": "Aug 6, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -1871,7 +1688,6 @@
           "rank": "Director",
           "email": "",
           "referral": "Reid Doster",
-          "discountCode": "BLUELINE",
           "dateRegistered": "Aug 6, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -1879,9 +1695,6 @@
       ],
       "referrers": [
         "Reid Doster"
-      ],
-      "discountCodes": [
-        "BLUELINE"
       ],
       "matchScore": 1,
       "attendeeCount": 4,
@@ -1897,7 +1710,6 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
-      "averageMrr": "$11,988.20",
       "clientCode": "MNJ, MNJ_SANDBOX",
       "products": {
         "Billing": true,
@@ -1920,7 +1732,6 @@
           "rank": "Non-Manager",
           "email": "",
           "referral": "Rachel Buchtan",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 4, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -1932,7 +1743,6 @@
           "rank": "Non-Manager",
           "email": "",
           "referral": "Rachael Buchtan",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 20, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -1944,7 +1754,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Rachel Buchtan",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 4, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -1956,7 +1765,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Rachael Buchtan",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 20, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -1965,9 +1773,6 @@
       "referrers": [
         "Rachael Buchtan",
         "Rachel Buchtan"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 4,
@@ -1982,7 +1787,6 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
-      "averageMrr": "$5,490.05",
       "clientCode": "DIGITALAGENT",
       "products": {
         "Billing": true,
@@ -2005,7 +1809,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Ingrid Beard",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 12, 2026",
           "hotel": "No",
           "attendedBefore": "Yes"
@@ -2017,7 +1820,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Ingrid Beard",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 12, 2026",
           "hotel": "No",
           "attendedBefore": "Yes"
@@ -2029,7 +1831,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Ingrid Beard",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 12, 2026",
           "hotel": "No",
           "attendedBefore": "Yes"
@@ -2037,9 +1838,6 @@
       ],
       "referrers": [
         "Ingrid Beard"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 3,
@@ -2054,7 +1852,6 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
-      "averageMrr": "$8,661.92",
       "clientCode": "SIMPLICITYVOIP",
       "products": {
         "Billing": true,
@@ -2077,7 +1874,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Katerra Greenwood",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 31, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -2089,7 +1885,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Katerra Greenwood",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 31, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -2101,7 +1896,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Katerra Greenwood",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 31, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -2109,9 +1903,6 @@
       ],
       "referrers": [
         "Katerra Greenwood"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 3,
@@ -2126,7 +1917,6 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
-      "averageMrr": "$29,656.02",
       "clientCode": "TOUCHTONE, TOUCHTONE_SANDBOX",
       "products": {
         "Billing": true,
@@ -2149,7 +1939,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Jakob Champion",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 30, 2026",
           "hotel": "No",
           "attendedBefore": "Yes"
@@ -2161,7 +1950,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Jakob Champion",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 31, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -2173,7 +1961,6 @@
           "rank": "Director",
           "email": "",
           "referral": "Jakob Champion",
-          "discountCode": "2BLONDES",
           "dateRegistered": "Jul 30, 2026",
           "hotel": "No",
           "attendedBefore": "Yes"
@@ -2181,10 +1968,6 @@
       ],
       "referrers": [
         "Jakob Champion"
-      ],
-      "discountCodes": [
-        "2BLONDES",
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 3,
@@ -2199,7 +1982,6 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
-      "averageMrr": "$3,175.06",
       "clientCode": "CALLSPROUT, CALLSPROUTPSA",
       "products": {
         "Billing": true,
@@ -2222,7 +2004,6 @@
           "rank": "VP-Level",
           "email": "",
           "referral": "Justin Lee",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 20, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -2234,7 +2015,6 @@
           "rank": "Non-Manager",
           "email": "",
           "referral": "Justin Lee",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 20, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -2242,9 +2022,6 @@
       ],
       "referrers": [
         "Justin Lee"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 2,
@@ -2260,7 +2037,6 @@
       ],
       "assignedAm": "Olivia Sandefur",
       "status": "Active",
-      "averageMrr": "$5,081.76",
       "clientCode": "ADVANCEDCOMMUNICATIONS, ADVANCEDCOMMUNICATIONSRMM, CENTRAIPPSA, CENTRAIPRMM",
       "products": {
         "Billing": true,
@@ -2283,7 +2059,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Ryan Koontz",
-          "discountCode": "2BLONDES",
           "dateRegistered": "Aug 4, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -2295,7 +2070,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Ryan Koontz",
-          "discountCode": "2BLONDES",
           "dateRegistered": "Aug 4, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -2303,9 +2077,6 @@
       ],
       "referrers": [
         "Ryan Koontz"
-      ],
-      "discountCodes": [
-        "2BLONDES"
       ],
       "matchScore": 0.94,
       "attendeeCount": 2,
@@ -2320,7 +2091,6 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
-      "averageMrr": "$8,185.94",
       "clientCode": "GRID4",
       "products": {
         "Billing": true,
@@ -2343,7 +2113,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Justin Lee",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 12, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -2355,7 +2124,6 @@
           "rank": "VP-Level",
           "email": "",
           "referral": "Justin Lee",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 12, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -2363,9 +2131,6 @@
       ],
       "referrers": [
         "Justin Lee"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 2,
@@ -2380,7 +2145,6 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "averageMrr": "$1,179.72",
       "clientCode": "HOSTEDAMERICAPSAPSA",
       "products": {
         "Billing": false,
@@ -2403,7 +2167,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Justin Lee",
-          "discountCode": "SUMMIT100",
           "dateRegistered": "Jul 31, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -2415,7 +2178,6 @@
           "rank": "VP-Level",
           "email": "",
           "referral": "Justin Lee",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 26, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -2423,10 +2185,6 @@
       ],
       "referrers": [
         "Justin Lee"
-      ],
-      "discountCodes": [
-        "REVGUEST-A",
-        "SUMMIT100"
       ],
       "matchScore": 1,
       "attendeeCount": 2,
@@ -2442,7 +2200,6 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
-      "averageMrr": "$9,620.92",
       "clientCode": "IPITOMY",
       "products": {
         "Billing": true,
@@ -2465,7 +2222,6 @@
           "rank": "Non-Manager",
           "email": "",
           "referral": "Ryan Burton",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 27, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -2477,7 +2233,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Ryan Burton",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 5, 2026",
           "hotel": "No",
           "attendedBefore": "Yes"
@@ -2485,9 +2240,6 @@
       ],
       "referrers": [
         "Ryan Burton"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 2,
@@ -2502,7 +2254,6 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
-      "averageMrr": "$19,699.45",
       "clientCode": "SNET, SNET_SANDBOX",
       "products": {
         "Billing": true,
@@ -2525,7 +2276,6 @@
           "rank": "Director",
           "email": "",
           "referral": "Jakob Champion",
-          "discountCode": "2BLONDES",
           "dateRegistered": "Aug 4, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -2537,7 +2287,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Jakob Champion",
-          "discountCode": "2BLONDES",
           "dateRegistered": "Aug 4, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -2545,9 +2294,6 @@
       ],
       "referrers": [
         "Jakob Champion"
-      ],
-      "discountCodes": [
-        "2BLONDES"
       ],
       "matchScore": 0.86,
       "attendeeCount": 2,
@@ -2563,7 +2309,6 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
-      "averageMrr": "$2,900.00",
       "clientCode": "SAVVY, SAVVYPSA",
       "products": {
         "Billing": true,
@@ -2586,7 +2331,6 @@
           "rank": "Other",
           "email": "",
           "referral": "Shane Frost",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 19, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -2598,7 +2342,6 @@
           "rank": "VP-Level",
           "email": "",
           "referral": "Shane Frost",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 25, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -2606,9 +2349,6 @@
       ],
       "referrers": [
         "Shane Frost"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 0.96,
       "attendeeCount": 2,
@@ -2623,7 +2363,6 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active",
-      "averageMrr": "$5,826.49",
       "clientCode": "TEN4, TEN4PSA",
       "products": {
         "Billing": true,
@@ -2646,7 +2385,6 @@
           "rank": "VP-Level",
           "email": "",
           "referral": "Cam Sharpe",
-          "discountCode": "REVFAN100",
           "dateRegistered": "May 18, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -2658,7 +2396,6 @@
           "rank": "VP-Level",
           "email": "",
           "referral": "Cam Sharpe",
-          "discountCode": "REVFAN100",
           "dateRegistered": "May 18, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -2666,9 +2403,6 @@
       ],
       "referrers": [
         "Cam Sharpe"
-      ],
-      "discountCodes": [
-        "REVFAN100"
       ],
       "matchScore": 1,
       "attendeeCount": 2,
@@ -2683,7 +2417,6 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
-      "averageMrr": "$18,250.70",
       "clientCode": "ALTAWORX, ALTAWORX_SANDBOX, CATAPULT_SANDBOX",
       "products": {
         "Billing": true,
@@ -2706,7 +2439,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Ryan Koontz",
-          "discountCode": "2BLONDES",
           "dateRegistered": "Aug 4, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -2714,9 +2446,6 @@
       ],
       "referrers": [
         "Ryan Koontz"
-      ],
-      "discountCodes": [
-        "2BLONDES"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -2731,7 +2460,6 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
-      "averageMrr": "$20,987.92",
       "clientCode": "CLEARRATE, CLEARRATE_SANDBOX, CLEARRATE_TEST",
       "products": {
         "Billing": true,
@@ -2754,7 +2482,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Ryan Burton",
-          "discountCode": "CLEARRATE",
           "dateRegistered": "Aug 25, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -2762,9 +2489,6 @@
       ],
       "referrers": [
         "Ryan Burton"
-      ],
-      "discountCodes": [
-        "CLEARRATE"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -2779,7 +2503,6 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
-      "averageMrr": "$5,393.81",
       "clientCode": "GLACIER, GLACIER_SANDBOX",
       "products": {
         "Billing": true,
@@ -2802,7 +2525,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Ryan Burton",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 27, 2026",
           "hotel": "No",
           "attendedBefore": "Yes"
@@ -2810,9 +2532,6 @@
       ],
       "referrers": [
         "Ryan Burton"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -2827,7 +2546,6 @@
       ],
       "assignedAm": "Rachael Buchtan",
       "status": "Active",
-      "averageMrr": "$3,408.78",
       "clientCode": "INETCOMMUNICATIONS, INETCOMMUNICATIONSPSA",
       "products": {
         "Billing": true,
@@ -2850,7 +2568,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Reid Doster",
-          "discountCode": "SUMMIT50",
           "dateRegistered": "Jul 31, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -2858,9 +2575,6 @@
       ],
       "referrers": [
         "Reid Doster"
-      ],
-      "discountCodes": [
-        "SUMMIT50"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -2875,7 +2589,6 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
-      "averageMrr": "$4,828.28",
       "clientCode": "JCMTELECOM",
       "products": {
         "Billing": true,
@@ -2898,7 +2611,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Justin Lee",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 8, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -2906,9 +2618,6 @@
       ],
       "referrers": [
         "Justin Lee"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -2923,7 +2632,6 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active",
-      "averageMrr": "$8,513.56",
       "clientCode": "LIGHTSPAR",
       "products": {
         "Billing": true,
@@ -2946,7 +2654,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Ingrid Beard",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 7, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -2954,9 +2661,6 @@
       ],
       "referrers": [
         "Ingrid Beard"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -2971,7 +2675,6 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
-      "averageMrr": "$13,389.22",
       "clientCode": "MACHNETWORKS, MACHNETWORKS_SANDBOX, MACHNETWORKS_TEST",
       "products": {
         "Billing": true,
@@ -2994,7 +2697,6 @@
           "rank": "Director",
           "email": "",
           "referral": "Jamie Butler",
-          "discountCode": "2BLONDES",
           "dateRegistered": "Aug 6, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -3002,9 +2704,6 @@
       ],
       "referrers": [
         "Jamie Butler"
-      ],
-      "discountCodes": [
-        "2BLONDES"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -3019,7 +2718,6 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
-      "averageMrr": "$4,500.00",
       "clientCode": "PREMIER, Premier_SANDBOX",
       "products": {
         "Billing": true,
@@ -3042,7 +2740,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Justin Lee",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Jul 15, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -3050,9 +2747,6 @@
       ],
       "referrers": [
         "Justin Lee"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -3067,7 +2761,6 @@
       ],
       "assignedAm": "Unassigned",
       "status": "",
-      "averageMrr": "$1,009.22",
       "clientCode": "PTCOA",
       "products": {
         "Billing": true,
@@ -3090,7 +2783,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Cam Sharpe",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 4, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -3098,9 +2790,6 @@
       ],
       "referrers": [
         "Cam Sharpe"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -3115,7 +2804,6 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
-      "averageMrr": "$52,403.27",
       "clientCode": "SPECTROTEL, SPECTROTEL_NEW1, SPECTROTEL_SANDBOX",
       "products": {
         "Billing": true,
@@ -3138,7 +2826,6 @@
           "rank": "VP-Level",
           "email": "",
           "referral": "Jamie Butler",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 6, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -3146,9 +2833,6 @@
       ],
       "referrers": [
         "Jamie Butler"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 1,
@@ -3163,7 +2847,6 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active, Raving Fan",
-      "averageMrr": "$31,000.00",
       "clientCode": "TAILWINDS_SANDBOX, WORX1, WORX1PSA",
       "products": {
         "Billing": true,
@@ -3186,16 +2869,12 @@
           "rank": "VP-Level",
           "email": "",
           "referral": "",
-          "discountCode": "REVFAN100",
           "dateRegistered": "Mar 31, 2026",
           "hotel": "No",
           "attendedBefore": "Yes"
         }
       ],
       "referrers": [],
-      "discountCodes": [
-        "REVFAN100"
-      ],
       "matchScore": 1,
       "attendeeCount": 1,
       "targetOwner": "Ryan Burton",
@@ -3209,7 +2888,6 @@
       ],
       "assignedAm": "jacob.williams",
       "status": "Active",
-      "averageMrr": "$3,232.71",
       "clientCode": "BRIDGECOMM, BRIDGECOMMPSA",
       "products": {
         "Billing": true,
@@ -3231,7 +2909,6 @@
           "rank": "Non-Manager",
           "email": "",
           "referral": "Jakob Champion",
-          "discountCode": "2BLONDES",
           "dateRegistered": "Aug 4, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -3243,7 +2920,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Jakob Champion",
-          "discountCode": "2BLONDES",
           "dateRegistered": "Aug 4, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -3255,7 +2931,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Jakob Champion",
-          "discountCode": "2BLONDES",
           "dateRegistered": "Aug 4, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -3267,7 +2942,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Jakob Champion",
-          "discountCode": "2BLONDES",
           "dateRegistered": "Aug 4, 2026",
           "hotel": "Yes",
           "attendedBefore": "No"
@@ -3275,9 +2949,6 @@
       ],
       "referrers": [
         "Jakob Champion"
-      ],
-      "discountCodes": [
-        "2BLONDES"
       ],
       "matchScore": 1,
       "attendeeCount": 4,
@@ -3292,7 +2963,6 @@
       ],
       "assignedAm": "Sarah McGovern",
       "status": "Active, Onboarding",
-      "averageMrr": "$5,040.03",
       "clientCode": "VANRAN, VANRANPSA",
       "products": {
         "Billing": true,
@@ -3314,7 +2984,6 @@
           "rank": "Other",
           "email": "",
           "referral": "Blaine Villafuerte",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 12, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -3326,7 +2995,6 @@
           "rank": "VP-Level",
           "email": "",
           "referral": "Blaine Villafuerte",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 14, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -3338,7 +3006,6 @@
           "rank": "Other",
           "email": "",
           "referral": "Blaine Villafuerte",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 12, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -3350,7 +3017,6 @@
           "rank": "Director",
           "email": "",
           "referral": "Blaine Villafuerte",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 17, 2026",
           "hotel": "No",
           "attendedBefore": "No"
@@ -3358,9 +3024,6 @@
       ],
       "referrers": [
         "Blaine Villafuerte"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 4,
@@ -3375,7 +3038,6 @@
       ],
       "assignedAm": "Ryan Burton",
       "status": "Active",
-      "averageMrr": "$16,646.78",
       "clientCode": "PEACE, PEACEODIN, PEACERESELLER",
       "products": {
         "Billing": true,
@@ -3397,7 +3059,6 @@
           "rank": "C-Level",
           "email": "",
           "referral": "Ryan Burton",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 5, 2026",
           "hotel": "Yes",
           "attendedBefore": "Yes"
@@ -3409,7 +3070,6 @@
           "rank": "Manager",
           "email": "",
           "referral": "Ryan Burton",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 5, 2026",
           "hotel": "No",
           "attendedBefore": "Yes"
@@ -3421,7 +3081,6 @@
           "rank": "VP-Level",
           "email": "",
           "referral": "Ryan Burton",
-          "discountCode": "REVGUEST-A",
           "dateRegistered": "Aug 5, 2026",
           "hotel": "No",
           "attendedBefore": "Yes"
@@ -3429,9 +3088,6 @@
       ],
       "referrers": [
         "Ryan Burton"
-      ],
-      "discountCodes": [
-        "REVGUEST-A"
       ],
       "matchScore": 1,
       "attendeeCount": 3,
@@ -3597,161 +3253,138 @@
       "name": "Charles Drapeau",
       "company": "AIMERICA",
       "referral": "Connor Flynn",
-      "discountCode": "REVGUEST-A",
       "dateRegistered": "2026-08-04"
     },
     {
       "name": "Sean Tishler",
       "company": "AIMERICA",
       "referral": "Connor Flynn",
-      "discountCode": "REVGUEST-A",
       "dateRegistered": "2026-08-04"
     },
     {
       "name": "Yan Carter",
       "company": "AIMERICA",
       "referral": "Connor Flynn",
-      "discountCode": "REVGUEST-A",
       "dateRegistered": "2026-08-04"
     },
     {
       "name": "Amy Shirey",
       "company": "AppDirect",
       "referral": "Ryan Burton",
-      "discountCode": "REVGUEST-A",
       "dateRegistered": "2026-07-16"
     },
     {
       "name": "Brittany Clester",
       "company": "AppDirect",
       "referral": "Ryan Burton",
-      "discountCode": "REVGUEST-A",
       "dateRegistered": "2026-07-16"
     },
     {
       "name": "David Cox",
       "company": "AvTek Solutions, Inc.",
       "referral": "Brook Lee",
-      "discountCode": "2BLONDES",
       "dateRegistered": "2026-07-14"
     },
     {
       "name": "Antwine Jackson",
       "company": "Enitech Solutions",
       "referral": "Connor Flynn",
-      "discountCode": "REVGUEST-A",
       "dateRegistered": "2026-08-12"
     },
     {
       "name": "Alyssa Hutchinson",
       "company": "Gamut",
       "referral": "Cam Sharpe",
-      "discountCode": "CAMREVSUMMIT",
       "dateRegistered": "2026-05-14"
     },
     {
       "name": "Brendan English",
       "company": "Gamut",
       "referral": "Cam Sharpe",
-      "discountCode": "CAMREVSUMMIT",
       "dateRegistered": "2026-05-14"
     },
     {
       "name": "Corinne Bowden",
       "company": "IMC Jax",
       "referral": "Connor Flynn",
-      "discountCode": "REVGUEST-A",
       "dateRegistered": "2026-08-05"
     },
     {
       "name": "Eric Lewis",
       "company": "IMC Jax",
       "referral": "Connor Flynn",
-      "discountCode": "REVGUEST-A",
       "dateRegistered": "2026-08-05"
     },
     {
       "name": "Lori Rockwell",
       "company": "IMC Jax",
       "referral": "Connor Flynn",
-      "discountCode": "REVGUEST-A",
       "dateRegistered": "2026-08-05"
     },
     {
       "name": "Brent Reeves",
       "company": "KealyWalker",
       "referral": "",
-      "discountCode": "2BLONDES",
       "dateRegistered": "2026-08-17"
     },
     {
       "name": "Michael Yokay",
       "company": "KealyWalker",
       "referral": "",
-      "discountCode": "2BLONDES",
       "dateRegistered": "2026-08-17"
     },
     {
       "name": "Brandon Burchard",
       "company": "MYSWITCH Communications",
       "referral": "Justin Lee",
-      "discountCode": "REVGUEST-A",
       "dateRegistered": "2026-07-20"
     },
     {
       "name": "Brenden Koop",
       "company": "MYSWITCH Communications",
       "referral": "Justin Lee",
-      "discountCode": "REVGUEST-A",
       "dateRegistered": "2026-07-20"
     },
     {
       "name": "Michael Abenhaim",
       "company": "Ooma",
       "referral": "Jake Mitchell",
-      "discountCode": "2BLONDES",
       "dateRegistered": "2026-08-18"
     },
     {
       "name": "Robert Lafrance",
       "company": "Ooma",
       "referral": "Jake Mitchell",
-      "discountCode": "2BLONDES",
       "dateRegistered": "2026-08-18"
     },
     {
       "name": "Frank Rubiano",
       "company": "Rubiano",
       "referral": "Jamie Butler",
-      "discountCode": "REVFAN100",
       "dateRegistered": "2026-06-04"
     },
     {
       "name": "Dylan Hornaday",
       "company": "Southeast Telephone Service",
       "referral": "Connor Flynn",
-      "discountCode": "REVGUEST-A",
       "dateRegistered": "2026-07-17"
     },
     {
       "name": "Joshua Faw",
       "company": "Southeast Telephone Service",
       "referral": "Connor Flynn",
-      "discountCode": "SUMMIT100",
       "dateRegistered": "2026-07-17"
     },
     {
       "name": "Richard Crancer",
       "company": "The Crancer Group",
       "referral": "Brook Lee - she won GTIA Member of the Year she is amazing",
-      "discountCode": "2BLONDES",
       "dateRegistered": "2026-08-14"
     },
     {
       "name": "Lori Williams",
       "company": "True Choice Technology",
       "referral": "Reid Doster",
-      "discountCode": "BLUELINE",
       "dateRegistered": "2026-08-06"
     }
   ]
