@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T04:30:50.374Z",
+  "generatedAt": "2026-08-31T04:38:21.325Z",
   "source": {
     "summitData": "assets/data/summit-data.json",
     "clientProducts": "../exports/gmail-attachments/1783436761907-master-client-list-a2654cf0c7e34c57bff58f4ea63d241f_all.csv",
@@ -7,7 +7,7 @@
     "liveNotionNote": "Notion API returned object_not_found/not shared; used cached CSV export for the same Notion page ID."
   },
   "rules": {
-    "accountFilter": "Registrant has a non-empty discount code other than REVII or SUMMITSPONSOR, then company is matched to Master Client List.",
+    "accountFilter": "Registrant has a non-empty discount code other than REVII or SUMMITSPONSOR, then company is matched to Master Client List. Ooma and KealyWalker are ignored as sponsors if unmatched.",
     "products": [
       "Billing",
       "PSA Web",
@@ -24,7 +24,8 @@
     "referrers": 25,
     "accountsWithMissingProducts": 58,
     "missingProductOpportunities": 202,
-    "unmatchedRegistrants": 23,
+    "unmatchedRegistrants": 19,
+    "ignoredSponsorRegistrants": 4,
     "clientMasterRows": 1074
   },
   "accounts": [
@@ -3322,18 +3323,6 @@
       "dateRegistered": "2026-08-05"
     },
     {
-      "name": "Brent Reeves",
-      "company": "KealyWalker",
-      "referral": "",
-      "dateRegistered": "2026-08-17"
-    },
-    {
-      "name": "Michael Yokay",
-      "company": "KealyWalker",
-      "referral": "",
-      "dateRegistered": "2026-08-17"
-    },
-    {
       "name": "Brandon Burchard",
       "company": "MYSWITCH Communications",
       "referral": "Justin Lee",
@@ -3344,18 +3333,6 @@
       "company": "MYSWITCH Communications",
       "referral": "Justin Lee",
       "dateRegistered": "2026-07-20"
-    },
-    {
-      "name": "Michael Abenhaim",
-      "company": "Ooma",
-      "referral": "Jake Mitchell",
-      "dateRegistered": "2026-08-18"
-    },
-    {
-      "name": "Robert Lafrance",
-      "company": "Ooma",
-      "referral": "Jake Mitchell",
-      "dateRegistered": "2026-08-18"
     },
     {
       "name": "Frank Rubiano",
@@ -3386,6 +3363,32 @@
       "company": "True Choice Technology",
       "referral": "Reid Doster",
       "dateRegistered": "2026-08-06"
+    }
+  ],
+  "ignoredSponsorRegistrants": [
+    {
+      "name": "Brent Reeves",
+      "company": "KealyWalker",
+      "referral": "",
+      "dateRegistered": "2026-08-17"
+    },
+    {
+      "name": "Michael Yokay",
+      "company": "KealyWalker",
+      "referral": "",
+      "dateRegistered": "2026-08-17"
+    },
+    {
+      "name": "Michael Abenhaim",
+      "company": "Ooma",
+      "referral": "Jake Mitchell",
+      "dateRegistered": "2026-08-18"
+    },
+    {
+      "name": "Robert Lafrance",
+      "company": "Ooma",
+      "referral": "Jake Mitchell",
+      "dateRegistered": "2026-08-18"
     }
   ]
 }

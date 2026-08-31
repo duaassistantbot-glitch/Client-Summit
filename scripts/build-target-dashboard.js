@@ -12,6 +12,7 @@ const outCsvPath = path.join(repoDir, 'assets', 'data', 'summit-target-accounts.
 
 const PRODUCTS = ['Billing', 'PSA Web', 'Tigerpaw', 'Odin', 'Payments'];
 const EXCLUDED_CODES = new Set(['REVII', 'SUMMITSPONSOR']);
+const EXCLUDED_SPONSOR_COMPANIES = new Set(['ooma', 'kealywalker']);
 const COMPANY_SUFFIX_RE = /\b(incorporated|inc|llc|l\.l\.c|ltd|limited|corp|corporation|co|company|communications|communication|telecom|technologies|technology|solutions|services|service|systems|group|direct|usa|c\/o)\b/g;
 const GENERIC_SINGLE_MATCH_TOKENS = new Set(['telephone', 'phone', 'voice', 'network', 'networks', 'security', 'secure', 'data', 'digital', 'global', 'premier', 'southeast', 'technology', 'technologies', 'solution', 'solutions', 'system', 'systems']);
 
@@ -217,12 +218,24 @@ async function main() {
   }
   const rollup = [...referrerRollup.values()].sort((a, b) => b.missingOpportunities - a.missingOpportunities || b.attendees - a.attendees || a.owner.localeCompare(b.owner));
 
-  const unmatched = targetedRegistrants.filter(r => !r.match).map(r => ({
-    name: r.name,
-    company: r.company,
-    referral: r.referral,
-    dateRegistered: r.dateRegistered || r.dateLabel || ''
-  })).sort((a, b) => a.company.localeCompare(b.company));
+  const ignoredSponsorRegistrants = targetedRegistrants
+    .filter(r => !r.match && EXCLUDED_SPONSOR_COMPANIES.has(normalizeCompany(r.company)))
+    .map(r => ({
+      name: r.name,
+      company: r.company,
+      referral: r.referral,
+      dateRegistered: r.dateRegistered || r.dateLabel || ''
+    }))
+    .sort((a, b) => a.company.localeCompare(b.company));
+
+  const unmatched = targetedRegistrants
+    .filter(r => !r.match && !EXCLUDED_SPONSOR_COMPANIES.has(normalizeCompany(r.company)))
+    .map(r => ({
+      name: r.name,
+      company: r.company,
+      referral: r.referral,
+      dateRegistered: r.dateRegistered || r.dateLabel || ''
+    })).sort((a, b) => a.company.localeCompare(b.company));
 
   const data = {
     generatedAt: new Date().toISOString(),
@@ -233,7 +246,7 @@ async function main() {
       liveNotionNote: 'Notion API returned object_not_found/not shared; used cached CSV export for the same Notion page ID.'
     },
     rules: {
-      accountFilter: 'Registrant has a non-empty discount code other than REVII or SUMMITSPONSOR, then company is matched to Master Client List.',
+      accountFilter: 'Registrant has a non-empty discount code other than REVII or SUMMITSPONSOR, then company is matched to Master Client List. Ooma and KealyWalker are ignored as sponsors if unmatched.',
       products: PRODUCTS
     },
     summary: {
@@ -245,11 +258,13 @@ async function main() {
       accountsWithMissingProducts: accounts.filter(a => a.hasMissingProducts).length,
       missingProductOpportunities: accounts.reduce((sum, a) => sum + a.missingCount, 0),
       unmatchedRegistrants: unmatched.length,
+      ignoredSponsorRegistrants: ignoredSponsorRegistrants.length,
       clientMasterRows: clientCount
     },
     accounts,
     rollup,
-    unmatched
+    unmatched,
+    ignoredSponsorRegistrants
   };
   fs.writeFileSync(outDataPath, JSON.stringify(data, null, 2));
 
@@ -326,7 +341,7 @@ main{max-width:1400px;margin:-26px auto 60px;padding:0 20px}.stats{display:grid;
 <header class="hero"><div class="wrap"><div class="eyebrow">Rev.io Summit 2026 · Client Targeting</div><h1>Client target dashboard</h1><p>Account-level view of Summit attendees who used non-sponsor/non-REVII discount codes, matched to the Master Client List products so referrers know which clients they own and which products to target onsite.</p><div class="meta"><span class="pill">Excludes REVII</span><span class="pill">Excludes SUMMITSPONSOR</span><span class="pill">Products: Billing · PSA Web · Tigerpaw · Odin · Payments</span><span class="pill">Generated ${htmlEscape(new Date(data.generatedAt).toLocaleString('en-US', { timeZone: 'UTC', dateStyle: 'medium', timeStyle: 'short' }))} UTC</span></div></div></header>
 <main>
 <section class="stats">
-${stat('Target accounts', data.summary.targetAccounts)}${stat('Matched attendees', data.summary.matchedClientRegistrants, `${data.summary.discountedNonSponsorRegistrants} discounted non-sponsor registrants`)}${stat('Referrers / owners', data.summary.referrers)}${stat('Accounts missing products', data.summary.accountsWithMissingProducts)}${stat('Missing product opps', data.summary.missingProductOpportunities)}${stat('Unmatched registrants', data.summary.unmatchedRegistrants, 'Need manual account match')}
+${stat('Target accounts', data.summary.targetAccounts)}${stat('Matched attendees', data.summary.matchedClientRegistrants, `${data.summary.discountedNonSponsorRegistrants} discounted non-sponsor registrants`)}${stat('Referrers / owners', data.summary.referrers)}${stat('Accounts missing products', data.summary.accountsWithMissingProducts)}${stat('Missing product opps', data.summary.missingProductOpportunities)}${stat('Unmatched registrants', data.summary.unmatchedRegistrants, `${data.summary.ignoredSponsorRegistrants} sponsor registrants ignored`)}
 </section>
 <section class="panel"><div class="actions"><div><h2>Target account list</h2><div class="note">Owner = registrant referral name when present; falls back to Assigned AM. Product checks come from Master Client List “Rev.io Product”.</div></div><a class="download" href="assets/data/summit-target-accounts.csv">Download CSV</a></div>
 <div class="controls"><input id="search" placeholder="Search account, attendee, owner, code…"><select id="owner"><option value="">All owners</option>${data.rollup.map(r => `<option>${htmlEscape(r.owner)}</option>`).join('')}</select><select id="missing"><option value="">All missing products</option>${PRODUCTS.map(p => `<option>${htmlEscape(p)}</option>`).join('')}<option value="none">No missing products</option></select><select id="have"><option value="">All current products</option>${PRODUCTS.map(p => `<option>${htmlEscape(p)}</option>`).join('')}</select></div>
