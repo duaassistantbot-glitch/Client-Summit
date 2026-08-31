@@ -19,697 +19,754 @@ main{max-width:1400px;margin:-26px auto 60px;padding:0 20px}.stats{display:grid;
 </head>
 <body>
 <div class="topbar"></div>
-<header class="hero"><div class="wrap"><div class="eyebrow">Rev.io Summit 2026 · Client Targeting</div><h1>Client target dashboard</h1><p>Account-level view of Summit attendees who used non-sponsor/non-REVII discount codes, matched to the Master Client List products so referrers know which clients they own and which products to target onsite.</p><div class="meta"><span class="pill">Excludes REVII</span><span class="pill">Excludes SUMMITSPONSOR</span><span class="pill">Targets: Billing · New Rev.io · Payments</span><span class="pill">Cohort from Salesforce</span><span class="pill">Generated Aug 31, 2026, 12:47 PM UTC</span></div></div></header>
+<header class="hero"><div class="wrap"><div class="eyebrow">Rev.io Summit 2026 · Client Targeting</div><h1>Client target dashboard</h1><p>Account-level view of Summit attendees who used non-sponsor/non-REVII discount codes, matched to the Master Client List products so referrers know which clients they own and which products to target onsite.</p><div class="meta"><span class="pill">Excludes REVII</span><span class="pill">Excludes SUMMITSPONSOR</span><span class="pill">Targets: Billing · New Rev.io · Payments</span><span class="pill">Cohort from Salesforce</span><span class="pill">Generated Aug 31, 2026, 12:56 PM UTC</span></div></div></header>
 <main>
 <section class="stats">
 <div class="stat"><div class="stat-value">57</div><div class="stat-label">Target accounts</div></div><div class="stat"><div class="stat-value">106</div><div class="stat-label">Matched attendees</div><div class="stat-sub">130 discounted non-sponsor registrants</div></div><div class="stat"><div class="stat-value">25</div><div class="stat-label">Referrers / owners</div></div><div class="stat"><div class="stat-value">56</div><div class="stat-label">Accounts missing products</div></div><div class="stat"><div class="stat-value">94</div><div class="stat-label">Missing product opps</div></div><div class="stat"><div class="stat-value">20</div><div class="stat-label">Unmatched registrants</div><div class="stat-sub">4 sponsor registrants ignored</div></div>
 </section>
-<section class="panel"><div class="actions"><div><h2>Target account list</h2><div class="note">Owner = registrant referral name when present; falls back to Assigned AM. Product checks come from Master Client List “Rev.io Product”; New Rev.io maps to PSA Web. Original cohort is pulled from Salesforce; Tigerpaw cohort is driven by PSA Account Status.</div></div><a class="download" href="assets/data/summit-target-accounts.csv">Download CSV</a></div>
+<section class="panel"><div class="actions"><div><h2>Target account list</h2><div class="note">Owners show Referral Owner, Salesforce Account Owner, and AM Owner. Product checks come from Master Client List “Rev.io Product”; New Rev.io maps to PSA Web. Original cohort is pulled from Salesforce; Tigerpaw cohort is driven by PSA Account Status. Meetings are Salesforce Events dated Sep 1–3, 2026.</div></div><a class="download" href="assets/data/summit-target-accounts.csv">Download CSV</a></div>
 <div class="controls"><input id="search" placeholder="Search account, attendee, owner…"><select id="owner"><option value="">All owners</option><option>Blaine Villafuerte</option><option>Justin Lee</option><option>Ryan Koontz</option><option>Ryan Burton</option><option>Jamie Butler</option><option>Rachael Buchtan</option><option>Shane Frost</option><option>Ingrid Beard</option><option>Jacob Williams</option><option>Jacob Willimas</option><option>Jaylin Bender</option><option>Rinor Berisha</option><option>Katerra Stephenson-Greenwood</option><option>Jakob Champion</option><option>Reid Doster</option><option>Cam Sharpe</option><option>Bryan Bettiol</option><option>Lorrie Browne</option><option>Roman Rudzik</option><option>Unassigned</option><option>Jeremy Adams</option><option>Olivia Sandefur</option><option>Sarah McGovern</option><option>Rachel Buchtan</option><option>Katerra Greenwood</option></select><select id="missing"><option value="">All missing products</option><option>Billing</option><option>New Rev.io</option><option>Payments</option><option value="none">No missing products</option></select><select id="have"><option value="">All current products</option><option>Billing</option><option>New Rev.io</option><option>Payments</option></select></div>
-<div class="table-wrap"><table id="accounts"><thead><tr><th class="sticky">Account</th><th>Target owner</th><th>Attendees</th><th>Billing</th><th>New Rev.io</th><th>Payments</th><th>Missing / target</th><th>Details</th></tr></thead><tbody>
-    <tr data-owner="blaine villafuerte" data-products="" data-missing="billing new rev.io payments" data-search="rss (restaurant service solutions) blaine villafuerte blaine villafuerte rss brandon sauer mandy hughs rich vale wes watson">
+<div class="table-wrap"><table id="accounts"><thead><tr><th class="sticky">Account</th><th>Owners</th><th>Events Sep 1–3</th><th>Attendees</th><th>Billing</th><th>New Rev.io</th><th>Payments</th><th>Missing / target</th><th>Details</th></tr></thead><tbody>
+    <tr data-owner="blaine villafuerte" data-products="" data-missing="billing new rev.io payments" data-search="rss (restaurant service solutions) blaine villafuerte jakob champion blaine villafuerte rss brandon sauer mandy hughs rich vale wes watson 2026-09-01: rss - client business review (summit)">
       <td data-label="Account" class="sticky"><strong>RSS (Restaurant Service Solutions)</strong><span class="cohort">Tigerpaw</span><span>RSS</span></td>
-      <td data-label="Target owner">Blaine Villafuerte<span>Assigned AM: Blaine Villafuerte</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Blaine Villafuerte<span>Account: Jakob Champion</span><span>AM: Blaine Villafuerte</span></td>
+      <td data-label="Events Sep 1–3"><strong>1 scheduled</strong><span>2026-09-01: RSS - Client Business Review (Summit)</span></td>
       <td data-label="Attendees" class="num">4<span>Brandon Sauer; Mandy Hughs; Rich Vale; Wes Watson</span></td>
       <td data-label="Billing" class="product no">—</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Billing</b> <b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Brandon Sauer — Head of Sales · Sales/Marketing · referred by Blaine Villafuerte · attended before: No</li><li>Mandy Hughs — Director of HR &amp; Admin · Operations/Support · referred by Blaine Villafuerte · attended before: Yes</li><li>Rich Vale — Field Service &amp; Product Manager · Operations/Support · referred by Blaine Villafuerte · attended before: No</li><li>Wes Watson — Director of Technology · IT/Engineering · referred by Blaine Villafuerte · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Tigerpaw</p><strong>Salesforce account</strong><p>RSS (Restaurant Service Solutions)</p><strong>Match score</strong><p>0.86</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Brandon Sauer — Head of Sales · Sales/Marketing · referred by Blaine Villafuerte · attended before: No</li><li>Mandy Hughs — Director of HR &amp; Admin · Operations/Support · referred by Blaine Villafuerte · attended before: Yes</li><li>Rich Vale — Field Service &amp; Product Manager · Operations/Support · referred by Blaine Villafuerte · attended before: No</li><li>Wes Watson — Director of Technology · IT/Engineering · referred by Blaine Villafuerte · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>2026-09-01 — RSS - Client Business Review (Summit) · owner: Jakob Champion</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Blaine Villafuerte<br>Account: Jakob Champion<br>AM: Blaine Villafuerte</p><strong>Source product field</strong><p>Tigerpaw</p><strong>Salesforce account</strong><p>RSS (Restaurant Service Solutions)</p><strong>Match score</strong><p>0.86</p></div>
     </div></td></tr>
-    <tr data-owner="jacob williams, jacob willimas" data-products="" data-missing="billing new rev.io payments" data-search="homeland technology group jacob williams, jacob willimas jacob.williams homeland security systems mark fleeger jeremy staley kevin ewing">
+    <tr data-owner="jacob williams, jacob willimas" data-products="" data-missing="billing new rev.io payments" data-search="homeland technology group jacob williams, jacob willimas jakob champion jacob.williams homeland security systems mark fleeger jeremy staley kevin ewing no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Homeland Technology Group</strong><span class="cohort">Tigerpaw</span><span>Homeland Security Systems</span></td>
-      <td data-label="Target owner">Jacob Williams, Jacob Willimas<span>Assigned AM: jacob.williams</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Jacob Williams, Jacob Willimas<span>Account: Jakob Champion</span><span>AM: jacob.williams</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">3<span>Mark Fleeger; Jeremy Staley; Kevin Ewing</span></td>
       <td data-label="Billing" class="product no">—</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Billing</b> <b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Mark Fleeger — CEO · Other · referred by Jacob Willimas · attended before: No</li><li>Jeremy Staley — President · C-Suite · referred by Jacob Williams · attended before: No</li><li>Kevin Ewing — IT Director · IT/Engineering · referred by Jacob Williams · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Tigerpaw</p><strong>Salesforce account</strong><p>Homeland Technology Group</p><strong>Match score</strong><p>0.92</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Mark Fleeger — CEO · Other · referred by Jacob Willimas · attended before: No</li><li>Jeremy Staley — President · C-Suite · referred by Jacob Williams · attended before: No</li><li>Kevin Ewing — IT Director · IT/Engineering · referred by Jacob Williams · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Jacob Williams, Jacob Willimas<br>Account: Jakob Champion<br>AM: jacob.williams</p><strong>Source product field</strong><p>Tigerpaw</p><strong>Salesforce account</strong><p>Homeland Technology Group</p><strong>Match score</strong><p>0.92</p></div>
     </div></td></tr>
-    <tr data-owner="rinor berisha" data-products="" data-missing="billing new rev.io payments" data-search="centerpoint it, inc rinor berisha rinor.berisha centerpoint it kevin durham scott williams">
+    <tr data-owner="rinor berisha" data-products="" data-missing="billing new rev.io payments" data-search="centerpoint it, inc rinor berisha jakob champion rinor.berisha centerpoint it kevin durham scott williams no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Centerpoint IT, Inc</strong><span class="cohort">Tigerpaw</span><span>Centerpoint IT</span></td>
-      <td data-label="Target owner">Rinor Berisha<span>Assigned AM: rinor.berisha</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Rinor Berisha<span>Account: Jakob Champion</span><span>AM: rinor.berisha</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">2<span>Kevin Durham; Scott Williams</span></td>
       <td data-label="Billing" class="product no">—</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Billing</b> <b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Kevin Durham — Lead Manager · IT/Engineering · referred by Rinor Berisha · attended before: No</li><li>Scott Williams — Client Success Manager · IT/Engineering · referred by Rinor Berisha · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Tigerpaw</p><strong>Salesforce account</strong><p>Centerpoint IT</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Kevin Durham — Lead Manager · IT/Engineering · referred by Rinor Berisha · attended before: No</li><li>Scott Williams — Client Success Manager · IT/Engineering · referred by Rinor Berisha · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Rinor Berisha<br>Account: Jakob Champion<br>AM: rinor.berisha</p><strong>Source product field</strong><p>Tigerpaw</p><strong>Salesforce account</strong><p>Centerpoint IT</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="blaine villafuerte" data-products="" data-missing="billing new rev.io payments" data-search="ics communications blaine villafuerte unassigned ics communications jason veasey susie veasey">
+    <tr data-owner="blaine villafuerte" data-products="" data-missing="billing new rev.io payments" data-search="ics communications blaine villafuerte justin lee unassigned ics communications jason veasey susie veasey no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>ICS Communications</strong><span class="cohort">Tigerpaw</span><span>ICS Communications</span></td>
-      <td data-label="Target owner">Blaine Villafuerte<span>Assigned AM: Unassigned</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Blaine Villafuerte<span>Account: Justin Lee</span><span>AM: Unassigned</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">2<span>Jason Veasey; Susie Veasey</span></td>
       <td data-label="Billing" class="product no">—</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Billing</b> <b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Jason Veasey — Owner · C-Suite · referred by Blaine Villafuerte · attended before: No</li><li>Susie Veasey — VP of Operations · Operations/Support · referred by Blaine Villafuerte · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Tigerpaw</p><strong>Salesforce account</strong><p>ICS Communications</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Jason Veasey — Owner · C-Suite · referred by Blaine Villafuerte · attended before: No</li><li>Susie Veasey — VP of Operations · Operations/Support · referred by Blaine Villafuerte · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Blaine Villafuerte<br>Account: Justin Lee<br>AM: Unassigned</p><strong>Source product field</strong><p>Tigerpaw</p><strong>Salesforce account</strong><p>ICS Communications</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="jaylin bender" data-products="" data-missing="billing new rev.io payments" data-search="minuteman security technologies, inc. jaylin bender unassigned minutemen security systems christopher gordan gary gordon">
+    <tr data-owner="jaylin bender" data-products="" data-missing="billing new rev.io payments" data-search="minuteman security technologies, inc. jaylin bender abbey mcintosh unassigned minutemen security systems christopher gordan gary gordon no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Minuteman Security Technologies, Inc.</strong><span class="cohort">Tigerpaw</span><span>Minutemen Security Systems</span></td>
-      <td data-label="Target owner">Jaylin Bender<span>Assigned AM: Unassigned</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Jaylin Bender<span>Account: Abbey McIntosh</span><span>AM: Unassigned</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">2<span>Christopher Gordan; Gary Gordon</span></td>
       <td data-label="Billing" class="product no">—</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Billing</b> <b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Christopher Gordan — COO · C-Suite · referred by Jaylin Bender · attended before: No</li><li>Gary Gordon — Owner · C-Suite · referred by Jaylin Bender · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Tigerpaw</p><strong>Salesforce account</strong><p>Minuteman Security Technologies</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Christopher Gordan — COO · C-Suite · referred by Jaylin Bender · attended before: No</li><li>Gary Gordon — Owner · C-Suite · referred by Jaylin Bender · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Jaylin Bender<br>Account: Abbey McIntosh<br>AM: Unassigned</p><strong>Source product field</strong><p>Tigerpaw</p><strong>Salesforce account</strong><p>Minuteman Security Technologies</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="katerra stephenson-greenwood" data-products="" data-missing="billing new rev.io payments" data-search="j &amp; m systems llc katerra stephenson-greenwood unassigned j&amp;m systems llc mark geier">
+    <tr data-owner="katerra stephenson-greenwood" data-products="" data-missing="billing new rev.io payments" data-search="j &amp; m systems llc katerra stephenson-greenwood katerra stephenson greenwood unassigned j&amp;m systems llc mark geier no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>J &amp; M Systems LLC</strong><span class="cohort">Tigerpaw</span><span>J&amp;M Systems LLC</span></td>
-      <td data-label="Target owner">Katerra Stephenson-Greenwood<span>Assigned AM: Unassigned</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Katerra Stephenson-Greenwood<span>Account: Katerra Stephenson Greenwood</span><span>AM: Unassigned</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Mark Geier</span></td>
       <td data-label="Billing" class="product no">—</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Billing</b> <b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Mark Geier — Partner · C-Suite · referred by Katerra Stephenson-Greenwood · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Tigerpaw</p><strong>Salesforce account</strong><p>J &amp; M Systems LLC</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Mark Geier — Partner · C-Suite · referred by Katerra Stephenson-Greenwood · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Katerra Stephenson-Greenwood<br>Account: Katerra Stephenson Greenwood<br>AM: Unassigned</p><strong>Source product field</strong><p>Tigerpaw</p><strong>Salesforce account</strong><p>J &amp; M Systems LLC</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="blaine villafuerte" data-products="" data-missing="billing new rev.io payments" data-search="jct (johnston communications voice &amp; data) blaine villafuerte blaine villafuerte jct solutions joe marinello">
+    <tr data-owner="blaine villafuerte" data-products="" data-missing="billing new rev.io payments" data-search="jct (johnston communications voice &amp; data) blaine villafuerte ryan koontz blaine villafuerte jct solutions joe marinello no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>JCT (Johnston Communications Voice &amp; Data)</strong><span class="cohort">Tigerpaw</span><span>JCT Solutions</span></td>
-      <td data-label="Target owner">Blaine Villafuerte<span>Assigned AM: Blaine Villafuerte</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Blaine Villafuerte<span>Account: Ryan Koontz</span><span>AM: Blaine Villafuerte</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Joe Marinello</span></td>
       <td data-label="Billing" class="product no">—</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Billing</b> <b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Joe Marinello — Director of Information Systems · IT/Engineering · referred by Blaine Villafuerte · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Tigerpaw</p><strong>Salesforce account</strong><p>Voice-N-Data Solutions</p><strong>Match score</strong><p>0.86</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Joe Marinello — Director of Information Systems · IT/Engineering · referred by Blaine Villafuerte · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Blaine Villafuerte<br>Account: Ryan Koontz<br>AM: Blaine Villafuerte</p><strong>Source product field</strong><p>Tigerpaw</p><strong>Salesforce account</strong><p>Voice-N-Data Solutions</p><strong>Match score</strong><p>0.86</p></div>
     </div></td></tr>
-    <tr data-owner="blaine villafuerte" data-products="new rev.io" data-missing="billing payments" data-search="bank-tec south blaine villafuerte blaine villafuerte bank-tec south robin brownmiller salena collins tammy kay robbins matt sanders">
+    <tr data-owner="blaine villafuerte" data-products="new rev.io" data-missing="billing payments" data-search="bank-tec south blaine villafuerte jakob champion blaine villafuerte bank-tec south robin brownmiller salena collins tammy kay robbins matt sanders 2026-09-02: rev.io / bank-tec south (client business review) - summit">
       <td data-label="Account" class="sticky"><strong>Bank-Tec South</strong><span class="cohort">Tigerpaw</span><span>Bank-Tec South</span></td>
-      <td data-label="Target owner">Blaine Villafuerte<span>Assigned AM: Blaine Villafuerte</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Blaine Villafuerte<span>Account: Jakob Champion</span><span>AM: Blaine Villafuerte</span></td>
+      <td data-label="Events Sep 1–3"><strong>1 scheduled</strong><span>2026-09-02: Rev.io / Bank-Tec South (Client Business Review) - Summit</span></td>
       <td data-label="Attendees" class="num">4<span>Robin Brownmiller; Salena Collins; Tammy Kay Robbins; Matt Sanders</span></td>
       <td data-label="Billing" class="product no">—</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Billing</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Robin Brownmiller — NCR Liaison · Other · referred by Blaine Villafuerte · attended before: Yes</li><li>Salena Collins — Sales Order Specialist · Sales/Marketing · referred by Blaine Villafuerte · attended before: No</li><li>Tammy Kay Robbins — Accounting Manager · Finance/Billing · referred by Blaine Villafuerte · attended before: Yes</li><li>Matt Sanders — Senior Director of Internal Operations · Sales/Marketing · referred by Blaine Villafuerte · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>Bank-Tec South</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Robin Brownmiller — NCR Liaison · Other · referred by Blaine Villafuerte · attended before: Yes</li><li>Salena Collins — Sales Order Specialist · Sales/Marketing · referred by Blaine Villafuerte · attended before: No</li><li>Tammy Kay Robbins — Accounting Manager · Finance/Billing · referred by Blaine Villafuerte · attended before: Yes</li><li>Matt Sanders — Senior Director of Internal Operations · Sales/Marketing · referred by Blaine Villafuerte · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>2026-09-02 — Rev.io / Bank-Tec South (Client Business Review) - Summit · owner: Jakob Champion</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Blaine Villafuerte<br>Account: Jakob Champion<br>AM: Blaine Villafuerte</p><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>Bank-Tec South</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="jamie butler, ryan burton" data-products="billing" data-missing="new rev.io payments" data-search="bcm one c/o invoiceiq jamie butler, ryan burton ryan burton bcm one skyswitch adnon dow cassandra monroe danilo jr catacutan">
+    <tr data-owner="jamie butler, ryan burton" data-products="billing" data-missing="new rev.io payments" data-search="bcm one c/o invoiceiq jamie butler, ryan burton justin lee ryan burton bcm one skyswitch adnon dow cassandra monroe danilo jr catacutan 2026-09-02: (client business review - summit) rev.io &amp; skyswitch">
       <td data-label="Account" class="sticky"><strong>BCM ONE C/O InvoiceIQ</strong><span class="cohort">Rev.io Billing</span><span>BCM One / Skyswitch</span></td>
-      <td data-label="Target owner">Jamie Butler, Ryan Burton<span>Assigned AM: Ryan Burton</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Jamie Butler, Ryan Burton<span>Account: Justin Lee</span><span>AM: Ryan Burton</span></td>
+      <td data-label="Events Sep 1–3"><strong>1 scheduled</strong><span>2026-09-02: (Client Business Review - Summit) Rev.io &amp; SkySwitch</span></td>
       <td data-label="Attendees" class="num">3<span>Adnon Dow; Cassandra Monroe; Danilo Jr Catacutan</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Adnon Dow — Chief Product &amp; Strategy Officer · C-Suite · referred by Jamie Butler · attended before: No</li><li>Cassandra Monroe — Director of Billing Operations · Finance/Billing · referred by Ryan Burton · attended before: No</li><li>Danilo Jr Catacutan — Sr. Manager for Implementation · Finance/Billing · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>SkySwitch</p><strong>Match score</strong><p>0.94</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Adnon Dow — Chief Product &amp; Strategy Officer · C-Suite · referred by Jamie Butler · attended before: No</li><li>Cassandra Monroe — Director of Billing Operations · Finance/Billing · referred by Ryan Burton · attended before: No</li><li>Danilo Jr Catacutan — Sr. Manager for Implementation · Finance/Billing · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>2026-09-02 — (Client Business Review - Summit) Rev.io &amp; SkySwitch · owner: Justin Lee</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Jamie Butler, Ryan Burton<br>Account: Justin Lee<br>AM: Ryan Burton</p><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>SkySwitch</p><strong>Match score</strong><p>0.94</p></div>
     </div></td></tr>
-    <tr data-owner="lorrie browne, roman rudzik" data-products="new rev.io" data-missing="billing payments" data-search="acs fire &amp; security lorrie browne, roman rudzik rinor.berisha acs fire &amp; security martin rudzik roman rudzik">
+    <tr data-owner="lorrie browne, roman rudzik" data-products="new rev.io" data-missing="billing payments" data-search="acs fire &amp; security lorrie browne, roman rudzik justin lee rinor.berisha acs fire &amp; security martin rudzik roman rudzik no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>ACS Fire &amp; Security</strong><span class="cohort">Tigerpaw</span><span>ACS Fire &amp; Security</span></td>
-      <td data-label="Target owner">Lorrie Browne, Roman Rudzik<span>Assigned AM: rinor.berisha</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Lorrie Browne, Roman Rudzik<span>Account: Justin Lee</span><span>AM: rinor.berisha</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">2<span>Martin Rudzik; Roman Rudzik</span></td>
       <td data-label="Billing" class="product no">—</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Billing</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Martin Rudzik — VP · Operations/Support · referred by Roman Rudzik · attended before: No</li><li>Roman Rudzik — CFO · Finance/Billing · referred by Lorrie Browne · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>ACS Fire &amp; Security</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Martin Rudzik — VP · Operations/Support · referred by Roman Rudzik · attended before: No</li><li>Roman Rudzik — CFO · Finance/Billing · referred by Lorrie Browne · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Lorrie Browne, Roman Rudzik<br>Account: Justin Lee<br>AM: rinor.berisha</p><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>ACS Fire &amp; Security</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="blaine villafuerte" data-products="new rev.io" data-missing="billing payments" data-search="all secured security services blaine villafuerte sarah mcgovern all secure ben lawrence rita lawrence">
+    <tr data-owner="blaine villafuerte" data-products="new rev.io" data-missing="billing payments" data-search="all secured security services blaine villafuerte katerra stephenson greenwood sarah mcgovern all secure ben lawrence rita lawrence no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>All Secured Security Services</strong><span class="cohort">Tigerpaw</span><span>All Secure</span></td>
-      <td data-label="Target owner">Blaine Villafuerte<span>Assigned AM: Sarah McGovern</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Blaine Villafuerte<span>Account: Katerra Stephenson Greenwood</span><span>AM: Sarah McGovern</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">2<span>Ben Lawrence; Rita Lawrence</span></td>
       <td data-label="Billing" class="product no">—</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Billing</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Ben Lawrence — President · C-Suite · referred by Blaine Villafuerte · attended before: Yes</li><li>Rita Lawrence — VP Partner Development · Operations/Support · referred by Blaine Villafuerte · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>All Secured Security Services</p><strong>Match score</strong><p>0.94</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Ben Lawrence — President · C-Suite · referred by Blaine Villafuerte · attended before: Yes</li><li>Rita Lawrence — VP Partner Development · Operations/Support · referred by Blaine Villafuerte · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Blaine Villafuerte<br>Account: Katerra Stephenson Greenwood<br>AM: Sarah McGovern</p><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>All Secured Security Services</p><strong>Match score</strong><p>0.94</p></div>
     </div></td></tr>
-    <tr data-owner="jamie butler" data-products="new rev.io" data-missing="billing payments" data-search="c1st technologies jamie butler unassigned c1st technologies gregory marchand tony hsieh">
+    <tr data-owner="jamie butler" data-products="new rev.io" data-missing="billing payments" data-search="c1st technologies jamie butler ingrid beard unassigned c1st technologies gregory marchand tony hsieh no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>C1st Technologies</strong><span class="cohort">Tigerpaw</span><span>C1st Technologies</span></td>
-      <td data-label="Target owner">Jamie Butler<span>Assigned AM: Unassigned</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Jamie Butler<span>Account: Ingrid Beard</span><span>AM: Unassigned</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">2<span>Gregory Marchand; Tony Hsieh</span></td>
       <td data-label="Billing" class="product no">—</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Billing</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Gregory Marchand — Director of MSP Operations · IT/Engineering · referred by Jamie Butler · attended before: No</li><li>Tony Hsieh — Partner · C-Suite · referred by Jamie Butler · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>C1st Technologies</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Gregory Marchand — Director of MSP Operations · IT/Engineering · referred by Jamie Butler · attended before: No</li><li>Tony Hsieh — Partner · C-Suite · referred by Jamie Butler · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Jamie Butler<br>Account: Ingrid Beard<br>AM: Unassigned</p><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>C1st Technologies</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="ryan koontz" data-products="billing" data-missing="new rev.io payments" data-search="global data systems ryan koontz unassigned global data systems global data systems, inc monica theriot-habetz robert guidry">
+    <tr data-owner="ryan koontz" data-products="billing" data-missing="new rev.io payments" data-search="global data systems ryan koontz jakob champion unassigned global data systems global data systems, inc monica theriot-habetz robert guidry no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Global Data Systems</strong><span class="cohort">Rev.io Billing</span><span>Global Data Systems / Global Data Systems, Inc</span></td>
-      <td data-label="Target owner">Ryan Koontz<span>Assigned AM: Unassigned</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Ryan Koontz<span>Account: Jakob Champion</span><span>AM: Unassigned</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">2<span>Monica Theriot-Habetz; Robert Guidry</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Monica Theriot-Habetz — Vice President, SFC · Operations/Support · referred by Ryan Koontz · attended before: No</li><li>Robert Guidry — CTO · C-Suite · referred by Ryan Koontz · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>Global Data Systems, Inc</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Monica Theriot-Habetz — Vice President, SFC · Operations/Support · referred by Ryan Koontz · attended before: No</li><li>Robert Guidry — CTO · C-Suite · referred by Ryan Koontz · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Ryan Koontz<br>Account: Jakob Champion<br>AM: Unassigned</p><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>Global Data Systems, Inc</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="unassigned" data-products="billing" data-missing="new rev.io payments" data-search="hiscall, inc. unassigned unassigned hiscall gary luffman shae pfieffer">
+    <tr data-owner="unassigned" data-products="billing" data-missing="new rev.io payments" data-search="hiscall, inc. unassigned justin lee unassigned hiscall gary luffman shae pfieffer no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Hiscall, Inc.</strong><span class="cohort">Tigerpaw</span><span>Hiscall</span></td>
-      <td data-label="Target owner">Unassigned<span>Assigned AM: Unassigned</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Unassigned<span>Account: Justin Lee</span><span>AM: Unassigned</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">2<span>Gary Luffman; Shae Pfieffer</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Gary Luffman — President · C-Suite · attended before: Yes</li><li>Shae Pfieffer — IT Manager · C-Suite · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>Hiscall</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Gary Luffman — President · C-Suite · attended before: Yes</li><li>Shae Pfieffer — IT Manager · C-Suite · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Unassigned<br>Account: Justin Lee<br>AM: Unassigned</p><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>Hiscall</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="justin lee" data-products="new rev.io" data-missing="billing payments" data-search="hosted america, llc justin lee unassigned hosted america andrew turkington mark robbins">
+    <tr data-owner="justin lee" data-products="new rev.io" data-missing="billing payments" data-search="hosted america, llc justin lee katerra stephenson greenwood unassigned hosted america andrew turkington mark robbins 2026-09-01: meeting">
       <td data-label="Account" class="sticky"><strong>Hosted America, LLC</strong><span class="cohort">Tigerpaw</span><span>Hosted America</span></td>
-      <td data-label="Target owner">Justin Lee<span>Assigned AM: Unassigned</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Justin Lee<span>Account: Katerra Stephenson Greenwood</span><span>AM: Unassigned</span></td>
+      <td data-label="Events Sep 1–3"><strong>1 scheduled</strong><span>2026-09-01: Meeting</span></td>
       <td data-label="Attendees" class="num">2<span>Andrew Turkington; Mark Robbins</span></td>
       <td data-label="Billing" class="product no">—</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Billing</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Andrew Turkington — CFO · Finance/Billing · referred by Justin Lee · attended before: Yes</li><li>Mark Robbins — VP, Director of Voice Operations · Operations/Support · referred by Justin Lee · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>PSA Web, Tigerpaw</p><strong>Salesforce account</strong><p>Hosted America</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Andrew Turkington — CFO · Finance/Billing · referred by Justin Lee · attended before: Yes</li><li>Mark Robbins — VP, Director of Voice Operations · Operations/Support · referred by Justin Lee · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>2026-09-01 — Meeting · owner: Katerra Stephenson Greenwood</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Justin Lee<br>Account: Katerra Stephenson Greenwood<br>AM: Unassigned</p><strong>Source product field</strong><p>PSA Web, Tigerpaw</p><strong>Salesforce account</strong><p>Hosted America</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="bryan bettiol" data-products="new rev.io" data-missing="billing payments" data-search="next step communications bryan bettiol unassigned next step communication next step communications john jason parmley shannon parmley">
+    <tr data-owner="bryan bettiol" data-products="new rev.io" data-missing="billing payments" data-search="next step communications bryan bettiol ingrid beard unassigned next step communication next step communications john jason parmley shannon parmley no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Next Step Communications</strong><span class="cohort">Tigerpaw</span><span>Next Step Communication / Next Step Communications</span></td>
-      <td data-label="Target owner">Bryan Bettiol<span>Assigned AM: Unassigned</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Bryan Bettiol<span>Account: Ingrid Beard</span><span>AM: Unassigned</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">2<span>John Jason Parmley; Shannon Parmley</span></td>
       <td data-label="Billing" class="product no">—</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Billing</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>John Jason Parmley — CEO · C-Suite · referred by Bryan Bettiol · attended before: No</li><li>Shannon Parmley — Business Manager · Finance/Billing · referred by Bryan Bettiol · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>Next Step Communications</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>John Jason Parmley — CEO · C-Suite · referred by Bryan Bettiol · attended before: No</li><li>Shannon Parmley — Business Manager · Finance/Billing · referred by Bryan Bettiol · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Bryan Bettiol<br>Account: Ingrid Beard<br>AM: Unassigned</p><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>Next Step Communications</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="justin lee, ryan koontz" data-products="billing" data-missing="new rev.io payments" data-search="spectrumvoip justin lee, ryan koontz ryan burton spectrumvoip jake leidy michael ruggiere">
+    <tr data-owner="justin lee, ryan koontz" data-products="billing" data-missing="new rev.io payments" data-search="spectrumvoip justin lee, ryan koontz justin lee ryan burton spectrumvoip jake leidy michael ruggiere no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>SpectrumVoIP</strong><span class="cohort">Rev.io Billing</span><span>SpectrumVoIP</span></td>
-      <td data-label="Target owner">Justin Lee, Ryan Koontz<span>Assigned AM: Ryan Burton</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Justin Lee, Ryan Koontz<span>Account: Justin Lee</span><span>AM: Ryan Burton</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">2<span>Jake Leidy; Michael Ruggiere</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Jake Leidy — Chief Operations Officer · C-Suite · referred by Justin Lee · attended before: Yes</li><li>Michael Ruggiere — Controller · Finance/Billing · referred by Ryan Koontz · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>SpectrumVoIP</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Jake Leidy — Chief Operations Officer · C-Suite · referred by Justin Lee · attended before: Yes</li><li>Michael Ruggiere — Controller · Finance/Billing · referred by Ryan Koontz · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Justin Lee, Ryan Koontz<br>Account: Justin Lee<br>AM: Ryan Burton</p><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>SpectrumVoIP</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="rachael buchtan" data-products="billing" data-missing="new rev.io payments" data-search="viirtue llc (apollo) rachael buchtan rachael buchtan viirtue inc alana lee ana da silva">
+    <tr data-owner="rachael buchtan" data-products="billing" data-missing="new rev.io payments" data-search="viirtue llc (apollo) rachael buchtan katerra stephenson greenwood rachael buchtan viirtue inc alana lee ana da silva no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Viirtue LLC (Apollo)</strong><span class="cohort">Rev.io Billing</span><span>Viirtue Inc</span></td>
-      <td data-label="Target owner">Rachael Buchtan<span>Assigned AM: Rachael Buchtan</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Rachael Buchtan<span>Account: Katerra Stephenson Greenwood</span><span>AM: Rachael Buchtan</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">2<span>Alana Lee; Ana da Silva</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Alana Lee — Billing and Services Coordinator · Finance/Billing · referred by Rachael Buchtan · attended before: No</li><li>Ana da Silva — Sr. Billing Manager · Finance/Billing · referred by Rachael Buchtan · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>Viirtue</p><strong>Match score</strong><p>0.94</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Alana Lee — Billing and Services Coordinator · Finance/Billing · referred by Rachael Buchtan · attended before: No</li><li>Ana da Silva — Sr. Billing Manager · Finance/Billing · referred by Rachael Buchtan · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Rachael Buchtan<br>Account: Katerra Stephenson Greenwood<br>AM: Rachael Buchtan</p><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>Viirtue</p><strong>Match score</strong><p>0.94</p></div>
     </div></td></tr>
-    <tr data-owner="ryan koontz" data-products="new rev.io" data-missing="billing payments" data-search="avit ryan koontz unassigned avit, llc steve konetski">
+    <tr data-owner="ryan koontz" data-products="new rev.io" data-missing="billing payments" data-search="avit ryan koontz jakob champion unassigned avit, llc steve konetski no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>AVIT</strong><span class="cohort">Tigerpaw</span><span>AVIT, LLC</span></td>
-      <td data-label="Target owner">Ryan Koontz<span>Assigned AM: Unassigned</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Ryan Koontz<span>Account: Jakob Champion</span><span>AM: Unassigned</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Steve Konetski</span></td>
       <td data-label="Billing" class="product no">—</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Billing</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Steve Konetski — CIO · C-Suite · referred by Ryan Koontz · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>AVIT</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Steve Konetski — CIO · C-Suite · referred by Ryan Koontz · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Ryan Koontz<br>Account: Jakob Champion<br>AM: Unassigned</p><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>AVIT</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="ingrid beard" data-products="billing" data-missing="new rev.io payments" data-search="bludog telecom ingrid beard unassigned bludog telecom chris reyes">
+    <tr data-owner="ingrid beard" data-products="billing" data-missing="new rev.io payments" data-search="bludog telecom ingrid beard justin lee unassigned bludog telecom chris reyes no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>BluDog Telecom</strong><span class="cohort">Rev.io Billing</span><span>BluDog Telecom</span></td>
-      <td data-label="Target owner">Ingrid Beard<span>Assigned AM: Unassigned</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Ingrid Beard<span>Account: Justin Lee</span><span>AM: Unassigned</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Chris Reyes</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Chris Reyes — Owner · C-Suite · referred by Ingrid Beard · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>BluDog Telecom</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Chris Reyes — Owner · C-Suite · referred by Ingrid Beard · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Ingrid Beard<br>Account: Justin Lee<br>AM: Unassigned</p><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>BluDog Telecom</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="blaine villafuerte" data-products="new rev.io" data-missing="billing payments" data-search="cl sams business solutions llc blaine villafuerte olivia sandefur cl sams clay lovelace">
+    <tr data-owner="blaine villafuerte" data-products="new rev.io" data-missing="billing payments" data-search="cl sams business solutions llc blaine villafuerte jakob champion olivia sandefur cl sams clay lovelace no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>CL Sams Business Solutions LLC</strong><span class="cohort">Rev.io Billing</span><span>CL Sams</span></td>
-      <td data-label="Target owner">Blaine Villafuerte<span>Assigned AM: Olivia Sandefur</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Blaine Villafuerte<span>Account: Jakob Champion</span><span>AM: Olivia Sandefur</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Clay Lovelace</span></td>
       <td data-label="Billing" class="product no">—</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Billing</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Clay Lovelace — COO/Co-Owner · Operations/Support · referred by Blaine Villafuerte · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>CL Sams</p><strong>Match score</strong><p>0.94</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Clay Lovelace — COO/Co-Owner · Operations/Support · referred by Blaine Villafuerte · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Blaine Villafuerte<br>Account: Jakob Champion<br>AM: Olivia Sandefur</p><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>CL Sams</p><strong>Match score</strong><p>0.94</p></div>
     </div></td></tr>
-    <tr data-owner="justin lee" data-products="billing" data-missing="new rev.io payments" data-search="converged networks justin lee sarah mcgovern converged networks brant yandell">
+    <tr data-owner="justin lee" data-products="billing" data-missing="new rev.io payments" data-search="converged networks justin lee justin lee sarah mcgovern converged networks brant yandell no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Converged Networks</strong><span class="cohort">Rev.io Billing</span><span>Converged Networks</span></td>
-      <td data-label="Target owner">Justin Lee<span>Assigned AM: Sarah McGovern</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Justin Lee<span>Account: Justin Lee</span><span>AM: Sarah McGovern</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Brant Yandell</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Brant Yandell — VoIP Engineer · Operations/Support · referred by Justin Lee · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>Converged Networks</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Brant Yandell — VoIP Engineer · Operations/Support · referred by Justin Lee · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Justin Lee<br>Account: Justin Lee<br>AM: Sarah McGovern</p><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>Converged Networks</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="rachael buchtan" data-products="billing" data-missing="new rev.io payments" data-search="decibel rachael buchtan rachael buchtan decibel stephanie kern">
+    <tr data-owner="rachael buchtan" data-products="billing" data-missing="new rev.io payments" data-search="decibel rachael buchtan unassigned rachael buchtan decibel stephanie kern no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Decibel</strong><span class="cohort">Rev.io Billing</span><span>Decibel</span></td>
-      <td data-label="Target owner">Rachael Buchtan<span>Assigned AM: Rachael Buchtan</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Rachael Buchtan<span>Account: Unassigned</span><span>AM: Rachael Buchtan</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Stephanie Kern</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Stephanie Kern — Director of Sales · Sales/Marketing · referred by Rachael Buchtan · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>—</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Stephanie Kern — Director of Sales · Sales/Marketing · referred by Rachael Buchtan · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Rachael Buchtan<br>Account: Unassigned<br>AM: Rachael Buchtan</p><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>—</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="jeremy adams" data-products="new rev.io" data-missing="billing payments" data-search="digital market pos jeremy adams jacob.williams digital market pos ismael adames">
+    <tr data-owner="jeremy adams" data-products="new rev.io" data-missing="billing payments" data-search="digital market pos jeremy adams jakob champion jacob.williams digital market pos ismael adames no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Digital Market POS</strong><span class="cohort">Tigerpaw</span><span>Digital Market POS</span></td>
-      <td data-label="Target owner">Jeremy Adams<span>Assigned AM: jacob.williams</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Jeremy Adams<span>Account: Jakob Champion</span><span>AM: jacob.williams</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Ismael Adames</span></td>
       <td data-label="Billing" class="product no">—</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Billing</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Ismael Adames — Lead Tech · Operations/Support · referred by Jeremy Adams · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>Digital Market POS</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Ismael Adames — Lead Tech · Operations/Support · referred by Jeremy Adams · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Jeremy Adams<br>Account: Jakob Champion<br>AM: jacob.williams</p><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>Digital Market POS</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="jamie butler" data-products="billing" data-missing="new rev.io payments" data-search="k&amp;l telecom jamie butler unassigned k&amp;l telecom andrew adair">
+    <tr data-owner="jamie butler" data-products="billing" data-missing="new rev.io payments" data-search="k&amp;l telecom jamie butler ingrid beard unassigned k&amp;l telecom andrew adair no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>K&amp;L Telecom</strong><span class="cohort">Rev.io Billing</span><span>K&amp;L Telecom</span></td>
-      <td data-label="Target owner">Jamie Butler<span>Assigned AM: Unassigned</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Jamie Butler<span>Account: Ingrid Beard</span><span>AM: Unassigned</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Andrew Adair</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Andrew Adair — Owner · Operations/Support · referred by Jamie Butler · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>K&amp;L Telecom</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Andrew Adair — Owner · Operations/Support · referred by Jamie Butler · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Jamie Butler<br>Account: Ingrid Beard<br>AM: Unassigned</p><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>K&amp;L Telecom</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="ryan burton" data-products="billing" data-missing="new rev.io payments" data-search="northwest digits llc ryan burton unassigned soundline communications sanjeev tirunagaram">
+    <tr data-owner="ryan burton" data-products="billing" data-missing="new rev.io payments" data-search="northwest digits llc ryan burton ingrid beard unassigned soundline communications sanjeev tirunagaram no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Northwest Digits LLC</strong><span class="cohort">Rev.io Billing</span><span>SoundLine Communications</span></td>
-      <td data-label="Target owner">Ryan Burton<span>Assigned AM: Unassigned</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Ryan Burton<span>Account: Ingrid Beard</span><span>AM: Unassigned</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Sanjeev Tirunagaram</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Sanjeev Tirunagaram — CMO · Sales/Marketing · referred by Ryan Burton · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>SoundLine Communications</p><strong>Match score</strong><p>0.96</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Sanjeev Tirunagaram — CMO · Sales/Marketing · referred by Ryan Burton · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Ryan Burton<br>Account: Ingrid Beard<br>AM: Unassigned</p><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>SoundLine Communications</p><strong>Match score</strong><p>0.96</p></div>
     </div></td></tr>
-    <tr data-owner="olivia sandefur" data-products="new rev.io" data-missing="billing payments" data-search="raven tech llc olivia sandefur olivia sandefur raven tech llc drew aldinger">
+    <tr data-owner="olivia sandefur" data-products="new rev.io" data-missing="billing payments" data-search="raven tech llc olivia sandefur katerra stephenson greenwood olivia sandefur raven tech llc drew aldinger no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Raven Tech LLC</strong><span class="cohort">Tigerpaw</span><span>Raven Tech LLC</span></td>
-      <td data-label="Target owner">Olivia Sandefur<span>Assigned AM: Olivia Sandefur</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Olivia Sandefur<span>Account: Katerra Stephenson Greenwood</span><span>AM: Olivia Sandefur</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Drew Aldinger</span></td>
       <td data-label="Billing" class="product no">—</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Billing</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Drew Aldinger — CEO · C-Suite · referred by Olivia Sandefur · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>Raven Tech LLC</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Drew Aldinger — CEO · C-Suite · referred by Olivia Sandefur · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Olivia Sandefur<br>Account: Katerra Stephenson Greenwood<br>AM: Olivia Sandefur</p><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>Raven Tech LLC</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="ryan koontz" data-products="billing" data-missing="new rev.io payments" data-search="southeast network specialists llc ryan koontz sarah mcgovern southeast networks william oppermann">
+    <tr data-owner="ryan koontz" data-products="billing" data-missing="new rev.io payments" data-search="southeast network specialists llc ryan koontz ingrid beard sarah mcgovern southeast networks william oppermann no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Southeast Network Specialists LLC</strong><span class="cohort">Rev.io Billing</span><span>Southeast Networks</span></td>
-      <td data-label="Target owner">Ryan Koontz<span>Assigned AM: Sarah McGovern</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Ryan Koontz<span>Account: Ingrid Beard</span><span>AM: Sarah McGovern</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>William Oppermann</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>William Oppermann — CEO · C-Suite · referred by Ryan Koontz · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>Southeast Network Specialists</p><strong>Match score</strong><p>0.86</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>William Oppermann — CEO · C-Suite · referred by Ryan Koontz · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Ryan Koontz<br>Account: Ingrid Beard<br>AM: Sarah McGovern</p><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>Southeast Network Specialists</p><strong>Match score</strong><p>0.86</p></div>
     </div></td></tr>
-    <tr data-owner="shane frost" data-products="billing" data-missing="new rev.io payments" data-search="southern telecom shane frost unassigned southern telecommunications, llc rob mcknight">
+    <tr data-owner="shane frost" data-products="billing" data-missing="new rev.io payments" data-search="southern telecom shane frost jakob champion unassigned southern telecommunications, llc rob mcknight no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Southern Telecom</strong><span class="cohort">Rev.io Billing</span><span>Southern Telecommunications, LLC</span></td>
-      <td data-label="Target owner">Shane Frost<span>Assigned AM: Unassigned</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Shane Frost<span>Account: Jakob Champion</span><span>AM: Unassigned</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Rob Mcknight</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Rob Mcknight — Operations Manager · Operations/Support · referred by Shane Frost · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>Southern Telecom</p><strong>Match score</strong><p>0.92</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Rob Mcknight — Operations Manager · Operations/Support · referred by Shane Frost · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Shane Frost<br>Account: Jakob Champion<br>AM: Unassigned</p><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>Southern Telecom</p><strong>Match score</strong><p>0.92</p></div>
     </div></td></tr>
-    <tr data-owner="sarah mcgovern" data-products="new rev.io" data-missing="billing payments" data-search="truline technologies sarah mcgovern sarah mcgovern truline technologies michael rowland">
+    <tr data-owner="unassigned" data-products="new rev.io" data-missing="billing payments" data-search="truline technologies unassigned jakob champion sarah mcgovern truline technologies michael rowland no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>TruLine Technologies</strong><span class="cohort">Tigerpaw</span><span>Truline Technologies</span></td>
-      <td data-label="Target owner">Sarah McGovern<span>Assigned AM: Sarah McGovern</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Unassigned<span>Account: Jakob Champion</span><span>AM: Sarah McGovern</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Michael Rowland</span></td>
       <td data-label="Billing" class="product no">—</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Billing</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Michael Rowland — President · C-Suite · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>TruLine Technologies</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Michael Rowland — President · C-Suite · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Unassigned<br>Account: Jakob Champion<br>AM: Sarah McGovern</p><strong>Source product field</strong><p>PSA Web</p><strong>Salesforce account</strong><p>TruLine Technologies</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="shane frost" data-products="billing" data-missing="new rev.io payments" data-search="vti communications shane frost unassigned vti communications megan ehmen">
+    <tr data-owner="shane frost" data-products="billing" data-missing="new rev.io payments" data-search="vti communications shane frost jakob champion unassigned vti communications megan ehmen no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>VTi Communications</strong><span class="cohort">Rev.io Billing</span><span>VTI Communications</span></td>
-      <td data-label="Target owner">Shane Frost<span>Assigned AM: Unassigned</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Shane Frost<span>Account: Jakob Champion</span><span>AM: Unassigned</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Megan Ehmen</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b> <b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Megan Ehmen — Manager · Operations/Support · referred by Shane Frost · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>VTi Communications</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Megan Ehmen — Manager · Operations/Support · referred by Shane Frost · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Shane Frost<br>Account: Jakob Champion<br>AM: Unassigned</p><strong>Source product field</strong><p>Billing</p><strong>Salesforce account</strong><p>VTi Communications</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="reid doster" data-products="billing new rev.io" data-missing="payments" data-search="blueline telecom reid doster rachael buchtan blueline telecom group, llc andres abeledo dagmar lynch jessica soto-perez tabitha abeledo">
+    <tr data-owner="reid doster" data-products="billing new rev.io" data-missing="payments" data-search="blueline telecom reid doster justin lee rachael buchtan blueline telecom group, llc andres abeledo dagmar lynch jessica soto-perez tabitha abeledo no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Blueline Telecom</strong><span class="cohort">Rev.io Billing</span><span>Blueline Telecom Group, LLC</span></td>
-      <td data-label="Target owner">Reid Doster<span>Assigned AM: Rachael Buchtan</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Reid Doster<span>Account: Justin Lee</span><span>AM: Rachael Buchtan</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">4<span>Andres Abeledo; Dagmar Lynch; Jessica Soto-Perez; Tabitha Abeledo</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Andres Abeledo — Vice President of Engineering and Operations · Operations/Support · referred by Reid Doster · attended before: Yes</li><li>Dagmar Lynch — Accounts Payable · Finance/Billing · referred by Reid Doster · attended before: No</li><li>Jessica Soto-Perez — Accounting Manager · Finance/Billing · referred by Reid Doster · attended before: Yes</li><li>Tabitha Abeledo — Director of Operations · Operations/Support · referred by Reid Doster · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, PSA Web</p><strong>Salesforce account</strong><p>Blueline Telecom</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Andres Abeledo — Vice President of Engineering and Operations · Operations/Support · referred by Reid Doster · attended before: Yes</li><li>Dagmar Lynch — Accounts Payable · Finance/Billing · referred by Reid Doster · attended before: No</li><li>Jessica Soto-Perez — Accounting Manager · Finance/Billing · referred by Reid Doster · attended before: Yes</li><li>Tabitha Abeledo — Director of Operations · Operations/Support · referred by Reid Doster · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Reid Doster<br>Account: Justin Lee<br>AM: Rachael Buchtan</p><strong>Source product field</strong><p>Billing, PSA Web</p><strong>Salesforce account</strong><p>Blueline Telecom</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="rachael buchtan, rachel buchtan" data-products="billing payments" data-missing="new rev.io" data-search="mnj technologies rachael buchtan, rachel buchtan rachael buchtan mnj technologies mnj technologies direct, inc. anastasiya chapman amanda gath georgia higgins james mace">
+    <tr data-owner="rachael buchtan, rachel buchtan" data-products="billing payments" data-missing="new rev.io" data-search="mnj technologies rachael buchtan, rachel buchtan justin lee rachael buchtan mnj technologies mnj technologies direct, inc. anastasiya chapman amanda gath georgia higgins james mace 2026-09-01: (client business review - summit) rev.io &amp; mnj technologies">
       <td data-label="Account" class="sticky"><strong>MNJ Technologies</strong><span class="cohort">Rev.io Billing</span><span>MNJ Technologies / MNJ Technologies Direct, Inc.</span></td>
-      <td data-label="Target owner">Rachael Buchtan, Rachel Buchtan<span>Assigned AM: Rachael Buchtan</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Rachael Buchtan, Rachel Buchtan<span>Account: Justin Lee</span><span>AM: Rachael Buchtan</span></td>
+      <td data-label="Events Sep 1–3"><strong>1 scheduled</strong><span>2026-09-01: (Client Business Review - Summit) Rev.io &amp; MNJ Technologies</span></td>
       <td data-label="Attendees" class="num">4<span>ANASTASIYA CHAPMAN; Amanda Gath; Georgia Higgins; James Mace</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product yes">✓</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>ANASTASIYA CHAPMAN — SENIOR STAFF ACCOUNTANT · Finance/Billing · referred by Rachel Buchtan · attended before: No</li><li>Amanda Gath — PMO Team Lead · IT/Engineering · referred by Rachael Buchtan · attended before: No</li><li>Georgia Higgins — Accounts Receivable Manager · Finance/Billing · referred by Rachel Buchtan · attended before: No</li><li>James Mace — PMO Manager · IT/Engineering · referred by Rachael Buchtan · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>MNJ Technologies</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>ANASTASIYA CHAPMAN — SENIOR STAFF ACCOUNTANT · Finance/Billing · referred by Rachel Buchtan · attended before: No</li><li>Amanda Gath — PMO Team Lead · IT/Engineering · referred by Rachael Buchtan · attended before: No</li><li>Georgia Higgins — Accounts Receivable Manager · Finance/Billing · referred by Rachel Buchtan · attended before: No</li><li>James Mace — PMO Manager · IT/Engineering · referred by Rachael Buchtan · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>2026-09-01 — (Client Business Review - Summit) Rev.io &amp; MNJ Technologies · owner: Justin Lee</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Rachael Buchtan, Rachel Buchtan<br>Account: Justin Lee<br>AM: Rachael Buchtan</p><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>MNJ Technologies</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="blaine villafuerte" data-products="billing new rev.io" data-missing="payments" data-search="vanran communications blaine villafuerte sarah mcgovern vanran communications kris kokell ron bohannon sheila greene emily sanders">
+    <tr data-owner="blaine villafuerte" data-products="billing new rev.io" data-missing="payments" data-search="vanran communications blaine villafuerte justin lee sarah mcgovern vanran communications kris kokell ron bohannon sheila greene emily sanders 2026-09-02: (client business review) rev.io &amp; vanran communications services">
       <td data-label="Account" class="sticky"><strong>Vanran Communications</strong><span class="cohort">Tigerpaw</span><span>VanRan Communications</span></td>
-      <td data-label="Target owner">Blaine Villafuerte<span>Assigned AM: Sarah McGovern</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Blaine Villafuerte<span>Account: Justin Lee</span><span>AM: Sarah McGovern</span></td>
+      <td data-label="Events Sep 1–3"><strong>1 scheduled</strong><span>2026-09-02: (Client Business Review) Rev.io &amp; VanRan Communications Services</span></td>
       <td data-label="Attendees" class="num">4<span>Kris Kokell; Ron Bohannon; Sheila Greene; Emily Sanders</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Kris Kokell — Dispatcher/Customer Service · Operations/Support · referred by Blaine Villafuerte · attended before: No</li><li>Ron Bohannon — Vice President · IT/Engineering · referred by Blaine Villafuerte · attended before: No</li><li>Sheila Greene — Office Manager · Operations/Support · referred by Blaine Villafuerte · attended before: No</li><li>Emily Sanders — Director of Quality Assurance · Operations/Support · referred by Blaine Villafuerte · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, PSA Web, Tigerpaw</p><strong>Salesforce account</strong><p>VanRan Communications Services, Inc.</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Kris Kokell — Dispatcher/Customer Service · Operations/Support · referred by Blaine Villafuerte · attended before: No</li><li>Ron Bohannon — Vice President · IT/Engineering · referred by Blaine Villafuerte · attended before: No</li><li>Sheila Greene — Office Manager · Operations/Support · referred by Blaine Villafuerte · attended before: No</li><li>Emily Sanders — Director of Quality Assurance · Operations/Support · referred by Blaine Villafuerte · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>2026-09-02 — (Client Business Review) Rev.io &amp; VanRan Communications Services · owner: Justin Lee</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Blaine Villafuerte<br>Account: Justin Lee<br>AM: Sarah McGovern</p><strong>Source product field</strong><p>Billing, PSA Web, Tigerpaw</p><strong>Salesforce account</strong><p>VanRan Communications Services, Inc.</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="ingrid beard" data-products="billing payments" data-missing="new rev.io" data-search="digital agent ingrid beard rachael buchtan digital agent howard hunter john reinhardt keyur patel">
+    <tr data-owner="ingrid beard" data-products="billing payments" data-missing="new rev.io" data-search="digital agent ingrid beard ingrid beard rachael buchtan digital agent howard hunter john reinhardt keyur patel no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Digital Agent</strong><span class="cohort">Tigerpaw</span><span>Digital Agent</span></td>
-      <td data-label="Target owner">Ingrid Beard<span>Assigned AM: Rachael Buchtan</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Ingrid Beard<span>Account: Ingrid Beard</span><span>AM: Rachael Buchtan</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">3<span>Howard Hunter; John Reinhardt; Keyur Patel</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product yes">✓</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Howard Hunter — Owner · C-Suite · referred by Ingrid Beard · attended before: Yes</li><li>John Reinhardt — Operation Manager · Operations/Support · referred by Ingrid Beard · attended before: Yes</li><li>Keyur Patel — COO · C-Suite · referred by Ingrid Beard · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>Digital Agent</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Howard Hunter — Owner · C-Suite · referred by Ingrid Beard · attended before: Yes</li><li>John Reinhardt — Operation Manager · Operations/Support · referred by Ingrid Beard · attended before: Yes</li><li>Keyur Patel — COO · C-Suite · referred by Ingrid Beard · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Ingrid Beard<br>Account: Ingrid Beard<br>AM: Rachael Buchtan</p><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>Digital Agent</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="ryan burton" data-products="billing payments" data-missing="new rev.io" data-search="scipio technologies ryan burton ryan burton scipio technologies jim peace john geary steve blankenship">
+    <tr data-owner="ryan burton" data-products="billing payments" data-missing="new rev.io" data-search="scipio technologies ryan burton katerra stephenson greenwood ryan burton scipio technologies jim peace john geary steve blankenship no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Scipio Technologies</strong><span class="cohort">Odin</span><span>Scipio Technologies</span></td>
-      <td data-label="Target owner">Ryan Burton<span>Assigned AM: Ryan Burton</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Ryan Burton<span>Account: Katerra Stephenson Greenwood</span><span>AM: Ryan Burton</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">3<span>Jim Peace; John Geary; Steve Blankenship</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product yes">✓</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Jim Peace — CEO · C-Suite · referred by Ryan Burton · attended before: Yes</li><li>John Geary — Assistant Controller · Finance/Billing · referred by Ryan Burton · attended before: Yes</li><li>Steve Blankenship — Financial Consultant · Finance/Billing · referred by Ryan Burton · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, Odin, Payments</p><strong>Salesforce account</strong><p>Scipio Technologies (Peace Communications)</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Jim Peace — CEO · C-Suite · referred by Ryan Burton · attended before: Yes</li><li>John Geary — Assistant Controller · Finance/Billing · referred by Ryan Burton · attended before: Yes</li><li>Steve Blankenship — Financial Consultant · Finance/Billing · referred by Ryan Burton · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Ryan Burton<br>Account: Katerra Stephenson Greenwood<br>AM: Ryan Burton</p><strong>Source product field</strong><p>Billing, Odin, Payments</p><strong>Salesforce account</strong><p>Scipio Technologies (Peace Communications)</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="katerra greenwood" data-products="billing payments" data-missing="new rev.io" data-search="simplicity voip katerra greenwood rachael buchtan simplicity voip ben humphreys lacey humphreys pam tyler">
+    <tr data-owner="katerra greenwood" data-products="billing payments" data-missing="new rev.io" data-search="simplicity voip katerra greenwood katerra stephenson greenwood rachael buchtan simplicity voip ben humphreys lacey humphreys pam tyler 2026-09-01: client business review simplicity voip &amp; rev.io">
       <td data-label="Account" class="sticky"><strong>Simplicity VoIP</strong><span class="cohort">Rev.io Billing</span><span>Simplicity VoIP</span></td>
-      <td data-label="Target owner">Katerra Greenwood<span>Assigned AM: Rachael Buchtan</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Katerra Greenwood<span>Account: Katerra Stephenson Greenwood</span><span>AM: Rachael Buchtan</span></td>
+      <td data-label="Events Sep 1–3"><strong>1 scheduled</strong><span>2026-09-01: Client Business Review Simplicity VoIP &amp; Rev.io</span></td>
       <td data-label="Attendees" class="num">3<span>Ben Humphreys; Lacey Humphreys; Pam Tyler</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product yes">✓</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Ben Humphreys — President · C-Suite · referred by Katerra Greenwood · attended before: Yes</li><li>Lacey Humphreys — Inventory Manager · Operations/Support · referred by Katerra Greenwood · attended before: Yes</li><li>Pam Tyler — Billing Manager · Finance/Billing · referred by Katerra Greenwood · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>Simplicity VoIP</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Ben Humphreys — President · C-Suite · referred by Katerra Greenwood · attended before: Yes</li><li>Lacey Humphreys — Inventory Manager · Operations/Support · referred by Katerra Greenwood · attended before: Yes</li><li>Pam Tyler — Billing Manager · Finance/Billing · referred by Katerra Greenwood · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>2026-09-01 — Client Business Review Simplicity VoIP &amp; Rev.io · owner: Katerra Stephenson Greenwood</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Katerra Greenwood<br>Account: Katerra Stephenson Greenwood<br>AM: Rachael Buchtan</p><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>Simplicity VoIP</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="jakob champion" data-products="billing payments" data-missing="new rev.io" data-search="touchtone jakob champion rachael buchtan touchtone communications christina bentley melissa maldonado tom ford">
+    <tr data-owner="jakob champion" data-products="billing payments" data-missing="new rev.io" data-search="touchtone jakob champion jakob champion rachael buchtan touchtone communications christina bentley melissa maldonado tom ford 2026-09-02: (psa discovery) touchtone communications @ rev.io summit; 2026-09-02: in person cbr (summit) - touchtone">
       <td data-label="Account" class="sticky"><strong>TouchTone</strong><span class="cohort">Rev.io Billing</span><span>Touchtone Communications</span></td>
-      <td data-label="Target owner">Jakob Champion<span>Assigned AM: Rachael Buchtan</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Jakob Champion<span>Account: Jakob Champion</span><span>AM: Rachael Buchtan</span></td>
+      <td data-label="Events Sep 1–3"><strong>2 scheduled</strong><span>2026-09-02: (PSA Discovery) TouchTone Communications @ Rev.io Summit; 2026-09-02: In Person CBR (Summit) - TouchTone</span></td>
       <td data-label="Attendees" class="num">3<span>Christina Bentley; Melissa Maldonado; Tom Ford</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product yes">✓</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Christina Bentley — Senior Billing Manager · Finance/Billing · referred by Jakob Champion · attended before: Yes</li><li>Melissa Maldonado — Provisioning Manager · Other · referred by Jakob Champion · attended before: Yes</li><li>Tom Ford — Director of Billing · Finance/Billing · referred by Jakob Champion · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>TouchTone Communications</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Christina Bentley — Senior Billing Manager · Finance/Billing · referred by Jakob Champion · attended before: Yes</li><li>Melissa Maldonado — Provisioning Manager · Other · referred by Jakob Champion · attended before: Yes</li><li>Tom Ford — Director of Billing · Finance/Billing · referred by Jakob Champion · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>2026-09-02 — (PSA Discovery) TouchTone Communications @ Rev.io Summit · owner: Jamie Butler</li><li>2026-09-02 — In Person CBR (Summit) - TouchTone · owner: Jakob Champion</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Jakob Champion<br>Account: Jakob Champion<br>AM: Rachael Buchtan</p><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>TouchTone Communications</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="justin lee" data-products="billing new rev.io" data-missing="payments" data-search="callsprout justin lee rachael buchtan callsprout atticus brind lenny ljungholm">
+    <tr data-owner="justin lee" data-products="billing new rev.io" data-missing="payments" data-search="callsprout justin lee justin lee rachael buchtan callsprout atticus brind lenny ljungholm no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>CallSprout</strong><span class="cohort">Rev.io Billing</span><span>CallSprout</span></td>
-      <td data-label="Target owner">Justin Lee<span>Assigned AM: Rachael Buchtan</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Justin Lee<span>Account: Justin Lee</span><span>AM: Rachael Buchtan</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">2<span>Atticus Brind; Lenny Ljungholm</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Atticus Brind — VP of Sales · Sales/Marketing · referred by Justin Lee · attended before: Yes</li><li>Lenny Ljungholm — Support Specialist · Operations/Support · referred by Justin Lee · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, PSA Web</p><strong>Salesforce account</strong><p>CallSprout</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Atticus Brind — VP of Sales · Sales/Marketing · referred by Justin Lee · attended before: Yes</li><li>Lenny Ljungholm — Support Specialist · Operations/Support · referred by Justin Lee · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Justin Lee<br>Account: Justin Lee<br>AM: Rachael Buchtan</p><strong>Source product field</strong><p>Billing, PSA Web</p><strong>Salesforce account</strong><p>CallSprout</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="ryan koontz" data-products="billing new rev.io" data-missing="payments" data-search="centra ip networks ryan koontz olivia sandefur centra ip centra ip networks patrick brangan stacey hutton">
+    <tr data-owner="ryan koontz" data-products="billing new rev.io" data-missing="payments" data-search="centra ip networks ryan koontz ingrid beard olivia sandefur centra ip centra ip networks patrick brangan stacey hutton no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Centra IP Networks</strong><span class="cohort">Rev.io Billing</span><span>Centra IP / Centra IP Networks</span></td>
-      <td data-label="Target owner">Ryan Koontz<span>Assigned AM: Olivia Sandefur</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Ryan Koontz<span>Account: Ingrid Beard</span><span>AM: Olivia Sandefur</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">2<span>Patrick Brangan; Stacey Hutton</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Patrick Brangan — CEO · C-Suite · referred by Ryan Koontz · attended before: Yes</li><li>Stacey Hutton — Operations Manager · Operations/Support · referred by Ryan Koontz · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, PSA Web</p><strong>Salesforce account</strong><p>Centra IP Networks</p><strong>Match score</strong><p>0.94</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Patrick Brangan — CEO · C-Suite · referred by Ryan Koontz · attended before: Yes</li><li>Stacey Hutton — Operations Manager · Operations/Support · referred by Ryan Koontz · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Ryan Koontz<br>Account: Ingrid Beard<br>AM: Olivia Sandefur</p><strong>Source product field</strong><p>Billing, PSA Web</p><strong>Salesforce account</strong><p>Centra IP Networks</p><strong>Match score</strong><p>0.94</p></div>
     </div></td></tr>
-    <tr data-owner="justin lee" data-products="billing payments" data-missing="new rev.io" data-search="grid4 communications justin lee ryan burton grid4 communications christopher hopkins michael hopkins">
+    <tr data-owner="justin lee" data-products="billing payments" data-missing="new rev.io" data-search="grid4 communications justin lee justin lee ryan burton grid4 communications christopher hopkins michael hopkins no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Grid4 Communications</strong><span class="cohort">Rev.io Billing</span><span>Grid4 Communications</span></td>
-      <td data-label="Target owner">Justin Lee<span>Assigned AM: Ryan Burton</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Justin Lee<span>Account: Justin Lee</span><span>AM: Ryan Burton</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">2<span>Christopher Hopkins; Michael Hopkins</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product yes">✓</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Christopher Hopkins — CEO · C-Suite · referred by Justin Lee · attended before: Yes</li><li>Michael Hopkins — Senior Vice President · C-Suite · referred by Justin Lee · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>Grid4 Communications</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Christopher Hopkins — CEO · C-Suite · referred by Justin Lee · attended before: Yes</li><li>Michael Hopkins — Senior Vice President · C-Suite · referred by Justin Lee · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Justin Lee<br>Account: Justin Lee<br>AM: Ryan Burton</p><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>Grid4 Communications</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="ryan burton" data-products="billing payments" data-missing="new rev.io" data-search="ipitomy ryan burton ryan burton ipitomy ipitomy communications llc erica carroll joseph haines">
+    <tr data-owner="ryan burton" data-products="billing payments" data-missing="new rev.io" data-search="ipitomy ryan burton jakob champion ryan burton ipitomy ipitomy communications llc erica carroll joseph haines no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>IPitomy</strong><span class="cohort">Rev.io Billing</span><span>IPitomy / IPitomy Communications LLC</span></td>
-      <td data-label="Target owner">Ryan Burton<span>Assigned AM: Ryan Burton</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Ryan Burton<span>Account: Jakob Champion</span><span>AM: Ryan Burton</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">2<span>Erica Carroll; Joseph Haines</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product yes">✓</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Erica Carroll — Order Processing · Operations/Support · referred by Ryan Burton · attended before: No</li><li>Joseph Haines — President/CEO · C-Suite · referred by Ryan Burton · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>IPitomy</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Erica Carroll — Order Processing · Operations/Support · referred by Ryan Burton · attended before: No</li><li>Joseph Haines — President/CEO · C-Suite · referred by Ryan Burton · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Ryan Burton<br>Account: Jakob Champion<br>AM: Ryan Burton</p><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>IPitomy</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="jakob champion" data-products="billing payments" data-missing="new rev.io" data-search="s-net communications, inc. jakob champion ryan burton safety net it jaclyn cooper zack killpack">
+    <tr data-owner="jakob champion" data-products="billing payments" data-missing="new rev.io" data-search="s-net communications, inc. jakob champion justin lee ryan burton safety net it jaclyn cooper zack killpack no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>S-Net Communications, Inc.</strong><span class="cohort">Rev.io Billing</span><span>Safety Net IT</span></td>
-      <td data-label="Target owner">Jakob Champion<span>Assigned AM: Ryan Burton</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Jakob Champion<span>Account: Justin Lee</span><span>AM: Ryan Burton</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">2<span>Jaclyn Cooper; Zack Killpack</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product yes">✓</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Jaclyn Cooper — Director · C-Suite · referred by Jakob Champion · attended before: No</li><li>Zack Killpack — Director · C-Suite · referred by Jakob Champion · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>S-Net Communications</p><strong>Match score</strong><p>0.86</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Jaclyn Cooper — Director · C-Suite · referred by Jakob Champion · attended before: No</li><li>Zack Killpack — Director · C-Suite · referred by Jakob Champion · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Jakob Champion<br>Account: Justin Lee<br>AM: Ryan Burton</p><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>S-Net Communications</p><strong>Match score</strong><p>0.86</p></div>
     </div></td></tr>
-    <tr data-owner="shane frost" data-products="billing new rev.io" data-missing="payments" data-search="savvy communications shane frost rachael buchtan savvy communcations inc. savvy communications inc chelsea mcbride nicole curry">
+    <tr data-owner="shane frost" data-products="billing new rev.io" data-missing="payments" data-search="savvy communications shane frost justin lee rachael buchtan savvy communcations inc. savvy communications inc chelsea mcbride nicole curry 2026-09-03: (client business review - summit) rev.io &amp; savvy communications">
       <td data-label="Account" class="sticky"><strong>Savvy Communications</strong><span class="cohort">Rev.io Billing</span><span>Savvy Communcations Inc. / Savvy Communications Inc</span></td>
-      <td data-label="Target owner">Shane Frost<span>Assigned AM: Rachael Buchtan</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Shane Frost<span>Account: Justin Lee</span><span>AM: Rachael Buchtan</span></td>
+      <td data-label="Events Sep 1–3"><strong>1 scheduled</strong><span>2026-09-03: (Client Business Review - Summit) Rev.io &amp; Savvy Communications</span></td>
       <td data-label="Attendees" class="num">2<span>Chelsea McBride; Nicole Curry</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Chelsea McBride — Billing &amp; Operations Coordinator · Finance/Billing · referred by Shane Frost · attended before: No</li><li>Nicole Curry — CSR · Other · referred by Shane Frost · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, PSA Web</p><strong>Salesforce account</strong><p>Savvy Communications</p><strong>Match score</strong><p>0.96</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Chelsea McBride — Billing &amp; Operations Coordinator · Finance/Billing · referred by Shane Frost · attended before: No</li><li>Nicole Curry — CSR · Other · referred by Shane Frost · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>2026-09-03 — (Client Business Review - Summit) Rev.io &amp; Savvy Communications · owner: Justin Lee</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Shane Frost<br>Account: Justin Lee<br>AM: Rachael Buchtan</p><strong>Source product field</strong><p>Billing, PSA Web</p><strong>Salesforce account</strong><p>Savvy Communications</p><strong>Match score</strong><p>0.96</p></div>
     </div></td></tr>
-    <tr data-owner="cam sharpe" data-products="billing new rev.io" data-missing="payments" data-search="ten4 cam sharpe sarah mcgovern ten4 brad muser tom mcdonnell">
+    <tr data-owner="cam sharpe" data-products="billing new rev.io" data-missing="payments" data-search="ten4 cam sharpe jakob champion sarah mcgovern ten4 brad muser tom mcdonnell no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Ten4</strong><span class="cohort">Rev.io Billing</span><span>Ten4</span></td>
-      <td data-label="Target owner">Cam Sharpe<span>Assigned AM: Sarah McGovern</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Cam Sharpe<span>Account: Jakob Champion</span><span>AM: Sarah McGovern</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">2<span>Brad Muser; Tom McDonnell</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Brad Muser — Executive Vice President, Finance · Finance/Billing · referred by Cam Sharpe · attended before: Yes</li><li>Tom McDonnell — Vice President, Operations · Operations/Support · referred by Cam Sharpe · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, PSA Web</p><strong>Salesforce account</strong><p>Ten4</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Brad Muser — Executive Vice President, Finance · Finance/Billing · referred by Cam Sharpe · attended before: Yes</li><li>Tom McDonnell — Vice President, Operations · Operations/Support · referred by Cam Sharpe · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Cam Sharpe<br>Account: Jakob Champion<br>AM: Sarah McGovern</p><strong>Source product field</strong><p>Billing, PSA Web</p><strong>Salesforce account</strong><p>Ten4</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="ryan koontz" data-products="billing payments" data-missing="new rev.io" data-search="altaworx ryan koontz ryan burton altaworx rickie richey">
+    <tr data-owner="ryan koontz" data-products="billing payments" data-missing="new rev.io" data-search="altaworx ryan koontz justin lee ryan burton altaworx rickie richey no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Altaworx</strong><span class="cohort">Rev.io Billing</span><span>Altaworx</span></td>
-      <td data-label="Target owner">Ryan Koontz<span>Assigned AM: Ryan Burton</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Ryan Koontz<span>Account: Justin Lee</span><span>AM: Ryan Burton</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Rickie Richey</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product yes">✓</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Rickie Richey — CEO · C-Suite · referred by Ryan Koontz · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>Altaworx</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Rickie Richey — CEO · C-Suite · referred by Ryan Koontz · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Ryan Koontz<br>Account: Justin Lee<br>AM: Ryan Burton</p><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>Altaworx</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="ryan burton" data-products="billing payments" data-missing="new rev.io" data-search="clear rate communications ryan burton ryan burton clear rate communications erik kubs">
+    <tr data-owner="ryan burton" data-products="billing payments" data-missing="new rev.io" data-search="clear rate communications ryan burton jakob champion ryan burton clear rate communications erik kubs no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Clear Rate Communications</strong><span class="cohort">Rev.io Billing</span><span>Clear Rate Communications</span></td>
-      <td data-label="Target owner">Ryan Burton<span>Assigned AM: Ryan Burton</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Ryan Burton<span>Account: Jakob Champion</span><span>AM: Ryan Burton</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Erik Kubs</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product yes">✓</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Erik Kubs — Manager Service Delivery · Operations/Support · referred by Ryan Burton · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>Clear Rate Communications</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Erik Kubs — Manager Service Delivery · Operations/Support · referred by Ryan Burton · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Ryan Burton<br>Account: Jakob Champion<br>AM: Ryan Burton</p><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>Clear Rate Communications</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="ryan burton" data-products="billing payments" data-missing="new rev.io" data-search="glacier networks inc ryan burton ryan burton glacier networks inc feliks kiliski">
+    <tr data-owner="ryan burton" data-products="billing payments" data-missing="new rev.io" data-search="glacier networks inc ryan burton justin lee ryan burton glacier networks inc feliks kiliski no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Glacier Networks Inc</strong><span class="cohort">Rev.io Billing</span><span>Glacier Networks Inc</span></td>
-      <td data-label="Target owner">Ryan Burton<span>Assigned AM: Ryan Burton</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Ryan Burton<span>Account: Justin Lee</span><span>AM: Ryan Burton</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Feliks Kiliski</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product yes">✓</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Feliks Kiliski — Partner · C-Suite · referred by Ryan Burton · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>Glacier Networks</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Feliks Kiliski — Partner · C-Suite · referred by Ryan Burton · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Ryan Burton<br>Account: Justin Lee<br>AM: Ryan Burton</p><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>Glacier Networks</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="reid doster" data-products="billing new rev.io" data-missing="payments" data-search="inet communications reid doster rachael buchtan inet communications, llc charles murray">
+    <tr data-owner="reid doster" data-products="billing new rev.io" data-missing="payments" data-search="inet communications reid doster katerra stephenson greenwood rachael buchtan inet communications, llc charles murray no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>iNet Communications</strong><span class="cohort">Rev.io Billing</span><span>INET Communications, LLC</span></td>
-      <td data-label="Target owner">Reid Doster<span>Assigned AM: Rachael Buchtan</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Reid Doster<span>Account: Katerra Stephenson Greenwood</span><span>AM: Rachael Buchtan</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Charles Murray</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Charles Murray — CEO · C-Suite · referred by Reid Doster · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, PSA Web</p><strong>Salesforce account</strong><p>iNet Communications</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Charles Murray — CEO · C-Suite · referred by Reid Doster · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Reid Doster<br>Account: Katerra Stephenson Greenwood<br>AM: Rachael Buchtan</p><strong>Source product field</strong><p>Billing, PSA Web</p><strong>Salesforce account</strong><p>iNet Communications</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="justin lee" data-products="billing payments" data-missing="new rev.io" data-search="jcm telecom llc justin lee ryan burton jcm telecom christian hernandez">
+    <tr data-owner="justin lee" data-products="billing payments" data-missing="new rev.io" data-search="jcm telecom llc justin lee katerra stephenson greenwood ryan burton jcm telecom christian hernandez no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>JCM Telecom LLC</strong><span class="cohort">Rev.io Billing</span><span>JCM Telecom</span></td>
-      <td data-label="Target owner">Justin Lee<span>Assigned AM: Ryan Burton</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Justin Lee<span>Account: Katerra Stephenson Greenwood</span><span>AM: Ryan Burton</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Christian Hernandez</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product yes">✓</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Christian Hernandez — President / Owner · C-Suite · referred by Justin Lee · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>JCM Telecom</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Christian Hernandez — President / Owner · C-Suite · referred by Justin Lee · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Justin Lee<br>Account: Katerra Stephenson Greenwood<br>AM: Ryan Burton</p><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>JCM Telecom</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="ingrid beard" data-products="billing payments" data-missing="new rev.io" data-search="lightspar ingrid beard sarah mcgovern lightspar bob bouquet">
+    <tr data-owner="ingrid beard" data-products="billing payments" data-missing="new rev.io" data-search="lightspar ingrid beard ingrid beard sarah mcgovern lightspar bob bouquet no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>LightSpar</strong><span class="cohort">Rev.io Billing</span><span>LightSpar</span></td>
-      <td data-label="Target owner">Ingrid Beard<span>Assigned AM: Sarah McGovern</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Ingrid Beard<span>Account: Ingrid Beard</span><span>AM: Sarah McGovern</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Bob Bouquet</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product yes">✓</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Bob Bouquet — CFO · C-Suite · referred by Ingrid Beard · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>LightSpar</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Bob Bouquet — CFO · C-Suite · referred by Ingrid Beard · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Ingrid Beard<br>Account: Ingrid Beard<br>AM: Sarah McGovern</p><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>LightSpar</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="jamie butler" data-products="billing payments" data-missing="new rev.io" data-search="mach networks jamie butler ryan burton mach networks paula anderson">
+    <tr data-owner="jamie butler" data-products="billing payments" data-missing="new rev.io" data-search="mach networks jamie butler jakob champion ryan burton mach networks paula anderson no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Mach Networks</strong><span class="cohort">Rev.io Billing</span><span>MACH Networks</span></td>
-      <td data-label="Target owner">Jamie Butler<span>Assigned AM: Ryan Burton</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Jamie Butler<span>Account: Jakob Champion</span><span>AM: Ryan Burton</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Paula Anderson</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product yes">✓</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Paula Anderson — Director · Sales/Marketing · referred by Jamie Butler · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>MACH Networks</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Paula Anderson — Director · Sales/Marketing · referred by Jamie Butler · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Jamie Butler<br>Account: Jakob Champion<br>AM: Ryan Burton</p><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>MACH Networks</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="justin lee" data-products="billing payments" data-missing="new rev.io" data-search="premier companies justin lee ryan burton premier companies mark bortz">
+    <tr data-owner="justin lee" data-products="billing payments" data-missing="new rev.io" data-search="premier companies justin lee justin lee ryan burton premier companies mark bortz no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Premier Companies</strong><span class="cohort">Rev.io Billing</span><span>Premier Companies</span></td>
-      <td data-label="Target owner">Justin Lee<span>Assigned AM: Ryan Burton</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Justin Lee<span>Account: Justin Lee</span><span>AM: Ryan Burton</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Mark Bortz</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product yes">✓</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Mark Bortz — Founder · C-Suite · referred by Justin Lee · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>Premier Companies</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Mark Bortz — Founder · C-Suite · referred by Justin Lee · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Justin Lee<br>Account: Justin Lee<br>AM: Ryan Burton</p><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>Premier Companies</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="cam sharpe" data-products="billing payments" data-missing="new rev.io" data-search="public telephone company cam sharpe unassigned public telephone company darrell lopez">
+    <tr data-owner="cam sharpe" data-products="billing payments" data-missing="new rev.io" data-search="public telephone company cam sharpe katerra stephenson greenwood unassigned public telephone company darrell lopez no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Public Telephone Company</strong><span class="cohort">Rev.io Billing</span><span>Public Telephone Company</span></td>
-      <td data-label="Target owner">Cam Sharpe<span>Assigned AM: Unassigned</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Cam Sharpe<span>Account: Katerra Stephenson Greenwood</span><span>AM: Unassigned</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Darrell Lopez</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product yes">✓</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Darrell Lopez — Chief Executive Officer · C-Suite · referred by Cam Sharpe · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>Public Telephone Company</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Darrell Lopez — Chief Executive Officer · C-Suite · referred by Cam Sharpe · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Cam Sharpe<br>Account: Katerra Stephenson Greenwood<br>AM: Unassigned</p><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>Public Telephone Company</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="jamie butler" data-products="billing payments" data-missing="new rev.io" data-search="spectrotel jamie butler ryan burton spectrotel mitch wright">
+    <tr data-owner="jamie butler" data-products="billing payments" data-missing="new rev.io" data-search="spectrotel jamie butler katerra stephenson greenwood ryan burton spectrotel mitch wright no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Spectrotel</strong><span class="cohort">Rev.io Billing</span><span>Spectrotel</span></td>
-      <td data-label="Target owner">Jamie Butler<span>Assigned AM: Ryan Burton</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Jamie Butler<span>Account: Katerra Stephenson Greenwood</span><span>AM: Ryan Burton</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Mitch Wright</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product no">—</td><td data-label="Payments" class="product yes">✓</td>
       <td data-label="Missing / target" class="missing"><b>New Rev.io</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Mitch Wright — VP of IT · IT/Engineering · referred by Jamie Butler · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>Spectrotel</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Mitch Wright — VP of IT · IT/Engineering · referred by Jamie Butler · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Jamie Butler<br>Account: Katerra Stephenson Greenwood<br>AM: Ryan Burton</p><strong>Source product field</strong><p>Billing, Payments</p><strong>Salesforce account</strong><p>Spectrotel</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="ryan burton" data-products="billing new rev.io" data-missing="payments" data-search="tailwinds voice &amp; data, inc. ryan burton ryan burton tailwind voice &amp; data tom murphy">
+    <tr data-owner="unassigned" data-products="billing new rev.io" data-missing="payments" data-search="tailwinds voice &amp; data, inc. unassigned jakob champion ryan burton tailwind voice &amp; data tom murphy no salesforce event found sep 1–3">
       <td data-label="Account" class="sticky"><strong>Tailwinds Voice &amp; Data, Inc.</strong><span class="cohort">Rev.io Billing</span><span>TailWind Voice &amp; Data</span></td>
-      <td data-label="Target owner">Ryan Burton<span>Assigned AM: Ryan Burton</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Unassigned<span>Account: Jakob Champion</span><span>AM: Ryan Burton</span></td>
+      <td data-label="Events Sep 1–3"><em>None found</em><span>No Salesforce Event found Sep 1–3</span></td>
       <td data-label="Attendees" class="num">1<span>Tom Murphy</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product no">—</td>
       <td data-label="Missing / target" class="missing"><b>Payments</b></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Tom Murphy — Senior Vice President · C-Suite · attended before: Yes</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, PSA Web</p><strong>Salesforce account</strong><p>Tailwinds Voice &amp; Data</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Tom Murphy — Senior Vice President · C-Suite · attended before: Yes</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>No Salesforce Event found.</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Unassigned<br>Account: Jakob Champion<br>AM: Ryan Burton</p><strong>Source product field</strong><p>Billing, PSA Web</p><strong>Salesforce account</strong><p>Tailwinds Voice &amp; Data</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr>
-    <tr data-owner="jakob champion" data-products="billing new rev.io payments" data-missing="" data-search="bridge communications, llc jakob champion jacob.williams bridge communications lauren otts matt pridemore matt otts mike hancock">
+    <tr data-owner="jakob champion" data-products="billing new rev.io payments" data-missing="" data-search="bridge communications, llc jakob champion jakob champion jacob.williams bridge communications lauren otts matt pridemore matt otts mike hancock 2026-09-01: rev.io / bridge communications (summit cbr)">
       <td data-label="Account" class="sticky"><strong>Bridge Communications, LLC</strong><span class="cohort">Tigerpaw</span><span>Bridge Communications</span></td>
-      <td data-label="Target owner">Jakob Champion<span>Assigned AM: jacob.williams</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> Jakob Champion<span>Account: Jakob Champion</span><span>AM: jacob.williams</span></td>
+      <td data-label="Events Sep 1–3"><strong>1 scheduled</strong><span>2026-09-01: Rev.io / Bridge Communications (Summit CBR)</span></td>
       <td data-label="Attendees" class="num">4<span>Lauren Otts; Matt Pridemore; Matt Otts; Mike Hancock</span></td>
       <td data-label="Billing" class="product yes">✓</td><td data-label="New Rev.io" class="product yes">✓</td><td data-label="Payments" class="product yes">✓</td>
       <td data-label="Missing / target" class="missing"><em>Complete set</em></td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="8"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul><li>Lauren Otts — Customer Success Specialist · Operations/Support · referred by Jakob Champion · attended before: No</li><li>Matt Pridemore — Managing Partner · C-Suite · referred by Jakob Champion · attended before: No</li><li>Matt Otts — Partner · Sales/Marketing · referred by Jakob Champion · attended before: No</li><li>Mike Hancock — Managing Partner · C-Suite · referred by Jakob Champion · attended before: No</li></ul></div>
-      <div><strong>Source product field</strong><p>Billing, PSA Web, Payments</p><strong>Salesforce account</strong><p>Bridge Communications</p><strong>Match score</strong><p>1</p></div>
+      <div><strong>Registrant targeting notes</strong><ul><li>Lauren Otts — Customer Success Specialist · Operations/Support · referred by Jakob Champion · attended before: No</li><li>Matt Pridemore — Managing Partner · C-Suite · referred by Jakob Champion · attended before: No</li><li>Matt Otts — Partner · Sales/Marketing · referred by Jakob Champion · attended before: No</li><li>Mike Hancock — Managing Partner · C-Suite · referred by Jakob Champion · attended before: No</li></ul><strong>Salesforce Events Sep 1–3</strong><ul><li>2026-09-01 — Rev.io / Bridge Communications (Summit CBR) · owner: Jakob Champion</li></ul></div>
+      <div><strong>Owners</strong><p>Referral: Jakob Champion<br>Account: Jakob Champion<br>AM: jacob.williams</p><strong>Source product field</strong><p>Billing, PSA Web, Payments</p><strong>Salesforce account</strong><p>Bridge Communications</p><strong>Match score</strong><p>1</p></div>
     </div></td></tr></tbody></table></div></section>
 <section class="panel"><h2>Referrer workload</h2><div class="table-wrap rollup"><table><thead><tr><th>Owner</th><th>Accounts</th><th>Attendees</th><th>Missing product opps</th></tr></thead><tbody><tr><td>Blaine Villafuerte</td><td class="num">7</td><td class="num">18</td><td class="num">16</td></tr><tr><td>Justin Lee</td><td class="num">7</td><td class="num">11</td><td class="num">10</td></tr><tr><td>Ryan Koontz</td><td class="num">6</td><td class="num">9</td><td class="num">10</td></tr><tr><td>Ryan Burton</td><td class="num">7</td><td class="num">12</td><td class="num">9</td></tr><tr><td>Jamie Butler</td><td class="num">5</td><td class="num">8</td><td class="num">8</td></tr><tr><td>Rachael Buchtan</td><td class="num">3</td><td class="num">7</td><td class="num">5</td></tr><tr><td>Shane Frost</td><td class="num">3</td><td class="num">4</td><td class="num">5</td></tr><tr><td>Ingrid Beard</td><td class="num">3</td><td class="num">5</td><td class="num">4</td></tr><tr><td>Jacob Williams</td><td class="num">1</td><td class="num">3</td><td class="num">3</td></tr><tr><td>Jacob Willimas</td><td class="num">1</td><td class="num">3</td><td class="num">3</td></tr><tr><td>Jaylin Bender</td><td class="num">1</td><td class="num">2</td><td class="num">3</td></tr><tr><td>Rinor Berisha</td><td class="num">1</td><td class="num">2</td><td class="num">3</td></tr><tr><td>Katerra Stephenson-Greenwood</td><td class="num">1</td><td class="num">1</td><td class="num">3</td></tr><tr><td>Jakob Champion</td><td class="num">3</td><td class="num">9</td><td class="num">2</td></tr><tr><td>Reid Doster</td><td class="num">2</td><td class="num">5</td><td class="num">2</td></tr><tr><td>Cam Sharpe</td><td class="num">2</td><td class="num">3</td><td class="num">2</td></tr><tr><td>Bryan Bettiol</td><td class="num">1</td><td class="num">2</td><td class="num">2</td></tr><tr><td>Lorrie Browne</td><td class="num">1</td><td class="num">2</td><td class="num">2</td></tr><tr><td>Roman Rudzik</td><td class="num">1</td><td class="num">2</td><td class="num">2</td></tr><tr><td>Unassigned</td><td class="num">1</td><td class="num">2</td><td class="num">2</td></tr><tr><td>Jeremy Adams</td><td class="num">1</td><td class="num">1</td><td class="num">2</td></tr><tr><td>Olivia Sandefur</td><td class="num">1</td><td class="num">1</td><td class="num">2</td></tr><tr><td>Sarah McGovern</td><td class="num">1</td><td class="num">1</td><td class="num">2</td></tr><tr><td>Rachel Buchtan</td><td class="num">1</td><td class="num">4</td><td class="num">1</td></tr><tr><td>Katerra Greenwood</td><td class="num">1</td><td class="num">3</td><td class="num">1</td></tr></tbody></table></div></section>
 <section class="panel warning"><h2>Unmatched discounted registrants</h2><p class="note">These passed the discount-code rule but did not confidently match a Master Client List account. They are excluded from target account stats until manually mapped.</p><div class="table-wrap"><table><thead><tr><th>Company</th><th>Registrant</th><th>Referral</th></tr></thead><tbody><tr><td>AIMERICA</td><td>Charles Drapeau</td><td>Connor Flynn</td></tr><tr><td>AIMERICA</td><td>Sean Tishler</td><td>Connor Flynn</td></tr><tr><td>AIMERICA</td><td>Yan Carter</td><td>Connor Flynn</td></tr><tr><td>AppDirect</td><td>Amy Shirey</td><td>Ryan Burton</td></tr><tr><td>AppDirect</td><td>Brittany Clester</td><td>Ryan Burton</td></tr><tr><td>AvTek Solutions, Inc.</td><td>David Cox</td><td>Brook Lee</td></tr><tr><td>Enitech Solutions</td><td>Antwine Jackson</td><td>Connor Flynn</td></tr><tr><td>Gamut</td><td>Alyssa Hutchinson</td><td>Cam Sharpe</td></tr><tr><td>Gamut</td><td>Brendan English</td><td>Cam Sharpe</td></tr><tr><td>IMC Jax</td><td>Corinne Bowden</td><td>Connor Flynn</td></tr><tr><td>IMC Jax</td><td>Eric Lewis</td><td>Connor Flynn</td></tr><tr><td>IMC Jax</td><td>Lori Rockwell</td><td>Connor Flynn</td></tr><tr><td>MYSWITCH Communications</td><td>Brandon Burchard</td><td>Justin Lee</td></tr><tr><td>MYSWITCH Communications</td><td>Brenden Koop</td><td>Justin Lee</td></tr><tr><td>Rubiano</td><td>Frank Rubiano</td><td>Jamie Butler</td></tr><tr><td>Southeast Telephone Service</td><td>Dylan Hornaday</td><td>Connor Flynn</td></tr><tr><td>Southeast Telephone Service</td><td>Joshua Faw</td><td>Connor Flynn</td></tr><tr><td>The Crancer Group</td><td>Richard Crancer</td><td>Brook Lee - she won GTIA Member of the Year she is amazing</td></tr><tr><td>True Choice Technology</td><td>Lori Williams</td><td>Reid Doster</td></tr><tr><td>YorN Sales Training</td><td>Lucy Shriver</td><td>Ryan Koontz</td></tr></tbody></table></div></section>

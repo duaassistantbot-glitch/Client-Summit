@@ -216,7 +216,7 @@ async function loadSalesforceAccountData(accounts) {
   if (!token) return { byKey: new Map(), available: false, error: 'Salesforce credentials unavailable' };
 
   const sfAccounts = await sfQuery(token, `
-    SELECT Id, Name, Client_Code__c, TigerPaw_Account_Status__c, Tigerpaw__c, Odin__c,
+    SELECT Id, Name, Client_Code__c, Owner.Name, TigerPaw_Account_Status__c, Tigerpaw__c, Odin__c,
            Odin_Account_Status__c, Broadsoft_Type__c, Billing_Platform__c, Current_Platform__c,
            PSA_Web__c, PSA_Platform__c
     FROM Account
@@ -255,16 +255,41 @@ async function loadSalesforceAccountData(accounts) {
     }
   }
 
+  const eventsByAccount = new Map();
+  for (let i = 0; i < ids.length; i += 80) {
+    const chunk = ids.slice(i, i + 80).map(id => `'${soqlString(id)}'`).join(',');
+    const events = await sfQuery(token, `
+      SELECT Id, AccountId, Subject, StartDateTime, EndDateTime, ActivityDate, Owner.Name
+      FROM Event
+      WHERE AccountId IN (${chunk})
+        AND ActivityDate >= 2026-09-01
+        AND ActivityDate <= 2026-09-03
+      ORDER BY StartDateTime ASC
+    `);
+    for (const event of events) {
+      if (!eventsByAccount.has(event.AccountId)) eventsByAccount.set(event.AccountId, []);
+      eventsByAccount.get(event.AccountId).push({
+        subject: event.Subject || 'Meeting',
+        date: event.ActivityDate || '',
+        startDateTime: event.StartDateTime || '',
+        endDateTime: event.EndDateTime || '',
+        owner: event.Owner?.Name || ''
+      });
+    }
+  }
+
   const byKey = new Map();
   for (const [accountName, sfAccount] of matched.entries()) {
     byKey.set(accountName, {
       sfAccountId: sfAccount.Id,
       sfAccountName: sfAccount.Name,
+      accountOwner: sfAccount.Owner?.Name || '',
       cohort: determineCohort(sfAccount, oppsByAccount.get(sfAccount.Id) || []),
-      usesBroadworks: hasBroadworks(sfAccount, oppsByAccount.get(sfAccount.Id) || [])
+      usesBroadworks: hasBroadworks(sfAccount, oppsByAccount.get(sfAccount.Id) || []),
+      summitEvents: eventsByAccount.get(sfAccount.Id) || []
     });
   }
-  return { byKey, available: true, matchedAccounts: byKey.size, queriedAccounts: sfAccounts.length };
+  return { byKey, available: true, matchedAccounts: byKey.size, queriedAccounts: sfAccounts.length, eventAccounts: eventsByAccount.size, eventCount: [...eventsByAccount.values()].reduce((sum, rows) => sum + rows.length, 0) };
 }
 
 function matchSalesforceAccount(account, sfAccounts) {
@@ -387,9 +412,12 @@ async function main() {
     registeredCompanyNames: [...acct.registeredCompanyNames].sort(),
     referrers: [...acct.referrers].sort(),
     attendeeCount: acct.registrants.length,
+    referralOwner: [...acct.referrers].sort().join(', ') || 'Unassigned',
     targetOwner: [...acct.referrers].sort().join(', ') || acct.assignedAm || 'Unassigned',
     originalCohort: 'Checking Salesforce…',
+    accountOwner: 'Checking Salesforce…',
     usesBroadworks: false,
+    summitEvents: [],
     missingCount: acct.missing.length,
     hasMissingProducts: acct.missing.length > 0
   })).sort((a, b) => (b.missingCount - a.missingCount) || b.attendeeCount - a.attendeeCount || a.account.localeCompare(b.account));
@@ -398,7 +426,9 @@ async function main() {
   for (const account of accounts) {
     const sf = sfCohorts.byKey.get(account.account);
     account.originalCohort = sf?.cohort || inferFallbackCohort(account.productsRaw);
+    account.accountOwner = sf?.accountOwner || 'Unassigned';
     account.usesBroadworks = Boolean(sf?.usesBroadworks);
+    account.summitEvents = sf?.summitEvents || [];
     account.sfAccountId = sf?.sfAccountId || '';
     account.sfAccountName = sf?.sfAccountName || '';
     delete account.clientCode;
@@ -469,17 +499,19 @@ async function main() {
   fs.writeFileSync(outDataPath, JSON.stringify(data, null, 2));
 
   const csvRows = [
-    ['Target Owner','Account','Original Cohort','Attendees','Registrant Names','Registered Company Names','Assigned AM','Current Products','Missing Products',...PRODUCTS,'Match Score']
+    ['Referral Owner','Account Owner','AM Owner','Account','Original Cohort','Summit Events Sep 1-3','Attendees','Registrant Names','Registered Company Names','Current Products','Missing Products',...PRODUCTS,'Match Score']
   ];
   for (const a of accounts) {
     csvRows.push([
-      a.targetOwner,
+      a.referralOwner,
+      a.accountOwner,
+      a.assignedAm,
       a.account,
       a.originalCohort,
+      a.summitEvents.map(e => `${e.date} ${e.subject}${e.owner ? ` (${e.owner})` : ''}`).join('; '),
       a.attendeeCount,
       a.registrants.map(r => `${r.name}${r.title ? ` (${r.title})` : ''}`).join('; '),
       a.registeredCompanyNames.join('; '),
-      a.assignedAm,
       PRODUCTS.filter(p => a.products[p]).join(', '),
       a.missing.join(', '),
       ...PRODUCTS.map(p => a.products[p] ? 'Yes' : 'No'),
@@ -500,18 +532,20 @@ function buildHtml(data) {
   const stat = (label, value, sub='') => `<div class="stat"><div class="stat-value">${htmlEscape(value)}</div><div class="stat-label">${htmlEscape(label)}</div>${sub ? `<div class="stat-sub">${htmlEscape(sub)}</div>` : ''}</div>`;
   const productHeader = PRODUCTS.map(p => `<th>${htmlEscape(p)}</th>`).join('');
   const productCells = a => PRODUCTS.map(p => `<td data-label="${htmlEscape(p)}" class="product ${a.products[p] ? 'yes' : 'no'}">${a.products[p] ? '✓' : '—'}</td>`).join('');
+  const eventSummary = a => a.summitEvents.length ? a.summitEvents.map(e => `${e.date}: ${e.subject}`).join('; ') : 'No Salesforce Event found Sep 1–3';
   const rows = data.accounts.map(a => `
-    <tr data-owner="${htmlEscape(a.targetOwner.toLowerCase())}" data-products="${htmlEscape(PRODUCTS.filter(p => a.products[p]).join(' ').toLowerCase())}" data-missing="${htmlEscape(a.missing.join(' ').toLowerCase())}" data-search="${htmlEscape([a.account, a.targetOwner, a.assignedAm, a.registeredCompanyNames.join(' '), a.registrants.map(r => r.name).join(' ')].join(' ').toLowerCase())}">
+    <tr data-owner="${htmlEscape(a.referralOwner.toLowerCase())}" data-products="${htmlEscape(PRODUCTS.filter(p => a.products[p]).join(' ').toLowerCase())}" data-missing="${htmlEscape(a.missing.join(' ').toLowerCase())}" data-search="${htmlEscape([a.account, a.referralOwner, a.accountOwner, a.assignedAm, a.registeredCompanyNames.join(' '), a.registrants.map(r => r.name).join(' '), eventSummary(a)].join(' ').toLowerCase())}">
       <td data-label="Account" class="sticky"><strong>${htmlEscape(a.account)}</strong><span class="cohort">${htmlEscape(a.originalCohort)}</span><span>${htmlEscape(a.registeredCompanyNames.join(' / '))}</span></td>
-      <td data-label="Target owner">${htmlEscape(a.targetOwner || 'Unassigned')}<span>Assigned AM: ${htmlEscape(a.assignedAm || '—')}</span></td>
+      <td data-label="Owners"><strong>Referral:</strong> ${htmlEscape(a.referralOwner || 'Unassigned')}<span>Account: ${htmlEscape(a.accountOwner || 'Unassigned')}</span><span>AM: ${htmlEscape(a.assignedAm || 'Unassigned')}</span></td>
+      <td data-label="Events Sep 1–3">${a.summitEvents.length ? `<strong>${a.summitEvents.length} scheduled</strong>` : '<em>None found</em>'}<span>${htmlEscape(eventSummary(a))}</span></td>
       <td data-label="Attendees" class="num">${a.attendeeCount}<span>${htmlEscape(a.registrants.map(r => r.name).join('; '))}</span></td>
       ${productCells(a)}
       <td data-label="Missing / target" class="missing">${a.missing.length ? a.missing.map(p => `<b>${htmlEscape(p)}</b>`).join(' ') : '<em>Complete set</em>'}</td>
       <td data-label="Details"><button class="details" type="button">View</button></td>
     </tr>
     <tr class="detail-row"><td colspan="${5 + PRODUCTS.length}"><div class="details-box">
-      <div><strong>Registrant targeting notes</strong><ul>${a.registrants.map(r => `<li>${htmlEscape(r.name)}${r.title ? ` — ${htmlEscape(r.title)}` : ''}${r.department ? ` · ${htmlEscape(r.department)}` : ''}${r.referral ? ` · referred by ${htmlEscape(r.referral)}` : ''}${r.attendedBefore ? ` · attended before: ${htmlEscape(r.attendedBefore)}` : ''}</li>`).join('')}</ul></div>
-      <div><strong>Source product field</strong><p>${htmlEscape(a.productsRaw || '—')}</p><strong>Salesforce account</strong><p>${htmlEscape(a.sfAccountName || '—')}</p><strong>Match score</strong><p>${htmlEscape(a.matchScore)}</p></div>
+      <div><strong>Registrant targeting notes</strong><ul>${a.registrants.map(r => `<li>${htmlEscape(r.name)}${r.title ? ` — ${htmlEscape(r.title)}` : ''}${r.department ? ` · ${htmlEscape(r.department)}` : ''}${r.referral ? ` · referred by ${htmlEscape(r.referral)}` : ''}${r.attendedBefore ? ` · attended before: ${htmlEscape(r.attendedBefore)}` : ''}</li>`).join('')}</ul><strong>Salesforce Events Sep 1–3</strong><ul>${a.summitEvents.length ? a.summitEvents.map(e => `<li>${htmlEscape(e.date)} — ${htmlEscape(e.subject)}${e.owner ? ` · owner: ${htmlEscape(e.owner)}` : ''}</li>`).join('') : '<li>No Salesforce Event found.</li>'}</ul></div>
+      <div><strong>Owners</strong><p>Referral: ${htmlEscape(a.referralOwner || 'Unassigned')}<br>Account: ${htmlEscape(a.accountOwner || 'Unassigned')}<br>AM: ${htmlEscape(a.assignedAm || 'Unassigned')}</p><strong>Source product field</strong><p>${htmlEscape(a.productsRaw || '—')}</p><strong>Salesforce account</strong><p>${htmlEscape(a.sfAccountName || '—')}</p><strong>Match score</strong><p>${htmlEscape(a.matchScore)}</p></div>
     </div></td></tr>`).join('');
 
   const rollupRows = data.rollup.map(r => `<tr><td>${htmlEscape(r.owner)}</td><td class="num">${r.accounts}</td><td class="num">${r.attendees}</td><td class="num">${r.missingOpportunities}</td></tr>`).join('');
@@ -544,9 +578,9 @@ main{max-width:1400px;margin:-26px auto 60px;padding:0 20px}.stats{display:grid;
 <section class="stats">
 ${stat('Target accounts', data.summary.targetAccounts)}${stat('Matched attendees', data.summary.matchedClientRegistrants, `${data.summary.discountedNonSponsorRegistrants} discounted non-sponsor registrants`)}${stat('Referrers / owners', data.summary.referrers)}${stat('Accounts missing products', data.summary.accountsWithMissingProducts)}${stat('Missing product opps', data.summary.missingProductOpportunities)}${stat('Unmatched registrants', data.summary.unmatchedRegistrants, `${data.summary.ignoredSponsorRegistrants} sponsor registrants ignored`)}
 </section>
-<section class="panel"><div class="actions"><div><h2>Target account list</h2><div class="note">Owner = registrant referral name when present; falls back to Assigned AM. Product checks come from Master Client List “Rev.io Product”; New Rev.io maps to PSA Web. Original cohort is pulled from Salesforce; Tigerpaw cohort is driven by PSA Account Status.</div></div><a class="download" href="assets/data/summit-target-accounts.csv">Download CSV</a></div>
+<section class="panel"><div class="actions"><div><h2>Target account list</h2><div class="note">Owners show Referral Owner, Salesforce Account Owner, and AM Owner. Product checks come from Master Client List “Rev.io Product”; New Rev.io maps to PSA Web. Original cohort is pulled from Salesforce; Tigerpaw cohort is driven by PSA Account Status. Meetings are Salesforce Events dated Sep 1–3, 2026.</div></div><a class="download" href="assets/data/summit-target-accounts.csv">Download CSV</a></div>
 <div class="controls"><input id="search" placeholder="Search account, attendee, owner…"><select id="owner"><option value="">All owners</option>${data.rollup.map(r => `<option>${htmlEscape(r.owner)}</option>`).join('')}</select><select id="missing"><option value="">All missing products</option>${PRODUCTS.map(p => `<option>${htmlEscape(p)}</option>`).join('')}<option value="none">No missing products</option></select><select id="have"><option value="">All current products</option>${PRODUCTS.map(p => `<option>${htmlEscape(p)}</option>`).join('')}</select></div>
-<div class="table-wrap"><table id="accounts"><thead><tr><th class="sticky">Account</th><th>Target owner</th><th>Attendees</th>${productHeader}<th>Missing / target</th><th>Details</th></tr></thead><tbody>${rows}</tbody></table></div></section>
+<div class="table-wrap"><table id="accounts"><thead><tr><th class="sticky">Account</th><th>Owners</th><th>Events Sep 1–3</th><th>Attendees</th>${productHeader}<th>Missing / target</th><th>Details</th></tr></thead><tbody>${rows}</tbody></table></div></section>
 <section class="panel"><h2>Referrer workload</h2><div class="table-wrap rollup"><table><thead><tr><th>Owner</th><th>Accounts</th><th>Attendees</th><th>Missing product opps</th></tr></thead><tbody>${rollupRows}</tbody></table></div></section>
 <section class="panel warning"><h2>Unmatched discounted registrants</h2><p class="note">These passed the discount-code rule but did not confidently match a Master Client List account. They are excluded from target account stats until manually mapped.</p><div class="table-wrap"><table><thead><tr><th>Company</th><th>Registrant</th><th>Referral</th></tr></thead><tbody>${unmatchedRows || '<tr><td colspan="3">No unmatched registrants.</td></tr>'}</tbody></table></div></section>
 <div class="footer">Source note: Live Notion page access returned not shared/object_not_found, so this build used the cached Master Client List CSV export with matching page ID.</div>
