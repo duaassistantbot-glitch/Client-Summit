@@ -160,7 +160,7 @@ async function fetchContactsAndAccounts(token, registrants) {
 async function fetchOpportunities(token, enrichedRegistrants) {
   const contactIds = [...new Set(enrichedRegistrants.map(r => r.sfContactId).filter(Boolean))];
   const accountIds = [...new Set(enrichedRegistrants.map(r => r.sfAccountId).filter(Boolean))];
-  const oppFields = 'Id, Name, AccountId, Account.Name, Product_Type__c, Total_Monthly_Fees__c, Renewal_Amount__c, Amount, StageName, IsWon, IsClosed, CreatedDate, CloseDate, Owner.Name';
+  const oppFields = 'Id, Name, AccountId, Account.Name, Type, Product_Type__c, Total_Monthly_Fees__c, Renewal_Amount__c, Amount, StageName, IsWon, IsClosed, CreatedDate, CloseDate, Owner.Name';
 
   const byContact = [];
   for (const part of chunks(contactIds, 90)) {
@@ -199,10 +199,17 @@ function buildRows(enrichedRegistrants, opportunities) {
   const rowsByKey = new Map();
   const add = (opp, registrant, connectionType) => {
     if (!opp || !registrant) return;
-    const key = `${opp.Id}|${registrant.sfContactId || registrant.email || registrant.name}`;
+    const key = opp.Id;
     if (rowsByKey.has(key)) {
       const existing = rowsByKey.get(key);
-      if (connectionType === 'Opportunity Contact Role') existing.connectionType = connectionType;
+      if (connectionType === 'Opportunity Contact Role' && existing.connectionType !== 'Opportunity Contact Role') {
+        existing.attendee = registrant.sfContactName || registrant.name || '';
+        existing.referredBy = registrant.referral || 'Not provided';
+        existing.connectionType = connectionType;
+        existing.sfContactId = registrant.sfContactId || '';
+        existing.primaryContactOwner = registrant.sfContactOwner || '';
+        existing.sourceRegistrantRow = registrant.sourceRow || '';
+      }
       return;
     }
     const mrr = Number(opp.Total_Monthly_Fees__c || opp.Renewal_Amount__c || opp.Amount || 0) || 0;
@@ -221,6 +228,7 @@ function buildRows(enrichedRegistrants, opportunities) {
       closeDate: opp.CloseDate || '',
       opportunityOwner: opp.Owner?.Name || '',
       attendee: registrant.sfContactName || registrant.name || '',
+      primaryContactOwner: registrant.sfContactOwner || '',
       attendeeCompanyFromRegistration: registrant.company || '',
       referredBy: registrant.referral || 'Not provided',
       connectionType,
@@ -281,7 +289,7 @@ function summarize(rows, enrichedRegistrants) {
 }
 
 function writeCsv(rows) {
-  const headers = ['Account', 'Opportunity Product Type', 'MRR', 'Contact Who Attended Summit', 'Who Referred Attendee', 'Opportunity Owner', 'Opportunity', 'Stage', 'Created Date', 'Close Date', 'Connection Type', 'Amount', 'Salesforce Account ID', 'Salesforce Contact ID', 'Salesforce Opportunity ID'];
+  const headers = ['Account', 'Opportunity Product Type', 'MRR', 'Contact Who Attended Summit', 'Who Referred Attendee', 'Opportunity Owner', 'Primary Contact Owner', 'Opportunity', 'Stage', 'Created Date', 'Close Date', 'Connection Type', 'Amount', 'Salesforce Account ID', 'Salesforce Contact ID', 'Salesforce Opportunity ID'];
   const data = rows.map(r => ({
     'Account': r.account,
     'Opportunity Product Type': r.productType,
@@ -289,6 +297,7 @@ function writeCsv(rows) {
     'Contact Who Attended Summit': r.attendee,
     'Who Referred Attendee': r.referredBy,
     'Opportunity Owner': r.opportunityOwner,
+    'Primary Contact Owner': r.primaryContactOwner,
     'Opportunity': r.opportunityName,
     'Stage': r.stage,
     'Created Date': r.createdDate,
@@ -308,7 +317,7 @@ function renderHtml(summary, rows) {
     <td><strong>${escapeHtml(r.account)}</strong><span>${escapeHtml(r.opportunityName)}</span></td>
     <td>${escapeHtml(r.productType)}</td>
     <td data-num="${r.mrr}">${money(r.mrr)}</td>
-    <td>${escapeHtml(r.attendee)}<span>${escapeHtml(r.connectionType)}</span></td>
+    <td>${escapeHtml(r.attendee)}<span>Contact owner: ${escapeHtml(r.primaryContactOwner || 'Unassigned')}</span></td>
     <td>${escapeHtml(r.referredBy)}</td>
     <td>${escapeHtml(r.opportunityOwner)}</td>
     <td>${escapeHtml(r.stage)}<span>${escapeHtml((r.createdDate || '').slice(0, 10))}</span></td>
@@ -334,7 +343,7 @@ function renderHtml(summary, rows) {
 </head>
 <body><main class="wrap"><div class="topbar"></div><section class="hero"><div><div class="eyebrow">Rev.io Client Summit 2026</div><h1>Summit Opportunity Dashboard</h1><p>Opportunities created on or after September 1 that are connected to registered Summit attendees through Salesforce Opportunity Contact Roles or the attendee's associated account.</p></div><div class="meta"><div><span>Generated</span><b>${escapeHtml(new Date(summary.generatedAt).toLocaleString('en-US'))}</b></div><div><span>Created since</span><b>${escapeHtml(summary.createdSince.slice(0,10))}</b></div><div><span>Source</span><b>${escapeHtml(summary.sourceFile)}</b></div></div></section>
 <section class="cards"><div class="card teal"><div class="label">Unique opps</div><div class="num" id="kpiOpps">${summary.uniqueOpportunities}</div></div><div class="card green"><div class="label">MRR</div><div class="num" id="kpiMrr">${money(summary.totalMRR)}</div></div><div class="card"><div class="label">Accounts</div><div class="num" id="kpiAccounts">${summary.uniqueAccountsWithOpportunities}</div></div><div class="card"><div class="label">Open opps</div><div class="num" id="kpiOpen">${summary.openOpportunities}</div></div><div class="card"><div class="label">Detail rows</div><div class="num" id="kpiRows">${summary.opportunityRows}</div></div></section>
-<section class="two"><div class="panel"><h2>Product Type Summary</h2><table><thead><tr><th>Product Type</th><th>Opps</th><th>MRR</th><th>Amount</th></tr></thead><tbody>${productRows}</tbody></table></div><div class="panel"><h2>Filters</h2><div class="controls"><input id="search" placeholder="Search account, attendee, referral, owner…" /><select id="product"><option value="">All product types</option>${options(products)}</select><select id="owner"><option value="">All owners</option>${options(owners)}</select><select id="stage"><option value="">All stages</option>${options(stages)}</select></div><div class="note">MRR uses Opportunity.Total_Monthly_Fees__c first, then Renewal_Amount__c, then Amount as fallback. Rows are per opportunity-attendee connection so one opportunity can appear more than once when multiple Summit registrants are tied to the account.</div></div></section>
+<section class="two"><div class="panel"><h2>Product Type Summary</h2><table><thead><tr><th>Product Type</th><th>Opps</th><th>MRR</th><th>Amount</th></tr></thead><tbody>${productRows}</tbody></table></div><div class="panel"><h2>Filters</h2><div class="controls"><input id="search" placeholder="Search account, attendee, referral, owner…" /><select id="product"><option value="">All product types</option>${options(products)}</select><select id="owner"><option value="">All owners</option>${options(owners)}</select><select id="stage"><option value="">All stages</option>${options(stages)}</select></div><div class="note">MRR uses Opportunity.Total_Monthly_Fees__c first, then Renewal_Amount__c, then Amount as fallback. Rows are one per Salesforce opportunity. If multiple Summit registrants are tied to the same opportunity/account, the dashboard keeps one primary Summit contact, preferring an Opportunity Contact Role match.</div></div></section>
 <section class="panel"><h2>Opportunity Detail</h2><table id="detail"><thead><tr><th>Account / Opportunity</th><th>Product type</th><th>MRR</th><th>Contact who attended</th><th>Referred by</th><th>Opp owner</th><th>Stage / Created</th></tr></thead><tbody>${rowHtml || '<tr><td colspan="7">No matching opportunities found.</td></tr>'}</tbody></table><div class="note">Matched ${summary.matchedRegistrants} of ${summary.registrants} active registrants to Salesforce contacts/accounts; ${summary.uniqueMatchedAccounts} unique matched accounts were checked.</div></section>
 </main><script>
 const rows=[...document.querySelectorAll('#detail tbody tr')];
