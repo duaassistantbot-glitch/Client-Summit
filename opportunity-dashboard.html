@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rev.io Summit Opportunity Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1D3756;--teal:#2399B5;--green:#6EBE4F;--light:#F5F7FA;--border:#DDE2E8;--text:#3d4d5c;--white:#FFFFFF;--ink:#122840;}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#10233A 0%,#1D3756 270px,#F5F7FA 271px);color:var(--text);font-family:'Open Sans',Arial,sans-serif}.wrap{max-width:1200px;margin:0 auto;padding:28px 22px 44px}.topbar{height:5px;background:linear-gradient(90deg,var(--teal),var(--green));border-radius:999px;margin-bottom:26px}.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:24px;align-items:end;color:#fff;margin-bottom:24px}.eyebrow{color:#fff;font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:12px}.hero h1{font-size:44px;line-height:1.02;margin:10px 0 12px;color:#fff}.hero p{font-size:16px;line-height:1.55;margin:0;max-width:780px;color:#fff}.meta{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:18px;color:#fff}.meta div{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid rgba(255,255,255,.18);padding:8px 0}.meta div:last-child{border-bottom:0}.meta b{font-family:Montserrat}.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:20px 0 20px}.card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 14px 34px rgba(29,55,86,.08)}.card .label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#637487;font-weight:800}.card .num{font-family:Montserrat;font-size:30px;font-weight:800;color:var(--navy);margin-top:8px}.card.green .num{color:var(--green)}.card.teal .num{color:var(--teal)}.panel{background:#fff;border:1px solid var(--border);border-radius:20px;padding:20px;margin-top:18px;box-shadow:0 14px 34px rgba(29,55,86,.08)}.panel h2{margin:0 0 14px;color:var(--navy);font-size:22px}.controls{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;margin-bottom:14px}input,select{width:100%;border:1px solid var(--border);border-radius:12px;padding:10px 12px;font:inherit;background:#fff;color:var(--text)}table{width:100%;border-collapse:separate;border-spacing:0}th{text-align:left;color:var(--navy);font-size:12px;text-transform:uppercase;letter-spacing:.08em;border-bottom:2px solid var(--border);padding:12px 10px;white-space:nowrap}td{padding:12px 10px;border-bottom:1px solid var(--border);vertical-align:top}td span{display:block;color:#718095;font-size:12px;margin-top:3px}tbody tr:hover{background:#F8FBFC}.two{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px}.note{font-size:12px;line-height:1.45;color:#637487;margin-top:12px}.hidden{display:none}@media(max-width:900px){.hero,.two{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.controls{grid-template-columns:1fr}table{font-size:13px}.wrap{padding:18px 12px}.hero h1{font-size:34px}}
+</style>
+</head>
+<body><main class="wrap"><div class="topbar"></div><section class="hero"><div><div class="eyebrow">Rev.io Client Summit 2026</div><h1>Summit Opportunity Dashboard</h1><p>Opportunities created on or after September 1 that are connected to registered Summit attendees through Salesforce Opportunity Contact Roles or the attendee's associated account.</p></div><div class="meta"><div><span>Generated</span><b>9/9/2026, 2:27:33 AM</b></div><div><span>Created since</span><b>2026-09-01</b></div><div><span>Source</span><b>assets/source/registration-report-deduped-2026-08-12.xlsx</b></div></div></section>
+<section class="cards"><div class="card teal"><div class="label">Unique opps</div><div class="num" id="kpiOpps">6</div></div><div class="card green"><div class="label">MRR</div><div class="num" id="kpiMrr">$3,030</div></div><div class="card"><div class="label">Accounts</div><div class="num" id="kpiAccounts">5</div></div><div class="card"><div class="label">Open opps</div><div class="num" id="kpiOpen">6</div></div><div class="card"><div class="label">Detail rows</div><div class="num" id="kpiRows">10</div></div></section>
+<section class="two"><div class="panel"><h2>Product Type Summary</h2><table><thead><tr><th>Product Type</th><th>Opps</th><th>MRR</th><th>Amount</th></tr></thead><tbody><tr><td>Unspecified</td><td>3</td><td>$1,873</td><td>$0</td></tr><tr><td>PSA 2.0</td><td>2</td><td>$1,157</td><td>$1,157</td></tr><tr><td>Payments AR</td><td>1</td><td>$0</td><td>$0</td></tr></tbody></table></div><div class="panel"><h2>Filters</h2><div class="controls"><input id="search" placeholder="Search account, attendee, referral, owner…" /><select id="product"><option value="">All product types</option><option value="PSA 2.0">PSA 2.0</option><option value="Payments AR">Payments AR</option><option value="Unspecified">Unspecified</option></select><select id="owner"><option value="">All owners</option><option value="Ingrid Beard">Ingrid Beard</option><option value="Justin Lee">Justin Lee</option><option value="Patrick Davies">Patrick Davies</option></select><select id="stage"><option value="">All stages</option><option value="1- Discovery Scheduled">1- Discovery Scheduled</option><option value="2 - Discovery Completed">2 - Discovery Completed</option></select></div><div class="note">MRR uses Opportunity.Total_Monthly_Fees__c first, then Renewal_Amount__c, then Amount as fallback. Rows are per opportunity-attendee connection so one opportunity can appear more than once when multiple Summit registrants are tied to the account.</div></div></section>
+<section class="panel"><h2>Opportunity Detail</h2><table id="detail"><thead><tr><th>Account / Opportunity</th><th>Product type</th><th>MRR</th><th>Contact who attended</th><th>Referred by</th><th>Opp owner</th><th>Stage / Created</th></tr></thead><tbody><tr data-product="Payments AR" data-owner="Justin Lee" data-stage="2 - Discovery Completed" data-search="mnj technologies payments ar amanda gath rachael buchtan justin lee mnj technologies - payments (paypal) 2 - discovery completed attendee account">
+    <td><strong>MNJ Technologies</strong><span>MNJ Technologies - Payments (PayPal)</span></td>
+    <td>Payments AR</td>
+    <td data-num="0">$0</td>
+    <td>Amanda Gath<span>Attendee Account</span></td>
+    <td>Rachael Buchtan</td>
+    <td>Justin Lee</td>
+    <td>2 - Discovery Completed<span>2026-09-08</span></td>
+  </tr><tr data-product="Payments AR" data-owner="Justin Lee" data-stage="2 - Discovery Completed" data-search="mnj technologies payments ar anastasiya chapman rachel buchtan justin lee mnj technologies - payments (paypal) 2 - discovery completed attendee account">
+    <td><strong>MNJ Technologies</strong><span>MNJ Technologies - Payments (PayPal)</span></td>
+    <td>Payments AR</td>
+    <td data-num="0">$0</td>
+    <td>ANASTASIYA CHAPMAN<span>Attendee Account</span></td>
+    <td>Rachel Buchtan</td>
+    <td>Justin Lee</td>
+    <td>2 - Discovery Completed<span>2026-09-08</span></td>
+  </tr><tr data-product="Payments AR" data-owner="Justin Lee" data-stage="2 - Discovery Completed" data-search="mnj technologies payments ar georgia higgins rachel buchtan justin lee mnj technologies - payments (paypal) 2 - discovery completed attendee account">
+    <td><strong>MNJ Technologies</strong><span>MNJ Technologies - Payments (PayPal)</span></td>
+    <td>Payments AR</td>
+    <td data-num="0">$0</td>
+    <td>Georgia Higgins<span>Attendee Account</span></td>
+    <td>Rachel Buchtan</td>
+    <td>Justin Lee</td>
+    <td>2 - Discovery Completed<span>2026-09-08</span></td>
+  </tr><tr data-product="Payments AR" data-owner="Justin Lee" data-stage="2 - Discovery Completed" data-search="mnj technologies payments ar james mace rachael buchtan justin lee mnj technologies - payments (paypal) 2 - discovery completed opportunity contact role">
+    <td><strong>MNJ Technologies</strong><span>MNJ Technologies - Payments (PayPal)</span></td>
+    <td>Payments AR</td>
+    <td data-num="0">$0</td>
+    <td>James Mace<span>Opportunity Contact Role</span></td>
+    <td>Rachael Buchtan</td>
+    <td>Justin Lee</td>
+    <td>2 - Discovery Completed<span>2026-09-08</span></td>
+  </tr><tr data-product="Unspecified" data-owner="Justin Lee" data-stage="1- Discovery Scheduled" data-search="jes and sons 2-way llc unspecified donald campbell not provided justin lee jes and sons 2-way llc - web migration 1- discovery scheduled attendee account">
+    <td><strong>JES and Sons 2-Way LLC</strong><span>JES and Sons 2-Way LLC - Web Migration</span></td>
+    <td>Unspecified</td>
+    <td data-num="1873">$1,873</td>
+    <td>Donald Campbell<span>Attendee Account</span></td>
+    <td>Not provided</td>
+    <td>Justin Lee</td>
+    <td>1- Discovery Scheduled<span>2026-09-08</span></td>
+  </tr><tr data-product="Unspecified" data-owner="Justin Lee" data-stage="1- Discovery Scheduled" data-search="jes and sons 2-way llc unspecified rosalyn campbell not provided justin lee jes and sons 2-way llc - web migration 1- discovery scheduled opportunity contact role">
+    <td><strong>JES and Sons 2-Way LLC</strong><span>JES and Sons 2-Way LLC - Web Migration</span></td>
+    <td>Unspecified</td>
+    <td data-num="1873">$1,873</td>
+    <td>Rosalyn Campbell<span>Opportunity Contact Role</span></td>
+    <td>Not provided</td>
+    <td>Justin Lee</td>
+    <td>1- Discovery Scheduled<span>2026-09-08</span></td>
+  </tr><tr data-product="Unspecified" data-owner="Justin Lee" data-stage="2 - Discovery Completed" data-search="altaworx unspecified rickie richey ryan koontz justin lee altaworx - microsoft licenses opp 2 - discovery completed opportunity contact role">
+    <td><strong>Altaworx</strong><span>Altaworx - Microsoft Licenses Opp</span></td>
+    <td>Unspecified</td>
+    <td data-num="0">$0</td>
+    <td>Rickie Richey<span>Opportunity Contact Role</span></td>
+    <td>Ryan Koontz</td>
+    <td>Justin Lee</td>
+    <td>2 - Discovery Completed<span>2026-09-08</span></td>
+  </tr><tr data-product="PSA 2.0" data-owner="Ingrid Beard" data-stage="1- Discovery Scheduled" data-search="valhalla psa 2.0 rose page ingrid beard ingrid beard valhalla - monthly min increase 1- discovery scheduled opportunity contact role">
+    <td><strong>Valhalla</strong><span>Valhalla - Monthly Min Increase</span></td>
+    <td>PSA 2.0</td>
+    <td data-num="157">$157</td>
+    <td>Rose Page<span>Opportunity Contact Role</span></td>
+    <td>Ingrid Beard</td>
+    <td>Ingrid Beard</td>
+    <td>1- Discovery Scheduled<span>2026-09-04</span></td>
+  </tr><tr data-product="Unspecified" data-owner="Ingrid Beard" data-stage="1- Discovery Scheduled" data-search="valhalla unspecified rose page ingrid beard ingrid beard valhalla tp migration 1- discovery scheduled opportunity contact role">
+    <td><strong>Valhalla</strong><span>Valhalla TP Migration</span></td>
+    <td>Unspecified</td>
+    <td data-num="0">$0</td>
+    <td>Rose Page<span>Opportunity Contact Role</span></td>
+    <td>Ingrid Beard</td>
+    <td>Ingrid Beard</td>
+    <td>1- Discovery Scheduled<span>2026-09-04</span></td>
+  </tr><tr data-product="PSA 2.0" data-owner="Patrick Davies" data-stage="1- Discovery Scheduled" data-search="bludog telecom psa 2.0 chris reyes ingrid beard patrick davies bludog telecom - psa 1- discovery scheduled opportunity contact role">
+    <td><strong>BluDog Telecom</strong><span>BluDog Telecom - PSA</span></td>
+    <td>PSA 2.0</td>
+    <td data-num="1000">$1,000</td>
+    <td>Chris Reyes<span>Opportunity Contact Role</span></td>
+    <td>Ingrid Beard</td>
+    <td>Patrick Davies</td>
+    <td>1- Discovery Scheduled<span>2026-09-01</span></td>
+  </tr></tbody></table><div class="note">Matched 210 of 228 active registrants to Salesforce contacts/accounts; 110 unique matched accounts were checked.</div></section>
+</main><script>
+const rows=[...document.querySelectorAll('#detail tbody tr')];
+function parseMoney(s){return Number(String(s).replace(/[^0-9.-]/g,''))||0}
+function fmt(n){return n.toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0})}
+function apply(){const q=document.getElementById('search').value.trim().toLowerCase();const p=document.getElementById('product').value;const o=document.getElementById('owner').value;const st=document.getElementById('stage').value;let visible=[];rows.forEach(r=>{const show=(!q||(r.dataset.search||'').includes(q))&&(!p||r.dataset.product===p)&&(!o||r.dataset.owner===o)&&(!st||r.dataset.stage===st);r.classList.toggle('hidden',!show);if(show&&r.children.length>1)visible.push(r)});const opps=new Set(),accts=new Set();let mrr=0,open=0;visible.forEach(r=>{const first=r.children[0].innerText;opps.add(first);accts.add(first.split('
+')[0]);mrr+=Number(r.children[2].dataset.num||0);if(!/^closed/i.test(r.dataset.stage||''))open++});document.getElementById('kpiRows').textContent=visible.length;document.getElementById('kpiOpps').textContent=opps.size;document.getElementById('kpiAccounts').textContent=accts.size;document.getElementById('kpiMrr').textContent=fmt(mrr);document.getElementById('kpiOpen').textContent=open}
+document.querySelectorAll('input,select').forEach(el=>el.addEventListener('input',apply));
+</script></body></html>
