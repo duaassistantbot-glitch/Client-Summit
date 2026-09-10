@@ -12,10 +12,18 @@
 *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#10233A 0%,#1D3756 270px,#F5F7FA 271px);color:var(--text);font-family:'Open Sans',Arial,sans-serif}.wrap{max-width:1200px;margin:0 auto;padding:28px 22px 44px}.topbar{height:5px;background:linear-gradient(90deg,var(--teal),var(--green));border-radius:999px;margin-bottom:26px}.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:24px;align-items:end;color:#fff;margin-bottom:24px}.eyebrow{color:#fff;font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:12px}.hero h1{font-size:44px;line-height:1.02;margin:10px 0 12px;color:#fff}.hero p{font-size:16px;line-height:1.55;margin:0;max-width:780px;color:#fff}.meta{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:18px;color:#fff}.meta div{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid rgba(255,255,255,.18);padding:8px 0}.meta div:last-child{border-bottom:0}.meta b{font-family:Montserrat}.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:20px 0 20px}.card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 14px 34px rgba(29,55,86,.08)}.card .label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#637487;font-weight:800}.card .num{font-family:Montserrat;font-size:30px;font-weight:800;color:var(--navy);margin-top:8px}.card.green .num{color:var(--green)}.card.teal .num{color:var(--teal)}.panel{background:#fff;border:1px solid var(--border);border-radius:20px;padding:20px;margin-top:18px;box-shadow:0 14px 34px rgba(29,55,86,.08)}.panel h2{margin:0 0 14px;color:var(--navy);font-size:22px}.controls{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;margin-bottom:14px}input,select{width:100%;border:1px solid var(--border);border-radius:12px;padding:10px 12px;font:inherit;background:#fff;color:var(--text)}table{width:100%;border-collapse:separate;border-spacing:0}th{text-align:left;color:var(--navy);font-size:12px;text-transform:uppercase;letter-spacing:.08em;border-bottom:2px solid var(--border);padding:12px 10px;white-space:nowrap}td{padding:12px 10px;border-bottom:1px solid var(--border);vertical-align:top}td span{display:block;color:#718095;font-size:12px;margin-top:3px}tbody tr:hover{background:#F8FBFC}.two{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px}.note{font-size:12px;line-height:1.45;color:#637487;margin-top:12px}.hidden{display:none}@media(max-width:900px){.hero,.two{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.controls{grid-template-columns:1fr}table{font-size:13px}.wrap{padding:18px 12px}.hero h1{font-size:34px}}
 </style>
 </head>
-<body><main class="wrap"><div class="topbar"></div><section class="hero"><div><div class="eyebrow">Rev.io Client Summit 2026</div><h1>Summit Opportunity Dashboard</h1><p>Opportunities created on or after September 1 that are connected to registered Summit attendees through Salesforce Opportunity Contact Roles or the attendee's associated account.</p></div><div class="meta"><div><span>Generated</span><b>9/9/2026, 6:09:16 PM</b></div><div><span>Created since</span><b>2026-09-01</b></div><div><span>Source</span><b>assets/source/registration-report-deduped-2026-08-12.xlsx</b></div></div></section>
-<section class="cards"><div class="card teal"><div class="label">Unique opps</div><div class="num" id="kpiOpps">11</div></div><div class="card green"><div class="label">MRR</div><div class="num" id="kpiMrr">$5,288</div></div><div class="card"><div class="label">Accounts</div><div class="num" id="kpiAccounts">10</div></div><div class="card"><div class="label">Open opps</div><div class="num" id="kpiOpen">11</div></div><div class="card"><div class="label">Detail rows</div><div class="num" id="kpiRows">11</div></div></section>
-<section class="two"><div class="panel"><h2>Product Type Summary</h2><table><thead><tr><th>Product Type</th><th>Opps</th><th>MRR</th><th>Amount</th></tr></thead><tbody><tr><td>Legacy Migration</td><td>4</td><td>$4,031</td><td>$0</td></tr><tr><td>PSA 2.0</td><td>2</td><td>$1,157</td><td>$1,157</td></tr><tr><td>Unspecified</td><td>2</td><td>$100</td><td>$100</td></tr><tr><td>Payments AR</td><td>2</td><td>$0</td><td>$0</td></tr><tr><td>Add-On / Expansion</td><td>1</td><td>$0</td><td>$0</td></tr></tbody></table></div><div class="panel"><h2>Filters</h2><div class="controls"><input id="search" placeholder="Search account, attendee, referral, owner…" /><select id="product"><option value="">All product types</option><option value="Add-On / Expansion">Add-On / Expansion</option><option value="Legacy Migration">Legacy Migration</option><option value="PSA 2.0">PSA 2.0</option><option value="Payments AR">Payments AR</option><option value="Unspecified">Unspecified</option></select><select id="owner"><option value="">All owners</option><option value="Ingrid Beard">Ingrid Beard</option><option value="Jakob Champion">Jakob Champion</option><option value="Justin Lee">Justin Lee</option><option value="Katerra Stephenson Greenwood">Katerra Stephenson Greenwood</option><option value="Patrick Davies">Patrick Davies</option></select><select id="stage"><option value="">All stages</option><option value="1- Discovery Scheduled">1- Discovery Scheduled</option><option value="2 - Discovery Completed">2 - Discovery Completed</option></select></div><div class="note">MRR uses Opportunity.Total_Monthly_Fees__c first, then Renewal_Amount__c, then Amount as fallback. Rows are one per Salesforce opportunity. If multiple Summit registrants are tied to the same opportunity/account, the dashboard keeps one primary Summit contact, preferring an Opportunity Contact Role match.</div></div></section>
-<section class="panel"><h2>Opportunity Detail</h2><table id="detail"><thead><tr><th>Account / Opportunity</th><th>Product type</th><th>MRR</th><th>Contact who attended</th><th>Referred by</th><th>Opp owner</th><th>Stage / Created</th></tr></thead><tbody><tr data-product="Payments AR" data-owner="Katerra Stephenson Greenwood" data-stage="1- Discovery Scheduled" data-search="viirtue inc payments ar ana da silva rachael buchtan katerra stephenson greenwood viirtue inc ar payments 1- discovery scheduled opportunity contact role">
+<body><main class="wrap"><div class="topbar"></div><section class="hero"><div><div class="eyebrow">Rev.io Client Summit 2026</div><h1>Summit Opportunity Dashboard</h1><p>Opportunities created on or after September 1 that are connected to registered Summit attendees through Salesforce Opportunity Contact Roles or the attendee's associated account.</p></div><div class="meta"><div><span>Generated</span><b>9/10/2026, 3:15:11 PM</b></div><div><span>Created since</span><b>2026-09-01</b></div><div><span>Source</span><b>assets/source/registration-report-deduped-2026-08-12.xlsx</b></div></div></section>
+<section class="cards"><div class="card teal"><div class="label">Unique opps</div><div class="num" id="kpiOpps">12</div></div><div class="card green"><div class="label">MRR</div><div class="num" id="kpiMrr">$5,788</div></div><div class="card"><div class="label">Accounts</div><div class="num" id="kpiAccounts">11</div></div><div class="card"><div class="label">Open opps</div><div class="num" id="kpiOpen">11</div></div><div class="card"><div class="label">Detail rows</div><div class="num" id="kpiRows">12</div></div></section>
+<section class="two"><div class="panel"><h2>Product Type Summary</h2><table><thead><tr><th>Product Type</th><th>Opps</th><th>MRR</th><th>Amount</th></tr></thead><tbody><tr><td>Legacy Migration</td><td>4</td><td>$4,031</td><td>$0</td></tr><tr><td>PSA 2.0</td><td>3</td><td>$1,657</td><td>$1,657</td></tr><tr><td>Add-On / Expansion</td><td>3</td><td>$100</td><td>$100</td></tr><tr><td>Payments AR</td><td>2</td><td>$0</td><td>$0</td></tr></tbody></table></div><div class="panel"><h2>Filters</h2><div class="controls"><input id="search" placeholder="Search account, attendee, referral, owner…" /><select id="product"><option value="">All product types</option><option value="Add-On / Expansion">Add-On / Expansion</option><option value="Legacy Migration">Legacy Migration</option><option value="PSA 2.0">PSA 2.0</option><option value="Payments AR">Payments AR</option></select><select id="owner"><option value="">All owners</option><option value="Connor Flynn">Connor Flynn</option><option value="Ingrid Beard">Ingrid Beard</option><option value="Jakob Champion">Jakob Champion</option><option value="Justin Lee">Justin Lee</option><option value="Katerra Stephenson Greenwood">Katerra Stephenson Greenwood</option><option value="Patrick Davies">Patrick Davies</option></select><select id="stage"><option value="">All stages</option><option value="1- Discovery Scheduled">1- Discovery Scheduled</option><option value="2 - Discovery Completed">2 - Discovery Completed</option><option value="3 - Initial Product Demo">3 - Initial Product Demo</option><option value="Closed Lost">Closed Lost</option></select></div><div class="note">MRR uses Opportunity.Total_Monthly_Fees__c first, then Renewal_Amount__c, then Amount as fallback. Rows are one per Salesforce opportunity. If multiple Summit registrants are tied to the same opportunity/account, the dashboard keeps one primary Summit contact, preferring an Opportunity Contact Role match.</div></div></section>
+<section class="panel"><h2>Opportunity Detail</h2><table id="detail"><thead><tr><th>Account / Opportunity</th><th>Product type</th><th>MRR</th><th>Contact who attended</th><th>Referred by</th><th>Opp owner</th><th>Stage / Created</th></tr></thead><tbody><tr data-product="PSA 2.0" data-owner="Connor Flynn" data-stage="1- Discovery Scheduled" data-search="public telephone company psa 2.0 darrell lopez cam sharpe connor flynn public telephone company 1- discovery scheduled opportunity contact role">
+    <td><strong>Public Telephone Company</strong><span>Public Telephone Company</span></td>
+    <td>PSA 2.0</td>
+    <td data-num="1000">$1,000</td>
+    <td>Darrell Lopez<span>Contact owner: Ingrid Beard</span></td>
+    <td>Cam Sharpe</td>
+    <td>Connor Flynn</td>
+    <td>1- Discovery Scheduled<span>2026-09-09</span></td>
+  </tr><tr data-product="Payments AR" data-owner="Katerra Stephenson Greenwood" data-stage="1- Discovery Scheduled" data-search="viirtue inc payments ar ana da silva rachael buchtan katerra stephenson greenwood viirtue inc ar payments 1- discovery scheduled opportunity contact role">
     <td><strong>Viirtue Inc</strong><span>Viirtue Inc AR Payments</span></td>
     <td>Payments AR</td>
     <td data-num="0">$0</td>
@@ -31,17 +39,17 @@
     <td>Katerra Stephenson-Greenwood</td>
     <td>Katerra Stephenson Greenwood</td>
     <td>1- Discovery Scheduled<span>2026-09-09</span></td>
-  </tr><tr data-product="Unspecified" data-owner="Jakob Champion" data-stage="1- Discovery Scheduled" data-search="truline technologies unspecified michael rowland not provided jakob champion truline technology - payments 1- discovery scheduled opportunity contact role">
+  </tr><tr data-product="Add-On / Expansion" data-owner="Jakob Champion" data-stage="1- Discovery Scheduled" data-search="truline technologies add-on / expansion michael rowland not provided jakob champion truline technology - payments 1- discovery scheduled opportunity contact role">
     <td><strong>Truline Technologies</strong><span>TruLine Technology - Payments</span></td>
-    <td>Unspecified</td>
+    <td>Add-On / Expansion</td>
     <td data-num="50">$50</td>
     <td>Michael Rowland<span>Contact owner: Connor Flynn</span></td>
     <td>Not provided</td>
     <td>Jakob Champion</td>
     <td>1- Discovery Scheduled<span>2026-09-09</span></td>
-  </tr><tr data-product="Unspecified" data-owner="Jakob Champion" data-stage="1- Discovery Scheduled" data-search="centerpoint it unspecified felicia turner rinor berisha jakob champion centerpoint it - payments 1- discovery scheduled opportunity contact role">
+  </tr><tr data-product="Add-On / Expansion" data-owner="Jakob Champion" data-stage="1- Discovery Scheduled" data-search="centerpoint it add-on / expansion felicia turner rinor berisha jakob champion centerpoint it - payments 1- discovery scheduled opportunity contact role">
     <td><strong>Centerpoint IT</strong><span>Centerpoint IT - Payments</span></td>
-    <td>Unspecified</td>
+    <td>Add-On / Expansion</td>
     <td data-num="50">$50</td>
     <td>Felicia Turner<span>Contact owner: Justin Lee</span></td>
     <td>Rinor Berisha</td>
@@ -55,14 +63,14 @@
     <td>Jacob Willimas</td>
     <td>Jakob Champion</td>
     <td>1- Discovery Scheduled<span>2026-09-09</span></td>
-  </tr><tr data-product="Payments AR" data-owner="Justin Lee" data-stage="2 - Discovery Completed" data-search="mnj technologies payments ar james mace rachael buchtan justin lee mnj technologies - payments (paypal) 2 - discovery completed opportunity contact role">
+  </tr><tr data-product="Payments AR" data-owner="Justin Lee" data-stage="Closed Lost" data-search="mnj technologies payments ar james mace rachael buchtan justin lee mnj technologies - payments (paypal) closed lost opportunity contact role">
     <td><strong>MNJ Technologies</strong><span>MNJ Technologies - Payments (PayPal)</span></td>
     <td>Payments AR</td>
     <td data-num="0">$0</td>
     <td>James Mace<span>Contact owner: Cam Sharpe</span></td>
     <td>Rachael Buchtan</td>
     <td>Justin Lee</td>
-    <td>2 - Discovery Completed<span>2026-09-08</span></td>
+    <td>Closed Lost<span>2026-09-08</span></td>
   </tr><tr data-product="Legacy Migration" data-owner="Justin Lee" data-stage="1- Discovery Scheduled" data-search="jes and sons 2-way llc legacy migration rosalyn campbell not provided justin lee jes and sons 2-way llc - web migration 1- discovery scheduled opportunity contact role">
     <td><strong>JES and Sons 2-Way LLC</strong><span>JES and Sons 2-Way LLC - Web Migration</span></td>
     <td>Legacy Migration</td>
@@ -95,14 +103,14 @@
     <td>Ingrid Beard</td>
     <td>Ingrid Beard</td>
     <td>1- Discovery Scheduled<span>2026-09-04</span></td>
-  </tr><tr data-product="PSA 2.0" data-owner="Patrick Davies" data-stage="1- Discovery Scheduled" data-search="bludog telecom psa 2.0 chris reyes ingrid beard patrick davies bludog telecom - psa 1- discovery scheduled opportunity contact role">
+  </tr><tr data-product="PSA 2.0" data-owner="Patrick Davies" data-stage="3 - Initial Product Demo" data-search="bludog telecom psa 2.0 chris reyes ingrid beard patrick davies bludog telecom - psa 3 - initial product demo opportunity contact role">
     <td><strong>BluDog Telecom</strong><span>BluDog Telecom - PSA</span></td>
     <td>PSA 2.0</td>
-    <td data-num="1000">$1,000</td>
+    <td data-num="500">$500</td>
     <td>Chris Reyes<span>Contact owner: Ingrid Beard</span></td>
     <td>Ingrid Beard</td>
     <td>Patrick Davies</td>
-    <td>1- Discovery Scheduled<span>2026-09-01</span></td>
+    <td>3 - Initial Product Demo<span>2026-09-01</span></td>
   </tr></tbody></table><div class="note">Matched 210 of 228 active registrants to Salesforce contacts/accounts; 110 unique matched accounts were checked.</div></section>
 </main><script>
 const rows=[...document.querySelectorAll('#detail tbody tr')];
