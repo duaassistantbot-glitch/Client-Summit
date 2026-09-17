@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-09-16T21:00:15.079Z",
+    "generatedAt": "2026-09-17T21:00:17.812Z",
     "sourceFile": "assets/source/registration-report-deduped-2026-08-12.xlsx",
     "createdSince": "2026-09-01T00:00:00Z",
     "registrants": 228,
@@ -9,16 +9,16 @@
     "opportunityRows": 17,
     "uniqueOpportunities": 17,
     "uniqueAccountsWithOpportunities": 15,
-    "totalMRR": 14445,
-    "totalAmount": 9757,
+    "totalMRR": 14195,
+    "totalAmount": 9507,
     "wonOpportunities": 0,
     "openOpportunities": 16,
     "byProductType": [
       {
         "productType": "PSA 2.0",
         "opportunities": 8,
-        "mrr": 9657,
-        "amount": 9657
+        "mrr": 9357,
+        "amount": 9357
       },
       {
         "productType": "Legacy Migration",
@@ -29,8 +29,8 @@
       {
         "productType": "Payments AR",
         "opportunities": 4,
-        "mrr": 100,
-        "amount": 100
+        "mrr": 150,
+        "amount": 150
       },
       {
         "productType": "Add-On / Expansion",
@@ -116,11 +116,11 @@
       "account": "Converged Networks",
       "accountId": "0011C000021D9oLQAS",
       "productType": "PSA 2.0",
-      "mrr": 1000,
-      "totalMonthlyFees": 0,
+      "mrr": 700,
+      "totalMonthlyFees": 700,
       "renewalAmount": 0,
-      "amount": 1000,
-      "stage": "1- Discovery Scheduled",
+      "amount": 700,
+      "stage": "3 - Initial Product Demo",
       "createdDate": "2026-09-10T21:45:01.000+0000",
       "closeDate": "2026-09-30",
       "opportunityOwner": "Connor Flynn",
@@ -185,10 +185,10 @@
       "account": "Viirtue Inc",
       "accountId": "0016O00003QyGNZQA3",
       "productType": "Payments AR",
-      "mrr": 0,
+      "mrr": 50,
       "totalMonthlyFees": 0,
       "renewalAmount": 0,
-      "amount": 0,
+      "amount": 50,
       "stage": "1- Discovery Scheduled",
       "createdDate": "2026-09-09T17:36:04.000+0000",
       "closeDate": "2026-10-31",
@@ -237,7 +237,7 @@
       "amount": 50,
       "stage": "1- Discovery Scheduled",
       "createdDate": "2026-09-09T17:25:32.000+0000",
-      "closeDate": "2026-09-30",
+      "closeDate": "2026-10-31",
       "opportunityOwner": "Jakob Champion",
       "attendee": "Michael Rowland",
       "primaryContactOwner": "Connor Flynn",
