@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-09-17T21:00:17.812Z",
+    "generatedAt": "2026-09-18T21:00:10.350Z",
     "sourceFile": "assets/source/registration-report-deduped-2026-08-12.xlsx",
     "createdSince": "2026-09-01T00:00:00Z",
     "registrants": 228,
@@ -9,16 +9,16 @@
     "opportunityRows": 17,
     "uniqueOpportunities": 17,
     "uniqueAccountsWithOpportunities": 15,
-    "totalMRR": 14195,
-    "totalAmount": 9507,
+    "totalMRR": 14095,
+    "totalAmount": 9407,
     "wonOpportunities": 0,
     "openOpportunities": 16,
     "byProductType": [
       {
         "productType": "PSA 2.0",
         "opportunities": 8,
-        "mrr": 9357,
-        "amount": 9357
+        "mrr": 9257,
+        "amount": 9257
       },
       {
         "productType": "Legacy Migration",
@@ -94,7 +94,7 @@
       "accountId": "0011500001HNQJIAA5",
       "productType": "PSA 2.0",
       "mrr": 1000,
-      "totalMonthlyFees": 0,
+      "totalMonthlyFees": 1000,
       "renewalAmount": 0,
       "amount": 1000,
       "stage": "3 - Initial Product Demo",
@@ -329,7 +329,7 @@
       "amount": 0,
       "stage": "1- Discovery Scheduled",
       "createdDate": "2026-09-08T10:19:48.000+0000",
-      "closeDate": "2026-09-30",
+      "closeDate": "2026-10-31",
       "opportunityOwner": "Justin Lee",
       "attendee": "Rosalyn Campbell",
       "primaryContactOwner": "Justin Lee",
@@ -352,7 +352,7 @@
       "amount": 0,
       "stage": "2 - Discovery Completed",
       "createdDate": "2026-09-08T10:16:55.000+0000",
-      "closeDate": "2026-09-30",
+      "closeDate": "2026-10-31",
       "opportunityOwner": "Justin Lee",
       "attendee": "Rickie Richey",
       "primaryContactOwner": "Jake Mitchell",
@@ -415,10 +415,10 @@
       "account": "BluDog Telecom",
       "accountId": "001PX000004N1qkYAC",
       "productType": "PSA 2.0",
-      "mrr": 500,
+      "mrr": 400,
       "totalMonthlyFees": 0,
       "renewalAmount": 0,
-      "amount": 500,
+      "amount": 400,
       "stage": "3 - Initial Product Demo",
       "createdDate": "2026-09-01T13:24:43.000+0000",
       "closeDate": "2026-09-30",
