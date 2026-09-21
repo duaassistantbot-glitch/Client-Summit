@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-09-20T21:00:22.971Z",
+    "generatedAt": "2026-09-21T21:00:24.484Z",
     "sourceFile": "assets/source/registration-report-deduped-2026-08-12.xlsx",
     "createdSince": "2026-09-01T00:00:00Z",
     "registrants": 228,
@@ -51,7 +51,7 @@
       "totalMonthlyFees": 4500,
       "renewalAmount": 0,
       "amount": 4500,
-      "stage": "1- Discovery Scheduled",
+      "stage": "2 - Discovery Completed",
       "createdDate": "2026-09-16T13:56:03.000+0000",
       "closeDate": "2026-10-31",
       "opportunityOwner": "Jamie Butler",
