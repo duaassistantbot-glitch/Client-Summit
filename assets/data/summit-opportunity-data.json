@@ -1,18 +1,18 @@
 {
   "summary": {
-    "generatedAt": "2026-09-22T21:00:19.012Z",
+    "generatedAt": "2026-09-23T21:00:22.051Z",
     "sourceFile": "assets/source/registration-report-deduped-2026-08-12.xlsx",
     "createdSince": "2026-09-01T00:00:00Z",
     "registrants": 228,
     "matchedRegistrants": 215,
-    "uniqueMatchedAccounts": 112,
-    "opportunityRows": 17,
-    "uniqueOpportunities": 17,
-    "uniqueAccountsWithOpportunities": 15,
-    "totalMRR": 14528,
-    "totalAmount": 9307,
+    "uniqueMatchedAccounts": 111,
+    "opportunityRows": 18,
+    "uniqueOpportunities": 18,
+    "uniqueAccountsWithOpportunities": 16,
+    "totalMRR": 14578,
+    "totalAmount": 9357,
     "wonOpportunities": 1,
-    "openOpportunities": 15,
+    "openOpportunities": 16,
     "byProductType": [
       {
         "productType": "PSA 2.0",
@@ -28,9 +28,9 @@
       },
       {
         "productType": "Payments AR",
-        "opportunities": 4,
-        "mrr": 150,
-        "amount": 150
+        "opportunities": 5,
+        "mrr": 200,
+        "amount": 200
       },
       {
         "productType": "Add-On / Expansion",
@@ -41,6 +41,29 @@
     ]
   },
   "rows": [
+    {
+      "opportunityId": "006PX00000gPEAtYAO",
+      "opportunityName": "Enitech Solutions - Payments",
+      "account": "Enitech Solutions",
+      "accountId": "0011C00002dwWjIQAU",
+      "productType": "Payments AR",
+      "mrr": 50,
+      "totalMonthlyFees": 0,
+      "renewalAmount": 0,
+      "amount": 50,
+      "stage": "2 - Discovery Completed",
+      "createdDate": "2026-09-23T14:10:46.000+0000",
+      "closeDate": "2026-10-31",
+      "opportunityOwner": "Jakob Champion",
+      "attendee": "Antwine Jackson",
+      "primaryContactOwner": "Jakob Champion",
+      "attendeeCompanyFromRegistration": "Enitech Solutions",
+      "referredBy": "Connor Flynn",
+      "connectionType": "Opportunity Contact Role",
+      "registrantMatchMethod": "Contact email → Account",
+      "sfContactId": "0031C000033EJPAQA4",
+      "sourceRegistrantRow": 16
+    },
     {
       "opportunityId": "006PX00000g7rk9YAA",
       "opportunityName": "Scipio Technologies",
@@ -53,7 +76,7 @@
       "amount": 4500,
       "stage": "2 - Discovery Completed",
       "createdDate": "2026-09-16T13:56:03.000+0000",
-      "closeDate": "2026-10-31",
+      "closeDate": "2026-11-30",
       "opportunityOwner": "Jamie Butler",
       "attendee": "Jim Peace",
       "primaryContactOwner": "Jamie Butler",
@@ -120,7 +143,7 @@
       "totalMonthlyFees": 700,
       "renewalAmount": 0,
       "amount": 700,
-      "stage": "3 - Initial Product Demo",
+      "stage": "4 - Proposal Sent",
       "createdDate": "2026-09-10T21:45:01.000+0000",
       "closeDate": "2026-09-30",
       "opportunityOwner": "Connor Flynn",
