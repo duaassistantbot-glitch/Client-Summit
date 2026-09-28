@@ -1,24 +1,24 @@
 {
   "summary": {
-    "generatedAt": "2026-09-27T21:00:20.338Z",
+    "generatedAt": "2026-09-28T21:00:11.063Z",
     "sourceFile": "assets/source/registration-report-deduped-2026-08-12.xlsx",
     "createdSince": "2026-09-01T00:00:00Z",
     "registrants": 228,
     "matchedRegistrants": 215,
     "uniqueMatchedAccounts": 111,
-    "opportunityRows": 19,
-    "uniqueOpportunities": 19,
-    "uniqueAccountsWithOpportunities": 17,
-    "totalMRR": 14558,
-    "totalAmount": 9337,
+    "opportunityRows": 20,
+    "uniqueOpportunities": 20,
+    "uniqueAccountsWithOpportunities": 18,
+    "totalMRR": 19058,
+    "totalAmount": 13837,
     "wonOpportunities": 3,
-    "openOpportunities": 14,
+    "openOpportunities": 15,
     "byProductType": [
       {
         "productType": "PSA 2.0",
-        "opportunities": 8,
-        "mrr": 9087,
-        "amount": 9087
+        "opportunities": 9,
+        "mrr": 13587,
+        "amount": 13587
       },
       {
         "productType": "Legacy Migration",
@@ -41,6 +41,29 @@
     ]
   },
   "rows": [
+    {
+      "opportunityId": "006PX00000gacPzYAI",
+      "opportunityName": "Affiliated Technology Solutions (New Platform)",
+      "account": "Affiliated Technology Solutions",
+      "accountId": "0016O000039vEEEQA2",
+      "productType": "PSA 2.0",
+      "mrr": 4500,
+      "totalMonthlyFees": 4500,
+      "renewalAmount": 0,
+      "amount": 4500,
+      "stage": "1- Discovery Scheduled",
+      "createdDate": "2026-09-28T12:31:06.000+0000",
+      "closeDate": "2026-10-31",
+      "opportunityOwner": "Jamie Butler",
+      "attendee": "Elise Cia",
+      "primaryContactOwner": "Ingrid Beard",
+      "attendeeCompanyFromRegistration": "Affiliated Technology Solutions",
+      "referredBy": "Reid Doster",
+      "connectionType": "Attendee Account",
+      "registrantMatchMethod": "Contact email → Account",
+      "sfContactId": "0036O00003cJeI2QAK",
+      "sourceRegistrantRow": 56
+    },
     {
       "opportunityId": "006PX00000gTW4LYAW",
       "opportunityName": "Southeast Telephone (AR Payments)",
