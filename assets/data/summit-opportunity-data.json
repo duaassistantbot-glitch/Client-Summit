@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-09-29T21:00:11.123Z",
+    "generatedAt": "2026-09-30T21:00:15.980Z",
     "sourceFile": "assets/source/registration-report-deduped-2026-08-12.xlsx",
     "createdSince": "2026-09-01T00:00:00Z",
     "registrants": 228,
@@ -53,7 +53,7 @@
       "amount": 4500,
       "stage": "1- Discovery Scheduled",
       "createdDate": "2026-09-28T12:31:06.000+0000",
-      "closeDate": "2026-10-31",
+      "closeDate": "2026-11-30",
       "opportunityOwner": "Jamie Butler",
       "attendee": "Elise Cia",
       "primaryContactOwner": "Ingrid Beard",
