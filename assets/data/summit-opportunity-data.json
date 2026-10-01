@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-09-30T21:00:15.980Z",
+    "generatedAt": "2026-10-01T21:00:15.543Z",
     "sourceFile": "assets/source/registration-report-deduped-2026-08-12.xlsx",
     "createdSince": "2026-09-01T00:00:00Z",
     "registrants": 228,
@@ -9,10 +9,10 @@
     "opportunityRows": 20,
     "uniqueOpportunities": 20,
     "uniqueAccountsWithOpportunities": 18,
-    "totalMRR": 19318,
-    "totalAmount": 14097,
+    "totalMRR": 19404,
+    "totalAmount": 14183,
     "wonOpportunities": 3,
-    "openOpportunities": 14,
+    "openOpportunities": 13,
     "byProductType": [
       {
         "productType": "PSA 2.0",
@@ -29,8 +29,8 @@
       {
         "productType": "Payments AR",
         "opportunities": 6,
-        "mrr": 250,
-        "amount": 250
+        "mrr": 336,
+        "amount": 336
       },
       {
         "productType": "Add-On / Expansion",
@@ -70,10 +70,10 @@
       "account": "SouthEast Telephone",
       "accountId": "001PX00000qKI9KYAW",
       "productType": "Payments AR",
-      "mrr": 50,
+      "mrr": 136,
       "totalMonthlyFees": 0,
       "renewalAmount": 0,
-      "amount": 50,
+      "amount": 136,
       "stage": "2 - Discovery Completed",
       "createdDate": "2026-09-24T19:48:24.000+0000",
       "closeDate": "2026-10-31",
@@ -488,9 +488,9 @@
       "totalMonthlyFees": 0,
       "renewalAmount": 0,
       "amount": 400,
-      "stage": "3 - Initial Product Demo",
+      "stage": "Closed Lost",
       "createdDate": "2026-09-01T13:24:43.000+0000",
-      "closeDate": "2026-10-31",
+      "closeDate": "2026-10-01",
       "opportunityOwner": "Patrick Davies",
       "attendee": "Chris Reyes",
       "primaryContactOwner": "Patrick Davies",
