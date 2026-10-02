@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-10-01T21:00:15.543Z",
+    "generatedAt": "2026-10-02T21:00:19.228Z",
     "sourceFile": "assets/source/registration-report-deduped-2026-08-12.xlsx",
     "createdSince": "2026-09-01T00:00:00Z",
     "registrants": 228,
@@ -143,7 +143,7 @@
       "totalMonthlyFees": 0,
       "renewalAmount": 0,
       "amount": 1000,
-      "stage": "1- Discovery Scheduled",
+      "stage": "2 - Discovery Completed",
       "createdDate": "2026-09-15T18:23:42.000+0000",
       "closeDate": "2026-10-31",
       "opportunityOwner": "Patrick Davies",
