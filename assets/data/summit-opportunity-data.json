@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-10-05T21:00:13.847Z",
+    "generatedAt": "2026-10-06T21:00:07.871Z",
     "sourceFile": "assets/source/registration-report-deduped-2026-08-12.xlsx",
     "createdSince": "2026-09-01T00:00:00Z",
     "registrants": 228,
@@ -12,7 +12,7 @@
     "totalMRR": 19404,
     "totalAmount": 14183,
     "wonOpportunities": 3,
-    "openOpportunities": 13,
+    "openOpportunities": 12,
     "byProductType": [
       {
         "productType": "PSA 2.0",
@@ -304,9 +304,9 @@
       "totalMonthlyFees": 0,
       "renewalAmount": 0,
       "amount": 50,
-      "stage": "1- Discovery Scheduled",
+      "stage": "Closed Lost",
       "createdDate": "2026-09-09T17:25:32.000+0000",
-      "closeDate": "2026-10-31",
+      "closeDate": "2026-10-06",
       "opportunityOwner": "Jakob Champion",
       "attendee": "Michael Rowland",
       "primaryContactOwner": "Connor Flynn",
