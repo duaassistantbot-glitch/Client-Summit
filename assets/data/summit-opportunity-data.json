@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-10-06T21:00:07.871Z",
+    "generatedAt": "2026-10-07T21:00:22.769Z",
     "sourceFile": "assets/source/registration-report-deduped-2026-08-12.xlsx",
     "createdSince": "2026-09-01T00:00:00Z",
     "registrants": 228,
@@ -9,10 +9,10 @@
     "opportunityRows": 20,
     "uniqueOpportunities": 20,
     "uniqueAccountsWithOpportunities": 18,
-    "totalMRR": 19404,
-    "totalAmount": 14183,
+    "totalMRR": 20280,
+    "totalAmount": 15059,
     "wonOpportunities": 3,
-    "openOpportunities": 12,
+    "openOpportunities": 11,
     "byProductType": [
       {
         "productType": "PSA 2.0",
@@ -29,8 +29,8 @@
       {
         "productType": "Payments AR",
         "opportunities": 6,
-        "mrr": 336,
-        "amount": 336
+        "mrr": 1212,
+        "amount": 1212
       },
       {
         "productType": "Add-On / Expansion",
@@ -70,10 +70,10 @@
       "account": "SouthEast Telephone",
       "accountId": "001PX00000qKI9KYAW",
       "productType": "Payments AR",
-      "mrr": 136,
+      "mrr": 1012,
       "totalMonthlyFees": 0,
       "renewalAmount": 0,
-      "amount": 136,
+      "amount": 1012,
       "stage": "2 - Discovery Completed",
       "createdDate": "2026-09-24T19:48:24.000+0000",
       "closeDate": "2026-10-31",
@@ -122,7 +122,7 @@
       "amount": 4500,
       "stage": "2 - Discovery Completed",
       "createdDate": "2026-09-16T13:56:03.000+0000",
-      "closeDate": "2026-11-30",
+      "closeDate": "2026-12-31",
       "opportunityOwner": "Jamie Butler",
       "attendee": "Jim Peace",
       "primaryContactOwner": "Jamie Butler",
@@ -143,9 +143,9 @@
       "totalMonthlyFees": 0,
       "renewalAmount": 0,
       "amount": 1000,
-      "stage": "2 - Discovery Completed",
+      "stage": "Closed Lost",
       "createdDate": "2026-09-15T18:23:42.000+0000",
-      "closeDate": "2026-10-31",
+      "closeDate": "2026-10-07",
       "opportunityOwner": "Patrick Davies",
       "attendee": "Michael Cramer",
       "primaryContactOwner": "Patrick Davies",
