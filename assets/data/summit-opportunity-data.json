@@ -1,18 +1,18 @@
 {
   "summary": {
-    "generatedAt": "2026-10-07T21:00:22.769Z",
+    "generatedAt": "2026-10-08T21:00:08.950Z",
     "sourceFile": "assets/source/registration-report-deduped-2026-08-12.xlsx",
     "createdSince": "2026-09-01T00:00:00Z",
     "registrants": 228,
     "matchedRegistrants": 224,
     "uniqueMatchedAccounts": 108,
-    "opportunityRows": 20,
-    "uniqueOpportunities": 20,
-    "uniqueAccountsWithOpportunities": 18,
-    "totalMRR": 20280,
-    "totalAmount": 15059,
+    "opportunityRows": 21,
+    "uniqueOpportunities": 21,
+    "uniqueAccountsWithOpportunities": 19,
+    "totalMRR": 23230,
+    "totalAmount": 18009,
     "wonOpportunities": 3,
-    "openOpportunities": 11,
+    "openOpportunities": 12,
     "byProductType": [
       {
         "productType": "PSA 2.0",
@@ -29,8 +29,14 @@
       {
         "productType": "Payments AR",
         "opportunities": 6,
-        "mrr": 1212,
-        "amount": 1212
+        "mrr": 3162,
+        "amount": 3162
+      },
+      {
+        "productType": "Billing",
+        "opportunities": 1,
+        "mrr": 1000,
+        "amount": 1000
       },
       {
         "productType": "Add-On / Expansion",
@@ -41,6 +47,29 @@
     ]
   },
   "rows": [
+    {
+      "opportunityId": "006PX00000h4EreYAE",
+      "opportunityName": "TransNexus",
+      "account": "TransNexus",
+      "accountId": "0011500001IIF8aAAH",
+      "productType": "Billing",
+      "mrr": 1000,
+      "totalMonthlyFees": 0,
+      "renewalAmount": 0,
+      "amount": 1000,
+      "stage": "3 - Initial Product Demo",
+      "createdDate": "2026-10-08T20:36:39.000+0000",
+      "closeDate": "2026-11-30",
+      "opportunityOwner": "Jamie Butler",
+      "attendee": "Jim Dalton",
+      "primaryContactOwner": "Jake Mitchell",
+      "attendeeCompanyFromRegistration": "TransNexus",
+      "referredBy": "Not provided",
+      "connectionType": "Opportunity Contact Role",
+      "registrantMatchMethod": "Contact email → Account",
+      "sfContactId": "0031C00002SaemUQAR",
+      "sourceRegistrantRow": 76
+    },
     {
       "opportunityId": "006PX00000gacPzYAI",
       "opportunityName": "Affiliated Technology Solutions (New Platform)",
@@ -254,10 +283,10 @@
       "account": "Viirtue Inc",
       "accountId": "0016O00003QyGNZQA3",
       "productType": "Payments AR",
-      "mrr": 50,
+      "mrr": 2000,
       "totalMonthlyFees": 0,
       "renewalAmount": 0,
-      "amount": 50,
+      "amount": 2000,
       "stage": "1- Discovery Scheduled",
       "createdDate": "2026-09-09T17:36:04.000+0000",
       "closeDate": "2026-10-31",
