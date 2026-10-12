@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-10-11T21:00:07.591Z",
+    "generatedAt": "2026-10-12T21:00:07.102Z",
     "sourceFile": "assets/source/registration-report-deduped-2026-08-12.xlsx",
     "createdSince": "2026-09-01T00:00:00Z",
     "registrants": 228,
@@ -12,7 +12,7 @@
     "totalMRR": 23230,
     "totalAmount": 18009,
     "wonOpportunities": 3,
-    "openOpportunities": 12,
+    "openOpportunities": 10,
     "byProductType": [
       {
         "productType": "PSA 2.0",
@@ -356,9 +356,9 @@
       "totalMonthlyFees": 0,
       "renewalAmount": 0,
       "amount": 50,
-      "stage": "1- Discovery Scheduled",
+      "stage": "Closed Lost",
       "createdDate": "2026-09-09T17:23:45.000+0000",
-      "closeDate": "2026-10-31",
+      "closeDate": "2026-10-12",
       "opportunityOwner": "Jakob Champion",
       "attendee": "Felicia Turner",
       "primaryContactOwner": "Justin Lee",
@@ -448,9 +448,9 @@
       "totalMonthlyFees": 0,
       "renewalAmount": 0,
       "amount": 0,
-      "stage": "2 - Discovery Completed",
+      "stage": "Closed Lost",
       "createdDate": "2026-09-08T10:16:55.000+0000",
-      "closeDate": "2026-10-31",
+      "closeDate": "2026-10-12",
       "opportunityOwner": "Justin Lee",
       "attendee": "Rickie Richey",
       "primaryContactOwner": "Connor Flynn",
