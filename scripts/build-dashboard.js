@@ -457,8 +457,10 @@ function buildModel(rows, sponsorshipOpportunities) {
       staffTickets: staffRows.length,
       sponsorPasses: sponsorRows.length,
       ticketRevenue,
-      sponsorRevenue: sponsorshipSummary.totalAmount,
-      totalRevenue: ticketRevenue + sponsorshipSummary.totalAmount,
+      // Main revenue reporting reflects signed/closed-won sponsorships.
+      // Open and lost opportunities remain available in the Sponsorships tab.
+      sponsorRevenue: sponsorshipSummary.wonAmount,
+      totalRevenue: ticketRevenue + sponsorshipSummary.wonAmount,
       avgPaidTicket,
       fullCompTickets: fullComps.length,
       hotelRooms: rows.filter((row) => /^yes$/i.test(row.hotel)).length,
@@ -1330,7 +1332,7 @@ function renderModelTable() {
     ['Avg Paid Ticket Price', fmtMoney(a.avgTicketPrice), '$448 goal', fmtMoney(s.avgPaidTicket), ''],
     ['Ticket Revenue', fmtMoney(a.ticketRevenue), fmtMoney(g.ticketRevenue), fmtMoney(s.ticketRevenue), fmtPct(s.ticketRevenue, g.ticketRevenue)],
     ['Sponsor Tickets', a.sponsorTickets, g.sponsorPasses, s.sponsorPasses, fmtPct(s.sponsorPasses, g.sponsorPasses)],
-    ['# of Sponsors', a.sponsors, g.uniqueSponsors, data.sponsorships.uniqueCompanies, fmtPct(data.sponsorships.uniqueCompanies, g.uniqueSponsors)],
+    ['# of Sponsors', a.sponsors, g.uniqueSponsors, data.sponsorships.closedWon, fmtPct(data.sponsorships.closedWon, g.uniqueSponsors)],
     ['Sponsorship Revenue', fmtMoney(a.sponsorshipRevenue), fmtMoney(g.sponsorRevenue), fmtMoney(s.sponsorRevenue), fmtPct(s.sponsorRevenue, g.sponsorRevenue)]
   ];
   document.getElementById('modelTable').innerHTML = '<thead><tr><th>Metric</th><th class="num">2025 Actuals</th><th class="num">2026 Goal</th><th class="num">2026 Current</th><th class="num">% to Goal</th></tr></thead><tbody>' +

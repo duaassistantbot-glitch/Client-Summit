@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T17:31:36.463Z",
+  "generatedAt": "2026-10-29T20:04:44.999Z",
   "sourceFile": "registration-report-deduped-2026-08-12.xlsx",
   "goals": {
     "totalRegistrants": 400,
@@ -44,8 +44,8 @@
     "staffTickets": 0,
     "sponsorPasses": 0,
     "ticketRevenue": 18850,
-    "sponsorRevenue": 296487.5,
-    "totalRevenue": 315337.5,
+    "sponsorRevenue": 233987.5,
+    "totalRevenue": 252837.5,
     "avgPaidTicket": 524,
     "fullCompTickets": 188,
     "hotelRooms": 153,
@@ -5617,29 +5617,17 @@
     "uniqueCompanies": 67,
     "totalAmount": 296487.5,
     "wonAmount": 233987.5,
-    "openAmount": 14000,
+    "openAmount": 0,
     "closedWon": 17,
-    "closedLost": 47,
+    "closedLost": 50,
     "byStage": [
       {
         "name": "Closed Lost",
-        "count": 47
+        "count": 50
       },
       {
         "name": "Closed Won",
         "count": 17
-      },
-      {
-        "name": "1- Discovery Scheduled",
-        "count": 1
-      },
-      {
-        "name": "2 - Discovery Completed",
-        "count": 1
-      },
-      {
-        "name": "6 - Verbal Commit",
-        "count": 1
       }
     ],
     "byType": [
@@ -5696,23 +5684,23 @@
       {
         "opportunityName": "Acronis Summit Sponsorship 2026",
         "company": "Acronis",
-        "stage": "6 - Verbal Commit",
+        "stage": "Closed Lost",
         "closeDate": "2026-08-31",
         "amount": 14000,
         "sponsorshipType": "Silver",
         "sponsorshipPackage": "Emerald - VIP Dinner - $14,000",
-        "isClosed": false,
+        "isClosed": true,
         "isWon": false
       },
       {
         "opportunityName": "Guardz Summit Sponsorship 2026",
         "company": "Guardz",
-        "stage": "2 - Discovery Completed",
+        "stage": "Closed Lost",
         "closeDate": "2026-08-31",
         "amount": 0,
         "sponsorshipType": "Unspecified",
         "sponsorshipPackage": "",
-        "isClosed": false,
+        "isClosed": true,
         "isWon": false
       },
       {
@@ -5740,12 +5728,12 @@
       {
         "opportunityName": "Telcloud",
         "company": "TelCloud",
-        "stage": "1- Discovery Scheduled",
+        "stage": "Closed Lost",
         "closeDate": "2026-08-31",
         "amount": 0,
         "sponsorshipType": "Unspecified",
         "sponsorshipPackage": "",
-        "isClosed": false,
+        "isClosed": true,
         "isWon": false
       },
       {
@@ -5771,17 +5759,6 @@
         "isWon": false
       },
       {
-        "opportunityName": "Crexendo Summit Sponsorship 2026",
-        "company": "Crexendo Business Solutions",
-        "stage": "Closed Won",
-        "closeDate": "2026-08-11",
-        "amount": 11000,
-        "sponsorshipType": "Silver",
-        "sponsorshipPackage": "",
-        "isClosed": true,
-        "isWon": true
-      },
-      {
         "opportunityName": "MSP Hub Summit Sponsorship 2026",
         "company": "MSP Hub",
         "stage": "Closed Lost",
@@ -5791,6 +5768,17 @@
         "sponsorshipPackage": "",
         "isClosed": true,
         "isWon": false
+      },
+      {
+        "opportunityName": "Crexendo Summit Sponsorship 2026",
+        "company": "Netsapiens/Crexendo",
+        "stage": "Closed Won",
+        "closeDate": "2026-08-11",
+        "amount": 11000,
+        "sponsorshipType": "Silver",
+        "sponsorshipPackage": "",
+        "isClosed": true,
+        "isWon": true
       },
       {
         "opportunityName": "Oculum Summit Sponsorship 2026",
@@ -6025,7 +6013,7 @@
       },
       {
         "opportunityName": "Petra Security Summit Sponsorship 2026",
-        "company": "Petra Security",
+        "company": "Petra",
         "stage": "Closed Lost",
         "closeDate": "2026-08-04",
         "amount": 0,
@@ -6245,7 +6233,7 @@
       },
       {
         "opportunityName": "iReply Summit Sponsorship 2026",
-        "company": "Ireplyservices",
+        "company": "iReply Services",
         "stage": "Closed Won",
         "closeDate": "2026-06-26",
         "amount": 6000,
@@ -6398,8 +6386,8 @@
         "isWon": false
       },
       {
-        "opportunityName": "Thread Summit Sponsorship 2026",
-        "company": "Thread",
+        "opportunityName": "VoIPCX Summit Sponsorship 2026",
+        "company": "Textable",
         "stage": "Closed Lost",
         "closeDate": "2026-06-09",
         "amount": 0,
@@ -6409,8 +6397,8 @@
         "isWon": false
       },
       {
-        "opportunityName": "VoIPCX Summit Sponsorship 2026",
-        "company": "VoIPCX",
+        "opportunityName": "Thread Summit Sponsorship 2026",
+        "company": "Thread",
         "stage": "Closed Lost",
         "closeDate": "2026-06-09",
         "amount": 0,
